@@ -1,12 +1,16 @@
 {
-    "private": true,
-    "workspaces": [
-        "packages/*"
-    ],
-    "name": "jorytindall",
-    "scripts": {
-        "web:dev": "yarn workspace web start",
-        "web:build": "yarn workspace web build",
-        "web:clean": "yarn workspace web gatsby clean"
-    }
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"name": "jorytindall",
+	"scripts": {
+		"web:dev": "yarn workspace web start",
+		"web:build": "yarn workspace web build",
+		"web:clean": "yarn workspace web gatsby clean",
+		"format:all": "prettier --write ."
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	}
 }
