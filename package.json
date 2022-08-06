@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "name": "jorytindall",
+    "scripts": {
+        "web:dev": "yarn workspace web start",
+        "web:build": "yarn workspace web build",
+        "web:clean": "yarn workspace web gatsby clean"
+    }
+}
