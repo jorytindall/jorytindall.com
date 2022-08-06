@@ -7,7 +7,8 @@
 	"scripts": {
 		"web:dev": "yarn workspace web start",
 		"web:build": "yarn workspace web build",
-		"web:clean": "yarn workspace web gatsby clean",
+        "admin:dev": "yarn workspace admin start",
+        "admin:build": "yarn workspace admin build",
 		"format:all": "prettier --write ."
 	},
 	"devDependencies": {
