@@ -8,8 +8,8 @@
 	"scripts": {
 		"web:dev": "yarn workspace web start",
 		"web:build": "yarn workspace web build",
-        "admin:dev": "yarn workspace admin start",
-        "admin:build": "yarn workspace admin build",
+		"admin:dev": "yarn workspace admin start",
+		"admin:build": "yarn workspace admin build",
 		"tokens:build": "yarn workspace tokens style-dictionary build",
 		"format:all": "prettier --write ."
 	},

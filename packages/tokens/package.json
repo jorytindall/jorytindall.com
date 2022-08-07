@@ -1,13 +1,13 @@
 {
-    "name": "tokens",
-    "version": "0.1.0",
-    "author": "Jory Tindall <jory@hypecreativestudios.com",
-    "private": false,
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
-        "@divriots/style-dictionary-to-figma": "^0.3.0",
-        "style-dictionary": "^3.7.1"
-    },
-    "main": "./dist/"
+	"name": "tokens",
+	"version": "0.1.0",
+	"author": "Jory Tindall <jory@hypecreativestudios.com",
+	"private": false,
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"@divriots/style-dictionary-to-figma": "^0.3.0",
+		"style-dictionary": "^3.7.1"
+	},
+	"main": "./dist/"
 }
