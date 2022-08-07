@@ -4,15 +4,28 @@
 		"packages/*"
 	],
 	"name": "jorytindall",
+	"description": "Monorepo for my personal website and projects",
 	"scripts": {
 		"web:dev": "yarn workspace web start",
 		"web:build": "yarn workspace web build",
-        "admin:dev": "yarn workspace admin start",
-        "admin:build": "yarn workspace admin build",
+		"admin:dev": "yarn workspace admin start",
+		"admin:build": "yarn workspace admin build",
+		"tokens:build": "yarn workspace tokens style-dictionary build",
 		"format:all": "prettier --write ."
 	},
 	"devDependencies": {
 		"prettier": "^2.7.1",
 		"turbo": "^1.4.2"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jorytindall/jorytindall"
+	},
+	"keywords": [
+		"design",
+		"design systems",
+		"javascript",
+		"react",
+		"music"
+	]
 }
