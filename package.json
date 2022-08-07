@@ -11,7 +11,8 @@
 		"admin:dev": "yarn workspace admin start",
 		"admin:build": "yarn workspace admin build",
 		"tokens:build": "yarn workspace tokens style-dictionary build",
-		"format:all": "prettier --write ."
+		"format:all": "prettier --write .",
+		"version": "yarn changeset version"
 	},
 	"devDependencies": {
 		"prettier": "^2.7.1",
@@ -27,5 +28,10 @@
 		"javascript",
 		"react",
 		"music"
-	]
+	],
+	"dependencies": {
+		"@changesets/cli": "^2.24.2",
+		"npm": "^8.16.0"
+	},
+	"version": "0.0.0"
 }
