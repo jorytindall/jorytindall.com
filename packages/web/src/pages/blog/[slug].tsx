@@ -2,22 +2,22 @@ import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
 import { usePreviewSubscriptionHook } from 'lib/sanity'
 import { getClient, previewClient } from 'lib/sanity.server'
-import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries'
+import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries'
 
-export default function Page({ data, preview }) {
+export default function Event({ data, preview }) {
     const router = useRouter()
 
-    const { data: page } = usePreviewSubscriptionHook(GET_PAGES, {
-        params: {slug: data.page?.slug},
-        initialData: data.page,
-        enabled: preview && data.page?.slug,
+    const { data: post } = usePreviewSubscriptionHook(GET_BLOG_POSTS, {
+        params: {slug: data.post?.slug},
+        initialData: data.post,
+        enabled: preview && data.post?.slug,
     })
 
-    if (!router.isFallback && !data.page?.slug) {
+    if (!router.isFallback && !data.post?.slug) {
         return <ErrorPage statusCode={404} />
     }
 
-    const { title } = page
+    const { title } = post
 
     return (
         <>
@@ -27,20 +27,20 @@ export default function Page({ data, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-    const page = await getClient(preview).fetch(GET_PAGES, {
+    const post = await getClient(preview).fetch(GET_BLOG_POSTS, {
         slug: params.slug,
     })
 
     return {
         props: {
             preview,
-            data: {page}
+            data: {post}
         }
     }
 }
 
 export async function getStaticPaths() {
-    const paths = await getClient(previewClient).fetch(GET_PAGE_PATHS)
+    const paths = await getClient(previewClient).fetch(GET_BLOG_POST_PATHS)
 
     return {
         paths: paths.map((slug) => ({ params: {slug} })),
