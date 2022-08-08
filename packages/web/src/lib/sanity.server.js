@@ -3,7 +3,7 @@ import { config } from './sanityConfig'
 
 export const sanityClient = createClient(config)
 export const previewClient = createClient({
-    ...client,
+    ...config,
     useCdn: false,
     token: process.env.SANITY_API_TOKEN,
 })
