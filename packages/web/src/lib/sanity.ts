@@ -1,4 +1,4 @@
-import { createPreviewSubscriptionHook, createCurrentUserHook } from 'next-sanity'
+import { createPreviewSubscriptionHook } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
 import { config } from './sanityConfig'
 
