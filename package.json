@@ -6,7 +6,7 @@
 	"name": "jorytindall",
 	"description": "Monorepo for my personal website and projects",
 	"scripts": {
-		"web:dev": "yarn workspace web start",
+		"web:dev": "yarn workspace web dev",
 		"web:build": "yarn workspace web build",
 		"admin:dev": "yarn workspace admin start",
 		"admin:build": "yarn workspace admin build",
