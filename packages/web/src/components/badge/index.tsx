@@ -1,4 +1,4 @@
-import styles from './Badge.module.scss'
+import styles from 'styles/components/Badge.module.scss'
 
 interface BadgeProps {
     text: string,
@@ -10,6 +10,9 @@ export const Badge = ({
     type = 'primary'
 }: BadgeProps) => {
     return (
-        <span className={styles.badge}>{text}</span>
+        <span className={[
+            styles.badge,
+            styles[`badge--${type}`],
+        ].join(' ')}>{text}</span>
     )
 }

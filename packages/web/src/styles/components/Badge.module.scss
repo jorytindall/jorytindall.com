@@ -1,0 +1,20 @@
+$variants:
+    'primary' '#ffffff' 'blue',
+    'secondary' '#ffffff' 'red';
+
+.badge {
+    padding: 4px 16px;
+	font-family: var(--font-headline);
+	font-size: 1rem;
+	line-height: 1.7;
+	font-weight: 600;
+	border-radius: 4px;
+	letter-spacing: 0.25px;
+
+    @each $variant, $color, $background in $variants {
+        &--#{$variant} {
+            background: $background;
+            color: $color;
+        }
+    }
+}
