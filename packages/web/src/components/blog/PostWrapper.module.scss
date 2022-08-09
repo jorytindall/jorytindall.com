@@ -1,0 +1,22 @@
+@import 'styles/_variables';
+
+.wrapper {
+    padding: 2.5rem;
+	background: var(--color-tertiary-medium-tint);
+	margin: 2.5rem 0;
+	transition: all 0.15s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		transform: translateY(-4px);
+		background: var(--color-primary-main);
+
+		& a > * {
+			color: var(--color-accent-01);
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
