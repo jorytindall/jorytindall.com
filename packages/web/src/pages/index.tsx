@@ -4,7 +4,7 @@ export default function Home() {
 	return (
 		<div>
 			<p>Hello, world!</p>
-			<Badge text="Badge text" type='primary' />
+			<Badge text="Badge text" type='secondary' />
 		</div>
 	);
 }
