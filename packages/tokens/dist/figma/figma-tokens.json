@@ -651,9 +651,60 @@
       }
     },
     "line-height": {
-      "mega-headline": "0.9",
-      "headline": "1.4",
-      "body": "1.7"
+      "mega-headline": {
+        "value": "0.9",
+        "filePath": "tokens/typography/line-height.json",
+        "isSource": true,
+        "original": {
+          "value": "0.9"
+        },
+        "attributes": {
+          "category": "typography",
+          "type": "line-height",
+          "item": "mega-headline"
+        },
+        "path": {
+          "0": "typography",
+          "1": "line-height",
+          "2": "mega-headline"
+        }
+      },
+      "headline": {
+        "value": "1.4",
+        "filePath": "tokens/typography/line-height.json",
+        "isSource": true,
+        "original": {
+          "value": "1.4"
+        },
+        "attributes": {
+          "category": "typography",
+          "type": "line-height",
+          "item": "headline"
+        },
+        "path": {
+          "0": "typography",
+          "1": "line-height",
+          "2": "headline"
+        }
+      },
+      "body": {
+        "value": "1.7",
+        "filePath": "tokens/typography/line-height.json",
+        "isSource": true,
+        "original": {
+          "value": "1.7"
+        },
+        "attributes": {
+          "category": "typography",
+          "type": "line-height",
+          "item": "body"
+        },
+        "path": {
+          "0": "typography",
+          "1": "line-height",
+          "2": "body"
+        }
+      }
     }
   }
 }
