@@ -1,4 +1,4 @@
-import styles from 'styles/components/Badge.module.scss'
+import styles from './Badge.module.scss'
 
 interface BadgeProps {
     text: string,

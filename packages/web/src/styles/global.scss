@@ -1,4 +1,3 @@
-// @import 'tokens/dist/web/tokens.scss';
 @import './variables.scss';
 
 // Reset
@@ -14,4 +13,8 @@
 html, body {
     height: 100%;
     font-size: 16px;
+
+    .badge {
+        color: red !important;
+    }
 }
