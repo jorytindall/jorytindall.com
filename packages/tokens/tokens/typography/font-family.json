@@ -1,0 +1,9 @@
+{
+    "typography": {
+        "font-family": {
+            "body": { "value": "Neue Haas Unica, Helvetica, Arial, sans-serif" },
+            "headline": { "value": "Uxum Grotesque, Helvetica, Aria, sans-serif" },
+            "mono": { "value": "Fira Code, courier, monospace" }
+        }
+    }
+}
