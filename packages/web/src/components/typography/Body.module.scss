@@ -1,0 +1,8 @@
+@import 'styles/_variables.scss';
+
+.paragraph {
+    font-family: $typography-font-family-body;
+    line-height: 1.8;
+    color: $color-neutral-600;
+    margin: 1rem 0;
+}
