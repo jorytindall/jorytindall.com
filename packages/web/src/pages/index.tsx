@@ -10,7 +10,9 @@ export default function Home() {
 			<H4>Heading 4</H4>
 			<H5>Heading 5</H5>
 			<H6>Heading 6</H6>
-			<Paragraph>Lorem ipsum dolar sit amet</Paragraph>
+			<Paragraph type='primary'>Lorem ipsum dolar sit amet</Paragraph>
+			<Paragraph type='secondary'>Lorem ipsum dolar sit amet</Paragraph>
+			<Paragraph type='lead'>Lorem ipsum dolar sit amet</Paragraph>
 		</div>
 	);
 }
