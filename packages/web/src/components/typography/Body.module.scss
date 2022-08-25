@@ -1,0 +1,25 @@
+@import 'styles/_variables';
+
+$paragraphVariants: (
+    'primary' $typography-font-size-body-primary,
+    'secondary' $typography-font-size-body-secondary,
+    'lead' $typography-font-size-body-lead,
+);
+
+.paragraph {
+    font-family: $typography-font-family-body;
+    color: $color-neutral-600;
+    line-height: 1.8;
+    margin: 1rem 0;
+    text-align: left;
+
+    a, a:visited {
+		color: $color-primary-300;
+	}
+
+    @each $variant, $fontSize in $paragraphVariants {
+        &--#{$variant} {
+            font-size: $fontSize;
+        }
+    }
+}

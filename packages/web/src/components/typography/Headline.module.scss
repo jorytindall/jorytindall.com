@@ -1,0 +1,22 @@
+@import 'styles/_variables';
+
+$variants: (
+    'mega' $typography-font-size-headline-mega,
+    'h1' $typography-font-size-headline-01,
+    'h2' $typography-font-size-headline-02,
+    'h3' $typography-font-size-headline-03,
+    'h4' $typography-font-size-headline-04,
+    'h5' $typography-font-size-headline-05,
+    'h6' $typography-font-size-headline-06,
+);
+
+.headline {
+    font-family: $typography-font-family-headline;
+    color: $color-primary-300;
+
+    @each $variant, $fontSize in $variants {
+        &--#{$variant} {
+            font-size: $fontSize;
+        }
+    }
+}
