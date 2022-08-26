@@ -1,5 +1,5 @@
 import { Badge } from 'components/badge'
-import { Paragraph } from 'components/typography';
+import { Paragraph, Code } from 'components/typography';
 import { Heading } from 'components/typography'
 import { InlineLink } from 'components/typography';
 import { Item, List } from 'components/typography';
@@ -15,6 +15,7 @@ export default function Home() {
 			<Heading type='h5'>Heading 5</Heading>
 			<Heading type='h6'>Heading 6</Heading>
 			<Paragraph type='secondary'>Hello, world!</Paragraph>
+			<Code>Hello, code!</Code>
 			<List type='ul'>
 				<Item>Item 1</Item>
 				<Item>Item 2</Item>

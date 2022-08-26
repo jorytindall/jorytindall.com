@@ -2,7 +2,11 @@ import styles from './Body.module.scss'
 
 interface ParagraphProps {
     children: React.ReactNode,
-    type?: string
+    type?: 'primary' | 'secondary' | 'lead',
+}
+
+interface CodeProps {
+    children: React.ReactNode,
 }
 
 export const Paragraph = ({ 
@@ -16,3 +20,5 @@ export const Paragraph = ({
         ].join(' ')}>{children}</p>
     )
 }
+
+export const Code = ({ children }: CodeProps) => <code className={styles.code}>{children}</code>
