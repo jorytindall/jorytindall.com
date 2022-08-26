@@ -10,42 +10,54 @@ export const Heading = ({
     type='h1'
 }: HeadlineProps) => {
 
-    const renderHeadlineType = type === 'mega' ?
+    switch (type) {
+        case 'mega': return (
             <h1 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h1>
-        : type === 'h1' ? 
+        );
+        case 'h1': return (
             <h1 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h1>
-        : type === 'h2' ?
+        );
+        case 'h2': return (
             <h2 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h2>
-        : type === 'h3' ?
+        );
+        case 'h3': return (
             <h3 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h3>
-        : type === 'h4' ?
+        );
+        case 'h4': return (
             <h4 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h4>
-        : type === 'h5' ?
+        );
+        case 'h5': return (
             <h5 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h5>
-        : type === 'h6' ?
+        );
+        case 'h6': return (
             <h6 className={[
                 styles.headline,
                 styles[`headline--${type}`],
             ].join(' ')}>{children}</h6>
-        : null;
-
-    return renderHeadlineType
+        );
+        default: return (
+            <h1 className={[
+                styles.headline,
+                styles[`headline--${type}`],
+            ].join(' ')}>{children}</h1>
+        )
+    }
 }

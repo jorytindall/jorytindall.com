@@ -1,22 +1,27 @@
 @import 'styles/_variables';
 
 $variants: (
-    'mega' $typography-font-size-headline-mega,
-    'h1' $typography-font-size-headline-01,
-    'h2' $typography-font-size-headline-02,
-    'h3' $typography-font-size-headline-03,
-    'h4' $typography-font-size-headline-04,
-    'h5' $typography-font-size-headline-05,
-    'h6' $typography-font-size-headline-06,
+    'mega' $typography-font-size-headline-mega $typography-line-height-mega-headline,
+    'h1' $typography-font-size-headline-01 $typography-line-height-headline,
+    'h2' $typography-font-size-headline-02 $typography-line-height-headline,
+    'h3' $typography-font-size-headline-03 $typography-line-height-headline,
+    'h4' $typography-font-size-headline-04 $typography-line-height-headline,
+    'h5' $typography-font-size-headline-05 $typography-line-height-headline,
+    'h6' $typography-font-size-headline-06 $typography-line-height-headline,
 );
 
 .headline {
     font-family: $typography-font-family-headline;
     color: $color-primary-300;
+    font-weight: bold;
+    line-height: $typography-line-height-headline;
+    margin: 2rem 0 1rem 0;
+    text-align: left;
 
-    @each $variant, $fontSize in $variants {
+    @each $variant, $fontSize, $lineHeight in $variants {
         &--#{$variant} {
             font-size: $fontSize;
+            line-height: $lineHeight;
         }
     }
 }
