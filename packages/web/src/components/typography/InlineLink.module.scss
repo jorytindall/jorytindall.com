@@ -1,0 +1,25 @@
+@import 'styles/_variables';
+
+$variants: (
+    'primary' $color-primary-300 $color-primary-400 $color-primary-500,
+    'secondary' $color-neutral-600 $color-neutral-500 $color-neutral-500,
+    'tertiary' $color-neutral-500 $color-neutral-600 $color-neutral-600
+);
+
+.link {
+    text-decoration: underline;
+    font-size: inherit;
+    font-family: inherit;
+    transition: all 0.15s;
+    display: inline;
+
+    @each $variant, $colorDefault, $colorHover, $colorActive in $variants {
+        &--#{$variant} {
+            color: $colorDefault;
+
+            &:hover { color: $colorHover; };
+            &:active { color: $colorActive; };
+            &:visited { color: $colorDefault };
+        }
+    }
+}
