@@ -19,7 +19,7 @@ $paragraphVariants: (
 }
 
 @each $variant, $fontSize in $paragraphVariants {
-    &--#{$variant} {
+    .#{$variant} {
         @extend .paragraph;
         font-size: $fontSize;
     }

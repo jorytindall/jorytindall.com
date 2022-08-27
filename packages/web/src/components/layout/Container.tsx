@@ -3,25 +3,27 @@ import styles from './Container.module.scss'
 interface ContainerProps {
     density?: 'default' | 'spacious' | 'packed',
     isFlex?: boolean,
-    flexDirection?: 'horizontal' | 'vertical',
+    flexDirection?: 'row' | 'column',
     semanticElement?: 'div' | 'section' | 'article' | 'aside',
     children?: React.ReactNode,
+    justify?: 'normal' | 'start' | 'center' | 'end' | 'space-between' | 'space-around',
 }
 
 export const Container = ({
     density = 'default',
     isFlex,
-    flexDirection,
+    flexDirection = 'row',
+    justify = 'normal',
     semanticElement,
     children,
 }: ContainerProps) => {
     switch (semanticElement) {
         case 'div': return (
             <div className={[
-                styles.container,
                 styles[`container--density_${density}`],
-                styles[`container--${isFlex}`],
-                styles[`container--${flexDirection}`]
+                [isFlex === true ? styles[`container--is-flex`] : null],
+                styles[`container--is-flex--${flexDirection}`],
+                styles[`container--is-flex--${justify}`]
             ].join(' ')}
             >{children}</div>
         )

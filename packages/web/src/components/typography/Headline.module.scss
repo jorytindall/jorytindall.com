@@ -20,7 +20,7 @@ $variants: (
 }
 
 @each $variant, $fontSize, $lineHeight in $variants {
-    &--#{$variant} {
+    .#{$variant} {
         @extend .headline;
         font-size: $fontSize;
         line-height: $lineHeight;

@@ -1,15 +1,48 @@
-$spacingVariants: (
+$densityVariants: (
     'default': 2.5rem,
     'packed': 1.0rem,
     'spacious': 5.0rem
 );
 
-.container {
-    &--density {
-        @each $variant, $padding in $spacingVariants {
-            &_#{$variant} {
-                padding: $padding;
-            }
+$directionVariants: (
+    column,
+    row,
+);
+
+$justifyVariants: (
+    normal,
+    start,
+    center,
+    end,
+    space-between,
+    space-around,
+);
+
+.container {}
+
+.container--density {
+    @each $variant, $padding in $densityVariants {
+        &_#{$variant} {
+            @extend .container;
+            padding: $padding;
         }
+    }
+}
+
+.container--is-flex {
+    display: flex;
+}
+
+@each $direction in $directionVariants {
+    .container--is-flex--#{$direction} {
+        @extend .container--is-flex;
+        flex-direction: $direction;
+    }
+}
+
+@each $justification in $justifyVariants {
+    .container--is-flex--#{$justification} {
+        @extend .container--is-flex;
+        justify-content: $justification;
     }
 }

@@ -15,6 +15,8 @@ $variants: (
 	font-weight: 600;
 	border-radius: 4px;
 	letter-spacing: 0.25px;
+    width: fit-content;
+    height: fit-content;
 }
 
 @each $variant, $color, $background in $variants {
