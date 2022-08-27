@@ -14,11 +14,12 @@ export const Paragraph = ({
     type='primary'
 }: ParagraphProps) => {
     return (
-        <p className={[
-            styles.paragraph,
-            styles[`paragraph--${type}`],
-        ].join(' ')}>{children}</p>
+        <p className={styles[type]}>{children}</p>
     )
 }
 
-export const Code = ({ children }: CodeProps) => <code className={styles.code}>{children}</code>
+export const Code = ({ children }: CodeProps) => {
+    return (
+        <code className={styles.code}>{children}</code>
+    )
+}

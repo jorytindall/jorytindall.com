@@ -16,11 +16,12 @@ $paragraphVariants: (
     a, a:visited {
 		color: $color-primary-300;
 	}
+}
 
-    @each $variant, $fontSize in $paragraphVariants {
-        &--#{$variant} {
-            font-size: $fontSize;
-        }
+@each $variant, $fontSize in $paragraphVariants {
+    &--#{$variant} {
+        @extend .paragraph;
+        font-size: $fontSize;
     }
 }
 
