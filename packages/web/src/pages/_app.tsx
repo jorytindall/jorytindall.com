@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as Fathom from 'fathom-client'
-import '../styles/global.scss'
+import '../styles/main.scss'
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter()
