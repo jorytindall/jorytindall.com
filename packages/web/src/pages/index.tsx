@@ -1,28 +1,18 @@
 import { Badge } from 'components/badge'
 import { Paragraph, Code } from 'components/typography';
-import { Heading } from 'components/typography'
-import { InlineLink } from 'components/typography';
-import { Item, List } from 'components/typography';
+import { Heading, InlineLink, Item, List } from 'components/typography'
+import { Container } from 'components/layout'
 
 export default function Home() {
 	return (
 		<div>
-			<Heading type='mega'>Heading mega</Heading>
-			<Heading type='h1'>Heading 1</Heading>
-			<Heading type='h2'>Heading 2</Heading>
-			<Heading type='h3'>Heading 3</Heading>
-			<Heading type='h4'>Heading 4</Heading>
-			<Heading type='h5'>Heading 5</Heading>
-			<Heading type='h6'>Heading 6</Heading>
-			<Paragraph type='secondary'>Hello, world!</Paragraph>
-			<Code>Hello, code!</Code>
-			<List type='ul'>
-				<Item>Item 1</Item>
-				<Item>Item 2</Item>
-				<Item>Item 3</Item>
-				<Item>Item 4</Item>
-			</List>
-			<Badge type='primary' text='Primary badge' />
+			<Container semanticElement='div'>
+				<Heading type='h3'>Heading within the container</Heading>
+				<Paragraph>Lorem ipsum dolar sit amet.</Paragraph>
+				<Badge type='primary' text='Primary badge' />
+				<Badge type='secondary' text='Secondary badge' />
+				<Badge type='tertiary' text='Tertiary badge' />
+			</Container>
 		</div>
 	);
 }

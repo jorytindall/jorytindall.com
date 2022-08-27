@@ -1,0 +1,15 @@
+$spacingVariants: (
+    'default': 2.5rem,
+    'packed': 1.0rem,
+    'spacious': 5.0rem
+);
+
+.container {
+    &--density {
+        @each $variant, $padding in $spacingVariants {
+            &_#{$variant} {
+                padding: $padding;
+            }
+        }
+    }
+}

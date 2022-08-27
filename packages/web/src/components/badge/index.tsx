@@ -10,9 +10,6 @@ export const Badge = ({
     type = 'primary'
 }: BadgeProps) => {
     return (
-        <span className={[
-            styles.badge,
-            styles[`badge--${type}`],
-        ].join(' ')}>{text}</span>
+        <span className={styles[type]}>{text}</span>
     )
 }
