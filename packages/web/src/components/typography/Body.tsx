@@ -3,6 +3,7 @@ import styles from './Body.module.scss'
 interface ParagraphProps {
     children: React.ReactNode,
     type?: 'primary' | 'secondary' | 'lead',
+    collapse?: boolean,
 }
 
 interface CodeProps {
@@ -11,10 +12,14 @@ interface CodeProps {
 
 export const Paragraph = ({ 
     children,
-    type='primary'
+    type='primary',
+    collapse,
 }: ParagraphProps) => {
     return (
-        <p className={styles[type]}>{children}</p>
+        <p className={[
+            styles[type],
+            [collapse ? styles.collapse : null]
+        ].join(' ')}>{children}</p>
     )
 }
 

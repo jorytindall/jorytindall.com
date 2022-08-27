@@ -3,16 +3,24 @@ import styles from './Headline.module.scss'
 interface HeadlineProps {
     children: React.ReactNode,
     type?: 'mega' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+    collapse?: boolean,
 }
 
 export const Heading = ({ 
     children,
-    type='h1'
+    type='h1',
+    collapse,
 }: HeadlineProps) => {
 
     switch (type) {
         case 'mega': return <h1 className={styles[type]}>{children}</h1>
-        case 'h1': return <h1 className={styles[type]}>{children}</h1>
+        case 'h1': return (
+            <h1
+                className={[
+                    styles[type], 
+                    [collapse ? styles.collapse : null]
+                ].join(' ')}>{children}</h1>
+        )
         case 'h2': return <h2 className={styles[type]}>{children}</h2>
         case 'h3': return <h3 className={styles[type]}>{children}</h3>
         case 'h4': return <h4 className={styles[type]}>{children}</h4>

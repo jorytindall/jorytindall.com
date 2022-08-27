@@ -9,12 +9,12 @@ export default function Home() {
 			<Container
 				semanticElement='div'
 				isFlex={true}
-				flexDirection='row'
+				flexDirection='column'
 				density='default'
-				justify='center'
-				align='center'
+				justify='start'
+				align='normal'
 			>
-				<Heading type='h3'>Heading within the container</Heading>
+				<Heading type='h1'>Heading within the container</Heading>
 				<Paragraph type='primary'>Lorem ipsum dolar sit amet.</Paragraph>
 				<Badge type='primary' text='Primary badge' />
 			</Container>
