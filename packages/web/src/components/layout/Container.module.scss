@@ -18,6 +18,13 @@ $justifyVariants: (
     space-around,
 );
 
+$alignVariants: (
+    normal,
+    start,
+    center,
+    end,
+);
+
 .container {}
 
 .container--density {
@@ -44,5 +51,12 @@ $justifyVariants: (
     .container--is-flex--#{$justification} {
         @extend .container--is-flex;
         justify-content: $justification;
+    }
+}
+
+@each $alignment in $alignVariants {
+    .container--is-flex--#{$alignment} {
+        @extend .container--is-flex;
+        align-items: $alignment;
     }
 }

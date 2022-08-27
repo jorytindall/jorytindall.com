@@ -12,6 +12,7 @@ export default function Home() {
 				flexDirection='row'
 				density='default'
 				justify='center'
+				align='center'
 			>
 				<Heading type='h3'>Heading within the container</Heading>
 				<Paragraph type='primary'>Lorem ipsum dolar sit amet.</Paragraph>
