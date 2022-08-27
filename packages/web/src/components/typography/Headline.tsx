@@ -11,53 +11,13 @@ export const Heading = ({
 }: HeadlineProps) => {
 
     switch (type) {
-        case 'mega': return (
-            <h1 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h1>
-        );
-        case 'h1': return (
-            <h1 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h1>
-        );
-        case 'h2': return (
-            <h2 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h2>
-        );
-        case 'h3': return (
-            <h3 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h3>
-        );
-        case 'h4': return (
-            <h4 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h4>
-        );
-        case 'h5': return (
-            <h5 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h5>
-        );
-        case 'h6': return (
-            <h6 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h6>
-        );
-        default: return (
-            <h1 className={[
-                styles.headline,
-                styles[`headline--${type}`],
-            ].join(' ')}>{children}</h1>
-        )
+        case 'mega': return <h1 className={styles[type]}>{children}</h1>
+        case 'h1': return <h1 className={styles[type]}>{children}</h1>
+        case 'h2': return <h2 className={styles[type]}>{children}</h2>
+        case 'h3': return <h3 className={styles[type]}>{children}</h3>
+        case 'h4': return <h4 className={styles[type]}>{children}</h4>
+        case 'h5': return <h5 className={styles[type]}>{children}</h5>
+        case 'h6': return <h6 className={styles[type]}>{children}</h6>
+        default: return <h1 className={styles[type]}>{children}</h1>
     }
 }

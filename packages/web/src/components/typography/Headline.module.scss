@@ -17,11 +17,12 @@ $variants: (
     line-height: $typography-line-height-headline;
     margin: 2rem 0 1rem 0;
     text-align: left;
+}
 
-    @each $variant, $fontSize, $lineHeight in $variants {
-        &--#{$variant} {
-            font-size: $fontSize;
-            line-height: $lineHeight;
-        }
+@each $variant, $fontSize, $lineHeight in $variants {
+    &--#{$variant} {
+        @extend .headline;
+        font-size: $fontSize;
+        line-height: $lineHeight;
     }
 }
