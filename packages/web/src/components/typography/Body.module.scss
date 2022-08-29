@@ -6,7 +6,7 @@ $paragraphVariants: (
     'lead' $typography-font-size-body-lead,
 );
 
-.paragraph {
+@mixin paragraph-base {
     font-family: $typography-font-family-body;
     color: $color-neutral-600;
     line-height: 1.8;
@@ -20,7 +20,7 @@ $paragraphVariants: (
 
 @each $variant, $fontSize in $paragraphVariants {
     .#{$variant} {
-        @extend .paragraph;
+        @include paragraph-base;
         font-size: $fontSize;
     }
 }

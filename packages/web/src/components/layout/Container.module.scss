@@ -25,12 +25,12 @@ $alignVariants: (
     end,
 );
 
-.container {}
+@mixin container-base {}
 
 .container--density {
     @each $variant, $padding in $densityVariants {
         &_#{$variant} {
-            @extend .container;
+            @include container-base;
             padding: $padding;
         }
     }

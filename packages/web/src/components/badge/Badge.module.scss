@@ -7,7 +7,7 @@ $variants: (
 );
 
 // Define root badge styling
-.badge {
+@mixin badge-base {
     padding: 4px 16px;
     font-family: $typography-font-family-body;
 	font-size: 1rem;
@@ -21,7 +21,7 @@ $variants: (
 
 @each $variant, $color, $background in $variants {
     .#{$variant} {
-        @extend .badge;
+        @include badge-base;
         background: $background;
         color: $color;
     }

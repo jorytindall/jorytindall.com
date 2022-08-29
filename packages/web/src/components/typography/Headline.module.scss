@@ -10,7 +10,7 @@ $variants: (
     'h6' $typography-font-size-headline-06 $typography-line-height-headline,
 );
 
-.headline {
+@mixin headline-base {
     font-family: $typography-font-family-headline;
     color: $color-primary-300;
     font-weight: bold;
@@ -21,7 +21,7 @@ $variants: (
 
 @each $variant, $fontSize, $lineHeight in $variants {
     .#{$variant} {
-        @extend .headline;
+        @include headline-base;
         font-size: $fontSize;
         line-height: $lineHeight;
     }
