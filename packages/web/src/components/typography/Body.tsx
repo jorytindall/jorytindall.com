@@ -15,12 +15,13 @@ export const Paragraph = ({
     type='primary',
     collapse,
 }: ParagraphProps) => {
-    return (
-        <p className={[
-            styles[type],
-            [collapse ? styles.collapse : null]
-        ].join(' ')}>{children}</p>
-    )
+
+    const getClasses = [
+        styles[type],
+        [collapse ? styles.collapse : null]
+    ].join(' ')
+
+    return <p className={getClasses}>{children}</p>
 }
 
 export const Code = ({ children }: CodeProps) => {

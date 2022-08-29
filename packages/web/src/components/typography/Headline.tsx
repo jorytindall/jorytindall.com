@@ -12,20 +12,19 @@ export const Heading = ({
     collapse,
 }: HeadlineProps) => {
 
+    const getClasses = [
+        styles[type], 
+        [collapse ? styles.collapse : null]
+    ].join(' ');
+
     switch (type) {
-        case 'mega': return <h1 className={styles[type]}>{children}</h1>
-        case 'h1': return (
-            <h1
-                className={[
-                    styles[type], 
-                    [collapse ? styles.collapse : null]
-                ].join(' ')}>{children}</h1>
-        )
-        case 'h2': return <h2 className={styles[type]}>{children}</h2>
-        case 'h3': return <h3 className={styles[type]}>{children}</h3>
-        case 'h4': return <h4 className={styles[type]}>{children}</h4>
-        case 'h5': return <h5 className={styles[type]}>{children}</h5>
-        case 'h6': return <h6 className={styles[type]}>{children}</h6>
-        default: return <h1 className={styles[type]}>{children}</h1>
+        case 'mega': return <h1 className={getClasses}>{children}</h1>
+        case 'h1': return <h1 className={getClasses}>{children}</h1>
+        case 'h2': return <h2 className={getClasses}>{children}</h2>
+        case 'h3': return <h3 className={getClasses}>{children}</h3>
+        case 'h4': return <h4 className={getClasses}>{children}</h4>
+        case 'h5': return <h5 className={getClasses}>{children}</h5>
+        case 'h6': return <h6 className={getClasses}>{children}</h6>
+        default: return <h1 className={getClasses}>{children}</h1>
     }
 }
