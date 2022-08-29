@@ -1,4 +1,5 @@
 import styles from './Body.module.scss'
+import { getClasses } from 'utils/getClasses'
 
 interface ParagraphProps {
     children: React.ReactNode,
@@ -16,12 +17,12 @@ export const Paragraph = ({
     collapse,
 }: ParagraphProps) => {
 
-    const getClasses = [
+    const classes = getClasses([
         styles[type],
-        [collapse ? styles.collapse : null]
-    ].join(' ')
+        collapse ? styles.collapse : null
+    ])
 
-    return <p className={getClasses}>{children}</p>
+    return <p className={classes}>{children}</p>
 }
 
 export const Code = ({ children }: CodeProps) => {

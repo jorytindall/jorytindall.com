@@ -1,4 +1,5 @@
 import styles from './Container.module.scss'
+import { getClasses } from 'utils/getClasses'
 
 interface ContainerProps {
     density?: 'default' | 'spacious' | 'packed',
@@ -10,8 +11,6 @@ interface ContainerProps {
     align?: 'normal' | 'flex-start' | 'center' | 'flex-end',
 }
 
-
-
 export const Container = ({
     density = 'default',
     isFlex,
@@ -22,20 +21,18 @@ export const Container = ({
     align,
 }: ContainerProps) => {
 
-    const getClasses = [
+    const classes = getClasses([
         styles[`density_${density}`],
         [isFlex === true ? styles[`is-flex`] : null],
         styles[`is-flex--${flexDirection}`],
         styles[`is-flex--${justify}`],
         styles[`is-flex--${align}`]
-    ].join(' ')
-
-    // console.log(getClasses)
+    ])
 
     switch (semanticElement) {
-        case 'div': return <div className={getClasses}>{children}</div>
-        case 'section': return <section className={getClasses}>{children}</section>
-        case 'article': return <article className={getClasses}>{children}</article>
-        case 'aside': return <aside className={getClasses}>{children}</aside>
+        case 'div': return <div className={classes}>{children}</div>
+        case 'section': return <section className={classes}>{children}</section>
+        case 'article': return <article className={classes}>{children}</article>
+        case 'aside': return <aside className={classes}>{children}</aside>
     }
 }

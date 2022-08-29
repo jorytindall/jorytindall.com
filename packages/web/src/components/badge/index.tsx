@@ -1,4 +1,5 @@
 import styles from './Badge.module.scss'
+import { getClasses } from 'utils/getClasses'
 
 interface BadgeProps {
     text: string,
@@ -9,7 +10,12 @@ export const Badge = ({
     text = 'Default badge text',
     type = 'primary'
 }: BadgeProps) => {
+    
+    const classes = getClasses([
+        styles[type]
+    ])
+
     return (
-        <span className={styles[type]}>{text}</span>
+        <span className={classes}>{text}</span>
     )
 }

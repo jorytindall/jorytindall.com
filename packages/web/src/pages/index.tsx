@@ -8,7 +8,6 @@ export default function Home() {
 		<div>
 			<Container
 				semanticElement='section'
-				isFlex={true}
 				flexDirection='column'
 				density='default'
 				justify='flex-start'
