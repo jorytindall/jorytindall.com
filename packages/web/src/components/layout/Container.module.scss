@@ -25,6 +25,13 @@ $alignVariants: (
     flex-end,
 );
 
+$gapVariants: (
+    'small' 0.5rem,
+    'default' 1rem,
+    'large' 1.5rem,
+    'extra-large' 2.5rem,
+);
+
 @mixin container-base {}
 
 .density {
@@ -38,6 +45,7 @@ $alignVariants: (
 
 .is-flex {
     display: flex;
+    @include container-base;
 }
 
 @each $direction in $directionVariants {
@@ -58,5 +66,11 @@ $alignVariants: (
     .is-flex--#{$alignment} {
         display: flex;
         align-items: $alignment;
+    }
+}
+
+@each $variant, $gap in $gapVariants {
+    .is-flex--#{$variant} {
+        gap: $gap;
     }
 }

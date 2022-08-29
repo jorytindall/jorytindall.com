@@ -12,9 +12,10 @@ export default function Home() {
 				density='default'
 				justify='flex-start'
 				align='normal'
+				gap='extra-large'
 			>
-				<Heading type='h1'>Heading within the container</Heading>
-				<Paragraph type='primary'>Lorem ipsum dolar sit amet.</Paragraph>
+				<Heading type='h1' collapse>Heading within the container</Heading>
+				<Paragraph type='primary' collapse>Lorem ipsum dolar sit amet.</Paragraph>
 				<Badge type='primary' text='Primary badge' />
 			</Container>
 		</div>

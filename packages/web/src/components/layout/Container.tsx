@@ -9,6 +9,7 @@ interface ContainerProps {
     children?: React.ReactNode,
     justify?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around',
     align?: 'normal' | 'flex-start' | 'center' | 'flex-end',
+    gap?: 'small' | 'default' | 'large' | 'extra-large',
 }
 
 export const Container = ({
@@ -19,6 +20,7 @@ export const Container = ({
     semanticElement,
     children,
     align,
+    gap,
 }: ContainerProps) => {
 
     const classes = getClasses([
@@ -26,7 +28,8 @@ export const Container = ({
         [isFlex === true ? styles[`is-flex`] : null],
         styles[`is-flex--${flexDirection}`],
         styles[`is-flex--${justify}`],
-        styles[`is-flex--${align}`]
+        styles[`is-flex--${align}`],
+        styles[`is-flex--${gap}`],
     ])
 
     switch (semanticElement) {
