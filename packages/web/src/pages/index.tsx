@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<div>
 			<Container
-				semanticElement='div'
+				semanticElement='section'
 				isFlex={true}
 				flexDirection='column'
 				density='default'

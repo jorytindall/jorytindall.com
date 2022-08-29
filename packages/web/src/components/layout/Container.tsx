@@ -10,6 +10,8 @@ interface ContainerProps {
     align?: 'normal' | 'start' | 'center' | 'end',
 }
 
+
+
 export const Container = ({
     density = 'default',
     isFlex,
@@ -19,19 +21,21 @@ export const Container = ({
     children,
     align,
 }: ContainerProps) => {
+
+    const getClasses = [
+        styles[`container--density_${density}`],
+        [isFlex === true ? styles[`container--is-flex`] : null],
+        styles[`container--is-flex--${flexDirection}`],
+        styles[`container--is-flex--${justify}`],
+        styles[`container--is-flex--${align}`]
+    ].join(' ')
+
+    // console.log(getClasses)
+
     switch (semanticElement) {
-        case 'div': return (
-            <div className={[
-                styles[`container--density_${density}`],
-                [isFlex === true ? styles[`container--is-flex`] : null],
-                styles[`container--is-flex--${flexDirection}`],
-                styles[`container--is-flex--${justify}`],
-                styles[`container--is-flex--${align}`],
-            ].join(' ')}
-            >{children}</div>
-        )
-        case 'section': return <section>{children}</section>
-        case 'article': return <article>{children}</article>
-        case 'aside': return <aside>{children}</aside>
+        case 'div': return <div className={getClasses}>{children}</div>
+        case 'section': return <section className={getClasses}>{children}</section>
+        case 'article': return <article className={getClasses}>{children}</article>
+        case 'aside': return <aside className={getClasses}>{children}</aside>
     }
 }
