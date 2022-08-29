@@ -11,7 +11,7 @@ export default function Home() {
 				isFlex={true}
 				flexDirection='column'
 				density='default'
-				justify='start'
+				justify='flex-start'
 				align='normal'
 			>
 				<Heading type='h1'>Heading within the container</Heading>

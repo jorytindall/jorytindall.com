@@ -6,8 +6,8 @@ interface ContainerProps {
     flexDirection?: 'row' | 'column',
     semanticElement?: 'div' | 'section' | 'article' | 'aside',
     children?: React.ReactNode,
-    justify?: 'normal' | 'start' | 'center' | 'end' | 'space-between' | 'space-around',
-    align?: 'normal' | 'start' | 'center' | 'end',
+    justify?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around',
+    align?: 'normal' | 'flex-start' | 'center' | 'flex-end',
 }
 
 
@@ -23,11 +23,11 @@ export const Container = ({
 }: ContainerProps) => {
 
     const getClasses = [
-        styles[`container--density_${density}`],
-        [isFlex === true ? styles[`container--is-flex`] : null],
-        styles[`container--is-flex--${flexDirection}`],
-        styles[`container--is-flex--${justify}`],
-        styles[`container--is-flex--${align}`]
+        styles[`density_${density}`],
+        [isFlex === true ? styles[`is-flex`] : null],
+        styles[`is-flex--${flexDirection}`],
+        styles[`is-flex--${justify}`],
+        styles[`is-flex--${align}`]
     ].join(' ')
 
     // console.log(getClasses)

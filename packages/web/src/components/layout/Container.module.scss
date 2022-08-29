@@ -11,23 +11,23 @@ $directionVariants: (
 
 $justifyVariants: (
     normal,
-    start,
+    flex-start,
     center,
-    end,
+    flex-end,
     space-between,
     space-around,
 );
 
 $alignVariants: (
     normal,
-    start,
+    flex-start,
     center,
-    end,
+    flex-end,
 );
 
 @mixin container-base {}
 
-.container--density {
+.density {
     @each $variant, $padding in $densityVariants {
         &_#{$variant} {
             @include container-base;
@@ -36,27 +36,27 @@ $alignVariants: (
     }
 }
 
-.container--is-flex {
+.is-flex {
     display: flex;
 }
 
 @each $direction in $directionVariants {
-    .container--is-flex--#{$direction} {
-        @extend .container--is-flex;
+    .is-flex--#{$direction} {
+        display: flex;
         flex-direction: $direction;
     }
 }
 
 @each $justification in $justifyVariants {
-    .container--is-flex--#{$justification} {
-        @extend .container--is-flex;
+    .is-flex--#{$justification} {
+        display: flex;
         justify-content: $justification;
     }
 }
 
 @each $alignment in $alignVariants {
-    .container--is-flex--#{$alignment} {
-        @extend .container--is-flex;
+    .is-flex--#{$alignment} {
+        display: flex;
         align-items: $alignment;
     }
 }
