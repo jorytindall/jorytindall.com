@@ -1,0 +1,59 @@
+@import 'styles/_variables';
+
+$variants: (
+    'primary' $color-neutral-100 $color-primary-300 $color-primary-400 $color-primary-500 none, 
+    'secondary' $color-neutral-100 $color-neutral-500 $color-neutral-600 $color-neutral-600 none,
+    'tertiary' $color-primary-300 transparent $color-primary-400 $color-primary-500 $color-primary-300,
+);
+
+$sizes: (
+    'small' 0.75rem 0.75rem,
+    'default' 1rem 1rem,
+    'large' 1.25rem 1.25rem,
+);
+
+@mixin button {
+    font-family: $typography-font-family-headline;
+    font-weight: 300;
+    border-radius: 0;
+    border: none;
+    transition: all 0.1s ease-in-out;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@each $variant, $color, $background, $backgroundHover, $backgroundActive, $border in $variants {
+    .#{$variant} {
+        @include button;
+        color: $color;
+        background: $background;
+        border-color: $border;
+
+        &:hover {
+            background: $backgroundHover;
+            transform: translateY(-2px);
+        }
+
+        &:active {
+            background: $backgroundActive;
+            transform: translateY(0px);
+        }
+    }
+}
+
+@each $size, $fontSize, $padding in $sizes {
+    .#{$size} {
+        font-size: $fontSize;
+        padding: $padding;
+        line-height: $fontSize;
+
+        @media (max-width: 400px) {
+            width: 100%;
+        }
+    }
+}
