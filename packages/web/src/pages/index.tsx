@@ -24,10 +24,12 @@ export default function Home() {
 				<Button
 					variant='secondary'
 					size='default'
+					href='https://google.com'
 				>Default button</Button>
 				<Button
 					variant='secondary'
 					size='large'
+					href='/contact'
 				>Large button</Button>
 				<Badge type='primary' text='Primary badge' />
 			</Container>
