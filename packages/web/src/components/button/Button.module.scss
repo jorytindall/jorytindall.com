@@ -1,15 +1,28 @@
 @import 'styles/_variables';
 
-$variants: (
-    'primary' $color-neutral-100 $color-primary-300 $color-primary-400 $color-primary-500 none, 
-    'secondary' $color-neutral-100 $color-neutral-500 $color-neutral-600 $color-neutral-600 none,
-    'tertiary' $color-primary-300 transparent $color-primary-400 $color-primary-500 $color-primary-300,
-);
+$button-variants: ( 'primary', 'secondary' );
 
-$sizes: (
-    'small' 0.75rem 0.75rem,
-    'default' 1rem 1rem,
-    'large' 1.25rem 1.25rem,
+$button-variant-props: (
+    'primary': (
+        'text-color': $color-neutral-100,
+        'text-color-hover': $color-neutral-100,
+        'background-default': $color-primary-300,
+        'background-hover': $color-primary-400,
+        'background-active': $color-primary-500,
+        'border-color-default': none, 
+        'border-color-hover': none,
+        'border-color-active': none,
+    ),
+    'secondary': (
+        'text-color': $color-primary-300,
+        'text-color-hover': $color-neutral-100,
+        'background-default': transparent,
+        'background-hover': $color-primary-400,
+        'background-active': $color-primary-500,
+        'border-color-default': $color-primary-300,
+        'border-color-hover': $color-primary-400,
+        'border-color-active': $color-primary-500,
+    ),
 );
 
 @mixin button {
@@ -17,7 +30,7 @@ $sizes: (
     font-weight: 300;
     border-radius: 0;
     border: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.05s ease-in-out;
     text-align: center;
     border-width: 2px;
     border-style: solid;
@@ -27,26 +40,35 @@ $sizes: (
     }
 }
 
-@each $variant, $color, $background, $backgroundHover, $backgroundActive, $border in $variants {
+@each $variant in $button-variants {
     .#{$variant} {
         @include button;
-        color: $color;
-        background: $background;
-        border-color: $border;
+        color: map-get($button-variant-props, $variant, 'text-color');
+        background: map-get($button-variant-props, $variant, 'background-default');
+        border-color: map-get($button-variant-props, $variant, 'border-color-default');
 
         &:hover {
-            background: $backgroundHover;
+            background: map-get($button-variant-props, $variant, 'background-hover');
+            color: map-get($button-variant-props, $variant, 'text-color-hover');
+            border-color: map-get($button-variant-props, $variant, 'border-color-hover');
             transform: translateY(-2px);
         }
 
         &:active {
-            background: $backgroundActive;
+            background: map-get($button-variant-props, $variant, 'background-active');
+            border-color: map-get($button-variant-props, $variant, 'border-color-active');
             transform: translateY(0px);
         }
     }
 }
 
-@each $size, $fontSize, $padding in $sizes {
+$button-sizes: (
+    'small' 0.75rem 0.75rem,
+    'default' 1rem 1rem,
+    'large' 1.25rem 1.25rem,
+);
+
+@each $size, $fontSize, $padding in $button-sizes {
     .#{$size} {
         font-size: $fontSize;
         padding: $padding;

@@ -18,15 +18,15 @@ export default function Home() {
 				<Heading type='h1' collapse>Heading within the container</Heading>
 				<Paragraph type='primary' collapse>Lorem ipsum dolar sit amet.</Paragraph>
 				<Button
-					variant='tertiary'
-					size='default'
-				>Default button</Button>
-				<Button
-					variant='tertiary'
+					variant='secondary'
 					size='small'
 				>Small button</Button>
 				<Button
-					variant='tertiary'
+					variant='secondary'
+					size='default'
+				>Default button</Button>
+				<Button
+					variant='secondary'
 					size='large'
 				>Large button</Button>
 				<Badge type='primary' text='Primary badge' />

@@ -4,7 +4,7 @@ import { getClasses } from 'utils/getClasses'
 interface ButtonProps {
     children: React.ReactNode,
     isLink?: boolean,
-    variant?: 'primary' | 'secondary' | 'tertiary',
+    variant?: 'primary' | 'secondary',
     size?: 'small' | 'default' | 'large',
 }
 
