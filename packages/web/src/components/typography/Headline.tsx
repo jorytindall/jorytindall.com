@@ -7,7 +7,7 @@ interface HeadlineProps {
     collapse?: boolean,
 }
 
-export const Heading = ({ 
+export const Headline = ({ 
     children,
     type='h1',
     collapse,

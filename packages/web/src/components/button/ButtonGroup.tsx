@@ -8,7 +8,7 @@ interface ButtonGroupProps {
 export const ButtonGroup = ({ children }: ButtonGroupProps) => {
 
     const classes = getClasses([
-        styles.buttonGroup,
+        styles['button-group'],
     ])
 
     return (

@@ -13,7 +13,7 @@ export const TextArrow = ({
 }: TextArrowProps) => {
 
     const classes = getClasses([
-        styles.textArrow,
+        styles['text-arrow'],
     ])
 
     if (!href) {

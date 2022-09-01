@@ -447,11 +447,11 @@
     "font-size": {
       "headline": {
         "mega": {
-          "value": "9.375rem",
+          "value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)",
           "filePath": "tokens/typography/font-size.json",
           "isSource": true,
           "original": {
-            "value": "9.375rem"
+            "value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)"
           },
           "attributes": {
             "category": "typography",
@@ -467,11 +467,11 @@
           }
         },
         "01": {
-          "value": "3rem",
+          "value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)",
           "filePath": "tokens/typography/font-size.json",
           "isSource": true,
           "original": {
-            "value": "3rem"
+            "value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)"
           },
           "attributes": {
             "category": "typography",
