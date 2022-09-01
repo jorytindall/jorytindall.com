@@ -1,0 +1,8 @@
+@import 'styles/_variables';
+
+.buttonGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-flow: wrap;
+}

@@ -9,9 +9,9 @@ $button-variant-props: (
         'background-default': $color-primary-300,
         'background-hover': $color-primary-400,
         'background-active': $color-primary-500,
-        'border-color-default': none, 
-        'border-color-hover': none,
-        'border-color-active': none,
+        'border-color-default': $color-primary-300, 
+        'border-color-hover': $color-primary-400,
+        'border-color-active': $color-primary-500,
     ),
     'secondary': (
         'text-color': $color-primary-300,
@@ -36,6 +36,7 @@ $button-variant-props: (
     border-style: solid;
     text-decoration: none;
     width: fit-content;
+    box-sizing: border-box;
 
     &:hover {
         cursor: pointer;

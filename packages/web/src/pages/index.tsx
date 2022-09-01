@@ -1,7 +1,7 @@
 import { Paragraph, Code } from 'components/typography';
 import { Heading, InlineLink, Item, List } from 'components/typography'
 import { Container } from 'components/layout'
-import { Button } from 'components/button'
+import { Button, ButtonGroup } from 'components/button'
 import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form'
 
 export default function Home() {
@@ -25,36 +25,6 @@ export default function Home() {
 					align='normal'
 					gap='default'
 				>
-					<Form
-						name='test-form'
-						method='POST'
-					>
-						<ItemWrapper>
-							<Label>First name</Label>
-							<Input
-								name='first-name'
-								type='text'
-								placeholder='First name'
-							/>
-						</ItemWrapper>
-						<ItemWrapper>
-							<Label>Email</Label>
-							<Input
-								name='email'
-								type='email'
-								placeholder='Email address'
-							/>
-						</ItemWrapper>
-						<ItemWrapper>
-							<Label>Message</Label>
-							<TextArea
-								name='email'
-								placeholder='Email address'
-								rows={4}
-							/>
-						</ItemWrapper>
-						<Button type='submit' variant='primary'>Submit</Button>
-					</Form>
 				</Container>
 			</Container>
 		</div>
