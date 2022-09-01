@@ -1,0 +1,28 @@
+@import 'styles/_variables';
+
+.input {
+    padding: 1rem 1.5rem;
+	font-size: 1rem;
+    background: $color-tertiary-300;
+	border: none;
+    color: $color-neutral-600;
+	font-family: $typography-font-family-body;
+	border-radius: 0;
+	transition: all 0.15s ease;
+    width: 100%;
+
+	&:focus {
+		outline: none;
+		box-shadow: 4px 4px 8px rgba(0, 47, 128, 0.05);
+		transform: translateY(-2px);
+		background: $color-neutral-100;
+
+		&::placeholder {
+			color: $color-neutral-400;
+		}
+	}
+
+	&::placeholder {
+		color: $color-tertiary-500;
+	}
+}

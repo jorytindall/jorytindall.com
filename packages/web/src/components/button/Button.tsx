@@ -7,13 +7,15 @@ interface ButtonProps {
     href?: string,
     variant?: 'primary' | 'secondary',
     size?: 'small' | 'default' | 'large',
+    type?: 'button' | 'submit' | 'reset',
 }
 
 export const Button = ({
     children = 'Button text',
     href,
     variant = 'primary',
-    size = 'default'
+    size = 'default',
+    type,
 }: ButtonProps) => {
 
     const classes = getClasses([
@@ -22,7 +24,7 @@ export const Button = ({
     ])
 
     if (!href) {
-        return <button className={classes}>{children}</button>
+        return <button type={type} className={classes}>{children}</button>
     } else if (href.includes('http')) {
         return (
             <Link href={href} passHref>

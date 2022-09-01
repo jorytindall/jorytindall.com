@@ -35,9 +35,14 @@ $button-variant-props: (
     border-width: 2px;
     border-style: solid;
     text-decoration: none;
+    width: fit-content;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
     }
 }
 
@@ -74,9 +79,5 @@ $button-sizes: (
         font-size: $fontSize;
         padding: $padding;
         line-height: $fontSize;
-
-        @media (max-width: 400px) {
-            width: 100%;
-        }
     }
 }

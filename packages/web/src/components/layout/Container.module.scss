@@ -32,7 +32,9 @@ $gapVariants: (
     'extra-large' 2.5rem,
 );
 
-@mixin container-base {}
+@mixin container-base {
+    width: 100%;
+}
 
 .density {
     @each $variant, $padding in $densityVariants {
