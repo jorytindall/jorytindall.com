@@ -1,710 +1,710 @@
 {
-  "color": {
-    "primary": {
-      "100": {
-        "value": "#ccdfff",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#CCDFFF"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "primary",
-          "item": "100"
-        },
-        "path": {
-          "0": "color",
-          "1": "primary",
-          "2": "100"
-        }
-      },
-      "200": {
-        "value": "#669eff",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#669EFF"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "primary",
-          "item": "200"
-        },
-        "path": {
-          "0": "color",
-          "1": "primary",
-          "2": "200"
-        }
-      },
-      "300": {
-        "value": "#005eff",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#005EFF"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "primary",
-          "item": "300"
-        },
-        "path": {
-          "0": "color",
-          "1": "primary",
-          "2": "300"
-        }
-      },
-      "400": {
-        "value": "#002f80",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#002F80"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "primary",
-          "item": "400"
-        },
-        "path": {
-          "0": "color",
-          "1": "primary",
-          "2": "400"
-        }
-      },
-      "500": {
-        "value": "#00215a",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#00215A"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "primary",
-          "item": "500"
-        },
-        "path": {
-          "0": "color",
-          "1": "primary",
-          "2": "500"
-        }
-      }
-    },
-    "secondary": {
-      "100": {
-        "value": "#fff3dc",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFF3DC"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "secondary",
-          "item": "100"
-        },
-        "path": {
-          "0": "color",
-          "1": "secondary",
-          "2": "100"
-        }
-      },
-      "200": {
-        "value": "#ffdc97",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFDC97"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "secondary",
-          "item": "200"
-        },
-        "path": {
-          "0": "color",
-          "1": "secondary",
-          "2": "200"
-        }
-      },
-      "300": {
-        "value": "#ffc551",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFC551"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "secondary",
-          "item": "300"
-        },
-        "path": {
-          "0": "color",
-          "1": "secondary",
-          "2": "300"
-        }
-      },
-      "400": {
-        "value": "#d4700b",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#D4700B"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "secondary",
-          "item": "400"
-        },
-        "path": {
-          "0": "color",
-          "1": "secondary",
-          "2": "400"
-        }
-      },
-      "500": {
-        "value": "#7c4106",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#7C4106"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "secondary",
-          "item": "500"
-        },
-        "path": {
-          "0": "color",
-          "1": "secondary",
-          "2": "500"
-        }
-      }
-    },
-    "tertiary": {
-      "100": {
-        "value": "#fff3f4",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFF3F4"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "tertiary",
-          "item": "100"
-        },
-        "path": {
-          "0": "color",
-          "1": "tertiary",
-          "2": "100"
-        }
-      },
-      "200": {
-        "value": "#ffe6e4",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFE6E4"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "tertiary",
-          "item": "200"
-        },
-        "path": {
-          "0": "color",
-          "1": "tertiary",
-          "2": "200"
-        }
-      },
-      "300": {
-        "value": "#ffd8d9",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFD8D9"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "tertiary",
-          "item": "300"
-        },
-        "path": {
-          "0": "color",
-          "1": "tertiary",
-          "2": "300"
-        }
-      },
-      "400": {
-        "value": "#eca3a5",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#ECA3A5"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "tertiary",
-          "item": "400"
-        },
-        "path": {
-          "0": "color",
-          "1": "tertiary",
-          "2": "400"
-        }
-      },
-      "500": {
-        "value": "#875d6f",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#875D6F"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "tertiary",
-          "item": "500"
-        },
-        "path": {
-          "0": "color",
-          "1": "tertiary",
-          "2": "500"
-        }
-      }
-    },
-    "neutral": {
-      "100": {
-        "value": "#ffffff",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#FFFFFF"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "100"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "100"
-        }
-      },
-      "200": {
-        "value": "#f6f7f9",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#F6F7F9"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "200"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "200"
-        }
-      },
-      "300": {
-        "value": "#e6ebef",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#E6EBEF"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "300"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "300"
-        }
-      },
-      "400": {
-        "value": "#a7acba",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#A7ACBA"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "400"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "400"
-        }
-      },
-      "500": {
-        "value": "#676b74",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#676B74"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "500"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "500"
-        }
-      },
-      "600": {
-        "value": "#160f29",
-        "filePath": "tokens/core-light/color.json",
-        "isSource": true,
-        "original": {
-          "value": "#160F29"
-        },
-        "attributes": {
-          "category": "color",
-          "type": "neutral",
-          "item": "600"
-        },
-        "path": {
-          "0": "color",
-          "1": "neutral",
-          "2": "600"
-        }
-      }
-    }
-  },
-  "typography": {
-    "font-family": {
-      "body": {
-        "value": "Neue Haas Unica, Helvetica, Arial, sans-serif",
-        "filePath": "tokens/typography/font-family.json",
-        "isSource": true,
-        "original": {
-          "value": "Neue Haas Unica, Helvetica, Arial, sans-serif"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "font-family",
-          "item": "body"
-        },
-        "path": {
-          "0": "typography",
-          "1": "font-family",
-          "2": "body"
-        }
-      },
-      "headline": {
-        "value": "Uxum Grotesque, Helvetica, Aria, sans-serif",
-        "filePath": "tokens/typography/font-family.json",
-        "isSource": true,
-        "original": {
-          "value": "Uxum Grotesque, Helvetica, Aria, sans-serif"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "font-family",
-          "item": "headline"
-        },
-        "path": {
-          "0": "typography",
-          "1": "font-family",
-          "2": "headline"
-        }
-      },
-      "mono": {
-        "value": "Fira Code, courier, monospace",
-        "filePath": "tokens/typography/font-family.json",
-        "isSource": true,
-        "original": {
-          "value": "Fira Code, courier, monospace"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "font-family",
-          "item": "mono"
-        },
-        "path": {
-          "0": "typography",
-          "1": "font-family",
-          "2": "mono"
-        }
-      }
-    },
-    "font-size": {
-      "headline": {
-        "mega": {
-          "value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "mega"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "mega"
-          }
-        },
-        "01": {
-          "value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "01"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "01"
-          }
-        },
-        "02": {
-          "value": "2.5rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "2.5rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "02"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "02"
-          }
-        },
-        "03": {
-          "value": "2rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "2rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "03"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "03"
-          }
-        },
-        "04": {
-          "value": "1.5rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1.5rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "04"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "04"
-          }
-        },
-        "05": {
-          "value": "1.25rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1.25rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "05"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "05"
-          }
-        },
-        "06": {
-          "value": "1rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "headline",
-            "subitem": "06"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "headline",
-            "3": "06"
-          }
-        }
-      },
-      "body": {
-        "lead": {
-          "value": "1.25rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1.25rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "body",
-            "subitem": "lead"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "body",
-            "3": "lead"
-          }
-        },
-        "primary": {
-          "value": "1.125rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1.125rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "body",
-            "subitem": "primary"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "body",
-            "3": "primary"
-          }
-        },
-        "secondary": {
-          "value": "1rem",
-          "filePath": "tokens/typography/font-size.json",
-          "isSource": true,
-          "original": {
-            "value": "1rem"
-          },
-          "attributes": {
-            "category": "typography",
-            "type": "font-size",
-            "item": "body",
-            "subitem": "secondary"
-          },
-          "path": {
-            "0": "typography",
-            "1": "font-size",
-            "2": "body",
-            "3": "secondary"
-          }
-        }
-      }
-    },
-    "line-height": {
-      "mega-headline": {
-        "value": "0.9",
-        "filePath": "tokens/typography/line-height.json",
-        "isSource": true,
-        "original": {
-          "value": "0.9"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "line-height",
-          "item": "mega-headline"
-        },
-        "path": {
-          "0": "typography",
-          "1": "line-height",
-          "2": "mega-headline"
-        }
-      },
-      "headline": {
-        "value": "1.4",
-        "filePath": "tokens/typography/line-height.json",
-        "isSource": true,
-        "original": {
-          "value": "1.4"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "line-height",
-          "item": "headline"
-        },
-        "path": {
-          "0": "typography",
-          "1": "line-height",
-          "2": "headline"
-        }
-      },
-      "body": {
-        "value": "1.7",
-        "filePath": "tokens/typography/line-height.json",
-        "isSource": true,
-        "original": {
-          "value": "1.7"
-        },
-        "attributes": {
-          "category": "typography",
-          "type": "line-height",
-          "item": "body"
-        },
-        "path": {
-          "0": "typography",
-          "1": "line-height",
-          "2": "body"
-        }
-      }
-    }
-  }
+	"color": {
+		"primary": {
+			"100": {
+				"value": "#ccdfff",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#CCDFFF"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "primary",
+					"item": "100"
+				},
+				"path": {
+					"0": "color",
+					"1": "primary",
+					"2": "100"
+				}
+			},
+			"200": {
+				"value": "#669eff",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#669EFF"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "primary",
+					"item": "200"
+				},
+				"path": {
+					"0": "color",
+					"1": "primary",
+					"2": "200"
+				}
+			},
+			"300": {
+				"value": "#005eff",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#005EFF"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "primary",
+					"item": "300"
+				},
+				"path": {
+					"0": "color",
+					"1": "primary",
+					"2": "300"
+				}
+			},
+			"400": {
+				"value": "#002f80",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#002F80"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "primary",
+					"item": "400"
+				},
+				"path": {
+					"0": "color",
+					"1": "primary",
+					"2": "400"
+				}
+			},
+			"500": {
+				"value": "#00215a",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#00215A"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "primary",
+					"item": "500"
+				},
+				"path": {
+					"0": "color",
+					"1": "primary",
+					"2": "500"
+				}
+			}
+		},
+		"secondary": {
+			"100": {
+				"value": "#fff3dc",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFF3DC"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "secondary",
+					"item": "100"
+				},
+				"path": {
+					"0": "color",
+					"1": "secondary",
+					"2": "100"
+				}
+			},
+			"200": {
+				"value": "#ffdc97",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFDC97"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "secondary",
+					"item": "200"
+				},
+				"path": {
+					"0": "color",
+					"1": "secondary",
+					"2": "200"
+				}
+			},
+			"300": {
+				"value": "#ffc551",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFC551"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "secondary",
+					"item": "300"
+				},
+				"path": {
+					"0": "color",
+					"1": "secondary",
+					"2": "300"
+				}
+			},
+			"400": {
+				"value": "#d4700b",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#D4700B"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "secondary",
+					"item": "400"
+				},
+				"path": {
+					"0": "color",
+					"1": "secondary",
+					"2": "400"
+				}
+			},
+			"500": {
+				"value": "#7c4106",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#7C4106"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "secondary",
+					"item": "500"
+				},
+				"path": {
+					"0": "color",
+					"1": "secondary",
+					"2": "500"
+				}
+			}
+		},
+		"tertiary": {
+			"100": {
+				"value": "#fff3f4",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFF3F4"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "tertiary",
+					"item": "100"
+				},
+				"path": {
+					"0": "color",
+					"1": "tertiary",
+					"2": "100"
+				}
+			},
+			"200": {
+				"value": "#ffe6e4",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFE6E4"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "tertiary",
+					"item": "200"
+				},
+				"path": {
+					"0": "color",
+					"1": "tertiary",
+					"2": "200"
+				}
+			},
+			"300": {
+				"value": "#ffd8d9",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFD8D9"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "tertiary",
+					"item": "300"
+				},
+				"path": {
+					"0": "color",
+					"1": "tertiary",
+					"2": "300"
+				}
+			},
+			"400": {
+				"value": "#eca3a5",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#ECA3A5"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "tertiary",
+					"item": "400"
+				},
+				"path": {
+					"0": "color",
+					"1": "tertiary",
+					"2": "400"
+				}
+			},
+			"500": {
+				"value": "#875d6f",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#875D6F"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "tertiary",
+					"item": "500"
+				},
+				"path": {
+					"0": "color",
+					"1": "tertiary",
+					"2": "500"
+				}
+			}
+		},
+		"neutral": {
+			"100": {
+				"value": "#ffffff",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#FFFFFF"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "100"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "100"
+				}
+			},
+			"200": {
+				"value": "#f6f7f9",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#F6F7F9"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "200"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "200"
+				}
+			},
+			"300": {
+				"value": "#e6ebef",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#E6EBEF"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "300"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "300"
+				}
+			},
+			"400": {
+				"value": "#a7acba",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#A7ACBA"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "400"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "400"
+				}
+			},
+			"500": {
+				"value": "#676b74",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#676B74"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "500"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "500"
+				}
+			},
+			"600": {
+				"value": "#160f29",
+				"filePath": "tokens/core-light/color.json",
+				"isSource": true,
+				"original": {
+					"value": "#160F29"
+				},
+				"attributes": {
+					"category": "color",
+					"type": "neutral",
+					"item": "600"
+				},
+				"path": {
+					"0": "color",
+					"1": "neutral",
+					"2": "600"
+				}
+			}
+		}
+	},
+	"typography": {
+		"font-family": {
+			"body": {
+				"value": "Neue Haas Unica, Helvetica, Arial, sans-serif",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Neue Haas Unica, Helvetica, Arial, sans-serif"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "body"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "body"
+				}
+			},
+			"headline": {
+				"value": "Uxum Grotesque, Helvetica, Aria, sans-serif",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Uxum Grotesque, Helvetica, Aria, sans-serif"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "headline"
+				}
+			},
+			"mono": {
+				"value": "Fira Code, courier, monospace",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Fira Code, courier, monospace"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "mono"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "mono"
+				}
+			}
+		},
+		"font-size": {
+			"headline": {
+				"mega": {
+					"value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "mega"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "mega"
+					}
+				},
+				"01": {
+					"value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "01"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "01"
+					}
+				},
+				"02": {
+					"value": "2.5rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "2.5rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "02"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "02"
+					}
+				},
+				"03": {
+					"value": "2rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "2rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "03"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "03"
+					}
+				},
+				"04": {
+					"value": "1.5rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.5rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "04"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "04"
+					}
+				},
+				"05": {
+					"value": "1.25rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.25rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "05"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "05"
+					}
+				},
+				"06": {
+					"value": "1rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "06"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "06"
+					}
+				}
+			},
+			"body": {
+				"lead": {
+					"value": "1.25rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.25rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "lead"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "lead"
+					}
+				},
+				"primary": {
+					"value": "1.125rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.125rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "primary"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "primary"
+					}
+				},
+				"secondary": {
+					"value": "1rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "secondary"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "secondary"
+					}
+				}
+			}
+		},
+		"line-height": {
+			"mega-headline": {
+				"value": "0.9",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "0.9"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "mega-headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "mega-headline"
+				}
+			},
+			"headline": {
+				"value": "1.4",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "1.4"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "headline"
+				}
+			},
+			"body": {
+				"value": "1.7",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "1.7"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "body"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "body"
+				}
+			}
+		}
+	}
 }

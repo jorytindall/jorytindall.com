@@ -1,7 +1,9 @@
-import styles from './ItemWrapper.module.scss'
+import styles from './ItemWrapper.module.scss';
 
 interface ItemWrapperProps {
-    children: React.ReactNode,
+	children: React.ReactNode;
 }
 
-export const ItemWrapper = ({ children }: ItemWrapperProps) => <div className={styles.itemWrapper}>{children}</div>
+export const ItemWrapper = ({ children }: ItemWrapperProps) => (
+	<div className={styles.itemWrapper}>{children}</div>
+);

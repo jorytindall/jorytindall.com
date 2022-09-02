@@ -1,28 +1,28 @@
 @import 'styles/_variables';
 
 $variants: (
-    'primary' $color-primary-500 $color-primary-100,
-    'secondary' $color-secondary-500 $color-secondary-100,
-    'tertiary' $color-tertiary-500 $color-tertiary-100,
+	'primary' $color-primary-500 $color-primary-100,
+	'secondary' $color-secondary-500 $color-secondary-100,
+	'tertiary' $color-tertiary-500 $color-tertiary-100
 );
 
 // Define root badge styling
 @mixin badge-base {
-    padding: 4px 16px;
-    font-family: $typography-font-family-body;
+	padding: 4px 16px;
+	font-family: $typography-font-family-body;
 	font-size: 1rem;
 	line-height: 1.7;
 	font-weight: 600;
 	border-radius: 4px;
 	letter-spacing: 0.25px;
-    width: fit-content;
-    height: fit-content;
+	width: fit-content;
+	height: fit-content;
 }
 
 @each $variant, $color, $background in $variants {
-    .#{$variant} {
-        @include badge-base;
-        background: $background;
-        color: $color;
-    }
+	.#{$variant} {
+		@include badge-base;
+		background: $background;
+		color: $color;
+	}
 }

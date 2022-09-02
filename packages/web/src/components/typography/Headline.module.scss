@@ -1,56 +1,56 @@
 @import 'styles/_variables';
 
-$headline-variants: ( 'mega', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' );
+$headline-variants: ('mega', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 
 $headline-variants-props: (
-    'mega': (
-        'font-size': $typography-font-size-headline-mega,
-        'line-height': $typography-line-height-mega-headline,
-    ),
-    'h1': (
-        'font-size': $typography-font-size-headline-01,
-        'line-height': $typography-line-height-headline,
-    ),
-    'h2': (
-        'font-size': $typography-font-size-headline-02,
-        'line-height': $typography-line-height-headline,
-    ),
-    'h3': (
-        'font-size': $typography-font-size-headline-03,
-        'line-height': $typography-line-height-headline,
-    ),
-    'h4': (
-        'font-size': $typography-font-size-headline-04,
-        'line-height': $typography-line-height-headline,
-    ),
-    'h5': (
-        'font-size': $typography-font-size-headline-05,
-        'line-height': $typography-line-height-headline,
-    ),
-    'h6': (
-        'font-size': $typography-font-size-headline-06,
-        'line-height': $typography-line-height-headline,
-    )
+	'mega': (
+		'font-size': $typography-font-size-headline-mega,
+		'line-height': $typography-line-height-mega-headline,
+	),
+	'h1': (
+		'font-size': $typography-font-size-headline-01,
+		'line-height': $typography-line-height-headline,
+	),
+	'h2': (
+		'font-size': $typography-font-size-headline-02,
+		'line-height': $typography-line-height-headline,
+	),
+	'h3': (
+		'font-size': $typography-font-size-headline-03,
+		'line-height': $typography-line-height-headline,
+	),
+	'h4': (
+		'font-size': $typography-font-size-headline-04,
+		'line-height': $typography-line-height-headline,
+	),
+	'h5': (
+		'font-size': $typography-font-size-headline-05,
+		'line-height': $typography-line-height-headline,
+	),
+	'h6': (
+		'font-size': $typography-font-size-headline-06,
+		'line-height': $typography-line-height-headline,
+	),
 );
 
 @mixin headline-base {
-    font-family: $typography-font-family-headline;
-    color: $color-primary-300;
-    font-weight: bold;
-    line-height: $typography-line-height-headline;
-    margin: 2rem 0 1rem 0;
-    text-align: left;
+	font-family: $typography-font-family-headline;
+	color: $color-primary-300;
+	font-weight: bold;
+	line-height: $typography-line-height-headline;
+	margin: 2rem 0 1rem 0;
+	text-align: left;
 }
 
 @each $variant in $headline-variants {
-    .#{$variant} {
-        @include headline-base;
-        font-size: map-get($headline-variants-props, $variant, 'font-size');
-        line-height: map-get($headline-variants-props, $variant, 'line-height');
-    }
+	.#{$variant} {
+		@include headline-base;
+		font-size: map-get($headline-variants-props, $variant, 'font-size');
+		line-height: map-get($headline-variants-props, $variant, 'line-height');
+	}
 }
 
 .collapse {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }

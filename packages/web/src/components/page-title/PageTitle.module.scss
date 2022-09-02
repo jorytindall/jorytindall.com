@@ -1,44 +1,43 @@
 @import 'styles/_variables';
 
 .page-title {
-    padding: 2rem;
+	padding: 2rem;
 	display: grid;
 	grid-template-areas: 'title mega mega';
-    align-items: start;
-    gap: 2.5rem;
+	align-items: start;
+	gap: 2.5rem;
 
-    svg {
-        transform: rotate(-0.25turn);
-    }
+	svg {
+		transform: rotate(-0.25turn);
+	}
 
 	@media (max-width: 1000px) {
 		display: flex;
 		flex-direction: column;
-        gap: 0;
+		gap: 0;
 	}
 
 	@media (max-width: 758px) {
 		padding: 1rem;
 	}
-
 }
 
 .title-paragraph {
-    font-size: $typography-font-size-body-lead;
-    grid-area: title;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem 0;
+	font-size: $typography-font-size-body-lead;
+	grid-area: title;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1rem 0;
 }
 
 .title-headline {
-    grid-area: mega;
-    font-family: $typography-font-family-headline;
-    font-size: $typography-font-size-headline-mega;
-    color: $color-primary-300;
+	grid-area: mega;
+	font-family: $typography-font-family-headline;
+	font-size: $typography-font-size-headline-mega;
+	color: $color-primary-300;
 
-    @media (max-width: 1000px) {
-        max-width: 100%;
-    }
+	@media (max-width: 1000px) {
+		max-width: 100%;
+	}
 }

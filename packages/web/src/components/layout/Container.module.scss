@@ -1,78 +1,70 @@
 $densityVariants: (
-    'default': 2.5rem,
-    'packed': 1.0rem,
-    'spacious': 5.0rem
+	'default': 2.5rem,
+	'packed': 1rem,
+	'spacious': 5rem,
 );
 
-$directionVariants: (
-    column,
-    row,
-);
+$directionVariants: (column, row);
 
 $justifyVariants: (
-    normal,
-    flex-start,
-    center,
-    flex-end,
-    space-between,
-    space-around,
+	normal,
+	flex-start,
+	center,
+	flex-end,
+	space-between,
+	space-around
 );
 
-$alignVariants: (
-    normal,
-    flex-start,
-    center,
-    flex-end,
-);
+$alignVariants: (normal, flex-start, center, flex-end);
 
 $gapVariants: (
-    'small' 0.5rem,
-    'default' 1rem,
-    'large' 1.5rem,
-    'extra-large' 2.5rem,
+	'small' 0.5rem,
+	'default' 1rem,
+	'large' 1.5rem,
+	'extra-large' 2.5rem
 );
 
 @mixin container-base {
-    width: 100%;
+	width: 100%;
 }
 
 .density {
-    @each $variant, $padding in $densityVariants {
-        &_#{$variant} {
-            @include container-base;
-            padding: $padding;
-        }
-    }
+	@each $variant, $padding in $densityVariants {
+		&_#{$variant} {
+			@include container-base;
+			padding: $padding;
+		}
+	}
 }
 
 .is-flex {
-    display: flex;
-    @include container-base;
+	display: flex;
+	@include container-base;
 }
 
 @each $direction in $directionVariants {
-    .is-flex--#{$direction} {
-        display: flex;
-        flex-direction: $direction;
-    }
+	.is-flex--#{$direction} {
+		display: flex;
+		flex-direction: $direction;
+	}
 }
 
 @each $justification in $justifyVariants {
-    .is-flex--#{$justification} {
-        display: flex;
-        justify-content: $justification;
-    }
+	.is-flex--#{$justification} {
+		display: flex;
+		justify-content: $justification;
+	}
 }
 
 @each $alignment in $alignVariants {
-    .is-flex--#{$alignment} {
-        display: flex;
-        align-items: $alignment;
-    }
+	.is-flex--#{$alignment} {
+		display: flex;
+		align-items: $alignment;
+	}
 }
 
 @each $variant, $gap in $gapVariants {
-    .is-flex--#{$variant} {
-        gap: $gap;
-    }
+	.is-flex--#{$variant} {
+		gap: $gap;
+	}
 }

@@ -1,36 +1,36 @@
 @import 'styles/_variables';
 
 .text-arrow {
-    color: $color-primary-300;
-    font-family: $typography-font-family-body;
-    font-size: 1rem;
-    display: inline-block;
-    text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    background: none;
-    border: none;
+	color: $color-primary-300;
+	font-family: $typography-font-family-body;
+	font-size: 1rem;
+	display: inline-block;
+	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	background: none;
+	border: none;
 
-    &:hover {
-        cursor: pointer;
-    }
+	&:hover {
+		cursor: pointer;
+	}
 
-    svg {
-        transition: all 0.15s ease-in-out;
-        position: relative;
-        left: 0;
-        transform: rotate(-0.25turn);
+	svg {
+		transition: all 0.15s ease-in-out;
+		position: relative;
+		left: 0;
+		transform: rotate(-0.25turn);
 
-        path {
-            fill: $color-primary-300;
-        }
-    }
+		path {
+			fill: $color-primary-300;
+		}
+	}
 
-    &:hover {
-        svg {
-            left: 0.5rem;
-        }
-    }
+	&:hover {
+		svg {
+			left: 0.5rem;
+		}
+	}
 }

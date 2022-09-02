@@ -1,2 +1,2 @@
-export { PostWrapper } from './PostWrapper'
-export { BlogTitle } from './BlogTitle'
+export { PostWrapper } from './PostWrapper';
+export { BlogTitle } from './BlogTitle';

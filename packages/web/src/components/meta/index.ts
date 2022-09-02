@@ -1,1 +1,1 @@
-export { MetaHead } from './Head'
+export { MetaHead } from './Head';

@@ -1,16 +1,16 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import * as Fathom from 'fathom-client'
-import '../styles/main.scss'
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import * as Fathom from 'fathom-client';
+import '../styles/main.scss';
 
 function MyApp({ Component, pageProps }) {
-	const router = useRouter()
+	const router = useRouter();
 
 	// Fathom Analytics
 	useEffect(() => {
 		Fathom.load(process.env.FATHOM_SITE_ID, {
-			includedDomains: [ 'jorytindall.com' ]
-		})
+			includedDomains: ['jorytindall.com'],
+		});
 
 		function onRouteChangeComplete() {
 			Fathom.trackPageview();
@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }) {
 
 		return () => {
 			router.events.off('routeChangeComplete', onRouteChangeComplete);
-		}
-	}, [router.events])
+		};
+	}, [router.events]);
 
 	return <Component {...pageProps} />;
 }

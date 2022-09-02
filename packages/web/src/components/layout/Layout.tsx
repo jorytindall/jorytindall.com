@@ -1,9 +1,7 @@
 interface LayoutProps {
-    children: React.ReactNode
+	children: React.ReactNode;
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-    return (
-        <div>{children}</div>
-    )
-}
+	return <div>{children}</div>;
+};

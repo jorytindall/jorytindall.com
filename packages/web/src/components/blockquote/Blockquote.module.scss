@@ -1,14 +1,14 @@
 @import 'styles/_variables.scss';
 
 .wrapper {
-    background: $color-neutral-100;
-    padding: 2.5rem;
-    margin: 2.5rem 0 0 0;
+	background: $color-neutral-100;
+	padding: 2.5rem;
+	margin: 2.5rem 0 0 0;
 }
 
 .blockquote {
-    font-family: $typography-font-family-body;
-    font-size: $typography-font-size-body-lead;
-    line-height: $typography-line-height-body;
-    color: $color-primary-400;
+	font-family: $typography-font-family-body;
+	font-size: $typography-font-size-body-lead;
+	line-height: $typography-line-height-body;
+	color: $color-primary-400;
 }

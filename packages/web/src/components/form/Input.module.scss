@@ -1,15 +1,15 @@
 @import 'styles/_variables';
 
 .input {
-    padding: 1rem 1.5rem;
+	padding: 1rem 1.5rem;
 	font-size: 1rem;
-    background: $color-tertiary-300;
+	background: $color-tertiary-300;
 	border: none;
-    color: $color-neutral-600;
+	color: $color-neutral-600;
 	font-family: $typography-font-family-body;
 	border-radius: 0;
 	transition: all 0.15s ease;
-    width: 100%;
+	width: 100%;
 
 	&:focus {
 		outline: none;

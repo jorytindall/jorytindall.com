@@ -1,59 +1,59 @@
-import ErrorPage from 'next/error'
-import { useRouter } from 'next/router'
-import { usePreviewSubscriptionHook } from 'lib/sanity'
-import { getClient, previewClient } from 'lib/sanity.server'
-import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries'
-import { PageTitle } from 'components/page-title'
-import { Headline } from 'components/typography'
+import ErrorPage from 'next/error';
+import { useRouter } from 'next/router';
+import { usePreviewSubscriptionHook } from 'lib/sanity';
+import { getClient, previewClient } from 'lib/sanity.server';
+import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
+import { PageTitle } from 'components/page-title';
+import { Headline } from 'components/typography';
 
-import { RichText } from 'components/rich-text'
+import { RichText } from 'components/rich-text';
 
 export default function Page({ data, preview }) {
-    const router = useRouter()
+	const router = useRouter();
 
-    const { data: page } = usePreviewSubscriptionHook(GET_PAGES, {
-        params: {slug: data.page?.slug},
-        initialData: data.page,
-        enabled: preview && data.page?.slug,
-    })
+	const { data: page } = usePreviewSubscriptionHook(GET_PAGES, {
+		params: { slug: data.page?.slug },
+		initialData: data.page,
+		enabled: preview && data.page?.slug,
+	});
 
-    if (!router.isFallback && !data.page?.slug) {
-        return <ErrorPage statusCode={404} />
-    }
+	if (!router.isFallback && !data.page?.slug) {
+		return <ErrorPage statusCode={404} />;
+	}
 
-    const { title, megaHeadline, showTitle, moduleContent } = page
+	const { title, megaHeadline, showTitle, moduleContent } = page;
 
-    return (
-        <>
-            {page.megaHeadline !== null ? (
-                <PageTitle title={title} megaTitle={megaHeadline} />
-            ): null}
-            {megaHeadline === null ? <Headline type='h1'>{title}</Headline> : null}
-            {moduleContent && (
-                <p>Module content goes here.</p>
-            )}
-        </>
-    )
+	return (
+		<>
+			{page.megaHeadline !== null ? (
+				<PageTitle title={title} megaTitle={megaHeadline} />
+			) : null}
+			{megaHeadline === null ? (
+				<Headline type="h1">{title}</Headline>
+			) : null}
+			{moduleContent && <p>Module content goes here.</p>}
+		</>
+	);
 }
 
 export async function getStaticProps({ params, preview = false }) {
-    const page = await getClient(preview).fetch(GET_PAGES, {
-        slug: params.slug,
-    })
+	const page = await getClient(preview).fetch(GET_PAGES, {
+		slug: params.slug,
+	});
 
-    return {
-        props: {
-            preview,
-            data: {page}
-        }
-    }
+	return {
+		props: {
+			preview,
+			data: { page },
+		},
+	};
 }
 
 export async function getStaticPaths() {
-    const paths = await getClient(previewClient).fetch(GET_PAGE_PATHS)
+	const paths = await getClient(previewClient).fetch(GET_PAGE_PATHS);
 
-    return {
-        paths: paths.map((slug) => ({ params: {slug} })),
-        fallback: false,
-    }
+	return {
+		paths: paths.map((slug) => ({ params: { slug } })),
+		fallback: false,
+	};
 }
