@@ -36,8 +36,18 @@ export const GET_PORTFOLIO_PROJECT_PATHS = groq`
 export const GET_BLOG_POSTS = groq`
     *[_type == 'post' && slug.current == $slug][0] {
         _id,
+        _key,
         title,
         "slug": slug.current,
+        publishedDate,
+        categories {
+            name
+        },
+        content,
+        featuredImage {
+            alternativeText,
+            asset
+        }
     }
 `
 

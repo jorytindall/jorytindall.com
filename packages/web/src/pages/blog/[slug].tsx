@@ -4,7 +4,7 @@ import { usePreviewSubscriptionHook } from 'lib/sanity'
 import { getClient, previewClient } from 'lib/sanity.server'
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries'
 
-export default function Event({ data, preview }) {
+export default function BlogPost({ data, preview }) {
     const router = useRouter()
 
     const { data: post } = usePreviewSubscriptionHook(GET_BLOG_POSTS, {
@@ -17,7 +17,7 @@ export default function Event({ data, preview }) {
         return <ErrorPage statusCode={404} />
     }
 
-    const { title } = post
+    const { title, publishedDate, categories, content, featuredImage } = post
 
     return (
         <>
