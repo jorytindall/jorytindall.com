@@ -24,7 +24,7 @@
 }
 
 .title-paragraph {
-    font-size: 1.125rem;
+    font-size: $typography-font-size-body-lead;
     grid-area: title;
     display: flex;
     flex-direction: row;

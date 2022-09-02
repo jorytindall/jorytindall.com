@@ -1,21 +1,19 @@
 import styles from './BlogTitle.module.scss'
 import { Badge } from 'components/badge'
 
-interface Category {
-    category: {
-        name: string
-    }
-}
-
 interface BlogTitleProps {
     featuredImage: string,
     title: string,
-    categories: [Category]
+    categories: [
+        category: {
+            name: string,
+        }
+    ]
 }
 
 export const BlogTitle = ({ featuredImage, title, categories }: BlogTitleProps) => {
     const mapCategories = categories.map((category) => {
-        return <Badge type='secondary' text={category.name}
+        return <Badge type='secondary' text={category.name} key={category.name} />
     })
     
     return (

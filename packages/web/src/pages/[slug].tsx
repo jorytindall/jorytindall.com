@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import { usePreviewSubscriptionHook } from 'lib/sanity'
 import { getClient, previewClient } from 'lib/sanity.server'
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries'
+import { PageTitle } from 'components/page-title'
+import { Headline } from 'components/typography'
 
 export default function Page({ data, preview }) {
     const router = useRouter()
@@ -17,11 +19,17 @@ export default function Page({ data, preview }) {
         return <ErrorPage statusCode={404} />
     }
 
-    const { title } = page
+    const { title, megaHeadline, showTitle, moduleContent } = page
 
     return (
         <>
-            <h1>{title}</h1>
+            {page.megaHeadline !== null ? (
+                <PageTitle title={title} megaTitle={megaHeadline} />
+            ): null}
+            {megaHeadline === null ? <Headline type='h1'>{title}</Headline> : null}
+            {moduleContent && (
+                <p>Module content goes here.</p>
+            )}
         </>
     )
 }

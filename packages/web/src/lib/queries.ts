@@ -7,6 +7,9 @@ export const GET_PAGES = groq`
         _id,
         title,
         "slug": slug.current,
+        showTitle,
+        megaHeadline,
+        moduleContent
     }
 `
 
