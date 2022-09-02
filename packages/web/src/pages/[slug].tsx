@@ -6,6 +6,8 @@ import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries'
 import { PageTitle } from 'components/page-title'
 import { Headline } from 'components/typography'
 
+import { RichText } from 'components/rich-text'
+
 export default function Page({ data, preview }) {
     const router = useRouter()
 
