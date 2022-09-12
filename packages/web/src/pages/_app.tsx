@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
-import '../styles/main.scss';
+import 'styles/main.scss';
+import { Layout } from 'components/layout'
+import { Footer } from 'components/navigation'
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -23,7 +25,14 @@ function MyApp({ Component, pageProps }) {
 		};
 	}, [router.events]);
 
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+			<Footer />
+		</>
+	)
 }
 
 export default MyApp;
