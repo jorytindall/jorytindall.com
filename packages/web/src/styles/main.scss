@@ -1,4 +1,4 @@
-@import './variables.scss';
-@import './fonts';
-@import './reset';
-@import './global';
+@use './abstracts/variables';
+@use './abstracts/fonts';
+@use './abstracts/reset';
+@use './abstracts/global';

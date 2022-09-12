@@ -1,4 +1,4 @@
-import styles from './List.module.scss';
+import styles from 'styles/components/typography/List.module.scss';
 
 interface ItemProps {
 	children: React.ReactNode;

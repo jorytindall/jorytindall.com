@@ -1,4 +1,4 @@
-@import 'styles/_variables';
+@use 'styles/abstracts/variables' as *;
 
 $variants: (
 	'primary' $color-primary-300 $color-primary-400 $color-primary-500,

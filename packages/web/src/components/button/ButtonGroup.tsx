@@ -1,4 +1,4 @@
-import styles from './ButtonGroup.module.scss';
+import styles from 'styles/components/button/ButtonGroup.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface ButtonGroupProps {

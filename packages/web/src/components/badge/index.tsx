@@ -1,4 +1,4 @@
-import styles from './Badge.module.scss';
+import styles from 'styles/components/Badge.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface BadgeProps {

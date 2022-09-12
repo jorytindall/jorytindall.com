@@ -1,4 +1,4 @@
-@import 'styles/_variables';
+@use 'styles/abstracts/variables' as *;
 
 .button-group {
 	display: flex;

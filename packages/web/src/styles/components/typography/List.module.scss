@@ -1,4 +1,4 @@
-@import 'styles/_variables';
+@use 'styles/abstracts/variables' as *;
 
 .item {
 	font-family: $typography-font-family-body;

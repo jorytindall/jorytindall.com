@@ -1,4 +1,4 @@
-@import 'styles/_variables';
+@use 'styles/abstracts/variables' as *;
 
 $paragraphVariants: (
 	'primary' $typography-font-size-body-primary,

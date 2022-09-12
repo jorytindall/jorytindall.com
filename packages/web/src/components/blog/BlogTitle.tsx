@@ -1,4 +1,4 @@
-import styles from './BlogTitle.module.scss';
+import styles from 'styles/components/blog/BlogTitle.module.scss';
 import { Badge } from 'components/badge';
 
 interface BlogTitleProps {

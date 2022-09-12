@@ -1,4 +1,4 @@
-import styles from './PostWrapper.module.scss';
+import styles from 'styles/components/blog/PostWrapper.module.scss';
 
 interface PostWrapperProps {
 	title: string;

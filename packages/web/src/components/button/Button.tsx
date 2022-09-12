@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Button.module.scss';
+import styles from 'styles/components/button/Button.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface ButtonProps {

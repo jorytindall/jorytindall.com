@@ -1,6 +1,6 @@
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import styles from './CodeBlock.module.scss'
+import styles from 'styles/components/CodeBlock.module.scss'
 import { Paragraph } from 'components/typography'
 import { getClasses } from 'utils/getClasses'
 
@@ -20,7 +20,6 @@ export const Code = ({ code, description, language }: CodeProps) => {
         <section className={classes}>
             <SyntaxHighlighter
                 language={language}
-                style={dark}
             >
                 {code}
             </SyntaxHighlighter>

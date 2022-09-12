@@ -1,4 +1,4 @@
-import styles from './Form.module.scss';
+import styles from 'styles/components/form/Form.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface FormProps {

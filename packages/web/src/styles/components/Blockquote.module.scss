@@ -1,4 +1,4 @@
-@import 'styles/_variables.scss';
+@use 'styles/abstracts/variables' as *;
 
 .wrapper {
 	background: $color-neutral-100;

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './Banner.module.scss';
+import styles from 'styles/components/Banner.module.scss';
 import { RichText } from 'components/rich-text';
 import { linkResolver } from 'utils/linkResolver';
 

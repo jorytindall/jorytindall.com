@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './InlineLink.module.scss';
+import styles from 'styles/components/typography/InlineLink.module.scss';
 
 interface LinkProps {
 	type: string;

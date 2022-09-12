@@ -1,4 +1,4 @@
-import styles from './Headline.module.scss';
+import styles from 'styles/components/typography/Headline.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface HeadlineProps {

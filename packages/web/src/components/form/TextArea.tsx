@@ -1,4 +1,4 @@
-import styles from './TextArea.module.scss';
+import styles from 'styles/components/form/TextArea.module.scss';
 
 interface TextAreaProps {
 	name?: string;

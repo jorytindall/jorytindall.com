@@ -1,4 +1,4 @@
-@import 'styles/_variables';
+@use 'styles/abstracts/variables' as *;
 
 $headline-variants: ('mega', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 

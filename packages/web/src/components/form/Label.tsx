@@ -1,4 +1,4 @@
-import styles from './Label.module.scss';
+import styles from 'styles/components/form/Label.module.scss';
 
 interface LabelProps {
 	children: React.ReactNode;
