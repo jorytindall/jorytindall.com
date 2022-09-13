@@ -16,6 +16,7 @@ export const Header = () => {
         <header className={classes}>
             <Avatar />
             <Burger overlay={overlay} toggle={toggle} />
+            <Overlay overlay={overlay} />
         </header>
     )
 }
