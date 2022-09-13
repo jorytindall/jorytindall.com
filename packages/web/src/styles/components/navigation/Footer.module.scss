@@ -53,14 +53,3 @@
     font-family: $typography-font-family-body;
     font-size: $typography-font-size-body-primary;
 }
-
-.avatar {
-    // box-shadow: 0px 0px 12px rgba(22, 15, 41, 0.15);
-    border: 3px solid $color-primary-300;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    position: relative;
-    z-index: 10;
-    cursor: url('/emojis/cool.png'), pointer;
-}

@@ -1,0 +1,51 @@
+@use 'styles/abstracts/variables' as *;
+
+.header {
+    position: sticky;
+	background: $color-tertiary-100;
+	background: transparent;
+	top: 0;
+	z-index: 10;
+	max-width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 2.5rem;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+
+	@media (max-width: 768px) {
+		padding: 2rem 1rem;
+	}
+
+    &--overlay {
+        background: var(--color-accent-01);
+        height: inherit;
+    }
+}
+
+.burger {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    background: $color-neutral-100;
+    box-shadow: 0px 0px 12px rgba(22, 15, 41, 0.05);
+
+    &--overlay {
+        box-shadow: none;
+    }
+}
+
+.bar {
+    width: 32px;
+    height: 2px;
+    background: $color-primary-300;
+    margin: 12px 0;
+}
+
+.avatar {
+    box-shadow: 0px 0px 12px rgba(22, 15, 41, 0.15);
+    border: 3px solid $color-primary-300;
+    border-radius: 50%;
+    position: relative;
+    cursor: url('/emojis/cool.png'), pointer;
+}

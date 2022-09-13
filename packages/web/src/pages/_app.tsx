@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import 'styles/main.scss';
 import { Layout } from 'components/layout'
-import { Footer } from 'components/navigation'
+import { Footer, Header } from 'components/navigation'
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
+			<Header />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>

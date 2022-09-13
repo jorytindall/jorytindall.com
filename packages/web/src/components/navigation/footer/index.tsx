@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from 'styles/components/navigation/Footer.module.scss'
 import { Paragraph } from 'components/typography'
 import { internalLinks, externalLinks } from './Links'
-import avatarLogo from '../../../../public/avatar-logo.jpg'
+import { Avatar } from 'components/avatar'
 
 export const Footer = () => {
 
@@ -15,19 +15,7 @@ export const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.content}>
                 <div className={styles.copyright}>
-                    <Link href='/'>
-                        <a>
-                            <Image
-                                src={avatarLogo}
-                                className={styles.avatar}
-                                width={60}
-                                height={60}
-                                layout='fixed'
-                                alt='Picture of Jory Tindall'
-                                quality={90}
-                            />
-                        </a>
-                    </Link>
+                    <Link href='/'><a><Avatar /></a></Link>
                     <Paragraph collapse>Copyright &copy; Jory Tindall {new Date().getFullYear()}</Paragraph>
                 </div>
                 <div className={styles.internalLinks}>
