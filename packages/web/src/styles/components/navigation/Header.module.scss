@@ -10,9 +10,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	padding: 2rem 2.5rem;
 	box-sizing: border-box;
-	flex-wrap: wrap;
 
 	@media (max-width: 768px) {
 		padding: 2rem 1rem;
