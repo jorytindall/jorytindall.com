@@ -26,13 +26,11 @@ function MyApp({ Component, pageProps }) {
 	}, [router.events]);
 
 	return (
-		<>
+		<Layout>
 			<Header />
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<Component {...pageProps} />
 			<Footer />
-		</>
+		</Layout>
 	)
 }
 
