@@ -14,6 +14,7 @@ export const Avatar = () => {
                         width={60}
                         height={60}
                         quality={90}
+                        priority={true}
                     />
                 </div>
             </a>
