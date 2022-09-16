@@ -10,13 +10,13 @@ export const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.content}>
                 <div className={styles.copyright}>
-                    <Link href='/'><a><Avatar /></a></Link>
+                    <Avatar />
                     <Paragraph collapse>Copyright &copy; Jory Tindall {new Date().getFullYear()}</Paragraph>
                 </div>
                 <div className={styles.internalLinks}>
                     {internalLinks.map(link => {
                         return (
-                            <Link href={link.slug} key={link.text}>
+                            <Link href={link.slug} key={link.text} passHref>
                                 <a className={styles.link}>{link.text}</a>
                             </Link>
                         )

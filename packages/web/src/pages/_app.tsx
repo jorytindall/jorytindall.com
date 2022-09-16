@@ -27,9 +27,7 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<Layout>
-			<Header />
 			<Component {...pageProps} />
-			<Footer />
 		</Layout>
 	)
 }
