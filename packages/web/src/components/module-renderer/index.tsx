@@ -1,4 +1,3 @@
-// Import modules
 import { RichText } from 'components/rich-text';
 import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form';
 import { RichTextWrapper, GridWrapper } from 'components/layout';
@@ -11,8 +10,8 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
     const module = modules.map((m) => {
         switch (m._type) {
             case 'richText': return (
-                <RichTextWrapper>
-                    <RichText value={m.content} key={m._key} />
+                <RichTextWrapper key={m._key}>
+                    <RichText value={m.content} />
                 </RichTextWrapper>
             );
             case 'form': return (
