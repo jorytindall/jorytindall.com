@@ -1,0 +1,25 @@
+@use 'styles/variables' as *;
+
+.results {
+    padding: 2.5rem;
+	background: $color-primary-300;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+    h5 {
+        color: $color-neutral-100;
+    }
+
+	div {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	@media (max-width: 1000px) {
+		padding: 2.5rem 1rem;
+	}
+}
