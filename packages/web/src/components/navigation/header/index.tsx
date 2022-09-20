@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { getClasses } from 'utils/getClasses'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { Burger } from './Burger'
 import { Overlay } from './Overlay'
 import styles from 'styles/components/navigation/Header.module.scss'
 import { Avatar } from 'components/avatar'
 
 export const Header = () => {
-    const [overlay, toggle] = useState(false)
+    const route = useRouter().asPath
+    const [ overlay, setOverlay ] = useState(false)
 
-    const classes = getClasses([styles.header])
+    // Check to see if overlay is toggled, then return the appropriate class
+    const getOverlayClass = overlay ? styles.headerOverlay : styles.header;
+
+    // Reset the state of overlay after route change
+    useEffect(() => setOverlay(false), [route])
 
     return (
-        <header className={classes}>
+        <header className={getOverlayClass}>
             <Avatar />
-            <Burger overlay={overlay} toggle={toggle} />
+            <Burger overlay={overlay} toggle={setOverlay} />
             <Overlay overlay={overlay} />
         </header>
     )

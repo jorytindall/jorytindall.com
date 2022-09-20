@@ -9,11 +9,48 @@ interface OverlayProps {
 }
 
 export const Overlay = ({ overlay }: OverlayProps) => {
-    const classes = getClasses([styles[overlay]])
+    
+    const getOverlayClass = overlay ? styles.overlayVisible : styles.overlayHidden;
+
+    // Define an array of links to map through
+    const links = [
+        {
+            slug: '/',
+            text: 'Home',
+        },
+        {
+            slug: '/about',
+            text: 'About',
+        },
+        {
+            slug: '/portfolio',
+            text: 'Portfolio',
+        },
+        {
+            slug: '/events',
+            text: 'Events',
+        },
+        {
+            slug: '/blog',
+            text: 'Blog'
+        },
+        {
+            slug: '/contact',
+            text: 'Contact'
+        }
+    ]
 
     return (
-        <div className={classes}>
-             
+        <div className={getOverlayClass}>
+             <aside className={styles.linkWrapper}>
+                {links.map(link => {
+                    return (
+                        <Link href={link.slug} key={link.text}>
+                            <a className={styles.navLink}>{link.text}</a>
+                        </Link>
+                    )
+                })}
+             </aside>
         </div>
     )
 }
