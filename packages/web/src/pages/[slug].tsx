@@ -5,6 +5,7 @@ import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { Headline } from 'components/typography';
+import { ModuleRenderer } from 'components/module-renderer';
 
 export default function Page({ data, preview }) {
 	const router = useRouter();
@@ -21,6 +22,8 @@ export default function Page({ data, preview }) {
 
 	const { title, megaHeadline, showTitle, moduleContent } = page;
 
+	console.log(moduleContent)
+
 	return (
 		<>
 			{page.megaHeadline !== null ? (
@@ -29,7 +32,7 @@ export default function Page({ data, preview }) {
 			{megaHeadline === null ? (
 				<Headline type="h1">{title}</Headline>
 			) : null}
-			{moduleContent && <p>Module content goes here.</p>}
+			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>
 	);
 }
