@@ -22,7 +22,7 @@ export default function Page({ data, preview }) {
 
 	const { title, megaHeadline, showTitle, moduleContent } = page;
 
-	console.log(moduleContent)
+	// console.log(moduleContent)
 
 	return (
 		<>

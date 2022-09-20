@@ -1,9 +1,4 @@
-interface ResolverProps {
-	parent: string;
-	slug: string;
-}
-
-export function linkResolver({ parent, slug }: ResolverProps) {
+export function linkResolver(parent: string, slug: string) {
 	switch (parent) {
 		case 'page':
 			return `/${slug}`;

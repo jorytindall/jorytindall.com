@@ -15,6 +15,7 @@ export const Avatar = () => {
                         height={60}
                         quality={90}
                         priority={true}
+                        alt='Photo of Jory Tindall'
                     />
                 </div>
             </a>

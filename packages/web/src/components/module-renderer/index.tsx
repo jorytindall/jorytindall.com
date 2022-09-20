@@ -7,7 +7,7 @@ interface ModuleRendererProps {
 }
 
 export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
-    const module = modules.map((m) => {
+    const getModule = modules.map((m) => {
         switch (m._type) {
             case 'richText': return (
                 <RichTextWrapper key={m._key}>
@@ -29,5 +29,5 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
         }
     })
 
-    return <GridWrapper>{module}</GridWrapper>
+    return <GridWrapper>{getModule}</GridWrapper>
 }

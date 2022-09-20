@@ -25,7 +25,7 @@ export const Footer = () => {
                 <div className={styles.externalLinks}>
                     {externalLinks.map(link => {
                         return (
-                            <a target='_blank' href={link.href} className={styles.link} key={link.text}>{link.text}</a>
+                            <a target='_blank' rel='noreferrer' href={link.href} className={styles.link} key={link.text}>{link.text}</a>
                         )
                     })}
                 </div>
