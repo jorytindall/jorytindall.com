@@ -17,6 +17,8 @@ $justifyVariants: (
 
 $alignVariants: (normal, flex-start, center, flex-end);
 
+$textAlignVariants: ( left, center, right );
+
 $gapVariants: (
 	'small' 0.5rem,
 	'default' 1rem,
@@ -66,5 +68,13 @@ $gapVariants: (
 @each $variant, $gap in $gapVariants {
 	.is-flex--#{$variant} {
 		gap: $gap;
+	}
+}
+
+@each $variant in $textAlignVariants {
+	.text-align--#{$variant} {
+		& * {
+			text-align: $variant !important;
+		}
 	}
 }
