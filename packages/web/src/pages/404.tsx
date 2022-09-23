@@ -17,6 +17,7 @@ export default function Custom404() {
                 alt='Page not found'
                 width={600}
                 height={350}
+                priority
             />
             <Headline type='h1'>404, not found :(</Headline>
             <Paragraph>Bummer dude, couldn&apos;t find that page. Would you like to go <InlineLink type='internal' href='/'>Back to the homepage?</InlineLink></Paragraph>

@@ -25,7 +25,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
             case 'portfolioList': return <p key={m._key}>Portfolio list here</p>
             case 'results': return <p key={m._key}>Results here</p>
             case 'features': return <p key={m._key}>Features here</p>
-            default: return console.log('Nothing came back for this module')
+            default: return console.error('Nothing came back for this module')
         }
     })
 
