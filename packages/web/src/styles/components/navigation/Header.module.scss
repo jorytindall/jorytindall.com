@@ -32,10 +32,16 @@
     padding: 0.5rem 0.75rem;
     background: $color-neutral-100;
     box-shadow: 0px 0px 12px rgba(22, 15, 41, 0.05);
+	border: 3px solid $color-primary-300;
+	transition: all 0.15s ease-in-out;
 
-    &--overlay {
-        box-shadow: none;
-    }
+	&:hover {
+		box-shadow: 0px 0px 0px 16px rgba(0, 94, 255, 0.3)
+	}
+}
+
+.burgerOverlay {
+	box-shadow: 0px 0px 0px 16px rgba(0, 94, 255, 0.3)
 }
 
 .bar {

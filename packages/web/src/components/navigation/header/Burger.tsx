@@ -8,7 +8,10 @@ interface BurgerProps {
 }
 
 export const Burger = ({ overlay, toggle }: BurgerProps) => {
-    const classes = getClasses([styles.burger, styles[overlay]])
+    const classes = getClasses([
+        styles.burger,
+        overlay === true ? styles.burgerOverlay : null,
+    ])
 
     const topVariants = {
         open: { rotate: 45, y: 7 },
