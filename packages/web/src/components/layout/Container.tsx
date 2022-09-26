@@ -2,7 +2,7 @@ import styles from 'styles/components/layout/Container.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface ContainerProps {
-	density?: 'default' | 'spacious' | 'packed';
+	density?: 'default' | 'spacious' | 'packed' | 'collapse';
 	isFlex?: boolean;
 	flexDirection?: 'row' | 'column';
 	semanticElement?: 'div' | 'section' | 'article' | 'aside';

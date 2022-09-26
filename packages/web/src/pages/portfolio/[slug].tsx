@@ -6,6 +6,8 @@ import {
 	GET_PORTFOLIO_PROJECTS,
 	GET_PORTFOLIO_PROJECT_PATHS,
 } from 'lib/queries';
+import { ModuleRenderer } from 'components/module-renderer'
+import { HeroImage, Title } from 'components/portfolio'
 
 export default function PortfolioProject({ data, preview }) {
 	const router = useRouter();
@@ -23,11 +25,30 @@ export default function PortfolioProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title } = portfolioProject;
+	const { 
+		title,
+		featuredImage,
+		moduleContent,
+	} = portfolioProject;
+
+	console.log(featuredImage)
 
 	return (
 		<>
-			<h1>{title}</h1>
+			{featuredImage.asset &&			
+				<HeroImage
+					source={featuredImage.asset.url}
+					altText={featuredImage.alternativeText}
+				/>
+			}
+			{title &&
+				<Title
+					{...portfolioProject}
+				/>
+			}
+			{moduleContent &&
+				<ModuleRenderer modules={moduleContent} />
+			}
 		</>
 	);
 }

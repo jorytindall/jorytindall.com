@@ -2,6 +2,7 @@ $densityVariants: (
 	'default': 2.5rem,
 	'packed': 1rem,
 	'spacious': 5rem,
+	'collapse': 0,
 );
 
 $directionVariants: (column, row);
@@ -42,6 +43,7 @@ $gapVariants: (
 .is-flex {
 	display: flex;
 	@include container-base;
+	flex-wrap: wrap;
 }
 
 @each $direction in $directionVariants {

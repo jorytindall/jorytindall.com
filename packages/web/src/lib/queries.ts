@@ -24,6 +24,23 @@ export const GET_PORTFOLIO_PROJECTS = groq`
         _id,
         title,
         "slug": slug.current,
+        client,
+        tools,
+        timeline,
+        types,
+        overview,
+        externalLink,
+        roles,
+        shareImage {
+            asset {
+                url
+            }
+        },
+        featuredImage {
+            alternativeText,
+            asset
+        },
+        moduleContent,
     }
 `;
 
