@@ -40,9 +40,7 @@ export default function PortfolioProject({ data, preview }) {
 				/>
 			}
 			{title &&
-				<Title
-					{...portfolioProject}
-				/>
+				<Title input={portfolioProject} />
 			}
 			{moduleContent &&
 				<ModuleRenderer modules={moduleContent} />

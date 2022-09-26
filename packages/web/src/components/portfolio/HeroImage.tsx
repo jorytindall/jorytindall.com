@@ -8,7 +8,7 @@ interface HeroImageProps {
     altText: string,
 }
 
-export const HeroImage = ({ source, altText}:HeroImageProps) => {
+export const HeroImage = ({ source, altText }:HeroImageProps) => {
     const imageProps:object = useNextSanityImage(
         sanityClient,
         source,

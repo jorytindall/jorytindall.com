@@ -5,26 +5,21 @@ import { Container } from 'components/layout'
 import styles from 'styles/components/portfolio/Title.module.scss'
 
 interface TitleProps {
-    title: string,
-    client: string,
-    types: string[],
-    roles: string[],
-    tools: string[],
-    timeline: string,
-    overview: string,
-    externalLink: string,
+    input: {
+        title: string,
+        client: string,
+        types: string[],
+        roles: string[],
+        tools: string[],
+        timeline: string,
+        overview: string,
+        externalLink: string,
+    }
 }
 
-export const Title = ({
-    title,
-    client,
-    types,
-    roles,
-    tools,
-    timeline,
-    overview,
-    externalLink,
-}:TitleProps) => {
+export const Title = ({ input }:TitleProps) => {
+
+    const { title, client, types, roles, tools, timeline, overview, externalLink } = input
 
     // Map through the detail arrays of the project 
     const mapTypes = types.map(type => <Badge text={type} type='secondary' key={type} />)

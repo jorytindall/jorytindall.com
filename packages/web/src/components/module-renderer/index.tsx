@@ -1,6 +1,7 @@
 import { RichText } from 'components/rich-text';
 import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form';
 import { RichTextWrapper, GridWrapper } from 'components/layout';
+import { Features } from 'components/features'
 
 interface ModuleRendererProps {
     modules?: any,
@@ -24,7 +25,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
             case 'hero': return <p key={m._key}>Hero here</p>
             case 'portfolioList': return <p key={m._key}>Portfolio list here</p>
             case 'results': return <p key={m._key}>Results here</p>
-            case 'features': return <p key={m._key}>Features here</p>
+            case 'features': return <Features input={m} key={m._key} />
             default: return console.error('Nothing came back for this module')
         }
     })
