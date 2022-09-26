@@ -3,8 +3,12 @@
 .heroWrapper {
     max-width: 100vw;
 	position: relative;
-	top: -124px;
-	margin-bottom: -124px;
+	top: -130px;
+	margin-bottom: -130px;
+
+	span {
+		height: 100%;
+	}
 
 	@media (max-width: 1000px) {
 		top: -164px;
@@ -12,9 +16,7 @@
 	}
 
 	@media (max-width: 550px) {
-		top: -124px;
-		margin-bottom: -124px;
+		top: -130px;
+		margin-bottom: -130px;
 	}
 }
-
-.heroImage {};

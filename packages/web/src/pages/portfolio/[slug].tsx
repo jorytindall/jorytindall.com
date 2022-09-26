@@ -31,13 +31,11 @@ export default function PortfolioProject({ data, preview }) {
 		moduleContent,
 	} = portfolioProject;
 
-	console.log(featuredImage)
-
 	return (
 		<>
 			{featuredImage.asset &&			
 				<HeroImage
-					source={featuredImage.asset.url}
+					source={featuredImage.asset}
 					altText={featuredImage.alternativeText}
 				/>
 			}

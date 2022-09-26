@@ -16,7 +16,7 @@
 		"baseUrl": "src",
 		"incremental": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/sanityConfig.js", "src/components/portfolio/HeroImage.js"],
 	"exclude": ["node_modules"],
 	"sassOptions": {
 		"includePaths": ["./src"]

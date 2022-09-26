@@ -13,7 +13,7 @@ export const PortfolioListItem = ({ input }: PortfolioListItemProps) => {
 
     const portfolioItems = input.items.map(item => {
         return (
-            <article className={styles.itemWrapper}>
+            <article className={styles.itemWrapper} key={item.item.title}>
                 <Link href={linkResolver('portfolio', item.item.slug.current)}>
                     <a>
                         {/* insert image here */}
