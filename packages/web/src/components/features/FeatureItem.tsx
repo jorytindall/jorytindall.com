@@ -25,9 +25,10 @@ export const FeatureItem = ({ image, title, description }: FeatureItemProps) => 
                 flexDirection='column'
                 semanticElement='div'
                 density='collapse'
+                gap='default'
             >
                 {image && <Image {...imageProps} layout='intrinsic' className='imageWrapper' />}
-                {title && <Headline type='h5'>{title}</Headline>}
+                {title && <Headline type='h5' collapse>{title}</Headline>}
                 {description && <Paragraph type='primary' collapse>{description}</Paragraph>}
             </Container>
         </>
