@@ -21,7 +21,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
                     <p>Form items go here.</p>
                 </Form>
             );
-            case 'fullWidthImage': return <p> key={m._key}Full width image here</p>
+            case 'fullWidthImage': return <FullWidthImage input={m} key={m._key} />
             case 'gallery': return <Gallery input={m} key={m._key} />
             case 'hero': return <p key={m._key}>Hero here</p>
             case 'portfolioList': return <p key={m._key}>Portfolio list here</p>

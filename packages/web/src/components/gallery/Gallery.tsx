@@ -19,12 +19,10 @@ export const Gallery = ({ input }: GalleryProps) => {
 
     const { _key, images } = input
 
-    console.log(input)
-
     const galleryImages = images.map(image => {
         return (
             <GalleryItem
-                key={image.key}
+                key={image._key}
                 image={image}
                 altText={image.alternativeText}
                 caption={image.caption}

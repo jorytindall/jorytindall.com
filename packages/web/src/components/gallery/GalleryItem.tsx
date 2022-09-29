@@ -23,7 +23,7 @@ export const GalleryItem = ({
     )
 
     return (
-        <div key={key}>
+        <div>
             {image && <Image {...imageProps} layout='intrinsic' alt={altText} />}
             {caption && <Paragraph type='secondary' collapse>{caption}</Paragraph>}
         </div>
