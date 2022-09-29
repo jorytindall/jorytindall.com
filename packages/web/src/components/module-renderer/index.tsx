@@ -3,6 +3,7 @@ import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form';
 import { RichTextWrapper, GridWrapper } from 'components/layout';
 import { Features } from 'components/features'
 import { Gallery, FullWidthImage } from 'components/gallery'
+import { PortfolioList } from 'components/portfolio';
 
 interface ModuleRendererProps {
     modules?: any,
@@ -24,7 +25,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
             case 'fullWidthImage': return <FullWidthImage input={m} key={m._key} />
             case 'gallery': return <Gallery input={m} key={m._key} />
             case 'hero': return <p key={m._key}>Hero here</p>
-            case 'portfolioList': return <p key={m._key}>Portfolio list here</p>
+            case 'portfolioList': return <PortfolioList input={m} key={m._key} />
             case 'results': return <p key={m._key}>Results here</p>
             case 'features': return <Features input={m} key={m._key} />
             default: return console.error('Nothing came back for this module')

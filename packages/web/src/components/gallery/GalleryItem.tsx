@@ -11,7 +11,6 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({
-    key,
     image,
     altText,
     caption

@@ -1,33 +1,34 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useNextSanityImage } from 'next-sanity-image'
+import { sanityClient } from 'lib/sanity.server'
 import { linkResolver } from 'utils/linkResolver'
 import { Headline, Paragraph } from 'components/typography'
-import styles from 'styles/components/portfolio/PortfolioListItem.module.scss'
-import { Input } from 'components/form'
+import styles from 'styles/components/portfolio/PortfolioList.module.scss'
 
 interface PortfolioListItemProps {
-    input: any,
+    title: string,
+    slug: string,
+    client: string,
+    image: any,
 }
 
-export const PortfolioListItem = ({ input }: PortfolioListItemProps) => {
+export const PortfolioListItem = ({ title, slug, client, image}: PortfolioListItemProps) => {
 
-    const portfolioItems = input.items.map(item => {
-        return (
-            <article className={styles.itemWrapper} key={item.item.title}>
-                <Link href={linkResolver('portfolio', item.item.slug.current)}>
-                    <a>
-                        {/* insert image here */}
-                        <Headline type='h4' collapse>{item.item.title}</Headline>
-                        <Paragraph type='primary' collapse>{item.item.client}</Paragraph>
-                    </a>
-                </Link>
-            </article>
-        )
-    })
+    const imageProps:object = useNextSanityImage(
+        sanityClient,
+        image,
+    )
 
     return (
-        <section className={styles.wrapper}>
-            {portfolioItems}
-        </section>
+        <article className={styles.itemWrapper} key={title}>
+            <Link href={linkResolver('portfolio', slug)}>
+                <a>
+                    <Image src={image} {...imageProps} layout='responsive' alt={image.alternativeText} />
+                    <Headline type='h4' collapse>{title}</Headline>
+                    <Paragraph type='primary' collapse>{client}</Paragraph>
+                </a>
+            </Link>
+        </article>
     )
 }

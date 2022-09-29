@@ -9,7 +9,12 @@ export const GET_PAGES = groq`
         "slug": slug.current,
         showTitle,
         megaHeadline,
-        moduleContent
+        moduleContent[] {
+            ...,
+            items[] {
+                item->
+            }
+        }
     }
 `;
 
@@ -40,7 +45,7 @@ export const GET_PORTFOLIO_PROJECTS = groq`
             alternativeText,
             asset
         },
-        moduleContent,
+        moduleContent
     }
 `;
 
