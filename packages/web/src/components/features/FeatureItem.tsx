@@ -27,7 +27,7 @@ export const FeatureItem = ({ image, title, description }: FeatureItemProps) => 
                 density='collapse'
                 gap='default'
             >
-                {image && <Image {...imageProps} layout='intrinsic' className='imageWrapper' />}
+                {image && <Image {...imageProps} layout='intrinsic' className={styles.imageWrapper} />}
                 {title && <Headline type='h5' collapse>{title}</Headline>}
                 {description && <Paragraph type='primary' collapse>{description}</Paragraph>}
             </Container>

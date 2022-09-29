@@ -31,8 +31,6 @@ export default function PortfolioProject({ data, preview }) {
 		moduleContent,
 	} = portfolioProject;
 
-	console.log(moduleContent)
-
 	return (
 		<>
 			{featuredImage.asset &&			

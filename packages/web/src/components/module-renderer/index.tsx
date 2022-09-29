@@ -2,6 +2,7 @@ import { RichText } from 'components/rich-text';
 import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form';
 import { RichTextWrapper, GridWrapper } from 'components/layout';
 import { Features } from 'components/features'
+import { Gallery, FullWidthImage } from 'components/gallery'
 
 interface ModuleRendererProps {
     modules?: any,
@@ -21,7 +22,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
                 </Form>
             );
             case 'fullWidthImage': return <p> key={m._key}Full width image here</p>
-            case 'gallery': return <p key={m._key}>Gallery here</p>
+            case 'gallery': return <Gallery input={m} key={m._key} />
             case 'hero': return <p key={m._key}>Hero here</p>
             case 'portfolioList': return <p key={m._key}>Portfolio list here</p>
             case 'results': return <p key={m._key}>Results here</p>
