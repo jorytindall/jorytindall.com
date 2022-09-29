@@ -42,7 +42,7 @@ export const Title = ({ input }:TitleProps) => {
         },
         {
             title: 'Timeline',
-            content: timeline,
+            content: <Badge text={timeline} type='secondary' />
         }
     ]
 
