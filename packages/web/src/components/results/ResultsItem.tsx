@@ -1,4 +1,4 @@
-import styles from 'styles/components/results/ResultsItem.module.scss'
+import styles from 'styles/components/results/Results.module.scss'
 import { Headline, Paragraph } from 'components/typography'
 
 interface ResultsItemProps {
@@ -15,7 +15,7 @@ export const ResultsItem = ({
     percentageDirection,
 }: ResultsItemProps) => {
     return (
-        <article>
+        <article className={styles.resultsItem}>
             {metric && (
                 <span className={styles.percentage}>
                     <Headline type='h1' collapse>{metric}</Headline>

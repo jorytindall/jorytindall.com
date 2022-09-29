@@ -4,27 +4,30 @@ import { ResultsItem } from './ResultsItem'
 import styles from 'styles/components/results/Results.module.scss'
 
 interface ResultsProps {
-    description?: string,
-    resultsItems: any[],
+    input: {
+        description?: string,
+        resultItems: any[],
+    }
 }
 
-export const Results = ({
-    description,
-    resultsItems,
-}: ResultsProps) => {
+export const Results = ({ input }: ResultsProps) => {
+
+    const { description, resultItems } = input
 
     const classes = getClasses([
         styles.results,
     ])
+
+    console.log(input)
 
     return (
         <section className={classes}>
             {description && (
                 <Headline type='h5'>{description}</Headline>
             )}
-            {resultsItems && (
+            {resultItems && (
                 <div>
-                    {resultsItems.map((item) => {
+                    {resultItems.map((item) => {
                         return (
                             <ResultsItem
                                 key={item._key}

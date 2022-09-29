@@ -4,6 +4,7 @@ import { RichTextWrapper, GridWrapper } from 'components/layout';
 import { Features } from 'components/features'
 import { Gallery, FullWidthImage } from 'components/gallery'
 import { PortfolioList } from 'components/portfolio';
+import { Results } from 'components/results';
 
 interface ModuleRendererProps {
     modules?: any,
@@ -26,7 +27,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
             case 'gallery': return <Gallery input={m} key={m._key} />
             case 'hero': return <p key={m._key}>Hero here</p>
             case 'portfolioList': return <PortfolioList input={m} key={m._key} />
-            case 'results': return <p key={m._key}>Results here</p>
+            case 'results': return <Results input={m} key={m._key} />
             case 'features': return <Features input={m} key={m._key} />
             default: return console.error('Nothing came back for this module')
         }
