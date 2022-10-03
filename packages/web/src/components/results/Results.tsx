@@ -18,8 +18,6 @@ export const Results = ({ input }: ResultsProps) => {
         styles.results,
     ])
 
-    console.log(input)
-
     return (
         <section className={classes}>
             {description && (

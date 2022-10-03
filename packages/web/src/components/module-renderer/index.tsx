@@ -1,5 +1,6 @@
 import { RichText } from 'components/rich-text';
-import { Form, Input, Label, TextArea, ItemWrapper } from 'components/form';
+import { Form, RenderFormControls } from 'components/form';
+import { Paragraph } from 'components/typography'
 import { RichTextWrapper, GridWrapper } from 'components/layout';
 import { Features } from 'components/features'
 import { Gallery, FullWidthImage } from 'components/gallery'
@@ -18,11 +19,14 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
                     <RichText value={m.content} />
                 </RichTextWrapper>
             );
-            case 'form': return (
-                <Form key={m._key} name={m.name} method={m.method}>
-                    <p>Form items go here.</p>
-                </Form>
-            );
+            case 'form': {
+                return (
+                    <Form key={m._key} name={m.name} method={m.method}>
+                        {/* <RenderFormControls input={m.fields} /> */}
+                        <Paragraph><a href='mailto:hello@jorytindall.com'>Get in touch me!</a></Paragraph>
+                    </Form>
+                )
+            }
             case 'fullWidthImage': return <FullWidthImage input={m} key={m._key} />
             case 'gallery': return <Gallery input={m} key={m._key} />
             case 'hero': return <p key={m._key}>Hero here</p>
