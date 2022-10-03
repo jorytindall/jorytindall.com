@@ -23,7 +23,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
                 return (
                     <Form key={m._key} name={m.name} method={m.method}>
                         {/* <RenderFormControls input={m.fields} /> */}
-                        <Paragraph><a href='mailto:hello@jorytindall.com'>Get in touch me!</a></Paragraph>
+                        <Paragraph><a href='mailto:hello@jorytindall.com'>Get in touch with me!</a></Paragraph>
                     </Form>
                 )
             }

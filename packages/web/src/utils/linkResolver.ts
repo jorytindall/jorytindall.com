@@ -7,7 +7,7 @@ export function linkResolver(parent: string, slug: string) {
 		case 'portfolio':
 			return `/portfolio/${slug}`;
 		case 'event':
-			return `/event/${slug}`;
+			return `/events/${slug}`;
 		case 'music':
 			return `/music/${slug}`;
 		case 'landingPage':

@@ -81,6 +81,17 @@ export const GET_EVENT_PATHS = groq`
     *[_type == 'event' && defined(slug.current)][].slug.current
 `;
 
+export const GET_ALL_EVENTS = groq`
+    *[_type == 'event'][] {
+        _id,
+        title,
+        "slug": slug.current,
+        date,
+        image,
+        location
+    }
+`
+
 // Music queries
 
 export const GET_MUSIC_PROJECTS = groq`
