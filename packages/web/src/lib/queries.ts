@@ -74,6 +74,11 @@ export const GET_EVENTS = groq`
         _id,
         title,
         "slug": slug.current,
+        date,
+        image,
+        location,
+        description,
+        url
     }
 `;
 

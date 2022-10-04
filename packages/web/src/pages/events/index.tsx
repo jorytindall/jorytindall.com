@@ -31,6 +31,8 @@ export default function EventsPage({ data, preview }) {
         )
     }) : <Paragraph>No upcoming events, check back soon!</Paragraph>
 
+    console.log(events)
+
     return (
         <>
             <PageTitle title='🗓 Events' megaTitle="Upcoming Events" />
