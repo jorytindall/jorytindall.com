@@ -1,13 +1,15 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
-import Image from 'next/image'
-import { format, formatISO, parseISO } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 import { useNextSanityImage } from 'next-sanity-image';
 import { usePreviewSubscriptionHook } from 'lib/sanity';
 import { getClient, previewClient, sanityClient } from 'lib/sanity.server';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography'
 import { RichText } from 'components/rich-text';
+import { GridWrapper } from 'components/layout';
+import { Button } from 'components/button'
+import styles from 'styles/pages/Event.module.scss'
 
 export default function Event({ data, preview }) {
 	const router = useRouter();
@@ -32,12 +34,14 @@ export default function Event({ data, preview }) {
 	console.log(description)
 
 	return (
-		<>
-			<Image {...imageProps} alt={image.alternativeText} />
-			<Headline type='h1' collapse>{title}</Headline>
-			<Paragraph collapse>{format(parseISO(date), 'MMMM do, yyyy')} at <InlineLink href={url} type='external'>{location}</InlineLink></Paragraph>
-			<RichText value={description.content} />
-		</>
+		<GridWrapper>
+			<section className={styles.wrapper}>
+				<Headline type='h1' collapse>{title}</Headline>
+				<Paragraph collapse>{format(parseISO(date), 'MMMM do, yyyy')} at <InlineLink href={url} type='external'>{location}</InlineLink></Paragraph>
+				<RichText value={description.content} />
+				<Button href={url}>Get tickets</Button>
+			</section>
+		</GridWrapper>
 	);
 }
 
