@@ -1,14 +1,16 @@
 import Link from 'next/link'
-import styles from 'styles/components/EventItem.module.scss'
 import { Headline, Paragraph } from 'components/typography'
+import { Container } from 'components/layout'
 import { linkResolver } from 'utils/linkResolver'
 import { formatDateTime } from 'utils/datetimeFormat'
+import styles from 'styles/components/event/EventItem.module.scss'
 
 interface EventItemProps {
     title: string,
     date: string,
     location?: string,
-    slug: string
+    slug: string,
+    description?: string,
 }
 
 export const EventItem = ({
@@ -17,12 +19,20 @@ export const EventItem = ({
     location,
     slug,
 }: EventItemProps) => {
+
     return (
-        <Link href={linkResolver('event', slug)} className={styles.eventItem}>
-            <a>
-                {title && <Headline type='h4'>{title}</Headline>}
-                {date && <Paragraph collapse>{formatDateTime(date)}</Paragraph>}
-                {location && <Paragraph collapse>{location}</Paragraph>}
+        <Link href={linkResolver('event', slug)}>
+            <a className={styles.wrapper}>
+                <Container
+                    density='default'
+                    flexDirection='column'
+                    semanticElement='div'
+                    isFlex
+                >
+                    <Headline type='h4' collapse>{title}</Headline>
+                    <Paragraph collapse>{formatDateTime(date)}</Paragraph>
+                    <Paragraph collapse>{location}</Paragraph>
+                </Container>
             </a>
         </Link>
     )

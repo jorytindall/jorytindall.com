@@ -1,18 +1,25 @@
-import { useNextSanityImage } from "next-sanity-image"
-import { usePreviewSubscriptionHook } from "lib/sanity"
-import { getClient, previewClient } from "lib/sanity.server"
+import { formatISO, format, parseISO } from 'date-fns'
+import { getClient } from "lib/sanity.server"
 import { GET_ALL_EVENTS } from "lib/queries"
 import { PageTitle } from "components/page-title"
 import { EventItem } from "components/event"
+import { Paragraph } from 'components/typography'
 import styles from 'styles/pages/Events.module.scss'
+
+interface filterEventsProps {
+    eventDate: string,
+}
 
 export default function EventsPage({ data, preview }) {
 
     const { events } = data
+    
+    const currentEvents = events.filter(event => {
+        const today = format(new Date(), 'yyyyMMdd');
+        return format(parseISO(event.date), 'yyyyMMdd' + 1) > today;
+    })
 
-    console.log(events)
-
-    const getEvents = events.map(event => {
+    const filterEvents = currentEvents.length > 0 ? currentEvents.map(event => {
         return (
             <EventItem
                 title={event.title}
@@ -22,13 +29,13 @@ export default function EventsPage({ data, preview }) {
                 key={event._id}
             />
         )
-    })
+    }) : <Paragraph>No upcoming events, check back soon!</Paragraph>
 
     return (
         <>
             <PageTitle title='🗓 Events' megaTitle="Upcoming Events" />
             <section className={styles.wrapper}>
-                {getEvents}
+                {filterEvents}
             </section>
         </>
     )
