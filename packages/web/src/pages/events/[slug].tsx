@@ -1,9 +1,8 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import { format, parseISO } from 'date-fns'
-import { useNextSanityImage } from 'next-sanity-image';
 import { usePreviewSubscriptionHook } from 'lib/sanity';
-import { getClient, previewClient, sanityClient } from 'lib/sanity.server';
+import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography'
 import { RichText } from 'components/rich-text';
@@ -25,13 +24,6 @@ export default function Event({ data, preview }) {
 	}
 
 	const { title, date, description, location, image, url } = event;
-
-	const imageProps = useNextSanityImage(
-		sanityClient,
-		image,
-	)
-
-	console.log(description)
 
 	return (
 		<GridWrapper>
