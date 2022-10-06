@@ -1,12 +1,19 @@
-import { linkResolver } from 'utils/linkResolver'
+import { MetaHead } from 'components/meta'
 
 export default function Home() {
-
-	const parent = 'page'
-	const slug = 'about'
 	return (
-		<div>
+		<>
+			<MetaHead
+				title='Designer, saxophonist artist, and educator'
+				description='Home of Jory Tindall; User experience designer, saxophone artist, and music educator based in Seattle, Washington.'
+			/>
 			<h1>Home page</h1>
-		</div>
+		</>
 	);
+}
+
+export async function getStaticProps() {
+	return {
+		props: {}
+	}
 }

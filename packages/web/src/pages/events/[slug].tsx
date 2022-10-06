@@ -8,6 +8,8 @@ import { Headline, Paragraph, InlineLink } from 'components/typography'
 import { RichText } from 'components/rich-text';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button'
+import { MetaHead } from 'components/meta'
+import { linkResolver } from 'utils/linkResolver';
 import styles from 'styles/pages/Event.module.scss'
 
 export default function Event({ data, preview }) {
@@ -23,17 +25,24 @@ export default function Event({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, date, description, location, image, url } = event;
+	const { title, date, description, location, image, url, slug } = event;
 
 	return (
-		<GridWrapper>
-			<section className={styles.wrapper}>
-				<Headline type='h1' collapse>{title}</Headline>
-				<Paragraph collapse>{format(parseISO(date), 'MMMM do, yyyy')} at <InlineLink href={url} type='external'>{location}</InlineLink></Paragraph>
-				<RichText value={description.content} />
-				<Button href={url}>Get tickets</Button>
-			</section>
-		</GridWrapper>
+		<>
+			<MetaHead
+				title={title}
+				description={title}
+				slug={linkResolver('event', slug)}
+			/>
+			<GridWrapper>
+				<section className={styles.wrapper}>
+					<Headline type='h1' collapse>{title}</Headline>
+					<Paragraph collapse>{format(parseISO(date), 'MMMM do, yyyy')} at <InlineLink href={url} type='external'>{location}</InlineLink></Paragraph>
+					<RichText value={description.content} />
+					<Button href={url}>Get tickets</Button>
+				</section>
+			</GridWrapper>
+		</>
 	);
 }
 

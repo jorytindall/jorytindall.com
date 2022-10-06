@@ -4,6 +4,7 @@ import { GET_ALL_EVENTS } from "lib/queries"
 import { PageTitle } from "components/page-title"
 import { EventItem } from "components/event"
 import { Paragraph } from 'components/typography'
+import { MetaHead } from 'components/meta'
 import styles from 'styles/pages/Events.module.scss'
 
 interface filterEventsProps {
@@ -31,10 +32,13 @@ export default function EventsPage({ data, preview }) {
         )
     }) : <Paragraph>No upcoming events, check back soon!</Paragraph>
 
-    console.log(events)
-
     return (
         <>
+            <MetaHead
+                title='Events'
+                description='Upcoming events and live music'
+                slug='events'
+            />
             <PageTitle title='🗓 Events' megaTitle="Upcoming Events" />
             <section className={styles.wrapper}>
                 {filterEvents}

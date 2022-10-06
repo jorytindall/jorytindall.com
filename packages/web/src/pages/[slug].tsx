@@ -6,6 +6,8 @@ import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { Headline } from 'components/typography';
 import { ModuleRenderer } from 'components/module-renderer';
+import { MetaHead } from 'components/meta'
+import { linkResolver } from 'utils/linkResolver';
 
 export default function Page({ data, preview }) {
 	const router = useRouter();
@@ -20,10 +22,14 @@ export default function Page({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, megaHeadline, showTitle, moduleContent } = page;
+	const { title, megaHeadline, showTitle, moduleContent, slug } = page;
 
 	return (
 		<>
+			<MetaHead
+				title={title}
+				slug={linkResolver('page', slug)}
+			/>
 			{page.megaHeadline !== null ? (
 				<PageTitle title={title} megaTitle={megaHeadline} />
 			) : null}

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import 'styles/main.scss';
 import { Layout } from 'components/layout'
-import { Footer, Header } from 'components/navigation'
+import { MetaHead } from 'components/meta'
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();

@@ -8,6 +8,8 @@ import {
 } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer'
 import { HeroImage, Title } from 'components/portfolio'
+import { MetaHead } from 'components/meta'
+import { linkResolver } from 'utils/linkResolver';
 
 export default function PortfolioProject({ data, preview }) {
 	const router = useRouter();
@@ -29,10 +31,15 @@ export default function PortfolioProject({ data, preview }) {
 		title,
 		featuredImage,
 		moduleContent,
+		slug
 	} = portfolioProject;
 
 	return (
 		<>
+			<MetaHead
+				title={title}
+				slug={linkResolver('portfolio', slug)}
+			/>
 			{featuredImage.asset &&			
 				<HeroImage
 					source={featuredImage.asset}

@@ -27,8 +27,5 @@ export const RenderFormControls = ({ input }: RenderFormControlsProps) => {
         }
     })
 
-
-    console.log(input)
-
     return <>{getFormControls}</>
 }
