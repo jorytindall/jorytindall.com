@@ -2,21 +2,21 @@
 
 .wrapper {
 	padding: 2.5rem;
-	background: var(--color-tertiary-medium-tint);
+	background: $color-tertiary-200;
 	margin: 2.5rem 0;
 	transition: all 0.15s ease-in-out;
+
+	a {
+		text-decoration: none;
+	}
 
 	&:hover {
 		cursor: pointer;
 		transform: translateY(-4px);
-		background: var(--color-primary-main);
+		background: $color-primary-300;
 
 		& a > * {
-			color: var(--color-accent-01);
+			color: $color-neutral-100;
 		}
-	}
-
-	a {
-		text-decoration: none;
 	}
 }
