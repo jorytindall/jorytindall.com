@@ -3,6 +3,11 @@ import { useRouter } from 'next/router';
 import { usePreviewSubscriptionHook } from 'lib/sanity';
 import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
+import { BlogTitle } from 'components/blog';
+import { RichText } from 'components/rich-text';
+import { GridWrapper, RichTextWrapper } from 'components/layout';
+import { MetaHead } from 'components/meta'
+import { linkResolver } from 'utils/linkResolver'
 
 export default function Event({ data, preview }) {
 	const router = useRouter();
@@ -17,11 +22,27 @@ export default function Event({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title } = post;
+	const { title, slug, publishedDate, featuredImage, author, categories, excerpt, content } = post;
 
 	return (
 		<>
-			<h1>{title}</h1>
+			<MetaHead
+				title={title}
+				slug={linkResolver('post', slug)}
+				description={excerpt}
+			/>
+			<BlogTitle
+				featuredImage={featuredImage}
+				title={title}
+				categories={categories}
+			/>
+			{content && 
+				<GridWrapper>
+					<RichTextWrapper>
+						<RichText value={content} />
+					</RichTextWrapper>
+				</GridWrapper>
+			}
 		</>
 	);
 }

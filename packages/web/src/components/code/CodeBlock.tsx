@@ -10,7 +10,7 @@ interface CodeProps {
     language: string,
 }
 
-export const Code = ({ code, description, language }: CodeProps) => {
+export const CodeBlock = ({ code, description, language }: CodeProps) => {
 
     const classes = getClasses([
         styles.wrapper

@@ -63,9 +63,9 @@ export const GET_BLOG_POSTS = groq`
         publishedDate,
         featuredImage,
         author,
-        categories,
+        categories[]->,
         excerpt,
-        postContent
+        "content": content.content,
     }
 `;
 

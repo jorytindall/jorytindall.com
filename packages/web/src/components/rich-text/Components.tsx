@@ -1,7 +1,6 @@
 import { Headline, Paragraph, Code, InlineLink, List, Item } from 'components/typography';
-import { linkResolver } from 'utils/linkResolver';
 import { Blockquote } from 'components/blockquote';
-// Add code block and inline image
+import { CodeBlock } from 'components/code'
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -36,10 +35,11 @@ export const Components = {
 	},
 	marks: {
 		internalLink: ({ value, children }: MarkProps) => <InlineLink type="primary" href={value}>{children}</InlineLink>,
-		code: ({ value, children }: MarkProps) => <p>This is some code</p>,
+		// code: ({ code, language, description }: MarkProps) => <CodeBlock code={code} language={language} description={description} />,
+		code: ({ children }: MarkProps) => <Code>{children}</Code>
 	},
 	types: {
-		codeBlock: ({ value }: TypeProps) => <p>This is a code block</p>,
+		codeBlock: ({ value }: TypeProps) => <CodeBlock code={value.code.code} language={value.language} description={value.description} />,
 		mainImage: ({ value }: TypeProps) => <p>This is an image</p>,
 	},
 };
