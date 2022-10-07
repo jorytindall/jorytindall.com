@@ -1,5 +1,5 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { Paragraph } from 'components/typography';
 import { getClasses } from 'utils/getClasses';
 import styles from 'styles/components/CodeBlock.module.scss';
