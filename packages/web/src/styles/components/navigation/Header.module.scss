@@ -1,0 +1,119 @@
+@use 'styles/abstracts/variables' as *;
+
+.header {
+    position: sticky;
+	background: $color-tertiary-100;
+	background: transparent;
+	top: 0;
+	z-index: 10;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 2rem 2.5rem;
+	box-sizing: border-box;
+
+	@media (max-width: 768px) {
+		padding: 2rem 1rem;
+	}
+}
+
+.headerOverlay {
+	@extend .header;
+	background: $color-neutral-100;
+	height: inherit;
+}
+
+// Burger
+
+.burger {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    background: $color-neutral-100;
+    box-shadow: 0px 0px 12px rgba(22, 15, 41, 0.05);
+	border: 3px solid $color-primary-300;
+	transition: all 0.15s ease-in-out;
+
+	&:hover {
+		box-shadow: 0px 0px 0px 16px rgba(0, 94, 255, 0.3)
+	}
+}
+
+.burgerOverlay {
+	box-shadow: 0px 0px 0px 16px rgba(0, 94, 255, 0.3)
+}
+
+.bar {
+    width: 32px;
+    height: 2px;
+    background: $color-primary-300;
+    margin: 12px 0;
+}
+
+// Overlay
+
+.overlay {
+    width: 100%;
+	height: calc(100vh - 124px);
+	padding: 2.5rem 2rem 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 124px;
+	left: 0;
+	box-sizing: border-box;
+	background: $color-neutral-100;
+
+
+	@media (max-width: 768px) {
+		top: 89px;
+	}
+}
+
+.overlayHidden {
+	@extend .overlay;
+	visibility: hidden;
+}
+
+.overlayVisible {
+	@extend .overlay;
+	visibility: visible;
+}
+
+.linkWrapper {
+	padding: 0 2rem;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	align-self: flex-end;
+	flex-grow: 1;
+
+	@media (max-width: 768px) {
+		padding: 0 1rem;
+	}
+}
+
+.navLink {
+	font-family: $typography-font-family-headline;
+	font-size: 75px;
+	font-weight: bold;
+	line-height: 75px;
+	color: $color-primary-300;
+	text-decoration: none;
+	transition: color 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99),
+		transform 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99);
+	margin: 0.25rem 0;
+	display: block;
+	transform: none;
+
+	&:hover {
+		color: $color-primary-400;
+		transform: translateX(-0.5rem);
+	}
+	&:active {
+		color: $color-primary-400;
+	}
+}
+
+// Featured section

@@ -386,5 +386,325 @@
 				}
 			}
 		}
+	},
+	"typography": {
+		"font-family": {
+			"body": {
+				"value": "Neue Haas Unica, Helvetica, Arial, sans-serif",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Neue Haas Unica, Helvetica, Arial, sans-serif"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "body"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "body"
+				}
+			},
+			"headline": {
+				"value": "Uxum Grotesque, Helvetica, Aria, sans-serif",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Uxum Grotesque, Helvetica, Aria, sans-serif"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "headline"
+				}
+			},
+			"mono": {
+				"value": "Fira Code, courier, monospace",
+				"filePath": "tokens/typography/font-family.json",
+				"isSource": true,
+				"original": {
+					"value": "Fira Code, courier, monospace"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "font-family",
+					"item": "mono"
+				},
+				"path": {
+					"0": "typography",
+					"1": "font-family",
+					"2": "mono"
+				}
+			}
+		},
+		"font-size": {
+			"headline": {
+				"mega": {
+					"value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "mega"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "mega"
+					}
+				},
+				"01": {
+					"value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "01"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "01"
+					}
+				},
+				"02": {
+					"value": "2.5rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "2.5rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "02"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "02"
+					}
+				},
+				"03": {
+					"value": "2rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "2rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "03"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "03"
+					}
+				},
+				"04": {
+					"value": "1.5rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.5rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "04"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "04"
+					}
+				},
+				"05": {
+					"value": "1.25rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.25rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "05"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "05"
+					}
+				},
+				"06": {
+					"value": "1rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "headline",
+						"subitem": "06"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "headline",
+						"3": "06"
+					}
+				}
+			},
+			"body": {
+				"lead": {
+					"value": "1.25rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.25rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "lead"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "lead"
+					}
+				},
+				"primary": {
+					"value": "1.125rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1.125rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "primary"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "primary"
+					}
+				},
+				"secondary": {
+					"value": "1rem",
+					"filePath": "tokens/typography/font-size.json",
+					"isSource": true,
+					"original": {
+						"value": "1rem"
+					},
+					"attributes": {
+						"category": "typography",
+						"type": "font-size",
+						"item": "body",
+						"subitem": "secondary"
+					},
+					"path": {
+						"0": "typography",
+						"1": "font-size",
+						"2": "body",
+						"3": "secondary"
+					}
+				}
+			}
+		},
+		"line-height": {
+			"mega-headline": {
+				"value": "0.9",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "0.9"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "mega-headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "mega-headline"
+				}
+			},
+			"headline": {
+				"value": "1.4",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "1.4"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "headline"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "headline"
+				}
+			},
+			"body": {
+				"value": "1.7",
+				"filePath": "tokens/typography/line-height.json",
+				"isSource": true,
+				"original": {
+					"value": "1.7"
+				},
+				"attributes": {
+					"category": "typography",
+					"type": "line-height",
+					"item": "body"
+				},
+				"path": {
+					"0": "typography",
+					"1": "line-height",
+					"2": "body"
+				}
+			}
+		}
 	}
 }

@@ -1,0 +1,25 @@
+@use 'styles/abstracts/variables';
+
+$gallery-columns: (1, 2, 3, 4);
+
+.wrapper {
+    grid-column: 1 / span 3;
+    display: grid;
+    padding: 2.5rem;
+    gap: 2.5rem;
+
+    @media (max-width: 1000px) {
+        padding: 1rem;
+        gap: 1rem;
+    }
+}
+
+@each $variant in $gallery-columns {
+    .columns-#{$variant} {
+        grid-template-columns: repeat($variant, 1fr);
+
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

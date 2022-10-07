@@ -1,0 +1,8 @@
+@use 'styles/abstracts/variables' as *;
+
+.itemWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 0.25rem;
+}

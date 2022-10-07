@@ -1,0 +1,10 @@
+@use 'styles/abstracts/variables' as *;
+
+.banner {
+	max-width: 100vw;
+	text-align: center;
+	background: $color-secondary-300;
+	padding: 0.25rem 1rem;
+	color: $color-neutral-600;
+	box-sizing: border-box;
+}

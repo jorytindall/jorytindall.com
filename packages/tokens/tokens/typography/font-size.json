@@ -1,0 +1,20 @@
+{
+	"typography": {
+		"font-size": {
+			"headline": {
+				"mega": { "value": "clamp(10vw, 39.3vw - 15.2rem, 9.375rem)" },
+				"01": { "value": "clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem)" },
+				"02": { "value": "2.5rem" },
+				"03": { "value": "2rem" },
+				"04": { "value": "1.5rem" },
+				"05": { "value": "1.25rem" },
+				"06": { "value": "1rem" }
+			},
+			"body": {
+				"lead": { "value": "1.25rem" },
+				"primary": { "value": "1.125rem" },
+				"secondary": { "value": "1rem" }
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+@use 'styles/abstracts/variables' as *;
+
+.button-group {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+	flex-flow: wrap;
+}

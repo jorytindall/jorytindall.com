@@ -1,0 +1,82 @@
+$densityVariants: (
+	'default': 2.5rem,
+	'packed': 1rem,
+	'spacious': 5rem,
+	'collapse': 0,
+);
+
+$directionVariants: (column, row);
+
+$justifyVariants: (
+	normal,
+	flex-start,
+	center,
+	flex-end,
+	space-between,
+	space-around
+);
+
+$alignVariants: (normal, flex-start, center, flex-end);
+
+$textAlignVariants: ( left, center, right );
+
+$gapVariants: (
+	'small' 0.5rem,
+	'default' 1rem,
+	'large' 1.5rem,
+	'extra-large' 2.5rem
+);
+
+@mixin container-base {
+	width: 100%;
+}
+
+.density {
+	@each $variant, $padding in $densityVariants {
+		&_#{$variant} {
+			@include container-base;
+			padding: $padding;
+		}
+	}
+}
+
+.is-flex {
+	display: flex;
+	@include container-base;
+	flex-wrap: wrap;
+}
+
+@each $direction in $directionVariants {
+	.is-flex--#{$direction} {
+		display: flex;
+		flex-direction: $direction;
+	}
+}
+
+@each $justification in $justifyVariants {
+	.is-flex--#{$justification} {
+		display: flex;
+		justify-content: $justification;
+	}
+}
+
+@each $alignment in $alignVariants {
+	.is-flex--#{$alignment} {
+		display: flex;
+		align-items: $alignment;
+	}
+}
+
+@each $variant, $gap in $gapVariants {
+	.is-flex--#{$variant} {
+		gap: $gap;
+	}
+}
+
+@each $variant in $textAlignVariants {
+	.text-align--#{$variant} {
+		& * {
+			text-align: $variant !important;
+		}
+	}
+}

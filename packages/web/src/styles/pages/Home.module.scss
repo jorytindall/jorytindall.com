@@ -1,0 +1,15 @@
+@use 'styles/abstracts/variables' as *;
+
+.mainContent {
+    max-width: 75ch;
+    margin: 0 auto;
+    padding: 0 1rem 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+}

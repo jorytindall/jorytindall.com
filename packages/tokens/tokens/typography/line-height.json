@@ -1,0 +1,9 @@
+{
+	"typography": {
+		"line-height": {
+			"mega-headline": { "value": "0.9" },
+			"headline": { "value": "1.4" },
+			"body": { "value": "1.7" }
+		}
+	}
+}

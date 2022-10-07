@@ -1,0 +1,8 @@
+.form {
+	grid-column: 2;
+	// max-width: 65ch;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 2.5rem;
+}

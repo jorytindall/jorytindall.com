@@ -1,0 +1,41 @@
+@use 'styles/abstracts/variables' as *;
+
+@mixin item-base {
+	font-family: $typography-font-family-body;
+	font-size: 1.125rem;
+	line-height: 1.8;
+	color: $color-neutral-600;
+	margin: 1rem;
+}
+
+.item {
+	@include item-base;
+}
+
+.ordered, .unordered {
+	padding-left: 2rem;
+	list-style-position: outside;
+}
+
+// .ordered {}
+
+.unordered {
+	list-style: none;
+	
+	li {
+		@include item-base;
+		position: relative;
+		padding: 0.5rem 0 0.5rem 0.75rem;
+
+		&::before {
+			content: '';
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			background: url('/arrow-right.png');
+			background-size: cover;
+			background-position: center;
+			left: -2rem;
+		}
+	}
+}

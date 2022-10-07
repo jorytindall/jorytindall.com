@@ -1,0 +1,20 @@
+@use 'styles/abstracts/variables' as *;
+
+.eventItem {
+    display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+    background: $color-tertiary-400;
+	padding: 2rem;
+	text-decoration: none;
+	transition: all 0.1s ease-in-out;
+
+	&:hover {
+		background: $color-primary-300;
+		transform: translateY(-4px);
+
+		& > * {
+			color: $color-neutral-100;
+		}
+	}
+}

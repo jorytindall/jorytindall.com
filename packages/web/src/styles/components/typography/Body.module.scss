@@ -1,0 +1,38 @@
+@use 'styles/abstracts/variables' as *;
+
+$paragraphVariants: (
+	'primary' $typography-font-size-body-primary,
+	'secondary' $typography-font-size-body-secondary,
+	'lead' $typography-font-size-body-lead
+);
+
+@mixin paragraph-base {
+	font-family: $typography-font-family-body;
+	color: $color-neutral-600;
+	line-height: 1.8;
+	margin: 1rem 0;
+
+	a,
+	a:visited {
+		color: $color-primary-300;
+	}
+}
+
+@each $variant, $fontSize in $paragraphVariants {
+	.#{$variant} {
+		@include paragraph-base;
+		font-size: $fontSize;
+	}
+}
+
+.code {
+	background: $color-tertiary-200;
+	color: $color-tertiary-500;
+	padding: 0.25rem 0.5rem;
+	font-family: $typography-font-family-mono;
+}
+
+.collapse {
+	padding: 0;
+	margin: 0;
+}
