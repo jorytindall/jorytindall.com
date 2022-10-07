@@ -16,13 +16,13 @@ export default function Home() {
 						Hey 🤘 My name is Jory Tindall.
 					</Headline>
 					<Headline type="h4">
-						I'm an empathetic interface and experience designer with
-						passions for system-thinking and design systems, design
-						technology, and shredding the saxophone, currently based
-						in Seattle, Washington.
+						I&apos;m an empathetic interface and experience designer
+						with passions for system-thinking and design systems,
+						design technology, and shredding the saxophone,
+						currently based in Seattle, Washington.
 					</Headline>
 					<Paragraph>
-						I'm currently helping to empower a broad range of
+						I&apos;m currently helping to empower a broad range of
 						designers and creative thinkers on the Design System
 						team at{' '}
 						<InlineLink
@@ -62,8 +62,8 @@ export default function Home() {
 						<InlineLink type="internal" href="contact">
 							Drop me a line,
 						</InlineLink>{' '}
-						I'm always looking to meet new people and start up new
-						collaborations.
+						I&apos;m always looking to meet new people and start up
+						new collaborations.
 					</Paragraph>
 				</article>
 			</section>
