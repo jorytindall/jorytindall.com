@@ -5,7 +5,7 @@
 	grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
 	grid-column: 1 / span 3;
 	gap: 5rem;
-    padding: 2.5rem;
+	padding: 2.5rem;
 
 	@media (max-width: 1400px) {
 		gap: 2.5rem;
@@ -22,7 +22,7 @@
 }
 
 .itemWrapper {
-    text-decoration: none;
+	text-decoration: none;
 	transition: all 250ms cubic-bezier(0.77, 0, 0.175, 1);
 
 	* {

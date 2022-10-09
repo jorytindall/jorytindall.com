@@ -1,21 +1,20 @@
 @use 'styles/abstracts/variables' as *;
 
 .wrapper {
-    display: flex;
+	display: flex;
 	flex-direction: row;
 	gap: 0.5rem;
-    background: $color-tertiary-200;
+	background: $color-tertiary-200;
 	text-decoration: none;
 	transition: all 0.1s ease-in-out;
 
 	&:hover {
-        div {
-            & > * {
-                color: $color-neutral-100;
-            }
-        }
+		div {
+			& > * {
+				color: $color-neutral-100;
+			}
+		}
 		background: $color-primary-300;
 		transform: translateY(-4px);
-
 	}
 }

@@ -1,10 +1,10 @@
 @use 'styles/abstracts/variables' as *;
 
 .eventItem {
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-    background: $color-tertiary-400;
+	background: $color-tertiary-400;
 	padding: 2rem;
 	text-decoration: none;
 	transition: all 0.1s ease-in-out;

@@ -12,7 +12,8 @@
 	@include item-base;
 }
 
-.ordered, .unordered {
+.ordered,
+.unordered {
 	padding-left: 2rem;
 	list-style-position: outside;
 }
@@ -21,7 +22,7 @@
 
 .unordered {
 	list-style: none;
-	
+
 	li {
 		@include item-base;
 		position: relative;
