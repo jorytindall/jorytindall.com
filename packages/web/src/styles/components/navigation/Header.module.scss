@@ -15,7 +15,7 @@
 	box-sizing: border-box;
 
 	@media (max-width: 768px) {
-		padding: 2rem 1rem;
+		padding: 1rem 1.5rem;
 	}
 }
 
@@ -55,7 +55,7 @@
 
 .overlay {
     width: 100%;
-	height: calc(100vh - 124px);
+	height: calc(100vh - 130px);
 	padding: 2.5rem 2rem 2rem 2rem;
 	display: flex;
 	flex-direction: column;
@@ -65,9 +65,9 @@
 	box-sizing: border-box;
 	background: $color-neutral-100;
 
-
 	@media (max-width: 768px) {
-		top: 89px;
+		top: 98px;
+		height: calc(100vh - 98px);
 	}
 }
 
