@@ -1,38 +1,37 @@
-import { getClasses } from 'utils/getClasses'
-import { GalleryItem } from './GalleryItem'
-import styles from 'styles/components/gallery/Gallery.module.scss'
+import { getClasses } from 'utils/getClasses';
+import { GalleryItem } from './GalleryItem';
+import styles from 'styles/components/gallery/Gallery.module.scss';
 
 interface GalleryProps {
-    input: {
-        images: any[],
-        columns: string,
-        _key: string,
-    }
+	input: {
+		images: any[];
+		columns: string;
+		_key: string;
+	};
 }
 
 export const Gallery = ({ input }: GalleryProps) => {
+	const classes = getClasses([
+		styles.wrapper,
+		styles['columns-' + input.columns],
+	]);
 
-    const classes = getClasses([
-        styles.wrapper,
-        styles['columns-' + input.columns],
-    ])
+	const { _key, images } = input;
 
-    const { _key, images } = input
+	const galleryImages = images.map((image) => {
+		return (
+			<GalleryItem
+				key={image._key}
+				image={image}
+				altText={image.alternativeText}
+				caption={image.caption}
+			/>
+		);
+	});
 
-    const galleryImages = images.map(image => {
-        return (
-            <GalleryItem
-                key={image._key}
-                image={image}
-                altText={image.alternativeText}
-                caption={image.caption}
-            />
-        )
-    })
-
-    return (
-        <section className={classes} key={_key}>
-            {galleryImages}
-        </section>
-    )
-}
+	return (
+		<section className={classes} key={_key}>
+			{galleryImages}
+		</section>
+	);
+};

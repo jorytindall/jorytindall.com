@@ -6,7 +6,7 @@ import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { Headline } from 'components/typography';
 import { ModuleRenderer } from 'components/module-renderer';
-import { MetaHead } from 'components/meta'
+import { MetaHead } from 'components/meta';
 import { linkResolver } from 'utils/linkResolver';
 
 export default function Page({ data, preview }) {
@@ -26,10 +26,7 @@ export default function Page({ data, preview }) {
 
 	return (
 		<>
-			<MetaHead
-				title={title}
-				slug={linkResolver('page', slug)}
-			/>
+			<MetaHead title={title} slug={linkResolver('page', slug)} />
 			{page.megaHeadline !== null ? (
 				<PageTitle title={title} megaTitle={megaHeadline} />
 			) : null}

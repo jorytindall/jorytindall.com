@@ -1,7 +1,9 @@
-import styles from 'styles/components/layout/RichTextWrapper.module.scss'
+import styles from 'styles/components/layout/RichTextWrapper.module.scss';
 
 interface RichTextWrapperProps {
-    children: React.ReactNode,
+	children: React.ReactNode;
 }
 
-export const RichTextWrapper = ({ children }: RichTextWrapperProps) => <div className={styles.wrapper}>{children}</div>
+export const RichTextWrapper = ({ children }: RichTextWrapperProps) => (
+	<div className={styles.wrapper}>{children}</div>
+);

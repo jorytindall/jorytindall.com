@@ -1,2 +1,2 @@
-export * from './Results'
-export * from './ResultsItem'
+export * from './Results';
+export * from './ResultsItem';

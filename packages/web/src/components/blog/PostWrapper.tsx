@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Headline, Paragraph } from 'components/typography'
+import Link from 'next/link';
+import { Headline, Paragraph } from 'components/typography';
 import styles from 'styles/components/blog/PostWrapper.module.scss';
 
 interface PostWrapperProps {
@@ -13,7 +13,9 @@ export const PostWrapper = ({ title, excerpt, link }: PostWrapperProps) => {
 		<article className={styles.wrapper}>
 			<Link href={link}>
 				<a>
-					<Headline type='h4' collapse>{title}</Headline>
+					<Headline type="h4" collapse>
+						{title}
+					</Headline>
 					<Paragraph>{excerpt}</Paragraph>
 				</a>
 			</Link>

@@ -1,8 +1,0 @@
-/node_modules
-.DS_STORE
-/public
-/.cache
-.npm
-
-.env.development
-.env.production

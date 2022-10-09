@@ -1,3 +1,3 @@
-export * from './Gallery'
-export * from './GalleryItem'
-export * from './FullWidthImage'
+export * from './Gallery';
+export * from './GalleryItem';
+export * from './FullWidthImage';

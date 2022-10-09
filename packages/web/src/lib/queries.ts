@@ -81,7 +81,7 @@ export const GET_ALL_BLOG_POSTS = groq`
         publishedDate,
         excerpt,
     }
-`
+`;
 
 // Event Queries
 
@@ -112,7 +112,7 @@ export const GET_ALL_EVENTS = groq`
         location,
         description,
     }
-`
+`;
 
 // Music queries
 

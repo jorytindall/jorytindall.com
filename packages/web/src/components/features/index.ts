@@ -1,2 +1,2 @@
-export * from './Features'
-export * from './FeatureItem'
+export * from './Features';
+export * from './FeatureItem';

@@ -6,9 +6,9 @@ import {
 	GET_PORTFOLIO_PROJECTS,
 	GET_PORTFOLIO_PROJECT_PATHS,
 } from 'lib/queries';
-import { ModuleRenderer } from 'components/module-renderer'
-import { HeroImage, Title } from 'components/portfolio'
-import { MetaHead } from 'components/meta'
+import { ModuleRenderer } from 'components/module-renderer';
+import { HeroImage, Title } from 'components/portfolio';
+import { MetaHead } from 'components/meta';
 import { linkResolver } from 'utils/linkResolver';
 
 export default function PortfolioProject({ data, preview }) {
@@ -27,31 +27,19 @@ export default function PortfolioProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { 
-		title,
-		featuredImage,
-		moduleContent,
-		slug
-	} = portfolioProject;
+	const { title, featuredImage, moduleContent, slug } = portfolioProject;
 
 	return (
 		<>
-			<MetaHead
-				title={title}
-				slug={linkResolver('portfolio', slug)}
-			/>
-			{featuredImage.asset &&			
+			<MetaHead title={title} slug={linkResolver('portfolio', slug)} />
+			{featuredImage.asset && (
 				<HeroImage
 					source={featuredImage.asset}
 					altText={featuredImage.alternativeText}
 				/>
-			}
-			{title &&
-				<Title input={portfolioProject} />
-			}
-			{moduleContent &&
-				<ModuleRenderer modules={moduleContent} />
-			}
+			)}
+			{title && <Title input={portfolioProject} />}
+			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>
 	);
 }

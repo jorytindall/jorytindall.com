@@ -1,1 +1,1 @@
-import { BiCalendar } from 'react-icons/bi'
+import { BiCalendar } from 'react-icons/bi';

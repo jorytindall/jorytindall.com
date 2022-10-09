@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
 import 'styles/main.scss';
-import { Layout } from 'components/layout'
-import { MetaHead } from 'components/meta'
+import { Layout } from 'components/layout';
+import { MetaHead } from 'components/meta';
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
 		<Layout>
 			<Component {...pageProps} />
 		</Layout>
-	)
+	);
 }
 
 export default MyApp;

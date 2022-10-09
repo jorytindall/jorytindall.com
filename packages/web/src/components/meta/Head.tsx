@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 interface MetaHeadProps {
-	title?: string,
-	description?: string,
-	ogImage?: string,
-	slug?: string,
+	title?: string;
+	description?: string;
+	ogImage?: string;
+	slug?: string;
 }
 
 export const MetaHead = ({
@@ -15,16 +15,19 @@ export const MetaHead = ({
 }: MetaHeadProps) => {
 	return (
 		<Head>
-			<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+			<meta
+				name="viewport"
+				content="initial-scale=1.0, width=device-width"
+			/>
 			<meta name="theme-color" content="#005eff" />
 			<title>{`${title} | Jory Tindall`}</title>
-			<meta content='@jorytindall' name='twitter:site' />
-			<meta content='summary_large_image' name='twitter:card' />
-			<meta content={description} name='description' />
-			<meta content={title} property='og:title' />
-			<meta content={description} property='og:description' />
-			<meta content={`https://jorytindall/${slug}`} property='og:url' />
-			<meta content={ogImage} property='og:image' />
+			<meta content="@jorytindall" name="twitter:site" />
+			<meta content="summary_large_image" name="twitter:card" />
+			<meta content={description} name="description" />
+			<meta content={title} property="og:title" />
+			<meta content={description} property="og:description" />
+			<meta content={`https://jorytindall/${slug}`} property="og:url" />
+			<meta content={ogImage} property="og:image" />
 			<link
 				rel="apple-touch-icon"
 				sizes="180x180"

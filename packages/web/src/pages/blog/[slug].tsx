@@ -6,8 +6,8 @@ import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
 import { BlogTitle } from 'components/blog';
 import { RichText } from 'components/rich-text';
 import { GridWrapper, RichTextWrapper } from 'components/layout';
-import { MetaHead } from 'components/meta'
-import { linkResolver } from 'utils/linkResolver'
+import { MetaHead } from 'components/meta';
+import { linkResolver } from 'utils/linkResolver';
 
 export default function Event({ data, preview }) {
 	const router = useRouter();
@@ -22,7 +22,16 @@ export default function Event({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, slug, publishedDate, featuredImage, author, categories, excerpt, content } = post;
+	const {
+		title,
+		slug,
+		publishedDate,
+		featuredImage,
+		author,
+		categories,
+		excerpt,
+		content,
+	} = post;
 
 	return (
 		<>
@@ -36,13 +45,13 @@ export default function Event({ data, preview }) {
 				title={title}
 				categories={categories}
 			/>
-			{content && 
+			{content && (
 				<GridWrapper>
 					<RichTextWrapper>
 						<RichText value={content} />
 					</RichTextWrapper>
 				</GridWrapper>
-			}
+			)}
 		</>
 	);
 }
