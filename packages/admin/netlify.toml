@@ -1,0 +1,8 @@
+[build]
+    base="/"
+    publish="dist/"
+
+[[redirects]]
+    from = "/*"
+    to = "/"
+    status = 200
