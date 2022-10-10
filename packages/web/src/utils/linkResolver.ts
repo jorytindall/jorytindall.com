@@ -4,15 +4,15 @@ export function linkResolver(parent: string, slug: string) {
 			return `${slug}`;
 		case 'post':
 			return `blog/${slug}`;
-		case 'portfolio':
+		case 'portfolioProject' || 'portfolio':
 			return `portfolio/${slug}`;
 		case 'event':
 			return `events/${slug}`;
-		case 'music':
+		case 'musicProject' || 'music':
 			return `music/${slug}`;
 		case 'landingPage':
 			return `p/${slug}`;
 		default:
-			return null;
+			return `${slug}`;
 	}
 }
