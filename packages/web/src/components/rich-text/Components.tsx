@@ -62,7 +62,6 @@ export const Components = {
 				{children}
 			</InlineLink>
 		),
-		// code: ({ code, language, description }: MarkProps) => <CodeBlock code={code} language={language} description={description} />,
 		code: ({ children }: MarkProps) => <Code>{children}</Code>,
 	},
 	types: {
