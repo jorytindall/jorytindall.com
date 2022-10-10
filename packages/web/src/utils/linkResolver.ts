@@ -1,4 +1,16 @@
-export function linkResolver(parent: string, slug: string) {
+// interface LinkResolverProps {
+// 	parent:
+// 		| 'page'
+// 		| 'post'
+// 		| 'portfolioProject'
+// 		| 'event'
+// 		| 'musicProject'
+// 		| 'landingPage'
+// 		| '';
+// 	slug: any;
+// }
+
+export function linkResolver(parent, slug) {
 	switch (parent) {
 		case 'page':
 			return `${slug}`;

@@ -31,7 +31,10 @@ export default function PortfolioProject({ data, preview }) {
 
 	return (
 		<>
-			<MetaHead title={title} slug={linkResolver('portfolio', slug)} />
+			<MetaHead
+				title={title}
+				slug={linkResolver('portfolioProject', slug)}
+			/>
 			{featuredImage.asset && (
 				<HeroImage
 					source={featuredImage.asset}

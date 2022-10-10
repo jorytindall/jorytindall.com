@@ -23,7 +23,7 @@ export const PortfolioListItem = ({
 
 	return (
 		<article className={styles.itemWrapper} key={title}>
-			<Link href={linkResolver('portfolio', slug)}>
+			<Link href={linkResolver('portfolioProject', slug)}>
 				<a>
 					<Image
 						src={image}
