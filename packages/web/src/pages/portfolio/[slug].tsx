@@ -9,6 +9,7 @@ import {
 import { ModuleRenderer } from 'components/module-renderer';
 import { HeroImage, Title } from 'components/portfolio';
 import { MetaHead } from 'components/meta';
+import { Layout } from 'components/layout'
 import { linkResolver } from 'utils/linkResolver';
 
 export default function PortfolioProject({ data, preview }) {
@@ -30,7 +31,7 @@ export default function PortfolioProject({ data, preview }) {
 	const { title, featuredImage, moduleContent, slug } = portfolioProject;
 
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title={title}
 				slug={linkResolver('portfolioProject', slug)}
@@ -43,7 +44,7 @@ export default function PortfolioProject({ data, preview }) {
 			)}
 			{title && <Title input={portfolioProject} />}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
-		</>
+		</Layout>
 	);
 }
 

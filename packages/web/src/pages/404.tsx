@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { InlineLink, Headline, Paragraph } from 'components/typography';
-import { Container } from 'components/layout';
+import { Layout, Container } from 'components/layout';
 import { MetaHead } from 'components/meta';
 
 export default function Custom404() {
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title="404: bummer dude, couldn&lsquo;t find that page."
 				description="404: bummer dude, couldn&lsquo;t find that page."
@@ -35,6 +35,6 @@ export default function Custom404() {
 					</InlineLink>
 				</Paragraph>
 			</Container>
-		</>
+		</Layout>
 	);
 }

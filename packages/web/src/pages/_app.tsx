@@ -29,9 +29,7 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<Header />
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			<Component {...pageProps} />
 			<Footer />
 		</>
 	);

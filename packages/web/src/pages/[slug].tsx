@@ -8,6 +8,7 @@ import { Headline } from 'components/typography';
 import { ModuleRenderer } from 'components/module-renderer';
 import { MetaHead } from 'components/meta';
 import { linkResolver } from 'utils/linkResolver';
+import { Layout } from 'components/layout'
 
 export default function Page({ data, preview }) {
 	const router = useRouter();
@@ -25,7 +26,7 @@ export default function Page({ data, preview }) {
 	const { title, megaHeadline, showTitle, moduleContent, slug } = page;
 
 	return (
-		<>
+		<Layout>
 			<MetaHead title={title} slug={linkResolver('page', slug)} />
 			{page.megaHeadline !== null ? (
 				<PageTitle title={title} megaTitle={megaHeadline} />
@@ -34,7 +35,7 @@ export default function Page({ data, preview }) {
 				<Headline tag="h1">{title}</Headline>
 			) : null}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
-		</>
+		</Layout>
 	);
 }
 

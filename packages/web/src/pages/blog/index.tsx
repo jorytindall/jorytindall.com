@@ -3,6 +3,7 @@ import { GET_ALL_BLOG_POSTS } from 'lib/queries';
 import { PostWrapper } from 'components/blog';
 import { Headline } from 'components/typography';
 import { MetaHead } from 'components/meta';
+import { Layout } from 'components/layout'
 import styles from 'styles/pages/Blog.module.scss';
 import { linkResolver } from 'utils/linkResolver';
 
@@ -19,7 +20,7 @@ export default function Blog({ data }) {
 	});
 
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title="Blog"
 				description="Recent blog posts and writings"
@@ -31,7 +32,7 @@ export default function Blog({ data }) {
 				</Headline>
 				{posts}
 			</section>
-		</>
+		</Layout>
 	);
 }
 

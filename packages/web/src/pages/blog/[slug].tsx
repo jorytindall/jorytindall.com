@@ -5,7 +5,7 @@ import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
 import { BlogTitle } from 'components/blog';
 import { RichText } from 'components/rich-text';
-import { GridWrapper, RichTextWrapper } from 'components/layout';
+import { Layout, GridWrapper, RichTextWrapper } from 'components/layout';
 import { MetaHead } from 'components/meta';
 import { linkResolver } from 'utils/linkResolver';
 
@@ -34,7 +34,7 @@ export default function Event({ data, preview }) {
 	} = post;
 
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title={title}
 				slug={linkResolver('post', slug)}
@@ -52,7 +52,7 @@ export default function Event({ data, preview }) {
 					</RichTextWrapper>
 				</GridWrapper>
 			)}
-		</>
+		</Layout>
 	);
 }
 
