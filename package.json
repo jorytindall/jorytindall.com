@@ -11,11 +11,15 @@
 		"admin:dev": "yarn workspace admin start",
 		"admin:build": "yarn workspace admin build",
 		"tokens:build": "yarn workspace tokens style-dictionary build",
-		"format:all": "prettier --write ."
+		"format:all": "prettier --write .",
+		"build": "turbo run build",
+		"test": "turbo run test",
+		"lint": "turbo run lint",
+		"dev": "turbo run dev"
 	},
 	"devDependencies": {
 		"prettier": "^2.7.1",
-		"turbo": "^1.4.2"
+		"turbo": "^1.5.6"
 	},
 	"repository": {
 		"type": "git",
