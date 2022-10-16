@@ -5,6 +5,7 @@ import { PageTitle } from 'components/page-title';
 import { EventItem } from 'components/event';
 import { Paragraph } from 'components/typography';
 import { MetaHead } from 'components/meta';
+import { Layout } from 'components/layout'
 import styles from 'styles/pages/Events.module.scss';
 
 interface filterEventsProps {
@@ -37,7 +38,7 @@ export default function EventsPage({ data, preview }) {
 		);
 
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title="Events"
 				description="Upcoming events and live music"
@@ -45,7 +46,7 @@ export default function EventsPage({ data, preview }) {
 			/>
 			<PageTitle title="🗓 Events" megaTitle="Upcoming Events" />
 			<section className={styles.wrapper}>{filterEvents}</section>
-		</>
+		</Layout>
 	);
 }
 

@@ -1,11 +1,12 @@
 import { MetaHead } from 'components/meta';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { TextArrow } from 'components/button';
+import { Layout } from 'components/layout'
 import styles from 'styles/pages/Home.module.scss';
 
 export default function Home() {
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title="Designer, saxophonist artist, and educator"
 				description="Home of Jory Tindall; User experience designer, saxophone artist, and music educator based in Seattle, Washington."
@@ -67,7 +68,7 @@ export default function Home() {
 					</Paragraph>
 				</article>
 			</section>
-		</>
+		</Layout>
 	);
 }
 

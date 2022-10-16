@@ -6,7 +6,7 @@ import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { RichText } from 'components/rich-text';
-import { GridWrapper } from 'components/layout';
+import { Layout, GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import { MetaHead } from 'components/meta';
 import { linkResolver } from 'utils/linkResolver';
@@ -28,7 +28,7 @@ export default function Event({ data, preview }) {
 	const { title, date, description, location, image, url, slug } = event;
 
 	return (
-		<>
+		<Layout>
 			<MetaHead
 				title={title}
 				description={title}
@@ -49,7 +49,7 @@ export default function Event({ data, preview }) {
 					<Button href={url}>Get tickets</Button>
 				</section>
 			</GridWrapper>
-		</>
+		</Layout>
 	);
 }
 

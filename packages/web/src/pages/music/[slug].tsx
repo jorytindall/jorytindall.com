@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { usePreviewSubscriptionHook } from 'lib/sanity';
 import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
+import { Layout } from 'components/layout'
 
 export default function MusicProject({ data, preview }) {
 	const router = useRouter();
@@ -23,9 +24,9 @@ export default function MusicProject({ data, preview }) {
 	const { title } = musicProject;
 
 	return (
-		<>
+		<Layout>
 			<h1>{title}</h1>
-		</>
+		</Layout>
 	);
 }
 
