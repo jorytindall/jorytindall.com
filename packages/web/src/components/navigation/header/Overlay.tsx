@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { getClasses } from 'utils/getClasses';
-import { Headline } from 'components/typography';
 import { FeaturedItem } from './FeaturedItem';
 import styles from 'styles/components/navigation/Header.module.scss';
 

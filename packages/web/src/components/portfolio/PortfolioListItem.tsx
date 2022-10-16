@@ -31,7 +31,7 @@ export const PortfolioListItem = ({
 						layout="responsive"
 						alt={image.alternativeText}
 					/>
-					<Headline type="h4" collapse>
+					<Headline tag="h4" collapse>
 						{title}
 					</Headline>
 					<Paragraph type="primary" collapse>

@@ -26,7 +26,7 @@ export default function Custom404() {
 					height={350}
 					priority
 				/>
-				<Headline type="h1">404, not found :(</Headline>
+				<Headline tag="h1">404, not found :(</Headline>
 				<Paragraph>
 					Bummer dude, couldn&apos;t find that page. Would you like to
 					go{' '}

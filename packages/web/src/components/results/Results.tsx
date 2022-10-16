@@ -17,7 +17,7 @@ export const Results = ({ input }: ResultsProps) => {
 
 	return (
 		<section className={classes}>
-			{description && <Headline type="h5">{description}</Headline>}
+			{description && <Headline tag="h5">{description}</Headline>}
 			{resultItems && (
 				<div>
 					{resultItems.map((item) => {

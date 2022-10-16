@@ -22,8 +22,6 @@ export const Headline = ({
 		collapse ? styles.collapse : null,
 	]);
 
-	console.log(color)
-
 	switch (tag) {
 		case 'h1':
 			return <h1 className={classes}>{children}</h1>;

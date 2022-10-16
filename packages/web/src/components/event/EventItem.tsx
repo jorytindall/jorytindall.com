@@ -23,7 +23,7 @@ export const EventItem = ({ title, date, location, slug }: EventItemProps) => {
 					semanticElement="div"
 					isFlex
 				>
-					<Headline type="h4" collapse>
+					<Headline tag="h4" collapse>
 						{title}
 					</Headline>
 					<Paragraph collapse>{formatDateTime(date)}</Paragraph>

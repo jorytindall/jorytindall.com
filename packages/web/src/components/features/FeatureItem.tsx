@@ -38,7 +38,7 @@ export const FeatureItem = ({
 					/>
 				)}
 				{title && (
-					<Headline type="h5" collapse>
+					<Headline tag="h5" collapse>
 						{title}
 					</Headline>
 				)}

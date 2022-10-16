@@ -18,14 +18,14 @@ export const ResultsItem = ({
 		<article className={styles.resultsItem}>
 			{metric && (
 				<span className={styles.percentage}>
-					<Headline type="h1" collapse>
+					<Headline tag="h1" collapse>
 						{metric}
 					</Headline>
 				</span>
 			)}
 			{percentageDirection && <p>Add the percentage direction</p>}
 			{headline && (
-				<Headline type="h6" collapse>
+				<Headline tag="h6" collapse>
 					{headline}
 				</Headline>
 			)}
