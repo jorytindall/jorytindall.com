@@ -58,7 +58,6 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 			className={getOverlayClass}
 		>
 			<motion.aside 
-				variants={linkAnimation}
 				initial='hidden'
 				animate='enter'
 				className={styles.linkWrapper}
