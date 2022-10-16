@@ -12,10 +12,10 @@ export default function Home() {
 			/>
 			<section className={styles.mainContent}>
 				<article>
-					<Headline type="h2">
+					<Headline tag="h1" size='h2'>
 						Hey 🤘 My name is Jory Tindall.
 					</Headline>
-					<Headline type="h4">
+					<Headline tag="p" size='h4'>
 						I&apos;m an empathetic interface and experience designer
 						with passions for system-thinking and design systems,
 						design technology, and shredding the saxophone,
@@ -57,7 +57,7 @@ export default function Home() {
 					<TextArrow href="portfolio">View my portfolio</TextArrow>
 				</article>
 				<article>
-					<Headline type="h3">Want to know more?</Headline>
+					<Headline tag="h3">Want to know more?</Headline>
 					<Paragraph>
 						<InlineLink type="internal" href="contact">
 							Drop me a line,

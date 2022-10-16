@@ -31,7 +31,7 @@ export default function Page({ data, preview }) {
 				<PageTitle title={title} megaTitle={megaHeadline} />
 			) : null}
 			{megaHeadline === null ? (
-				<Headline type="h1">{title}</Headline>
+				<Headline tag="h1">{title}</Headline>
 			) : null}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>

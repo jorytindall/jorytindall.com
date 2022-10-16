@@ -25,22 +25,22 @@ interface TypeProps {
 export const Components = {
 	block: {
 		h1: ({ children }: BlockProps) => (
-			<Headline type="h1">{children}</Headline>
+			<Headline tag="h1">{children}</Headline>
 		),
 		h2: ({ children }: BlockProps) => (
-			<Headline type="h2">{children}</Headline>
+			<Headline tag="h2">{children}</Headline>
 		),
 		h3: ({ children }: BlockProps) => (
-			<Headline type="h3">{children}</Headline>
+			<Headline tag="h3">{children}</Headline>
 		),
 		h4: ({ children }: BlockProps) => (
-			<Headline type="h4">{children}</Headline>
+			<Headline tag="h4">{children}</Headline>
 		),
 		h5: ({ children }: BlockProps) => (
-			<Headline type="h5">{children}</Headline>
+			<Headline tag="h5">{children}</Headline>
 		),
 		h6: ({ children }: BlockProps) => (
-			<Headline type="h6">{children}</Headline>
+			<Headline tag="h6">{children}</Headline>
 		),
 		normal: ({ children }: BlockProps) => (
 			<Paragraph type="primary">{children}</Paragraph>

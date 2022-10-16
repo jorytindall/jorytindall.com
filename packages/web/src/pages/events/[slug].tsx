@@ -36,7 +36,7 @@ export default function Event({ data, preview }) {
 			/>
 			<GridWrapper>
 				<section className={styles.wrapper}>
-					<Headline type="h1" collapse>
+					<Headline tag="h1" collapse>
 						{title}
 					</Headline>
 					<Paragraph collapse>

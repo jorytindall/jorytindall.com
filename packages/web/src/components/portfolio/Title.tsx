@@ -64,7 +64,7 @@ export const Title = ({ input }: TitleProps) => {
 	const mapProjectDetails = projectDetails.map((project) => {
 		return (
 			<div className={styles.detailItem} key={project.title}>
-				<Headline type="h6" collapse>
+				<Headline tag="h6" collapse>
 					{project.title}
 				</Headline>
 				<Container
@@ -84,8 +84,8 @@ export const Title = ({ input }: TitleProps) => {
 		<section className={styles.wrapper}>
 			<div className={styles.content}>
 				<article className={styles.titleWrapper}>
-					<Headline type="h6">{client}</Headline>
-					<Headline type="h1" collapse>
+					<Headline tag="h6">{client}</Headline>
+					<Headline tag="h1" collapse>
 						{title}
 					</Headline>
 				</article>

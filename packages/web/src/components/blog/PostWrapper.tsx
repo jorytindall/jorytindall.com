@@ -13,7 +13,7 @@ export const PostWrapper = ({ title, excerpt, link }: PostWrapperProps) => {
 		<article className={styles.wrapper}>
 			<Link href={link}>
 				<a>
-					<Headline type="h4" collapse>
+					<Headline tag="h4" collapse>
 						{title}
 					</Headline>
 					<Paragraph>{excerpt}</Paragraph>

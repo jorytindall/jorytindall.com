@@ -26,7 +26,7 @@ export default function Blog({ data }) {
 				slug="blog"
 			/>
 			<section className={styles.wrapper}>
-				<Headline type="h3" collapse>
+				<Headline tag="h3" collapse>
 					Recent posts
 				</Headline>
 				{posts}

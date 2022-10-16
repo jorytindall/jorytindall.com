@@ -1,8 +1,9 @@
 @use 'styles/abstracts/variables' as *;
 
-$headline-variants: ('mega', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6');
+$headline-tags: ('mega', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6');
+$headline-colors: ('primary', 'secondary', 'light');
 
-$headline-variants-props: (
+$headline-sizes: (
 	'mega': (
 		'font-size': $typography-font-size-headline-mega,
 		'line-height': $typography-line-height-mega-headline,
@@ -33,6 +34,12 @@ $headline-variants-props: (
 	),
 );
 
+$headline-color-props: (
+	'primary': ( 'color': $color-primary-300 ) ,
+	'secondary': ( 'color': $color-neutral-600 ),
+	'light': ( 'color': $color-neutral-100 ),
+);
+
 @mixin headline-base {
 	font-family: $typography-font-family-headline;
 	color: $color-primary-300;
@@ -41,11 +48,17 @@ $headline-variants-props: (
 	margin: 2rem 0 1rem 0;
 }
 
-@each $variant in $headline-variants {
+@each $variant in $headline-tags {
 	.#{$variant} {
 		@include headline-base;
-		font-size: map-get($headline-variants-props, $variant, 'font-size');
-		line-height: map-get($headline-variants-props, $variant, 'line-height');
+		font-size: map-get($headline-sizes, $variant, 'font-size');
+		line-height: map-get($headline-sizes, $variant, 'line-height');
+	}
+}
+
+@each $color in $headline-colors {
+	.#{$color} {
+		color: map-get($headline-color-props, $color, 'color');
 	}
 }
 

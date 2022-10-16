@@ -40,7 +40,7 @@ export const BlogTitle = ({
 			{categories && (
 				<div className={styles.categoryContainer}>{mapCategories}</div>
 			)}
-			{title && <Headline type="h1">{title}</Headline>}
+			{title && <Headline tag="h1">{title}</Headline>}
 		</section>
 	);
 };

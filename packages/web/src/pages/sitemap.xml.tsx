@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity.server.ts';
+import { sanityClient } from 'lib/sanity.server';
 import { GET_SITEMAP } from 'lib/queries/sitemap';
 import { linkResolver } from 'utils/linkResolver';
 
@@ -37,8 +37,6 @@ export async function getServerSideProps({ res }) {
 	];
 
 	const data = staticData.concat(dynamicData.pages);
-
-	console.log(data);
 
 	const pages = data.map((page) => {
 		const slug = page ? linkResolver(page._type, page.slug.current) : '';
