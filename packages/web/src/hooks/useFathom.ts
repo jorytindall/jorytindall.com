@@ -8,7 +8,10 @@ export const useFathom = () => {
     useEffect(() => {
 		if (process.env.NODE_ENV === 'production') {
 			Fathom.load(process.env.NEXT_PUBLIC_FATHOM_SITE_ID, {
-				includedDomains: ['jorytindall.com'],
+				includedDomains: [
+					'jorytindall.com',
+					'www.jorytindall.com'
+				],
 			});
 		}
 
