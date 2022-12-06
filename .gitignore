@@ -9,3 +9,5 @@ node_modules
 packages/**/node_modules
 packages/.DS_Store
 packages/**/.turbo
+
+.yarn
