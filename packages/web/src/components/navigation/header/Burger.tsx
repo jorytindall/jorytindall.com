@@ -30,18 +30,17 @@ export const Burger = ({ overlay, toggle }: BurgerProps) => {
 
 	return (
 		<div className={classes} onClick={() => toggle(!overlay)}>
-			<motion.div
-				animate={overlay ? 'open' : 'closed'}
-				variants={topVariants}
-				transition={transition}
-				className={styles.bar}
-			/>
-			<motion.div
-				animate={overlay ? 'open' : 'closed'}
-				variants={bottomVariants}
-				transition={transition}
-				className={styles.bar}
-			/>
+			{overlay && <span role='img' aria-label='open menu' className={styles.burgerEmoji}>🍔</span>}
+			{!overlay &&
+				<>
+					<motion.div
+						className={styles.bar}
+					/>
+					<motion.div
+						className={styles.bar}
+					/>
+				</>
+			}
 		</div>
 	);
 };

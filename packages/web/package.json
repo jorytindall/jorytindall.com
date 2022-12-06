@@ -1,7 +1,6 @@
 {
 	"name": "web",
 	"version": "2.0.0",
-	"private": false,
 	"author": "Jory Tindall <jory@hypecreativestudios.com",
 	"license": "MIT",
 	"scripts": {
