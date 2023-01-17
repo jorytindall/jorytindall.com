@@ -13,17 +13,11 @@ export default {
 			name: `alternativeText`,
 			title: `Alternative Text`,
 			type: `string`,
-			options: {
-				isHighlighted: true,
-			},
 		},
 		{
 			name: `caption`,
 			title: `Caption`,
 			type: `string`,
-			options: {
-				isHighlighted: true,
-			},
 		},
 	],
 	preview: {
