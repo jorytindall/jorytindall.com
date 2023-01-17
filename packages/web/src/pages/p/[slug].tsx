@@ -39,6 +39,7 @@ export async function getStaticProps({ params, preview = false }) {
 			preview,
 			data: { landingPage },
 		},
+		revalidate: 60,
 	};
 }
 

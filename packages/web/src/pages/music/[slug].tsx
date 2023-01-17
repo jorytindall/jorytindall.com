@@ -40,6 +40,7 @@ export async function getStaticProps({ params, preview = false }) {
 			preview,
 			data: { musicProject },
 		},
+		revalidate: 60,
 	};
 }
 
