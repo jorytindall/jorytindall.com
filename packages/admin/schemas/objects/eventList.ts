@@ -24,6 +24,5 @@ export default {
 			project2: 'items.2.eventListItem.title',
 			project3: 'items.3.eventListItem.title',
 		},
-		prepare(selection) {},
 	},
 };

@@ -1,6 +1,9 @@
-# Sanity Studio for jorytindall.com
+# Sanity Clean Content Studio
 
-Content including portfolio, blog posts, pages, and other information about Jory Tindall.
+Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
 
-Deploys to Netlify
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5aaf7d5a-1cdd-4ae2-871b-1c25b63d39ed/deploy-status)](https://app.netlify.com/sites/jorytindall-admin/deploys)
+Now you can do the following things:
+
+- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
+- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
+- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)

@@ -1,43 +1,34 @@
 {
-	"name": "admin",
-	"private": true,
-	"version": "1.0.0",
-	"description": "Sanity Studio admin for Jory Tindall's website.",
-	"main": "package.json",
-	"author": "Jory Tindall <jory@hypecreativestudios.com>",
-	"license": "UNLICENSED",
-	"scripts": {
-		"start": "sanity start",
-		"dev": "sanity start",
-		"build": "sanity build"
-	},
-	"keywords": [
-		"sanity"
-	],
-	"dependencies": {
-		"@portabletext/types": "^1.0.3",
-		"@sanity/base": "^2.29.5",
-		"@sanity/cli": "^2.28.0",
-		"@sanity/code-input": "^2.29.5",
-		"@sanity/color-input": "^2.29.5",
-		"@sanity/components": "^2.14.0",
-		"@sanity/core": "^2.29.5",
-		"@sanity/dashboard": "^2.29.5",
-		"@sanity/default-layout": "^2.29.5",
-		"@sanity/default-login": "^2.29.5",
-		"@sanity/desk-tool": "^2.29.6",
-		"@sanity/vision": "^2.29.5",
-		"prop-types": "^15.8.1",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-icons": "^4.3.1",
-		"sanity-plugin-color-list": "^2.0.2",
-		"sanity-plugin-dashboard-widget-document-list": "^0.0.13",
-		"sanity-plugin-dashboard-widget-netlify": "^1.2.1",
-		"sanity-plugin-media": "^1.4.4",
-		"styled-components": "^5.3.3"
-	},
-	"devDependencies": {
-		"prettier": "^2.6.0"
-	}
+  "name": "admin",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/code-input": "^2.29.5",
+    "@sanity/vision": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.3.1",
+    "react-is": "^18.2.0",
+    "sanity": "^3.0.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@sanity/dashboard": "^2.36.0",
+    "@sanity/eslint-config-studio": "^2.0.1",
+    "eslint": "^8.6.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.0.0"
+  }
 }

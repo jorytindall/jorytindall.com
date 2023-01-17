@@ -29,17 +29,17 @@ export default {
 				],
 			},
 		},
-		{
-			name: `code`,
-			title: `Code`,
-			type: `code`,
-			options: {
-				language: `js`,
-				languageAlternatives: [`html`, `css`],
-				theme: `monokai`,
-				withFileName: true,
-			},
-		},
+		// {
+		// 	name: `code`,
+		// 	title: `Code`,
+		// 	type: `code`,
+		// 	options: {
+		// 		language: `js`,
+		// 		languageAlternatives: [`html`, `css`],
+		// 		theme: `monokai`,
+		// 		withFileName: true,
+		// 	},
+		// },
 	],
 	preview: {
 		select: {
