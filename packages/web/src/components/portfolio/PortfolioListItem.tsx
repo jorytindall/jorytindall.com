@@ -24,20 +24,18 @@ export const PortfolioListItem = ({
 	return (
 		<article className={styles.itemWrapper} key={title}>
 			<Link href={linkResolver('portfolioProject', slug)}>
-				<a>
-					<Image
-						src={image}
-						{...imageProps}
-						layout="responsive"
-						alt={image.alternativeText}
-					/>
-					<Headline tag="h4" collapse>
-						{title}
-					</Headline>
-					<Paragraph type="primary" collapse>
-						{client}
-					</Paragraph>
-				</a>
+				<Image
+					src={image}
+					{...imageProps}
+					layout="responsive"
+					alt={image.alternativeText}
+				/>
+				<Headline tag="h4" collapse>
+					{title}
+				</Headline>
+				<Paragraph type="primary" collapse>
+					{client}
+				</Paragraph>
 			</Link>
 		</article>
 	);

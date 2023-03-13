@@ -6,19 +6,17 @@ import avatarLogo from '../../../public/avatar-logo.png';
 export const Avatar = () => {
 	return (
 		<Link href="/" passHref>
-			<a>
-				<div className={styles.avatar}>
-					<Image
-						src={avatarLogo}
-						layout="fixed"
-						width={60}
-						height={60}
-						quality={90}
-						priority={true}
-						alt="Photo of Jory Tindall"
-					/>
-				</div>
-			</a>
+			<div className={styles.avatar}>
+				<Image
+					src={avatarLogo}
+					layout="fixed"
+					width={60}
+					height={60}
+					quality={90}
+					priority={true}
+					alt="Photo of Jory Tindall"
+				/>
+			</div>
 		</Link>
 	);
 };

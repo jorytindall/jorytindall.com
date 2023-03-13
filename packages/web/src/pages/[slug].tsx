@@ -13,22 +13,22 @@ import { Layout } from 'components/layout'
 export default function Page({ data, preview }) {
 	const router = useRouter();
 
-	const { data: page } = usePreviewSubscriptionHook(GET_PAGES, {
-		params: { slug: data.page?.slug },
-		initialData: data.page,
-		enabled: preview && data.page?.slug,
-	});
+	// const { data: page } = usePreviewSubscriptionHook(GET_PAGES, {
+	// 	params: { slug: data.page?.slug },
+	// 	initialData: data.page,
+	// 	enabled: preview && data.page?.slug,
+	// });
 
 	if (!router.isFallback && !data.page?.slug) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, megaHeadline, showTitle, moduleContent, slug } = page;
+	const { title, megaHeadline, showTitle, moduleContent, slug } = data.page;
 
 	return (
 		<Layout>
 			<MetaHead title={title} slug={linkResolver('page', slug)} />
-			{page.megaHeadline !== null ? (
+			{data.page.megaHeadline !== null ? (
 				<PageTitle title={title} megaTitle={megaHeadline} />
 			) : null}
 			{megaHeadline === null ? (
