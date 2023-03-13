@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import classnames from 'classnames'
 import styles from 'styles/components/typography/InlineLink.module.scss';
 
 interface LinkProps {
@@ -18,18 +19,21 @@ export const InlineLink = ({
 	rel,
 	variant = 'primary',
 }: LinkProps) => {
+
+	const classes = classnames(
+		styles.link,
+		styles[`link--${variant}`],
+	)
+
 	switch (type) {
 		case 'internal':
 			return (
-				<Link href={href} passHref>
-					<a
-						className={[
-							styles.link,
-							styles[`link--${variant}`],
-						].join(' ')}
-					>
-						{children}
-					</a>
+				<Link
+					href={href}
+					passHref
+					className={classes}
+				>
+					{children}
 				</Link>
 			);
 		case 'external':
@@ -38,9 +42,7 @@ export const InlineLink = ({
 					href={href}
 					target={target}
 					rel={rel}
-					className={[styles.link, styles[`link--${variant}`]].join(
-						' '
-					)}
+					className={classes}
 				>
 					{children}
 				</a>
@@ -51,9 +53,7 @@ export const InlineLink = ({
 					href={href}
 					target={target}
 					rel={rel}
-					className={[styles.link, styles[`link--${variant}`]].join(
-						' '
-					)}
+					className={classes}
 				>
 					{children}
 				</a>
