@@ -16,10 +16,12 @@ export const FullWidthImage = ({ input }: FullWidthImageProps) => {
 
 	const imageProps = useNextSanityImage(sanityClient, image);
 
+	const css = { maxWidth: '100%', height: 'auto' }
+
 	return (
 		<Image
 			{...imageProps}
-			layout="intrinsic"
+			style={css}
 			alt={alternativeText}
 			className={styles.fullWidthImage}
 		/>

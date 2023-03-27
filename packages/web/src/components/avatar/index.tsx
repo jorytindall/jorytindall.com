@@ -9,7 +9,6 @@ export const Avatar = () => {
 			<div className={styles.avatar}>
 				<Image
 					src={avatarLogo}
-					layout="fixed"
 					width={60}
 					height={60}
 					quality={90}

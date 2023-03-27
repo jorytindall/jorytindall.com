@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import { sanityClient } from 'lib/sanity.server';
 import { Paragraph } from 'components/typography';
+import { getSanityImageUrl } from 'utils/getSanityImage';
+import s from 'styles/components/gallery/GalleryItem.module.css'
 
 interface GalleryItemProps {
 	key: string;
@@ -11,12 +11,12 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-	const imageProps = useNextSanityImage(sanityClient, image);
-
 	return (
-		<div>
+		<div className={s.wrapper}>
 			{image && (
-				<Image {...imageProps} layout="intrinsic" alt={altText} />
+				<div className={s.imageWrapper}>
+					<Image src={getSanityImageUrl(image)} fill alt={altText} className={s.image} />
+				</div>
 			)}
 			{caption && (
 				<Paragraph type="secondary" collapse>

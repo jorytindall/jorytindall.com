@@ -12,12 +12,6 @@ import { linkResolver } from 'utils/linkResolver';
 export default function Event({ data, preview }) {
 	const router = useRouter();
 
-	const { data: post } = usePreviewSubscriptionHook(GET_BLOG_POSTS, {
-		params: { slug: data.post?.slug },
-		initialData: data.post,
-		enabled: preview && data.post?.slug,
-	});
-
 	if (!router.isFallback && !data.post?.slug) {
 		return <ErrorPage statusCode={404} />;
 	}
@@ -31,7 +25,7 @@ export default function Event({ data, preview }) {
 		categories,
 		excerpt,
 		content,
-	} = post;
+	} = data.post;
 
 	return (
 		<Layout>

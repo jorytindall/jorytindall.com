@@ -11,13 +11,15 @@ interface HeroImageProps {
 export const HeroImage = ({ source, altText }: HeroImageProps) => {
 	const imageProps: object = useNextSanityImage(sanityClient, source);
 
+	const css = { maxWidth: '100%', height: '100%' }
+
 	return (
 		<section className={styles.heroWrapper}>
 			<Image
 				src={source}
 				{...imageProps}
 				alt={altText}
-				layout="responsive"
+				style={css}
 			/>
 		</section>
 	);
