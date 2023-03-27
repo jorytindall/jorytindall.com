@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { sanityClient } from 'lib/sanity.server';
-import { useNextSanityImage } from 'next-sanity-image';
-import styles from 'styles/components/portfolio/HeroImage.module.scss';
+import { getSanityImageUrl } from 'utils/getSanityImage';
+import s from 'styles/components/portfolio/HeroImage.module.css';
 
 interface HeroImageProps {
 	source: string;
@@ -9,17 +8,14 @@ interface HeroImageProps {
 }
 
 export const HeroImage = ({ source, altText }: HeroImageProps) => {
-	const imageProps: object = useNextSanityImage(sanityClient, source);
-
-	const css = { maxWidth: '100%', height: '100%' }
-
 	return (
-		<section className={styles.heroWrapper}>
+		<section className={s.heroWrapper}>
 			<Image
-				src={source}
-				{...imageProps}
+				src={getSanityImageUrl(source)}
 				alt={altText}
-				style={css}
+				fill
+				className={s.image}
+				sizes="(max-width: 1800) 100vw"
 			/>
 		</section>
 	);

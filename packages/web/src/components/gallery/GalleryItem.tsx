@@ -15,7 +15,13 @@ export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
 		<div className={s.wrapper}>
 			{image && (
 				<div className={s.imageWrapper}>
-					<Image src={getSanityImageUrl(image)} fill alt={altText} className={s.image} />
+					<Image
+						src={getSanityImageUrl(image)}
+						fill
+						alt={altText}
+						className={s.image}
+						sizes="(max-width: 768px) 40vw"
+					/>
 				</div>
 			)}
 			{caption && (
