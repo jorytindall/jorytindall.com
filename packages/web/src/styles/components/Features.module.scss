@@ -21,5 +21,10 @@
 }
 
 .imageWrapper {
-	max-width: 100%;
+	position: relative;
+	height: 500px;
+
+	& img {
+		object-fit: cover;
+	}
 }
