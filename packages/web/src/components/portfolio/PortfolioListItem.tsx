@@ -4,6 +4,7 @@ import { useNextSanityImage } from 'next-sanity-image';
 import { sanityClient } from 'lib/sanity.server';
 import { linkResolver } from 'utils/linkResolver';
 import { Headline, Paragraph } from 'components/typography';
+import { getSanityImageUrl } from 'utils/getSanityImage';
 import styles from 'styles/components/portfolio/PortfolioList.module.scss';
 
 interface PortfolioListItemProps {
@@ -19,17 +20,18 @@ export const PortfolioListItem = ({
 	client,
 	image,
 }: PortfolioListItemProps) => {
-	const imageProps: object = useNextSanityImage(sanityClient, image);
+	// const imageProps: object = useNextSanityImage(sanityClient, image);
 
 	return (
 		<article className={styles.itemWrapper} key={title}>
 			<Link href={linkResolver('portfolioProject', slug)}>
-				<Image
-					src={image}
-					{...imageProps}
-					layout="responsive"
-					alt={image.alternativeText}
-				/>
+				<div className={styles.imageWrapper}>
+					<Image
+						src={getSanityImageUrl(image)}
+						alt={image.alternativeText}
+						fill
+					/>
+				</div>
 				<Headline tag="h4" collapse>
 					{title}
 				</Headline>
