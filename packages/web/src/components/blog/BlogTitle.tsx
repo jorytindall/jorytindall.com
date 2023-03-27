@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import { sanityClient } from 'lib/sanity.server';
 import { Badge } from 'components/badge';
 import { Headline } from 'components/typography';
-import styles from 'styles/components/blog/BlogTitle.module.scss';
+import { getSanityImageUrl } from 'utils/getSanityImage';
+import s from 'styles/components/blog/BlogTitle.module.scss';
 
 interface BlogTitleProps {
 	featuredImage: {
@@ -28,17 +27,17 @@ export const BlogTitle = ({
 		);
 	});
 
-	const imageProps = useNextSanityImage(sanityClient, featuredImage);
-
 	return (
-		<section className={styles.wrapper}>
-			<Image
-				src={featuredImage}
-				{...imageProps}
-				alt={featuredImage.alternativeText}
-			/>
+		<section className={s.wrapper}>
+			<div className={s.imageWrapper}>
+				<Image
+					src={getSanityImageUrl(featuredImage)}
+					alt={featuredImage.alternativeText}
+					fill
+				/>
+			</div>
 			{categories && (
-				<div className={styles.categoryContainer}>{mapCategories}</div>
+				<div className={s.categoryContainer}>{mapCategories}</div>
 			)}
 			{title && <Headline tag="h1">{title}</Headline>}
 		</section>

@@ -3,7 +3,8 @@ import { useNextSanityImage } from 'next-sanity-image';
 import { sanityClient } from 'lib/sanity.server';
 import { Container } from 'components/layout';
 import { Headline, Paragraph } from 'components/typography';
-import styles from 'styles/components/Features.module.scss';
+import { getSanityImageUrl } from 'utils/getSanityImage';
+import s from 'styles/components/Features.module.scss';
 
 interface FeatureItemProps {
 	image: {
@@ -18,7 +19,7 @@ export const FeatureItem = ({
 	title,
 	description,
 }: FeatureItemProps) => {
-	const imageProps = useNextSanityImage(sanityClient, image);
+	// const imageProps = useNextSanityImage(sanityClient, image);
 
 	return (
 		<>
@@ -30,12 +31,14 @@ export const FeatureItem = ({
 				gap="default"
 			>
 				{image && (
-					<Image
-						{...imageProps}
-						layout="intrinsic"
-						className={styles.imageWrapper}
-						alt={image.alternativeText}
-					/>
+					<div className={s.imageWrapper}>
+						<Image
+							src={getSanityImageUrl(image)}
+							className={s.imageWrapper}
+							alt={image.alternativeText}
+							fill
+						/>
+					</div>
 				)}
 				{title && (
 					<Headline tag="h5" collapse>

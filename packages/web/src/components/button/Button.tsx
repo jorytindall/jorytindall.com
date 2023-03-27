@@ -27,8 +27,8 @@ export const Button = ({
 		);
 	} else if (href.includes('http')) {
 		return (
-			<Link href={href} passHref>
-				<a className={classes}>{children}</a>
+			<Link href={href} passHref className={classes}>
+				{children}
 			</Link>
 		);
 	} else {

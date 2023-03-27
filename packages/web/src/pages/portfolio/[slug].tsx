@@ -1,6 +1,5 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
-import { usePreviewSubscriptionHook } from 'lib/sanity';
 import { getClient, previewClient } from 'lib/sanity.server';
 import {
 	GET_PORTFOLIO_PROJECTS,
@@ -15,20 +14,11 @@ import { linkResolver } from 'utils/linkResolver';
 export default function PortfolioProject({ data, preview }) {
 	const router = useRouter();
 
-	const { data: portfolioProject } = usePreviewSubscriptionHook(
-		GET_PORTFOLIO_PROJECTS,
-		{
-			params: { slug: data.portfolioProject?.slug },
-			initialData: data.portfolioProject,
-			enabled: preview && data.portfolioProject?.slug,
-		}
-	);
-
 	if (!router.isFallback && !data.portfolioProject?.slug) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, featuredImage, moduleContent, slug } = portfolioProject;
+	const { title, featuredImage, moduleContent, slug } = data.portfolioProject;
 
 	return (
 		<Layout>
@@ -42,7 +32,7 @@ export default function PortfolioProject({ data, preview }) {
 					altText={featuredImage.alternativeText}
 				/>
 			)}
-			{title && <Title input={portfolioProject} />}
+			{title && <Title input={data.portfolioProject} />}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</Layout>
 	);

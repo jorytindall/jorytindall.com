@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useNextSanityImage } from 'next-sanity-image';
-import { sanityClient } from 'lib/sanity.server';
 import { linkResolver } from 'utils/linkResolver';
 import { Headline, Paragraph } from 'components/typography';
+import { getSanityImageUrl } from 'utils/getSanityImage';
+import { Badge } from 'components/badge';
 import styles from 'styles/components/portfolio/PortfolioList.module.scss';
 
 interface PortfolioListItemProps {
@@ -19,26 +19,23 @@ export const PortfolioListItem = ({
 	client,
 	image,
 }: PortfolioListItemProps) => {
-	const imageProps: object = useNextSanityImage(sanityClient, image);
-
 	return (
-		<article className={styles.itemWrapper} key={title}>
-			<Link href={linkResolver('portfolioProject', slug)}>
-				<a>
+		<Link href={linkResolver('portfolioProject', slug)} className={styles.linkWrapper}>
+			<article className={styles.itemWrapper} key={title}>
+				<div className={styles.imageWrapper}>
 					<Image
-						src={image}
-						{...imageProps}
-						layout="responsive"
+						src={getSanityImageUrl(image)}
 						alt={image.alternativeText}
+						fill
 					/>
-					<Headline tag="h4" collapse>
-						{title}
-					</Headline>
-					<Paragraph type="primary" collapse>
-						{client}
-					</Paragraph>
-				</a>
-			</Link>
-		</article>
+				</div>
+				<Headline tag="h4" collapse>
+					{title}
+				</Headline>
+				<Paragraph type="primary" collapse>
+					<Badge text={client} type='primary' />
+				</Paragraph>
+			</article>
+		</Link>
 	);
 };

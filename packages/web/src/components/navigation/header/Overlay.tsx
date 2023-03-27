@@ -51,21 +51,21 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 	];
 
 	return (
-		<motion.div 
+		<motion.div
 			variants={overlayAnimation}
 			initial='hidden'
 			animate='enter'
 			className={getOverlayClass}
 		>
-			<motion.aside 
+			<motion.aside
 				initial='hidden'
 				animate='enter'
 				className={styles.linkWrapper}
 			>
 				{links.map((link) => {
 					return (
-						<Link href={link.slug} key={link.text}>
-							<a className={styles.navLink}>{link.text}</a>
+						<Link href={link.slug} key={link.text} className={styles.navLink}>
+							{link.text}
 						</Link>
 					);
 				})}
