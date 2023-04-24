@@ -2,17 +2,17 @@
 
 .wrapper {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	gap: 0.5rem;
 	background: $color-tertiary-200;
 	text-decoration: none;
 	transition: all 0.1s ease-in-out;
+	text-align: center;
+	padding: 2rem;
 
 	&:hover {
-		div {
-			& > * {
-				color: $color-neutral-100;
-			}
+		& > * {
+			color: $color-neutral-100;
 		}
 		background: $color-primary-300;
 		transform: translateY(-4px);
