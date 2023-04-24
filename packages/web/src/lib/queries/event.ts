@@ -26,5 +26,5 @@ export const GET_ALL_EVENTS = groq`
         image,
         location,
         description,
-    }
+    } | order(date asc)
 `;

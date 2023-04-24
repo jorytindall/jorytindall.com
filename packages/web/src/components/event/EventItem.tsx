@@ -16,18 +16,18 @@ interface EventItemProps {
 export const EventItem = ({ title, date, location, slug }: EventItemProps) => {
 	return (
 		<Link href={linkResolver('event', slug)} className={styles.wrapper}>
-			<Container
+			{/* <Container
 				density="default"
 				flexDirection="column"
 				semanticElement="div"
 				isFlex
-			>
-				<Headline tag="h4" collapse>
-					{title}
-				</Headline>
-				<Paragraph collapse>{formatDateTime(date)}</Paragraph>
-				<Paragraph collapse>{location}</Paragraph>
-			</Container>
+			> */}
+			<Headline tag="h4" collapse>
+				{title}
+			</Headline>
+			<Paragraph collapse>{formatDateTime(date)}</Paragraph>
+			<Paragraph collapse>{location}</Paragraph>
+			{/* </Container> */}
 		</Link>
 	);
 };
