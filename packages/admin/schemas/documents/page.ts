@@ -11,7 +11,7 @@ export default {
 			title: `Title`,
 			type: `string`,
 			description: `Title of the page`,
-			validation: (Rule) => [
+			validation: (Rule: any) => [
 				Rule.required().error(`The page must have a title.`),
 			],
 		},
@@ -29,7 +29,7 @@ export default {
 			options: {
 				source: `title`,
 			},
-			validation: (Rule) => [
+			validation: (Rule: any) => [
 				Rule.required().error(`The page must have a title.`),
 			],
 		},
