@@ -11,6 +11,9 @@ export default {
 			title: `Title`,
 			type: `string`,
 			description: `Title of the music project.`,
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a title.')
+			}
 		},
 		{
 			name: `slug`,
@@ -19,12 +22,9 @@ export default {
 			options: {
 				source: `title`,
 			},
-		},
-		{
-			name: `author`,
-			title: `Author`,
-			type: `reference`,
-			to: [{ type: `person` }],
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a slug.')
+			}
 		},
 		{
 			name: `moduleContent`,
