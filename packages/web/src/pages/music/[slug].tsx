@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { Layout } from 'components/layout'
+import { ModuleRenderer } from 'components/module-renderer';
 
 export default function MusicProject({ data, preview }) {
 	const router = useRouter();
@@ -11,11 +12,12 @@ export default function MusicProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title } = data.musicProject;
+	const { title, moduleContent } = data.musicProject;
 
 	return (
 		<Layout>
 			<h1>{title}</h1>
+			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</Layout>
 	);
 }

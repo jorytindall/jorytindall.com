@@ -8,6 +8,8 @@ import {
 } from 'components/typography';
 import { Blockquote } from 'components/blockquote';
 import { CodeBlock } from 'components/code';
+import { Audio } from 'components/audio';
+import { Playlist } from 'components/playlist';
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -73,5 +75,19 @@ export const Components = {
 			/>
 		),
 		mainImage: ({ value }: TypeProps) => <p>This is an image</p>,
+		audio: ({ value }: TypeProps) => (
+			<Audio
+				title={value.title}
+				file={value.file}
+				artist={value.artist}
+			/>
+		),
+		playlist: ({ value }: TypeProps) => (
+			<Playlist
+				title={value.title}
+				tracks={value.tracks}
+				artwork={value.artwork}
+			/>
+		)
 	},
 };

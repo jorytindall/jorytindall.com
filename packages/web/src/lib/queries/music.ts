@@ -5,6 +5,12 @@ export const GET_MUSIC_PROJECTS = groq`
         _id,
         title,
         "slug": slug.current,
+        moduleContent[] {
+            ...,
+            items[] {
+                item->
+            }
+        }
     }
 `;
 
