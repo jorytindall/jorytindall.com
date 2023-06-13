@@ -38,6 +38,8 @@ import resultItem from './objects/resultItem';
 import codeBlock from './objects/codeBlock';
 import figmaEmbed from './objects/figmaEmbed';
 import fileDownload from './objects/fileDownload';
+import audio from './objects/audio'
+import playlist from './objects/playlist'
 
 export const schemaTypes = [
   // Documents
@@ -79,4 +81,6 @@ export const schemaTypes = [
   codeBlock,
   figmaEmbed,
   fileDownload,
+  audio,
+  playlist,
 ]

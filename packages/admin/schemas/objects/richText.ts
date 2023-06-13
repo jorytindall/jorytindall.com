@@ -74,6 +74,8 @@ export default {
 				{ type: `mainImage` },
 				{ type: `figmaEmbed` },
 				{ type: 'fileDownload' },
+				{ type: `audio` },
+				{ type: `playlist` },
 			],
 		},
 	],
