@@ -7,6 +7,7 @@ interface DisplayTrackProps {
   audioRef: any,
   setDuration: any,
   progressBarRef: any,
+  handleNext: any
 }
 
 export const DisplayTrack = ({
@@ -14,6 +15,7 @@ export const DisplayTrack = ({
   audioRef,
   setDuration,
   progressBarRef,
+  handleNext,
 }: DisplayTrackProps) => {
 
   const track = getSanityFileUrl(currentTrack.file);
@@ -30,6 +32,7 @@ export const DisplayTrack = ({
         src={track.url}
         ref={audioRef}
         onLoadedMetadata={onLoadedMetadata}
+        onEnded={handleNext}
       />
       <div className={styles.audioInfo}>
         <Paragraph type="secondary">{currentTrack.title}</Paragraph>
