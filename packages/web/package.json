@@ -25,6 +25,7 @@
 		"react-icons": "^4.9.0",
 		"react-syntax-highlighter": "^15.5.0",
 		"sass": "^1.63.3",
+		"sharp": "^0.32.1",
 		"tokens": "^0.1.1",
 		"typescript": "^4.9.5"
 	},
