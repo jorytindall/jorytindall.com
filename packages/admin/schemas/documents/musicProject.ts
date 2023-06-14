@@ -27,6 +27,14 @@ export default {
 			}
 		},
 		{
+			name: `description`,
+			title: `Description`,
+			type: `text`,
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a descrtiption.')
+			}
+		},
+		{
 			name: `moduleContent`,
 			type: `moduleContent`,
 		},
