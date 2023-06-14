@@ -35,6 +35,14 @@ export default {
 			}
 		},
 		{
+			name: 'image',
+			title: 'Image',
+			type: 'mainImage',
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have an image.')
+			}
+		},
+		{
 			name: `moduleContent`,
 			type: `moduleContent`,
 		},
