@@ -4,6 +4,9 @@ import { getClient, previewClient } from 'lib/sanity.server';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { Layout } from 'components/layout'
 import { ModuleRenderer } from 'components/module-renderer';
+import { PageTitle } from 'components/page-title'
+import { MetaHead } from 'components/meta';
+import { linkResolver } from 'utils/linkResolver';
 
 export default function MusicProject({ data, preview }) {
 	const router = useRouter();
@@ -12,11 +15,12 @@ export default function MusicProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, moduleContent } = data.musicProject;
+	const { title, moduleContent, slug } = data.musicProject;
 
 	return (
 		<Layout>
-			<h1>{title}</h1>
+			<MetaHead title={title} slug={linkResolver('page', slug)} />
+			<PageTitle megaTitle={title} />
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</Layout>
 	);

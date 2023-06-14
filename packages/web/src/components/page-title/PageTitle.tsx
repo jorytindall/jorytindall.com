@@ -2,8 +2,8 @@ import styles from 'styles/components/PageTitle.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface PageTitleProps {
-	title: string;
-	megaTitle: string;
+	title?: string;
+	megaTitle?: string;
 }
 
 export const PageTitle = ({ title, megaTitle }: PageTitleProps) => {

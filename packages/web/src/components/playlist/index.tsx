@@ -28,7 +28,7 @@ export const Playlist = ({
   })
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Paragraph type='primary'>{title}</Paragraph>
       {renderTracks}
     </div>

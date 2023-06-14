@@ -20,8 +20,10 @@ export const Audio = ({
 
   return (
     <div className={styles.wrapper}>
-      <Paragraph type='primary'>{title}</Paragraph>
-      <Paragraph type='primary'>{artist}</Paragraph>
+      <div className={styles.content}>
+        <Paragraph type='secondary' collapse><strong>{title}</strong></Paragraph>
+        <Paragraph type='secondary' collapse>By {artist}</Paragraph>
+      </div>
       <audio
         controls
         src={audioFile.url}
