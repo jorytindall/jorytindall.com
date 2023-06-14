@@ -4,6 +4,7 @@ export const GET_MUSIC_PROJECTS = groq`
     *[_type == 'musicProject' && slug.current == $slug][0] {
         _id,
         title,
+        description,
         "slug": slug.current,
         moduleContent[] {
             ...,

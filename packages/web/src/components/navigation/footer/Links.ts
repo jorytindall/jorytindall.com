@@ -8,6 +8,10 @@ export const internalLinks = [
 		slug: '/portfolio',
 	},
 	{
+		slug: '/music',
+		text: 'Music',
+	},
+	{
 		text: 'Blog',
 		slug: '/blog',
 	},
