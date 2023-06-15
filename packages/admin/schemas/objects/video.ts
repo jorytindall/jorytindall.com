@@ -17,17 +17,17 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Mux Video', value: 'muxVideo' },
-          { title: 'YouTube Video', value: 'youTubeVideo' },
+          { title: 'Mux Video', value: 'mux' },
+          { title: 'YouTube Video', value: 'youTube' },
         ]
       }
     },
     {
-      name: 'youTubeVideo',
-      title: 'YouTube Video',
+      name: 'youTubeId',
+      title: 'YouTube Video ID',
       type: 'string',
       description: 'ID of the YouTube video',
-      hidden: ({ parent }: any) => parent?.source !== 'youTubeVideo',
+      hidden: ({ parent }: any) => parent?.source !== 'youTube',
     },
     // {
     //   name: 'muxVideo',
