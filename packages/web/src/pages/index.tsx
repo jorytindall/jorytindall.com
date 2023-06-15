@@ -56,6 +56,7 @@ export default function Home() {
 						teaching music to the next generation of shredders.
 					</Paragraph>
 					<TextArrow href="portfolio">View my portfolio</TextArrow>
+					<TextArrow href='music'>My music</TextArrow>
 				</article>
 				<article>
 					<Headline tag="h3">Want to know more?</Headline>
