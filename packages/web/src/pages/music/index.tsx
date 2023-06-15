@@ -9,7 +9,7 @@ import { MusicItem } from 'components/music'
 
 export default function MusicPage({ data }) {
 
-  const musicProjects = data.musicProjects.map(musicProject => {
+  const musicProjects = data.musicProjects.map((musicProject) => {
     return (
       <MusicItem
         link={musicProject.slug}

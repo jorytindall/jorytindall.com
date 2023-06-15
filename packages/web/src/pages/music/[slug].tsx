@@ -15,11 +15,11 @@ export default function MusicProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, moduleContent, slug } = data.musicProject;
+	const { title, description, moduleContent, slug } = data.musicProject;
 
 	return (
 		<Layout>
-			<MetaHead title={title} slug={linkResolver('page', slug)} />
+			<MetaHead title={title} description={description} slug={linkResolver('musicProject', slug)} />
 			<PageTitle megaTitle={title} />
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</Layout>
