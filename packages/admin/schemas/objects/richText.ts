@@ -75,6 +75,7 @@ export default {
 				{ type: `figmaEmbed` },
 				{ type: 'fileDownload' },
 				{ type: `playlist` },
+				{ type: `video` },
 			],
 		},
 	],

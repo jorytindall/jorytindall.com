@@ -9,6 +9,7 @@ import {
 import { Blockquote } from 'components/blockquote';
 import { CodeBlock } from 'components/code';
 import { Playlist } from 'components/audio'
+import { Video } from 'components/video'
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -77,6 +78,13 @@ export const Components = {
 		playlist: ({ value }: TypeProps) => (
 			<Playlist
 				tracks={value.tracks}
+			/>
+		),
+		video: ({ value}: TypeProps) => (
+			<Video
+				title={value.title}
+				source={value.source}
+				youTubeId={value.youTubeId}
 			/>
 		)
 	},

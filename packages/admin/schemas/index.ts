@@ -40,6 +40,7 @@ import figmaEmbed from './objects/figmaEmbed';
 import fileDownload from './objects/fileDownload';
 import audio from './objects/audio'
 import playlist from './objects/playlist'
+import video from './objects/video'
 
 export const schemaTypes = [
   // Documents
@@ -83,4 +84,5 @@ export const schemaTypes = [
   fileDownload,
   audio,
   playlist,
+  video
 ]

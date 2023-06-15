@@ -1,0 +1,11 @@
+@use 'styles/abstracts/variables' as *;
+
+.wrapper {
+	padding: 1rem;
+	background: $color-tertiary-200;
+}
+
+.content {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}
