@@ -116,7 +116,7 @@ export const Controls = ({
         }
       </div>
       <div className={styles.volume}>
-        <button onClick={() => setMuteVolume((prev) => !prev)} className={styles.controlButton}>
+        <button onClick={() => setMuteVolume((prev) => !prev)} className={styles.controlButtonSmall}>
           {muteVolume || volume < 5 ? (
             <TbVolumeOff />
           ) : volume < 40 ? (
