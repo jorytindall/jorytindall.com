@@ -11,6 +11,9 @@ export default {
 			title: `Title`,
 			type: `string`,
 			description: `Title of the music project.`,
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a title.')
+			}
 		},
 		{
 			name: `slug`,
@@ -19,12 +22,25 @@ export default {
 			options: {
 				source: `title`,
 			},
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a slug.')
+			}
 		},
 		{
-			name: `author`,
-			title: `Author`,
-			type: `reference`,
-			to: [{ type: `person` }],
+			name: `description`,
+			title: `Description`,
+			type: `text`,
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have a descrtiption.')
+			}
+		},
+		{
+			name: 'image',
+			title: 'Image',
+			type: 'mainImage',
+			validation: (Rule: any) => {
+				Rule.required().error('The project must have an image.')
+			}
 		},
 		{
 			name: `moduleContent`,
