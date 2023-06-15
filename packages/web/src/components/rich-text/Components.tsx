@@ -74,20 +74,6 @@ export const Components = {
 			/>
 		),
 		mainImage: ({ value }: TypeProps) => <p>This is an image</p>,
-		audio: ({ value }: TypeProps) => (
-			<Audio
-				title={value.title}
-				file={value.file}
-				artist={value.artist}
-			/>
-		),
-		// playlist: ({ value }: TypeProps) => (
-		// 	<Playlist
-		// 		title={value.title}
-		// 		tracks={value.tracks}
-		// 		artwork={value.artwork}
-		// 	/>
-		// ),
 		playlist: ({ value }: TypeProps) => (
 			<Playlist
 				tracks={value.tracks}

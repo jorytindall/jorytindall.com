@@ -132,9 +132,6 @@ export const Controls = ({
           value={volume}
           onChange={(e) => setVolume(e.target.value)}
           className={styles.volumeSlider}
-          // style={{
-          //   background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
-          // }}
         />
       </div>
     </div>

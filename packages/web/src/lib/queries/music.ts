@@ -25,5 +25,6 @@ export const GET_ALL_MUSIC_PROJECTS = groq`
         title,
         description,
         "slug": slug.current,
+        image,
     }
 `
