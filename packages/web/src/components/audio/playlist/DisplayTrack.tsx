@@ -1,13 +1,15 @@
+import { TbMusic } from 'react-icons/tb'
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
 import styles from 'styles/components/audio/Playlist.module.scss'
-import { Paragraph } from 'components/typography';
 
 interface DisplayTrackProps {
   currentTrack: any,
   audioRef: any,
   setDuration: any,
   progressBarRef: any,
-  handleNext: any
+  handleNext: any,
+  trackIndex: string
+  tracks: any[]
 }
 
 export const DisplayTrack = ({
@@ -16,6 +18,8 @@ export const DisplayTrack = ({
   setDuration,
   progressBarRef,
   handleNext,
+  trackIndex,
+  tracks
 }: DisplayTrackProps) => {
 
   const track = getSanityFileUrl(currentTrack.file);
@@ -35,8 +39,12 @@ export const DisplayTrack = ({
         onEnded={handleNext}
       />
       <div className={styles.audioInfo}>
-        <Paragraph type="secondary">{currentTrack.title}</Paragraph>
-        <Paragraph type="secondary">{currentTrack.artist}</Paragraph>
+        <p className={styles.title}>{currentTrack.title}</p>
+        <p className={styles.artist}>By {currentTrack.artist}</p>
+        <p className={styles.trackNumber}>
+          <TbMusic />
+          {trackIndex + 1} / {tracks.length}
+        </p>
       </div>
     </div>
   )

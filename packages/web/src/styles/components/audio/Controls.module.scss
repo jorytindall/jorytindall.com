@@ -1,0 +1,69 @@
+@use 'styles/abstracts/variables' as *;
+
+.controlsWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+}
+
+.controlButton {
+	color: $color-neutral-100;
+	background: $color-primary-400;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	transition: 100ms all ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: $color-primary-500;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		transform: translateY(-1px);
+	}
+}
+
+.volume {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+
+	input[type='range'] {
+		-webkit-appearance: none;
+		height: 4px;
+		background: $color-neutral-100;
+		border-radius: 4px;
+	}
+
+	input[type='range']::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background: $color-primary-400;
+		height: 16px;
+		width: 16px;
+		border-radius: 16px;
+		border: 1px solid $color-primary-500;
+		cursor: ew-resize;
+		position: relative;
+		top: -5px;
+	}
+
+	input[type='range']::-webkit-slider-runnable-track {
+		height: 4px;
+		border-radius: 4px;
+		cursor: pointer;
+		background: transparent;
+		box-shadow: none;
+	}
+}

@@ -4,7 +4,6 @@ import {
   useRef,
   useCallback
 } from 'react'
-import styles from 'styles/components/Playlist.module.scss'
 import {
   TbPlayerPlayFilled,
   TbPlayerPauseFilled,
@@ -16,6 +15,7 @@ import {
   TbVolumeOff,
   TbVolume2,
 } from 'react-icons/tb'
+import styles from 'styles/components/audio/Playlist.module.scss'
 
 export const Controls = ({
   audioRef,
@@ -91,24 +91,24 @@ export const Controls = ({
   return (
     <div className={styles.controlsWrapper}>
       <div className={styles.controls}>
-        <button onClick={handlePrevious}>
+        <button onClick={handlePrevious} className={styles.controlButton}>
           <TbPlayerSkipBackFilled />
         </button>
-        <button onClick={skipBackward}>
+        <button onClick={skipBackward} className={styles.controlButton}>
           <TbPlayerTrackPrevFilled />
         </button>
-        <button onClick={togglePlayPause}>
+        <button onClick={togglePlayPause} className={styles.controlButton}>
           {isPlaying ? <TbPlayerPauseFilled /> : <TbPlayerPlayFilled />}
         </button>
-        <button onClick={skipForward}>
+        <button onClick={skipForward} className={styles.controlButton}>
           <TbPlayerTrackNextFilled />
         </button>
-        <button onClick={handleNext}>
+        <button onClick={handleNext} className={styles.controlButton}>
           <TbPlayerSkipForwardFilled />
         </button>
       </div>
       <div className={styles.volume}>
-        <button onClick={() => setMuteVolume((prev) => !prev)}>
+        <button onClick={() => setMuteVolume((prev) => !prev)} className={styles.controlButton}>
           {muteVolume || volume < 5 ? (
             <TbVolumeOff />
           ) : volume < 40 ? (
@@ -123,9 +123,10 @@ export const Controls = ({
           max={100}
           value={volume}
           onChange={(e) => setVolume(e.target.value)}
-          style={{
-            background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
-          }}
+          className={styles.volumeSlider}
+          // style={{
+          //   background: `linear-gradient(to right, #f50 ${volume}%, #ccc ${volume}%)`,
+          // }}
         />
       </div>
     </div>

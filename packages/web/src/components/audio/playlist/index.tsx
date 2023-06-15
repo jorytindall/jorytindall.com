@@ -5,7 +5,6 @@ import styles from 'styles/components/audio/Playlist.module.scss'
 import { DisplayTrack } from './DisplayTrack';
 import { ProgressBar } from './ProgressBar';
 import { Controls } from './Controls';
-import { TrackList } from './TrackList'
 
 interface PlaylistProps {
   title?: string;
@@ -45,6 +44,16 @@ export const Playlist = ({
           setDuration,
           progressBarRef,
           handleNext,
+          tracks,
+          trackIndex
+        }}
+      />
+      <ProgressBar
+        {...{
+          progressBarRef,
+          audioRef,
+          timeProgress,
+          duration,
         }}
       />
       <Controls 
@@ -59,23 +68,6 @@ export const Playlist = ({
           setCurrentTrack,
           handleNext
         }} />
-      <ProgressBar
-        {...{
-          progressBarRef,
-          audioRef,
-          timeProgress,
-          duration,
-        }}
-      />
-      <TrackList
-        {...{
-          tracks,
-          currentTrack,
-          setCurrentTrack,
-          trackIndex,
-          setTrackIndex
-        }}
-      />
     </div>
   )
 }

@@ -1,14 +1,9 @@
 export const TrackList = ({ tracks, currentTrack, setCurrentTrack, trackIndex, setTrackIndex }) => {
 
-  console.log(currentTrack)
+  console.log(tracks)
 
-  const handleSetCurrentTrack = ( tracks ) => {
+  const handleSetCurrentTrack = () => {
     console.log(trackIndex)
-    if (trackIndex === tracks[trackIndex]) {
-      console.log('Yes!')
-    } else {
-      console.log('No!')
-    }
   }
 
   const list = tracks.map(track => {
