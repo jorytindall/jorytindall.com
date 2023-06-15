@@ -41,10 +41,12 @@ export const DisplayTrack = ({
       <div className={styles.audioInfo}>
         <p className={styles.title}>{currentTrack.title}</p>
         <p className={styles.artist}>By {currentTrack.artist}</p>
-        <p className={styles.trackNumber}>
-          <TbMusic />
-          {trackIndex + 1} / {tracks.length}
-        </p>
+        {tracks.length > 1 &&        
+          <p className={styles.trackNumber}>
+            <TbMusic />
+            {trackIndex + 1} / {tracks.length}
+          </p>
+        }
       </div>
     </div>
   )

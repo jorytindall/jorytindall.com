@@ -8,9 +8,7 @@ import {
 } from 'components/typography';
 import { Blockquote } from 'components/blockquote';
 import { CodeBlock } from 'components/code';
-import { Audio } from 'components/audio';
-// import { Playlist } from 'components/playlist';
-import { Playlist } from 'components/audio/playlist'
+import { Playlist } from 'components/audio'
 
 interface BlockProps {
 	children?: React.ReactNode;

@@ -91,21 +91,29 @@ export const Controls = ({
   return (
     <div className={styles.controlsWrapper}>
       <div className={styles.controls}>
-        <button onClick={handlePrevious} className={styles.controlButton}>
-          <TbPlayerSkipBackFilled />
-        </button>
-        <button onClick={skipBackward} className={styles.controlButton}>
-          <TbPlayerTrackPrevFilled />
-        </button>
+        {tracks.length > 1 && 
+          <>
+            <button onClick={handlePrevious} className={styles.controlButton}>
+              <TbPlayerSkipBackFilled />
+            </button>
+            <button onClick={skipBackward} className={styles.controlButton}>
+              <TbPlayerTrackPrevFilled />
+            </button>
+          </>
+        }
         <button onClick={togglePlayPause} className={styles.controlButton}>
           {isPlaying ? <TbPlayerPauseFilled /> : <TbPlayerPlayFilled />}
         </button>
-        <button onClick={skipForward} className={styles.controlButton}>
-          <TbPlayerTrackNextFilled />
-        </button>
-        <button onClick={handleNext} className={styles.controlButton}>
-          <TbPlayerSkipForwardFilled />
-        </button>
+        {tracks.length > 1 &&
+          <>
+            <button onClick={skipForward} className={styles.controlButton}>
+              <TbPlayerTrackNextFilled />
+            </button>
+            <button onClick={handleNext} className={styles.controlButton}>
+              <TbPlayerSkipForwardFilled />
+            </button>
+          </>
+        }
       </div>
       <div className={styles.volume}>
         <button onClick={() => setMuteVolume((prev) => !prev)} className={styles.controlButton}>

@@ -1,8 +1,8 @@
 import styles from 'styles/components/Playlist.module.scss'
 import { Paragraph } from 'components/typography'
-import { Audio } from 'components/audio';
+import { Audio } from 'components/audio/audio';
 
-import { AudioProps } from 'components/audio';
+import { AudioProps } from 'components/audio/audio';
 
 interface PlaylistProps {
   title: string;

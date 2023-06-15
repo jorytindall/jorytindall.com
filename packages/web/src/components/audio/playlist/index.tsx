@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { AudioProps } from 'components/audio';
+import { AudioProps } from 'components/audio/audio';
 import styles from 'styles/components/audio/Playlist.module.scss'
 
 import { DisplayTrack } from './DisplayTrack';
