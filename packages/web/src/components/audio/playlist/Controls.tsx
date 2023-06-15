@@ -93,10 +93,10 @@ export const Controls = ({
       <div className={styles.controls}>
         {tracks.length > 1 && 
           <>
-            <button onClick={handlePrevious} className={styles.controlButton}>
+            <button onClick={handlePrevious} className={styles.controlButtonSmall}>
               <TbPlayerSkipBackFilled />
             </button>
-            <button onClick={skipBackward} className={styles.controlButton}>
+            <button onClick={skipBackward} className={styles.controlButtonSmall}>
               <TbPlayerTrackPrevFilled />
             </button>
           </>
@@ -106,10 +106,10 @@ export const Controls = ({
         </button>
         {tracks.length > 1 &&
           <>
-            <button onClick={skipForward} className={styles.controlButton}>
+            <button onClick={skipForward} className={styles.controlButtonSmall}>
               <TbPlayerTrackNextFilled />
             </button>
-            <button onClick={handleNext} className={styles.controlButton}>
+            <button onClick={handleNext} className={styles.controlButtonSmall}>
               <TbPlayerSkipForwardFilled />
             </button>
           </>

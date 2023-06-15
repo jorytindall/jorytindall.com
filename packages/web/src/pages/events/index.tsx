@@ -1,4 +1,4 @@
-import { formatISO, format, parseISO } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import { getClient } from 'lib/sanity.server';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
@@ -8,11 +8,7 @@ import { MetaHead } from 'components/meta';
 import { Layout } from 'components/layout'
 import styles from 'styles/pages/Events.module.scss';
 
-interface filterEventsProps {
-	eventDate: string;
-}
-
-export default function EventsPage({ data, preview }) {
+export default function EventsPage({ data }) {
 	const { events } = data;
 
 	const currentEvents = events.filter((event) => {

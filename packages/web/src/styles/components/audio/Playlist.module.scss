@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	margin-bottom: 2.5rem;
+	margin: 2.5rem 0;
 }
 
 .audioInfo {
@@ -59,6 +59,7 @@
 .controls {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	gap: 0.5rem;
 }
 
@@ -80,6 +81,12 @@
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 		transform: translateY(-1px);
 	}
+}
+
+.controlButtonSmall {
+	@extend .controlButton;
+	width: 2rem;
+	height: 2rem;
 }
 
 .volume {
