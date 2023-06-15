@@ -7,7 +7,7 @@
 	text-decoration: none;
 	transition: 150ms all ease-in-out;
 	overflow: hidden;
-	cursor: url('/emojis/saxophone.png');
+	cursor: url('/emojis/saxophone.png'), pointer;
 
 	h3 {
 		color: $color-primary-300;
