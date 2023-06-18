@@ -12,3 +12,19 @@
 		gap: 2.5rem;
 	}
 }
+
+.musicians {
+	display: flex;
+	justify-content: center;
+	gap: 0;
+}
+
+.musicians > .inner {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem 2.5rem;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1rem;
+}

@@ -6,7 +6,9 @@ import { Layout } from 'components/layout'
 import { ModuleRenderer } from 'components/module-renderer';
 import { PageTitle } from 'components/page-title'
 import { MetaHead } from 'components/meta';
+import { Person } from 'components/person';
 import { linkResolver } from 'utils/linkResolver';
+import styles from 'styles/pages/Music.module.scss'
 
 export default function MusicProject({ data, preview }) {
 	const router = useRouter();
@@ -15,12 +17,32 @@ export default function MusicProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, description, moduleContent, slug } = data.musicProject;
+	const { title, description, moduleContent, slug, musicians } = data.musicProject;
+
+	console.log(musicians)
+
+	const renderMusicians = musicians.map(musician => {
+		return (
+			<Person
+				name={musician.name}
+				instrument={musician.instrument}
+				image={musician.image}
+				key={musician.name}
+			/>
+		)
+	})
 
 	return (
 		<Layout>
 			<MetaHead title={title} description={description} slug={linkResolver('musicProject', slug)} />
 			<PageTitle megaTitle={title} />
+			{musicians && 
+				<section className={styles.musicians}>
+					<div className={styles.inner}>
+						{renderMusicians}
+					</div>
+				</section>
+			}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</Layout>
 	);

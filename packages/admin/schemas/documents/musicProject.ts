@@ -35,6 +35,19 @@ export default {
 			}
 		},
 		{
+			name: `musicians`,
+			title: `Musicians`,
+			type: `array`,
+			of: [
+				{
+					name: `musician`,
+					title: `Musician`,
+					type: `reference`,
+					to: { type: `person` }
+				}
+			]
+		},
+		{
 			name: 'image',
 			title: 'Image',
 			type: 'mainImage',
