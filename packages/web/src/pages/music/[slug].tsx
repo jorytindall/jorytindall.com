@@ -19,19 +19,6 @@ export default function MusicProject({ data, preview }) {
 
 	const { title, description, moduleContent, slug, musicians } = data.musicProject;
 
-	console.log(musicians)
-
-	const renderMusicians = musicians.map(musician => {
-		return (
-			<Person
-				name={musician.name}
-				instrument={musician.instrument}
-				image={musician.image}
-				key={musician.name}
-			/>
-		)
-	})
-
 	return (
 		<Layout>
 			<MetaHead title={title} description={description} slug={linkResolver('musicProject', slug)} />
@@ -39,7 +26,16 @@ export default function MusicProject({ data, preview }) {
 			{musicians && 
 				<section className={styles.musicians}>
 					<div className={styles.inner}>
-						{renderMusicians}
+						{musicians.map(musician => {
+							return (
+								<Person
+									name={musician.name}
+									instrument={musician.instrument}
+									image={musician.image}
+									key={musician.name}
+								/>
+							)
+						})}
 					</div>
 				</section>
 			}
