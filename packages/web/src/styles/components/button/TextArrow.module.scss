@@ -32,24 +32,34 @@
 
 	&:hover {
 		svg {
-			left: 0.5rem;
+			left: 0.25rem;
 		}
 	}
 }
 
 $styles: (
-	'primary': $color-primary-300,
-	'neutral': $color-neutral-600,
-	'dark': $color-neutral-100,
+	'primary' $color-primary-300 $color-neutral-100,
+	'neutral' $color-neutral-600 $color-neutral-100,
+	'dark' $color-neutral-100 $color-neutral-600
 );
 
-@each $style, $color in $styles {
+@each $style, $color, $color-inverse in $styles {
 	.style--#{$style} {
 		border-color: $color;
 		color: $color;
+		background: transparent;
 
 		svg path {
 			fill: $color;
+		}
+
+		&:hover {
+			background: $color;
+			color: $color-inverse;
+
+			svg path {
+				fill: $color-inverse;
+			}
 		}
 	}
 }

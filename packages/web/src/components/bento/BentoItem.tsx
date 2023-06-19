@@ -8,6 +8,7 @@ interface BentoItemProps {
   size: string,
   padding: string,
   gap: string,
+  isJustified?: boolean
 }
 
 export const BentoItem = ({
@@ -17,6 +18,7 @@ export const BentoItem = ({
   size,
   padding,
   gap,
+  isJustified
 }: BentoItemProps) => {
 
   const classes = getClasses([
@@ -25,6 +27,7 @@ export const BentoItem = ({
     styles[`size--${size}`],
     styles[`padding--${padding}`],
     styles[`gap--${gap}`],
+    isJustified ? styles.isJustified : null,
     className,
   ])
 
