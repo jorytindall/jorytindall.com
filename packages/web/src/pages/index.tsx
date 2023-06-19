@@ -4,6 +4,7 @@ import { TextArrow } from 'components/button';
 import { Layout } from 'components/layout'
 import styles from 'styles/pages/Home.module.scss';
 import { BentoBox,BentoItem } from 'components/bento';
+import { Button } from 'components/button'
 
 export default function Home() {
 	return (
@@ -69,6 +70,7 @@ export default function Home() {
 					background='dark'
 				>
 					<Headline tag="h2" size="h4" color='light' collapse>Upcoming events</Headline>
+					<TextArrow href='/events' style='dark'>All events</TextArrow>
 				</BentoItem>
 				<BentoItem
 					size='four'
@@ -98,7 +100,7 @@ export default function Home() {
 				>
 					<Headline tag='h3' size='h4' color='dark' collapse>Get in touch</Headline>
 					<Paragraph type='secondary' collapse>Reach out to say hello 👋!</Paragraph>
-					<TextArrow href='/contact'>Contact me</TextArrow>
+					<TextArrow href='/contact' style='neutral'>Contact me</TextArrow>
 				</BentoItem>
 			</BentoBox>
 			{/* <section className={styles.mainContent}>

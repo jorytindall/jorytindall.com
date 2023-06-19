@@ -4,14 +4,16 @@
 	color: $color-primary-300;
 	font-family: $typography-font-family-body;
 	font-size: 1rem;
-	display: inline-block;
 	text-decoration: none;
-	display: flex;
+	display: inline-flex;
 	flex-direction: row;
 	align-items: center;
+	width: fit-content;
 	gap: 0.5rem;
 	background: none;
-	border: none;
+	border: 1px solid $color-primary-300;
+	border-radius: 20px;
+	padding: 0 1rem;
 
 	&:hover {
 		cursor: pointer;
@@ -31,6 +33,23 @@
 	&:hover {
 		svg {
 			left: 0.5rem;
+		}
+	}
+}
+
+$styles: (
+	'primary': $color-primary-300,
+	'neutral': $color-neutral-600,
+	'dark': $color-neutral-100,
+);
+
+@each $style, $color in $styles {
+	.style--#{$style} {
+		border-color: $color;
+		color: $color;
+
+		svg path {
+			fill: $color;
 		}
 	}
 }
