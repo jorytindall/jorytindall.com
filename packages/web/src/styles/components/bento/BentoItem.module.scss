@@ -4,26 +4,66 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
+	justify-content: space-between;
+	min-height: 20vh;
 }
 
 $sizes: (
-	'one': 1,
-	'two': 2,
-	'three': 3,
-	'four': 4,
-	'five': 5,
-	'six': 6,
-	'seven': 7,
-	'eight': 8,
-	'nine': 9,
-	'ten': 10,
-	'eleven': 11,
-	'twelve': 12,
+	'small': span 3,
+	'medium': span 4,
+	'large': span 6,
+	'x-large': span 8,
+	'full': span 12,
 );
 
 @each $size, $value in $sizes {
-	.#{$size} {
-		grid-column: span $value;
+	.size--#{$size} {
+		@if ($size == 'small') {
+			@media (min-width: 350px) {
+				grid-column: span 6;
+			}
+			@media (min-width: 1000px) {
+				grid-column: span 4;
+				background: red !important;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 3;
+			}
+		}
+
+		@if ($size == 'medium') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 768px) {
+				grid-column: span 6;
+			}
+			@media (min-width: 1000px) {
+				grid-column: span 4;
+			}
+		}
+
+		@if ($size == 'large') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 6;
+			}
+		}
+
+		@if ($size == 'x-large') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 8;
+			}
+		}
+
+		@if ($size == 'full') {
+			grid-column: span 12;
+		}
 	}
 }
 
@@ -32,6 +72,7 @@ $backgrounds: (
 	'secondary': $color-secondary-200,
 	'tertiary': $color-tertiary-200,
 	'dark': $color-neutral-600,
+	'white': $color-neutral-100,
 );
 
 @each $background, $color in $backgrounds {

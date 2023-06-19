@@ -22,7 +22,7 @@ export const BentoItem = ({
   const classes = getClasses([
     styles.wrapper,
     styles[background],
-    styles[size],
+    styles[`size--${size}`],
     styles[`padding--${padding}`],
     styles[`gap--${gap}`],
     className,

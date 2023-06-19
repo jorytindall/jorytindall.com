@@ -1,7 +1,7 @@
 import { MetaHead } from 'components/meta';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { TextArrow } from 'components/button';
-import { Layout } from 'components/layout'
+import { Container, Layout } from 'components/layout'
 import styles from 'styles/pages/Home.module.scss';
 import { BentoBox,BentoItem } from 'components/bento';
 import { Button } from 'components/button'
@@ -15,7 +15,7 @@ export default function Home() {
 			/>
 			<BentoBox>
 				<BentoItem
-					size='eight'
+					size='x-large'
 					background='tertiary'
 					padding='x-large'
 					gap='large'
@@ -64,42 +64,50 @@ export default function Home() {
 					</Paragraph>
 				</BentoItem>
 				<BentoItem
-					size="four"
+					size="medium"
 					padding='x-large'
 					gap='large'
 					background='dark'
 				>
-					<Headline tag="h2" size="h4" color='light' collapse>Upcoming events</Headline>
+					<Container isFlex flexDirection='column' semanticElement='div' density='collapse'>
+						<Headline tag="h2" size="h4" color='light' collapse>Upcoming events</Headline>
+					</Container>
 					<TextArrow href='/events' style='dark'>All events</TextArrow>
 				</BentoItem>
 				<BentoItem
-					size='four'
+					size='medium'
 					padding='x-large'
 					gap='small'
 					background='tertiary'
 				>
-					<Headline tag='h3' size='h4' color='primary' collapse>Portfolio</Headline>
-					<Paragraph type='secondary' collapse>Recent work in design, engineering, and other creative projects.</Paragraph>
+					<Container isFlex flexDirection='column' semanticElement='div' density='collapse'>
+						<Headline tag='h3' size='h4' color='primary' collapse>Portfolio</Headline>
+						<Paragraph type='secondary' collapse>Recent work in design, engineering, and other creative projects.</Paragraph>
+					</Container>
 					<TextArrow href='/portfolio'>My portfolio</TextArrow>
 				</BentoItem>
 				<BentoItem
-					size='four'
+					size='medium'
 					padding='x-large'
 					gap='small'
 					background='tertiary'
 				>
-					<Headline tag='h3' size='h4' color='primary' collapse>Music</Headline>
-					<Paragraph type='secondary' collapse>Music projects, original compositions, current working ensembles.</Paragraph>
+					<Container isFlex flexDirection='column' semanticElement='div' density='collapse'>
+						<Headline tag='h3' size='h4' color='primary' collapse>Music</Headline>
+						<Paragraph type='secondary' collapse>Music projects, original compositions, current working ensembles.</Paragraph>
+					</Container>
 					<TextArrow href='/music'>My music</TextArrow>
 				</BentoItem>
 				<BentoItem
-					size='four'
+					size='medium'
 					padding='x-large'
 					gap='small'
 					background='secondary'
 				>
-					<Headline tag='h3' size='h4' color='dark' collapse>Get in touch</Headline>
-					<Paragraph type='secondary' collapse>Reach out to say hello 👋!</Paragraph>
+					<Container isFlex flexDirection='column' semanticElement='div' density='collapse'>
+						<Headline tag='h3' size='h4' color='dark' collapse>Get in touch</Headline>
+						<Paragraph type='secondary' collapse>Reach out to say hello 👋!</Paragraph>
+					</Container>
 					<TextArrow href='/contact' style='neutral'>Contact me</TextArrow>
 				</BentoItem>
 			</BentoBox>
