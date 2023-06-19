@@ -35,14 +35,22 @@ $headline-sizes: (
 );
 
 $headline-color-props: (
-	'primary': ( 'color': $color-primary-300 ) ,
-	'secondary': ( 'color': $color-neutral-600 ),
-	'light': ( 'color': $color-neutral-100 ),
+	'primary': (
+		'color': $color-primary-300,
+	),
+	'secondary': (
+		'color': $color-neutral-600,
+	),
+	'light': (
+		'color': $color-neutral-100,
+	),
+	'dark': (
+		'color': $color-neutral-600,
+	),
 );
 
 @mixin headline-base {
 	font-family: $typography-font-family-headline;
-	color: $color-primary-300;
 	font-weight: bold;
 	line-height: $typography-line-height-headline;
 	margin: 2rem 0 1rem 0;
