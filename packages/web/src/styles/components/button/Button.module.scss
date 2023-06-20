@@ -28,7 +28,7 @@ $button-variant-props: (
 @mixin button {
 	font-family: $typography-font-family-headline;
 	font-weight: 300;
-	border-radius: 0;
+	border-radius: 64px;
 	border: none;
 	transition: all 0.05s ease-in-out;
 	text-align: center;

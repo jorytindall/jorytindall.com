@@ -5,10 +5,18 @@ import { getClasses } from 'utils/getClasses';
 interface TextArrowProps {
 	href?: string;
 	children: React.ReactNode;
+	style?: string
 }
 
-export const TextArrow = ({ href, children }: TextArrowProps) => {
-	const classes = getClasses([styles['text-arrow']]);
+export const TextArrow = ({
+	href,
+	children,
+	style,
+}: TextArrowProps) => {
+	const classes = getClasses([
+		styles['text-arrow'],
+		styles[`style--${style}`]
+	]);
 
 	if (!href) {
 		return (

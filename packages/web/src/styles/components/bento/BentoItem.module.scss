@@ -1,0 +1,113 @@
+@use 'styles/abstracts/variables' as *;
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	min-height: 20vh;
+}
+
+.isJustified {
+	justify-content: space-between;
+}
+
+$sizes: (
+	'small': span 3,
+	'medium': span 4,
+	'large': span 6,
+	'x-large': span 8,
+	'full': span 12,
+);
+
+@each $size, $value in $sizes {
+	.size--#{$size} {
+		@if ($size == 'small') {
+			@media (min-width: 350px) {
+				grid-column: span 6;
+			}
+			@media (min-width: 1000px) {
+				grid-column: span 4;
+				background: red !important;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 3;
+			}
+		}
+
+		@if ($size == 'medium') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 768px) {
+				grid-column: span 6;
+			}
+			@media (min-width: 1000px) {
+				grid-column: span 4;
+			}
+		}
+
+		@if ($size == 'large') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 6;
+			}
+		}
+
+		@if ($size == 'x-large') {
+			@media (min-width: 350px) {
+				grid-column: span 12;
+			}
+			@media (min-width: 1200px) {
+				grid-column: span 8;
+			}
+		}
+
+		@if ($size == 'full') {
+			grid-column: span 12;
+		}
+	}
+}
+
+$backgrounds: (
+	'primary': $color-primary-300,
+	'secondary': $color-secondary-200,
+	'tertiary': $color-tertiary-200,
+	'dark': $color-neutral-600,
+	'white': $color-neutral-100,
+);
+
+@each $background, $color in $backgrounds {
+	.#{$background} {
+		background: $color;
+	}
+}
+
+$paddings: (
+	'none': 0,
+	'small': 0.5rem,
+	'medium': 1rem,
+	'large': 1.5rem,
+	'x-large': 2.5rem,
+);
+
+@each $padding, $value in $paddings {
+	.padding--#{$padding} {
+		padding: $value;
+	}
+}
+
+$gaps: (
+	'none': 0,
+	'small': 0.5rem,
+	'medium': 1rem,
+	'large': 1.5rem,
+	'x-large': 2.5rem,
+);
+
+@each $gap, $value in $gaps {
+	.gap--#{$gap} {
+		gap: $value;
+	}
+}
