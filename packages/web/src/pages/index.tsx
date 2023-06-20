@@ -25,7 +25,7 @@ export default function Home({ data }) {
 					gap='medium'
 					isJustified
 				>
-					<Container isFlex density='collapse' semanticElement='div'>
+					<Container isFlex density='collapse' gap='default' semanticElement='div'>
 						<Headline tag="h1" size='h2' color='primary' collapse>
 								Hey 🤘 My name is Jory Tindall.
 						</Headline>
