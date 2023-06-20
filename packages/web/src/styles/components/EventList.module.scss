@@ -1,14 +1,13 @@
 @use 'styles/abstracts/variables' as *;
 
 .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 	p {
 		font-family: $typography-font-family-body;
 		font-size: $typography-font-size-body-secondary;
 		color: $color-neutral-100;
-	}
-
-	hr {
-		border-color: $color-neutral-400;
 	}
 }
 
@@ -24,7 +23,14 @@
 	flex-wrap: wrap;
 	align-items: center;
 	text-decoration: none;
-	padding: 0.5rem 0;
+	padding: 0.5rem;
+	background: transparent;
+	transition: 100ms all ease-in-out;
+	border-radius: 5px;
+
+	&:hover {
+		background: $color-primary-300;
+	}
 }
 
 .title {

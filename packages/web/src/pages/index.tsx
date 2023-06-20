@@ -70,7 +70,7 @@ export default function Home({ data }) {
 						</Paragraph>
 					</Container>
 					<TextArrow href='/about' style='primary'>More about me</TextArrow>
-				</BentoItem>
+				</BentoItem>		
 				<BentoItem
 					size="medium"
 					padding='x-large'

@@ -19,7 +19,6 @@ export const EventList = ({ events }) => {
                 <p className={styles.title}><strong>{event.title}</strong></p>
                 <p className={styles.date}>{formatDate(event.date)}</p>
               </Link>
-              <hr />
             </div>
           )
         }) :
