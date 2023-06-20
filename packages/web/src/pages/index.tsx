@@ -1,10 +1,16 @@
+import { getClient } from 'lib/sanity.server';
+import { GET_HOMEPAGE_DATA } from 'lib/queries'
 import { MetaHead } from 'components/meta';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { TextArrow } from 'components/button';
 import { Container, Layout } from 'components/layout'
 import { BentoBox,BentoItem } from 'components/bento';
+import { EventList } from 'components/event'
 
-export default function Home() {
+export default function Home({ data }) {
+
+	const homepage = data;
+
 	return (
 		<Layout>
 			<MetaHead
@@ -72,8 +78,9 @@ export default function Home() {
 					background='dark'
 					isJustified
 				>
-					<Container isFlex flexDirection='column' semanticElement='div' density='collapse'>
+					<Container isFlex flexDirection='column' semanticElement='div' density='collapse' gap='default'>
 						<Headline tag="h2" size="h4" color='light' collapse>Upcoming events</Headline>
+						<EventList events={homepage.homepage} />
 					</Container>
 					<TextArrow href='/events' style='dark'>All events</TextArrow>
 				</BentoItem>
@@ -121,8 +128,14 @@ export default function Home() {
 	);
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview = false }) {
+	const homepage = await getClient(preview).fetch(GET_HOMEPAGE_DATA)
+
 	return {
-		props: {},
+		props: {
+			preview,
+			data: { homepage }
+		},
+		revalidate: 60,
 	};
 }

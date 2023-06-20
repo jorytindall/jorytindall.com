@@ -1,0 +1,46 @@
+@use 'styles/abstracts/variables' as *;
+
+.wrapper {
+	p {
+		font-family: $typography-font-family-body;
+		font-size: $typography-font-size-body-secondary;
+		color: $color-neutral-100;
+	}
+
+	hr {
+		border-color: $color-neutral-400;
+	}
+}
+
+.event {
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	text-decoration: none;
+	padding: 0.5rem 0;
+}
+
+.title {
+	font-family: $typography-font-family-body;
+	font-size: $typography-font-size-body-secondary;
+	color: $color-neutral-100;
+}
+
+.date {
+	font-family: $typography-font-family-body;
+	font-size: $typography-font-size-body-secondary;
+	color: $color-neutral-100;
+}
+
+.noEvents {
+	font-family: $typography-font-family-body;
+	font-size: $typography-font-size-body-secondary;
+	color: $color-neutral-100;
+}

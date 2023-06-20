@@ -1,6 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import { getClient } from 'lib/sanity.server';
 import { GET_ALL_EVENTS } from 'lib/queries';
+import { getCurrentEvents } from 'utils/getCurrentEvents';
 import { PageTitle } from 'components/page-title';
 import { EventItem } from 'components/event';
 import { Paragraph } from 'components/typography';
@@ -11,10 +12,7 @@ import styles from 'styles/pages/Events.module.scss';
 export default function EventsPage({ data }) {
 	const { events } = data;
 
-	const currentEvents = events.filter((event) => {
-		const today = format(new Date(), 'yyyyMMdd');
-		return format(parseISO(event.date), 'yyyyMMdd' + 1) > today;
-	});
+	const currentEvents = getCurrentEvents(events);
 
 	const filterEvents =
 		currentEvents.length > 0 ? (
