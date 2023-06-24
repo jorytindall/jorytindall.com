@@ -6,14 +6,16 @@ $variants: (
 	'tertiary' $color-tertiary-500 $color-tertiary-200
 );
 
+$types: ('filled', 'outlined');
+
 // Define root badge styling
 @mixin badge-base {
-	padding: 4px 16px;
+	padding: 4px 12px;
 	font-family: $typography-font-family-body;
 	font-size: 1rem;
 	line-height: 1.7;
 	font-weight: 600;
-	border-radius: 4px;
+	border-radius: 25%;
 	letter-spacing: 0.25px;
 	width: fit-content;
 	height: fit-content;
