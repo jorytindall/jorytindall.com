@@ -31,13 +31,13 @@ export const Title = ({ input }: TitleProps) => {
 
 	// Map through the detail arrays of the project
 	const mapTypes = types.map((type) => (
-		<Badge text={type} type="secondary" key={type} />
+		<Badge text={type} type="secondary" style='filled' key={type} />
 	));
 	const mapTools = tools.map((tool) => (
-		<Badge text={tool} type="secondary" key={tool} />
+		<Badge text={tool} type="secondary" style='filled' key={tool} />
 	));
 	const mapRoles = roles.map((role) => (
-		<Badge text={role} type="secondary" key={role} />
+		<Badge text={role} type="secondary" style='filled' key={role} />
 	));
 
 	// Define objects for the project details
