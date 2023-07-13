@@ -1,7 +1,8 @@
 {
 	"private": true,
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"apps/*"
 	],
 	"name": "jorytindall",
 	"description": "Monorepo for my personal website and projects",

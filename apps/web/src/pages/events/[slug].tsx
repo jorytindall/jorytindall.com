@@ -18,7 +18,7 @@ export default function Event({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, date, description, location, image, url, slug } = data.event;
+	const { title, date, description, location, url, slug } = data.event;
 
 	return (
 		<Layout>
@@ -38,7 +38,9 @@ export default function Event({ data, preview }) {
 							{location}
 						</InlineLink>
 					</Paragraph>
-					<RichText value={description.content} />
+					{description &&
+						<RichText value={description.content} />
+					}
 					<Button href={url}>More information</Button>
 				</section>
 			</GridWrapper>
