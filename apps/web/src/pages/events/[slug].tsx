@@ -18,7 +18,7 @@ export default function Event({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, date, description, location, image, url, slug } = data.event;
+	const { title, date, description, location, url, slug } = data.event;
 
 	return (
 		<Layout>
