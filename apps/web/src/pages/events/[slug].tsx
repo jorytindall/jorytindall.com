@@ -38,7 +38,9 @@ export default function Event({ data, preview }) {
 							{location}
 						</InlineLink>
 					</Paragraph>
-					<RichText value={description.content} />
+					{description &&
+						<RichText value={description.content} />
+					}
 					<Button href={url}>More information</Button>
 				</section>
 			</GridWrapper>
