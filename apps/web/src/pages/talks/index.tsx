@@ -1,13 +1,21 @@
+import Link from 'next/link'
 import { getClient } from 'lib/sanity.server'
 import { GET_ALL_TALKS } from 'lib/queries'
 import { PageTitle } from 'components/page-title'
 import { Layout } from 'components/layout'
 import { MetaHead } from 'components/meta'
+import { linkResolver } from 'utils/linkResolver'
 
 export default function TalksPage({ data }) {
   const { talks } = data;
 
   console.log(talks)
+
+  const renderTalks = talks.map(talk => {
+    return (
+      <Link href={linkResolver('talk', talk.slug)} key={talk._id}>{talk.title}</Link>
+    )
+  })
 
   return (
     <Layout>
@@ -17,6 +25,7 @@ export default function TalksPage({ data }) {
         slug='talks'
       />
       <PageTitle title='🎙️ Talks' megaTitle="Speaking Engagements" />
+      {renderTalks}
     </Layout>
   )
 }

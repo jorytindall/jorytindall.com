@@ -15,6 +15,18 @@ export default {
       }
     },
     {
+      name: `slug`,
+      type: `slug`,
+      title: `Slug`,
+      description: `Slug or URL of the talk.`,
+			options: {
+				source: `title`,
+			},
+			validation: (Rule: any) => [
+				Rule.required().error(`The page must have a title.`),
+			],
+    },
+    {
       name: `conference`,
       title: `Conference`,
       type: `string`,
@@ -38,7 +50,7 @@ export default {
     {
       name: `deck`,
       title: `Deck`,
-      type: `file`,
+      type: `string`,
     },
     {
       name: `moduleContent`,
