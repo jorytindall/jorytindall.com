@@ -15,7 +15,7 @@ export default function Talk({ data, preview }) {
     return <ErrorPage statusCode={404} />
   }
 
-  const { 
+  const {
     title,
     slug,
     description,
@@ -23,7 +23,7 @@ export default function Talk({ data, preview }) {
     date,
     link,
     deck,
-    moduleContent 
+    moduleContent
   } = data.talk;
 
   return (
@@ -33,30 +33,30 @@ export default function Talk({ data, preview }) {
         description={description}
         slug={linkResolver('talk', slug)}
       />
-      <Headline tag='h1' collapse>{title}</Headline>
+      <Headline tag="h1" size="h1">{title}</Headline>
     </Layout>
   )
 }
 
-export async function getStaticProps({ params, preview = false}) {
+export async function getStaticProps({ params, preview = false }) {
   const talk = await getClient(preview).fetch(GET_TALKS, {
     slug: params.slug,
   });
 
   return {
-    props:  {
+    props: {
       preview,
       data: { talk },
     },
     revalidate: 60,
-  }
+  };
 }
 
 export async function getStaticPaths() {
   const paths = await getClient(previewClient).fetch(GET_TALK_PATHS);
 
   return {
-    paths: paths.map((slug) => ({ params: { slug }})),
+    paths: paths.map((slug) => ({ params: { slug } })),
     fallback: false,
-  }
+  };
 }

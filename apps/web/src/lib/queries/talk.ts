@@ -6,17 +6,17 @@ export const GET_TALKS = groq`
     title,
     "slug": slug.current,
     description,
-    conference,
-    date
+    date,
     link,
     deck,
-    moduleContent,
+    conference,
+    moduleContent
   }
-`
+`;
 
 export const GET_TALK_PATHS = groq`
-  *[_type == 'talk' && defined(slug.current)][].slug.current;
-`
+  *[_type == 'talk' && defined(slug.current)][].slug.current
+`;
 
 export const GET_ALL_TALKS = groq`
   *[_type == 'talk'][] {
@@ -26,4 +26,4 @@ export const GET_ALL_TALKS = groq`
     description,
     date,
   }
-`
+`;
