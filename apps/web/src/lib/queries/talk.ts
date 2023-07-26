@@ -10,7 +10,9 @@ export const GET_TALKS = groq`
     link,
     deck,
     conference,
-    moduleContent
+    conferenceLink,
+    moduleContent,
+    image,
   }
 `;
 

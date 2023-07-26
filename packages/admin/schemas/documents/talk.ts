@@ -19,18 +19,28 @@ export default {
       type: `slug`,
       title: `Slug`,
       description: `Slug or URL of the talk.`,
-			options: {
-				source: `title`,
-			},
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+      options: {
+        source: `title`,
+      },
+      validation: (Rule: any) => [
+        Rule.required().error(`The page must have a title.`),
+      ],
+    },
+    {
+      name: `image`,
+      type: `mainImage`,
+      title: `Image`,
     },
     {
       name: `conference`,
       title: `Conference`,
       type: `string`,
       description: `Example: Reactathon 2023`,
+    },
+    {
+      name: `conferenceLink`,
+      title: `Conference Link`,
+      type: `string`
     },
     {
       name: `description`,

@@ -1,12 +1,18 @@
 import ErrorPage from 'next/error'
 import { useRouter } from 'next/router'
+import { format, parseISO } from 'date-fns';
+import Image from 'next/image'
 import { getClient, previewClient } from 'lib/sanity.server'
-import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries'
-import { Headline } from 'components/typography'
-import { ModuleRenderer } from 'components/module-renderer'
-import { Layout } from 'components/layout'
-import { MetaHead } from 'components/meta'
+import { getSanityImageUrl } from 'utils/getSanityImage'
 import { linkResolver } from 'utils/linkResolver'
+import { formatDateString } from 'utils/datetimeFormat'
+import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries'
+import { Headline, Paragraph } from 'components/typography'
+import { ModuleRenderer } from 'components/module-renderer'
+import { GridWrapper, Layout } from 'components/layout'
+import { MetaHead } from 'components/meta'
+import { Button } from 'components/button'
+import styles from 'styles/pages/Talk.module.scss'
 
 export default function Talk({ data, preview }) {
   const router = useRouter();
@@ -20,10 +26,12 @@ export default function Talk({ data, preview }) {
     slug,
     description,
     conference,
+    conferenceLink,
     date,
     link,
     deck,
-    moduleContent
+    moduleContent,
+    image
   } = data.talk;
 
   return (
@@ -33,7 +41,24 @@ export default function Talk({ data, preview }) {
         description={description}
         slug={linkResolver('talk', slug)}
       />
-      <Headline tag="h1" size="h1">{title}</Headline>
+      <GridWrapper>
+        <div className={styles.wrapper}>
+          {image &&
+            <div className={styles.imageWrapper}>
+              <Image src={getSanityImageUrl(image)} fill alt={image.altText} />
+            </div>
+          }
+          <div className={styles.metadata}>
+            {title && <Headline tag="h1" size="h1" collapse>{title}</Headline>}
+            <Paragraph type="secondary" collapse>Given at <a href={conferenceLink} target="blank">{conference}</a> on {format(parseISO(date), 'MMMM do, yyyy')}</Paragraph>
+            <div className={styles.actions}>
+              {link && <Button variant='primary' href={link}>See the talk</Button>}
+              {deck && <Button variant='secondary' href={deck}>Spec the deck</Button>}
+            </div>
+          </div>
+          {moduleContent && <ModuleRenderer modules={moduleContent} />}
+        </div>
+      </GridWrapper>
     </Layout>
   )
 }
