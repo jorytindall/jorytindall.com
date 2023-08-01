@@ -34,7 +34,7 @@ export default function TalksPage({ data }) {
         description='Speaking engagements and conference talks'
         slug='talks'
       />
-      <PageTitle title='🎙️ Talks' megaTitle="Speaking Engagements" />
+      <PageTitle title='🎙️ Speaking' megaTitle="Conference talks" />
       <CenteredWrapper semanticElement="section">
         {renderTalks}
       </CenteredWrapper>
