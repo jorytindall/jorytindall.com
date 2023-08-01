@@ -23,8 +23,8 @@ export default function EventsPage({ data }) {
 						link={linkResolver('event', event.slug)}
 						key={event._id}
 					>
-						<Paragraph type='primary' collapse>{event.location}</Paragraph>
-						<Paragraph type='primary' collapse>{format(parseISO(event.date), 'MMMM do, yyyy')}</Paragraph>
+						<Paragraph type='primary' collapse><strong>Location: </strong>{event.location}</Paragraph>
+						<Paragraph type='primary' collapse><strong>Date: </strong>{format(parseISO(event.date), 'MMMM do, yyyy')}</Paragraph>
 					</ListItem>
 				);
 			})
