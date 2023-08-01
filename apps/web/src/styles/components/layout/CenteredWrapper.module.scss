@@ -1,0 +1,10 @@
+@use 'styles/abstracts/variables' as *;
+
+.wrapper {
+	max-width: 100ch;
+	margin: 0 auto;
+	padding: 2.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}

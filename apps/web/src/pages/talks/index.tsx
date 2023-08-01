@@ -1,19 +1,29 @@
-import Link from 'next/link'
+import { format, parseISO } from 'date-fns'
 import { getClient } from 'lib/sanity.server'
 import { GET_ALL_TALKS } from 'lib/queries'
 import { PageTitle } from 'components/page-title'
-import { Layout } from 'components/layout'
+import { CenteredWrapper, Layout } from 'components/layout'
 import { MetaHead } from 'components/meta'
 import { linkResolver } from 'utils/linkResolver'
+import { ListItem } from 'components/list/list-item'
+import { Paragraph } from 'components/typography'
 
 export default function TalksPage({ data }) {
   const { talks } = data;
 
-  console.log(talks)
-
   const renderTalks = talks.map(talk => {
     return (
-      <Link href={linkResolver('talk', talk.slug)} key={talk._id}>{talk.title}</Link>
+      <ListItem
+        key={talk._id}
+        title={talk.title}
+        link={linkResolver('talk', talk.slug)}
+      >
+        <Paragraph type='primary' collapse>{talk.description}</Paragraph>
+        <Paragraph
+          type='secondary'
+          collapse
+        >Given at <strong>{talk.conference}</strong> on <strong>{format(parseISO(talk.date), 'MMMM do, yyyy')}</strong></Paragraph>
+      </ListItem>
     )
   })
 
@@ -25,7 +35,9 @@ export default function TalksPage({ data }) {
         slug='talks'
       />
       <PageTitle title='🎙️ Talks' megaTitle="Speaking Engagements" />
-      {renderTalks}
+      <CenteredWrapper semanticElement="section">
+        {renderTalks}
+      </CenteredWrapper>
     </Layout>
   )
 }

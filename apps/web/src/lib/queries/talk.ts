@@ -27,5 +27,6 @@ export const GET_ALL_TALKS = groq`
     "slug": slug.current,
     description,
     date,
+    conference,
   }
 `;
