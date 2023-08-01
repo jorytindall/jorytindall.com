@@ -10,6 +10,7 @@ import person from './documents/person'
 import portfolioProject from './documents/portfolioProject'
 import post from './documents/post'
 import settings from './documents/siteSettings'
+import talk from './documents/talk'
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -55,6 +56,7 @@ export const schemaTypes = [
   portfolioProject,
   post,
   settings,
+  talk,
   // Objects
   moduleContent,
   richText,

@@ -24,6 +24,8 @@ export function linkResolver(parent, slug) {
 			return `music/${slug}`;
 		case 'landingPage':
 			return `p/${slug}`;
+		case 'talk':
+			return `talks/${slug}`;
 		default:
 			return `${slug}`;
 	}

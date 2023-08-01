@@ -45,6 +45,10 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 			text: 'Events',
 		},
 		{
+			slug: '/talks',
+			text: 'Speaking',
+		},
+		{
 			slug: '/blog',
 			text: 'Blog',
 		},
