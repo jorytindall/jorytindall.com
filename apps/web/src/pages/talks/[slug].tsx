@@ -48,7 +48,7 @@ export default function Talk({ data, preview }) {
             </div>
           }
           <div className={styles.metadata}>
-            {title && <Headline tag="h1" size="h1" collapse>{title}</Headline>}
+            {title && <Headline tag="h1" size="h1" color='primary' collapse>{title}</Headline>}
             <Paragraph type="secondary" collapse>Given at <a href={conferenceLink} target="blank">{conference}</a> on {format(parseISO(date), 'MMMM do, yyyy')}</Paragraph>
             <div className={styles.actions}>
               {link && <Button variant='primary' href={link}>See the talk</Button>}
