@@ -3,11 +3,11 @@ import { getClient } from 'lib/sanity.server';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 import { PageTitle } from 'components/page-title';
-import { EventItem } from 'components/event';
 import { Paragraph } from 'components/typography';
 import { MetaHead } from 'components/meta';
-import { Layout } from 'components/layout'
-import styles from 'styles/pages/Events.module.scss';
+import { Layout, CenteredWrapper } from 'components/layout'
+import { ListItem } from 'components/list';
+import { linkResolver } from 'utils/linkResolver';
 
 export default function EventsPage({ data }) {
 	const { events } = data;
@@ -18,13 +18,14 @@ export default function EventsPage({ data }) {
 		currentEvents.length > 0 ? (
 			currentEvents.map((event) => {
 				return (
-					<EventItem
+					<ListItem
 						title={event.title}
-						date={event.date}
-						location={event.location}
-						slug={event.slug}
+						link={linkResolver('event', event.slug)}
 						key={event._id}
-					/>
+					>
+						<Paragraph type='primary' collapse>{event.location}</Paragraph>
+						<Paragraph type='primary' collapse>{format(parseISO(event.date), 'MMMM do, yyyy')}</Paragraph>
+					</ListItem>
 				);
 			})
 		) : (
@@ -39,7 +40,7 @@ export default function EventsPage({ data }) {
 				slug="events"
 			/>
 			<PageTitle title="🗓 Events" megaTitle="Upcoming Events" />
-			<section className={styles.wrapper}>{filterEvents}</section>
+			<CenteredWrapper semanticElement="section">{filterEvents}</CenteredWrapper>
 		</Layout>
 	);
 }
