@@ -11,6 +11,7 @@ import portfolioProject from './documents/portfolioProject'
 import post from './documents/post'
 import settings from './documents/siteSettings'
 import talk from './documents/talk'
+import navigation from './documents/navigation'
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -42,6 +43,7 @@ import fileDownload from './objects/fileDownload';
 import audio from './objects/audio'
 import playlist from './objects/playlist'
 import video from './objects/video'
+import link from './objects/link'
 
 export const schemaTypes = [
   // Documents
@@ -57,6 +59,7 @@ export const schemaTypes = [
   post,
   settings,
   talk,
+  navigation,
   // Objects
   moduleContent,
   richText,
@@ -86,5 +89,6 @@ export const schemaTypes = [
   fileDownload,
   audio,
   playlist,
-  video
+  video,
+  link
 ]
