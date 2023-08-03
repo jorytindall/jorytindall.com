@@ -14,6 +14,52 @@ importers:
         specifier: ^1.10.7
         version: 1.10.7
 
+  apps/admin:
+    dependencies:
+      '@sanity/code-input':
+        specifier: ^4.1.1
+        version: 4.1.1(@babel/runtime@7.22.6)(@codemirror/lint@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
+      '@sanity/vision':
+        specifier: ^3.14.1
+        version: 3.14.1(@babel/runtime@7.22.6)(@codemirror/lint@6.4.0)(@codemirror/state@6.2.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.0.3)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-icons:
+        specifier: ^4.10.1
+        version: 4.10.1(react@18.2.0)
+      react-is:
+        specifier: ^18.2.0
+        version: 18.2.0
+      sanity:
+        specifier: ^3.14.1
+        version: 3.14.1(react-dom@18.2.0)(react@18.2.0)(sass@1.63.6)(styled-components@5.3.11)
+      sanity-plugin-mux-input:
+        specifier: 2.1.1
+        version: 2.1.1(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
+      styled-components:
+        specifier: ^6.0.3
+        version: 6.0.3(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@sanity/dashboard':
+        specifier: ^3.1.4
+        version: 3.1.4(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
+      '@sanity/eslint-config-studio':
+        specifier: ^2.0.4
+        version: 2.0.4(eslint@8.44.0)(typescript@5.1.6)
+      eslint:
+        specifier: ^8.44.0
+        version: 8.44.0
+      prettier:
+        specifier: ^3.0.0
+        version: 3.0.0
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+
   apps/web:
     dependencies:
       '@portabletext/react':
@@ -86,52 +132,6 @@ importers:
       eslint-config-next:
         specifier: 13.4.9
         version: 13.4.9(eslint@8.44.0)(typescript@5.1.6)
-
-  packages/admin:
-    dependencies:
-      '@sanity/code-input':
-        specifier: ^4.1.1
-        version: 4.1.1(@babel/runtime@7.22.6)(@codemirror/lint@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
-      '@sanity/vision':
-        specifier: ^3.14.1
-        version: 3.14.1(@babel/runtime@7.22.6)(@codemirror/lint@6.4.0)(@codemirror/state@6.2.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.0.3)
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-icons:
-        specifier: ^4.10.1
-        version: 4.10.1(react@18.2.0)
-      react-is:
-        specifier: ^18.2.0
-        version: 18.2.0
-      sanity:
-        specifier: ^3.14.1
-        version: 3.14.1(react-dom@18.2.0)(react@18.2.0)(sass@1.63.6)(styled-components@5.3.11)
-      sanity-plugin-mux-input:
-        specifier: 2.1.1
-        version: 2.1.1(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
-      styled-components:
-        specifier: ^6.0.3
-        version: 6.0.3(react-dom@18.2.0)(react@18.2.0)
-    devDependencies:
-      '@sanity/dashboard':
-        specifier: ^3.1.4
-        version: 3.1.4(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.14.1)(styled-components@6.0.3)
-      '@sanity/eslint-config-studio':
-        specifier: ^2.0.4
-        version: 2.0.4(eslint@8.44.0)(typescript@5.1.6)
-      eslint:
-        specifier: ^8.44.0
-        version: 8.44.0
-      prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
-      typescript:
-        specifier: ^5.1.6
-        version: 5.1.6
 
   packages/tokens:
     devDependencies:
@@ -6250,7 +6250,7 @@ packages:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
     dependencies:
-      semver: 6.1.1
+      semver: 6.3.1
 
   /map-obj@1.0.1:
     resolution: {integrity: sha512-7N/q3lyZ+LVCp7PzuxrJr4KMbBE2hW7BT7YNia330OFxIf4d3r5zVpicP2650l7CPN6RM9zOJRl3NGpqSiw3Eg==}
