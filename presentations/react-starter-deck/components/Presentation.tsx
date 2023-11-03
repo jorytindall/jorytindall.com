@@ -18,9 +18,10 @@ export default function Presentation({ role, secret, id, src }: { role: string, 
     useEffect(() => {
         // must happen when the page is definitely being rendered in a browser
         if (!window.Reveal) {
+            // eslint-disable-next-line
             reveal = new RevealJS({
-                embedded: true, 
-                plugins: [ ],
+                embedded: true,
+                plugins: [],
                 multiplex: {
                     secret: secret,
                     id: id,
@@ -48,8 +49,8 @@ export default function Presentation({ role, secret, id, src }: { role: string, 
         console.log('content ready');
         if (!initialised) {
             initialised = true;
-            reveal.initialize(); 
-        } else { 
+            reveal.initialize();
+        } else {
             reveal.sync();
         }
     };

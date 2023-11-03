@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ReactNode, useEffect } from 'react';
 import Question from './Question';
+import CustomComponent from './CustomComponent';
 import useSWR from 'swr';
 import parse, { HTMLReactParserOptions, Element } from 'html-react-parser';
 
@@ -12,15 +13,20 @@ const options = {
     replace: (domNode: any) => {
         if (domNode instanceof Element && domNode.attribs) {
             switch (domNode.tagName) {
-            case 'question':
-                console.log('Enriching question tag...');
-                let question = domNode.attribs['question'];
-                let explanation = domNode.attribs['explanation'];
-                let instruction = domNode.attribs['instruction'];
-                if (question && explanation && instruction) {
-                    return (<Question question={question} explanation={explanation} instruction={instruction} />);
-                }
-                break;
+                case 'question':
+                    console.log('Enriching question tag...');
+                    let question = domNode.attribs['question'];
+                    let explanation = domNode.attribs['explanation'];
+                    let instruction = domNode.attribs['instruction'];
+                    if (question && explanation && instruction) {
+                        return (<Question question={question} explanation={explanation} instruction={instruction} />);
+                    }
+                    break;
+                case 'custom-component':
+                    let title = domNode.attribs['title'];
+                    if (title) {
+                        return <CustomComponent title={title} />
+                    }
             }
         }
     }
