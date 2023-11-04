@@ -196,6 +196,10 @@ importers:
         version: 4.4.5
 
   presentations/reveal-starter-deck:
+    dependencies:
+      tokens:
+        specifier: workspace:^
+        version: link:../../packages/tokens
     devDependencies:
       '@babel/core':
         specifier: ^7.23.2
