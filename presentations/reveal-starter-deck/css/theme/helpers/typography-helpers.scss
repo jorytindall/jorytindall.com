@@ -1,0 +1,46 @@
+// General
+
+.collapse {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// Text alignment
+
+.text-align--left {
+  text-align: left;
+}
+
+.text-align--center {
+  text-align: center;
+}
+
+.text-align--right {
+  text-align: right;
+}
+
+// Typographic elements
+
+.body--secondary {
+  font-size: 1rem;
+  color: $color-neutral-500;
+}
+
+.body--primary {
+  font-size: 1rem;
+  color: $color-neutral-600;
+}
+
+// Color
+
+.color--primary {
+  color: $color-primary-300;
+}
+
+.color--secondary {
+  color: $color-secondary-400;
+}
+
+.color--tertiary {
+  color: $color-tertiary-500;
+}
