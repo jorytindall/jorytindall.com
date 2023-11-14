@@ -1,15 +1,3 @@
-// interface LinkResolverProps {
-// 	parent:
-// 		| 'page'
-// 		| 'post'
-// 		| 'portfolioProject'
-// 		| 'event'
-// 		| 'musicProject'
-// 		| 'landingPage'
-// 		| '';
-// 	slug: any;
-// }
-
 export function linkResolver(parent, slug) {
 	switch (parent) {
 		case 'page':
@@ -26,6 +14,8 @@ export function linkResolver(parent, slug) {
 			return `p/${slug}`;
 		case 'talk':
 			return `talks/${slug}`;
+		case 'pressKit':
+			return `press-kit/${slug}`;
 		default:
 			return `${slug}`;
 	}
