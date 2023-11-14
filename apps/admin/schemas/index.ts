@@ -11,6 +11,7 @@ import portfolioProject from './documents/portfolioProject'
 import post from './documents/post'
 import settings from './documents/siteSettings'
 import talk from './documents/talk'
+import pressKit from './documents/press-kit'
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -57,6 +58,7 @@ export const schemaTypes = [
   post,
   settings,
   talk,
+  pressKit,
   // Objects
   moduleContent,
   richText,
