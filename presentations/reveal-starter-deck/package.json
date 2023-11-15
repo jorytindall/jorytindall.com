@@ -2,7 +2,7 @@
   "name": "reveal-starter-deck",
   "version": "1.0.0",
   "description": "Jory's starter deck using Reveal.js",
-  "main": "dist/index.js",
+  "main": "dist/reveal.js",
   "module": "dist/reveal.esm.js",
   "scripts": {
     "test": "gulp test",
