@@ -273,6 +273,9 @@ importers:
       reveal.js:
         specifier: ^4.3.1
         version: 4.6.1
+      tokens:
+        specifier: workspace:^
+        version: link:../../packages/tokens
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^1.0.1
