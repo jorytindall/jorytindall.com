@@ -6,7 +6,8 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title></title>
+  <title>Bridging design tooling and the browser | Design for your engineer
+  </title>
 
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
@@ -19,16 +20,54 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section class="text-align--left">
-        <h1>Design for your engineer</h1>
-        <p>Part I: Bridging design tooling and the browser</p>
-        <div class="flex--row gap--large">
-          <p class="body--secondary">Jory Tindall, Product Designer</p>
-        </div>
+
+      <section class="text-align--left" id="title"
+        data-markdown="./slides/title.md">
       </section>
-      <section>
-        <h1>Slide 2</h1>
+
+      <section class="text-align--left" id="intro"
+        data-markdown="./slides/intro.md">
       </section>
+
+      <section class="text-align--left" data-markdown="./slides/overview.md"
+        id="overview">
+      </section>
+
+      <section
+        data-markdown="./slides/state-of-design-tooling.md"
+        id="state-of-design-tooling">
+      </section>
+
+      <section
+        data-markdown="./slides/understanding-the-dom.md"
+        id="understanding-the-dom">
+      </section>
+      
+      <section
+        data-markdown="./slides/what-is-the-dom-01.md"
+        id="what-is-the-dom-01">
+      </section>
+
+      <section
+        data-markdown="./slides/the-dom.md"
+        id="the-dom">
+      </section>
+
+      <section
+        data-markdown="./slides/what-is-the-dom-02.md"
+        data-separator-notes="^Notes:"
+        class="text-align--left"
+        id="what-is-the-dom-02">
+      </section>
+
+      <section
+        data-markdown="./slides/tooling-overlap.md" id="tooling-overlap">
+      </section>
+
+      <section
+        data-markdown="./slides/code-example.md">
+      </section>
+
     </div>
   </div>
 
@@ -36,6 +75,7 @@
   <script src="plugin/notes/notes.js"></script>
   <script src="plugin/markdown/markdown.js"></script>
   <script src="plugin/highlight/highlight.js"></script>
+  <script src="node_modules/reveal.js-menu/menu.js"></script>
   <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -44,7 +84,14 @@
       hash: true,
 
       // Learn about plugins: https://revealjs.com/plugins/
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealMenu
+      ],
+
+      menu: {}
     });
   </script>
 </body>
