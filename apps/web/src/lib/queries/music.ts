@@ -6,6 +6,7 @@ export const GET_MUSIC_PROJECTS = groq`
         title,
         description,
         "slug": slug.current,
+        pressKit,
         musicians[]->,
         moduleContent[] {
             ...,

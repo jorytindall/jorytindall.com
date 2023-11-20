@@ -35,6 +35,11 @@ export default {
 			}
 		},
 		{
+			name: 'pressKit',
+			title: 'Press kit',
+			type: 'fileDownload',
+		},
+		{
 			name: `musicians`,
 			title: `Musicians`,
 			type: `array`,
