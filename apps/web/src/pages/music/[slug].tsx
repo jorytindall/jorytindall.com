@@ -22,7 +22,7 @@ export default function MusicProject({ data, preview }) {
 
 	const { title, description, moduleContent, slug, musicians, pressKit } = data.musicProject;
 
-	const pressKitUrl = getSanityFileUrl(pressKit.file.asset._ref)
+	const pressKitUrl = pressKit ? getSanityFileUrl(pressKit.file.asset._ref) : null
 
 	return (
 		<Layout>
