@@ -8,6 +8,8 @@ interface ButtonProps {
 	variant?: 'primary' | 'secondary';
 	size?: 'small' | 'default' | 'large';
 	type?: 'button' | 'submit' | 'reset';
+	isDownload?: boolean,
+	isFullWidth?: boolean,
 }
 
 export const Button = ({
@@ -16,8 +18,14 @@ export const Button = ({
 	variant = 'primary',
 	size = 'default',
 	type,
+	isDownload,
+	isFullWidth,
 }: ButtonProps) => {
-	const classes = getClasses([styles[variant], styles[size]]);
+	const classes = getClasses([
+		styles[variant],
+		styles[size],
+		isFullWidth ? styles[`full-width`] : null,
+	]);
 
 	if (!href) {
 		return (
@@ -32,10 +40,9 @@ export const Button = ({
 			</Link>
 		);
 	} else {
-		return (
-			<a href={href} className={classes}>
-				{children}
-			</a>
-		);
+
+		return isDownload ?
+			<a href={href} className={classes} download>{children}</a> :
+			<a href={href} className={classes}>{children}</a>
 	}
 };

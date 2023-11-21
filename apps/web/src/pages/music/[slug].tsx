@@ -7,7 +7,10 @@ import { ModuleRenderer } from 'components/module-renderer';
 import { PageTitle } from 'components/page-title'
 import { MetaHead } from 'components/meta';
 import { Person } from 'components/person';
+import { Button } from 'components/button';
+import { CenteredWrapper } from 'components/layout';
 import { linkResolver } from 'utils/linkResolver';
+import { getSanityFileUrl } from 'utils/getSanityFileUrl';
 import styles from 'styles/pages/Music.module.scss'
 
 export default function MusicProject({ data, preview }) {
@@ -17,13 +20,15 @@ export default function MusicProject({ data, preview }) {
 		return <ErrorPage statusCode={404} />;
 	}
 
-	const { title, description, moduleContent, slug, musicians } = data.musicProject;
+	const { title, description, moduleContent, slug, musicians, pressKit } = data.musicProject;
+
+	const pressKitUrl = pressKit ? getSanityFileUrl(pressKit.file.asset._ref) : null
 
 	return (
 		<Layout>
 			<MetaHead title={title} description={description} slug={linkResolver('musicProject', slug)} />
 			<PageTitle megaTitle={title} />
-			{musicians && 
+			{musicians &&
 				<section className={styles.musicians}>
 					<div className={styles.inner}>
 						{musicians.map(musician => {
@@ -40,6 +45,15 @@ export default function MusicProject({ data, preview }) {
 				</section>
 			}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
+			{pressKit &&
+				<CenteredWrapper semanticElement='div'>
+					<Button
+						href={pressKitUrl.url}
+						isDownload
+						isFullWidth
+					>Download Press Kit</Button>
+				</CenteredWrapper>
+			}
 		</Layout>
 	);
 }
