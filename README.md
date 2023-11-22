@@ -10,7 +10,7 @@ This monorepo is managed by `pnpm` workspaces and TurboRepo and contains:
 -   The content management system for my website built with [Sanity](https://www.sanity.io/).
 -   Tokens managed with `style-dictionary`
 
-There are a couple of projects that are a work-in-progress that add some additional content and functionality to my personal suite of web platforms, including:
+There are a couple of projects that are a work-in-progress to add some additional content and functionality to my personal suite of web platforms, including:
 
 - A custom REST API for managing my resume items and work history.
 - A growing collection of presentations geared towards conference talks and education around design systems and bridging the gap between designers and engineers; built with a unique configuration of [Svelte](https://svelte.dev/) and [RevealJS](https://revealjs.com/).
