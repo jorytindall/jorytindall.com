@@ -12,6 +12,8 @@
 		"admin:dev": "turbo run dev --filter=admin",
 		"admin:build": "turbo run build --filter=admin",
 		"tokens:build": "turbo run build --filter=tokens",
+		"pres:dev": "turbo run dev --filter=presentations",
+		"pres:build": "turbo run build --filter=presentations",
 		"format:all": "prettier --write .",
 		"build": "turbo run build",
 		"test": "turbo run test",
