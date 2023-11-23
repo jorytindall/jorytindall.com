@@ -9,7 +9,7 @@
 	import Reveal from 'reveal.js';
 	import RevealNotes from 'reveal.js/plugin/notes/notes';
 	import { onMount, tick } from 'svelte';
-	import Presentation from '../../pres/design-for-your-engineer-part-one/Presentation.svelte';
+	import Presentation from '../../presentations/design-for-your-engineer-part-one/Presentation.svelte';
 
 	export let reveal;
 
