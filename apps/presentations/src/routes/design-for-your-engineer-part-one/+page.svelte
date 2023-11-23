@@ -1,6 +1,10 @@
 <script>
-	// import 'reveal.js/dist/reveal.css';
-	import '../../../node_modules/reveal.js/dist/reveal.css';
+	// Import Reveal styles
+	import 'reveal.js/dist/reveal.css';
+	// Import theme
+	import '../../styles/theme.css';
+	// Import CSS for plugins
+	import 'reveal.js/plugin/highlight/monokai.css';
 
 	import Reveal from 'reveal.js';
 	import { onMount, tick } from 'svelte';
