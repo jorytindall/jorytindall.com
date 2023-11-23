@@ -1,0 +1,58 @@
+@import '../../node_modules/tokens/dist/web/tokens.css';
+
+body {
+  background: var(--color-tertiary-100);
+  color: var(--color-neutral-600);
+  font-family: var(--typography-font-family-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary-300);
+  font-family: var(--typography-font-family-headline);
+  margin: 0;
+  padding: 0;
+}
+
+h1 { font-size: var(--typography-font-size-headline-01); }
+h2 { font-size: var(--typography-font-size-headline-02); }
+h3 { font-size: var(--typography-font-size-headline-03); }
+h4 { font-size: var(--typography-font-size-headline-04); }
+h5 { font-size: var(--typography-font-size-headline-05); }
+h6 { font-size: var(--typography-font-size-headline-06); }
+
+a {
+  color: var(--color-primary-400);
+}
+
+a:hover {
+  color: var(--color-primary-500);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  max-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 5rem;
+}
+
+.container {
+  min-height: 25vh;
+  max-width: 85ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.presentations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.back-link {
+  color: var(--color-neutral-500);
+}
