@@ -7,6 +7,7 @@
 	import 'reveal.js/plugin/highlight/monokai.css';
 
 	import Reveal from 'reveal.js';
+	import RevealNotes from 'reveal.js/plugin/notes/notes';
 	import { onMount, tick } from 'svelte';
 	import Presentation from '../../pres/design-for-your-engineer-part-one/Presentation.svelte';
 
@@ -15,7 +16,10 @@
 	onMount(async () => {
 		await tick();
 		const deck = new Reveal(reveal);
-		deck.initialize();
+		deck.initialize({
+			transition: 'fade',
+			plugins: [RevealNotes],
+		});
 	});
 </script>
 
