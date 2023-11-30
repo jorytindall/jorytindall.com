@@ -1,5 +1,5 @@
 <script>
-	import Slide from '../../../lib/Slide.svelte';
+	import Slide from '../../../components/Slide.svelte';
 	import Box from '../../../components/Box.svelte';
 </script>
 

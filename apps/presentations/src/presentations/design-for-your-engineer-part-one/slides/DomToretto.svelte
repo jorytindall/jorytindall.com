@@ -1,6 +1,6 @@
 <script>
-	// import Slide from '../../../lib/Slide.svelte';
-	import Slide from '$lib/Slide.svelte';
+	// import Slide from '../../../components/Slide.svelte';
+	import Slide from '../../../components/Slide.svelte';
 </script>
 
 <Slide>
