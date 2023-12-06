@@ -3,6 +3,9 @@
 	import Introduction from './slides/intro/Introduction.svelte';
 	import MusicIntro from './slides/intro/MusicIntro.svelte';
 	import Overview from './slides/intro/Overview.svelte';
+
+	import Conclusion from './slides/conclusion/Conclusion.svelte';
+	import Goodbye from './slides/conclusion/Goodbye.svelte';
 </script>
 
 <!-- Intro -->
@@ -10,3 +13,7 @@
 <Introduction />
 <MusicIntro />
 <Overview />
+
+<!-- Conclusion -->
+<Conclusion />
+<Goodbye />
