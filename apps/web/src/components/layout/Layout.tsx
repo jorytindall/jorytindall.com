@@ -1,3 +1,5 @@
+'use client'
+
 import styles from 'styles/components/layout/Layout.module.scss';
 import { motion } from 'framer-motion'
 
