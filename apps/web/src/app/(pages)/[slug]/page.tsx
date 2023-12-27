@@ -39,17 +39,17 @@ export default async function Page({ params }) {
     const { slug } = params
     const page = await sanityClient.fetch(GET_PAGES, { slug })
 
-    const { title, megaHeadline, showTitle, moduleContent } = page;
+    const { title, megaHeadline, moduleContent } = page;
 
     return (
         <>
-            {page.megaHeadline !== null ? (
-                <PageTitle title={page.title} megaTitle={page.megaHeadline} />
-            ) : null}
-            {megaHeadline === null ? (
-				<Headline tag="h1">{title}</Headline>
-			) : null}
-			{moduleContent && <ModuleRenderer modules={moduleContent} />}
+          {page.megaHeadline !== null ? (
+            <PageTitle title={page.title} megaTitle={page.megaHeadline} />
+          ) : null}
+          {megaHeadline === null ? (
+            <Headline tag="h1">{title}</Headline>
+          ) : null}
+          {moduleContent && <ModuleRenderer modules={moduleContent} />}
         </>
     )
 }
