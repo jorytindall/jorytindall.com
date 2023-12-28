@@ -11,13 +11,16 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
+
+	const galleryImage = getSanityImageUrl(image)
+
 	return (
 		<div className={s.wrapper}>
 			{image && (
 				<div className={s.imageWrapper}>
 					<Image
 						// @ts-ignore
-						src={getSanityImageUrl(image)}
+						src={galleryImage}
 						fill
 						alt={altText}
 						className={s.image}
