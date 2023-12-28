@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 export default async function Home() {
     const homePage = await sanityClient.fetch(GET_HOMEPAGE_DATA)
 
-    console.log(homePage)
-
     return (
         <BentoBox>
             <BentoItem

@@ -9,16 +9,16 @@ import { linkResolver } from "utils/linkResolver";
 // Generate metadata
 export async function generateMetadata({ params }) {
   
-    const { slug } = params;
-    const client = sanityClient
-    const page = await client.fetch(GET_PAGES, {
-      slug
-    })
-  
-    return {
-      title: `${page.title} | Jory Tindall`,
-    }
+  const { slug } = params;
+  const client = sanityClient
+  const page = await client.fetch(GET_PAGES, {
+    slug
+  })
+
+  return {
+    title: `${page.title} | Jory Tindall`,
   }
+}
 
 // Generate static paths for prerendering
 export async function generateStaticParams() {
