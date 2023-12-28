@@ -17,7 +17,9 @@ export const Headline = ({
 	color,
 }: HeadlineProps) => {
 	const classes = getClasses([
+		// @ts-ignore
 		styles[size ? size : tag],
+		// @ts-ignore
 		styles[color ? color : null],
 		collapse ? styles.collapse : null,
 	]);

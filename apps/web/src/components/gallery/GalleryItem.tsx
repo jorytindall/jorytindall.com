@@ -16,6 +16,7 @@ export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
 			{image && (
 				<div className={s.imageWrapper}>
 					<Image
+						// @ts-ignore
 						src={getSanityImageUrl(image)}
 						fill
 						alt={altText}

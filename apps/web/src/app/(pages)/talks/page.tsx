@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: 'Speaking engagements and conference talks',
 }
 
-export default async function TalksPage({ data }) {
+export default async function TalksPage() {
     const client = sanityClient
     const talks = await client.fetch(GET_ALL_TALKS);
 

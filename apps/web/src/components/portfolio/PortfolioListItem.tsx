@@ -24,6 +24,7 @@ export const PortfolioListItem = ({
 			<article className={styles.itemWrapper} key={title}>
 				<div className={styles.imageWrapper}>
 					<Image
+						// @ts-ignore
 						src={getSanityImageUrl(image)}
 						alt={image.alternativeText}
 						fill

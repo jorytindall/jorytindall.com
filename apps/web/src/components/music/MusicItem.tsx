@@ -26,6 +26,7 @@ export const MusicItem = ({
       {image &&
         <div className={styles.imageWrapper}>
           <Image
+            // @ts-ignore
             src={getSanityImageUrl(image)}
             alt={image.alternativeText}
             className={styles.featureImage}

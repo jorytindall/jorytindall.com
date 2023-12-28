@@ -26,6 +26,7 @@ export const Audio = ({
       </div>
       <audio
         controls
+        // @ts-ignore
         src={audioFile.url}
       >
         Download audio

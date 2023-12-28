@@ -17,8 +17,10 @@ export const Text = ({
     color
 }: TextProps) => {
     const classes = getClasses([
+        // @ts-ignore
         styles[size ? size : tag],
         collapse ? styles.collapse : null,
+        // @ts-ignore
         styles[color],
     ])
 

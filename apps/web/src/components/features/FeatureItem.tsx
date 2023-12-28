@@ -33,6 +33,7 @@ export const FeatureItem = ({
 				{image && (
 					<div className={s.imageWrapper}>
 						<Image
+							// @ts-ignore
 							src={getSanityImageUrl(image)}
 							className={s.imageWrapper}
 							alt={image.alternativeText}

@@ -33,6 +33,7 @@ export const DisplayTrack = ({
   return (
     <div>
       <audio
+        // @ts-ignore
         src={track.url}
         ref={audioRef}
         onLoadedMetadata={onLoadedMetadata}

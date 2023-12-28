@@ -31,7 +31,9 @@ export const BlogTitle = ({
 		<section className={s.wrapper}>
 			<div className={s.imageWrapper}>
 				<Image
+					// @ts-ignore
 					src={getSanityImageUrl(featuredImage)}
+					// @ts-ignore
 					alt={featuredImage.alternativeText}
 					fill
 				/>

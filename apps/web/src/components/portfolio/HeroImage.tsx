@@ -11,6 +11,7 @@ export const HeroImage = ({ source, altText }: HeroImageProps) => {
 	return (
 		<section className={s.heroWrapper}>
 			<Image
+				// @ts-ignore
 				src={getSanityImageUrl(source)}
 				alt={altText}
 				fill

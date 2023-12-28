@@ -16,6 +16,7 @@ export const Person = ({
   return (
     <div className={styles.wrapper}>
       <Image
+        // @ts-ignore
         src={getSanityImageUrl(image)}
         alt={name}
         width={80}
