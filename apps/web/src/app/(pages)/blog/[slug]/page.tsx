@@ -1,8 +1,8 @@
 import { sanityClient } from "lib/sanity.client";
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from "lib/queries";
-import { BlogTitle } from "components/blog";
-import { RichText } from "components/rich-text";
-import { GridWrapper, RichTextWrapper } from "components/layout";
+import { BlogTitle } from "app/components/blog";
+import { RichText } from "app/components/rich-text";
+import { GridWrapper, RichTextWrapper } from "app/components/layout";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

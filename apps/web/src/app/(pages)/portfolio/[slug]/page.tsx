@@ -1,7 +1,7 @@
 import { sanityClient } from "lib/sanity.client";
 import { GET_PORTFOLIO_PROJECTS, GET_PORTFOLIO_PROJECT_PATHS } from "lib/queries";
-import { HeroImage, Title } from 'components/portfolio';
-import { ModuleRenderer } from 'components/module-renderer';
+import { HeroImage, Title } from 'app/components/portfolio';
+import { ModuleRenderer } from 'app/components/module-renderer';
 
 export async function generateMetadata({ params }) {
   const { slug } = params;

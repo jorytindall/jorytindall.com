@@ -1,7 +1,7 @@
 import { sanityClient } from "utils/sanity/sanityClient";
 import { GET_ALL_BLOG_POSTS } from "lib/queries";
-import { PostWrapper } from "components/blog";
-import { Headline } from "components/typography";
+import { PostWrapper } from "app/components/blog";
+import { Headline } from "app/components/typography";
 import { linkResolver } from "utils/linkResolver";
 import styles from 'styles/pages/Blog.module.scss';
 

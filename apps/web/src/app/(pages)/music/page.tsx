@@ -1,8 +1,8 @@
 import { sanityClient } from "utils/sanity/sanityClient";
 import { GET_ALL_MUSIC_PROJECTS } from "lib/queries";
-import { PageTitle } from "components/page-title";
+import { PageTitle } from "app/components/page-title";
 import styles from 'styles/pages/Music.module.scss';
-import { MusicItem } from 'components/music';
+import { MusicItem } from 'app/components/music';
 
 import type { Metadata } from "next";
 

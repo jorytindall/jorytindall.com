@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import Fathom from "lib/fathom";
-import { Header, Footer } from "components/navigation";
+import { Header, Footer } from "app/components/navigation";
 import 'styles/main.scss';
 
 export const metadata = {

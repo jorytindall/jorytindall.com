@@ -1,10 +1,10 @@
 import { sanityClient } from "utils/sanity/sanityClient";
 import { GET_HOMEPAGE_DATA } from "lib/queries";
-import { Headline, Paragraph, InlineLink } from 'components/typography';
-import { TextArrow } from 'components/button';
-import { Container } from 'components/layout'
-import { BentoBox,BentoItem } from 'components/bento';
-import { EventList } from 'components/event'
+import { Headline, Paragraph, InlineLink } from 'app/components/typography';
+import { TextArrow } from 'app/components/button';
+import { Container } from 'app/components/layout'
+import { BentoBox,BentoItem } from 'app/components/bento';
+import { EventList } from 'app/components/event'
 
 import type { Metadata } from "next";
 
