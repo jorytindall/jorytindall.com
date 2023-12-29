@@ -1,4 +1,4 @@
-import { sanityClient } from "utils/sanity/sanityClient";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_HOMEPAGE_DATA } from "lib/queries";
 import { Headline, Paragraph, InlineLink } from 'app/components/typography';
 import { TextArrow } from 'app/components/button';

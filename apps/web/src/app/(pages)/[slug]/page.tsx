@@ -1,10 +1,9 @@
-import { sanityClient } from "utils/sanity/sanityClient"
+import { sanityClient } from "lib/sanity/sanityClient"
 import { GET_PAGES, GET_PAGE_PATHS } from "lib/queries"
 
 import { PageTitle } from "app/components/page-title";
 import { Headline } from "app/components/typography";
 import { ModuleRenderer } from "app/components/module-renderer";
-import { linkResolver } from "utils/linkResolver";
 
 // Generate metadata
 export async function generateMetadata({ params }) {

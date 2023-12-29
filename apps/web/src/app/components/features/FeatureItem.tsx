@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import { sanityClient } from 'lib/sanity.server';
 import { Container } from 'app/components/layout';
 import { Headline, Paragraph } from 'app/components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
@@ -19,7 +17,6 @@ export const FeatureItem = ({
 	title,
 	description,
 }: FeatureItemProps) => {
-	// const imageProps = useNextSanityImage(sanityClient, image);
 
 	return (
 		<>

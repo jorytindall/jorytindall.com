@@ -1,5 +1,5 @@
 import { RichText } from 'app/components/rich-text';
-import { Form, RenderFormControls } from 'app/components/form';
+import { Form } from 'app/components/form';
 import { Paragraph } from 'app/components/typography';
 import { RichTextWrapper, GridWrapper } from 'app/components/layout';
 import { Features } from 'app/components/features';
@@ -23,7 +23,6 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 			case 'form': {
 				return (
 					<Form key={m._key} name={m.name} method={m.method}>
-						{/* <RenderFormControls input={m.fields} /> */}
 						<Paragraph>
 							<a href="mailto:hello@jorytindall.com">
 								Get in touch with me!

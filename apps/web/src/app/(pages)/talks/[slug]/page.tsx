@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns'
 import Image from 'next/image'
-import { sanityClient } from 'utils/sanity/sanityClient'
+import { sanityClient } from 'lib/sanity/sanityClient'
 import { getSanityImageUrl } from 'utils/getSanityImage'
 import { linkResolver } from 'utils/linkResolver'
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries'

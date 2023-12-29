@@ -1,9 +1,9 @@
 import { createClient } from 'next-sanity';
-import { config } from './sanityConfig';
+import { sanityConfig } from './sanity.client'
 
-export const sanityClient = createClient(config);
+export const sanityClient = createClient(sanityConfig);
 export const previewClient = createClient({
-	...config,
+	...sanityConfig,
 	useCdn: false,
 	token: process.env.SANITY_API_TOKEN,
 });

@@ -1,4 +1,4 @@
-import { sanityClient } from "lib/sanity.client";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_PORTFOLIO_PROJECTS, GET_PORTFOLIO_PROJECT_PATHS } from "lib/queries";
 import { HeroImage, Title } from 'app/components/portfolio';
 import { ModuleRenderer } from 'app/components/module-renderer';

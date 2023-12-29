@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns';
-import { sanityClient } from 'utils/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_ALL_TALKS } from 'lib/queries';
 import { PageTitle } from 'app/components/page-title';
 import { CenteredWrapper } from 'app/components/layout';

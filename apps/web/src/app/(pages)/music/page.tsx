@@ -1,4 +1,4 @@
-import { sanityClient } from "utils/sanity/sanityClient";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_ALL_MUSIC_PROJECTS } from "lib/queries";
 import { PageTitle } from "app/components/page-title";
 import styles from 'styles/pages/Music.module.scss';

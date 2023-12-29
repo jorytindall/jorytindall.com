@@ -1,4 +1,4 @@
-import { sanityClient } from "lib/sanity.client";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from "lib/queries";
 import { BlogTitle } from "app/components/blog";
 import { RichText } from "app/components/rich-text";

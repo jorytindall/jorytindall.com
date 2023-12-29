@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from 'styles/components/Avatar.module.scss';
-import avatarLogo from '../../../public/avatar-logo.png';
+import avatarLogo from '../../../../public/avatar-logo.png';
 
 export const Avatar = () => {
 	return (

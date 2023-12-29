@@ -1,4 +1,4 @@
-import { sanityClient } from "utils/sanity/sanityClient";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_ALL_BLOG_POSTS } from "lib/queries";
 import { PostWrapper } from "app/components/blog";
 import { Headline } from "app/components/typography";

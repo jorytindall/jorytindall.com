@@ -1,4 +1,4 @@
-import { sanityClient } from "utils/sanity/sanityClient";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from "lib/queries";
 import { ModuleRenderer } from "app/components/module-renderer";
 import { PageTitle } from "app/components/page-title";

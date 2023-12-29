@@ -1,4 +1,4 @@
-import { sanityClient } from "utils/sanity/sanityClient";
+import { sanityClient } from "lib/sanity/sanityClient";
 import { format, parseISO } from "date-fns";
 import { GET_ALL_EVENTS } from "lib/queries";
 import { getCurrentEvents } from "utils/getCurrentEvents";
