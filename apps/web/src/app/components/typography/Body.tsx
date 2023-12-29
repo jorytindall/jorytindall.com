@@ -4,6 +4,7 @@ import { getClasses } from 'utils/getClasses';
 interface ParagraphProps {
 	children: React.ReactNode;
 	type?: 'primary' | 'secondary' | 'lead';
+	color?: 'primary' | 'secondary' | 'light';
 	collapse?: boolean;
 }
 
@@ -14,10 +15,13 @@ interface CodeProps {
 export const Paragraph = ({
 	children,
 	type = 'primary',
+	color = 'primary',
 	collapse,
 }: ParagraphProps) => {
 	const classes = getClasses([
 		styles[type],
+		// @ts-ignore
+		styles[color ? color : null],
 		collapse ? styles.collapse : null,
 	]);
 

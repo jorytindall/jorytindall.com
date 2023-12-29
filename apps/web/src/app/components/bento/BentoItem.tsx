@@ -3,7 +3,7 @@ import styles from 'styles/components/bento/BentoItem.module.scss';
 
 interface BentoItemProps {
 	children: React.ReactNode;
-	background?: string;
+	background?: 'primary' | 'secondary' | 'tertiary' | 'light' | 'dark';
 	className?: string;
 	size: string;
 	padding: string;

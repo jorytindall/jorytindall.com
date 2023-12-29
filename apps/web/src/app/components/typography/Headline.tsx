@@ -6,7 +6,7 @@ interface HeadlineProps {
 	size?: 'mega' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	collapse?: boolean;
 	tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-	color?: string;
+	color?: 'primary' | 'secondary' | 'light';
 }
 
 export const Headline = ({

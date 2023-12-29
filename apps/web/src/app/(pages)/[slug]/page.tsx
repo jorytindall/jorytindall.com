@@ -1,4 +1,5 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
+import useSanityFetch from 'lib/sanity/useSanityFetch';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 
 import { PageTitle } from 'app/components/page-title';

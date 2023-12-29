@@ -2,8 +2,8 @@ import styles from 'styles/components/Badge.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface BadgeProps {
-	text: string;
-	type?: string;
+	text: string,
+	type?: 'primary' | 'secondary' | 'tertiary',
 }
 
 export const Badge = ({
