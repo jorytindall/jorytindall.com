@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Fathom from "lib/fathom";
 import { Header, Footer } from "components/navigation";
 import 'styles/main.scss';
@@ -15,10 +16,13 @@ export default function RootLayout({
     return (
       <html lang="en">
         <body>
-            <Fathom />
             <Header />
             {children}
             <Footer />
+            {/* Fathom analytics */}
+            <Fathom />
+            {/* Vercel analytics */}
+            <Analytics />
         </body>
       </html>
     )
