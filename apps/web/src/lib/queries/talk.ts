@@ -1,4 +1,4 @@
-import { groq } from 'next-sanity'
+import { groq } from 'next-sanity';
 
 export const GET_TALKS = groq`
   *[_type == 'talk' && slug.current == $slug][0] {

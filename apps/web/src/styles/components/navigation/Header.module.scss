@@ -118,7 +118,8 @@
 	line-height: 60px;
 	color: $color-primary-300;
 	text-decoration: none;
-	transition: color 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99),
+	transition:
+		color 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99),
 		transform 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99);
 	margin: 0.25rem 0;
 	display: block;

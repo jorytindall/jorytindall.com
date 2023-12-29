@@ -2,32 +2,30 @@
  * Handles the showing of speaker notes
  */
 export default class Notes {
-
-	constructor( Reveal ) {
-
+	constructor(Reveal) {
 		this.Reveal = Reveal;
-
 	}
 
 	render() {
-
-		this.element = document.createElement( 'div' );
+		this.element = document.createElement('div');
 		this.element.className = 'speaker-notes';
-		this.element.setAttribute( 'data-prevent-swipe', '' );
-		this.element.setAttribute( 'tabindex', '0' );
-		this.Reveal.getRevealElement().appendChild( this.element );
-
+		this.element.setAttribute('data-prevent-swipe', '');
+		this.element.setAttribute('tabindex', '0');
+		this.Reveal.getRevealElement().appendChild(this.element);
 	}
 
 	/**
 	 * Called when the reveal.js config is updated.
 	 */
-	configure( config, oldConfig ) {
-
-		if( config.showNotes ) {
-			this.element.setAttribute( 'data-layout', typeof config.showNotes === 'string' ? config.showNotes : 'inline' );
+	configure(config, oldConfig) {
+		if (config.showNotes) {
+			this.element.setAttribute(
+				'data-layout',
+				typeof config.showNotes === 'string'
+					? config.showNotes
+					: 'inline',
+			);
 		}
-
 	}
 
 	/**
@@ -37,13 +35,16 @@ export default class Notes {
 	 * @see {@link config.showNotes}
 	 */
 	update() {
-
-		if( this.Reveal.getConfig().showNotes && this.element && this.Reveal.getCurrentSlide() && !this.Reveal.print.isPrintingPDF() ) {
-
-			this.element.innerHTML = this.getSlideNotes() || '<span class="notes-placeholder">No notes on this slide.</span>';
-
+		if (
+			this.Reveal.getConfig().showNotes &&
+			this.element &&
+			this.Reveal.getCurrentSlide() &&
+			!this.Reveal.print.isPrintingPDF()
+		) {
+			this.element.innerHTML =
+				this.getSlideNotes() ||
+				'<span class="notes-placeholder">No notes on this slide.</span>';
 		}
-
 	}
 
 	/**
@@ -53,14 +54,15 @@ export default class Notes {
 	 * one or more slides in the deck.
 	 */
 	updateVisibility() {
-
-		if( this.Reveal.getConfig().showNotes && this.hasNotes() && !this.Reveal.print.isPrintingPDF() ) {
-			this.Reveal.getRevealElement().classList.add( 'show-notes' );
+		if (
+			this.Reveal.getConfig().showNotes &&
+			this.hasNotes() &&
+			!this.Reveal.print.isPrintingPDF()
+		) {
+			this.Reveal.getRevealElement().classList.add('show-notes');
+		} else {
+			this.Reveal.getRevealElement().classList.remove('show-notes');
 		}
-		else {
-			this.Reveal.getRevealElement().classList.remove( 'show-notes' );
-		}
-
 	}
 
 	/**
@@ -68,9 +70,11 @@ export default class Notes {
 	 * presentation.
 	 */
 	hasNotes() {
-
-		return this.Reveal.getSlidesElement().querySelectorAll( '[data-notes], aside.notes' ).length > 0;
-
+		return (
+			this.Reveal.getSlidesElement().querySelectorAll(
+				'[data-notes], aside.notes',
+			).length > 0
+		);
 	}
 
 	/**
@@ -80,9 +84,7 @@ export default class Notes {
 	 * @return {boolean}
 	 */
 	isSpeakerNotesWindow() {
-
-		return !!window.location.search.match( /receiver/gi );
-
+		return !!window.location.search.match(/receiver/gi);
 	}
 
 	/**
@@ -94,27 +96,24 @@ export default class Notes {
 	 * @param {HTMLElement} [slide=currentSlide]
 	 * @return {(string|null)}
 	 */
-	getSlideNotes( slide = this.Reveal.getCurrentSlide() ) {
-
+	getSlideNotes(slide = this.Reveal.getCurrentSlide()) {
 		// Notes can be specified via the data-notes attribute...
-		if( slide.hasAttribute( 'data-notes' ) ) {
-			return slide.getAttribute( 'data-notes' );
+		if (slide.hasAttribute('data-notes')) {
+			return slide.getAttribute('data-notes');
 		}
 
 		// ... or using <aside class="notes"> elements
-		let notesElements = slide.querySelectorAll( 'aside.notes' );
-		if( notesElements ) {
-			return Array.from(notesElements).map( notesElement => notesElement.innerHTML ).join( '\n' );
+		let notesElements = slide.querySelectorAll('aside.notes');
+		if (notesElements) {
+			return Array.from(notesElements)
+				.map((notesElement) => notesElement.innerHTML)
+				.join('\n');
 		}
 
 		return null;
-
 	}
 
 	destroy() {
-
 		this.element.remove();
-
 	}
-
 }

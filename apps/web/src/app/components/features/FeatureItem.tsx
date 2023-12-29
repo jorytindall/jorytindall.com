@@ -17,7 +17,6 @@ export const FeatureItem = ({
 	title,
 	description,
 }: FeatureItemProps) => {
-
 	return (
 		<>
 			<Container

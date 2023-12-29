@@ -10,36 +10,40 @@ import { Paragraph } from 'app/components/typography';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Talks | Jory Tindall',
-    description: 'Speaking engagements and conference talks',
-}
+	title: 'Talks | Jory Tindall',
+	description: 'Speaking engagements and conference talks',
+};
 
 export default async function TalksPage() {
-    const client = sanityClient
-    const talks = await client.fetch(GET_ALL_TALKS);
+	const client = sanityClient;
+	const talks = await client.fetch(GET_ALL_TALKS);
 
-    const renderTalks = talks.map(talk => {
-        return (
-            <ListItem
-                key={talk._id}
-                title={talk.title}
-                link={linkResolver('talk', talk.slug)}
-            >
-                <Paragraph type='primary' collapse>{talk.description}</Paragraph>
-                <Paragraph
-                    type='secondary'
-                    collapse
-                >Given at <strong>{talk.conference}</strong> on <strong>{format(parseISO(talk.date), 'MMMM do, yyyy')}</strong></Paragraph>
-            </ListItem>
-        )
-    })
+	const renderTalks = talks.map((talk) => {
+		return (
+			<ListItem
+				key={talk._id}
+				title={talk.title}
+				link={linkResolver('talk', talk.slug)}
+			>
+				<Paragraph type="primary" collapse>
+					{talk.description}
+				</Paragraph>
+				<Paragraph type="secondary" collapse>
+					Given at <strong>{talk.conference}</strong> on{' '}
+					<strong>
+						{format(parseISO(talk.date), 'MMMM do, yyyy')}
+					</strong>
+				</Paragraph>
+			</ListItem>
+		);
+	});
 
-    return (
-        <>
-            <PageTitle title='🎙️ Speaking' megaTitle="Conference talks" />
-            <CenteredWrapper semanticElement="section">
-                {renderTalks}
-            </CenteredWrapper>
-        </>
-    )
+	return (
+		<>
+			<PageTitle title="🎙️ Speaking" megaTitle="Conference talks" />
+			<CenteredWrapper semanticElement="section">
+				{renderTalks}
+			</CenteredWrapper>
+		</>
+	);
 }

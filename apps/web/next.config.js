@@ -13,13 +13,13 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'cdn.sanity.io',
-			}
-		]
+			},
+		],
 	},
 	i18n: {
 		locales: ['en'],
 		defaultLocale: 'en',
-	}
+	},
 };
 
 module.exports = nextConfig;

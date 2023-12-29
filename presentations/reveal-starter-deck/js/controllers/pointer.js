@@ -2,9 +2,7 @@
  * Handles hiding of the pointer/cursor when inactive.
  */
 export default class Pointer {
-
-	constructor( Reveal ) {
-
+	constructor(Reveal) {
 		this.Reveal = Reveal;
 
 		// Throttles mouse wheel navigation
@@ -16,37 +14,64 @@ export default class Pointer {
 		// Timeout used to determine when the cursor is inactive
 		this.cursorInactiveTimeout = 0;
 
-		this.onDocumentCursorActive = this.onDocumentCursorActive.bind( this );
-		this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind( this );
-
+		this.onDocumentCursorActive = this.onDocumentCursorActive.bind(this);
+		this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind(this);
 	}
 
 	/**
 	 * Called when the reveal.js config is updated.
 	 */
-	configure( config, oldConfig ) {
-
-		if( config.mouseWheel ) {
-			document.addEventListener( 'DOMMouseScroll', this.onDocumentMouseScroll, false ); // FF
-			document.addEventListener( 'mousewheel', this.onDocumentMouseScroll, false );
-		}
-		else {
-			document.removeEventListener( 'DOMMouseScroll', this.onDocumentMouseScroll, false ); // FF
-			document.removeEventListener( 'mousewheel', this.onDocumentMouseScroll, false );
+	configure(config, oldConfig) {
+		if (config.mouseWheel) {
+			document.addEventListener(
+				'DOMMouseScroll',
+				this.onDocumentMouseScroll,
+				false,
+			); // FF
+			document.addEventListener(
+				'mousewheel',
+				this.onDocumentMouseScroll,
+				false,
+			);
+		} else {
+			document.removeEventListener(
+				'DOMMouseScroll',
+				this.onDocumentMouseScroll,
+				false,
+			); // FF
+			document.removeEventListener(
+				'mousewheel',
+				this.onDocumentMouseScroll,
+				false,
+			);
 		}
 
 		// Auto-hide the mouse pointer when its inactive
-		if( config.hideInactiveCursor ) {
-			document.addEventListener( 'mousemove', this.onDocumentCursorActive, false );
-			document.addEventListener( 'mousedown', this.onDocumentCursorActive, false );
-		}
-		else {
+		if (config.hideInactiveCursor) {
+			document.addEventListener(
+				'mousemove',
+				this.onDocumentCursorActive,
+				false,
+			);
+			document.addEventListener(
+				'mousedown',
+				this.onDocumentCursorActive,
+				false,
+			);
+		} else {
 			this.showCursor();
 
-			document.removeEventListener( 'mousemove', this.onDocumentCursorActive, false );
-			document.removeEventListener( 'mousedown', this.onDocumentCursorActive, false );
+			document.removeEventListener(
+				'mousemove',
+				this.onDocumentCursorActive,
+				false,
+			);
+			document.removeEventListener(
+				'mousedown',
+				this.onDocumentCursorActive,
+				false,
+			);
 		}
-
 	}
 
 	/**
@@ -54,12 +79,10 @@ export default class Pointer {
 	 * #hideCursor.
 	 */
 	showCursor() {
-
-		if( this.cursorHidden ) {
+		if (this.cursorHidden) {
 			this.cursorHidden = false;
 			this.Reveal.getRevealElement().style.cursor = '';
 		}
-
 	}
 
 	/**
@@ -67,23 +90,35 @@ export default class Pointer {
 	 * container.
 	 */
 	hideCursor() {
-
-		if( this.cursorHidden === false ) {
+		if (this.cursorHidden === false) {
 			this.cursorHidden = true;
 			this.Reveal.getRevealElement().style.cursor = 'none';
 		}
-
 	}
 
 	destroy() {
-
 		this.showCursor();
 
-		document.removeEventListener( 'DOMMouseScroll', this.onDocumentMouseScroll, false );
-		document.removeEventListener( 'mousewheel', this.onDocumentMouseScroll, false );
-		document.removeEventListener( 'mousemove', this.onDocumentCursorActive, false );
-		document.removeEventListener( 'mousedown', this.onDocumentCursorActive, false );
-
+		document.removeEventListener(
+			'DOMMouseScroll',
+			this.onDocumentMouseScroll,
+			false,
+		);
+		document.removeEventListener(
+			'mousewheel',
+			this.onDocumentMouseScroll,
+			false,
+		);
+		document.removeEventListener(
+			'mousemove',
+			this.onDocumentCursorActive,
+			false,
+		);
+		document.removeEventListener(
+			'mousedown',
+			this.onDocumentCursorActive,
+			false,
+		);
 	}
 
 	/**
@@ -92,14 +127,15 @@ export default class Pointer {
 	 *
 	 * @param {object} event
 	 */
-	onDocumentCursorActive( event ) {
-
+	onDocumentCursorActive(event) {
 		this.showCursor();
 
-		clearTimeout( this.cursorInactiveTimeout );
+		clearTimeout(this.cursorInactiveTimeout);
 
-		this.cursorInactiveTimeout = setTimeout( this.hideCursor.bind( this ), this.Reveal.getConfig().hideCursorTime );
-
+		this.cursorInactiveTimeout = setTimeout(
+			this.hideCursor.bind(this),
+			this.Reveal.getConfig().hideCursorTime,
+		);
 	}
 
 	/**
@@ -108,22 +144,16 @@ export default class Pointer {
 	 *
 	 * @param {object} event
 	 */
-	onDocumentMouseScroll( event ) {
-
-		if( Date.now() - this.lastMouseWheelStep > 1000 ) {
-
+	onDocumentMouseScroll(event) {
+		if (Date.now() - this.lastMouseWheelStep > 1000) {
 			this.lastMouseWheelStep = Date.now();
 
 			let delta = event.detail || -event.wheelDelta;
-			if( delta > 0 ) {
+			if (delta > 0) {
 				this.Reveal.next();
-			}
-			else if( delta < 0 ) {
+			} else if (delta < 0) {
 				this.Reveal.prev();
 			}
-
 		}
-
 	}
-
 }

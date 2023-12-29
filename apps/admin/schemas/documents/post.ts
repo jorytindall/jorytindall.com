@@ -16,7 +16,7 @@ export default {
 				Rule.min(3)
 					.max(96)
 					.warning(
-						`It's recommended that the post title be less than 96 characters for length and SEO reasons.`
+						`It's recommended that the post title be less than 96 characters for length and SEO reasons.`,
 					)
 			),
 		},
@@ -29,7 +29,7 @@ export default {
 			},
 			validation: (Rule) =>
 				Rule.required().error(
-					'The post needs a slug to properly generate from the template.'
+					'The post needs a slug to properly generate from the template.',
 				),
 		},
 		{
@@ -42,7 +42,7 @@ export default {
 			},
 			validation: (Rule) =>
 				Rule.required().error(
-					'Enter the date the post was published for accurate sorting and organization.'
+					'Enter the date the post was published for accurate sorting and organization.',
 				),
 		},
 		{
@@ -51,7 +51,7 @@ export default {
 			type: `mainImage`,
 			validation: (Rule) =>
 				Rule.required().error(
-					'Upload an image to be rendered within the post, but also in sharing on social platforms.'
+					'Upload an image to be rendered within the post, but also in sharing on social platforms.',
 				),
 		},
 		{
@@ -89,7 +89,7 @@ export default {
 			type: `richText`,
 			validation: (Rule) =>
 				Rule.required().error(
-					'The post needs content, otherwise why would you write it?'
+					'The post needs content, otherwise why would you write it?',
 				),
 		},
 	],

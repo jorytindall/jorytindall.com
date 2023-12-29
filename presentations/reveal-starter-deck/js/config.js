@@ -2,7 +2,6 @@
  * The default reveal.js config object.
  */
 export default {
-
 	// The "normal" size of the presentation, aspect ratio will be preserved
 	// when the presentation is scaled to fit different resolutions
 	width: 960,
@@ -193,7 +192,7 @@ export default {
 		'border-color',
 		'border-radius',
 		'outline',
-		'outline-offset'
+		'outline-offset',
 	],
 
 	// Controls automatic progression to the next slide
@@ -295,6 +294,5 @@ export default {
 	dependencies: [],
 
 	// Plugin objects to register and use for this presentation
-	plugins: []
-
-}
+	plugins: [],
+};

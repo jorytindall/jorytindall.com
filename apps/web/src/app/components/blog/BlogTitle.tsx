@@ -12,7 +12,7 @@ interface BlogTitleProps {
 	categories: [
 		category: {
 			name: string;
-		}
+		},
 	];
 }
 

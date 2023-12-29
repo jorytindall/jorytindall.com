@@ -3,17 +3,17 @@ import styles from 'styles/components/layout/RichTextWrapper.module.scss';
 
 interface RichTextWrapperProps {
 	children: React.ReactNode;
-	collapse?: boolean
+	collapse?: boolean;
 }
 
-export const RichTextWrapper = ({ children, collapse }: RichTextWrapperProps) => {
-
+export const RichTextWrapper = ({
+	children,
+	collapse,
+}: RichTextWrapperProps) => {
 	const classes = getClasses([
 		[styles.wrapper],
-		[collapse === true ? styles.collapse : null]
-	])
+		[collapse === true ? styles.collapse : null],
+	]);
 
-	return (
-		<div className={classes}>{children}</div>
-	)
-}
+	return <div className={classes}>{children}</div>;
+};

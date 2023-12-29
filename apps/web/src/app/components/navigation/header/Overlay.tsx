@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import { FeaturedItem } from './FeaturedItem';
 import styles from 'styles/components/navigation/Header.module.scss';
 
@@ -10,12 +10,12 @@ interface OverlayProps {
 const overlayAnimation = {
 	hidden: { opacity: 0 },
 	enter: { opacity: 1 },
-}
+};
 
 const linkAnimation = {
 	hidden: { opacity: 0, translateX: 50 },
 	enter: { opacity: 1, translateX: 0 },
-}
+};
 
 export const Overlay = ({ overlay }: OverlayProps) => {
 	const getOverlayClass = overlay
@@ -61,18 +61,22 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 	return (
 		<motion.div
 			variants={overlayAnimation}
-			initial='hidden'
-			animate='enter'
+			initial="hidden"
+			animate="enter"
 			className={getOverlayClass}
 		>
 			<motion.aside
-				initial='hidden'
-				animate='enter'
+				initial="hidden"
+				animate="enter"
 				className={styles.linkWrapper}
 			>
 				{links.map((link) => {
 					return (
-						<Link href={link.slug} key={link.text} className={styles.navLink}>
+						<Link
+							href={link.slug}
+							key={link.text}
+							className={styles.navLink}
+						>
 							{link.text}
 						</Link>
 					);

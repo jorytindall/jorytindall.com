@@ -26,7 +26,10 @@ export const MetaHead = ({
 			<meta content={description} name="description"></meta>
 			<meta content={title} property="og:title"></meta>
 			<meta content={description} property="og:description"></meta>
-			<meta content={`https://jorytindall/${slug}`} property="og:url"></meta>
+			<meta
+				content={`https://jorytindall/${slug}`}
+				property="og:url"
+			></meta>
 			<meta content={ogImage} property="og:image"></meta>
 			<link
 				rel="apple-touch-icon"

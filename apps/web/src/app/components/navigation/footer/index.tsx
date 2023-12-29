@@ -17,7 +17,12 @@ export const Footer = () => {
 				<div className={styles.internalLinks}>
 					{internalLinks.map((link) => {
 						return (
-							<Link href={link.slug} key={link.text} passHref className={styles.link}>
+							<Link
+								href={link.slug}
+								key={link.text}
+								passHref
+								className={styles.link}
+							>
 								{link.text}
 							</Link>
 						);

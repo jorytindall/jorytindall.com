@@ -1,19 +1,13 @@
 import { getClasses } from 'utils/getClasses';
-import s from 'styles/components/layout/CenteredWrapper.module.scss'
+import s from 'styles/components/layout/CenteredWrapper.module.scss';
 
 interface CenteredWrapperProps {
-  children: React.ReactNode,
-  semanticElement: 'div' | 'article' | 'section',
+	children: React.ReactNode;
+	semanticElement: 'div' | 'article' | 'section';
 }
 
-export const CenteredWrapper = ({
-  children,
-  semanticElement
-}) => {
-
-  const classes = getClasses([
-    s.wrapper,
-  ])
+export const CenteredWrapper = ({ children, semanticElement }) => {
+	const classes = getClasses([s.wrapper]);
 
 	switch (semanticElement) {
 		case 'div':
@@ -25,4 +19,4 @@ export const CenteredWrapper = ({
 		case 'aside':
 			return <aside className={classes}>{children}</aside>;
 	}
-}
+};

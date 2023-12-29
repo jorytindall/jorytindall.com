@@ -1,2 +1,2 @@
-export { Playlist } from './playlist'
-export { Audio } from './audio'
+export { Playlist } from './playlist';
+export { Audio } from './audio';

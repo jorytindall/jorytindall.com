@@ -20,7 +20,10 @@ export const PortfolioListItem = ({
 	image,
 }: PortfolioListItemProps) => {
 	return (
-		<Link href={linkResolver('portfolioProject', slug)} className={styles.linkWrapper}>
+		<Link
+			href={linkResolver('portfolioProject', slug)}
+			className={styles.linkWrapper}
+		>
 			<article className={styles.itemWrapper} key={title}>
 				<div className={styles.imageWrapper}>
 					<Image
@@ -34,7 +37,7 @@ export const PortfolioListItem = ({
 					{title}
 				</Headline>
 				<Paragraph type="primary" collapse>
-					<Badge text={client} type='primary' />
+					<Badge text={client} type="primary" />
 				</Paragraph>
 			</article>
 		</Link>

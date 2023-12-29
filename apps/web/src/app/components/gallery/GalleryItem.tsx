@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Paragraph } from 'app/components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import s from 'styles/components/gallery/GalleryItem.module.css'
+import s from 'styles/components/gallery/GalleryItem.module.css';
 
 interface GalleryItemProps {
 	key: string;
@@ -11,8 +11,7 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-
-	const galleryImage = getSanityImageUrl(image)
+	const galleryImage = getSanityImageUrl(image);
 
 	return (
 		<div className={s.wrapper}>

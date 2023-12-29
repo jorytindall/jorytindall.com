@@ -1,5 +1,5 @@
 import { createClient } from 'next-sanity';
-import { sanityConfig } from './sanity.client'
+import { sanityConfig } from './sanity.client';
 
 export const sanityClient = createClient(sanityConfig);
 export const previewClient = createClient({

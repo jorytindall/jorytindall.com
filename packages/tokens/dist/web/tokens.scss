@@ -22,9 +22,20 @@ $color-neutral-300: #e6ebef;
 $color-neutral-400: #a7acba;
 $color-neutral-500: #676b74;
 $color-neutral-600: #160f29;
-$typography-font-family-body: Neue Haas Unica, Helvetica, Arial, sans-serif;
-$typography-font-family-headline: Uxum Grotesque, Helvetica, Aria, sans-serif;
-$typography-font-family-mono: Fira Code, courier, monospace;
+$typography-font-family-body:
+	Neue Haas Unica,
+	Helvetica,
+	Arial,
+	sans-serif;
+$typography-font-family-headline:
+	Uxum Grotesque,
+	Helvetica,
+	Aria,
+	sans-serif;
+$typography-font-family-mono:
+	Fira Code,
+	courier,
+	monospace;
 $typography-font-size-headline-mega: clamp(10vw, 39.3vw - 15.2rem, 9.375rem);
 $typography-font-size-headline-01: clamp(2rem, 5.3vw - 0.3rem, 3rem);
 $typography-font-size-headline-02: 2.5rem;

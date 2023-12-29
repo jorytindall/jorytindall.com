@@ -1,2 +1,2 @@
-export { BentoBox } from './BentoBox'
-export { BentoItem } from './BentoItem'
+export { BentoBox } from './BentoBox';
+export { BentoItem } from './BentoItem';

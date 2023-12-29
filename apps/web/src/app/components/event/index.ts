@@ -1,1 +1,1 @@
-export * from './EventList'
+export * from './EventList';

@@ -30,17 +30,21 @@ export const Burger = ({ overlay, toggle }: BurgerProps) => {
 
 	return (
 		<div className={classes} onClick={() => toggle(!overlay)}>
-			{overlay && <span role='img' aria-label='open menu' className={styles.burgerEmoji}>🍔</span>}
-			{!overlay &&
+			{overlay && (
+				<span
+					role="img"
+					aria-label="open menu"
+					className={styles.burgerEmoji}
+				>
+					🍔
+				</span>
+			)}
+			{!overlay && (
 				<>
-					<motion.div
-						className={styles.bar}
-					/>
-					<motion.div
-						className={styles.bar}
-					/>
+					<motion.div className={styles.bar} />
+					<motion.div className={styles.bar} />
 				</>
-			}
+			)}
 		</div>
 	);
 };
