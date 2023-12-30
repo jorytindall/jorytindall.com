@@ -49,7 +49,7 @@ const PortfolioTitle = ({
           density='collapse'
         >
           <Headline
-            color='primary'
+            color='secondary'
             tag='h2'
             size='h5'
             collapse
@@ -74,7 +74,7 @@ const PortfolioTitle = ({
           density='collapse'
         >
           <Headline
-            color='primary'
+            color='secondary'
             tag='h2'
             size='h5'
             collapse
@@ -99,7 +99,7 @@ const PortfolioTitle = ({
           density='collapse'
         >
           <Headline
-            color='primary'
+            color='secondary'
             tag='h2'
             size='h5'
             collapse
@@ -116,7 +116,21 @@ const PortfolioTitle = ({
             ))}
           </Container>
         </Container>
-        <Paragraph color='secondary' collapse><strong>Project timeline:</strong> {timeline}</Paragraph>
+        <Container
+          semanticElement='section'
+          isFlex
+          flexDirection='column'
+          gap='small'
+          density='collapse'
+        >
+          <Headline
+            color='secondary'
+            tag='h2'
+            size='h5'
+            collapse
+          >Project timeline</Headline>
+          <Paragraph color='secondary' collapse>{timeline}</Paragraph>
+        </Container>
       </BentoItem>
     </BentoBox>
   );

@@ -3,7 +3,7 @@ import { getClasses } from 'utils/getClasses';
 
 interface BadgeProps {
 	text: string,
-	type?: 'primary' | 'secondary' | 'tertiary',
+	type?: 'primary' | 'secondary' | 'tertiary' | 'inverse',
 }
 
 export const Badge = ({
