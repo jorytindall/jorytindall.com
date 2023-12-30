@@ -4,6 +4,7 @@ import { Headline } from 'app/components/typography';
 import styles from 'styles/components/portfolio/PortfolioList.module.scss';
 import { linkResolver } from 'utils/linkResolver';
 import { Badge } from 'app/components/badge';
+import { getSanityImageUrl } from 'utils/getSanityImage';
 
 interface PortfolioListItem {
 	input: any;
@@ -11,6 +12,9 @@ interface PortfolioListItem {
 
 export const PortfolioList = ({ input }: PortfolioListItem) => {
 	const portfolioItems = input.items.map((item) => {
+
+		const image = getSanityImageUrl(item.item.featuredImage.asset._ref);
+
 		return (
 			<BentoItem
 				key={item.item.title}
@@ -20,6 +24,8 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 				gap='large'
 				isInteractive={true}
 				href={linkResolver('portfolioProject', item.item.slug.current)}
+				image={image}
+				imagePosition="top"
 			>
 				<Headline tag='h2' size='h4' color='primary' collapse>{item.item.title}</Headline>
 				<Badge text={item.item.client} type='inverse' />

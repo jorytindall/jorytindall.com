@@ -47,23 +47,39 @@ export const BentoItem = ({
 		isJustified ? styles.isJustified : null,
 	])
 
+	// const renderImage = () => {
+	// 	return (
+	// 		<Image
+	// 			src={image}
+	// 			alt={image.alt}
+	// 			fill
+	// 		/>
+	// 	)
+	// }
+
 	if (isInteractive === false) {
 		return (
 			<article className={outerClasses}>
 				{image && imagePosition === 'top' &&
-					<Image
-						src={image}
-						alt={image.alt}
-					/>
+					<div className={styles.imageWrapper}>
+						<Image
+							src={image}
+							alt={image.alt}
+							fill
+						/>
+					</div>
 				}
 				<div className={innerClasses}>
 					{children}
 				</div>
 				{image && imagePosition === 'bottom' &&
-					<Image
-						src={image}
-						alt={image.alt}
-					/>
+					<div className={styles.imageWrapper}>
+						<Image
+							src={image}
+							alt={image.alt}
+							fill
+						/>
+					</div>
 				}
 			</article>
 		)
@@ -74,19 +90,25 @@ export const BentoItem = ({
 				className={outerClasses}
 			>
 				{image && imagePosition === 'top' &&
-					<Image
-						src={image}
-						alt={image.alt}
-					/>
+					<div className={styles.imageWrapper}>
+						<Image
+							src={image}
+							alt={image.alt}
+							fill
+						/>
+					</div>
 				}
 				<div className={innerClasses}>
 					{children}
 				</div>
 				{image && imagePosition === 'bottom' &&
-					<Image
-						src={image}
-						alt={image.alt}
-					/>
+					<div className={styles.imageWrapper}>
+						<Image
+							src={image}
+							alt={image.alt}
+							fill
+						/>
+					</div>
 				}
 			</Link>
 		)
