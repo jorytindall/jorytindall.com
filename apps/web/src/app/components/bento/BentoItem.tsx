@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { getClasses } from 'utils/getClasses';
 import styles from 'styles/components/bento/BentoItem.module.scss';
 
@@ -9,6 +11,10 @@ interface BentoItemProps {
 	padding: string;
 	gap: string;
 	isJustified?: boolean;
+	isInteractive?: boolean;
+	href?: any;
+	image?: any;
+	imagePosition?: 'top' | 'bottom';
 }
 
 export const BentoItem = ({
@@ -19,17 +25,70 @@ export const BentoItem = ({
 	padding,
 	gap,
 	isJustified,
+	isInteractive = false,
+	href,
+	image,
+	imagePosition = 'top'
 }: BentoItemProps) => {
-	const classes = getClasses([
-		styles.wrapper,
+
+	const outerClasses = getClasses([
+		styles.outer,
 		// @ts-ignore
 		styles[background],
 		styles[`size--${size}`],
-		styles[`padding--${padding}`],
-		styles[`gap--${gap}`],
-		isJustified ? styles.isJustified : null,
+		isInteractive ? styles.isInteractive : null,
 		className,
 	]);
 
-	return <article className={classes}>{children}</article>;
+	const innerClasses = getClasses([
+		styles.inner,
+		styles[`padding--${padding}`],
+		styles[`gap--${gap}`],
+		isJustified ? styles.isJustified : null,
+	])
+
+	if (isInteractive === false) {
+		return (
+			<article className={outerClasses}>
+				{image && imagePosition === 'top' &&
+					<Image
+						src={image}
+						alt={image.alt}
+					/>
+				}
+				<div className={innerClasses}>
+					{children}
+				</div>
+				{image && imagePosition === 'bottom' &&
+					<Image
+						src={image}
+						alt={image.alt}
+					/>
+				}
+			</article>
+		)
+	} else {
+		return (
+			<Link
+				href={href}
+				className={outerClasses}
+			>
+				{image && imagePosition === 'top' &&
+					<Image
+						src={image}
+						alt={image.alt}
+					/>
+				}
+				<div className={innerClasses}>
+					{children}
+				</div>
+				{image && imagePosition === 'bottom' &&
+					<Image
+						src={image}
+						alt={image.alt}
+					/>
+				}
+			</Link>
+		)
+	}
 };

@@ -1,22 +1,51 @@
 @use 'styles/abstracts/variables' as *;
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
+// Base styles
+
+.outer {
 	border-radius: 10px;
 	min-height: 20vh;
 }
+
+.inner {
+	display: flex;
+	flex-direction: column;
+}
+
+// Justification
 
 .isJustified {
 	justify-content: space-between;
 }
 
+// Interactive
+
+.isInteractive {
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+	display: inherit;
+	gap: inherit;
+	text-decoration: none;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.075);
+		background: $color-primary-300;
+
+		& > h1, h2, h3, h4, h5, h6, p {
+			color: $color-neutral-100;
+		}
+	}
+}
+
+// Sizes
+
 $sizes: (
-	'small': span 3,
-	'medium': span 4,
-	'large': span 6,
-	'x-large': span 8,
-	'full': span 12,
+	'small',
+	'medium',
+	'large',
+	'x-large',
+	'full',
 );
 
 @each $size, $value in $sizes {
@@ -69,6 +98,8 @@ $sizes: (
 	}
 }
 
+// Background
+
 $backgrounds: (
 	'primary': $color-primary-300,
 	'secondary': $color-secondary-200,
@@ -83,6 +114,8 @@ $backgrounds: (
 	}
 }
 
+// Padding
+
 $paddings: (
 	'none': 0,
 	'small': 0.5rem,
@@ -96,6 +129,8 @@ $paddings: (
 		padding: $value;
 	}
 }
+
+// Gap
 
 $gaps: (
 	'none': 0,

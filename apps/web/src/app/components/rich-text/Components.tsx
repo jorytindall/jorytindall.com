@@ -45,7 +45,7 @@ export const Components = {
 			<Headline tag="h6">{children}</Headline>
 		),
 		normal: ({ children }: BlockProps) => (
-			<Paragraph type="primary">{children}</Paragraph>
+			<Paragraph type="secondary">{children}</Paragraph>
 		),
 		blockquote: ({ children }: BlockProps) => (
 			<Blockquote text={children} />

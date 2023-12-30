@@ -4,10 +4,13 @@
 	grid-auto-flow: row;
 	padding: 0 1rem 1rem 1rem;
 	gap: 1rem;
-	min-height: calc(100vh - 134px);
 
 	@media (min-width: 768px) {
 		padding: 0 2.5rem 2.5rem 2.5rem;
 		gap: 2.5rem;
 	}
+}
+
+.isFullBleed {
+	min-height: calc(100vh - 134px);
 }

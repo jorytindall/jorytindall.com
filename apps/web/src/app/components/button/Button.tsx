@@ -5,7 +5,7 @@ import { getClasses } from 'utils/getClasses';
 interface ButtonProps {
 	children: React.ReactNode;
 	href?: string;
-	variant?: 'primary' | 'secondary';
+	variant?: 'primary' | 'secondary' | 'inverse';
 	size?: 'small' | 'default' | 'large';
 	type?: 'button' | 'submit' | 'reset';
 	isDownload?: boolean;

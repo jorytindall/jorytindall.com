@@ -80,7 +80,6 @@ export default async function PortfolioProject({ params }) {
 					tools={tools}
 				/>
 			}
-			{title && <Title input={portfolioProject} />}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>
 	);

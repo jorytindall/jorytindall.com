@@ -2,6 +2,7 @@ import { BentoBox, BentoItem } from 'app/components/bento';
 import { Headline, Paragraph } from 'app/components/typography';
 import { Badge } from 'app/components/badge';
 import { Container } from 'app/components/layout';
+import { TextArrow } from 'app/components/button';
 
 interface PortfolioTitleProps {
   title: string;
@@ -25,15 +26,20 @@ const PortfolioTitle = ({
   tools,
 }: PortfolioTitleProps) => {
   return (
-    <BentoBox>
+    <BentoBox isFullBleed={false}>
       <BentoItem
         size="x-large"
         padding="x-large"
         gap="large"
         background='primary'
       >
+        <Badge text={client} type='inverse' />
         <Headline tag='h1' size='h1' color='light' collapse>{title}</Headline>
         <Paragraph color='light' collapse>{overview}</Paragraph>
+        <TextArrow
+          style='dark'
+          href={externalLink}
+        >View project</TextArrow>
       </BentoItem>
       <BentoItem
         size="medium"
@@ -129,7 +135,7 @@ const PortfolioTitle = ({
             size='h5'
             collapse
           >Project timeline</Headline>
-          <Paragraph color='secondary' collapse>{timeline}</Paragraph>
+          <Badge text={timeline} type='primary' />
         </Container>
       </BentoItem>
     </BentoBox>

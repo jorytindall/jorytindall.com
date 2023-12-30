@@ -165,7 +165,7 @@ export default async function Home() {
 					semanticElement="div"
 					density="collapse"
 				>
-					<Headline tag="h3" size="h4" color="dark" collapse>
+					<Headline tag="h3" size="h4" color="secondary" collapse>
 						Get in touch
 					</Headline>
 					<Paragraph type="secondary" collapse>
