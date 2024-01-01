@@ -41,7 +41,7 @@ export default async function Home() {
 						design technology, and shredding the saxophone,
 						currently based in Seattle, Washington.
 					</Headline>
-					<Paragraph collapse>
+					<Paragraph color='secondary' collapse>
 						I&apos;m currently helping to empower a broad range of
 						designers and creative thinkers on the Design System
 						team at{' '}
@@ -61,7 +61,7 @@ export default async function Home() {
 							T-Mobile Design System team.
 						</InlineLink>
 					</Paragraph>
-					<Paragraph collapse>
+					<Paragraph color='secondary' collapse>
 						You can also find me leading the charge to democratize
 						music education at{' '}
 						<InlineLink
@@ -123,7 +123,7 @@ export default async function Home() {
 						projects.
 					</Paragraph>
 				</Container>
-				<TextArrow href="/portfolio" style="primary">
+				<TextArrow href="/portfolio" style="neutral">
 					My portfolio
 				</TextArrow>
 			</BentoItem>
@@ -148,7 +148,7 @@ export default async function Home() {
 						ensembles.
 					</Paragraph>
 				</Container>
-				<TextArrow href="/music" style="primary">
+				<TextArrow href="/music" style="neutral">
 					My music
 				</TextArrow>
 			</BentoItem>

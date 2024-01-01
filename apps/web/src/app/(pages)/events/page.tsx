@@ -34,11 +34,11 @@ export default async function Events() {
 						link={linkResolver('event', event.slug)}
 						key={event._id}
 					>
-						<Paragraph type="primary" collapse>
+						<Paragraph type="primary" color='secondary' collapse>
 							<strong>Location: </strong>
 							{event.location}
 						</Paragraph>
-						<Paragraph type="primary" collapse>
+						<Paragraph type="primary" color='secondary' collapse>
 							<strong>Date: </strong>
 							{format(parseISO(event.date), 'MMMM do, yyyy')}
 						</Paragraph>
@@ -46,7 +46,7 @@ export default async function Events() {
 				);
 			})
 		) : (
-			<Paragraph>No upcoming events, check back soon!</Paragraph>
+			<Paragraph color='secondary' collapse>No upcoming events, check back soon!</Paragraph>
 		);
 
 	return (

@@ -27,7 +27,7 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 				image={image}
 				imagePosition="top"
 			>
-				<Headline tag='h2' size='h4' color='primary' collapse>{item.item.title}</Headline>
+				<Headline tag='h2' size='h4' color='secondary' collapse>{item.item.title}</Headline>
 				<Badge text={item.item.client} type='inverse' />
 			</BentoItem>
 		);

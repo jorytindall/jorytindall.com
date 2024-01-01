@@ -51,23 +51,8 @@ export default async function PortfolioProject({ params }) {
 		moduleContent
 	} = portfolioProject;
 
-	// title
-	// overview
-	// timeline
-	// types
-	// externalLink
-	// roles
-	// client
-	// tools
-
 	return (
 		<>
-			{/* {featuredImage.asset && (
-				<HeroImage
-					source={featuredImage.asset}
-					altText={featuredImage.alternativeText}
-				/>
-			)} */}
 			{title &&
 				<PortfolioTitle
 					title={title}

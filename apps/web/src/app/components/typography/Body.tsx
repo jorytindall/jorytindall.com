@@ -15,7 +15,7 @@ interface CodeProps {
 export const Paragraph = ({
 	children,
 	type = 'primary',
-	color = 'primary',
+	color = 'secondary',
 	collapse,
 }: ParagraphProps) => {
 	const classes = getClasses([

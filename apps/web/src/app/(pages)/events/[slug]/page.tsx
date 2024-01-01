@@ -39,7 +39,7 @@ export default async function Event({ params }) {
 				<Headline tag="h1" color="primary" collapse>
 					{title}
 				</Headline>
-				<Paragraph collapse>
+				<Paragraph color='secondary' collapse>
 					{format(parseISO(date), 'MMMM do, yyyy')} at{' '}
 					<InlineLink href={url} type="external">
 						{location}
