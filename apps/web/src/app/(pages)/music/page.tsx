@@ -1,11 +1,11 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_ALL_MUSIC_PROJECTS } from 'lib/queries';
 import { PageTitle } from 'app/components/page-title';
-import styles from 'styles/pages/Music.module.scss';
 import { linkResolver } from 'utils/linkResolver';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { BentoBox, BentoItem } from 'app/components/bento';
 import { Headline, Paragraph } from 'app/components/typography';
+import styles from 'styles/pages/Music.module.scss';
 
 import type { Metadata } from 'next';
 
@@ -25,13 +25,6 @@ export default async function MusicPage() {
 
 
 		return (
-			// <MusicItem
-			// 	link={musicProject.slug}
-			// 	title={musicProject.title}
-			// 	description={musicProject.description}
-			// 	image={musicProject.image}
-			// 	key={musicProject._id}
-			// />
 			<BentoItem
 				key={title}
 				background='tertiary'
@@ -58,7 +51,6 @@ export default async function MusicPage() {
 			>
 				{musicItems}
 			</BentoBox>
-			{/* <section className={styles.outer}>{musicItems}</section> */}
 		</>
 	);
 }
