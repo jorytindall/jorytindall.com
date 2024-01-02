@@ -3,10 +3,10 @@ import { format, parseISO } from 'date-fns';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 import { PageTitle } from 'app/components/page-title';
-import { Paragraph } from 'app/components/typography';
 import { CenteredWrapper } from 'app/components/layout';
 import { ListItem } from 'app/components/list';
 import { linkResolver } from 'utils/linkResolver';
+import { Paragraph } from 'app/components/typography';
 
 import type { Metadata } from 'next';
 
@@ -28,19 +28,25 @@ export default async function Events() {
 	const filterEvents =
 		currentEvents.length > 0 ? (
 			currentEvents.map((event) => {
+
+				const { title, location, date, slug, _id } = event;
+
+				const eventLink = linkResolver('event', slug);
+				const eventDate = format(parseISO(date), 'MMMM do, yyyy');
+
 				return (
 					<ListItem
-						title={event.title}
-						link={linkResolver('event', event.slug)}
-						key={event._id}
+						title={title}
+						link={eventLink}
+						key={_id}
 					>
 						<Paragraph type="primary" color='secondary' collapse>
 							<strong>Location: </strong>
-							{event.location}
+							{location}
 						</Paragraph>
 						<Paragraph type="primary" color='secondary' collapse>
 							<strong>Date: </strong>
-							{format(parseISO(event.date), 'MMMM do, yyyy')}
+							{eventDate}
 						</Paragraph>
 					</ListItem>
 				);

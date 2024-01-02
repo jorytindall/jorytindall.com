@@ -1,5 +1,5 @@
+import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/sanityClient';
-import useSanityFetch from 'lib/sanity/useSanityFetch';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 
 import { PageTitle } from 'app/components/page-title';
@@ -36,6 +36,10 @@ export default async function Page({ params }) {
 	const page = await sanityClient.fetch(GET_PAGES, { slug });
 
 	const { title, megaHeadline, moduleContent } = page;
+
+	if (!page) {
+		return notFound();
+	}
 
 	return (
 		<>
