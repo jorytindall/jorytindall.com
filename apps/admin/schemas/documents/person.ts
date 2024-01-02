@@ -11,8 +11,8 @@ export default {
 			title: `Name`,
 			type: `string`,
 			validation: (Rule: any) => {
-				Rule.required().error('The person needs a name.')
-			}
+				Rule.required().error('The person needs a name.');
+			},
 		},
 		{
 			name: `instrument`,
@@ -28,7 +28,7 @@ export default {
 			name: `website`,
 			title: `Website`,
 			type: `string`,
-		}
+		},
 	],
 	preview: {
 		select: {

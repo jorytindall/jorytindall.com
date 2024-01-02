@@ -12,7 +12,7 @@
 	height: 100%;
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
 	.heroWrapper {
 		top: -164px;
 		margin-bottom: -164px;
@@ -29,4 +29,3 @@
 .image {
 	object-fit: cover;
 }
-

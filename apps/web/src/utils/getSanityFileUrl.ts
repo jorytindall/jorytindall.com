@@ -1,9 +1,9 @@
-import { getFileAsset } from '@sanity/asset-utils'
-import { sanityConfig } from 'lib/sanity.client'
+import { getFileAsset } from '@sanity/asset-utils';
+import { sanityClient } from 'lib/sanity/sanityClient';
 
 export function getSanityFileUrl(assetRef) {
-  if (!assetRef) return null
+	if (!assetRef) return null;
 
-  const fileUrl = getFileAsset(assetRef, sanityConfig)
-  return fileUrl
+	const fileUrl = getFileAsset(assetRef, sanityClient.config());
+	return fileUrl;
 }

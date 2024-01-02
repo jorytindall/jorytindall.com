@@ -6,6 +6,8 @@ $paragraphVariants: (
 	'lead' $typography-font-size-body-lead
 );
 
+$body-colors: ('primary', 'secondary', 'light');
+
 @mixin paragraph-base {
 	font-family: $typography-font-family-body;
 	color: $color-neutral-600;
@@ -35,4 +37,25 @@ $paragraphVariants: (
 .collapse {
 	padding: 0;
 	margin: 0;
+}
+
+$body-color-props: (
+	'primary': (
+		'color': $color-primary-300,
+	),
+	'secondary': (
+		'color': $color-neutral-600,
+	),
+	'light': (
+		'color': $color-neutral-100,
+	),
+	'dark': (
+		'color': $color-neutral-600,
+	),
+);
+
+@each $color in $body-colors {
+	.#{$color} {
+		color: map-get($body-color-props, $color, 'color');
+	}
 }
