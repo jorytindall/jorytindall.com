@@ -15,7 +15,7 @@
 				>Design For Your Engineer: Part I</a
 			>
 			<a href="/atomic-design-of-improvisation"
-				>The Atomic Design of Improvisation</a
+				>The Atomic Design of Improvisation - Lightning ⚡️ Talk</a
 			>
 		</article>
 
