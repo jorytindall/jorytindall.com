@@ -6,6 +6,7 @@ import { CenteredWrapper } from 'app/components/layout';
 import { linkResolver } from 'utils/linkResolver';
 import { ListItem } from 'app/components/list';
 import { Paragraph } from 'app/components/typography';
+import { TextArrow } from 'app/components/button';
 
 import type { Metadata } from 'next';
 
@@ -43,6 +44,7 @@ export default async function TalksPage() {
 			<PageTitle title="🎙️ Speaking" megaTitle="Conference talks" />
 			<CenteredWrapper semanticElement="section">
 				{renderTalks}
+				<TextArrow href='https://presentations.jorytindall.com' target='_blank' rel='noreferrer noopener'>View all presentations</TextArrow>
 			</CenteredWrapper>
 		</>
 	);

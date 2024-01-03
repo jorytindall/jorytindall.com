@@ -5,10 +5,18 @@ import { getClasses } from 'utils/getClasses';
 interface TextArrowProps {
 	href?: string;
 	children: React.ReactNode;
+	target?: string,
+	rel?: string,
 	style?: string;
 }
 
-export const TextArrow = ({ href, children, style }: TextArrowProps) => {
+export const TextArrow = ({
+	href,
+	children,
+	style,
+	target,
+	rel,
+}: TextArrowProps) => {
 	const classes = getClasses([
 		styles['text-arrow'],
 		styles[`style--${style}`],
@@ -34,7 +42,7 @@ export const TextArrow = ({ href, children, style }: TextArrowProps) => {
 		);
 	} else if (href.includes('http')) {
 		return (
-			<Link href={href} passHref className={classes}>
+			<Link target={target} rel={rel} href={href} passHref className={classes}>
 				{children}
 				<svg
 					width="40"
@@ -52,7 +60,12 @@ export const TextArrow = ({ href, children, style }: TextArrowProps) => {
 		);
 	} else {
 		return (
-			<a href={href} className={classes}>
+			<a
+				href={href}
+				className={classes}
+				target={target}
+				rel={rel}
+			>
 				{children}
 				<svg
 					width="40"
