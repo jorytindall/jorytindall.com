@@ -1,8 +1,0 @@
-@import '../node_modules/tokens/dist/web/tokens.css';
-
-#app {
-	width: 100%;
-	margin: 0 auto;
-	text-align: center;
-	height: 100vh;
-}

@@ -9,7 +9,7 @@
 	import Reveal from 'reveal.js';
 	import RevealNotes from 'reveal.js/plugin/notes/notes';
 	import { onMount, tick } from 'svelte';
-	import Presentation from '../../presentations/design-for-your-engineer-part-one/Presentation.svelte';
+	import Presentation from '../../presentations/atomic-design-of-improvisation/Presentation.svelte';
 
 	export let reveal;
 
@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>Design For Your Engineer: Part I</title>
+	<title>The Atomic Design of Jazz Improvisation</title>
 </svelte:head>
 
 <div class="reveal">

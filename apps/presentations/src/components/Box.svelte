@@ -119,7 +119,7 @@
 	/* Gap */
 
 	.gap--none {
-		gap: none;
+		gap: 0;
 	}
 
 	.gap--small {

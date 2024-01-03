@@ -14,6 +14,9 @@
 			<a href="/design-for-your-engineer-part-one"
 				>Design For Your Engineer: Part I</a
 			>
+			<a href="/atomic-design-of-improvisation"
+				>The Atomic Design of Improvisation</a
+			>
 		</article>
 
 		<a href="https://jorytindall.com" target="blank" class="back-link"
