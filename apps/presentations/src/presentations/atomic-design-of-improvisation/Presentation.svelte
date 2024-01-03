@@ -16,7 +16,9 @@
 	import AtomicImprovCategories from './slides/atomic-improvisation/AtomicImprovCategories.svelte';
 	import InPractice from './slides/atomic-improvisation/InPractice.svelte';
 	import AssembleTheLick from './slides/atomic-improvisation/AssembleTheLick.svelte';
+	import AssembleASolo from './slides/atomic-improvisation/AssembleASolo.svelte';
 
+	import Importance from './slides/conclusion/Importance.svelte';
 	import Conclusion from './slides/conclusion/Conclusion.svelte';
 	import Goodbye from './slides/conclusion/Goodbye.svelte';
 </script>
@@ -42,7 +44,9 @@
 <AtomicImprovCategories />
 <InPractice />
 <AssembleTheLick />
+<AssembleASolo />
 
 <!-- Conclusion -->
+<Importance />
 <Conclusion />
 <Goodbye />
