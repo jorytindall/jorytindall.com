@@ -8,7 +8,7 @@
 	<Box textAlign="center" alignItems="center">
 		<h2>What is Atomic Design?</h2>
 		<img
-			src="/images/atomic-design-categories.png"
+			src="/images/atomic-design-of-improvisation/atomic-design-categories.png"
 			alt="Categories of Atomic Design"
 		/>
 		<p>

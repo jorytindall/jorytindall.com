@@ -8,7 +8,7 @@
 	<Box alignItems="center">
 		<h2>Enter, Atomic Improvisation</h2>
 		<img
-			src="/images/atomic-improvisation-categories.png"
+			src="/images/atomic-design-of-improvisation/atomic-improvisation-categories.png"
 			alt="Atomic Improvisation"
 		/>
 	</Box>

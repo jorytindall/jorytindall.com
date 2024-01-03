@@ -4,6 +4,7 @@
 	import MusicIntro from './slides/intro/MusicIntro.svelte';
 	import Overview from './slides/intro/Overview.svelte';
 	import OverviewItems from './slides/intro/OverviewItems.svelte';
+	import NotPrepared from './slides/intro/NotPrepared.svelte';
 
 	import AtomicDesignOverview from './slides/atomic-design/AtomicDesignOverview.svelte';
 
@@ -14,6 +15,7 @@
 	import AtomicImprovisation from './slides/atomic-improvisation/AtomicImprovisation.svelte';
 	import AtomicImprovCategories from './slides/atomic-improvisation/AtomicImprovCategories.svelte';
 	import InPractice from './slides/atomic-improvisation/InPractice.svelte';
+	import AssembleTheLick from './slides/atomic-improvisation/AssembleTheLick.svelte';
 
 	import Conclusion from './slides/conclusion/Conclusion.svelte';
 	import Goodbye from './slides/conclusion/Goodbye.svelte';
@@ -25,6 +27,7 @@
 <MusicIntro />
 <Overview />
 <OverviewItems />
+<NotPrepared />
 
 <!--Atomic Design -->
 <AtomicDesignOverview />
@@ -38,6 +41,7 @@
 <AtomicImprovisation />
 <AtomicImprovCategories />
 <InPractice />
+<AssembleTheLick />
 
 <!-- Conclusion -->
 <Conclusion />

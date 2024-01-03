@@ -18,7 +18,7 @@
 			<li class="fragment" data-fragment-index="3">
 				<strong>Motifs:</strong> a.k.a. licks, comprised of multiple
 				<em>cells</em>
-				and potentially <em>sounds</em>. Motifs are generally applicable
+				and sometimes <em>sounds</em>. Motifs are generally applicable
 				in the context of a harmonic sequence or chord progression.
 			</li>
 			<li class="fragment" data-fragment-index="4">

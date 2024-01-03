@@ -8,8 +8,8 @@
 	<Box>
 		<h2>What is this ⚡️ talk about?</h2>
 		<ul>
-			<li>What is improvisation?</li>
 			<li>What is Atomic Design?</li>
+			<li>What is improvisation?</li>
 			<li>
 				How can improvisation be approached from an <em>atomic</em> perspective?
 			</li>
