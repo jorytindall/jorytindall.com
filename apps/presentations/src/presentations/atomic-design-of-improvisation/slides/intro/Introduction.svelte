@@ -5,7 +5,11 @@
 
 <Slide>
 	<Box justifyContent="start" textAlign="left" flexDirection="column">
-		<img src="./jory-square-avatar.png" alt="Jory Tindall" width="150" />
+		<img
+			src="/images/jory-square-avatar.png"
+			alt="Jory Tindall"
+			width="150"
+		/>
 		<h2>Jory Tindall</h2>
 		<p>
 			Product Designer, <a
