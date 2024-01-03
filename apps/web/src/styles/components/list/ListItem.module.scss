@@ -7,6 +7,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	border: 1px solid $color-tertiary-300;
 
 	h1,
 	h2,
@@ -22,6 +23,9 @@
 
 	&:hover {
 		background: $color-primary-300;
+		border-color: $color-primary-400;
+		transform: translateY(-4px);
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.075);
 
 		& > * {
 			color: $color-neutral-100;

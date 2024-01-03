@@ -29,4 +29,4 @@ export const GET_ALL_MUSIC_PROJECTS = groq`
         "slug": slug.current,
         image,
     }
-`
+`;

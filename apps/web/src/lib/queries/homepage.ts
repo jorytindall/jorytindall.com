@@ -1,4 +1,4 @@
-import { groq } from 'next-sanity'
+import { groq } from 'next-sanity';
 
 export const GET_HOMEPAGE_DATA = groq`
   *[_type == 'event'][] {

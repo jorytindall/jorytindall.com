@@ -3,7 +3,8 @@
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/uxum-grotesque/UxumGrotesque-Regular.woff') format('woff'),
+	src:
+		url('/fonts/uxum-grotesque/UxumGrotesque-Regular.woff') format('woff'),
 		url('/fonts/uxum-grotesque/UxumGrotesque-Regular.woff2') format('woff2');
 }
 
@@ -12,7 +13,8 @@
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/uxum-grotesque/UxumGrotesque-Bold.woff') format('woff'),
+	src:
+		url('/fonts/uxum-grotesque/UxumGrotesque-Bold.woff') format('woff'),
 		url('/fonts/uxum-grotesque/UxumGrotesque-Bold.woff') format('woff2');
 }
 
@@ -21,7 +23,8 @@
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/uxum-grotesque/UxumGrotesque-Medium.woff') format('woff'),
+	src:
+		url('/fonts/uxum-grotesque/UxumGrotesque-Medium.woff') format('woff'),
 		url('/fonts/uxum-grotesque/UxumGrotesque-Medium.woff2') format('woff2');
 }
 
@@ -30,7 +33,8 @@
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
-	src: url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Regular.woff')
+	src:
+		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Regular.woff')
 			format('woff'),
 		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Regular.woff2')
 			format('woff2');
@@ -40,7 +44,9 @@
 	font-family: 'Neue Haas Unica';
 	font-weight: bold;
 	font-style: normal;
-	src: url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Bold.woff') format('woff'),
+	font-display: swap;
+	src:
+		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Bold.woff') format('woff'),
 		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Bold.woff2')
 			format('woff2');
 }
@@ -49,7 +55,9 @@
 	font-family: 'Neue Haas Unica';
 	font-weight: normal;
 	font-style: italic;
-	src: url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Italic.woff')
+	font-display: swap;
+	src:
+		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Italic.woff')
 			format('woff'),
 		url('/fonts/neue-haas-unica/NeueHaasUnicaPro-Italic.woff2')
 			format('woff2');
@@ -59,6 +67,8 @@
 	font-family: 'Fira Code';
 	font-weight: normal;
 	font-style: normal;
-	src: url('/fonts/fira-code/FiraCode-regular.woff') format('woff'),
+	font-display: swap;
+	src:
+		url('/fonts/fira-code/FiraCode-regular.woff') format('woff'),
 		url('/fonts/fira-code/FiraCode-regular.woff2') format('woff2');
 }

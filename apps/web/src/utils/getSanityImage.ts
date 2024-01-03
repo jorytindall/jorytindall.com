@@ -1,11 +1,12 @@
-import { getImageAsset, buildImageUrl } from '@sanity/asset-utils'
-import { sanityConfig } from 'lib/sanity.client'
+import { getImageAsset, buildImageUrl } from '@sanity/asset-utils';
+import { sanityClient } from 'lib/sanity/sanityClient';
 
 export function getSanityImageUrl(imageRef) {
-  if (!imageRef) return null
+	if (!imageRef) return null;
 
-  const image = getImageAsset(imageRef, sanityConfig)
-  const getUrl = buildImageUrl(image, sanityConfig)
+	// @ts-ignore
+	const image = getImageAsset(imageRef, sanityClient.config());
+	const getUrl = buildImageUrl(image, sanityClient.config());
 
-  return getUrl
+	return getUrl;
 }

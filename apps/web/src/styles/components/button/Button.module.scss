@@ -23,6 +23,16 @@ $button-variant-props: (
 		'border-color-hover': $color-primary-400,
 		'border-color-active': $color-primary-500,
 	),
+	'inverse': (
+		'text-color': $color-neutral-100,
+		'text-color-hover': $color-neutral-600,
+		'background-default': transparent,
+		'background-hover': $color-neutral-100,
+		'background-active': $color-neutral-200,
+		'border-color-default': $color-neutral-100,
+		'border-color-hover': $color-neutral-200,
+		'border-color-active': $color-neutral-300,
+	),
 );
 
 @mixin button {

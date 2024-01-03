@@ -8,9 +8,9 @@ export const formatDateTime = (dateIso: string) => {
 };
 
 export const formatDate = (dateIso: string) => {
-	const formatted = format(formatIso(dateIso), 'PP')
-	return formatted
-}
+	const formatted = format(formatIso(dateIso), 'PP');
+	return formatted;
+};
 
 export const formatDateString = (dateIso: string) => {
 	const formatted = format(formatIso(dateIso), 'ddMMyyyy');

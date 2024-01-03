@@ -12,8 +12,8 @@ export default {
 			type: `string`,
 			description: `Title of the music project.`,
 			validation: (Rule: any) => {
-				Rule.required().error('The project must have a title.')
-			}
+				Rule.required().error('The project must have a title.');
+			},
 		},
 		{
 			name: `slug`,
@@ -23,16 +23,16 @@ export default {
 				source: `title`,
 			},
 			validation: (Rule: any) => {
-				Rule.required().error('The project must have a slug.')
-			}
+				Rule.required().error('The project must have a slug.');
+			},
 		},
 		{
 			name: `description`,
 			title: `Description`,
 			type: `text`,
 			validation: (Rule: any) => {
-				Rule.required().error('The project must have a descrtiption.')
-			}
+				Rule.required().error('The project must have a descrtiption.');
+			},
 		},
 		{
 			name: 'pressKit',
@@ -48,17 +48,17 @@ export default {
 					name: `musician`,
 					title: `Musician`,
 					type: `reference`,
-					to: { type: `person` }
-				}
-			]
+					to: { type: `person` },
+				},
+			],
 		},
 		{
 			name: 'image',
 			title: 'Image',
 			type: 'mainImage',
 			validation: (Rule: any) => {
-				Rule.required().error('The project must have an image.')
-			}
+				Rule.required().error('The project must have an image.');
+			},
 		},
 		{
 			name: `moduleContent`,

@@ -13,7 +13,7 @@ export default {
 			description: `Describe the code block in a couple of words.`,
 			validation: (Rule) =>
 				Rule.required().warning(
-					`It's recommended that you add a title to the code block to differentiate between them in the editor.`
+					`It's recommended that you add a title to the code block to differentiate between them in the editor.`,
 				),
 		},
 		{
