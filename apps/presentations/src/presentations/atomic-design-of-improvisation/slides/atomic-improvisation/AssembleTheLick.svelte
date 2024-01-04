@@ -4,8 +4,8 @@
 
 <Slide>
 	<iframe
-		title="The lick"
-		src="https://flat.io/embed/6594fcdc9dbee549a7cc9244?appId=5d69f522529bf70e222e1b62&sharingKey=c087d80c789a4973bbd24e96674e735bb54dde0780a77fadd35dadc626a6d64d84fc281e301a4484df99cfd2edfc2fa1befe39ccf8d5fe9062bb79967f221c1e"
+		title="The Lick"
+		src="https://flat.io/embed/6594fcdc9dbee549a7cc9244?layout=page&appId=5d69f522529bf70e222e1b62&sharingKey=c087d80c789a4973bbd24e96674e735bb54dde0780a77fadd35dadc626a6d64d84fc281e301a4484df99cfd2edfc2fa1befe39ccf8d5fe9062bb79967f221c1e"
 		height="450"
 		width="100%"
 		frameBorder="0"
