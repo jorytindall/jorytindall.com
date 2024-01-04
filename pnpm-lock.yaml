@@ -211,7 +211,7 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       style-dictionary:
-        specifier: ^3.8.0
+        specifier: ^3.9.1
         version: 3.9.1
 
 packages:
