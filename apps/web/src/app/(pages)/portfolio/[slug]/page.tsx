@@ -8,6 +8,9 @@ import { ModuleRenderer } from 'app/components/module-renderer';
 import { BentoBox } from 'app/components/bento';
 import { PortfolioTitle } from '../PortfolioTitle';
 
+// Revalidate portfolio every minute
+export const revalidate = 60;
+
 // Generate Metadata
 export async function generateMetadata({ params }) {
 	const { slug } = params;
@@ -24,11 +27,7 @@ export async function generateMetadata({ params }) {
 // Generate static data
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const slugs = await client.fetch(GET_PORTFOLIO_PROJECT_PATHS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const slugs = await client.fetch(GET_PORTFOLIO_PROJECT_PATHS);
 	return slugs.map((slug) => ({ slug }));
 }
 
