@@ -8,6 +8,9 @@ import { CenteredWrapper } from 'app/components/layout';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
 import styles from 'styles/pages/Music.module.scss';
 
+// Revalidate pages every 60 seconds
+export const revalidate = 60;
+
 export async function generateMetadata({ params }) {
 	const { slug } = params;
 	const client = sanityClient;
