@@ -7,6 +7,9 @@ import styles from 'styles/pages/Blog.module.scss';
 
 import type { Metadata } from 'next';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 export const metadata: Metadata = {
 	title: 'Blog | Jory Tindall',
 	description: 'Recent blog posts and writings',
@@ -14,11 +17,7 @@ export const metadata: Metadata = {
 
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const blogPosts = await client.fetch(GET_ALL_BLOG_POSTS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const blogPosts = await client.fetch(GET_ALL_BLOG_POSTS);
 	return blogPosts;
 }
 

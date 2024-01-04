@@ -9,6 +9,9 @@ import { Paragraph } from 'app/components/typography';
 
 import type { Metadata } from 'next';
 
+// Revalidate talks every minute
+export const revalidate = 60;
+
 export const metadata: Metadata = {
 	title: 'Talks | Jory Tindall',
 	description: 'Speaking engagements and conference talks',

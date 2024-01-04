@@ -7,6 +7,9 @@ import { GridWrapper } from 'app/components/layout';
 import { Button } from 'app/components/button';
 import styles from 'styles/pages/Event.module.scss';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 export async function generateMetadata({ params }) {
 	const { slug } = params;
 	const client = sanityClient;
@@ -19,11 +22,7 @@ export async function generateMetadata({ params }) {
 
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const slugs = await client.fetch(GET_EVENT_PATHS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const slugs = await client.fetch(GET_EVENT_PATHS);
 	return slugs.map((slug) => ({ slug }));
 }
 

@@ -10,6 +10,9 @@ import { Paragraph } from 'app/components/typography';
 
 import type { Metadata } from 'next';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 export const metadata: Metadata = {
 	title: 'Events | Jory Tindall',
 	description: 'Upcoming events and live music',
@@ -17,11 +20,7 @@ export const metadata: Metadata = {
 
 export default async function Events() {
 	const client = sanityClient;
-	const events = await client.fetch(GET_ALL_EVENTS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const events = await client.fetch(GET_ALL_EVENTS);
 
 	const currentEvents = getCurrentEvents(events);
 

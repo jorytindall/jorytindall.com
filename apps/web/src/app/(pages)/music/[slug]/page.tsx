@@ -25,11 +25,7 @@ export async function generateMetadata({ params }) {
 
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const slugs = await client.fetch(GET_MUSIC_PROJECT_PATHS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const slugs = await client.fetch(GET_MUSIC_PROJECT_PATHS);
 	return slugs.map((slug) => ({ slug }));
 }
 

@@ -9,6 +9,9 @@ import styles from 'styles/pages/Music.module.scss';
 
 import type { Metadata } from 'next';
 
+// Revalidate the page every 5 minutes
+export const revalidate = 300;
+
 export const metadata: Metadata = {
 	title: 'Music | Jory Tindall',
 	description: 'Music projects, ensembles, and current working groups.',

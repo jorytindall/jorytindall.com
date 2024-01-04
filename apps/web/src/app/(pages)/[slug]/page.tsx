@@ -6,6 +6,9 @@ import { PageTitle } from 'app/components/page-title';
 import { Headline } from 'app/components/typography';
 import { ModuleRenderer } from 'app/components/module-renderer';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 // Generate metadata
 export async function generateMetadata({ params }) {
 	const { slug } = params;
@@ -22,11 +25,7 @@ export async function generateMetadata({ params }) {
 // Generate static paths for prerendering
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const slugs = await client.fetch(GET_PAGE_PATHS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const slugs = await client.fetch(GET_PAGE_PATHS);
 	return slugs.map((slug) => ({ slug }));
 }
 

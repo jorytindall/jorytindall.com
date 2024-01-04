@@ -4,6 +4,9 @@ import { BlogTitle } from 'app/components/blog';
 import { RichText } from 'app/components/rich-text';
 import { GridWrapper, RichTextWrapper } from 'app/components/layout';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 export async function generateMetadata({ params }) {
 	const { slug } = params;
 	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
@@ -15,11 +18,7 @@ export async function generateMetadata({ params }) {
 
 export async function generateStaticParams() {
 	const client = sanityClient;
-	const slugs = await client.fetch(GET_BLOG_POST_PATHS, {
-		next: {
-			revalidate: 60,
-		},
-	});
+	const slugs = await client.fetch(GET_BLOG_POST_PATHS);
 	return slugs.map((slug) => ({ slug }));
 }
 
