@@ -4,8 +4,8 @@ import { getClasses } from 'utils/getClasses';
 interface FormProps {
 	children: React.ReactNode;
 	name: string;
-	method: 'POST' | 'GET';
-	action?: string;
+	method?: 'POST' | 'GET';
+	action?: any;
 }
 
 export const Form = ({ children, name, method, action }: FormProps) => {

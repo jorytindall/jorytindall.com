@@ -1,5 +1,5 @@
 import { RichText } from 'app/components/rich-text';
-import { Form } from 'app/components/form';
+import { Form, RenderFormControls } from 'app/components/form';
 import { Paragraph } from 'app/components/typography';
 import { RichTextWrapper, GridWrapper } from 'app/components/layout';
 import { Features } from 'app/components/features';
@@ -20,16 +20,25 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 						<RichText value={m.content} />
 					</RichTextWrapper>
 				);
+			// case 'form': {
+			// 	console.log(m)
+			// 	return (
+			// 		<Form key={m._key} name={m.name} method={m.method}>
+			// 			<Paragraph>
+			// 				<a href="mailto:hello@jorytindall.com">
+			// 					Get in touch with me!
+			// 				</a>
+			// 			</Paragraph>
+			// 		</Form>
+			// 	);
+			// }
 			case 'form': {
+				console.log(m)
 				return (
 					<Form key={m._key} name={m.name} method={m.method}>
-						<Paragraph>
-							<a href="mailto:hello@jorytindall.com">
-								Get in touch with me!
-							</a>
-						</Paragraph>
+						<RenderFormControls input={m.fields} />
 					</Form>
-				);
+				)
 			}
 			case 'fullWidthImage':
 				return <FullWidthImage input={m} key={m._key} />;

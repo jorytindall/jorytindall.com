@@ -6,8 +6,9 @@
 	font-size: 1rem;
 	color: $color-neutral-600;
 	border: none;
-	background: $color-tertiary-300;
-	border-radius: 0;
+	background: $color-tertiary-200;
+	border-radius: 10px;
+	border: 1px solid $color-tertiary-300;
 	transition: all 0.25s ease;
 
 	&:focus {
@@ -22,6 +23,6 @@
 	}
 
 	&::placeholder {
-		color: $color-tertiary-500;
+		color: $color-neutral-500;
 	}
 }

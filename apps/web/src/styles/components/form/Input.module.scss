@@ -3,11 +3,12 @@
 .input {
 	padding: 1rem 1.5rem;
 	font-size: 1rem;
-	background: $color-tertiary-300;
+	background: $color-tertiary-200;
 	border: none;
 	color: $color-neutral-600;
 	font-family: $typography-font-family-body;
-	border-radius: 0;
+	border-radius: 10px;
+	border: 1px solid $color-tertiary-300;
 	transition: all 0.15s ease;
 	width: 100%;
 
@@ -23,6 +24,6 @@
 	}
 
 	&::placeholder {
-		color: $color-tertiary-500;
+		color: $color-neutral-500;
 	}
 }

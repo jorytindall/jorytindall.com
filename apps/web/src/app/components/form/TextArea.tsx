@@ -2,7 +2,7 @@ import styles from 'styles/components/form/TextArea.module.scss';
 
 interface TextAreaProps {
 	name?: string;
-	placeholder: string;
+	placeholder?: string;
 	rows?: number;
 }
 

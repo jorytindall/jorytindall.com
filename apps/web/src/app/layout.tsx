@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import Fathom from 'lib/fathom';
 import { Header, Footer } from 'app/components/navigation';
+import { Main } from 'app/components/layout';
 import 'styles/main.scss';
 
 export const metadata = {
@@ -17,11 +18,11 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<Header />
-				{children}
+				<Main>
+					{children}
+				</Main>
 				<Footer />
-				{/* Fathom analytics */}
 				<Fathom />
-				{/* Vercel analytics */}
 				<Analytics />
 			</body>
 		</html>
