@@ -4,9 +4,15 @@ interface TextAreaProps {
 	name?: string;
 	placeholder?: string;
 	rows?: number;
+	onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-export const TextArea = ({ name, placeholder, rows = 8 }: TextAreaProps) => {
+export const TextArea = ({
+	name,
+	placeholder,
+	rows = 8,
+	onChange,
+}: TextAreaProps) => {
 	return (
 		<textarea
 			name={name}
