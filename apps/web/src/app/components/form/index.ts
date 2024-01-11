@@ -4,3 +4,4 @@ export * from './Label';
 export * from './TextArea';
 export * from './ItemWrapper';
 export * from './RenderFormControls';
+export * from './Error'

@@ -1,5 +1,12 @@
-@use './variables';
+@use './variables' as *;
 
 body {
-	background: variables.$color-tertiary-100;
+	background: $color-tertiary-100;
+}
+
+.custom-toast {
+	background: $color-neutral-600 !important;
+	color: $color-neutral-100 !important;
+	font-family: $typography-font-family-body;
+	font-size: $typography-font-size-body-primary;
 }
