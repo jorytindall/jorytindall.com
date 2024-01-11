@@ -7,7 +7,7 @@ export default function ContactPage() {
     <>
       <PageTitle
         title='Contact 👋'
-        megaTitle='Get in touch'
+        megaTitle='Say hello.'
       />
       <CenteredWrapper semanticElement='section'>
         <ContactForm />
