@@ -10,6 +10,7 @@ interface ButtonProps {
 	type?: 'button' | 'submit' | 'reset';
 	isDownload?: boolean;
 	isFullWidth?: boolean;
+	disabled?: boolean;
 }
 
 export const Button = ({
@@ -20,6 +21,7 @@ export const Button = ({
 	type,
 	isDownload,
 	isFullWidth,
+	disabled,
 }: ButtonProps) => {
 	const classes = getClasses([
 		styles[variant],
@@ -29,7 +31,7 @@ export const Button = ({
 
 	if (!href) {
 		return (
-			<button type={type} className={classes}>
+			<button type={type} className={classes} disabled={disabled}>
 				{children}
 			</button>
 		);
