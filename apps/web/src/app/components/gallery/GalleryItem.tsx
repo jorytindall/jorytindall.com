@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Paragraph } from 'app/components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import s from 'styles/components/gallery/GalleryItem.module.css';
+import s from 'styles/components/gallery/GalleryItem.module.scss';
 
 interface GalleryItemProps {
 	key: string;

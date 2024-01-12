@@ -7,6 +7,9 @@ const nextConfig = {
 	swcMinify: true,
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
+		prependData: `
+			@import "./node_modules/tokens/dist/web/tokens.scss";
+		`
 	},
 	images: {
 		remotePatterns: [

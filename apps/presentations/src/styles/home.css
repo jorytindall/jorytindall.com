@@ -1,4 +1,4 @@
-@import '../../node_modules/tokens/dist/web/tokens.css';
+@import '../../node_modules/tokens/dist/web/tokens.scss';
 
 body {
 	background: var(--color-tertiary-100);

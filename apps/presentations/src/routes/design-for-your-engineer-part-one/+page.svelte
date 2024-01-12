@@ -1,10 +1,10 @@
 <script>
 	// Import Reveal styles
-	import 'reveal.js/dist/reveal.css';
+	import 'reveal.js/dist/reveal.scss';
 	// Import theme
-	import '../../styles/theme.css';
+	import '../../styles/theme.scss';
 	// Import CSS for plugins
-	import 'reveal.js/plugin/highlight/monokai.css';
+	import 'reveal.js/plugin/highlight/monokai.scss';
 
 	import Reveal from 'reveal.js';
 	import RevealNotes from 'reveal.js/plugin/notes/notes';

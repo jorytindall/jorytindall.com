@@ -36,7 +36,7 @@
 		"resend": "^2.1.0",
 		"sass": "^1.63.6",
 		"sharp": "^0.33.1",
-		"tokens": "^0.1.1",
+		"tokens": "link:../../packages/tokens",
 		"typescript": "^5.3.3"
 	},
 	"devDependencies": {

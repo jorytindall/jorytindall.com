@@ -1,14 +1,6 @@
-const { transform } = require('@divriots/style-dictionary-to-figma');
-
 module.exports = {
 	source: [`tokens/**/*.json`],
 	transform: {},
-	format: {
-		figmaTokens: ({ dictionary }) => {
-			const transformedTokens = transform(dictionary.tokens);
-			return JSON.stringify(transformedTokens, null, 2);
-		},
-	},
 	platforms: {
 		web: {
 			transformGroup: 'css',
@@ -19,18 +11,8 @@ module.exports = {
 					format: 'scss/variables',
 				},
 				{
-					destination: 'tokens.css',
+					destination: 'tokens.scss',
 					format: 'css/variables',
-				},
-			],
-		},
-		figma: {
-			transformGroup: 'js',
-			buildPath: './dist/figma/',
-			files: [
-				{
-					destination: 'figma-tokens.json',
-					format: 'figmaTokens',
 				},
 			],
 		},

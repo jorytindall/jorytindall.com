@@ -201,7 +201,7 @@ importers:
         specifier: ^0.33.1
         version: 0.33.1
       tokens:
-        specifier: ^0.1.1
+        specifier: link:../../packages/tokens
         version: link:../../packages/tokens
       typescript:
         specifier: ^5.3.3
