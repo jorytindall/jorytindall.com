@@ -3,6 +3,9 @@
 	"version": "0.1.1",
 	"author": "Jory Tindall <jory@hypecreativestudios.com",
 	"license": "MIT",
+	"scripts": {
+		"build": "style-dictionary build"
+	},
 	"devDependencies": {
 		"@divriots/style-dictionary-to-figma": "^0.4.0",
 		"style-dictionary": "^3.9.1"
