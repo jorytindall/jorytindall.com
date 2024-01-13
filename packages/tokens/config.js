@@ -11,7 +11,7 @@ module.exports = {
 					format: 'scss/variables',
 				},
 				{
-					destination: 'tokens.scss',
+					destination: 'tokens.css',
 					format: 'css/variables',
 				},
 			],

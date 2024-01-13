@@ -1,49 +1,55 @@
-/**
- * Do not edit directly
- * Generated on Sat, 13 Jan 2024 20:42:21 GMT
- */
 
-:root {
-  --color-primary-100: #ccdfff;
-  --color-primary-200: #669eff;
-  --color-primary-300: #005eff;
-  --color-primary-400: #002f80;
-  --color-primary-500: #00215a;
-  --color-secondary-100: #fff3dc;
-  --color-secondary-200: #ffdc97;
-  --color-secondary-300: #ffc551;
-  --color-secondary-400: #d4700b;
-  --color-secondary-500: #7c4106;
-  --color-tertiary-100: #fff3f4;
-  --color-tertiary-200: #ffe6e4;
-  --color-tertiary-300: #ffd8d9;
-  --color-tertiary-400: #eca3a5;
-  --color-tertiary-500: #875d6f;
-  --color-neutral-100: #ffffff;
-  --color-neutral-200: #f6f7f9;
-  --color-neutral-300: #e6ebef;
-  --color-neutral-400: #a7acba;
-  --color-neutral-500: #676b74;
-  --color-neutral-600: #160f29;
-  --color-surface-primary: #ffe6e4;
-  --color-surface-secondary: #ffdc97;
-  --color-surface-brand: #005eff;
-  --color-surface-dark: #160f29;
-  --color-surface-light: #ffffff;
-  --typography-font-family-body: Neue Haas Unica, Helvetica, Arial, sans-serif;
-  --typography-font-family-headline: Uxum Grotesque, Helvetica, Aria, sans-serif;
-  --typography-font-family-mono: Fira Code, courier, monospace;
-  --typography-font-size-headline-mega: clamp(10vw, 39.3vw - 15.2rem, 9.375rem);
-  --typography-font-size-headline-01: clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem);
-  --typography-font-size-headline-02: 2.5rem;
-  --typography-font-size-headline-03: 2rem;
-  --typography-font-size-headline-04: 1.5rem;
-  --typography-font-size-headline-05: 1.25rem;
-  --typography-font-size-headline-06: 1rem;
-  --typography-font-size-body-lead: 1.25rem;
-  --typography-font-size-body-primary: 1.125rem;
-  --typography-font-size-body-secondary: 1rem;
-  --typography-line-height-mega-headline: 0.9;
-  --typography-line-height-headline: 1.4;
-  --typography-line-height-body: 1.7;
-}
+// Do not edit directly
+// Generated on Sat, 13 Jan 2024 20:49:11 GMT
+
+$color-primary-100: #ccdfff;
+$color-primary-200: #669eff;
+$color-primary-300: #005eff;
+$color-primary-400: #002f80;
+$color-primary-500: #00215a;
+$color-secondary-100: #fff3dc;
+$color-secondary-200: #ffdc97;
+$color-secondary-300: #ffc551;
+$color-secondary-400: #d4700b;
+$color-secondary-500: #7c4106;
+$color-tertiary-100: #fff3f4;
+$color-tertiary-200: #ffe6e4;
+$color-tertiary-300: #ffd8d9;
+$color-tertiary-400: #eca3a5;
+$color-tertiary-500: #875d6f;
+$color-neutral-100: #ffffff;
+$color-neutral-200: #f6f7f9;
+$color-neutral-300: #e6ebef;
+$color-neutral-400: #a7acba;
+$color-neutral-500: #676b74;
+$color-neutral-600: #160f29;
+$color-page-primary: #fff3f4;
+$color-surface-primary: #ffe6e4;
+$color-surface-secondary: #ffdc97;
+$color-surface-brand: #005eff;
+$color-surface-dark: #160f29;
+$color-surface-light: #ffffff;
+$color-foreground-primary: #160f29;
+$color-foreground-brand: #005eff;
+$color-foreground-inverse: #ffffff;
+$color-border-brand: #005eff;
+$color-border-primary: #ffd8d9;
+$color-border-secondary: #ffc551;
+$color-border-dark: #160f29;
+$color-border-light: #f6f7f9;
+$typography-font-family-body: Neue Haas Unica, Helvetica, Arial, sans-serif;
+$typography-font-family-headline: Uxum Grotesque, Helvetica, Aria, sans-serif;
+$typography-font-family-mono: Fira Code, courier, monospace;
+$typography-font-size-headline-mega: clamp(10vw, 39.3vw - 15.2rem, 9.375rem);
+$typography-font-size-headline-01: clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem);
+$typography-font-size-headline-02: 2.5rem;
+$typography-font-size-headline-03: 2rem;
+$typography-font-size-headline-04: 1.5rem;
+$typography-font-size-headline-05: 1.25rem;
+$typography-font-size-headline-06: 1rem;
+$typography-font-size-body-lead: 1.25rem;
+$typography-font-size-body-primary: 1.125rem;
+$typography-font-size-body-secondary: 1rem;
+$typography-line-height-mega-headline: 0.9;
+$typography-line-height-headline: 1.4;
+$typography-line-height-body: 1.7;
