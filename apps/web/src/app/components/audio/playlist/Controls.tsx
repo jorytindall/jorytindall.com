@@ -77,85 +77,85 @@ export const Controls = ({
 
 	useEffect(() => {
 		if (audioRef) {
-			audioRef.current.volume = volume / 100)
-	audioRef.current.muted = muteVolume;
-}
+			audioRef.current.volume = volume / 100;
+			audioRef.current.muted = muteVolume;
+		}
 	}, [volume, audioRef, muteVolume]);
 
-return (
-	<div className={styles.controlsWrapper}>
-		<div className={styles.controls}>
-			{tracks.length > 1 && (
-				<>
-					<button
-						onClick={handlePrevious}
-						className={styles.controlButtonSmall}
-						aria-label="Previous track"
-					>
-						<TbPlayerSkipBackFilled />
-					</button>
-					<button
-						onClick={skipBackward}
-						className={styles.controlButtonSmall}
-						aria-label="Skip backwards"
-					>
-						<TbPlayerTrackPrevFilled />
-					</button>
-				</>
-			)}
-			<button
-				onClick={togglePlayPause}
-				className={styles.controlButton}
-				aria-label="Play track"
-			>
-				{isPlaying ? (
-					<TbPlayerPauseFilled />
-				) : (
-					<TbPlayerPlayFilled />
+	return (
+		<div className={styles.controlsWrapper}>
+			<div className={styles.controls}>
+				{tracks.length > 1 && (
+					<>
+						<button
+							onClick={handlePrevious}
+							className={styles.controlButtonSmall}
+							aria-label="Previous track"
+						>
+							<TbPlayerSkipBackFilled />
+						</button>
+						<button
+							onClick={skipBackward}
+							className={styles.controlButtonSmall}
+							aria-label="Skip backwards"
+						>
+							<TbPlayerTrackPrevFilled />
+						</button>
+					</>
 				)}
-			</button>
-			{tracks.length > 1 && (
-				<>
-					<button
-						onClick={skipForward}
-						className={styles.controlButtonSmall}
-						aria-label="Skip forwards"
-					>
-						<TbPlayerTrackNextFilled />
-					</button>
-					<button
-						onClick={handleNext}
-						className={styles.controlButtonSmall}
-						aria-label="Next track"
-					>
-						<TbPlayerSkipForwardFilled />
-					</button>
-				</>
-			)}
-		</div>
-		<div className={styles.volume}>
-			<button
-				onClick={() => setMuteVolume((prev) => !prev)}
-				className={styles.controlButtonSmall}
-				aria-label="Mute track"
-			>
-				{muteVolume || volume < 5 ? (
-					<TbVolumeOff />
-				) : volume < 40 ? (
-					<TbVolume2 />
-				) : (
-					<TbVolume />
+				<button
+					onClick={togglePlayPause}
+					className={styles.controlButton}
+					aria-label="Play track"
+				>
+					{isPlaying ? (
+						<TbPlayerPauseFilled />
+					) : (
+						<TbPlayerPlayFilled />
+					)}
+				</button>
+				{tracks.length > 1 && (
+					<>
+						<button
+							onClick={skipForward}
+							className={styles.controlButtonSmall}
+							aria-label="Skip forwards"
+						>
+							<TbPlayerTrackNextFilled />
+						</button>
+						<button
+							onClick={handleNext}
+							className={styles.controlButtonSmall}
+							aria-label="Next track"
+						>
+							<TbPlayerSkipForwardFilled />
+						</button>
+					</>
 				)}
-			</button>
-			<input
-				type="range"
-				min={0}
-				max={100}
-				value={volume}
-				onChange={(e) => setVolume(e.target.value)}
-				className={styles.volumeSlider}
-			/>
+			</div>
+			<div className={styles.volume}>
+				<button
+					onClick={() => setMuteVolume((prev) => !prev)}
+					className={styles.controlButtonSmall}
+					aria-label="Mute track"
+				>
+					{muteVolume || volume < 5 ? (
+						<TbVolumeOff />
+					) : volume < 40 ? (
+						<TbVolume2 />
+					) : (
+						<TbVolume />
+					)}
+				</button>
+				<input
+					type="range"
+					min={0}
+					max={100}
+					value={volume}
+					onChange={(e) => setVolume(e.target.value)}
+					className={styles.volumeSlider}
+				/>
+			</div>
 		</div>
-	</div>
-);
+	);
 };

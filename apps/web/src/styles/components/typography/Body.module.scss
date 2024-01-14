@@ -53,7 +53,7 @@ $body-color-props: (
 );
 
 @each $color in $body-colors {
-	.#{color} {
+	.#{$color} {
 		color: map-get($body-color-props, $color, 'color');
 	}
 }

@@ -63,7 +63,7 @@ $headline-color-props: (
 }
 
 @each $color in $headline-colors {
-	.#{color} {
+	.#{$color} {
 		color: map-get($headline-color-props, $color, 'color');
 	}
 }
