@@ -2,7 +2,7 @@
 	// Import Reveal styles
 	import 'reveal.js/dist/reveal.scss';
 	// Import theme
-	import '../../styles/theme.scss';
+	import '../../styles/theme.css';
 	// Import CSS for plugins
 	import 'reveal.js/plugin/highlight/monokai.scss';
 
