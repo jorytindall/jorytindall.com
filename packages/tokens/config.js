@@ -8,18 +8,13 @@ const webPath = `dist/web/`;
 console.log(`cleaning ${webPath}...`);
 fs.removeSync(webPath);
 
-// const styleDictionary = StyleDictionary.extend({
-// });
+// Don't currently need this
+// const modes = ['light', 'dark'];
 
-const modes = ['light', 'dark'];
-
-console.log('☀️ Building light mode...');
+console.log('🌞 Building light mode...');
 
 StyleDictionary.extend({
 	source: [
-		// this is saying find any files in the tokens folder
-		// that does not have .dark or .light, but ends in .json
-		// `tokens/**/!(*.${modes.join(`|*.`)}).json`,
 		`tokens/**/!(*.dark).json`
 	],
 
@@ -55,30 +50,25 @@ StyleDictionary.extend({
 				destination: `tokens.json`,
 				format: `json/flat`
 			}]
-		},
+		}
 	}
 }).buildAllPlatforms();
 
 console.log('🌑 Building dark mode...');
 
 StyleDictionary.extend({
-	// include: [
-	// 	// `tokens/**/!(*.${modes.join(`|*.`)}).json`
-	// 	`tokens/**/!(*.light).json`
-	// ],
 	source: [
-		// `tokens/**/*.dark.json`
-		`tokens/**/!(*.light).json`
+		`tokens/color/!(*.light).json`
 	],
+
 	platforms: {
+
 		css: {
 			transformGroup: `css`,
 			buildPath: webPath,
 			files: [{
 				destination: `tokens-dark.css`,
 				format: `css/variables`,
-				// only putting in the tokens from files with '.dark' in the filepath
-				// filter: (token) => token.filePath.indexOf(`.dark`) > -1,
 				options: {
 					outputReferences: true
 				}
@@ -94,6 +84,15 @@ StyleDictionary.extend({
 				options: {
 					outputReferences: true
 				}
+			}]
+		},
+
+		js: {
+			transformGroup: `web`,
+			buildPath: webPath,
+			files: [{
+				destination: `tokens-dark.json`,
+				format: `json/flat`
 			}]
 		},
 	}
