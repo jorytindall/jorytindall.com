@@ -200,9 +200,6 @@ importers:
       sharp:
         specifier: ^0.33.1
         version: 0.33.1
-      tokens:
-        specifier: link:../../packages/tokens
-        version: link:../../packages/tokens
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
