@@ -8,7 +8,7 @@ const nextConfig = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 		prependData: `
-			@import "./node_modules/tokens/dist/web/tokens.scss";
+			@import "./src/styles/abstracts/variables";
 		`
 	},
 	images: {

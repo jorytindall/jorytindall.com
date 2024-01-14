@@ -3,12 +3,12 @@
 	grid-template-columns: repeat(2, 1fr);
 	padding: 2.5rem;
 	gap: 5rem;
-	background: $color-primary-400;
+	background: $color-core-primary-400;
 	grid-column: 1 / span 3;
 
 	h5,
 	p {
-		color: $color-neutral-100;
+		color: $color-core-neutral-100;
 	}
 
 	@media (max-width: 1000px) {

@@ -1,8 +1,8 @@
 $variants: (
-	'primary' $color-primary-300 $color-primary-300 none,
-	'secondary' $color-neutral-600 $color-neutral-600 transparent,
-	'tertiary' $color-tertiary-500 $color-tertiary-500 transparent,
-	'inverse' $color-neutral-600 transparent $color-neutral-100,
+	'primary' $color-core-primary-300 $color-core-primary-300 none,
+	'secondary' $color-core-neutral-600 $color-core-neutral-600 transparent,
+	'tertiary' $color-core-tertiary-500 $color-core-tertiary-500 transparent,
+	'inverse' $color-core-neutral-600 transparent $color-core-neutral-100,
 );
 
 // Define root badge styling

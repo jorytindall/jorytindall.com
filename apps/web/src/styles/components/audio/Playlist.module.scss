@@ -1,13 +1,13 @@
 .audioPlayer {
-	background: $color-primary-300;
+	background: $color-core-primary-300;
 	padding: 1.5rem;
-	color: $color-neutral-100;
+	color: $color-core-neutral-100;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 	margin: 2.5rem 0;
 	border-radius: 10px;
-	border: 1px solid $color-primary-400;
+	border: 1px solid $color-core-primary-400;
 }
 
 .audioInfo {
@@ -16,20 +16,20 @@
 	gap: 0.5rem;
 
 	.title {
-		color: $color-neutral-100;
+		color: $color-core-neutral-100;
 		font-family: $typography-font-family-mono;
 		font-size: $typography-font-size-body-lead;
 		font-weight: bold;
 	}
 
 	.artist {
-		color: $color-neutral-300;
+		color: $color-core-neutral-300;
 		font-family: $typography-font-family-body;
 		font-size: $typography-font-size-body-secondary;
 	}
 
 	.trackNumber {
-		color: $color-primary-500;
+		color: $color-core-primary-500;
 		font-family: $typography-font-family-body;
 		font-size: $typography-font-size-body-primary;
 		font-weight: bold;
@@ -64,8 +64,8 @@
 }
 
 .controlButton {
-	color: $color-neutral-100;
-	background: $color-primary-400;
+	color: $color-core-neutral-100;
+	background: $color-core-primary-400;
 	border: none;
 	display: flex;
 	justify-content: center;
@@ -77,7 +77,7 @@
 
 	&:hover {
 		cursor: pointer;
-		background: $color-primary-500;
+		background: $color-core-primary-500;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 		transform: translateY(-1px);
 	}
@@ -98,17 +98,17 @@
 	input[type='range'] {
 		-webkit-appearance: none;
 		height: 4px;
-		background: $color-neutral-100;
+		background: $color-core-neutral-100;
 		border-radius: 4px;
 	}
 
 	input[type='range']::-webkit-slider-thumb {
 		-webkit-appearance: none;
-		background-color: $color-primary-400;
+		background-color: $color-core-primary-400;
 		height: 16px;
 		width: 16px;
 		border-radius: 16px;
-		border: 1px solid $color-primary-500;
+		border: 1px solid $color-core-primary-500;
 		cursor: ew-resize;
 		position: relative;
 		top: -5px;
@@ -118,7 +118,7 @@
 		height: 4px;
 		border-radius: 4px;
 		cursor: pointer;
-		background: $color-neutral-100;
+		background: $color-core-neutral-100;
 		box-shadow: none;
 	}
 
@@ -126,7 +126,7 @@
 		height: 4px;
 		border-radius: 4px;
 		cursor: pointer;
-		background: $color-neutral-100;
+		background: $color-core-neutral-100;
 		box-shadow: none;
 	}
 }
@@ -145,7 +145,7 @@
 
 	-webkit-appearance: none;
 	position: relative;
-	background: $color-neutral-100;
+	background: $color-core-neutral-100;
 	width: 100%;
 	height: 4px;
 	border-radius: 2px;
@@ -155,7 +155,7 @@
 /* Input range - firefox */
 .progressBar::-moz-range-track {
 	position: relative;
-	background: $color-neutral-100;
+	background: $color-core-neutral-100;
 	width: 100%;
 	height: 4px;
 	border-radius: 2px;
@@ -166,7 +166,7 @@
 .progressBar::before {
 	content: '';
 	height: 4px;
-	background: $color-primary-400;
+	background: $color-core-primary-400;
 	width: var(--range-progress);
 	border-bottom-left-radius: 4px;
 	border-top-left-radius: 4px;
@@ -177,7 +177,7 @@
 
 /* played progress length - firefox */
 .progressBar::-moz-range-progress {
-	background: $color-primary-400;
+	background: $color-core-primary-400;
 	border-bottom-left-radius: 4px;
 	border-top-left-radius: 4px;
 	height: 4px;
@@ -190,12 +190,12 @@
 	width: 16px;
 	border-radius: 50%;
 	border: none;
-	background-color: $color-primary-400;
+	background-color: $color-core-primary-400;
 	cursor: ew-resize;
 	position: relative;
 
 	&:hover {
-		background-color: $color-primary-500;
+		background-color: $color-core-primary-500;
 	}
 }
 
@@ -209,13 +209,13 @@
 	height: 16px;
 	width: 16px;
 	border-radius: 50%;
-	background: $color-primary-400;
+	background: $color-core-primary-400;
 	cursor: pointer;
 	border: transparent;
 	position: relative;
 
 	&:hover {
-		background-color: $color-primary-500;
+		background-color: $color-core-primary-500;
 	}
 }
 /* dragging thumb - firefox */

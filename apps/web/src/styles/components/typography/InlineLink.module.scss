@@ -1,7 +1,7 @@
 $variants: (
-	'primary' $color-primary-300 $color-primary-400 $color-primary-500,
-	'secondary' $color-neutral-600 $color-neutral-500 $color-neutral-500,
-	'tertiary' $color-neutral-500 $color-neutral-600 $color-neutral-600
+	'primary' $color-core-primary-300 $color-core-primary-400 $color-core-primary-500,
+	'secondary' $color-core-neutral-600 $color-core-neutral-500 $color-core-neutral-500,
+	'tertiary' $color-core-neutral-500 $color-core-neutral-600 $color-core-neutral-600
 );
 
 .link {

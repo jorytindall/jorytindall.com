@@ -34,16 +34,16 @@ $headline-sizes: (
 
 $headline-color-props: (
 	'primary': (
-		'color': $color-primary-300,
+		'color': $color-core-primary-300,
 	),
 	'secondary': (
-		'color': $color-neutral-600,
+		'color': $color-core-neutral-600,
 	),
 	'light': (
-		'color': $color-neutral-100,
+		'color': $color-core-neutral-100,
 	),
 	'dark': (
-		'color': $color-neutral-600,
+		'color': $color-core-neutral-600,
 	),
 );
 

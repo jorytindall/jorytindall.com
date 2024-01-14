@@ -1,9 +1,25 @@
 /**
  * Do not edit directly
- * Generated on Sun, 14 Jan 2024 02:09:16 GMT
+ * Generated on Sun, 14 Jan 2024 07:50:04 GMT
  */
 
 :root {
+  --typography-line-height-body: 1.7;
+  --typography-line-height-headline: 1.4;
+  --typography-line-height-mega-headline: 0.9;
+  --typography-font-size-body-secondary: 1rem;
+  --typography-font-size-body-primary: 1.125rem;
+  --typography-font-size-body-lead: 1.25rem;
+  --typography-font-size-headline-06: 1rem;
+  --typography-font-size-headline-05: 1.25rem;
+  --typography-font-size-headline-04: 1.5rem;
+  --typography-font-size-headline-03: 2rem;
+  --typography-font-size-headline-02: 2.5rem;
+  --typography-font-size-headline-01: clamp(2.0rem, 5.3vw - 0.3rem, 3.0rem);
+  --typography-font-size-headline-mega: clamp(10vw, 39.3vw - 15.2rem, 9.375rem);
+  --typography-font-family-mono: Fira Code, courier, monospace;
+  --typography-font-family-headline: Uxum Grotesque, Helvetica, Aria, sans-serif;
+  --typography-font-family-body: Neue Haas Unica, Helvetica, Arial, sans-serif;
   --color-core-neutral-600: #f6f7f9;
   --color-core-neutral-500: #e6ebef;
   --color-core-neutral-400: #a7acba;

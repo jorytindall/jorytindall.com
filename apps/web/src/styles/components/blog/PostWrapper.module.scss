@@ -1,6 +1,6 @@
 .wrapper {
 	padding: 2.5rem;
-	background: $color-tertiary-200;
+	background: $color-core-tertiary-200;
 	margin: 2.5rem 0;
 	transition: all 0.15s ease-in-out;
 
@@ -11,10 +11,10 @@
 	&:hover {
 		cursor: pointer;
 		transform: translateY(-4px);
-		background: $color-primary-300;
+		background: $color-core-primary-300;
 
 		& a > * {
-			color: $color-neutral-100;
+			color: $color-core-neutral-100;
 		}
 	}
 }

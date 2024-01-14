@@ -58,7 +58,7 @@ console.log('🌑 Building dark mode...');
 
 StyleDictionary.extend({
 	source: [
-		`tokens/color/!(*.light).json`
+		`tokens/**/!(*.light).json`
 	],
 
 	platforms: {
