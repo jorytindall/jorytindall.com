@@ -15,6 +15,6 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
-	font-family: $typography-font-family-body;
-	color: $color-core-neutral-600;
+	font-family: var(--typography-font-family-body);
+	color: var(--color-core-neutral-600);
 }

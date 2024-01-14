@@ -1,8 +1,8 @@
 .banner {
 	max-width: 100vw;
 	text-align: center;
-	background: $color-core-secondary-300;
+	background: var(--color-core-secondary-300);
 	padding: 0.25rem 1rem;
-	color: $color-core-neutral-600;
+	color: var(--color-core-neutral-600);
 	box-sizing: border-box;
 }

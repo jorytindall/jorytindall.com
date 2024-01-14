@@ -21,7 +21,7 @@
 }
 
 .title-paragraph {
-	font-size: $typography-font-size-body-lead;
+	font-size: var(--typography-font-size-body-lead);
 	grid-area: title;
 	display: flex;
 	flex-direction: row;
@@ -31,9 +31,9 @@
 
 .title-headline {
 	grid-area: mega;
-	font-family: $typography-font-family-headline;
-	font-size: $typography-font-size-headline-mega;
-	color: $color-core-primary-300;
+	font-family: var(--typography-font-family-headline);
+	font-size: var(--typography-font-size-headline-mega);
+	color: var(--color-core-primary-300);
 
 	@media (max-width: 1000px) {
 		max-width: 100%;

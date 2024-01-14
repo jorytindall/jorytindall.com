@@ -1,11 +1,11 @@
 .wrapper {
-	background: $color-core-tertiary-200;
+	background: var(--color-core-tertiary-200);
 	padding: 2rem 2.5rem;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	border: 1px solid $color-core-tertiary-300;
+	border: 1px solid var(--color-core-tertiary-300);
 
 	h1,
 	h2,
@@ -20,13 +20,13 @@
 	transition: 100ms all ease-in-out;
 
 	&:hover {
-		background: $color-core-primary-300;
-		border-color: $color-core-primary-400;
+		background: var(--color-core-primary-300);
+		border-color: var(--color-core-primary-400);
 		transform: translateY(-4px);
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.075);
 
 		& > * {
-			color: $color-core-neutral-100;
+			color: var(--color-core-neutral-100)
 		}
 	}
 }

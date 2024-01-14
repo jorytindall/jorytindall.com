@@ -1,6 +1,6 @@
 .text-arrow {
-	color: $color-core-primary-300;
-	font-family: $typography-font-family-body;
+	color: var(--color-core-primary-300);
+	font-family: var(--typography-font-family-body);
 	font-size: 1rem;
 	text-decoration: none;
 	display: inline-flex;
@@ -9,7 +9,7 @@
 	width: fit-content;
 	gap: 0.5rem;
 	background: none;
-	border: 1px solid $color-core-primary-300;
+	border: 1px solid var(--color-core-primary-300);
 	border-radius: 20px;
 	padding: 0 1rem;
 
@@ -24,7 +24,7 @@
 		transform: rotate(-0.25turn);
 
 		path {
-			fill: $color-core-primary-300;
+			fill: var(--color-core-primary-300);
 		}
 	}
 
@@ -36,12 +36,12 @@
 }
 
 $styles: (
-	'primary' $color-core-primary-300 $color-core-neutral-100,
-	'neutral' $color-core-neutral-600 $color-core-neutral-100,
-	'dark' $color-core-neutral-100 $color-core-neutral-600
+	'primary' var(--color-core-primary-300) var(--color-core-neutral-100),
+	'neutral' var(--color-core-neutral-600) var(--color-core-neutral-100),
+	'dark' var(--color-core-neutral-100) var(--color-core-neutral-600)
 );
 
-@each $style, $color, $color-core-inverse in $styles {
+@each $style, $color, $color-inverse in $styles {
 	.style--#{$style} {
 		border-color: $color;
 		color: $color;
@@ -53,10 +53,10 @@ $styles: (
 
 		&:hover {
 			background: $color;
-			color: $color-core-inverse;
+			color: $color-inverse;
 
 			svg path {
-				fill: $color-core-inverse;
+				fill: $color-inverse;
 			}
 		}
 	}

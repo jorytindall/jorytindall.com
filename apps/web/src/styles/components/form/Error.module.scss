@@ -1,6 +1,6 @@
 .form-error {
-  color: $color-core-tertiary-500;
-  font-family: $typography-font-family-body;
-  font-size: $typography-font-size-body-secondary;
+  color: var(--color-core-tertiary-500);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-body-secondary);
   font-weight: bold;
 }

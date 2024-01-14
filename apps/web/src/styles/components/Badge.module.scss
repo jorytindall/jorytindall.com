@@ -1,14 +1,14 @@
 $variants: (
-	'primary' $color-core-primary-300 $color-core-primary-300 none,
-	'secondary' $color-core-neutral-600 $color-core-neutral-600 transparent,
-	'tertiary' $color-core-tertiary-500 $color-core-tertiary-500 transparent,
-	'inverse' $color-core-neutral-600 transparent $color-core-neutral-100,
+	'primary' var(--color-core-primary-300) var(--color-core-primary-300) none,
+	'secondary' var(--color-core-neutral-600) var(--color-core-neutral-600) transparent,
+	'tertiary' var(--color-core-tertiary-500) var(--color-core-tertiary-500) transparent,
+	'inverse' var(--color-core-neutral-600) transparent var(--color-core-neutral-100),
 );
 
 // Define root badge styling
 @mixin badge-base {
 	padding: 4px 16px;
-	font-family: $typography-font-family-body;
+	font-family: var(--typography-font-family-body);
 	font-size: 1rem;
 	line-height: 1.7;
 	font-weight: 400;

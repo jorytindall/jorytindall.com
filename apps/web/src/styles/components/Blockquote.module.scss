@@ -1,12 +1,12 @@
 .wrapper {
-	background: $color-core-neutral-100;
+	background: var(--color-core-neutral-100);
 	padding: 2.5rem;
 	margin: 2.5rem 0 0 0;
 }
 
 .blockquote {
-	font-family: $typography-font-family-body;
-	font-size: $typography-font-size-body-lead;
-	line-height: $typography-line-height-body;
-	color: $color-core-primary-400;
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-body-lead);
+	line-height: var(--typography-line-height-body);
+	color: var(--color-core-primary-400);
 }

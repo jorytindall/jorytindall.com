@@ -42,11 +42,11 @@
 	&:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.075);
-		background: $color-core-primary-300;
-		border-color: $color-core-primary-300;
+		background: var(--color-core-primary-300);
+		border-color: var(--color-core-primary-300);
 
 		& > h1, h2, h3, h4, h5, h6, p {
-			color: $color-core-neutral-100;
+			color: var(--color-core-neutral-100);
 		}
 	}
 }
@@ -114,11 +114,11 @@ $sizes: (
 // Background
 
 $backgrounds: (
-	'primary' $color-core-primary-300 $color-core-primary-400,
-	'secondary' $color-core-secondary-200 $color-core-secondary-300,
-	'tertiary' $color-core-tertiary-200 $color-core-tertiary-300,
-	'dark' $color-core-neutral-600 $color-core-neutral-500,
-	'white' $color-core-neutral-100 $color-core-neutral-200,
+	'primary' var(--color-core-primary-300) var(--color-core-primary-400),
+	'secondary' var(--color-core-secondary-200) var(--color-core-secondary-300),
+	'tertiary' var(--color-core-tertiary-200) var(--color-core-tertiary-300),
+	'dark' var(--color-core-neutral-600) var(--color-core-neutral-500),
+	'white' var(--color-core-neutral-100) var(--color-core-neutral-200),
 );
 
 @each $background, $color, $border in $backgrounds {
