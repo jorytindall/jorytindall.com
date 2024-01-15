@@ -8,113 +8,94 @@ const webPath = `dist/web/`;
 console.log(`cleaning ${webPath}...`);
 fs.removeSync(webPath);
 
-// Don't currently need this
-// const modes = ['light', 'dark'];
-
 console.log('🌞 Building light mode...');
 
-StyleDictionary.extend({
-	source: [
-		`tokens/**/!(*.dark).json`
-	],
+const defaultTheme = StyleDictionary.extend({
+  source: [
+    'tokens/**/!(*.dark).json'
+  ],
 
-	platforms: {
-		css: {
-			transformGroup: `css`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens.css`,
-				format: `css/variables`,
-				options: {
-					outputReferences: true
-				}
-			}]
-		},
+  platforms: {
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens.css`,
+        format: `css/variables`,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
 
-		scss: {
-			transformGroup: `scss`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens.scss`,
-				format: `scss/variables`,
-				options: {
-					outputReferences: true
-				}
-			}]
-		},
+    scss: {
+      transformGroup: `scss`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens.scss`,
+        format: `scss/variables`,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
 
-		js: {
-			transformGroup: `web`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens.json`,
-				format: `json/flat`
-			}]
-		}
-	}
-}).buildAllPlatforms();
+    js: {
+      transformGroup: `web`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens.json`,
+        format: `json/flat`
+      }]
+    },
+  },
+})
+
+// module.exports = styleDictionary.buildAllPlatforms();
 
 console.log('🌑 Building dark mode...');
 
-StyleDictionary.extend({
-	source: [
-		`tokens/**/!(*.light).json`
-	],
+const darkTheme = StyleDictionary.extend({
+  source: [
+    `tokens/**/!(*.light).json`
+  ],
 
-	platforms: {
+  platforms: {
 
-		css: {
-			transformGroup: `css`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens-dark.css`,
-				format: `css/variables`,
-				options: {
-					outputReferences: true
-				}
-			}]
-		},
+    css: {
+      transformGroup: `css`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens-dark.css`,
+        format: `css/variables`,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
 
-		scss: {
-			transformGroup: `scss`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens-dark.scss`,
-				format: `scss/variables`,
-				options: {
-					outputReferences: true
-				}
-			}]
-		},
+    scss: {
+      transformGroup: `scss`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens-dark.scss`,
+        format: `scss/variables`,
+        options: {
+          outputReferences: true
+        }
+      }]
+    },
 
-		js: {
-			transformGroup: `web`,
-			buildPath: webPath,
-			files: [{
-				destination: `tokens-dark.json`,
-				format: `json/flat`
-			}]
-		},
-	}
-}).buildAllPlatforms();
+    js: {
+      transformGroup: `web`,
+      buildPath: webPath,
+      files: [{
+        destination: `tokens-dark.json`,
+        format: `json/flat`
+      }]
+    },
+  }
+})
 
-// module.exports = {
-// 	source: [`tokens/**/*.json`],
-// 	transform: {},
-// 	platforms: {
-// 		web: {
-// 			transformGroup: 'css',
-// 			buildPath: './dist/web/',
-// 			files: [
-// 				{
-// 					destination: 'tokens.scss',
-// 					format: 'scss/variables',
-// 				},
-// 				{
-// 					destination: 'tokens.css',
-// 					format: 'css/variables',
-// 				},
-// 			],
-// 		},
-// 	},
-// };
+module.exports = defaultTheme.buildAllPlatforms();
+module.exports = darkTheme.buildAllPlatforms();
