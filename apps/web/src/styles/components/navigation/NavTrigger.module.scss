@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  padding: 4px;
+  border-radius: 22px;
+  border: 1px solid var(--color-semantic-border-brand);
+  background: var(--color-core-neutral-100);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-core-neutral-400);
+}
+
+.burger {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 18px;
+  border: none;
+  color: var(--color-semantic-foreground-inverse);
+  background: var(--color-semantic-surface-brand);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-font-size-body-secondary);
+  line-height: 28px;
+
+  .menu-icon path {
+    stroke: var(--color-semantic-foreground-inverse)
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--color-core-primary-400);
+  }
+}
+
+
+.theme-picker {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+}
+
+.theme-button {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 8px;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: var(--color-core-neutral-500);
+  transition: all 0.1s ease-in-out;
+  height: 100%;
+
+  &:nth-child(odd) {
+    border-radius: 18px 4px 4px 18px;
+  }
+
+  &:nth-child(even) {
+    border-radius: 4px 18px 18px 4px;
+  }
+
+  .theme-icon path {
+    stroke: var(--color-core-neutral-500);
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--color-core-neutral-300);
+  }
+}
+
+.current {
+  color: var(--color-semantic-foreground-primary);
+  background: var(--color-core-neutral-300);
+
+  .theme-icon path {
+    stroke: var(--color-semantic-foreground-primary);
+  }
+
+  &:hover {
+    background: var(--color-core-neutral-400);
+  }
+}
