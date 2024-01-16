@@ -50,7 +50,7 @@
 .theme-button {
   display: flex;
   flex-direction: row;
-  padding: 4px 8px;
+  padding: 6px 8px;
   align-items: center;
   background: transparent;
   border: none;
@@ -58,12 +58,16 @@
   transition: all 0.1s ease-in-out;
   height: 100%;
 
-  &:nth-child(odd) {
+  &:nth-child(1) {
     border-radius: 18px 4px 4px 18px;
   }
 
-  &:nth-child(even) {
-    border-radius: 4px 18px 18px 4px;
+  &:nth-child(2) {
+    border-radius: 4px;
+  }
+
+  &:nth-child(3) {
+    border-radius: 4px;
   }
 
   .theme-icon path {
@@ -73,6 +77,10 @@
   &:hover {
     cursor: pointer;
     background: var(--color-core-neutral-300);
+  }
+
+  .button-text {
+    display: none;
   }
 }
 

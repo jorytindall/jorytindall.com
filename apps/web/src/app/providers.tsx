@@ -6,8 +6,8 @@ export function Providers({ children }) {
   return (
     <ThemeProvider
       defaultTheme='light'
-      enableSystem={false}
-      themes={['light', 'dark']}
+      enableSystem={true}
+      themes={['light', 'dark', 'system']}
     >
       {children}
     </ThemeProvider>
