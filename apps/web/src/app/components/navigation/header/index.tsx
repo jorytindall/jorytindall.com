@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Burger } from './Burger';
 import { Overlay } from './Overlay';
 import styles from 'styles/components/navigation/Header.module.scss';
 import { Avatar } from 'app/components/avatar';
