@@ -20,7 +20,6 @@
 .headerOverlay {
 	@extend .header;
 	background: var(--color-core-neutral-100);
-	// height: inherit;
 }
 
 // Overlay
@@ -41,7 +40,6 @@
 	@media (max-width: 768px) {
 		top: 98px;
 		height: calc(100vh - 98px);
-		// padding: 2.5rem 1rem 2rem 1rem;
 	}
 }
 
@@ -56,7 +54,6 @@
 }
 
 .linkWrapper {
-	// padding: 0 2rem;
 	display: flex;
 	flex-direction: column;
 	text-align: right;
