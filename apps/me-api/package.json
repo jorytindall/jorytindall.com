@@ -6,7 +6,7 @@
   "module": "app.js",
   "type": "module",
   "scripts": {
-    "dev:server": "nodemon app.js",
+    "start": "nodemon app.js",
     "test": "jest"
   },
   "keywords": [],
