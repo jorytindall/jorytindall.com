@@ -14,6 +14,7 @@
 		"tokens:build": "turbo run build --filter=tokens",
 		"pres:dev": "turbo run dev --filter=presentations",
 		"pres:build": "turbo run build --filter=presentations",
+		"api:start": "turbo run start --filter=me-api",
 		"format:all": "prettier --write .",
 		"build": "turbo run build",
 		"test": "turbo run test",

@@ -1,0 +1,31 @@
+{
+  "name": "me-api",
+  "version": "1.0.0",
+  "description": "GraphQL API for me.",
+  "main": "app.js",
+  "module": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Jory Tindall",
+    "email": "hello@jorytindall.com",
+    "url": "https://jorytindall.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "graphql": "^16.8.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.8",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  }
+}
