@@ -14,8 +14,8 @@ export const typeDefs = `#graphql
     startDate: String!
     endDate: String!
     role: String!
-    team: String!
-    description: String!
+    team: String
+    description: String
     responsibilities: [String!]!
   }
 
@@ -35,8 +35,8 @@ export const typeDefs = `#graphql
     startDate: String!
     endDate: String!
     role: String!
-    team: String!
-    description: String!
+    team: String
+    description: String
     responsibilities: [String!]!
   }
   
@@ -53,8 +53,8 @@ export const typeDefs = `#graphql
     startDate: String!
     endDate: String!
     role: String!
-    team: String!
-    description: String!
+    team: String
+    description: String
     responsibilities: [String!]!
   }
 
