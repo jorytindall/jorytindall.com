@@ -21,8 +21,7 @@ export const Header = () => {
 	return (
 		<header className={getOverlayClass}>
 			<Avatar />
-			{/* <Burger overlay={overlay} toggle={setOverlay} /> */}
-			<NavTrigger />
+			<NavTrigger overlay={overlay} toggle={setOverlay} />
 			<Overlay overlay={overlay} />
 		</header>
 	);

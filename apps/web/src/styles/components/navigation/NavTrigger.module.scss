@@ -28,14 +28,18 @@
   font-family: var(--typography-font-family-body);
   font-size: var(--typography-font-size-body-secondary);
   line-height: 28px;
+  cursor: pointer;
 
   .menu-icon path {
-    stroke: var(--color-semantic-foreground-inverse)
+    fill: var(--color-semantic-foreground-inverse)
   }
 
   &:hover {
-    cursor: pointer;
     background: var(--color-core-primary-400);
+  }
+
+  &:active {
+    background: var(--color-core-primary-500);
   }
 }
 
@@ -71,7 +75,7 @@
   }
 
   .theme-icon path {
-    stroke: var(--color-core-neutral-500);
+    fill: var(--color-core-neutral-500);
   }
 
   &:hover {
@@ -89,10 +93,25 @@
   background: var(--color-core-neutral-300);
 
   .theme-icon path {
-    stroke: var(--color-semantic-foreground-primary);
+    fill: var(--color-semantic-foreground-primary);
   }
 
   &:hover {
     background: var(--color-core-neutral-400);
+  }
+}
+
+.burgerEmoji {
+	font-size: 24px;
+	line-height: 24px;
+  animation: rotate 2s infinite linear;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
