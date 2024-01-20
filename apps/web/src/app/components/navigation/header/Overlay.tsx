@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FeaturedItem } from './FeaturedItem';
 import styles from 'styles/components/navigation/Header.module.scss';
 
 interface OverlayProps {
@@ -66,6 +65,7 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 			className={getOverlayClass}
 		>
 			<motion.aside
+				variants={linkAnimation}
 				initial="hidden"
 				animate="enter"
 				className={styles.linkWrapper}

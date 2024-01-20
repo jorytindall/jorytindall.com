@@ -1,22 +1,20 @@
-@use 'styles/abstracts/variables' as *;
-
 $paragraphVariants: (
-	'primary' $typography-font-size-body-primary,
-	'secondary' $typography-font-size-body-secondary,
-	'lead' $typography-font-size-body-lead
+	'primary' var(--typography-font-size-body-primary),
+	'secondary' var(--typography-font-size-body-secondary),
+	'lead' var(--typography-font-size-body-lea)d
 );
 
 $body-colors: ('primary', 'secondary', 'light');
 
 @mixin paragraph-base {
-	font-family: $typography-font-family-body;
-	color: $color-neutral-600;
+	font-family: var(--typography-font-family-body);
+	color: var(--color-core-neutral-600);
 	line-height: 1.8;
 	margin: 1rem 0;
 
 	a,
 	a:visited {
-		color: $color-primary-300;
+		color: var(--color-core-primary-300);
 	}
 }
 
@@ -28,10 +26,10 @@ $body-colors: ('primary', 'secondary', 'light');
 }
 
 .code {
-	background: $color-tertiary-200;
-	color: $color-tertiary-500;
+	background: var(--color-core-tertiary-200);
+	color: var(--color-core-tertiary-500);
 	padding: 0.25rem 0.5rem;
-	font-family: $typography-font-family-mono;
+	font-family: var(--typography-font-family-mono);
 }
 
 .collapse {
@@ -41,16 +39,16 @@ $body-colors: ('primary', 'secondary', 'light');
 
 $body-color-props: (
 	'primary': (
-		'color': $color-primary-300,
+		'color': var(--color-core-primary-300),
 	),
 	'secondary': (
-		'color': $color-neutral-600,
+		'color': var(--color-core-neutral-600),
 	),
 	'light': (
-		'color': $color-neutral-100,
+		'color': var(--color-core-neutral-100),
 	),
 	'dark': (
-		'color': $color-neutral-600,
+		'color': var(--color-core-neutral-600),
 	),
 );
 

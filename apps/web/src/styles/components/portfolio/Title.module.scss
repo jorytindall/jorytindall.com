@@ -1,7 +1,5 @@
-@use 'styles/abstracts/variables' as *;
-
 .wrapper {
-	background: $color-neutral-100;
+	background: var(--color-core-neutral-100);
 	padding: 4.444rem 1rem;
 	display: flex;
 	justify-content: center;
@@ -26,9 +24,6 @@
 	@media (max-width: 500px) {
 		gap: 1.5rem;
 	}
-}
-
-.titleWrapper {
 }
 
 .details {

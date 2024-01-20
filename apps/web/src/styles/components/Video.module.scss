@@ -1,10 +1,8 @@
-@use 'styles/abstracts/variables' as *;
-
 .wrapper {
 	padding: 1rem;
-	background: $color-tertiary-200;
+	background: var(--color-core-tertiary-200);
 	border-radius: 10px;
-	border: 1px solid $color-tertiary-300;
+	border: 1px solid var(--color-core-tertiary-300);
 }
 
 .content {

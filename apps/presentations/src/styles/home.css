@@ -1,8 +1,9 @@
+/* @import '../../node_modules/tokens/dist/web/tokens.scss'; */
 @import '../../node_modules/tokens/dist/web/tokens.css';
 
 body {
-	background: var(--color-tertiary-100);
-	color: var(--color-neutral-600);
+	background: var(--color-core-tertiary-100);
+	color: var(--color-core-neutral-600);
 	font-family: var(--typography-font-family-body);
 }
 
@@ -12,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--color-primary-300);
+	color: var(--color-core-primary-300);
 	font-family: var(--typography-font-family-headline);
 	margin: 0;
 	padding: 0;
@@ -38,11 +39,11 @@ h6 {
 }
 
 a {
-	color: var(--color-primary-400);
+	color: var(--color-core-primary-400);
 }
 
 a:hover {
-	color: var(--color-primary-500);
+	color: var(--color-core-primary-500);
 }
 
 main {
@@ -71,5 +72,5 @@ main {
 }
 
 .back-link {
-	color: var(--color-neutral-500);
+	color: var(--color-core-neutral-500);
 }

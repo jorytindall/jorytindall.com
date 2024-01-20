@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from 'react-hot-toast';
+import { Providers } from './providers';
 import Fathom from 'lib/fathom';
 import { Header, Footer } from 'app/components/navigation';
 import { Main } from 'app/components/layout';
@@ -16,16 +17,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body>
-				<Header />
-				<Main>
-					{children}
-				</Main>
-				<Footer />
-				<Toaster />
-				<Fathom />
-				<Analytics />
+				<Providers>
+					<Header />
+					<Main>
+						{children}
+					</Main>
+					<Footer />
+					<Toaster />
+					<Fathom />
+					<Analytics />
+				</Providers>
 			</body>
 		</html>
 	);

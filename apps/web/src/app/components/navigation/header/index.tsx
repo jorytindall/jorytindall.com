@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Burger } from './Burger';
 import { Overlay } from './Overlay';
 import styles from 'styles/components/navigation/Header.module.scss';
 import { Avatar } from 'app/components/avatar';
+import { NavTrigger } from './NavTrigger';
 
 export const Header = () => {
 	const route = usePathname();
@@ -20,7 +20,7 @@ export const Header = () => {
 	return (
 		<header className={getOverlayClass}>
 			<Avatar />
-			<Burger overlay={overlay} toggle={setOverlay} />
+			<NavTrigger overlay={overlay} toggle={setOverlay} />
 			<Overlay overlay={overlay} />
 		</header>
 	);

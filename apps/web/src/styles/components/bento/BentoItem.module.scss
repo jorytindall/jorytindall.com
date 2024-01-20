@@ -1,5 +1,3 @@
-@use 'styles/abstracts/variables' as *;
-
 // Base styles
 
 .outer {
@@ -44,11 +42,11 @@
 	&:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.075);
-		background: $color-primary-300;
-		border-color: $color-primary-300;
+		background: var(--color-core-primary-300);
+		border-color: var(--color-core-primary-300);
 
 		& > h1, h2, h3, h4, h5, h6, p {
-			color: $color-neutral-100;
+			color: var(--color-core-neutral-100);
 		}
 	}
 }
@@ -116,11 +114,11 @@ $sizes: (
 // Background
 
 $backgrounds: (
-	'primary' $color-primary-300 $color-primary-400,
-	'secondary' $color-secondary-200 $color-secondary-300,
-	'tertiary' $color-tertiary-200 $color-tertiary-300,
-	'dark' $color-neutral-600 $color-neutral-500,
-	'white' $color-neutral-100 $color-neutral-200,
+	'primary' var(--color-core-primary-300) var(--color-core-primary-400),
+	'secondary' var(--color-core-secondary-200) var(--color-core-secondary-300),
+	'tertiary' var(--color-core-tertiary-200) var(--color-core-tertiary-300),
+	'dark' var(--color-core-neutral-600) var(--color-core-neutral-500),
+	'white' var(--color-core-neutral-100) var(--color-core-neutral-200),
 );
 
 @each $background, $color, $border in $backgrounds {

@@ -1,42 +1,40 @@
-@use 'styles/abstracts/variables' as *;
-
 $button-variants: ('primary', 'secondary');
 
 $button-variant-props: (
 	'primary': (
-		'text-color': $color-neutral-100,
-		'text-color-hover': $color-neutral-100,
-		'background-default': $color-primary-300,
-		'background-hover': $color-primary-400,
-		'background-active': $color-primary-500,
-		'border-color-default': $color-primary-300,
-		'border-color-hover': $color-primary-400,
-		'border-color-active': $color-primary-500,
+		'text-color': var(--color-core-neutral-100),
+		'text-color-hover': var(--color-core-neutral-100),
+		'background-default': var(--color-core-primary-300),
+		'background-hover': var(--color-core-primary-400),
+		'background-active': var(--color-core-primary-500),
+		'border-color-default': var(--color-core-primary-300),
+		'border-color-hover': var(--color-core-primary-400),
+		'border-color-active': var(--color-core-primary-500),
 	),
 	'secondary': (
-		'text-color': $color-primary-300,
-		'text-color-hover': $color-neutral-100,
+		'text-color': var(--color-core-primary-300),
+		'text-color-hover': var(--color-core-neutral-100),
 		'background-default': transparent,
-		'background-hover': $color-primary-400,
-		'background-active': $color-primary-500,
-		'border-color-default': $color-primary-300,
-		'border-color-hover': $color-primary-400,
-		'border-color-active': $color-primary-500,
+		'background-hover': var(--color-core-primary-400),
+		'background-active': var(--color-core-primary-500),
+		'border-color-default': var(--color-core-primary-300),
+		'border-color-hover': var(--color-core-primary-400),
+		'border-color-active': var(--color-core-primary-500),
 	),
 	'inverse': (
-		'text-color': $color-neutral-100,
-		'text-color-hover': $color-neutral-600,
+		'text-color': var(--color-core-neutral-100),
+		'text-color-hover': var(--color-core-neutral-600),
 		'background-default': transparent,
-		'background-hover': $color-neutral-100,
-		'background-active': $color-neutral-200,
-		'border-color-default': $color-neutral-100,
-		'border-color-hover': $color-neutral-200,
-		'border-color-active': $color-neutral-300,
+		'background-hover': var(--color-core-neutral-100),
+		'background-active': var(--color-core-neutral-200),
+		'border-color-default': var(--color-core-neutral-100),
+		'border-color-hover': var(--color-core-neutral-200),
+		'border-color-active': var(--color-core-neutral-300),
 	),
 );
 
 @mixin button {
-	font-family: $typography-font-family-headline;
+	font-family: var(--typography-font-family-headline);
 	font-weight: 300;
 	border-radius: 64px;
 	border: none;

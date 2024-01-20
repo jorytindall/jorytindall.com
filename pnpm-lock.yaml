@@ -164,6 +164,9 @@ importers:
       next-sanity-image:
         specifier: ^6.1.0
         version: 6.1.1(@sanity/client@6.10.0)(next@14.0.4)(react@18.2.0)
+      next-themes:
+        specifier: ^0.2.1
+        version: 0.2.1(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -197,9 +200,6 @@ importers:
       sharp:
         specifier: ^0.33.1
         version: 0.33.1
-      tokens:
-        specifier: ^0.1.1
-        version: link:../../packages/tokens
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -225,6 +225,9 @@ importers:
       '@divriots/style-dictionary-to-figma':
         specifier: ^0.4.0
         version: 0.4.0
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
       style-dictionary:
         specifier: ^3.9.1
         version: 3.9.1
@@ -6466,6 +6469,15 @@ packages:
       universalify: 2.0.1
     dev: false
 
+  /fs-extra@11.2.0:
+    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
+    engines: {node: '>=14.14'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.1
+    dev: true
+
   /fs-extra@7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
     engines: {node: '>=6 <7 || >=8'}
@@ -7905,6 +7917,18 @@ packages:
       react: 18.2.0
       sanity: 3.23.4(react-dom@18.2.0)(react@18.2.0)(sass@1.69.7)(styled-components@6.1.6)
       styled-components: 6.1.6(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /next-themes@0.2.1(next@14.0.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 14.0.4(react-dom@18.2.0)(react@18.2.0)(sass@1.69.7)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next@14.0.4(react-dom@18.2.0)(react@18.2.0):
