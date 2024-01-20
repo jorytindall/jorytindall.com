@@ -15,6 +15,8 @@ export const typeDefs = `#graphql
     endDate: String!
     role: String!
     team: String!
+    description: String!
+    responsibilities: [String!]!
   }
 
   # type Pet {
@@ -34,6 +36,8 @@ export const typeDefs = `#graphql
     endDate: String!
     role: String!
     team: String!
+    description: String!
+    responsibilities: [String!]!
   }
   
   # input PetToEdit {
@@ -50,6 +54,8 @@ export const typeDefs = `#graphql
     endDate: String!
     role: String!
     team: String!
+    description: String!
+    responsibilities: [String!]!
   }
 
   # input PetToAdd {
