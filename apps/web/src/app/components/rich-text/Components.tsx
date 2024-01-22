@@ -10,6 +10,9 @@ import { Blockquote } from 'app/components/blockquote';
 import { CodeBlock } from 'app/components/code';
 import { Playlist } from 'app/components/audio';
 import { Video } from 'app/components/video';
+import { DownloadButton } from 'app/components/button';
+
+import s from 'styles/components/RichText.module.scss'
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -83,5 +86,12 @@ export const Components = {
 				youTubeId={value.youTubeId}
 			/>
 		),
+		fileDownload: ({ value }: TypeProps) => (
+			<DownloadButton
+				text={value.text}
+				href={value.file.asset._ref}
+				className={s['rich-text-button']}
+			/>
+		)
 	},
 };

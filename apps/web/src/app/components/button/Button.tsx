@@ -11,6 +11,7 @@ interface ButtonProps {
 	isDownload?: boolean;
 	isFullWidth?: boolean;
 	disabled?: boolean;
+	className?: string,
 }
 
 export const Button = ({
@@ -22,11 +23,13 @@ export const Button = ({
 	isDownload,
 	isFullWidth,
 	disabled,
+	className,
 }: ButtonProps) => {
 	const classes = getClasses([
 		styles[variant],
 		styles[size],
 		isFullWidth ? styles[`full-width`] : null,
+		className,
 	]);
 
 	if (!href) {
