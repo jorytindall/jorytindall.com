@@ -44,6 +44,7 @@ $button-variant-props: (
 	border-style: solid;
 	text-decoration: none;
 	width: fit-content;
+	display: block;
 
 	&:hover {
 		cursor: pointer;
