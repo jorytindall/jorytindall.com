@@ -12,11 +12,6 @@ export default {
 			type: 'string',
 		},
 		{
-			name: 'description',
-			title: 'Description',
-			type: 'text',
-		},
-		{
 			name: 'file',
 			title: 'File',
 			type: 'file',

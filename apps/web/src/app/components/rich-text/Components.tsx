@@ -10,6 +10,8 @@ import { Blockquote } from 'app/components/blockquote';
 import { CodeBlock } from 'app/components/code';
 import { Playlist } from 'app/components/audio';
 import { Video } from 'app/components/video';
+import { DownloadButton } from 'app/components/button';
+import { CenteredWrapper, Container } from 'app/components/layout';
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -83,5 +85,11 @@ export const Components = {
 				youTubeId={value.youTubeId}
 			/>
 		),
+		fileDownload: ({ value }: TypeProps) => (
+			<DownloadButton
+				text={value.text}
+				href={value.file.asset._ref}
+			/>
+		)
 	},
 };

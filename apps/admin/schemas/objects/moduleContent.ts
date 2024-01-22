@@ -14,6 +14,5 @@ export default {
 		{ type: `portfolioList` },
 		{ type: `results` },
 		{ type: `features` },
-		{ type: `fileDownload` },
 	],
 };

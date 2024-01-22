@@ -1,10 +1,9 @@
 import { RichText } from 'app/components/rich-text';
-import { RichTextWrapper, GridWrapper, CenteredWrapper, Container } from 'app/components/layout';
+import { RichTextWrapper, GridWrapper } from 'app/components/layout';
 import { Features } from 'app/components/features';
 import { Gallery, FullWidthImage } from 'app/components/gallery';
 import { PortfolioList } from 'app/components/portfolio';
 import { Results } from 'app/components/results';
-import { Button } from 'app/components/button';
 
 interface ModuleRendererProps {
 	modules?: any;
@@ -31,20 +30,6 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return <Results input={m} key={m._key} />;
 			case 'features':
 				return <Features input={m} key={m._key} />;
-			case 'fileDownload':
-				return (
-					<CenteredWrapper semanticElement='section' key={m._key}>
-						<Container semanticElement='div'>
-							<Button
-								isFullWidth
-								isDownload
-								href={m.file.asset.url}
-							>
-								{m.text}
-							</Button>
-						</Container>
-					</CenteredWrapper>
-				)
 			default:
 				return console.error('Nothing came back for this module');
 		}
