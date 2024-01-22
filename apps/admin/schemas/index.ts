@@ -21,6 +21,7 @@ import button from './objects/button';
 import gallery from './objects/gallery';
 import features from './objects/features';
 import featureItems from './objects/features/featureItem';
+import fileDownload from './objects/fileDownload';
 import form from './objects/form/index';
 import input from './objects/form/input';
 import submit from './objects/form/submit';
@@ -38,7 +39,6 @@ import results from './objects/results';
 import resultItem from './objects/resultItem';
 import codeBlock from './objects/codeBlock';
 import figmaEmbed from './objects/figmaEmbed';
-import fileDownload from './objects/fileDownload';
 import audio from './objects/audio';
 import playlist from './objects/playlist';
 import video from './objects/video';
@@ -66,6 +66,7 @@ export const schemaTypes = [
 	gallery,
 	features,
 	featureItems,
+	fileDownload,
 	form,
 	input,
 	submit,
@@ -83,7 +84,6 @@ export const schemaTypes = [
 	resultItem,
 	codeBlock,
 	figmaEmbed,
-	fileDownload,
 	audio,
 	playlist,
 	video,

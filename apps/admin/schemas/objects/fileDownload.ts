@@ -4,11 +4,11 @@ export default {
 	name: 'fileDownload',
 	title: 'File Download',
 	type: 'object',
-	icons: BiDownload,
+	icon: BiDownload,
 	fields: [
 		{
-			name: 'title',
-			title: 'Title',
+			name: 'text',
+			title: 'Text',
 			type: 'string',
 		},
 		{
