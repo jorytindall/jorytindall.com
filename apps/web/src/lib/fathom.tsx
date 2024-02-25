@@ -5,7 +5,7 @@ import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 function TrackPageView() {
-	const id = process.env.NEXT_PUBLIC_FATHOM_ID as string;
+	const id = process.env.NEXT_PUBLIC_FATHOM_SITE_ID as string;
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 
