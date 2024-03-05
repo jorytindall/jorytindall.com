@@ -8,6 +8,9 @@ import { EventList } from 'app/components/event';
 
 import type { Metadata } from 'next';
 
+// Revalidate events every minute
+export const revalidate = 60;
+
 export const metadata: Metadata = {
 	title: 'Jory Tindall | Designer, saxophone artist, educator.',
 	description:
