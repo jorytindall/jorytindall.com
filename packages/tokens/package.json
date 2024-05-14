@@ -9,7 +9,7 @@
 	"devDependencies": {
 		"@divriots/style-dictionary-to-figma": "^0.4.0",
 		"fs-extra": "^11.2.0",
-		"style-dictionary": "^3.9.1"
+		"style-dictionary": "^3.9.2"
 	},
 	"main": "dist/",
 	"files": [
