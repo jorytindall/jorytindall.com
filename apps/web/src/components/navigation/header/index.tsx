@@ -16,13 +16,7 @@ export const Header = () => {
 	const getOverlayClass = overlay ? styles.headerOverlay : styles.header;
 
 	// Reset the state of overlay after route change
-	useEffect(() => {
-		if (overlay) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
-	}, [route, overlay]);
+	useEffect(() => setOverlay(false), [route]);
 
 	// Change the header background on scroll
 	useEffect(() => {

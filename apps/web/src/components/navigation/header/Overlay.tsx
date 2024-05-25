@@ -1,20 +1,30 @@
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from 'styles/components/navigation/Header.module.scss';
+import { NavItem } from './NavItem';
 
 interface OverlayProps {
 	overlay?: any;
 }
 
 const overlayAnimation = {
-	hidden: { opacity: 0 },
-	enter: { opacity: 1 },
+	hidden: {
+		opacity: 0,
+		transition: { duration: 0.2 },
+	},
+	enter: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-const linkAnimation = {
-	hidden: { opacity: 0, translateX: 50 },
-	enter: { opacity: 1, translateX: 0 },
-};
+const staggerItems = {
+	hidden: {
+		opacity: 0,
+	},
+	enter: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.025,
+		}
+	}
+}
 
 export const Overlay = ({ overlay }: OverlayProps) => {
 	const getOverlayClass = overlay
@@ -61,27 +71,19 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 		<motion.div
 			variants={overlayAnimation}
 			initial="hidden"
-			animate="enter"
+			animate={overlay ? "enter" : "hidden"}
 			className={getOverlayClass}
 		>
-			<motion.aside
-				variants={linkAnimation}
+			<motion.ul
+				variants={staggerItems}
 				initial="hidden"
-				animate="enter"
+				animate={overlay ? "enter" : "hidden"}
 				className={styles.linkWrapper}
 			>
-				{links.map((link) => {
-					return (
-						<Link
-							href={link.slug}
-							key={link.text}
-							className={styles.navLink}
-						>
-							{link.text}
-						</Link>
-					);
-				})}
-			</motion.aside>
+				{links.map((link) => (
+					<NavItem key={link.text} slug={link.slug} text={link.text} />
+				))}
+			</motion.ul>
 		</motion.div>
 	);
 };
