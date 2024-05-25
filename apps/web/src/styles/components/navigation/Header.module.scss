@@ -1,7 +1,5 @@
 .header {
 	position: sticky;
-	background: rgba(255, 253, 244, 0.5);
-	backdrop-filter: blur(10px);
 	top: 0;
 	z-index: 100;
 	max-width: 100%;
@@ -11,6 +9,7 @@
 	flex-wrap: wrap;
 	padding: 2rem 2.5rem;
 	box-sizing: border-box;
+	transition: padding 150ms ease;
 
 	@media (max-width: 768px) {
 		padding: 1rem 1.5rem;
@@ -26,6 +25,12 @@
 .headerOverlay {
 	@extend .header;
 	background: var(--color-core-neutral-100);
+}
+
+.scrolled {
+	background: rgba(255, 253, 244, 0.5);
+	backdrop-filter: blur(10px);
+	padding: 0.5rem 2.5rem;
 }
 
 // Overlay

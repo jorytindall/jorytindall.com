@@ -2,14 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from 'styles/components/Avatar.module.scss';
 
-export const Avatar = () => {
+export const Avatar = ({
+	width = 60,
+	height = 60,
+}) => {
 	return (
-		<Link href="/" passHref>
-			<div className={styles.avatar}>
+		<Link href="/" className={styles.avatar} style={{ width: width + 2, height: height + 2 }} passHref>
+			<div>
 				<Image
 					src='/avatar-logo.png'
-					width={60}
-					height={60}
+					width={width}
+					height={height}
 					quality={90}
 					priority={true}
 					alt="Photo of Jory Tindall"
