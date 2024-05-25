@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+// this template mainly just handles the page transition with framer motion
+
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
