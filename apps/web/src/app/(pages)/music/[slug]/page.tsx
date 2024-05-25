@@ -1,10 +1,10 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
-import { ModuleRenderer } from 'app/components/module-renderer';
-import { PageTitle } from 'app/components/page-title';
-import { Person } from 'app/components/person';
-import { Button } from 'app/components/button';
-import { CenteredWrapper } from 'app/components/layout';
+import { ModuleRenderer } from 'components/module-renderer';
+import { PageTitle } from 'components/page-title';
+import { Person } from 'components/person';
+import { Button } from 'components/button';
+import { CenteredWrapper } from 'components/layout';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
 import styles from 'styles/pages/Music.module.scss';
 

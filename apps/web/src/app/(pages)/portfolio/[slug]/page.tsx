@@ -3,9 +3,9 @@ import {
 	GET_PORTFOLIO_PROJECTS,
 	GET_PORTFOLIO_PROJECT_PATHS,
 } from 'lib/queries';
-import { HeroImage, Title } from 'app/components/portfolio';
-import { ModuleRenderer } from 'app/components/module-renderer';
-import { BentoBox } from 'app/components/bento';
+import { HeroImage, Title } from 'components/portfolio';
+import { ModuleRenderer } from 'components/module-renderer';
+import { BentoBox } from 'components/bento';
 import { PortfolioTitle } from '../PortfolioTitle';
 
 // Revalidate portfolio every minute

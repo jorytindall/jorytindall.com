@@ -1,10 +1,10 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_ALL_MUSIC_PROJECTS } from 'lib/queries';
-import { PageTitle } from 'app/components/page-title';
+import { PageTitle } from 'components/page-title';
 import { linkResolver } from 'utils/linkResolver';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import { BentoBox, BentoItem } from 'app/components/bento';
-import { Headline, Paragraph } from 'app/components/typography';
+import { BentoBox, BentoItem } from 'components/bento';
+import { Headline, Paragraph } from 'components/typography';
 import styles from 'styles/pages/Music.module.scss';
 
 import type { Metadata } from 'next';

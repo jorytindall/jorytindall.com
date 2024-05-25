@@ -4,10 +4,10 @@ import { sanityClient } from 'lib/sanity/sanityClient';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { linkResolver } from 'utils/linkResolver';
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
-import { Headline, Paragraph } from 'app/components/typography';
-import { ModuleRenderer } from 'app/components/module-renderer';
-import { GridWrapper } from 'app/components/layout';
-import { Button } from 'app/components/button';
+import { Headline, Paragraph } from 'components/typography';
+import { ModuleRenderer } from 'components/module-renderer';
+import { GridWrapper } from 'components/layout';
+import { Button } from 'components/button';
 import styles from 'styles/pages/Talk.module.scss';
 
 // Revalidate events every minute

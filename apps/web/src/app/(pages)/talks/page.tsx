@@ -1,11 +1,11 @@
 import { format, parseISO } from 'date-fns';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_ALL_TALKS } from 'lib/queries';
-import { PageTitle } from 'app/components/page-title';
-import { CenteredWrapper } from 'app/components/layout';
+import { PageTitle } from 'components/page-title';
+import { CenteredWrapper } from 'components/layout';
 import { linkResolver } from 'utils/linkResolver';
-import { ListItem } from 'app/components/list';
-import { Paragraph } from 'app/components/typography';
+import { ListItem } from 'components/list';
+import { Paragraph } from 'components/typography';
 
 import type { Metadata } from 'next';
 

@@ -2,8 +2,8 @@
 
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { Form, Input, TextArea } from 'app/components/form';
-import { Button } from 'app/components/button';
+import { Form, Input, TextArea } from 'components/form';
+import { Button } from 'components/button';
 
 interface ContactFormProps {
   name: string;

@@ -1,10 +1,10 @@
 import { format, parseISO } from 'date-fns';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
-import { Headline, Paragraph, InlineLink } from 'app/components/typography';
-import { RichText } from 'app/components/rich-text';
-import { GridWrapper } from 'app/components/layout';
-import { Button } from 'app/components/button';
+import { Headline, Paragraph, InlineLink } from 'components/typography';
+import { RichText } from 'components/rich-text';
+import { GridWrapper } from 'components/layout';
+import { Button } from 'components/button';
 import styles from 'styles/pages/Event.module.scss';
 
 // Revalidate events every minute

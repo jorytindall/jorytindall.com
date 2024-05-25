@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 
-import { PageTitle } from 'app/components/page-title';
-import { Headline } from 'app/components/typography';
-import { ModuleRenderer } from 'app/components/module-renderer';
+import { PageTitle } from 'components/page-title';
+import { Headline } from 'components/typography';
+import { ModuleRenderer } from 'components/module-renderer';
 
 // Revalidate events every minute
 export const revalidate = 60;

@@ -2,11 +2,11 @@ import { sanityClient } from 'lib/sanity/sanityClient';
 import { format, parseISO } from 'date-fns';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
-import { PageTitle } from 'app/components/page-title';
-import { CenteredWrapper } from 'app/components/layout';
-import { ListItem } from 'app/components/list';
+import { PageTitle } from 'components/page-title';
+import { CenteredWrapper } from 'components/layout';
+import { ListItem } from 'components/list';
 import { linkResolver } from 'utils/linkResolver';
-import { Paragraph } from 'app/components/typography';
+import { Paragraph } from 'components/typography';
 
 import type { Metadata } from 'next';
 

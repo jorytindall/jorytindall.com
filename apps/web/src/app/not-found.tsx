@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Headline, Paragraph } from "./components/typography";
-import { Container } from "./components/layout";
+import { Headline, Paragraph } from "../components/typography";
+import { Container } from "../components/layout";
 // import notFoundImage from "./images/not-found-confused.gif"
-import { TextArrow } from "./components/button";
+import { TextArrow } from "../components/button";
 
 import type { Metadata } from "next";
 
