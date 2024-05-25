@@ -209,7 +209,7 @@ importers:
     devDependencies:
       '@sanity/client':
         specifier: ^6.18.3
-        version: 6.18.3(debug@3.2.7)
+        version: 6.18.3(debug@4.3.4)
       '@types/react-syntax-highlighter':
         specifier: ^15.5.13
         version: 15.5.13
@@ -8284,7 +8284,7 @@ packages:
     peerDependencies:
       '@sanity/client': ^6.18.0
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/icons': 2.11.8(react@18.3.1)
       '@sanity/preview-url-secret': 1.6.12(@sanity/client@6.18.3)
       '@sanity/ui': 2.1.7(react-dom@18.3.1)(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11)
@@ -8338,7 +8338,7 @@ packages:
       '@sanity/client': ^6.18.2
       react: ^18.2.0
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       react: 18.3.1
     dev: false
 
@@ -8352,7 +8352,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/preview-kit-compat': 1.4.23(@sanity/client@6.18.3)(react@18.3.1)
       mendoza: 3.0.7
       react: 18.3.1
@@ -8364,7 +8364,7 @@ packages:
     peerDependencies:
       '@sanity/client': ^6.17.2
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/uuid': 3.0.2
 
   /@sanity/preview-url-secret@1.6.13(@sanity/client@6.18.3):
@@ -8373,7 +8373,7 @@ packages:
     peerDependencies:
       '@sanity/client': ^6.18.2
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/uuid': 3.0.2
     dev: false
 
@@ -8690,7 +8690,7 @@ packages:
       svelte:
         optional: true
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/preview-url-secret': 1.6.13(@sanity/client@6.18.3)
       '@vercel/stega': 0.1.2
       next: 14.2.3(@babel/core@7.24.6)(react-dom@18.3.1)(react@18.3.1)(sass@1.77.2)
@@ -12922,7 +12922,7 @@ packages:
     engines: {node: '>=14.0.0'}
     dependencies:
       decompress-response: 7.0.0
-      follow-redirects: 1.15.6(debug@4.3.4)
+      follow-redirects: 1.15.6(debug@3.2.7)
       is-retry-allowed: 2.2.0
       progress-stream: 2.0.0
       tunnel-agent: 0.6.0
@@ -15102,7 +15102,7 @@ packages:
       next: ^13.0.0 || ^14.0.0
       react: ^18.0.0
     dependencies:
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/image-url': 1.0.2
       next: 14.2.3(@babel/core@7.24.6)(react-dom@18.3.1)(react@18.3.1)(sass@1.77.2)
       react: 18.3.1
@@ -15122,10 +15122,10 @@ packages:
       styled-components: ^6.1
     dependencies:
       '@portabletext/react': 3.0.18(react@18.3.1)
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/icons': 2.11.8(react@18.3.1)
       '@sanity/preview-kit': 5.0.59(@sanity/client@6.18.3)(react@18.3.1)
-      '@sanity/types': 3.43.0(debug@3.2.7)
+      '@sanity/types': 3.43.0(debug@4.3.4)
       '@sanity/ui': 2.1.12(react-dom@18.3.1)(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11)
       '@sanity/visual-editing': 1.8.21(@sanity/client@6.18.3)(next@14.2.3)
       groq: 3.41.2
@@ -16892,7 +16892,7 @@ packages:
       '@sanity/bifur-client': 0.3.1
       '@sanity/block-tools': 3.41.2
       '@sanity/cli': 3.41.2
-      '@sanity/client': 6.18.3(debug@3.2.7)
+      '@sanity/client': 6.18.3(debug@4.3.4)
       '@sanity/color': 3.0.6
       '@sanity/diff': 3.41.2
       '@sanity/diff-match-patch': 3.1.1
