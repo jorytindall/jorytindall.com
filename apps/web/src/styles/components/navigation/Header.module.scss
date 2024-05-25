@@ -20,6 +20,10 @@
 	.header {
 		background: rgba(3, 9, 19, 0.5);
 	}
+
+	.overlay-active {
+		background: rgba(3, 9, 19, 1);
+	}
 }
 
 .headerOverlay {
@@ -30,7 +34,10 @@
 .scrolled {
 	background: rgba(255, 253, 244, 0.5);
 	backdrop-filter: blur(10px);
-	padding: 0.5rem 2.5rem;
+}
+
+.overlay-active {
+	background: #fff;
 }
 
 // Overlay
@@ -50,7 +57,7 @@
 
 	@media (max-width: 768px) {
 		top: 94px;
-		height: calc(100vh - 98px);
+		height: calc(100vh - 94px);
 	}
 }
 

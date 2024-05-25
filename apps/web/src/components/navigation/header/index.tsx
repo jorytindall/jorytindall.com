@@ -16,7 +16,13 @@ export const Header = () => {
 	const getOverlayClass = overlay ? styles.headerOverlay : styles.header;
 
 	// Reset the state of overlay after route change
-	useEffect(() => setOverlay(false), [route]);
+	useEffect(() => {
+		if (overlay) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	}, [route, overlay]);
 
 	// Change the header background on scroll
 	useEffect(() => {
@@ -33,11 +39,14 @@ export const Header = () => {
 		}
 	}, [scrolled])
 
-	const setAvatarSize = scrolled ? 40 : 60;
+	// const setAvatarSize = scrolled ? 40 : 60;
 
 	return (
-		<header className={`${getOverlayClass} ${scrolled ? styles.scrolled : ''}`}>
-			<Avatar width={setAvatarSize} height={setAvatarSize} />
+		<header className={
+			`${getOverlayClass} ${scrolled ? styles.scrolled : ''} ${overlay ? styles['overlay-active'] : ''}`
+		}
+		>
+			<Avatar />
 			<NavTrigger overlay={overlay} toggle={setOverlay} />
 			<Overlay overlay={overlay} />
 		</header>
