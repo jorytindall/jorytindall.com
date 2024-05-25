@@ -18,6 +18,7 @@ export default {
 					{ title: `TikTok`, value: `tiktok` },
 					{ title: `Behance`, value: `behance` },
 					{ title: `Dribbble`, value: `dribbble` },
+					{ title: `GitHub`, value: `github` },
 				],
 				layout: `dropdown`,
 			},
