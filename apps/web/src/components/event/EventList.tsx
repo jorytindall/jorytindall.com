@@ -1,17 +1,14 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
 import { formatDate } from 'utils/datetimeFormat';
-import { getCurrentEvents } from 'utils/getCurrentEvents';
-import { Paragraph } from 'components/typography';
 import styles from 'styles/components/EventList.module.scss';
 
 export const EventList = ({ events }) => {
-	const currentEvents = getCurrentEvents(events);
 
 	return (
 		<div className={styles.wrapper}>
-			{currentEvents.length > 0 ? (
-				currentEvents.map((event) => {
+			{events.length > 0 ? (
+				events.map((event) => {
 					return (
 						<div className={styles.event} key={event._id}>
 							<Link
