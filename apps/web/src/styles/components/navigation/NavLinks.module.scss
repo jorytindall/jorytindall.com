@@ -1,0 +1,15 @@
+.linkWrapper {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	align-self: flex-end;
+	flex-grow: 1;
+
+	@media (max-width: 768px) {
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+}

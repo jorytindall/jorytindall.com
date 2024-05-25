@@ -36,9 +36,6 @@
 	backdrop-filter: blur(10px);
 }
 
-.overlay-active {
-	background: #fff;
-}
 
 // Overlay
 
@@ -73,18 +70,6 @@
 	overflow: hidden;
 }
 
-.linkWrapper {
-	display: flex;
-	flex-direction: column;
-	text-align: right;
-	align-self: flex-end;
-	flex-grow: 1;
-
-	@media (max-width: 768px) {
-		padding: 0;
-	}
-
-	li {
-		list-style: none;
-	}
+.overlay-active {
+	background: #fff;
 }
