@@ -1,5 +1,10 @@
 import { BiCompass } from "react-icons/bi"
 
+const areas = [
+  { title: 'Header', value: 'header' },
+  { title: 'Footer', value: 'footer' }
+]
+
 export default {
   name: 'navigation',
   type: 'document',
@@ -7,15 +12,14 @@ export default {
   icon: BiCompass,
   fields: [
     {
-      name: 'title',
+      name: 'area',
       type: 'string',
-      title: 'Title',
+      title: 'Area',
       options: {
-        list: [
-          { title: 'Header', value: 'header' },
-          { title: 'Footer', value: 'footer' }
-        ]
-      }
+        list: areas,
+        layout: 'dropdown'
+      },
+      validation: (Rule: any) => Rule.required()
     },
     {
       name: 'items',
@@ -26,7 +30,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-    }
+      title: 'area',
+    },
   }
 }
