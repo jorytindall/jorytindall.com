@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import styles from 'styles/components/navigation/Footer.module.scss';
 import { Paragraph } from 'components/typography';
-import { internalLinks, externalLinks } from './Links';
 import { Avatar } from 'components/avatar';
 
-export const Footer = () => {
+export const Footer = ({ internalLinks, socialLinks }) => {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.copyright}>
@@ -17,31 +16,31 @@ export const Footer = () => {
 				{internalLinks.map((link) => {
 					return (
 						<Link
-							href={link.slug}
-							key={link.text}
+							href={link.link}
+							key={link._id}
 							passHref
 							className={styles.link}
 						>
-							{link.text}
+							{link.title}
 						</Link>
 					);
 				})}
 			</div>
 			<div className={styles['external-links']}>
-				{externalLinks.map((link) => {
+				{socialLinks.map((link) => {
 					return (
 						<a
 							target="_blank"
 							rel="noreferrer"
-							href={link.href}
+							href={link.link}
 							className={styles.link}
-							key={link.text}
+							key={link._key}
 						>
 							{link.text}
 						</a>
 					);
 				})}
 			</div>
-		</footer>
+		</footer >
 	);
 };

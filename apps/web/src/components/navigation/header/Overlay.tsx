@@ -2,10 +2,14 @@ import { motion } from 'framer-motion';
 import styles from 'styles/components/navigation/Header.module.scss';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
-import { links } from './links';
 
 interface OverlayProps {
 	overlay?: any;
+	links: {
+		title: string;
+		link: string;
+		_id: string;
+	}[];
 }
 
 const overlayAnimation = {
@@ -16,7 +20,7 @@ const overlayAnimation = {
 	enter: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export const Overlay = ({ overlay }: OverlayProps) => {
+export const Overlay = ({ overlay, links }: OverlayProps) => {
 	const getOverlayClass = overlay
 		? styles.overlayVisible
 		: styles.overlayHidden;
@@ -30,7 +34,7 @@ export const Overlay = ({ overlay }: OverlayProps) => {
 		>
 			<NavLinks overlay={overlay}>
 				{links.map((link) => (
-					<NavItem key={link.text} slug={link.slug} text={link.text} />
+					<NavItem key={link._id} slug={link.link} text={link.title} />
 				))}
 			</NavLinks>
 		</motion.div>

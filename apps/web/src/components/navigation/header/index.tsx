@@ -7,7 +7,7 @@ import styles from 'styles/components/navigation/Header.module.scss';
 import { Avatar } from 'components/avatar';
 import { NavTrigger } from './NavTrigger';
 
-export const Header = () => {
+export const Header = ({ links }) => {
 	const route = usePathname();
 	const [overlay, setOverlay] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
@@ -31,9 +31,7 @@ export const Header = () => {
 		return () => {
 			document.removeEventListener('scroll', handleScroll);
 		}
-	}, [scrolled])
-
-	// const setAvatarSize = scrolled ? 40 : 60;
+	}, [scrolled]);
 
 	return (
 		<header className={
@@ -42,7 +40,7 @@ export const Header = () => {
 		>
 			<Avatar />
 			<NavTrigger overlay={overlay} toggle={setOverlay} />
-			<Overlay overlay={overlay} />
+			<Overlay overlay={overlay} links={links} />
 		</header>
 	);
 };

@@ -24,6 +24,12 @@ export default {
 			},
 		},
 		{
+			name: 'text',
+			type: 'string',
+			title: 'Text',
+			description: 'Text to display for the social link.'
+		},
+		{
 			name: `link`,
 			title: `Link`,
 			type: `url`,

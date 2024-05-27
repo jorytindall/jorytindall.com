@@ -22,7 +22,7 @@ export default function NotFound() {
       gap="default"
       semanticElement="section"
     >
-      <Image src='/images/not-found-confused.gif' alt="Not found" />
+      <Image src='/images/not-found-confused.gif' width={500} alt="Not found" />
       <Headline color="primary" collapse>404</Headline>
       <Paragraph collapse>Sorry, couldn&apos;t find that page.</Paragraph>
       <TextArrow href="/">Go back home</TextArrow>
