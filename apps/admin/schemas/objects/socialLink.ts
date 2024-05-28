@@ -18,9 +18,16 @@ export default {
 					{ title: `TikTok`, value: `tiktok` },
 					{ title: `Behance`, value: `behance` },
 					{ title: `Dribbble`, value: `dribbble` },
+					{ title: `GitHub`, value: `github` },
 				],
 				layout: `dropdown`,
 			},
+		},
+		{
+			name: 'text',
+			type: 'string',
+			title: 'Text',
+			description: 'Text to display for the social link.'
 		},
 		{
 			name: `link`,

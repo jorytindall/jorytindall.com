@@ -11,6 +11,7 @@ import portfolioProject from './documents/portfolioProject';
 import post from './documents/post';
 import settings from './documents/siteSettings';
 import talk from './documents/talk';
+import navigation from './documents/navigation';
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -42,6 +43,7 @@ import figmaEmbed from './objects/figmaEmbed';
 import audio from './objects/audio';
 import playlist from './objects/playlist';
 import video from './objects/video';
+import navItem from './objects/navItem';
 
 export const schemaTypes = [
 	// Documents
@@ -57,6 +59,7 @@ export const schemaTypes = [
 	post,
 	settings,
 	talk,
+	navigation,
 	// Objects
 	moduleContent,
 	richText,
@@ -87,4 +90,5 @@ export const schemaTypes = [
 	audio,
 	playlist,
 	video,
+	navItem,
 ];

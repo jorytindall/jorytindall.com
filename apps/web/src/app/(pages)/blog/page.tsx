@@ -1,11 +1,12 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_ALL_BLOG_POSTS } from 'lib/queries';
-import { PostWrapper } from 'app/components/blog';
-import { Headline } from 'app/components/typography';
 import { linkResolver } from 'utils/linkResolver';
-import styles from 'styles/pages/Blog.module.scss';
+import { ListItem } from 'components/list';
 
 import type { Metadata } from 'next';
+import { PageTitle } from 'components/page-title';
+import { CenteredWrapper } from 'components/layout';
+import { Paragraph } from 'components/typography';
 
 // Revalidate events every minute
 export const revalidate = 60;
@@ -27,21 +28,21 @@ export default async function Blog() {
 
 	const posts = blogPosts.map((post) => {
 		return (
-			<PostWrapper
-				key={post._id}
+			<ListItem
 				title={post.title}
-				excerpt={post.excerpt}
 				link={linkResolver('post', post.slug)}
-			/>
+			>
+				<Paragraph type="primary" color='secondary' collapse>{post.excerpt}</Paragraph>
+			</ListItem>
 		);
 	});
 
 	return (
-		<section className={styles.wrapper}>
-			<Headline tag="h3" collapse>
-				Recent posts
-			</Headline>
-			{posts}
-		</section>
+		<>
+			<PageTitle title="📝 Blog" megaTitle="Recent Posts" />
+			<CenteredWrapper semanticElement="section">
+				{posts}
+			</CenteredWrapper>
+		</>
 	);
 }

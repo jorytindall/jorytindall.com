@@ -12,8 +12,8 @@ export function linkResolver(parent, slug) {
 			return `music/${slug}`;
 		case 'landingPage':
 			return `p/${slug}`;
-		case 'talk':
-			return `talks/${slug}`;
+		case 'speaking':
+			return `speaking/${slug}`;
 		case 'pressKit':
 			return `press-kit/${slug}`;
 		default:

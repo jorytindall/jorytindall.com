@@ -2,8 +2,9 @@
 
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { Form, Input, TextArea } from 'app/components/form';
-import { Button } from 'app/components/button';
+import { sendEmail } from 'actions/send-email';
+import { Form, Input, TextArea } from 'components/form';
+import { Button } from 'components/button';
 
 interface ContactFormProps {
   name: string;
@@ -20,33 +21,25 @@ export function ContactForm() {
     reset,
   } = useForm<ContactFormProps>();
 
-  async function onSubmit(formData: ContactFormProps) {
-    await fetch('/api/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
-
-    }).then(() => {
-      // Toast notification
+  const onSubmit = async (formData: ContactFormProps) => {
+    try {
+      const contactFormObject = {
+        name: formData.name || '',
+        email: formData.email || '',
+        message: formData.message || '',
+      }
+      await sendEmail(contactFormObject)
       toast.success('Your email message has been sent successfully', {
         duration: 5000,
         position: 'top-center',
         className: 'custom-toast',
         icon: '🚀'
       });
-    });
-
-    reset();
+      reset()
+    } catch (e) {
+      throw new Error('Failed to send email')
+    }
   }
-
-
 
   return (
     <Form

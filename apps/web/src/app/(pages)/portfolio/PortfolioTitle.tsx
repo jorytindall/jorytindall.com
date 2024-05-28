@@ -1,8 +1,8 @@
-import { BentoBox, BentoItem } from 'app/components/bento';
-import { Headline, Paragraph } from 'app/components/typography';
-import { Badge } from 'app/components/badge';
-import { Container } from 'app/components/layout';
-import { TextArrow } from 'app/components/button';
+import { BentoBox, BentoItem } from 'components/bento';
+import { Headline, Paragraph } from 'components/typography';
+import { Badge } from 'components/badge';
+import { Container } from 'components/layout';
+import { TextArrow } from 'components/button';
 
 interface PortfolioTitleProps {
   title: string;

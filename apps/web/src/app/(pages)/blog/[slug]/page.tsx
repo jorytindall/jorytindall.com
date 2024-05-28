@@ -1,8 +1,8 @@
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
-import { BlogTitle } from 'app/components/blog';
-import { RichText } from 'app/components/rich-text';
-import { GridWrapper, RichTextWrapper } from 'app/components/layout';
+import { BlogTitle } from 'components/blog';
+import { RichText } from 'components/rich-text';
+import { GridWrapper, RichTextWrapper } from 'components/layout';
 
 // Revalidate events every minute
 export const revalidate = 60;

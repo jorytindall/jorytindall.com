@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Headline, Paragraph } from "./components/typography";
-import { Container } from "./components/layout";
+import { Headline, Paragraph } from "../components/typography";
+import { Container } from "../components/layout";
 // import notFoundImage from "./images/not-found-confused.gif"
-import { TextArrow } from "./components/button";
+import { TextArrow } from "../components/button";
 
 import type { Metadata } from "next";
 
@@ -22,7 +22,7 @@ export default function NotFound() {
       gap="default"
       semanticElement="section"
     >
-      <Image src='/images/not-found-confused.gif' alt="Not found" />
+      <Image src='/images/not-found-confused.gif' width={500} alt="Not found" />
       <Headline color="primary" collapse>404</Headline>
       <Paragraph collapse>Sorry, couldn&apos;t find that page.</Paragraph>
       <TextArrow href="/">Go back home</TextArrow>

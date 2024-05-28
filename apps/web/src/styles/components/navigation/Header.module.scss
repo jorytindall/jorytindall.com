@@ -1,7 +1,5 @@
 .header {
 	position: sticky;
-	background: rgba(255, 253, 244, 0.5);
-	backdrop-filter: blur(10px);
 	top: 0;
 	z-index: 100;
 	max-width: 100%;
@@ -11,6 +9,7 @@
 	flex-wrap: wrap;
 	padding: 2rem 2.5rem;
 	box-sizing: border-box;
+	transition: padding 150ms ease;
 
 	@media (max-width: 768px) {
 		padding: 1rem 1.5rem;
@@ -21,12 +20,22 @@
 	.header {
 		background: rgba(3, 9, 19, 0.5);
 	}
+
+	.overlay-active {
+		background: rgba(3, 9, 19, 1);
+	}
 }
 
 .headerOverlay {
 	@extend .header;
 	background: var(--color-core-neutral-100);
 }
+
+.scrolled {
+	background: rgba(255, 253, 244, 0.5);
+	backdrop-filter: blur(10px);
+}
+
 
 // Overlay
 
@@ -42,10 +51,11 @@
 	z-index: 10;
 	box-sizing: border-box;
 	background: var(--color-core-neutral-100);
+	overflow: hidden;
 
 	@media (max-width: 768px) {
 		top: 94px;
-		height: calc(100vh - 98px);
+		height: calc(100vh - 94px);
 	}
 }
 
@@ -57,39 +67,9 @@
 .overlayVisible {
 	@extend .overlay;
 	visibility: visible;
+	overflow: hidden;
 }
 
-.linkWrapper {
-	display: flex;
-	flex-direction: column;
-	text-align: right;
-	align-self: flex-end;
-	flex-grow: 1;
-
-	@media (max-width: 768px) {
-		padding: 0;
-	}
-}
-
-.navLink {
-	font-family: var(--typography-font-family-headline);
-	font-size: 60px;
-	font-weight: bold;
-	line-height: 60px;
-	color: var(--color-core-primary-300);
-	text-decoration: none;
-	transition:
-		color 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99),
-		transform 150ms cubic-bezier(0.78, 0.01, 0.51, 0.99);
-	margin: 0.25rem 0;
-	display: block;
-	transform: none;
-
-	&:hover {
-		color: var(--color-core-primary-400);
-		transform: translateX(-0.5rem);
-	}
-	&:active {
-		color: var(--color-core-primary-400);
-	}
+.overlay-active {
+	background: #fff;
 }

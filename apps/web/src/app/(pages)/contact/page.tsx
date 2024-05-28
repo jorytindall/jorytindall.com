@@ -1,6 +1,6 @@
-import { PageTitle } from "app/components/page-title";
+import { PageTitle } from "components/page-title";
 import { ContactForm } from "./contact-form";
-import { CenteredWrapper } from "app/components/layout";
+import { CenteredWrapper } from "components/layout";
 
 export default function ContactPage() {
   return (

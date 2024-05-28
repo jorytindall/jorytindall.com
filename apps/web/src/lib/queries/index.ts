@@ -6,3 +6,5 @@ export * from './music';
 export * from './landingPage';
 export * from './homepage';
 export * from './talk';
+export * from './navigation'
+export * from './siteSettings'
