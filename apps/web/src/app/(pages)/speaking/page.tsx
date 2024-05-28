@@ -26,7 +26,7 @@ export default async function TalksPage() {
 			<ListItem
 				key={talk._id}
 				title={talk.title}
-				link={linkResolver('talk', talk.slug)}
+				link={linkResolver('speaking', talk.slug)}
 			>
 				<Paragraph type="primary" collapse>
 					{talk.description}
