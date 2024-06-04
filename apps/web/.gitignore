@@ -37,3 +37,7 @@ next-env.d.ts
 
 # React email
 .react-email
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
