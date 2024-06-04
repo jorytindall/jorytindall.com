@@ -28,9 +28,6 @@ jobs:
             - name: Install Playwright Browsers
               run: cd apps/web && pnpx playwright install --with-deps
 
-            - name: Run NextJS App
-              run: cd apps/web && pnpm dev
-
             - name: Run Playwright tests
               run: cd apps/web && pnpm playwright test
             - uses: actions/upload-artifact@v4
