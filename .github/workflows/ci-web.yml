@@ -29,7 +29,7 @@ jobs:
               run: cd apps/web && pnpx playwright install --with-deps
 
             - name: Run Playwright tests
-              run: cd apps/web && pnpm test
+              run: cd apps/web && pnpm test:e2e
             - uses: actions/upload-artifact@v4
               if: ${{ !cancelled() }}
               with:
