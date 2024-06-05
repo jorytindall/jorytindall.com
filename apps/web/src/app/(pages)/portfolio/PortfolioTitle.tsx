@@ -36,10 +36,12 @@ const PortfolioTitle = ({
         <Badge text={client} type='inverse' />
         <Headline tag='h1' size='h1' color='light' collapse>{title}</Headline>
         <Paragraph color='light' collapse>{overview}</Paragraph>
-        <TextArrow
-          style='dark'
-          href={externalLink}
-        >View project</TextArrow>
+        {externalLink &&
+          <TextArrow
+            style='dark'
+            href={externalLink}
+          >View project</TextArrow>
+        }
       </BentoItem>
       <BentoItem
         size="medium"

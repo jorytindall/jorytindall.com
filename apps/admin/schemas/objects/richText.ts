@@ -76,6 +76,7 @@ export default {
 				{ type: 'fileDownload' },
 				{ type: `playlist` },
 				{ type: `video` },
+				{ type: `calloutBlock` }
 			],
 		},
 	],
