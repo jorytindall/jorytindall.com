@@ -1,0 +1,1 @@
+export { ResumePDF } from './resume'
