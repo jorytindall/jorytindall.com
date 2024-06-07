@@ -1,4 +1,3 @@
-import 'yet-another-react-lightbox/styles.css'
 import { getClasses } from 'utils/getClasses';
 import { GalleryItem } from './GalleryItem';
 import styles from 'styles/components/gallery/Gallery.module.scss';
