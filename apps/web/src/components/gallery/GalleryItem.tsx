@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Paragraph } from 'components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
+import { Expand } from './Expand';
 import s from 'styles/components/gallery/GalleryItem.module.scss';
 
 interface GalleryItemProps {
@@ -11,10 +12,12 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-	const galleryImage = getSanityImageUrl(image);
+	// @ts-ignore
+	const galleryImage: string = getSanityImageUrl(image ?? '');
 
 	return (
-		<div className={s.wrapper}>
+		<a href={galleryImage} className={s.wrapper}>
+			<Expand />
 			{image && (
 				<div className={s.imageWrapper}>
 					<Image
@@ -32,6 +35,6 @@ export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
 					{caption}
 				</Paragraph>
 			)}
-		</div>
+		</a>
 	);
 };

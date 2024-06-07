@@ -10,8 +10,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "email": "email dev --dir src/email",
-		"test:e2e": "playwright test",
-		"test:e2e:ui": "playwright test --ui"
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@portabletext/react": "^3.0.18",
@@ -23,6 +23,7 @@
     "date-fns": "^3.6.0",
     "fathom-client": "^3.5.0",
     "framer-motion": "^11.2.6",
+    "lightgallery": "^2.7.2",
     "next": "14.2.3",
     "next-sanity": "^9.3.0",
     "next-sanity-image": "^6.1.0",
