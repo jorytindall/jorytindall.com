@@ -11,10 +11,11 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-	const galleryImage = getSanityImageUrl(image);
+	// @ts-ignore
+	const galleryImage: string = getSanityImageUrl(image ?? '');
 
 	return (
-		<div className={s.wrapper}>
+		<a href={galleryImage} className={s.wrapper}>
 			{image && (
 				<div className={s.imageWrapper}>
 					<Image
@@ -32,6 +33,6 @@ export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
 					{caption}
 				</Paragraph>
 			)}
-		</div>
+		</a>
 	);
 };

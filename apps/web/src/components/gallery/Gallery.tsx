@@ -1,3 +1,8 @@
+'use client'
+
+import LightGallery from 'lightgallery/react';
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
 import { getClasses } from 'utils/getClasses';
 import { GalleryItem } from './GalleryItem';
 import styles from 'styles/components/gallery/Gallery.module.scss';
@@ -30,8 +35,12 @@ export const Gallery = ({ input }: GalleryProps) => {
 	});
 
 	return (
-		<section className={classes} key={_key}>
+		<LightGallery
+			speed={500}
+			elementClassNames={classes}
+			key={_key}
+		>
 			{galleryImages}
-		</section>
+		</LightGallery>
 	);
 };
