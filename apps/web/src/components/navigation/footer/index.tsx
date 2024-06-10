@@ -17,7 +17,7 @@ export const Footer = ({ internalLinks, socialLinks }) => {
 					return (
 						<Link
 							href={link.link}
-							key={link._id}
+							key={link._key}
 							passHref
 							className={styles.link}
 						>

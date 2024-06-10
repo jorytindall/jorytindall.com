@@ -5,7 +5,7 @@ export const GET_NAVIGATION_DATA = groq`
     _id,
     area,
     "links": items[] {
-      _id,
+      _key,
       title,
       link,
     }
