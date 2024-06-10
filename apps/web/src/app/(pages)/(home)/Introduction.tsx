@@ -29,7 +29,7 @@ const HomeIntroduction = () => {
         </Headline>
         <Paragraph color='secondary' collapse>
           I&apos;m currently helping to empower a broad range of
-          designers and creative thinkers on the Design System
+          designers, engineers, and creative thinkers on the Design System
           team at{' '}
           <InlineLink
             type="external"
