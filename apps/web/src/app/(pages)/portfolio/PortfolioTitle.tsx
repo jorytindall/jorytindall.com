@@ -53,6 +53,8 @@ const PortfolioTitle = ({
               // @ts-ignore
               src={featuredImage}
               alt={image.alternativeText}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
               fill
             />
           </div>
