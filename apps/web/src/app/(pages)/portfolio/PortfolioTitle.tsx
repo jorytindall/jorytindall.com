@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { BentoBox, BentoItem } from 'components/bento';
 import { Headline, Paragraph } from 'components/typography';
@@ -48,7 +51,7 @@ const PortfolioTitle = ({
           padding='none'
           background='tertiary'
         >
-          <div className={s['image-wrapper']}>
+          <motion.div className={s['image-wrapper']}>
             <Image
               // @ts-ignore
               src={featuredImage}
@@ -57,7 +60,7 @@ const PortfolioTitle = ({
               priority
               fill
             />
-          </div>
+          </motion.div>
         </BentoItem>
       }
       <BentoItem

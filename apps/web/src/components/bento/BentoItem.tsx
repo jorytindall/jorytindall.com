@@ -80,6 +80,7 @@ export const BentoItem = ({
 			<Link
 				href={href}
 				className={outerClasses}
+				scroll={true}
 			>
 				{image && imagePosition === 'top' &&
 					<div className={styles.imageWrapper}>

@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { BentoBox, BentoItem } from 'components/bento';
 import { Headline } from 'components/typography';
 import styles from 'styles/components/portfolio/PortfolioList.module.scss';
@@ -15,8 +19,13 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 
 		const image = getSanityImageUrl(item.item.featuredImage.asset._ref);
 
+		// Define custom motion components
+		const MotionHeadline = motion(Headline)
+		const MotionBentoItem = motion(BentoItem)
+
 		return (
-				<BentoItem
+			<AnimatePresence initial={false} mode='wait'>
+				<MotionBentoItem
 					key={item.item.title}
 					background='tertiary'
 					size='medium'
@@ -27,9 +36,10 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 					image={image}
 					imagePosition="top"
 				>
-					<Headline tag='h2' size='h4' color='secondary' collapse>{item.item.title}</Headline>
+					<MotionHeadline exit={{opacity: 0}} tag='h2' size='h4' color='secondary' collapse>{item.item.title}</MotionHeadline>
 					<Badge text={item.item.client} type='inverse' />
-				</BentoItem>
+				</MotionBentoItem>
+			</AnimatePresence>
 		);
 	});
 
