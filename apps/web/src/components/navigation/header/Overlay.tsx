@@ -8,7 +8,7 @@ interface OverlayProps {
 	links: {
 		title: string;
 		link: string;
-		_id: string;
+		_key: string;
 	}[];
 }
 
@@ -34,7 +34,7 @@ export const Overlay = ({ overlay, links }: OverlayProps) => {
 		>
 			<NavLinks overlay={overlay}>
 				{links.map((link) => (
-					<NavItem key={link._id} slug={link.link} text={link.title} />
+					<NavItem key={link._key} slug={link.link} text={link.title} />
 				))}
 			</NavLinks>
 		</motion.div>

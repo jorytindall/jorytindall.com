@@ -1,4 +1,5 @@
-import styles from 'styles/components/results/Results.module.scss';
+import { ArrowDownSquare, ArrowUpSquare } from './Arrows';
+import styles from 'styles/components/results/ResultsItem.module.scss';
 import { Headline, Paragraph } from 'components/typography';
 
 interface ResultsItemProps {
@@ -21,9 +22,9 @@ export const ResultsItem = ({
 					<Headline tag="h1" collapse>
 						{metric}
 					</Headline>
+					{percentageDirection ? (percentageDirection === 'up' ? <ArrowUpSquare /> : <ArrowDownSquare />) : null}
 				</span>
 			)}
-			{percentageDirection && <p>Add the percentage direction</p>}
 			{headline && (
 				<Headline tag="h6" collapse>
 					{headline}

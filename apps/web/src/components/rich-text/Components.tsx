@@ -11,6 +11,8 @@ import { CodeBlock } from 'components/code';
 import { Playlist } from 'components/audio';
 import { Video } from 'components/video';
 import { DownloadButton } from 'components/button';
+import { Callout } from 'components/callout';
+import { RichText } from './RichText';
 
 import s from 'styles/components/RichText.module.scss'
 
@@ -60,6 +62,7 @@ export const Components = {
 	},
 	listItem: {
 		bullet: ({ children }: BlockProps) => <Item>{children}</Item>,
+		number: ({ children }: BlockProps) => <Item>{children}</Item>,
 	},
 	marks: {
 		internalLink: ({ value, children }: MarkProps) => (
@@ -92,6 +95,13 @@ export const Components = {
 				href={value.file.asset._ref}
 				className={s['rich-text-button']}
 			/>
+		),
+		calloutBlock: ({ value }: TypeProps) => (
+			<Callout
+				headline={value.headline}
+			>
+				<RichText value={value.content} />
+			</Callout>
 		)
 	},
 };

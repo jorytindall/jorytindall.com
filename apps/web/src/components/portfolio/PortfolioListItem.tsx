@@ -19,6 +19,8 @@ export const PortfolioListItem = ({
 	client,
 	image,
 }: PortfolioListItemProps) => {
+
+	console.log(image.alternativeText)
 	return (
 		<Link
 			href={linkResolver('portfolioProject', slug)}
@@ -31,6 +33,7 @@ export const PortfolioListItem = ({
 						src={getSanityImageUrl(image)}
 						alt={image.alternativeText}
 						fill
+						sizes="(max-width: 1200px) 600px"
 					/>
 				</div>
 				<Headline tag="h4" collapse>

@@ -33,7 +33,7 @@ export default async function MusicPage() {
 				background='tertiary'
 				size='medium'
 				padding='large'
-				gap='default'
+				gap='none'
 				isInteractive={true}
 				href={link}
 				image={image}
