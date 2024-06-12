@@ -45,7 +45,13 @@
 		background: var(--color-core-primary-300);
 		border-color: var(--color-core-primary-300);
 
-		& > h1, h2, h3, h4, h5, h6, p {
+		& > h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
 			color: var(--color-core-neutral-100);
 		}
 	}
@@ -53,13 +59,7 @@
 
 // Sizes
 
-$sizes: (
-	'small',
-	'medium',
-	'large',
-	'x-large',
-	'full',
-);
+$sizes: ('small', 'medium', 'large', 'x-large', 'full');
 
 @each $size, $value in $sizes {
 	.size--#{$size} {
@@ -118,7 +118,7 @@ $backgrounds: (
 	'secondary' var(--color-core-secondary-200) var(--color-core-secondary-300),
 	'tertiary' var(--color-core-tertiary-200) var(--color-core-tertiary-300),
 	'dark' var(--color-core-neutral-600) var(--color-core-neutral-500),
-	'white' var(--color-core-neutral-100) var(--color-core-neutral-200),
+	'white' var(--color-core-neutral-100) var(--color-core-neutral-200)
 );
 
 @each $background, $color, $border in $backgrounds {

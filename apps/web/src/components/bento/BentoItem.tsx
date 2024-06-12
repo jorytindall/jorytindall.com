@@ -4,16 +4,16 @@ import { getClasses } from 'utils/getClasses';
 import styles from 'styles/components/bento/BentoItem.module.scss';
 
 interface BentoItemProps {
-	children: React.ReactNode;
-	background?: 'primary' | 'secondary' | 'tertiary' | 'light' | 'dark';
-	className?: string;
-	size: string;
-	padding: string;
-	gap: string;
-	isJustified?: boolean;
-	isInteractive?: boolean;
-	href?: any;
-	image?: any;
+	children: React.ReactNode
+	background?: 'primary' | 'secondary' | 'tertiary' | 'light' | 'dark'
+	className?: string
+	size: 'small' | 'medium' | 'large' | 'x-large' | 'full'
+	padding: 'none' | 'small' | 'medium' | 'large' | 'x-large'
+	gap?: 'none' | 'small' | 'medium' | 'large' | 'x-large'
+	isJustified?: boolean
+	isInteractive?: boolean
+	href?: any
+	image?: any
 	imagePosition?: 'top' | 'bottom';
 }
 

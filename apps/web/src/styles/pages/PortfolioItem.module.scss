@@ -1,0 +1,13 @@
+.image-wrapper {
+	position: relative;
+	overflow: hidden;
+	height: calc(100vh - 110px);
+
+	img {
+		object-fit: cover;
+	}
+
+	@media (min-width: 768px) {
+		height: calc(100vh - 166px);
+	}
+}

@@ -1,8 +1,11 @@
+import Image from 'next/image';
+import { getSanityImageUrl } from 'utils/getSanityImage';
 import { BentoBox, BentoItem } from 'components/bento';
 import { Headline, Paragraph } from 'components/typography';
 import { Badge } from 'components/badge';
 import { Container } from 'components/layout';
 import { TextArrow } from 'components/button';
+import s from 'styles/pages/PortfolioItem.module.scss'
 
 interface PortfolioTitleProps {
   title: string;
@@ -13,6 +16,13 @@ interface PortfolioTitleProps {
   roles: string[];
   client: string;
   tools: string[];
+  image?: {
+    alternativeText: string
+    asset: {
+      _ref: string
+      _type: string
+    }
+  }
 }
 
 const PortfolioTitle = ({
@@ -24,9 +34,30 @@ const PortfolioTitle = ({
   roles,
   client,
   tools,
+  image,
 }: PortfolioTitleProps) => {
+
+  // @ts-ignore
+  const featuredImage = getSanityImageUrl(image.asset._ref)?.toString();
+
   return (
     <BentoBox isFullBleed={false}>
+      {image &&
+        <BentoItem
+          size='full'
+          padding='none'
+          background='tertiary'
+        >
+          <div className={s['image-wrapper']}>
+            <Image
+              // @ts-ignore
+              src={featuredImage}
+              alt={image.alternativeText}
+              fill
+            />
+          </div>
+        </BentoItem>
+      }
       <BentoItem
         size="x-large"
         padding="x-large"
