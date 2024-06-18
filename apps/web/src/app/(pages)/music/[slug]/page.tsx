@@ -58,7 +58,6 @@ export default async function MusicProject({ params }) {
 					</div>
 				</section>
 			)}
-			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 			{pressKit && (
 				<CenteredWrapper semanticElement="div">
 					<Button
@@ -71,6 +70,7 @@ export default async function MusicProject({ params }) {
 					</Button>
 				</CenteredWrapper>
 			)}
+			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>
 	);
 }
