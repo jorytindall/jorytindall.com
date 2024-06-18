@@ -1,3 +1,4 @@
+import { trackEvent } from 'fathom-client';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
@@ -39,6 +40,10 @@ export default async function MusicProject({ params }) {
 		? getSanityFileUrl(pressKit.file.asset._ref)
 		: null;
 
+	const downloadEvent = () => {
+		trackEvent(`${title} press kit download`)
+	}
+
 	return (
 		<>
 			<PageTitle megaTitle={title} />
@@ -65,6 +70,8 @@ export default async function MusicProject({ params }) {
 						href={pressKitUrl.url}
 						isDownload
 						isFullWidth
+						// @ts-ignore
+						onClick={downloadEvent}
 					>
 						Download Press Kit
 					</Button>
