@@ -65,4 +65,10 @@ export default {
 			type: `moduleContent`,
 		},
 	],
+	preview: {
+		select: {
+			title: `title`,
+			media: `image`,
+		},
+	}
 };
