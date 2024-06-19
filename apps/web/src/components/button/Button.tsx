@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link';
 import styles from 'styles/components/button/Button.module.scss';
 import { getClasses } from 'utils/getClasses';
@@ -12,6 +14,7 @@ interface ButtonProps {
 	isFullWidth?: boolean;
 	disabled?: boolean;
 	className?: string,
+	onClick?: () => void;
 }
 
 export const Button = ({
@@ -24,6 +27,7 @@ export const Button = ({
 	isFullWidth,
 	disabled,
 	className,
+	onClick,
 }: ButtonProps) => {
 	const classes = getClasses([
 		styles[variant],
@@ -34,23 +38,23 @@ export const Button = ({
 
 	if (!href) {
 		return (
-			<button type={type} className={classes} disabled={disabled}>
+			<button type={type} className={classes} disabled={disabled} onClick={onClick}>
 				{children}
 			</button>
 		);
 	} else if (href.includes('http')) {
 		return (
-			<Link href={href} passHref className={classes}>
+			<Link href={href} passHref className={classes} onClick={onClick}>
 				{children}
 			</Link>
 		);
 	} else {
 		return isDownload ? (
-			<a href={href} className={classes} download>
+			<a href={href} className={classes} download onClick={onClick}>
 				{children}
 			</a>
 		) : (
-			<a href={href} className={classes}>
+			<a href={href} className={classes} onClick={onClick}>
 				{children}
 			</a>
 		);

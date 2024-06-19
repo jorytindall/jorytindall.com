@@ -42,6 +42,7 @@ export default async function MusicProject({ params }) {
 
 	const downloadEvent = () => {
 		trackEvent(`${title} press kit download`)
+		console.log('Download event fired');
 	}
 
 	return (
@@ -64,14 +65,15 @@ export default async function MusicProject({ params }) {
 				</section>
 			)}
 			{pressKit && (
-				<CenteredWrapper semanticElement="div">
+				<CenteredWrapper
+					semanticElement="div"
+					collapseY
+				>
 					<Button
 						// @ts-ignore
 						href={pressKitUrl.url}
 						isDownload
 						isFullWidth
-						// @ts-ignore
-						onClick={downloadEvent}
 					>
 						Download Press Kit
 					</Button>
