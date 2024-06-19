@@ -25,8 +25,16 @@ interface TabsContentProps {
   className?: string,
 }
 
+interface TabsListProps {
+  children?: React.ReactNode,
+  loop?: boolean,
+  isContained?: boolean,
+  className?: string,
+}
+
 export type {
   TabsProps,
   TabsTriggerProps,
   TabsContentProps,
+  TabsListProps,
 }

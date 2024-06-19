@@ -7,6 +7,7 @@ import {
   TabsProps,
   TabsContentProps,
   TabsTriggerProps,
+  TabsListProps,
  } from './types'
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }
@@ -15,4 +16,5 @@ export type {
   TabsProps,
   TabsContentProps,
   TabsTriggerProps,
+  TabsListProps,
 }

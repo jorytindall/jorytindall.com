@@ -1,15 +1,29 @@
-import { forwardRef } from 'react'
-import * as TabsPrimitive from "@radix-ui/react-tabs"
+'use client'
 
-const TabsList = forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List
-    ref={ref}
-    {...props}
-  />
-))
+import classnames from 'classnames'
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+import type { TabsListProps } from "./types"
+
+const TabsList = ({
+  children,
+  loop = true,
+  className,
+}: TabsListProps) => {
+
+  const classes = classnames([
+    className,
+  ])
+
+  return (
+    <TabsPrimitive.List
+      loop={loop}
+      className={classes}
+    >
+      {children}
+    </TabsPrimitive.List>
+  )
+}
+
 TabsList.displayName = TabsPrimitive.List.displayName
 
 export { TabsList }
