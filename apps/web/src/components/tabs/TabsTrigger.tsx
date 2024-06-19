@@ -2,6 +2,7 @@
 
 import classnames from 'classnames'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
+import s from 'styles/components/Tabs.module.scss'
 
 import type { TabsTriggerProps } from './types'
 
@@ -13,6 +14,7 @@ const TabsTrigger = ({
 }: TabsTriggerProps) => {
 
   const classes = classnames([
+    s[`tabs--trigger`],
     className,
   ])
   return (

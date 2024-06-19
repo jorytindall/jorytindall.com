@@ -2,6 +2,7 @@
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import classnames from 'classnames'
+import s from 'styles/components/Tabs.module.scss'
 
 import { TabsProps } from './types'
 
@@ -17,6 +18,7 @@ const Tabs = ({
 }: TabsProps) => {
 
   const classes = classnames([
+    s[`tabs--root`],
     className,
   ])
 

@@ -1,5 +1,5 @@
 import { RichText } from 'components/rich-text';
-import { RichTextWrapper, GridWrapper, CenteredWrapper } from 'components/layout';
+import { RichTextWrapper, GridWrapper, GridItem } from 'components/layout';
 import { Features } from 'components/features';
 import { Gallery, FullWidthImage } from 'components/gallery';
 import { PortfolioList } from 'components/portfolio';
@@ -38,7 +38,12 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return <Features input={m} key={m._key} />;
 			case 'tabs':
 				return (
-					<CenteredWrapper key={m._key} semanticElement='section'>
+					<GridItem
+						key={m._key}
+						density='default'
+						gridColumn='2'
+						gridSpan='1'
+					>
 						<Tabs
 							defaultValue={m.tabs[0]._key}
 						>
@@ -55,7 +60,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 								)
 							})}
 						</Tabs>
-					</CenteredWrapper>
+					</GridItem>
 				)
 			default:
 				return console.error('Nothing came back for this module');

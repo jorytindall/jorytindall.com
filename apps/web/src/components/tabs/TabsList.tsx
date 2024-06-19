@@ -2,6 +2,8 @@
 
 import classnames from 'classnames'
 import * as TabsPrimitive from "@radix-ui/react-tabs"
+import s from 'styles/components/Tabs.module.scss'
+
 import type { TabsListProps } from "./types"
 
 const TabsList = ({
@@ -11,6 +13,7 @@ const TabsList = ({
 }: TabsListProps) => {
 
   const classes = classnames([
+    s[`tabs--list`],
     className,
   ])
 
