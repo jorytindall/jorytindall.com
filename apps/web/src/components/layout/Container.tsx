@@ -17,18 +17,20 @@ interface ContainerProps {
 	align?: 'normal' | 'flex-start' | 'center' | 'flex-end';
 	textAlign?: 'left' | 'center' | 'right';
 	gap?: 'small' | 'default' | 'large' | 'extra-large';
+	className?: string,
 }
 
-export const Container = ({
+const Container = ({
 	density = 'default',
 	isFlex,
 	flexDirection,
 	justify,
-	semanticElement,
+	semanticElement = 'div',
 	children,
 	align,
 	gap,
 	textAlign,
+	className,
 }: ContainerProps) => {
 	const classes = getClasses([
 		styles[`density_${density}`],
@@ -38,6 +40,7 @@ export const Container = ({
 		styles[`is-flex--${align}`],
 		styles[`is-flex--${gap}`],
 		styles[`text-align--${textAlign}`],
+		className,
 	]);
 
 	switch (semanticElement) {
@@ -51,3 +54,6 @@ export const Container = ({
 			return <aside className={classes}>{children}</aside>;
 	}
 };
+
+export { Container }
+export type { ContainerProps }

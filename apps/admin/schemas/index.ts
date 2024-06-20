@@ -44,6 +44,8 @@ import audio from './objects/audio';
 import playlist from './objects/playlist';
 import video from './objects/video';
 import navItem from './objects/navItem';
+import tabs from './objects/tabs/tabs';
+import tab from './objects/tabs/tab';
 
 export const schemaTypes = [
 	// Documents
@@ -91,4 +93,6 @@ export const schemaTypes = [
 	playlist,
 	video,
 	navItem,
+	tabs,
+	tab
 ];

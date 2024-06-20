@@ -3,11 +3,22 @@ import s from 'styles/components/layout/CenteredWrapper.module.scss';
 
 interface CenteredWrapperProps {
 	children: React.ReactNode;
-	semanticElement: 'div' | 'article' | 'section';
+	semanticElement: 'div' | 'article' | 'section' | 'aside';
+	collapseY?: boolean;
+	collapseX?: boolean;
 }
 
-export const CenteredWrapper = ({ children, semanticElement }) => {
-	const classes = getClasses([s.wrapper]);
+export const CenteredWrapper = ({
+	children,
+	semanticElement,
+	collapseY,
+	collapseX,
+}: CenteredWrapperProps) => {
+	const classes = getClasses([
+		s.wrapper,
+		collapseY && s['collapse-y'],
+		collapseX && s['collapse-x'],
+	]);
 
 	switch (semanticElement) {
 		case 'div':
