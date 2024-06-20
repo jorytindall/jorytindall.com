@@ -2,7 +2,7 @@ $densityVariants: (
 	'default': 2.5rem,
 	'packed': 1rem,
 	'spacious': 5rem,
-	'collapse': 0,
+	'collapse': 0rem,
 );
 
 $directionVariants: (column, row);
@@ -36,6 +36,10 @@ $gapVariants: (
 		&_#{$variant} {
 			@include container-base;
 			padding: $padding;
+
+			@media (max-width: 786px) {
+				padding: 0.5rem;
+			}
 		}
 	}
 }

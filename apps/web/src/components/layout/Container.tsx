@@ -25,7 +25,7 @@ const Container = ({
 	isFlex,
 	flexDirection,
 	justify,
-	semanticElement,
+	semanticElement = 'div',
 	children,
 	align,
 	gap,

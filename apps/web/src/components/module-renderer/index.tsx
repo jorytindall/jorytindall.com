@@ -1,5 +1,5 @@
 import { RichText } from 'components/rich-text';
-import { RichTextWrapper, GridWrapper, GridItem } from 'components/layout';
+import { RichTextWrapper, GridWrapper, GridItem, Container } from 'components/layout';
 import { Features } from 'components/features';
 import { Gallery, FullWidthImage } from 'components/gallery';
 import { PortfolioList } from 'components/portfolio';
@@ -40,9 +40,10 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return (
 					<GridItem
 						key={m._key}
-						density='default'
-						gridColumn='2'
-						gridSpan='1'
+						density='collapse'
+						gridColumn='1'
+						gridSpan='3'
+						className='max-width--x-large'
 					>
 						<Tabs
 							defaultValue={m.tabs[0]._key}
@@ -55,7 +56,9 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 							{m.tabs.map((tab) => {
 								return (
 									<TabsContent key={tab._key} value={tab._key}>
-										<RichText value={tab.content[0].content} />
+										<Container semanticElement='div'>
+											<RichText value={tab.content[0].content} />
+										</Container>
 									</TabsContent>
 								)
 							})}

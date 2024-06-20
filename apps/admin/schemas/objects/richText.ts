@@ -1,4 +1,4 @@
-import { BiText } from 'react-icons/bi';
+import { BiText, BiLinkExternal, BiLink } from 'react-icons/bi';
 
 export default {
 	name: `richText`,
@@ -38,6 +38,7 @@ export default {
 								name: `link`,
 								type: `object`,
 								title: `URL`,
+								icon: BiLinkExternal,
 								fields: [
 									{
 										title: `URL`,
@@ -50,6 +51,7 @@ export default {
 								name: `internalLink`,
 								type: `object`,
 								title: `Internal Link`,
+								icon: BiLink,
 								fields: [
 									{
 										name: `reference`,
