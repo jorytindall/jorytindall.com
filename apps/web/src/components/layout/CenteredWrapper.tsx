@@ -3,14 +3,14 @@ import s from 'styles/components/layout/CenteredWrapper.module.scss';
 
 interface CenteredWrapperProps {
 	children: React.ReactNode;
-	semanticElement: 'div' | 'article' | 'section' | 'aside';
+	semanticElement?: 'div' | 'article' | 'section' | 'aside';
 	collapseY?: boolean;
 	collapseX?: boolean;
 }
 
 export const CenteredWrapper = ({
 	children,
-	semanticElement,
+	semanticElement = 'div',
 	collapseY,
 	collapseX,
 }: CenteredWrapperProps) => {
