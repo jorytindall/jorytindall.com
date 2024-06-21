@@ -1,22 +1,54 @@
 import { CenteredWrapper } from "components/layout"
+import { Headline, Paragraph } from "components/typography"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  useCarousel,
 } from "components/carousel"
 
 export default function CarouselTest() {
   return (
     <CenteredWrapper>
       <p>Carousel test</p>
-      <Carousel>
-        <CarouselContent>
-          <CarouselItem>Slide 1</CarouselItem>
-          <CarouselItem>Slide 2</CarouselItem>
-          <CarouselItem>Slide 3</CarouselItem>
+      <Carousel orientation='horizontal'>
+        <CarouselContent
+          opts={{
+            align: 'start',
+          }}
+          className='w-full max-w-sm'
+        >
+          <CarouselItem className='basis-1/3'>
+            <div>
+              <Headline>Slide 1</Headline>
+              <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
+            </div>
+          </CarouselItem>
+          <CarouselItem className='basis-1/3'>
+            <div>
+              <Headline>Slide 2</Headline>
+              <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
+            </div>
+          </CarouselItem>
+          <CarouselItem className='basis-1/3'>
+            <div>
+              <Headline>Slide 3</Headline>
+              <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
+            </div>
+          </CarouselItem>
+          <CarouselItem className='basis-1/3'>
+            <div>
+              <Headline>Slide 4</Headline>
+              <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
+            </div>
+          </CarouselItem>
+          <CarouselItem className='basis-1/3'>
+            <div>
+              <Headline>Slide 5</Headline>
+              <Paragraph>Lorem ipsum dolor sit amet.</Paragraph>
+            </div>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
