@@ -1,11 +1,8 @@
 {
 	"private": true,
-	"workspaces": [
-		"packages/*",
-		"apps/*"
-	],
 	"name": "jorytindall",
 	"description": "Monorepo for my personal website and projects",
+	"packageManager": "pnpm@9.9.0",
 	"scripts": {
 		"web:dev": "turbo run dev --filter=web",
 		"web:build": "turbo run build --filter=web",
