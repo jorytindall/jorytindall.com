@@ -9,13 +9,13 @@
 		"lint": "eslint ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.2.0",
-		"@sveltejs/kit": "^2.5.8",
-		"@sveltejs/vite-plugin-svelte": "^3.1.0",
-		"eslint": "^9.2.0",
-		"eslint-plugin-svelte": "^2.39.0",
-		"svelte": "^4.2.17",
-		"vite": "^5.2.11"
+		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/kit": "^2.6.1",
+		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"eslint": "^9.11.1",
+		"eslint-plugin-svelte": "^2.44.1",
+		"svelte": "^4.2.19",
+		"vite": "^5.4.8"
 	},
 	"type": "module",
 	"dependencies": {
