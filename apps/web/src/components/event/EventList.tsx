@@ -19,7 +19,7 @@ export const EventList = ({ events }) => {
 									<strong>{event.title}</strong>
 								</p>
 								<p className={styles.date}>
-									{formatDate(event.date)}
+									{formatDate(event.date, 'America/Los_Angeles')}
 								</p>
 							</Link>
 						</div>

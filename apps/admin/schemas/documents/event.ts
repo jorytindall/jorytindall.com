@@ -1,3 +1,6 @@
+import { isoDateToString } from '../../utils/formatDate';
+import { slugify } from '../../utils/slugify';
+
 export default {
 	name: 'event',
 	title: 'Event',
@@ -12,9 +15,16 @@ export default {
 			name: 'slug',
 			title: 'Slug',
 			type: 'slug',
-			options: {
-				source: 'title',
-			},
+			validation: (Rule: any) => [
+        Rule.required().error("The event must have a slug."),
+      ],
+      options: {
+        source: (doc: any) => {
+          const { title, date } = doc;
+          const slug = slugify([title, isoDateToString(date)]);
+          return slug;
+        },
+      },
 		},
 		{
 			name: 'project',
