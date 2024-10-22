@@ -20,6 +20,18 @@ export default {
       }
     },
     {
+      name: 'target',
+      type: 'string',
+      title: 'Target',
+      options: {
+        list: [
+          { title: 'None', value: '_self' },
+          { title: 'New tab', value: '_blank' }
+        ],
+        layout: 'dropdown'
+      }
+    },
+    {
       name: 'text',
       type: 'string',
       title: 'Text',

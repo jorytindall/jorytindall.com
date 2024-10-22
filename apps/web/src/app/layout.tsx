@@ -3,19 +3,15 @@ import { Toaster } from 'react-hot-toast';
 import { Providers } from './providers';
 import Fathom from 'lib/fathom';
 import { Header, Footer } from 'components/navigation';
+import { Banner } from 'components/banner';
 import { Main } from 'components/layout';
 import 'styles/main.scss';
 
 import { sanityClient } from 'lib/sanity/sanityClient';
-import { GET_NAVIGATION_DATA, GET_SITE_SETTINGS_DATA } from 'lib/queries';
+import { GET_GLOBAL_APP_DATA } from 'lib/queries';
 
-export const getNavigationData = async () => {
-	const data = await sanityClient.fetch(GET_NAVIGATION_DATA);
-	return data;
-}
-
-const getSiteSettings = async () => {
-	const data = await sanityClient.fetch(GET_SITE_SETTINGS_DATA);
+const getGlobalAppData = async () => {
+	const data = await sanityClient.fetch(GET_GLOBAL_APP_DATA);
 	return data;
 }
 
@@ -24,19 +20,29 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	// Navigation data
-	const navigationData = await getNavigationData();
-	const headerData = navigationData.find((item: any) => item.area === 'header');
-	const footerData = navigationData.find((item: any) => item.area === 'footer');
 
+	// Global app data
+	const globalAppData = await getGlobalAppData();
+
+	// Navigation
+	const headerData = globalAppData.navigation.find((item: any) => item.area === 'header');
+	const footerData = globalAppData.navigation.find((item: any) => item.area === 'footer');
+	
 	// Site settings
-	const siteSettings = await getSiteSettings();
-	const siteSettingsData = siteSettings[0];
+	const siteSettingsData = globalAppData.siteSettings;
 
+	// Banner
+	const bannerData = globalAppData.banner;
+	
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
 				<Providers>
+					<Banner
+						title={bannerData.title}
+						content={bannerData.content}
+						link={bannerData.link}
+					/>
 					<Header links={headerData.links} />
 					<Main>
 						{children}
