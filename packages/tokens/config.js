@@ -1,10 +1,9 @@
-const StyleDictionary = require('style-dictionary');
-const fs = require('fs-extra');
+import StyleDictionary from 'style-dictionary';
+import fs from 'fs-extra';
 
 const webPath = `dist/web/`;
 
-// before this runs we should clean the directories we are generating files in
-// to make sure they are ✨clean✨
+// Clean directories before running
 console.log(`cleaning ${webPath}...`);
 fs.removeSync(webPath);
 
@@ -14,7 +13,6 @@ const defaultTheme = StyleDictionary.extend({
   source: [
     'tokens/**/!(*.dark).json'
   ],
-
   platforms: {
     css: {
       transformGroup: `css`,
@@ -27,7 +25,6 @@ const defaultTheme = StyleDictionary.extend({
         }
       }]
     },
-
     scss: {
       transformGroup: `scss`,
       buildPath: webPath,
@@ -39,7 +36,6 @@ const defaultTheme = StyleDictionary.extend({
         }
       }]
     },
-
     js: {
       transformGroup: `web`,
       buildPath: webPath,
@@ -49,9 +45,7 @@ const defaultTheme = StyleDictionary.extend({
       }]
     },
   },
-})
-
-// module.exports = styleDictionary.buildAllPlatforms();
+});
 
 console.log('🌑 Building dark mode...');
 
@@ -59,9 +53,7 @@ const darkTheme = StyleDictionary.extend({
   source: [
     `tokens/**/!(*.light).json`
   ],
-
   platforms: {
-
     css: {
       transformGroup: `css`,
       buildPath: webPath,
@@ -73,7 +65,6 @@ const darkTheme = StyleDictionary.extend({
         }
       }]
     },
-
     scss: {
       transformGroup: `scss`,
       buildPath: webPath,
@@ -85,7 +76,6 @@ const darkTheme = StyleDictionary.extend({
         }
       }]
     },
-
     js: {
       transformGroup: `web`,
       buildPath: webPath,
@@ -95,7 +85,11 @@ const darkTheme = StyleDictionary.extend({
       }]
     },
   }
-})
+});
 
-module.exports = defaultTheme.buildAllPlatforms();
-module.exports = darkTheme.buildAllPlatforms();
+// Build both themes
+defaultTheme.buildAllPlatforms();
+darkTheme.buildAllPlatforms();
+
+// If you need to export something
+export { defaultTheme, darkTheme };
