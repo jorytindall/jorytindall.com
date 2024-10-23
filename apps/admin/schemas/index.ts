@@ -46,6 +46,7 @@ import video from './objects/video';
 import navItem from './objects/navItem';
 import tabs from './objects/tabs/tabs';
 import tab from './objects/tabs/tab';
+import link from './objects/link';
 
 export const schemaTypes = [
 	// Documents
@@ -94,5 +95,6 @@ export const schemaTypes = [
 	video,
 	navItem,
 	tabs,
-	tab
+	tab,
+	link,
 ];

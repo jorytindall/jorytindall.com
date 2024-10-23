@@ -8,16 +8,21 @@ export default {
 	fieldsets: [{ name: `action`, title: `Action` }],
 	fields: [
 		{
-			name: `title`,
-			title: `Title`,
-			type: `string`,
-			description: `Title for the banner, isn't rendered in the application.`,
-		},
-		{
 			name: `active`,
 			title: `Active`,
 			type: `boolean`,
 			description: `Is the banner active?`,
+		},
+		{
+			name: 'link',
+			type: 'link',
+			title: 'Link',
+		},
+		{
+			name: `title`,
+			title: `Title`,
+			type: `string`,
+			description: `Title for the banner, isn't rendered in the application.`,
 		},
 		{
 			name: `content`,
