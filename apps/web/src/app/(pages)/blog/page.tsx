@@ -31,6 +31,7 @@ export default async function Blog() {
 			<ListItem
 				title={post.title}
 				link={linkResolver('post', post.slug)}
+				key={post._id}
 			>
 				<Paragraph type="primary" color='secondary' collapse>{post.excerpt}</Paragraph>
 			</ListItem>
