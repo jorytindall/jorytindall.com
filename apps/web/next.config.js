@@ -7,9 +7,6 @@ const nextConfig = {
 	swcMinify: true,
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
-		// prependData: `
-		// 	@import "./node_modules/tokens/dist/web/tokens.css";
-		// `
 	},
 	images: {
 		remotePatterns: [
@@ -25,4 +22,8 @@ const nextConfig = {
 	},
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
