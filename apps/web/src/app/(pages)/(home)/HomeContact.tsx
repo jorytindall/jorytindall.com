@@ -32,4 +32,4 @@ const HomeContact = () => {
   )
 }
 
-export { HomeContact }
+export default HomeContact

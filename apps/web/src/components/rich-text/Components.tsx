@@ -70,6 +70,11 @@ export const Components = {
 				{children}
 			</InlineLink>
 		),
+		externalLink: ({ value, children }: MarkProps) => (
+			<InlineLink type="primary" href={value}>
+				{children}
+			</InlineLink>
+		),
 		code: ({ children }: MarkProps) => <Code>{children}</Code>,
 	},
 	types: {

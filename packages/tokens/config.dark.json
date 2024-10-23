@@ -1,0 +1,36 @@
+{
+  "source": ["tokens/**/!(*.light).json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens-dark.css",
+        "format": "css/variables",
+        "options": {
+          "outputReferences": true,
+          "selector": ":root[data-theme='dark']"
+        }
+      }]
+    },
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens-dark.scss",
+        "format": "scss/variables",
+        "options": {
+          "outputReferences": true
+        }
+      }]
+    },
+    "js": {
+      "transformGroup": "web",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens-dark.json",
+        "format": "json/flat"
+      }]
+    }
+  }
+}

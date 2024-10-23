@@ -1,0 +1,36 @@
+{
+  "source": ["tokens/**/!(*.dark).json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens.css",
+        "format": "css/variables",
+        "options": {
+          "outputReferences": true,
+          "selector": ":root"
+        }
+      }]
+    },
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens.scss",
+        "format": "scss/variables",
+        "options": {
+          "outputReferences": true
+        }
+      }]
+    },
+    "js": {
+      "transformGroup": "web",
+      "buildPath": "dist/web/",
+      "files": [{
+        "destination": "tokens.json",
+        "format": "json/flat"
+      }]
+    }
+  }
+}

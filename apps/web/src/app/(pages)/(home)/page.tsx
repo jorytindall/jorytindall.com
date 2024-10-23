@@ -1,16 +1,17 @@
+import dynamic from 'next/dynamic';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 
-// Page content
-import { HomeIntroduction } from './Introduction';
-import { HomeEvents } from './Events';
-import { HomePortfolio } from './Portfolio';
-import { HomeMusic } from './Music';
+// Import page sections
+import HomeIntroduction from './Introduction';
+import HomeEvents from './Events';
+import HomePortfolio from './Portfolio';
+import HomeMusic from './Music';
+import HomeContact from './HomeContact';
 
 import type { Metadata } from 'next';
-import { HomeContact } from './HomeContact';
 
 // Revalidate events every minute
 export const revalidate = 60;

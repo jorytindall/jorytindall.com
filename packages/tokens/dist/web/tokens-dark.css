@@ -1,9 +1,8 @@
 /**
- * Do not edit directly
- * Generated on Mon, 10 Jun 2024 06:42:21 GMT
+ * Do not edit directly, this file was auto-generated.
  */
 
-:root {
+:root[data-theme='dark'] {
   --typography-line-height-body: 1.7;
   --typography-line-height-headline: 1.4;
   --typography-line-height-mega-headline: 0.9;
@@ -20,32 +19,32 @@
   --typography-font-family-mono: Fira Code, courier, monospace;
   --typography-font-family-headline: Uxum Grotesque, Helvetica, Aria, sans-serif;
   --typography-font-family-body: Neue Haas Unica, Helvetica, Arial, sans-serif;
-  --color-core-positive-500: #002c1f;
-  --color-core-positive-400: #005f42;
-  --color-core-positive-300: #00976a;
-  --color-core-positive-200: #12ecaa;
-  --color-core-positive-100: #b3ffe8;
-  --color-core-neutral-600: #f6f7f9;
-  --color-core-neutral-500: #e6ebef;
-  --color-core-neutral-400: #a7acba;
-  --color-core-neutral-300: #393f50;
+  --color-core-positive-500: #002C1F;
+  --color-core-positive-400: #005F42;
+  --color-core-positive-300: #00976A;
+  --color-core-positive-200: #12ECAA;
+  --color-core-positive-100: #B3FFE8;
+  --color-core-neutral-600: #F6F7F9;
+  --color-core-neutral-500: #E6EBEF;
+  --color-core-neutral-400: #A7ACBA;
+  --color-core-neutral-300: #393F50;
   --color-core-neutral-200: #121021;
   --color-core-neutral-100: #030913;
-  --color-core-tertiary-500: #e6ebef;
-  --color-core-tertiary-400: #a7acba;
-  --color-core-tertiary-300: #393f50;
+  --color-core-tertiary-500: #E6EBEF;
+  --color-core-tertiary-400: #A7ACBA;
+  --color-core-tertiary-300: #393F50;
   --color-core-tertiary-200: #121021;
   --color-core-tertiary-100: #030913;
-  --color-core-secondary-500: #fde4b4;
-  --color-core-secondary-400: #fcca68;
-  --color-core-secondary-300: #865a03;
-  --color-core-secondary-200: #331a01;
+  --color-core-secondary-500: #FDE4B4;
+  --color-core-secondary-400: #FCCA68;
+  --color-core-secondary-300: #865A03;
+  --color-core-secondary-200: #331A01;
   --color-core-secondary-100: #281501;
-  --color-core-primary-500: #ccdfff;
-  --color-core-primary-400: #7babff;
-  --color-core-primary-300: #4187ff;
+  --color-core-primary-500: #CCDFFF;
+  --color-core-primary-400: #7BABFF;
+  --color-core-primary-300: #4187FF;
   --color-core-primary-200: #002564;
-  --color-core-primary-100: #00163c;
+  --color-core-primary-100: #00163C;
   --color-semantic-border-light: var(--color-core-neutral-200);
   --color-semantic-border-dark: var(--color-core-neutral-600);
   --color-semantic-border-secondary: var(--color-core-secondary-300);

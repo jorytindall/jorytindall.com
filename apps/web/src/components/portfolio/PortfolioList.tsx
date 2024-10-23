@@ -26,6 +26,8 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 					href={linkResolver('portfolioProject', item.item.slug.current)}
 					image={image}
 					imagePosition="top"
+					imageSizes="(max-width: 1200px) 600px, (max-width: 768px) 400px, 300px"
+					altText={item.item.featuredImage.alternativeText}
 				>
 					<Headline tag='h2' size='h4' color='secondary' collapse>{item.item.title}</Headline>
 					<Badge text={item.item.client} type='inverse' />

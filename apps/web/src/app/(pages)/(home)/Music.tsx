@@ -33,4 +33,4 @@ const HomeMusic = () => {
   )
 }
 
-export { HomeMusic }
+export default HomeMusic

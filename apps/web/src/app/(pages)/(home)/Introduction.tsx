@@ -34,7 +34,7 @@ const HomeIntroduction = () => {
           <InlineLink
             type="external"
             target="_blank"
-            href="https://hashicorp.com"
+            href="https://helios.hashicorp.design"
           >
             HashiCorp,
           </InlineLink>{' '}
@@ -51,9 +51,9 @@ const HomeIntroduction = () => {
           You can also find me leading the charge to democratize
           music education at{' '}
           <InlineLink
-            href="https://downbeatacademy.com"
             type="external"
             target="_blank"
+            href="https://downbeatacademy.com"
           >
             Downbeat Academy
           </InlineLink>
@@ -69,4 +69,4 @@ const HomeIntroduction = () => {
   )
 }
 
-export { HomeIntroduction }
+export default HomeIntroduction

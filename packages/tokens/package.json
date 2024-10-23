@@ -1,10 +1,10 @@
 {
 	"name": "tokens",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Jory Tindall <jory@hypecreativestudios.com",
 	"license": "MIT",
 	"scripts": {
-		"build": "style-dictionary build --config ./config.js"
+		"build": "style-dictionary build --config ./config.json && style-dictionary build --config ./config.dark.json"
 	},
 	"devDependencies": {
 		"@divriots/style-dictionary-to-figma": "^0.4.0",
@@ -14,5 +14,6 @@
 	"main": "dist/",
 	"files": [
 		"dist/"
-	]
+	],
+	"type": "module"
 }
