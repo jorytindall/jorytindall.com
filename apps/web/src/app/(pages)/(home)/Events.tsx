@@ -32,4 +32,4 @@ const HomeEvents = ({ events }) => {
   )
 }
 
-export { HomeEvents }
+export default HomeEvents

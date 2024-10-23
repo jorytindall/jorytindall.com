@@ -33,4 +33,4 @@ const HomePortfolio = () => {
   )
 }
 
-export { HomePortfolio }
+export default HomePortfolio

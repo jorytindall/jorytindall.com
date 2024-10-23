@@ -69,4 +69,4 @@ const HomeIntroduction = () => {
   )
 }
 
-export { HomeIntroduction }
+export default HomeIntroduction
