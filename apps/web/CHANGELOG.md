@@ -1,5 +1,13 @@
 # web
 
+## 3.0.1
+
+### Patch Changes
+
+-   Updated `primary-300` to meet a11y color contrast threshold'
+-   Updated dependencies
+    -   tokens@0.1.2
+
 ## 3.0.0
 
 ### Major Changes
