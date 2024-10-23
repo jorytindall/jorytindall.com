@@ -16,21 +16,28 @@ export const Banner = ({
 	link,
 }: BannerProps) => {
 
-	console.log(link)
-
-	if (link) {
+	if (link.type === 'internal') {
+			return (
+				<Link href={linkResolver(link.internalLink._type, link.internalLink.slug)} className={styles.banner}>
+					<Paragraph type='secondary' color='primary' collapse><strong>{title}</strong></Paragraph>
+					<RichText value={content} />
+				</Link>
+			)
+	} else if (link.type === 'customInternal') {
 		return (
-			<Link href='#' className={styles.banner}>
+			<Link href={link.customLink} className={styles.banner}>
 				<Paragraph type='secondary' color='primary' collapse><strong>{title}</strong></Paragraph>
 				<RichText value={content} />
 			</Link>
 		)
-	} else {
+	} else if (link.type === 'external') {
 		return (
-			<aside className={styles.banner}>
+			<a href={link.externalLink} target={link.target} className={styles.banner}>
 				<Paragraph type='secondary' color='primary' collapse><strong>{title}</strong></Paragraph>
 				<RichText value={content} />
-			</aside>
+			</a>
 		)
+	} else {
+		return null
 	}
 };

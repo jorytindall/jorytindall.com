@@ -38,11 +38,13 @@ export default async function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body>
 				<Providers>
-					<Banner
-						title={bannerData.title}
-						content={bannerData.content}
-						link={bannerData.link}
-					/>
+						{bannerData !== null && (
+							<Banner
+								title={bannerData.title}
+								content={bannerData.content}
+								link={bannerData.link}
+							/>
+						)}
 					<Header links={headerData.links} />
 					<Main>
 						{children}

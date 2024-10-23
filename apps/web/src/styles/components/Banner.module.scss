@@ -1,6 +1,6 @@
 .banner {
 	max-width: 100vw;
-	padding: 0.25rem 1.5rem;
+	padding: 0.5rem 1.5rem;
 	background: var(--color-core-secondary-200);
 	border-bottom: 1px solid var(--color-semantic-border-secondary);
 	display: flex;
@@ -14,10 +14,15 @@
 
 	&:hover {
 		background: var(--color-core-secondary-300);
+		cursor: pointer;
 	}
 
 	@media (min-width: 768px) {
-		padding: 0 2.5rem;
+		padding: 0.5rem 2.5rem;
 		justify-content: space-between;
+	}
+
+	& > p {
+		margin: 0;
 	}
 }
