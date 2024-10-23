@@ -4,27 +4,12 @@ import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 
-// Dynamically import page sections
-const HomeIntroduction = dynamic(() => import('./Introduction'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
-const HomeEvents = dynamic(() => import('./Events'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
-const HomePortfolio = dynamic(() => import('./Portfolio'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
-const HomeMusic = dynamic(() => import('./Music'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
-const HomeContact = dynamic(() => import('./HomeContact'), {
-	loading: () => <p>Loading...</p>,
-	ssr: false,
-});
+// Import page sections
+import HomeIntroduction from './Introduction';
+import HomeEvents from './Events';
+import HomePortfolio from './Portfolio';
+import HomeMusic from './Music';
+import HomeContact from './HomeContact';
 
 import type { Metadata } from 'next';
 
