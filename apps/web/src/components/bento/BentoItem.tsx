@@ -15,6 +15,8 @@ interface BentoItemProps {
 	href?: any
 	image?: any
 	imagePosition?: 'top' | 'bottom';
+	altText?: string;
+	imageSizes?: string;
 }
 
 export const BentoItem = ({
@@ -28,7 +30,9 @@ export const BentoItem = ({
 	isInteractive = false,
 	href,
 	image,
-	imagePosition = 'top'
+	imagePosition = 'top',
+	imageSizes,
+	altText,
 }: BentoItemProps) => {
 
 	const outerClasses = getClasses([
@@ -51,8 +55,10 @@ export const BentoItem = ({
 		return (
 			<Image
 				src={image}
-				alt={image.alt}
+				// @ts-ignore
+				alt={altText}
 				fill
+				sizes={imageSizes}
 			/>
 		)
 	}
