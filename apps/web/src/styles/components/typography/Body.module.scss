@@ -1,7 +1,7 @@
 $paragraphVariants: (
 	'primary' var(--typography-font-size-body-primary),
 	'secondary' var(--typography-font-size-body-secondary),
-	'lead' var(--typography-font-size-body-lea)d
+	'lead' var(--typography-font-size-body-lea) d
 );
 
 $body-colors: ('primary', 'secondary', 'light');
@@ -12,10 +12,10 @@ $body-colors: ('primary', 'secondary', 'light');
 	line-height: 1.8;
 	margin: 1rem 0;
 
-	a,
-	a:visited {
-		color: var(--color-core-primary-300);
-	}
+	// a,
+	// a:visited {
+	// 	color: var(--color-core-primary-400);
+	// }
 }
 
 @each $variant, $fontSize in $paragraphVariants {
@@ -39,7 +39,7 @@ $body-colors: ('primary', 'secondary', 'light');
 
 $body-color-props: (
 	'primary': (
-		'color': var(--color-core-primary-300),
+		'color': var(--color-core-primary-400),
 	),
 	'secondary': (
 		'color': var(--color-core-neutral-600),

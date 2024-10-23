@@ -1,7 +1,10 @@
 $variants: (
-	'primary' var(--color-core-primary-300) var(--color-core-primary-400) var(--color-core-primary-500),
-	'secondary' var(--color-core-neutral-600) var(--color-core-neutral-500) var(--color-core-neutral-500),
-	'tertiary' var(--color-core-neutral-500) var(--color-core-neutral-600) var(--color-core-neutral-600)
+	'primary' var(--color-core-primary-400) var(--color-core-primary-500)
+		var(--color-core-primary-500),
+	'secondary' var(--color-core-neutral-600) var(--color-core-neutral-500)
+		var(--color-core-neutral-500),
+	'tertiary' var(--color-core-neutral-500) var(--color-core-neutral-600)
+		var(--color-core-neutral-600)
 );
 
 .link {
