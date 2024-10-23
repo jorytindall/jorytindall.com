@@ -19,8 +19,6 @@ export const PortfolioListItem = ({
 	client,
 	image,
 }: PortfolioListItemProps) => {
-
-	console.log('hello')
 	return (
 		<Link
 			href={linkResolver('portfolioProject', slug)}

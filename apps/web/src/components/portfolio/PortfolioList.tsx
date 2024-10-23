@@ -15,8 +15,6 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 
 		const image = getSanityImageUrl(item.item.featuredImage.asset._ref);
 
-		console.log(item)
-
 		return (
 				<BentoItem
 					key={item.item.title}
