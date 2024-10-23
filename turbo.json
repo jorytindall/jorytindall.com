@@ -8,7 +8,8 @@
 			],
 			"outputs": [
 				"./.next/**",
-				"./dist/**"
+				"./dist/**",
+				"./svelte-kit/**"
 			]
 		},
 		"test": {},
