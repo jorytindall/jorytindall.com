@@ -1,6 +1,6 @@
-@import '../../node_modules/tokens/dist/web/tokens.css';
-@import '../../node_modules/tokens/dist/web/tokens-dark.css';
-@import './abstracts/fonts';
-@import './abstracts/reset';
-@import './abstracts/global';
-@import './abstracts/utility-classes';
+@use '../../node_modules/tokens/dist/web/tokens.css' as *;
+@use '../../node_modules/tokens/dist/web/tokens-dark.css' as *;
+@use './abstracts/fonts' as *;
+@use './abstracts/reset' as *;
+@use './abstracts/global' as *;
+@use './abstracts/utility-classes' as *;
