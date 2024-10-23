@@ -11,11 +11,6 @@ $body-colors: ('primary', 'secondary', 'light');
 	color: var(--color-core-neutral-600);
 	line-height: 1.8;
 	margin: 1rem 0;
-
-	// a,
-	// a:visited {
-	// 	color: var(--color-core-primary-400);
-	// }
 }
 
 @each $variant, $fontSize in $paragraphVariants {
@@ -39,7 +34,7 @@ $body-colors: ('primary', 'secondary', 'light');
 
 $body-color-props: (
 	'primary': (
-		'color': var(--color-core-primary-400),
+		'color': var(--color-core-primary-300),
 	),
 	'secondary': (
 		'color': var(--color-core-neutral-600),
