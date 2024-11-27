@@ -9,7 +9,7 @@
 	gap: 0.5rem;
 	margin: 2rem 0;
 
-	* {
+	& * {
 		color: var(--color-core-neutral-100);
 	}
 }
