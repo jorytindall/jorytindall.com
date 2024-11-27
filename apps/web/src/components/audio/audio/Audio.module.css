@@ -5,7 +5,7 @@
 	background: var(--color-core-tertiary-200);
 	gap: 1rem;
 
-	audio {
+	& audio {
 		width: 100%;
 	}
 }

@@ -13,7 +13,7 @@ import styles from 'styles/pages/Music.module.scss';
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const page = await client.fetch(GET_MUSIC_PROJECTS, {
 		slug,
@@ -31,7 +31,7 @@ export async function generateStaticParams() {
 }
 
 export default async function MusicProject({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const page = await sanityClient.fetch(GET_MUSIC_PROJECTS, { slug });
 
 	const { title, moduleContent, musicians, pressKit } = page;
@@ -39,11 +39,6 @@ export default async function MusicProject({ params }) {
 	const pressKitUrl = pressKit
 		? getSanityFileUrl(pressKit.file.asset._ref)
 		: null;
-
-	const downloadEvent = () => {
-		trackEvent(`${title} press kit download`)
-		console.log('Download event fired');
-	}
 
 	return (
 		<>

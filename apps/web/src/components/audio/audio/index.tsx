@@ -1,4 +1,4 @@
-import styles from 'styles/components/audio/Audio.module.scss';
+import styles from './Audio.module.css';
 import { Paragraph } from 'components/typography';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
 
