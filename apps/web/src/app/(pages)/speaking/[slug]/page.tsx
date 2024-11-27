@@ -14,7 +14,7 @@ import styles from 'styles/pages/Talk.module.scss';
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const talk = await client.fetch(GET_TALKS, {
 		slug,
@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Talk({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const talk = await sanityClient.fetch(GET_TALKS, { slug });
 
 	const {
@@ -55,7 +55,7 @@ export default async function Talk({ params }) {
 							fill
 							// @ts-ignore
 							src={getSanityImageUrl(image)}
-							alt={image.altText}
+							alt={image.alternativeText}
 						/>
 					</div>
 				)}

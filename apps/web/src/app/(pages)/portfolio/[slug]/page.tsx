@@ -11,7 +11,7 @@ export const revalidate = 60;
 
 // Generate Metadata
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const portfolioProject = await client.fetch(GET_PORTFOLIO_PROJECTS, {
 		slug,
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 }
 
 export default async function PortfolioProject({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const portfolioProject = await sanityClient.fetch(GET_PORTFOLIO_PROJECTS, {
 		slug,
 	});

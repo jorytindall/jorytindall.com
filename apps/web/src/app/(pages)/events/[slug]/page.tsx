@@ -12,7 +12,7 @@ import styles from 'styles/pages/Event.module.scss';
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const events = await client.fetch(GET_EVENTS, { slug });
 
@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Event({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const events = await sanityClient.fetch(GET_EVENTS, { slug });
 
 	const { title, date, description, location, url } = events;
