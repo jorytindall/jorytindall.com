@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import styles from './TextArrow.module.css';
 import { getClasses } from 'utils/getClasses';
+import styles from './TextArrow.module.css';
 
 interface TextArrowProps {
 	href?: string;
