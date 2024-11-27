@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from 'styles/components/Banner.module.scss';
 import { RichText } from 'components/rich-text';
 import { Paragraph } from 'components/typography';
 import { linkResolver } from 'utils/linkResolver';
+import styles from './Banner.module.css';
 
 interface BannerProps {
 	content?: any;
