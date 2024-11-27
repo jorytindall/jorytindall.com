@@ -14,7 +14,7 @@ import { DownloadButton } from 'components/button';
 import { Callout } from 'components/callout';
 import { RichText } from './RichText';
 
-import s from 'styles/components/RichText.module.scss'
+import s from './RichText.module.css'
 
 interface BlockProps {
 	children?: React.ReactNode;
