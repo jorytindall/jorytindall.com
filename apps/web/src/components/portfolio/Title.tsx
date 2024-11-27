@@ -2,7 +2,7 @@ import { Headline, Paragraph } from 'components/typography';
 import { TextArrow } from 'components/button';
 import { Badge } from 'components/badge';
 import { Container } from 'components/layout';
-import styles from 'styles/components/portfolio/Title.module.scss';
+import styles from './Title.module.css';
 
 interface TitleProps {
 	input: {

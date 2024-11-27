@@ -3,7 +3,7 @@
 	overflow: hidden;
 	height: calc(40vh);
 
-	img {
+	& img {
 		object-fit: cover;
 	}
 

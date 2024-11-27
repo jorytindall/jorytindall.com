@@ -4,7 +4,7 @@ import { linkResolver } from 'utils/linkResolver';
 import { Headline, Paragraph } from 'components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { Badge } from 'components/badge';
-import styles from 'styles/components/portfolio/PortfolioList.module.scss';
+import styles from './PortfolioListItem.module.css';
 
 interface PortfolioListItemProps {
 	title: string;

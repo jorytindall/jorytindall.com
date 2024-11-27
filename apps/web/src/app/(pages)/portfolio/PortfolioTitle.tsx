@@ -5,7 +5,7 @@ import { Headline, Paragraph } from 'components/typography';
 import { Badge } from 'components/badge';
 import { Container } from 'components/layout';
 import { TextArrow } from 'components/button';
-import s from 'styles/components/portfolio/PortfolioItem.module.scss'
+import s from 'styles/components/portfolio/PortfolioListItem.module.css'
 
 interface PortfolioTitleProps {
   title: string;
