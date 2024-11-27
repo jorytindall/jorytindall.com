@@ -2,7 +2,7 @@
 
 import classnames from 'classnames'
 import * as TabsPrimitive from "@radix-ui/react-tabs"
-import s from 'styles/components/Tabs.module.scss'
+import s from './Tabs.module.css'
 
 import type { TabsListProps } from "./types"
 
