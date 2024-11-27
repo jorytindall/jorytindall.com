@@ -1,0 +1,29 @@
+.outer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	justify-content: center;
+	margin: 1rem;
+	gap: 2.5rem;
+
+	@media (min-width: 768px) {
+		margin: 2.5rem;
+		gap: 2.5rem;
+	}
+}
+
+.musicians {
+	display: flex;
+	justify-content: center;
+	gap: 0;
+	padding: 2.5rem 0;
+}
+
+.musicians > .inner {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem 2.5rem;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1rem;
+}

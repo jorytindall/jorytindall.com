@@ -10,7 +10,7 @@ import {
 	TbVolumeOff,
 	TbVolume2,
 } from 'react-icons/tb';
-import styles from 'styles/components/audio/Playlist.module.scss';
+import styles from './Playlist.module.css';
 
 export const Controls = ({
 	audioRef,

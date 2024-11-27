@@ -38,14 +38,14 @@
 		align-items: center;
 		gap: 0.75rem;
 
-		svg {
+		& svg {
 			height: 24px;
 			width: 24px;
 		}
 	}
 }
 
-// Controls
+/* Controls */
 
 .controlsWrapper {
 	display: flex;
@@ -84,9 +84,23 @@
 }
 
 .controlButtonSmall {
-	@extend .controlButton;
+	color: var(--color-core-neutral-100);
+	background: var(--color-core-primary-400);
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 1.75rem;
 	height: 1.75rem;
+	border-radius: 50%;
+	transition: 100ms all ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: var(--color-core-primary-500);
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		transform: translateY(-1px);
+	}
 }
 
 .volume {
@@ -95,15 +109,15 @@
 	align-items: center;
 	gap: 1rem;
 
-	input[type='range'] {
-		-webkit-appearance: none;
+	& input[type='range'] {
+		appearance: none;
 		height: 4px;
 		background: var(--color-core-neutral-100);
 		border-radius: 4px;
 	}
 
-	input[type='range']::-webkit-slider-thumb {
-		-webkit-appearance: none;
+	& input[type='range']::-webkit-slider-thumb {
+		appearance: none;
 		background-color: var(--color-core-primary-400);
 		height: 16px;
 		width: 16px;
@@ -114,7 +128,7 @@
 		top: -5px;
 	}
 
-	input[type='range']::-webkit-slider-runnable-track {
+	& input[type='range']::-webkit-slider-runnable-track {
 		height: 4px;
 		border-radius: 4px;
 		cursor: pointer;
@@ -122,7 +136,7 @@
 		box-shadow: none;
 	}
 
-	input[type='range']::-moz-range-track {
+	& input[type='range']::-moz-range-track {
 		height: 4px;
 		border-radius: 4px;
 		cursor: pointer;
@@ -131,7 +145,7 @@
 	}
 }
 
-// ProgressBar
+/*ProgressBar */
 
 .progress {
 	display: flex;
@@ -143,7 +157,7 @@
 .progressBar {
 	--range-progress: 0;
 
-	-webkit-appearance: none;
+	appearance: none;
 	position: relative;
 	background: var(--color-core-neutral-100);
 	width: 100%;
@@ -185,7 +199,7 @@
 
 /* slider thumb - chrome and safari */
 .progressBar::-webkit-slider-thumb {
-	-webkit-appearance: none;
+	appearance: none;
 	height: 16px;
 	width: 16px;
 	border-radius: 50%;
