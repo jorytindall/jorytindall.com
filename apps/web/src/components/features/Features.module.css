@@ -6,8 +6,8 @@
 	background: var(--color-core-primary-300);
 	grid-column: 1 / span 3;
 
-	h5,
-	p {
+	& h5,
+	& p {
 		color: var(--color-core-neutral-100);
 	}
 

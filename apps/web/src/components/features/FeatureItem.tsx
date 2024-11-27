@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Container } from 'components/layout';
 import { Headline, Paragraph } from 'components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import s from 'styles/components/Features.module.scss';
+import s from './Features.module.css';
 
 interface FeatureItemProps {
 	image: {

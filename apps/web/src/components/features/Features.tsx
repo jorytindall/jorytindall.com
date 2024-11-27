@@ -1,4 +1,4 @@
-import styles from 'styles/components/Features.module.scss';
+import styles from './Features.module.css';
 import { FeatureItem } from './FeatureItem';
 
 interface FeaturesProps {
