@@ -5,7 +5,7 @@ import Fathom from 'lib/fathom';
 import { Header, Footer } from 'components/navigation';
 import { Banner } from 'components/banner';
 import { Main } from 'components/layout';
-import 'styles/main.scss';
+import 'styles/main.css';
 
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_GLOBAL_APP_DATA } from 'lib/queries';
