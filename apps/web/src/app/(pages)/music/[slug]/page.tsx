@@ -6,7 +6,7 @@ import { Person } from 'components/person';
 import { Button } from 'components/button';
 import { CenteredWrapper } from 'components/layout';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
-import styles from './Music.module.css';
+import styles from '../Music.module.css';
 
 // Revalidate pages every 60 seconds
 export const revalidate = 60;
