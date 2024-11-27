@@ -1,7 +1,7 @@
 // @ts-nocheck
 import Image from 'next/image';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import styles from 'styles/components/gallery/FullWidthImage.module.scss';
+import styles from './FullWidthImage.module.css';
 
 interface FullWidthImageProps {
 	input: {

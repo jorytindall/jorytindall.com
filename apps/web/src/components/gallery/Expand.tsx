@@ -1,4 +1,4 @@
-import s from 'styles/components/gallery/GalleryItem.module.scss';
+import s from './Expand.module.css';
 
 const Expand = () => {
   return (

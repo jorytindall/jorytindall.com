@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Paragraph } from 'components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { Expand } from './Expand';
-import s from 'styles/components/gallery/GalleryItem.module.scss';
+import s from './GalleryItem.module.css';
 
 interface GalleryItemProps {
 	key: string;

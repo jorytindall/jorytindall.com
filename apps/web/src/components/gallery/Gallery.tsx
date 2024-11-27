@@ -8,7 +8,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { getClasses } from 'utils/getClasses';
 import { GalleryItem } from './GalleryItem';
-import styles from 'styles/components/gallery/Gallery.module.scss';
+import styles from './Gallery.module.css';
 
 interface GalleryProps {
 	input: {
