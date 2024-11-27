@@ -1,5 +1,5 @@
 import { Headline, Paragraph } from "components/typography"
-import s from 'styles/components/Callout.module.scss'
+import s from './Callout.module.css'
 
 interface CalloutProps extends React.HTMLAttributes<HTMLDivElement> {
   headline?: string,
