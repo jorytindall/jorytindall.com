@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import styles from 'styles/components/Person.module.scss';
+import styles from './Person.module.css';
 
 interface PersonProps {
 	name: string;
