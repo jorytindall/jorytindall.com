@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';

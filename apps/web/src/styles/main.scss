@@ -1,5 +1,8 @@
+/* Tokens */
 @use '../../node_modules/tokens/dist/web/tokens.css' as *;
 @use '../../node_modules/tokens/dist/web/tokens-dark.css' as *;
+
+/* Abstracts */
 @use './abstracts/fonts' as *;
 @use './abstracts/reset' as *;
 @use './abstracts/global' as *;

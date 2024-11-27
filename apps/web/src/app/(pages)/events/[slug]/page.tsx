@@ -6,7 +6,7 @@ import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { RichText } from 'components/rich-text';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
-import styles from 'styles/pages/Event.module.scss';
+import styles from './Event.module.css';
 
 // Revalidate events every minute
 export const revalidate = 60;

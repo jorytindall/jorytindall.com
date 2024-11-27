@@ -2,13 +2,12 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import { linkResolver } from 'utils/linkResolver';
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
 import { Headline, Paragraph } from 'components/typography';
 import { ModuleRenderer } from 'components/module-renderer';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
-import styles from 'styles/pages/Talk.module.scss';
+import styles from './Talk.module.css';
 
 // Revalidate events every minute
 export const revalidate = 60;
