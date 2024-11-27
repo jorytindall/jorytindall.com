@@ -1,0 +1,54 @@
+/* Base headline styles */
+.mega, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: var(--typography-font-family-headline);
+	font-weight: bold;
+	margin: 2rem 0 1rem 0;
+}
+
+/* Size variants */
+.mega {
+	font-size: var(--typography-font-size-headline-mega);
+	line-height: var(--typography-line-height-mega-headline);
+}
+
+.h1 {
+	font-size: var(--typography-font-size-headline-01);
+	line-height: var(--typography-line-height-headline);
+}
+
+.h2 {
+	font-size: var(--typography-font-size-headline-02);
+	line-height: var(--typography-line-height-headline);
+}
+
+.h3 {
+	font-size: var(--typography-font-size-headline-03);
+	line-height: var(--typography-line-height-headline);
+}
+
+.h4 {
+	font-size: var(--typography-font-size-headline-04);
+	line-height: var(--typography-line-height-headline);
+}
+
+.h5 {
+	font-size: var(--typography-font-size-headline-05);
+	line-height: var(--typography-line-height-headline);
+}
+
+.h6 {
+	font-size: var(--typography-font-size-headline-06);
+	line-height: var(--typography-line-height-headline);
+}
+
+/* Color variants */
+.primary { color: var(--color-core-primary-300); }
+.secondary { color: var(--color-core-neutral-600); }
+.light { color: var(--color-core-neutral-100); }
+.dark { color: var(--color-core-neutral-600); }
+
+/* Utility */
+.collapse {
+	padding: 0;
+	margin: 0;
+}

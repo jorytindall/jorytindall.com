@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import classnames from 'classnames';
-import styles from 'styles/components/typography/InlineLink.module.scss';
+import styles from './InlineLink.module.css';
 
 interface LinkProps {
 	type: string;

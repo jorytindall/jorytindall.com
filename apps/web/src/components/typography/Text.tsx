@@ -1,4 +1,3 @@
-import styles from 'styles/components/typography/Text.module.scss';
 import { getClasses } from 'utils/getClasses';
 
 interface TextProps {
@@ -23,7 +22,6 @@ export const Text = ({ children, size, collapse, tag, color }: TextProps) => {
 	const classes = getClasses([
 		// @ts-ignore
 		styles[size ? size : tag],
-		collapse ? styles.collapse : null,
 		// @ts-ignore
 		styles[color],
 	]);

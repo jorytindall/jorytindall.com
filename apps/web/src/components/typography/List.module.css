@@ -1,0 +1,57 @@
+/* Base item styles */
+.item {
+	font-family: var(--typography-font-family-body);
+	font-size: 1rem;
+	line-height: 1.8;
+	color: var(--color-core-neutral-600);
+	margin: 0.5rem;
+}
+
+/* List containers */
+.ordered,
+.unordered {
+	padding-left: 2rem;
+	list-style-position: outside;
+}
+
+/* Ordered list items */
+.ordered li {
+	font-family: var(--typography-font-family-body);
+	font-size: 1rem;
+	line-height: 1.8;
+	color: var(--color-core-neutral-600);
+	margin: 0.5rem;
+	padding: 0.5rem 0 0.5rem 0.75rem;
+}
+
+.ordered li::marker {
+	color: var(--color-core-primary-300);
+	font-weight: bold;
+}
+
+/* Unordered list items */
+.unordered {
+	list-style: none;
+}
+
+.unordered li {
+	font-family: var(--typography-font-family-body);
+	font-size: 1rem;
+	line-height: 1.8;
+	color: var(--color-core-neutral-600);
+	margin: 0.5rem;
+	position: relative;
+	padding: 0.5rem 0 0.5rem 0.75rem;
+}
+
+.unordered li::before {
+	content: '';
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	background: url('/arrow-right.png');
+	background-size: cover;
+	background-position: center;
+	top: 0.75rem;
+	left: -2rem;
+}
