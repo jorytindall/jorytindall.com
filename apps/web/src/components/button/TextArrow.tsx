@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from 'styles/components/button/TextArrow.module.scss';
+import styles from './TextArrow.module.css';
 import { getClasses } from 'utils/getClasses';
 
 interface TextArrowProps {
