@@ -3,7 +3,7 @@
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { Paragraph } from 'components/typography';
-import styles from 'styles/components/Video.module.scss';
+import styles from './Video.module.css';
 
 interface VideoProps {
 	source?: 'youTube' | 'mux';
