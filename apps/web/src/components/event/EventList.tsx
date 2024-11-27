@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
 import { formatDate } from 'utils/datetimeFormat';
-import styles from 'styles/components/EventList.module.scss';
+import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
 
