@@ -1,4 +1,4 @@
-import s from 'styles/components/form/Error.module.scss'
+import s from './Error.module.css'
 
 export const Error = ({ message }) => {
   return (
