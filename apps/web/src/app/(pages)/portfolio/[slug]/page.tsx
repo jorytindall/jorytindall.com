@@ -4,7 +4,7 @@ import {
 	GET_PORTFOLIO_PROJECT_PATHS,
 } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
-import { PortfolioTitle } from '../PortfolioTitle';
+import { PortfolioTitle } from 'components/portfolio/PortfolioTitle';
 
 // Revalidate portfolio every minute
 export const revalidate = 60;
