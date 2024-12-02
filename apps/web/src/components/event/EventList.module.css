@@ -2,12 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
-
-	& p {
-		font-family: var(--typography-font-family-body);
-		font-size: var(--typography-font-size-body-secondary);
-		color: var(--color-core-neutral-100);
-	}
 }
 
 .event {
@@ -17,10 +11,9 @@
 
 .content {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
 	flex-wrap: wrap;
-	align-items: center;
+	gap: 0.25rem;
 	text-decoration: none;
 	padding: 0.5rem;
 	background: transparent;
@@ -32,20 +25,34 @@
 	}
 }
 
-.title {
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.event-item {
 	font-family: var(--typography-font-family-body);
 	font-size: var(--typography-font-size-body-secondary);
+}
+
+.title {
+	composes: event-item;
 	color: var(--color-core-neutral-100);
 }
 
 .date {
-	font-family: var(--typography-font-family-body);
-	font-size: var(--typography-font-size-body-secondary);
+	composes: event-item;
 	color: var(--color-core-neutral-100);
 }
 
-.noEvents {
-	font-family: var(--typography-font-family-body);
-	font-size: var(--typography-font-size-body-secondary);
+.location {
+	composes: event-item;
+	color: var(--color-core-neutral-300);
+}
+
+.no-events {
+	composes: event-item;
 	color: var(--color-core-neutral-100);
 }

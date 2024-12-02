@@ -6,6 +6,7 @@ export const GET_HOMEPAGE_DATA = groq`
     title,
     "slug": slug.current,
     description,
-    date
+    date,
+    location,
   } | order(date asc)
 `;
