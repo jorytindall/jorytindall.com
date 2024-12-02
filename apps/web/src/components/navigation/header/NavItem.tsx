@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import styles from 'styles/components/navigation/NavItem.module.scss';
+import styles from './NavItem.module.css';
 
 const item = {
   hidden: {

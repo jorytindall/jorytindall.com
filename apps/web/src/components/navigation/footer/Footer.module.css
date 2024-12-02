@@ -12,7 +12,8 @@
 			'copyright copyright'
 			'col1 col2';
 		padding: 2.5rem 1rem;
-		div:nth-child(1) {
+
+		& div:nth-child(1) {
 			margin-bottom: 2.5rem;
 		}
 	}

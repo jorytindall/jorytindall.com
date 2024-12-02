@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import styles from "styles/components/navigation/NavLinks.module.scss"
+import styles from "./NavLinks.module.css"
 
 const staggerItems = {
   hidden: {

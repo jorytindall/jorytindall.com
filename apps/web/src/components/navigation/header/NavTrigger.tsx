@@ -1,6 +1,6 @@
 import { ThemePicker } from "./ThemePicker";
 import { Burger } from "./Burger";
-import s from 'styles/components/navigation/NavTrigger.module.scss';
+import s from './NavTrigger.module.css';
 
 const NavTrigger = ({ overlay, toggle }) => {
   return (

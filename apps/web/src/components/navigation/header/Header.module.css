@@ -1,0 +1,46 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 2rem 2.5rem;
+	box-sizing: border-box;
+	transition: padding 150ms ease;
+}
+
+@media (max-width: 768px) {
+	.header {
+			padding: 1rem 1.5rem;
+	}
+}
+
+[data-theme='dark'] .header {
+	background: rgba(3, 9, 19, 0.5);
+}
+
+[data-theme='dark'] .overlay-active {
+	background: rgba(3, 9, 19, 1);
+}
+
+.headerOverlay {
+	composes: header;
+	background: var(--color-core-neutral-100);
+}
+
+.scrolled {
+	background: rgba(255, 253, 244, 0.5);
+	backdrop-filter: blur(10px);
+}
+
+/* Define the noScroll class that will be applied to body */
+.no-scroll {
+	position: fixed;
+	top: var(--scroll-position);
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}

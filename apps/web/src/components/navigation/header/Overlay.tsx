@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from 'styles/components/navigation/Header.module.scss';
+import styles from './Overlay.module.css';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
 
@@ -22,8 +22,8 @@ const overlayAnimation = {
 
 export const Overlay = ({ overlay, links }: OverlayProps) => {
 	const getOverlayClass = overlay
-		? styles.overlayVisible
-		: styles.overlayHidden;
+		? styles['overlay-visible']
+		: styles['overlay-hidden'];
 
 	return (
 		<motion.div

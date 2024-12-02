@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  padding: 4px;
+  border-radius: 22px;
+  border: 1px solid var(--color-semantic-border-brand);
+  background: var(--color-core-neutral-100);
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-core-neutral-400);
+}
+
+
