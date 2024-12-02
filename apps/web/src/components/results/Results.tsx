@@ -1,7 +1,7 @@
 import { getClasses } from 'utils/getClasses';
 import { Headline } from 'components/typography';
 import { ResultsItem } from './ResultsItem';
-import styles from 'styles/components/results/Results.module.scss';
+import styles from './Results.module.css';
 
 interface ResultsProps {
 	input: {
