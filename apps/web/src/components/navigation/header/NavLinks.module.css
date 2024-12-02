@@ -8,8 +8,8 @@
 	@media (max-width: 768px) {
 		padding: 0;
 	}
+}
 
-	& li {
-		list-style: none;
-	}
+.linkWrapper li {
+	list-style: none;
 }

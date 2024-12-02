@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import styles from './NavItem.module.css';
 
@@ -13,12 +14,23 @@ const item = {
     y: 0,
     x: 0,
   }
-}
+};
 
 const NavItem = ({ slug, text }) => {
+  const pathname = usePathname();
+  const isActive = slug === '/' 
+    ? pathname === '/'
+    : pathname?.startsWith(slug);
+
   return (
-    <motion.li variants={item}>
-      <Link href={slug} className={styles.navItem}>
+    <motion.li 
+      variants={item}
+    >
+      <Link 
+        href={slug} 
+        className={`${styles.navItem} ${isActive ? styles.active : ''}`}
+        aria-current={isActive ? 'page' : undefined}
+      >
         {text}
       </Link>
     </motion.li>
