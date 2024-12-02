@@ -25,10 +25,11 @@ const NavItem = ({ slug, text }) => {
   return (
     <motion.li 
       variants={item}
+      className={styles['nav-item--li']}
     >
       <Link 
         href={slug} 
-        className={`${styles.navItem} ${isActive ? styles.active : ''}`}
+        className={`${styles['nav-item']} ${isActive ? styles.active : ''}`}
         aria-current={isActive ? 'page' : undefined}
       >
         {text}
