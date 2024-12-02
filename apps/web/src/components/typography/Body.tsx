@@ -1,4 +1,4 @@
-import styles from 'styles/components/typography/Body.module.scss';
+import styles from './Body.module.css';
 import { getClasses } from 'utils/getClasses';
 
 interface ParagraphProps {

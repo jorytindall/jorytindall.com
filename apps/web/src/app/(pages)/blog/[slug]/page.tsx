@@ -8,7 +8,7 @@ import { GridWrapper, RichTextWrapper } from 'components/layout';
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
 
 	return {
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPost({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
 
 	const { title, featuredImage, categories, content } = post;

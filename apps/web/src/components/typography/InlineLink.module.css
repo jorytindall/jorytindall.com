@@ -1,0 +1,43 @@
+.link {
+	text-decoration: underline;
+	font-size: inherit;
+	font-family: inherit;
+	transition: all 0.15s;
+	display: inline;
+}
+
+.link--primary {
+	color: var(--color-core-primary-300);
+}
+
+.link--primary:hover {
+	color: var(--color-core-primary-500);
+}
+
+.link--primary:active {
+	color: var(--color-core-primary-500);
+}
+
+.link--secondary {
+	color: var(--color-core-neutral-600);
+}
+
+.link--secondary:hover {
+	color: var(--color-core-neutral-500);
+}
+
+.link--secondary:active {
+	color: var(--color-core-neutral-500);
+}
+
+.link--tertiary {
+	color: var(--color-core-neutral-500);
+}
+
+.link--tertiary:hover {
+	color: var(--color-core-neutral-600);
+}
+
+.link--tertiary:active {
+	color: var(--color-core-neutral-600);
+}

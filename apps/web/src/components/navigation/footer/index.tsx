@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from 'styles/components/navigation/Footer.module.scss';
+import styles from './Footer.module.css';
 import { Paragraph } from 'components/typography';
 import { Avatar } from 'components/avatar';
 

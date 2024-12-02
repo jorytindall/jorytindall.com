@@ -2,19 +2,18 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import { linkResolver } from 'utils/linkResolver';
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
 import { Headline, Paragraph } from 'components/typography';
 import { ModuleRenderer } from 'components/module-renderer';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
-import styles from 'styles/pages/Talk.module.scss';
+import styles from './Talk.module.css';
 
 // Revalidate events every minute
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const talk = await client.fetch(GET_TALKS, {
 		slug,
@@ -32,7 +31,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Talk({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const talk = await sanityClient.fetch(GET_TALKS, { slug });
 
 	const {
@@ -55,7 +54,7 @@ export default async function Talk({ params }) {
 							fill
 							// @ts-ignore
 							src={getSanityImageUrl(image)}
-							alt={image.altText}
+							alt={image.alternativeText}
 						/>
 					</div>
 				)}

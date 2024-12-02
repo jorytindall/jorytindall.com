@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import s from 'styles/components/portfolio/HeroImage.module.scss';
+import s from './HeroImage.module.css';
 
 interface HeroImageProps {
 	source: string;

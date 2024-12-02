@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getClasses } from 'utils/getClasses';
 import { Headline } from 'components/typography';
-import s from 'styles/components/list/ListItem.module.scss';
+import s from './ListItem.module.css';
 
 interface ListItemProps {
 	title: string;

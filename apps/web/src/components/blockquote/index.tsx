@@ -1,4 +1,4 @@
-import styles from 'styles/components/Blockquote.module.scss';
+import styles from './Blockquote.module.css';
 
 export const Blockquote = ({ text }) => {
 	return (

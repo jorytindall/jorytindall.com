@@ -1,5 +1,5 @@
 import { ArrowDownSquare, ArrowUpSquare } from './Arrows';
-import styles from 'styles/components/results/ResultsItem.module.scss';
+import styles from './ResultsItem.module.css';
 import { Headline, Paragraph } from 'components/typography';
 
 interface ResultsItemProps {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from 'styles/components/Avatar.module.scss';
+import styles from './Avatar.module.css';
 
 export const Avatar = ({
 	width = 60,

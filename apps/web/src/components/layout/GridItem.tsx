@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 import { Container } from './Container'
-import s from 'styles/components/layout/GridItem.module.scss'
+import s from './GridItem.module.css'
 
 import type { ContainerProps } from './Container'
 

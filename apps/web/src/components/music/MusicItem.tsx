@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { linkResolver } from 'utils/linkResolver';
-import styles from 'styles/components/music/MusicItem.module.scss';
+import styles from './MusicItem.module.css';
 
 interface MusicItemProps {
 	title: string;
@@ -17,6 +17,8 @@ export const MusicItem = ({
 	image,
 	link,
 }: MusicItemProps) => {
+
+	console.log(title)
 	return (
 		<Link
 			href={linkResolver('musicProject', link)}
@@ -27,7 +29,7 @@ export const MusicItem = ({
 					<Image
 						// @ts-ignore
 						src={getSanityImageUrl(image)}
-						alt={image.alternativeText}
+						alt={image.alternativeText || 'Music project image'}
 						className={styles.featureImage}
 						fill
 					/>

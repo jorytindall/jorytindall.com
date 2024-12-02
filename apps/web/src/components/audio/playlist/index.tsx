@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { AudioProps } from 'components/audio/audio';
-import styles from 'styles/components/audio/Playlist.module.scss';
+import styles from './Playlist.module.css';
 
 import { DisplayTrack } from './DisplayTrack';
 import { ProgressBar } from './ProgressBar';

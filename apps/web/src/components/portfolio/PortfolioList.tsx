@@ -1,10 +1,10 @@
 import { BentoBox, BentoItem } from 'components/bento';
 import { Headline } from 'components/typography';
-import styles from 'styles/components/portfolio/PortfolioList.module.scss';
 import { linkResolver } from 'utils/linkResolver';
 import { Badge } from 'components/badge';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { PortfolioListItem } from './PortfolioListItem';
+import styles from './PortfolioList.module.css';
 
 interface PortfolioListItem {
 	input: any;

@@ -1,4 +1,4 @@
-import styles from 'styles/components/form/Label.module.scss';
+import styles from './Label.module.css';
 
 interface LabelProps {
 	htmlFor?: string,

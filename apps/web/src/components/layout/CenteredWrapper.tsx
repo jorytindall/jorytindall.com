@@ -1,5 +1,5 @@
 import { getClasses } from 'utils/getClasses';
-import s from 'styles/components/layout/CenteredWrapper.module.scss';
+import s from './CenteredWrapper.module.css';
 
 interface CenteredWrapperProps {
 	children: React.ReactNode;

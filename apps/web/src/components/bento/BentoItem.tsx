@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getClasses } from 'utils/getClasses';
-import styles from 'styles/components/bento/BentoItem.module.scss';
+import styles from './BentoItem.module.css';
 
 interface BentoItemProps {
 	children: React.ReactNode

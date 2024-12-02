@@ -1,7 +1,7 @@
 import { Label } from './Label';
 import { ItemWrapper } from './ItemWrapper';
 import { Error } from './Error';
-import styles from 'styles/components/form/Input.module.scss';
+import styles from './Input.module.css';
 import { getClasses } from 'utils/getClasses';
 
 interface InputProps {

@@ -1,4 +1,5 @@
-import s from 'styles/components/navigation/NavTrigger.module.scss';
+// import s from './NavTrigger.module.css';
+import s from './Burger.module.css';
 
 const Burger = ({ overlay, toggle }) => {
   return (
@@ -18,7 +19,7 @@ const Burger = ({ overlay, toggle }) => {
         <span
           role="img"
           aria-label="open menu"
-          className={s.burgerEmoji}
+          className={s['burger-emoji']}
         >
           🍔
         </span>

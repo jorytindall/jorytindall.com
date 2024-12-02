@@ -1,4 +1,4 @@
-import styles from 'styles/components/layout/GridWrapper.module.scss';
+import styles from './GridWrapper.module.css';
 
 interface GridWrapperProps {
 	children: React.ReactNode;

@@ -1,4 +1,4 @@
-import styles from 'styles/components/audio/Playlist.module.scss';
+import styles from './Playlist.module.css';
 
 export const ProgressBar = ({
 	progressBarRef,

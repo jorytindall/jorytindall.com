@@ -5,7 +5,7 @@ import { linkResolver } from 'utils/linkResolver';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { BentoBox, BentoItem } from 'components/bento';
 import { Headline, Paragraph } from 'components/typography';
-import styles from 'styles/pages/Music.module.scss';
+import styles from './Music.module.css';
 
 import type { Metadata } from 'next';
 

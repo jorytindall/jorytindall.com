@@ -1,4 +1,4 @@
-import styles from 'styles/components/layout/Container.module.scss';
+import styles from './Container.module.css';
 import { getClasses } from 'utils/getClasses';
 
 interface ContainerProps {

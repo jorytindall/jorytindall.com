@@ -1,4 +1,3 @@
-import { trackEvent } from 'fathom-client';
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
@@ -7,13 +6,13 @@ import { Person } from 'components/person';
 import { Button } from 'components/button';
 import { CenteredWrapper } from 'components/layout';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
-import styles from 'styles/pages/Music.module.scss';
+import styles from '../Music.module.css';
 
 // Revalidate pages every 60 seconds
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const page = await client.fetch(GET_MUSIC_PROJECTS, {
 		slug,
@@ -31,7 +30,7 @@ export async function generateStaticParams() {
 }
 
 export default async function MusicProject({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const page = await sanityClient.fetch(GET_MUSIC_PROJECTS, { slug });
 
 	const { title, moduleContent, musicians, pressKit } = page;
@@ -39,11 +38,6 @@ export default async function MusicProject({ params }) {
 	const pressKitUrl = pressKit
 		? getSanityFileUrl(pressKit.file.asset._ref)
 		: null;
-
-	const downloadEvent = () => {
-		trackEvent(`${title} press kit download`)
-		console.log('Download event fired');
-	}
 
 	return (
 		<>

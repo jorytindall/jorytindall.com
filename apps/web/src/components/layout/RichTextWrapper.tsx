@@ -1,5 +1,5 @@
 import { getClasses } from 'utils/getClasses';
-import styles from 'styles/components/layout/RichTextWrapper.module.scss';
+import styles from './RichTextWrapper.module.css';
 
 interface RichTextWrapperProps {
 	children: React.ReactNode;

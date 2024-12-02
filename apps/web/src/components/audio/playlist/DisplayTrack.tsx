@@ -1,6 +1,6 @@
 import { TbMusic } from 'react-icons/tb';
 import { getSanityFileUrl } from 'utils/getSanityFileUrl';
-import styles from 'styles/components/audio/Playlist.module.scss';
+import styles from './Playlist.module.css';
 
 interface DisplayTrackProps {
 	currentTrack: any;

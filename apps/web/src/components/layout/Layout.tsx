@@ -1,6 +1,6 @@
 'use client';
 
-import styles from 'styles/components/layout/Layout.module.scss';
+import styles from './Layout.module.css';
 import { motion } from 'framer-motion';
 
 interface LayoutProps {

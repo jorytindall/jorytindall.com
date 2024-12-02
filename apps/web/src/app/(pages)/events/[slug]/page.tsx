@@ -1,4 +1,3 @@
-import { format, parseISO } from 'date-fns';
 import { formatDate } from 'utils/datetimeFormat'
 import { sanityClient } from 'lib/sanity/sanityClient';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
@@ -6,13 +5,13 @@ import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { RichText } from 'components/rich-text';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
-import styles from 'styles/pages/Event.module.scss';
+import styles from './Event.module.css';
 
 // Revalidate events every minute
 export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const events = await client.fetch(GET_EVENTS, { slug });
 
@@ -28,7 +27,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Event({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const events = await sanityClient.fetch(GET_EVENTS, { slug });
 
 	const { title, date, description, location, url } = events;

@@ -1,4 +1,4 @@
-import styles from 'styles/components/form/ItemWrapper.module.scss';
+import styles from './ItemWrapper.module.css';
 
 interface ItemWrapperProps {
 	children: React.ReactNode;

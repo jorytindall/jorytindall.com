@@ -1,7 +1,7 @@
 import { Label } from './Label';
 import { ItemWrapper } from './ItemWrapper';
 import { Error } from './Error';
-import styles from 'styles/components/form/TextArea.module.scss';
+import styles from './TextArea.module.css';
 
 interface TextAreaProps {
 	name: string;

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Badge } from 'components/badge';
 import { Headline } from 'components/typography';
 import { getSanityImageUrl } from 'utils/getSanityImage';
-import s from 'styles/components/blog/BlogTitle.module.scss';
+import s from './BlogTitle.module.css';
 
 interface BlogTitleProps {
 	featuredImage: {

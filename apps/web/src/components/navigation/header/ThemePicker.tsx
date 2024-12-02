@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from "next-themes"
 import { getClasses } from 'utils/getClasses';
-import s from 'styles/components/navigation/NavTrigger.module.scss'
+import s from './ThemePicker.module.css'
 
 const ThemePicker = () => {
   const [mounted, setMounted] = useState(false)

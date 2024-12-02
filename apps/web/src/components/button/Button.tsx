@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import styles from 'styles/components/button/Button.module.scss';
+import styles from './Button.module.css';
 import { getClasses } from 'utils/getClasses';
 
 interface ButtonProps {

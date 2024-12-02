@@ -1,0 +1,107 @@
+/* Density variants */
+.density_default {
+	width: 100%;
+	padding: 2.5rem;
+}
+
+.density_packed {
+	width: 100%;
+	padding: 1rem;
+}
+
+.density_spacious {
+	width: 100%;
+	padding: 5rem;
+}
+
+.density_collapse {
+	width: 100%;
+	padding: 0rem;
+}
+
+/* Base flex class */
+.is-flex {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+/* Direction variants */
+.is-flex--column {
+	display: flex;
+	flex-direction: column;
+}
+
+.is-flex--row {
+	display: flex;
+	flex-direction: row;
+}
+
+/* Justify variants */
+.is-flex--normal {
+	justify-content: normal;
+}
+.is-flex--flex-start {
+	justify-content: flex-start;
+}
+.is-flex--center {
+	justify-content: center;
+}
+.is-flex--flex-end {
+	justify-content: flex-end;
+}
+.is-flex--space-between {
+	justify-content: space-between;
+}
+.is-flex--space-around {
+	justify-content: space-around;
+}
+
+/* Align variants */
+.is-flex--normal {
+	align-items: normal;
+}
+.is-flex--flex-start {
+	align-items: flex-start;
+}
+.is-flex--center {
+	align-items: center;
+}
+.is-flex--flex-end {
+	align-items: flex-end;
+}
+
+/* Gap variants */
+.is-flex--small {
+	gap: 0.5rem;
+}
+.is-flex--default {
+	gap: 1rem;
+}
+.is-flex--large {
+	gap: 1.5rem;
+}
+.is-flex--extra-large {
+	gap: 2.5rem;
+}
+
+/* Text alignment */
+.text-align--left * {
+	text-align: left !important;
+}
+.text-align--center * {
+	text-align: center !important;
+}
+.text-align--right * {
+	text-align: right !important;
+}
+
+/* Media query for density */
+@media (max-width: 786px) {
+	.density_default,
+	.density_packed,
+	.density_spacious,
+	.density_collapse {
+		padding: 0.5rem;
+	}
+}

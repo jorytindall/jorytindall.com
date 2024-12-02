@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
 import { formatDate } from 'utils/datetimeFormat';
-import styles from 'styles/components/EventList.module.scss';
+import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
 
@@ -15,18 +15,23 @@ export const EventList = ({ events }) => {
 								href={linkResolver('event', event.slug)}
 								className={styles.content}
 							>
-								<p className={styles.title}>
-									<strong>{event.title}</strong>
-								</p>
-								<p className={styles.date}>
-									{formatDate(event.date, 'America/Los_Angeles')}
-								</p>
+								<div className={styles.main}>
+									<p className={styles.title}>
+										<strong>{event.title}</strong>
+									</p>
+									<p className={styles.date}>
+										{formatDate(event.date, 'America/Los_Angeles')}
+									</p>
+								</div>
+								<div className={styles.secondary}>
+									<p className={styles.location}>{event.location}</p>
+								</div>
 							</Link>
 						</div>
 					);
 				})
 			) : (
-				<p className={styles.noEvents}>
+				<p className={styles['no-events']}>
 					No upcoming events, check back soon!
 				</p>
 			)}

@@ -11,7 +11,7 @@ export const revalidate = 60;
 
 // Generate metadata
 export async function generateMetadata({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const client = sanityClient;
 	const page = await client.fetch(GET_PAGES, {
 		slug,
@@ -31,7 +31,7 @@ export async function generateStaticParams() {
 
 // Generate page
 export default async function Page({ params }) {
-	const { slug } = params;
+	const { slug } = await params;
 	const page = await sanityClient.fetch(GET_PAGES, { slug });
 
 	const { title, megaHeadline, moduleContent } = page;

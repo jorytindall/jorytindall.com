@@ -1,0 +1,111 @@
+/* Base button styles that are shared across variants */
+.primary,
+.secondary,
+.inverse {
+    font-family: var(--typography-font-family-headline);
+    font-weight: 300;
+    border-radius: 64px;
+    border-width: 2px;
+    border-style: solid;
+    width: fit-content;
+    display: block;
+    transition: all 0.05s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Primary button styles */
+.primary {
+    color: var(--color-core-neutral-100);
+    background: var(--color-core-primary-300);
+    border-color: var(--color-core-primary-300);
+}
+
+.primary:hover {
+    color: var(--color-core-neutral-100);
+    background: var(--color-core-primary-400);
+    border-color: var(--color-core-primary-400);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.primary:active {
+    background: var(--color-core-primary-500);
+    border-color: var(--color-core-primary-500);
+    transform: translateY(0px);
+}
+
+/* Secondary button styles */
+.secondary {
+    color: var(--color-core-primary-300);
+    background: transparent;
+    border-color: var(--color-core-primary-300);
+}
+
+.secondary:hover {
+    color: var(--color-core-neutral-100);
+    background: var(--color-core-primary-400);
+    border-color: var(--color-core-primary-400);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.secondary:active {
+    background: var(--color-core-primary-500);
+    border-color: var(--color-core-primary-500);
+    transform: translateY(0px);
+}
+
+/* Inverse button styles */
+.inverse {
+    color: var(--color-core-neutral-100);
+    background: transparent;
+    border-color: var(--color-core-neutral-100);
+}
+
+.inverse:hover {
+    color: var(--color-core-neutral-600);
+    background: var(--color-core-neutral-100);
+    border-color: var(--color-core-neutral-200);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.inverse:active {
+    background: var(--color-core-neutral-200);
+    border-color: var(--color-core-neutral-300);
+    transform: translateY(0px);
+}
+
+/* Button size variations */
+.small {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    line-height: 0.75rem;
+}
+
+.default {
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1rem;
+}
+
+.large {
+    font-size: 1.25rem;
+    padding: 1.25rem;
+    line-height: 1.25rem;
+}
+
+/* Width modifier */
+.full-width {
+    width: 100%;
+}
+
+/* Responsive behavior */
+@media (max-width: 400px) {
+    .primary,
+    .secondary,
+    .inverse {
+        width: 100%;
+    }
+}

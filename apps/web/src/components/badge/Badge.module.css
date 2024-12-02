@@ -1,0 +1,44 @@
+/* Base badge styling that all variants will inherit */
+.badge-base {
+	padding: 4px 16px;
+	width: fit-content;
+	height: fit-content;
+	font-family: var(--typography-font-family-body);
+	font-size: 1rem;
+	line-height: 1.7;
+	font-weight: 400;
+	letter-spacing: 0.25px;
+	border-radius: 20px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/* Type */
+
+.primary {
+	composes: badge-base;
+	color: var(--color-core-primary-300);
+	border-color: var(--color-core-primary-300);
+	background: none;
+}
+
+.secondary {
+	composes: badge-base;
+	color: var(--color-core-neutral-600);
+	border-color: var(--color-core-neutral-600);
+	background: transparent;
+}
+
+.tertiary {
+	composes: badge-base;
+	color: var(--color-core-tertiary-500);
+	border-color: var(--color-core-tertiary-500);
+	background: transparent;
+}
+
+.inverse {
+	composes: badge-base;
+	color: var(--color-core-neutral-600);
+	border-color: transparent;
+	background: var(--color-core-neutral-100);
+}

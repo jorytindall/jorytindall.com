@@ -1,0 +1,13 @@
+.link-wrapper {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	align-self: flex-end;
+	flex-grow: 1;
+	list-style-type: none;
+	list-style-image: none;
+
+	@media (max-width: 768px) {
+		padding: 0;
+	}
+}

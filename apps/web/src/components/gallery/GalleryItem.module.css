@@ -1,0 +1,44 @@
+.wrapper {
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	text-decoration: none;
+	color: var(--color-semantic-foreground-primary);
+	transition: transform 0.1s ease-in;
+	position: relative;
+}
+
+.wrapper:hover p {
+	color: var(--color-semantic-foreground-brand);
+}
+
+/* Target our new expandIcon class instead of trying to target Expand's internal class */
+.wrapper:hover .expandIcon {
+	opacity: 1;
+}
+
+.wrapper:hover .imageWrapper {
+	transform: translateY(-2px);
+	border: 2px solid var(--color-semantic-border-brand);
+}
+
+.imageWrapper {
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	border-radius: 5px;
+	transition: 
+			transform 0.1s ease-in-out,
+			border 0.1s ease-in-out;
+	border: 2px solid transparent;
+}
+
+.image {
+	object-fit: cover;
+}
+
+/* New class that will be passed to Expand component */
+.expandIcon {
+	opacity: 0;
+}

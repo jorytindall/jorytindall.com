@@ -1,5 +1,5 @@
 import { getClasses } from 'utils/getClasses';
-import styles from 'styles/components/bento/BentoBox.module.scss';
+import styles from './BentoBox.module.css';
 
 interface BentoBoxProps {
 	children: React.ReactNode;
