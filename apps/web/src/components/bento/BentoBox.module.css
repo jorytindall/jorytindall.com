@@ -12,5 +12,5 @@
 }
 
 .isFullBleed {
-	min-height: calc(100vh - 134px);
+	min-height: calc(100dvh - 172px);
 }
