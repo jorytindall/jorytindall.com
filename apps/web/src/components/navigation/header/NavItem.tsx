@@ -25,6 +25,7 @@ const NavItem = ({ slug, text }) => {
   return (
     <motion.li 
       variants={item}
+      // @ts-ignore
       className={styles['nav-item--li']}
     >
       <Link 
