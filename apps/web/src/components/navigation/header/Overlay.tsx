@@ -30,6 +30,7 @@ export const Overlay = ({ overlay, links }: OverlayProps) => {
 			variants={overlayAnimation}
 			initial="hidden"
 			animate={overlay ? "enter" : "hidden"}
+			// @ts-ignore
 			className={getOverlayClass}
 		>
 			<NavLinks overlay={overlay}>

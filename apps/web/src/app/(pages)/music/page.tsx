@@ -26,7 +26,6 @@ export default async function MusicPage() {
 		const image = getSanityImageUrl(musicProject.image.asset._ref);
 		const link = linkResolver('musicProject', slug);
 
-
 		return (
 			<BentoItem
 				key={title}
@@ -38,6 +37,8 @@ export default async function MusicPage() {
 				href={link}
 				image={image}
 				imagePosition="top"
+				imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+				altText={musicProject.image.alternativeText}
 			>
 				<Headline tag='h2' size='h4' color='secondary' collapse>{musicProject.title}</Headline>
 				<Paragraph>{description}</Paragraph>

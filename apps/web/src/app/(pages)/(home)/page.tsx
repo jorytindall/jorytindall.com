@@ -27,7 +27,7 @@ export default async function Home() {
 	const currentEvents = getCurrentEvents(homePage);
 
 	return (
-		<BentoBox>
+		<BentoBox isFullBleed>
 			<HomeIntroduction />
 			{currentEvents.length > 0 ?
 				(<HomeEvents events={currentEvents} />) : null
