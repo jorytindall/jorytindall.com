@@ -19,6 +19,7 @@ const NavLinks = ({ children, overlay }) => {
       variants={staggerItems}
       initial="hidden"
       animate={overlay ? "enter" : "hidden"}
+      // @ts-ignore
       className={styles['link-wrapper']}
     >
       {children}
