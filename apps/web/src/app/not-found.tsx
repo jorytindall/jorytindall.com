@@ -22,8 +22,8 @@ export default function NotFound() {
       gap="default"
       semanticElement="section"
     >
-      <Image src='/images/not-found-confused.gif' width={480} height={270} alt="Not found" />
-      <Headline color="primary" collapse>404</Headline>
+      <Image src='/images/not-found-confused.gif' unoptimized width={480} height={270} alt="Not found" />
+      <Headline color="primary" tag='h1' size='h1' collapse>404 🤷‍♂️</Headline>
       <Paragraph collapse>Sorry, couldn&apos;t find that page.</Paragraph>
       <TextArrow href="/">Go back home</TextArrow>
     </Container>
