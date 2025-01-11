@@ -10,7 +10,7 @@ export const EventList = ({ events }) => {
 			{events.length > 0 ? (
 				events.map((event) => {
 					return (
-						<div className={styles.event} key={event._id}>
+						<div className={styles.event} key={event.slug}>
 							<Link
 								href={linkResolver('event', event.slug)}
 								className={styles.content}
@@ -20,7 +20,7 @@ export const EventList = ({ events }) => {
 										<strong>{event.title}</strong>
 									</p>
 									<p className={styles.date}>
-										{formatDate(event.date, 'America/Los_Angeles')}
+										{formatDate(event.startDate, 'America/Los_Angeles')}
 									</p>
 								</div>
 								<div className={styles.secondary}>

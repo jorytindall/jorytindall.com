@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-// import createMDX from '@next/mdx';
 
 const nextConfig = {
 	reactStrictMode: true,
@@ -18,16 +17,8 @@ const nextConfig = {
 	},
 };
 
-const withMDX = require('@next/mdx')({
-	extension: /\.mdx?$/,
-	options: {
-		remarkPlugins: [],
-		rehypePlugins: [],
-	},
-});
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer(withMDX(nextConfig));
+module.exports = withBundleAnalyzer(nextConfig);

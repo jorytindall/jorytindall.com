@@ -4,7 +4,7 @@ import styles from './InlineLink.module.css';
 
 interface LinkProps {
 	type: string;
-	href: string;
+	href: any;
 	children: React.ReactNode;
 	target?: '_self' | '_blank' | '_parent' | '_top';
 	rel?: string;
