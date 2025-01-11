@@ -4,14 +4,15 @@ import path from 'path';
 import { EventFrontmatter } from 'types/event';
 import { formatDate } from 'utils/datetimeFormat'
 import { Headline, Paragraph, InlineLink } from 'components/typography';
-// import { RichText } from 'components/rich-text';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Event.module.css';
 
 export async function generateMetadata({ params }: { params: { slug: string }}) {
+	const { slug } = await params;
+
 	const data = await compileMDX<EventFrontmatter>({
-		source: await fs.readFile(path.join(process.cwd(), 'src/content/events', `${params.slug}.mdx`), 'utf-8'),
+		source: await fs.readFile(path.join(process.cwd(), 'src/content/events', `${slug}.mdx`), 'utf-8'),
 		options: {
 			parseFrontmatter: true,
 		},
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: { params: { slug: string }}) 
 }
 
 export default async function Event({ params }: { params: { slug: string }}) {
-
-	const content = await fs.readFile(path.join(process.cwd(), 'src/content/events', `${params.slug}.mdx`), 'utf-8');
+	const { slug } = await params;
+	
+	const content = await fs.readFile(path.join(process.cwd(), 'src/content/events', `${slug}.mdx`), 'utf-8');
 
 	const data = await compileMDX<EventFrontmatter>({
 		source: content,
