@@ -8,7 +8,7 @@ import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Event.module.css';
 
-export async function generateMetadata({ params }: { params: { slug: string }}) {
+export async function generateMetadata({ params }) {
 	const { slug } = await params;
 
 	const data = await compileMDX<EventFrontmatter>({
@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: { params: { slug: string }}) 
 	};
 }
 
-export default async function Event({ params }: { params: { slug: string }}) {
+export default async function Event({ params }) {
 	const { slug } = await params;
-	
+
 	const content = await fs.readFile(path.join(process.cwd(), 'src/content/events', `${slug}.mdx`), 'utf-8');
 
 	const data = await compileMDX<EventFrontmatter>({
