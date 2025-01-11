@@ -44,43 +44,45 @@ export default async function Events() {
 		};
 	}))
 
+	console.log(events)
+
 	const currentEvents = getCurrentEvents(events);
 
-	const filterEvents =
-		currentEvents.length > 0 ? (
-			currentEvents.map((event) => {
+	// const filterEvents =
+	// 	currentEvents.length > 0 ? (
+	// 		currentEvents.map((event) => {
 
-				const { title, location, startDate, slug } = event;
+	// 			const { title, location, startDate, slug } = event;
 
-				const eventLink = linkResolver('event', slug);
-				const eventDate = format(parseISO(startDate), 'MMMM do, yyyy');
+	// 			const eventLink = linkResolver('event', slug);
+	// 			const eventDate = format(parseISO(startDate), 'MMMM do, yyyy');
 
-				return (
-					<ListItem
-						title={title}
-						link={eventLink}
-						key={slug}
-					>
-						<Paragraph type="primary" color='secondary' collapse>
-							<strong>Location: </strong>
-							{location}
-						</Paragraph>
-						<Paragraph type="primary" color='secondary' collapse>
-							<strong>Date: </strong>
-							{eventDate}
-						</Paragraph>
-					</ListItem>
-				);
-			})
-		) : (
-			<Paragraph color='secondary' collapse>No upcoming events, check back soon!</Paragraph>
-		);
+	// 			return (
+	// 				<ListItem
+	// 					title={title}
+	// 					link={eventLink}
+	// 					key={slug}
+	// 				>
+	// 					<Paragraph type="primary" color='secondary' collapse>
+	// 						<strong>Location: </strong>
+	// 						{location}
+	// 					</Paragraph>
+	// 					<Paragraph type="primary" color='secondary' collapse>
+	// 						<strong>Date: </strong>
+	// 						{eventDate}
+	// 					</Paragraph>
+	// 				</ListItem>
+	// 			);
+	// 		})
+	// 	) : (
+	// 		<Paragraph color='secondary' collapse>No upcoming events, check back soon!</Paragraph>
+	// 	);
 
 	return (
 		<>
 			<PageTitle title="🗓 Events" megaTitle="Upcoming Events" />
 			<CenteredWrapper semanticElement="section">
-				{filterEvents}
+				{/* {filterEvents} */}
 				<Container
 					semanticElement="section"
 				>
