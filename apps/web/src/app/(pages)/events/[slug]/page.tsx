@@ -37,7 +37,8 @@ export default async function Event({ params }) {
 	})
 
 	const { title, startDate, endDate, location, url } = data.frontmatter;
-	
+
+	console.log(startDate)
 
 	return (
 		<GridWrapper>
