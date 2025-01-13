@@ -9,7 +9,6 @@ import {
   Link,
   Hr,
 } from '@react-email/components';
-import * as React from 'react';
 
 type ContactEmailProps = {
   name: string;
