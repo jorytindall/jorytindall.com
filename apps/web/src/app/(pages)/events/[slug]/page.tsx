@@ -8,6 +8,9 @@ import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Event.module.css';
 
+import { format } from 'date-fns';
+import { TZDate } from '@date-fns/tz';
+
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
 
@@ -38,8 +41,6 @@ export default async function Event({ params }) {
 
 	const { title, startDate, endDate, location, url } = data.frontmatter;
 
-	console.log(startDate)
-
 	return (
 		<GridWrapper>
 			<section className={styles.wrapper}>
@@ -47,7 +48,7 @@ export default async function Event({ params }) {
 					{title}
 				</Headline>
 				<Paragraph color='secondary' collapse>
-					{formatDate(startDate, 'MMMM do, yyyy, K:mmbbb', 'America/Los_Angeles')} at{' '}
+					{formatDate(startDate, 'MMMM do, yyyy, K:mmbbb', 'America/New_York')} at {' '}
 					<InlineLink href={url} type="external">
 						{location}
 					</InlineLink>
