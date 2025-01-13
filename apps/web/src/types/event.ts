@@ -9,8 +9,6 @@ export interface EventFrontmatter {
   project?: string
   startDate: string
   endDate: string
-  startTime: string
-  endTime: string
   location: string
   url?: string
   image?: EventImage
