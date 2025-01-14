@@ -9,7 +9,7 @@ import { TZDate } from '@date-fns/tz';
 // };
 
 // Catch-all function to format the date, time, and timezone
-export const formatDate = (date: string, dateFormat: string, timeZone: string) => {
+export const formatDate = (date: string, dateFormat: string, timeZone?: string) => {
   const isoDate = parseISO(date);
   return format(new TZDate(isoDate, timeZone), dateFormat);
 }

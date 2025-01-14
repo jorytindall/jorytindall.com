@@ -48,7 +48,7 @@ export default async function Event({ params }) {
 					{title}
 				</Headline>
 				<Paragraph color='secondary' collapse>
-					{formatDate(startDate, 'MMMM do, yyyy, K:mmbbb', 'America/Los_Angeles')} at {' '}
+					{formatDate(startDate, 'MMMM do, yyyy, K:mmbbb')} at {' '}
 					<InlineLink href={url} type="external">
 						{location}
 					</InlineLink>
