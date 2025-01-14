@@ -1,6 +1,8 @@
-import { format, parseISO } from 'date-fns';
-import { sanityClient } from 'lib/sanity/sanityClient';
-import { GET_ALL_TALKS } from 'lib/queries';
+import { promises as fs } from 'fs';
+import path from 'path'
+import { compileMDX } from 'next-mdx-remote/rsc';
+import { SpeakingFrontmatter } from 'types/speaking';
+import { formatDate } from 'utils/datetimeFormat'
 import { PageTitle } from 'components/page-title';
 import { CenteredWrapper } from 'components/layout';
 import { linkResolver } from 'utils/linkResolver';
@@ -9,22 +11,37 @@ import { Paragraph } from 'components/typography';
 
 import type { Metadata } from 'next';
 
-// Revalidate talks every minute
-export const revalidate = 60;
-
 export const metadata: Metadata = {
 	title: 'Talks | Jory Tindall',
 	description: 'Speaking engagements and conference talks',
 };
 
 export default async function TalksPage() {
-	const client = sanityClient;
-	const talks = await client.fetch(GET_ALL_TALKS);
+	const files = await fs.readdir(path.join(process.cwd(), 'src/content/speaking'));
 
-	const renderTalks = talks.map((talk) => {
+	const speaking = await Promise.all(files.map(async (file) => {
+		const content = await fs.readFile(
+			path.join(process.cwd(), 'src/content/speaking', file),
+			'utf-8'
+		);
+
+		const { frontmatter } = await compileMDX<SpeakingFrontmatter>({
+			source: content,
+			options: {
+				parseFrontmatter: true,
+			},
+		});
+
+		return {
+			filename: file,
+			...frontmatter,
+		};
+	}))
+
+	const renderTalks = speaking.map((talk) => {
 		return (
 			<ListItem
-				key={talk._id}
+				key={talk.slug}
 				title={talk.title}
 				link={linkResolver('speaking', talk.slug)}
 			>
@@ -32,9 +49,9 @@ export default async function TalksPage() {
 					{talk.description}
 				</Paragraph>
 				<Paragraph type="secondary" collapse>
-					Given at <strong>{talk.conference}</strong> on{' '}
+					Given at <strong>{talk.conference.title}</strong> on{' '}
 					<strong>
-						{format(parseISO(talk.date), 'MMMM do, yyyy')}
+						{formatDate(talk.date, 'MMMM do, yyyy')}
 					</strong>
 				</Paragraph>
 			</ListItem>

@@ -8,9 +8,6 @@ import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Event.module.css';
 
-import { format } from 'date-fns';
-import { TZDate } from '@date-fns/tz';
-
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
 
