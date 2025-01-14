@@ -1,3 +1,7 @@
+import { promises as fs } from 'fs';
+import { compileMDX } from 'next-mdx-remote/rsc';
+import path from 'path';
+import { SpeakingFrontmatter } from 'types/speaking';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import { sanityClient } from 'lib/sanity/sanityClient';
@@ -9,41 +13,49 @@ import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Talk.module.css';
 
-// Revalidate events every minute
-export const revalidate = 60;
-
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const client = sanityClient;
-	const talk = await client.fetch(GET_TALKS, {
-		slug,
-	});
+
+	const data = await compileMDX<SpeakingFrontmatter>({
+		source: await fs.readFile(path.join(process.cwd(), 'src/content/speaking', `${slug}.mdx`), 'utf-8'),
+		options: {
+			parseFrontmatter: true,
+		}
+	})
 
 	return {
-		title: `${talk.title} | Jory Tindall`,
+		title: `${data.frontmatter.title} | Jory Tindall`,
 	};
 }
 
-export async function generateStaticParams() {
-	const client = sanityClient;
-	const slugs = await client.fetch(GET_TALK_PATHS);
-	return slugs.map((slug) => ({ slug }));
-}
+// export async function generateStaticParams() {
+// 	const client = sanityClient;
+// 	const slugs = await client.fetch(GET_TALK_PATHS);
+// 	return slugs.map((slug) => ({ slug }));
+// }
 
 export default async function Talk({ params }) {
 	const { slug } = await params;
-	const talk = await sanityClient.fetch(GET_TALKS, { slug });
+
+	const content = await fs.readFile(path.join(process.cwd(), 'src/content/speaking', `${slug}.mdx`), 'utf-8');
+
+	const data = await compileMDX<SpeakingFrontmatter>({
+		source: content,
+		options: {
+			parseFrontmatter: true,
+		},
+		components: {}
+	})
 
 	const {
 		title,
 		conference,
-		conferenceLink,
+		description,
 		date,
-		link,
 		deck,
-		moduleContent,
 		image,
-	} = talk;
+		url
+	} = data.frontmatter;
 
 	return (
 		<GridWrapper>
@@ -52,9 +64,8 @@ export default async function Talk({ params }) {
 					<div className={styles.imageWrapper}>
 						<Image
 							fill
-							// @ts-ignore
-							src={getSanityImageUrl(image)}
-							alt={image.alternativeText}
+							src={image.asset}
+							alt={image.alt}
 						/>
 					</div>
 				)}
@@ -66,14 +77,14 @@ export default async function Talk({ params }) {
 					)}
 					<Paragraph type="secondary" collapse>
 						Given at{' '}
-						<a href={conferenceLink} target="blank">
-							{conference}
+						<a href={conference.url} target="blank">
+							{conference.title}
 						</a>{' '}
 						on {format(parseISO(date), 'MMMM do, yyyy')}
 					</Paragraph>
 					<div className={styles.actions}>
-						{link && (
-							<Button variant="primary" href={link}>
+						{url && (
+							<Button variant="primary" href={url}>
 								See the talk
 							</Button>
 						)}
@@ -83,8 +94,8 @@ export default async function Talk({ params }) {
 							</Button>
 						)}
 					</div>
+					{data.content}
 				</div>
-				{moduleContent && <ModuleRenderer modules={moduleContent} />}
 			</div>
 		</GridWrapper>
 	);
