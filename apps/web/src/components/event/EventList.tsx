@@ -9,22 +9,23 @@ export const EventList = ({ events }) => {
 		<div className={styles.wrapper}>
 			{events.length > 0 ? (
 				events.map((event) => {
+					const { title, location, startDate, slug } = event;
 					return (
-						<div className={styles.event} key={event._id}>
+						<div className={styles.event} key={slug}>
 							<Link
-								href={linkResolver('event', event.slug)}
+								href={linkResolver('event', slug)}
 								className={styles.content}
 							>
 								<div className={styles.main}>
 									<p className={styles.title}>
-										<strong>{event.title}</strong>
+										<strong>{title}</strong>
 									</p>
 									<p className={styles.date}>
-										{formatDate(event.date, 'America/Los_Angeles')}
+										{formatDate(startDate, 'MMM dd, yyyy', 'America/Los_Angeles')}
 									</p>
 								</div>
 								<div className={styles.secondary}>
-									<p className={styles.location}>{event.location}</p>
+									<p className={styles.location}>{location}</p>
 								</div>
 							</Link>
 						</div>
