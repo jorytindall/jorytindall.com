@@ -106,6 +106,9 @@ importers:
       '@date-fns/tz':
         specifier: ^1.2.0
         version: 1.2.0
+      '@mdx-js/react':
+        specifier: ^3.1.0
+        version: 3.1.0(@types/react@19.0.4)(react@19.0.0)
       '@next/bundle-analyzer':
         specifier: ^15.1.4
         version: 15.1.4

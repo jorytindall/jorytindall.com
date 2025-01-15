@@ -15,6 +15,7 @@ const nextConfig = {
 		locales: ['en'],
 		defaultLocale: 'en',
 	},
+	transpilePackages: ['next-mdx-remote'],
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

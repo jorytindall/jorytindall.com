@@ -4,11 +4,7 @@ import path from 'path';
 import { SpeakingFrontmatter } from 'types/speaking';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
-import { sanityClient } from 'lib/sanity/sanityClient';
-import { getSanityImageUrl } from 'utils/getSanityImage';
-import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
 import { Headline, Paragraph } from 'components/typography';
-import { ModuleRenderer } from 'components/module-renderer';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Talk.module.css';
@@ -27,12 +23,6 @@ export async function generateMetadata({ params }) {
 		title: `${data.frontmatter.title} | Jory Tindall`,
 	};
 }
-
-// export async function generateStaticParams() {
-// 	const client = sanityClient;
-// 	const slugs = await client.fetch(GET_TALK_PATHS);
-// 	return slugs.map((slug) => ({ slug }));
-// }
 
 export default async function Talk({ params }) {
 	const { slug } = await params;
