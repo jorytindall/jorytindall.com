@@ -1,18 +1,19 @@
-import { promises as fs } from 'fs'
-import { compileMDX } from 'next-mdx-remote/rsc'
-import path from 'path'
-import { EventFrontmatter } from 'types/event'
+import { sanityClient } from 'lib/sanity/sanityClient';
+import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 
-// Import page sections
+// Page content
 import HomeIntroduction from './Introduction';
 import HomeEvents from './Events';
 import HomePortfolio from './Portfolio';
 import HomeMusic from './Music';
-import HomeContact from './HomeContact';
 
 import type { Metadata } from 'next';
+import HomeContact from './HomeContact';
+
+// Revalidate events every minute
+export const revalidate = 60;
 
 export const metadata: Metadata = {
 	title: 'Jory Tindall | Designer, saxophone artist, educator.',
@@ -21,25 +22,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+	const homePage = await sanityClient.fetch(GET_HOMEPAGE_DATA);
 
-	const files = await fs.readdir(path.join(process.cwd(), 'src/content/events'));
-	const events = await Promise.all(files.map(async (file) => {
-		const { frontmatter } = await compileMDX<EventFrontmatter>({
-			source: await fs.readFile(path.join(process.cwd(), 'src/content/events', file), 'utf-8'),
-			options: {
-				parseFrontmatter: true,
-			},
-		})
-		return {
-			filename: file,
-			...frontmatter,
-		}
-	}))
-
-	const currentEvents = getCurrentEvents(events);
+	const currentEvents = getCurrentEvents(homePage);
 
 	return (
-		<BentoBox isFullBleed>
+		<BentoBox>
 			<HomeIntroduction />
 			{currentEvents.length > 0 ?
 				(<HomeEvents events={currentEvents} />) : null

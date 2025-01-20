@@ -1,45 +1,36 @@
-import { compileMDX } from 'next-mdx-remote/rsc';
-import { promises as fs } from 'fs';
-import path from 'path';
-import { EventFrontmatter } from 'types/event';
-import { formatDate } from 'utils/datetimeFormat'
+import { format, parseISO } from 'date-fns';
+import { sanityClient } from 'lib/sanity/sanityClient';
+import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
+import { RichText } from 'components/rich-text';
 import { GridWrapper } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './Event.module.css';
 
-import { format } from 'date-fns';
-import { TZDate } from '@date-fns/tz';
+// Revalidate events every minute
+export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-
-	const data = await compileMDX<EventFrontmatter>({
-		source: await fs.readFile(path.join(process.cwd(), 'src/content/events', `${slug}.mdx`), 'utf-8'),
-		options: {
-			parseFrontmatter: true,
-		},
-	})
+	const client = sanityClient;
+	const events = await client.fetch(GET_EVENTS, { slug });
 
 	return {
-		title: `${data.frontmatter.title} | Jory Tindall`,
+		title: `${events.title} | Jory Tindall`,
 	};
+}
+
+export async function generateStaticParams() {
+	const client = sanityClient;
+	const slugs = await client.fetch(GET_EVENT_PATHS);
+	return slugs.map((slug) => ({ slug }));
 }
 
 export default async function Event({ params }) {
 	const { slug } = await params;
+	const events = await sanityClient.fetch(GET_EVENTS, { slug });
 
-	const content = await fs.readFile(path.join(process.cwd(), 'src/content/events', `${slug}.mdx`), 'utf-8');
-
-	const data = await compileMDX<EventFrontmatter>({
-		source: content,
-		options: {
-			parseFrontmatter: true
-		},
-		components: {}
-	})
-
-	const { title, startDate, endDate, location, url } = data.frontmatter;
+	const { title, date, description, location, url } = events;
 
 	return (
 		<GridWrapper>
@@ -48,12 +39,12 @@ export default async function Event({ params }) {
 					{title}
 				</Headline>
 				<Paragraph color='secondary' collapse>
-					{formatDate(startDate, 'MMMM do, yyyy, K:mmbbb')} at {' '}
+					{format(parseISO(date), 'MMMM do, yyyy')} at{' '}
 					<InlineLink href={url} type="external">
 						{location}
 					</InlineLink>
 				</Paragraph>
-				{data.content}
+				{description && <RichText value={description.content} />}
 				<Button href={url}>More information</Button>
 			</section>
 		</GridWrapper>
