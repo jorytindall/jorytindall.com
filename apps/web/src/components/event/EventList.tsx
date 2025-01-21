@@ -9,30 +9,24 @@ export const EventList = ({ events }) => {
 		<div className={styles.wrapper}>
 			{events.length > 0 ? (
 				events.map((event) => {
-					const { title, location, startDate, slug } = event;
 					return (
-						<div className={styles.event} key={slug}>
+						<div className={styles.event} key={event._id}>
 							<Link
-								href={linkResolver('event', slug)}
+								href={linkResolver('event', event.slug)}
 								className={styles.content}
 							>
-								<div className={styles.main}>
-									<p className={styles.title}>
-										<strong>{title}</strong>
-									</p>
-									<p className={styles.date}>
-										{formatDate(startDate, 'MMM dd, yyyy', 'America/Los_Angeles')}
-									</p>
-								</div>
-								<div className={styles.secondary}>
-									<p className={styles.location}>{location}</p>
-								</div>
+								<p className={styles.title}>
+									<strong>{event.title}</strong>
+								</p>
+								<p className={styles.date}>
+									{formatDate(event.date)}
+								</p>
 							</Link>
 						</div>
 					);
 				})
 			) : (
-				<p className={styles['no-events']}>
+				<p className={styles.noEvents}>
 					No upcoming events, check back soon!
 				</p>
 			)}

@@ -1,8 +1,6 @@
-import { promises as fs } from 'fs';
-import path from 'path'
-import { compileMDX } from 'next-mdx-remote/rsc';
-import { EventFrontmatter } from 'types/event';
+import { sanityClient } from 'lib/sanity/sanityClient';
 import { format, parseISO } from 'date-fns';
+import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 import { PageTitle } from 'components/page-title';
 import { CenteredWrapper } from 'components/layout';
@@ -23,26 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Events() {
-	const files = await fs.readdir(path.join(process.cwd(), 'src/content/events'));
-
-	const events = await Promise.all(files.map(async (file) => {
-		const content = await fs.readFile(
-			path.join(process.cwd(), 'src/content/events', file),
-			'utf-8'
-		);
-
-		const { frontmatter } = await compileMDX<EventFrontmatter>({
-			source: content,
-			options: {
-				parseFrontmatter: true,
-			},
-		});
-
-		return {
-			filename: file,
-			...frontmatter,
-		};
-	}))
+	const client = sanityClient;
+	const events = await client.fetch(GET_ALL_EVENTS);
 
 	const currentEvents = getCurrentEvents(events);
 
@@ -50,16 +30,16 @@ export default async function Events() {
 		currentEvents.length > 0 ? (
 			currentEvents.map((event) => {
 
-				const { title, location, startDate, slug } = event;
+				const { title, location, date, slug, _id } = event;
 
 				const eventLink = linkResolver('event', slug);
-				const eventDate = format(parseISO(startDate), 'MMMM do, yyyy');
+				const eventDate = format(parseISO(date), 'MMMM do, yyyy');
 
 				return (
 					<ListItem
 						title={title}
 						link={eventLink}
-						key={slug}
+						key={_id}
 					>
 						<Paragraph type="primary" color='secondary' collapse>
 							<strong>Location: </strong>
