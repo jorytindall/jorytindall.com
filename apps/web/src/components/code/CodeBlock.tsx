@@ -1,36 +1,46 @@
-import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
-// import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+'use client'
+
+import { CopyBlock, atomOneDark } from 'react-code-blocks';
 import { Paragraph } from 'components/typography';
 import { getClasses } from 'utils/getClasses';
 import styles from './CodeBlock.module.css';
-
-const SyntaxHighlighter = (Prism as any) as React.FC<SyntaxHighlighterProps>;
 
 interface CodeProps {
 	code: string;
 	description?: string;
 	language: string;
+	showLineNumbers?: boolean;
+	startingLineNumber?: number;
+	wrapLines?: boolean;
 }
 
-export const CodeBlock = ({ code, description, language }: CodeProps) => {
+export const CodeBlock = ({
+	code,
+	description,
+	language,
+	showLineNumbers = true,
+	startingLineNumber = 1,
+	wrapLines = false,
+}: CodeProps) => {
 	const classes = getClasses([styles.wrapper]);
 
+	// Bit 'o custom styling for the wrapper
 	const codeWrapperStyles = {
-		padding: '1.5rem',
-		borderRadius: '10px',
-		boxShadow: '0px 0px 24px 0px rgba(0,0,0,0.05)',
+		fontFamily: 'Fira Code, monospace',
 	};
 
 	return (
 		<section className={classes}>
-			<SyntaxHighlighter
+			<CopyBlock
+				text={code}
 				language={language}
-				style={atomOneDark}
+				showLineNumbers={showLineNumbers}
+				startingLineNumber={startingLineNumber}
+				theme={atomOneDark}
 				customStyle={codeWrapperStyles}
-			>
-				{code}
-			</SyntaxHighlighter>
+				wrapLongLines={wrapLines}
+				codeBlock
+			/>
 			{description && (
 				<Paragraph type="secondary" collapse>
 					{description}
