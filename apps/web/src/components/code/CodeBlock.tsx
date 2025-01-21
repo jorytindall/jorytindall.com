@@ -1,8 +1,11 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
+// import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { Paragraph } from 'components/typography';
 import { getClasses } from 'utils/getClasses';
 import styles from './CodeBlock.module.css';
+
+const SyntaxHighlighter = (Prism as any) as React.FC<SyntaxHighlighterProps>;
 
 interface CodeProps {
 	code: string;
