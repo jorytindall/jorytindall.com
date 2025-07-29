@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import {
 	GET_PORTFOLIO_PROJECTS,
 	GET_PORTFOLIO_PROJECT_PATHS,

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 
 import { PageTitle } from 'components/page-title';

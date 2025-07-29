@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
 import { Headline, Paragraph } from 'components/typography';

@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_ALL_MUSIC_PROJECTS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { linkResolver } from 'utils/linkResolver';

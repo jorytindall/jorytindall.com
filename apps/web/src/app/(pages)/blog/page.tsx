@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_ALL_BLOG_POSTS } from 'lib/queries';
 import { linkResolver } from 'utils/linkResolver';
 import { ListItem } from 'components/list';

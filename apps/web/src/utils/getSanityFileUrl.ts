@@ -1,5 +1,5 @@
 import { getFileAsset } from '@sanity/asset-utils';
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 
 export function getSanityFileUrl(assetRef) {
 	if (!assetRef) return null;

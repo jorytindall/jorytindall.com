@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { AudioProps } from 'components/audio/audio';
+import { AudioProps } from '../Audio';
 import styles from './Playlist.module.css';
 
 import { DisplayTrack } from './DisplayTrack';

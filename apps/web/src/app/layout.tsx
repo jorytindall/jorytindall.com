@@ -7,7 +7,7 @@ import { Banner } from 'components/banner';
 import { Main } from 'components/layout';
 import 'styles/main.css';
 
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_GLOBAL_APP_DATA } from 'lib/queries';
 
 const getGlobalAppData = async () => {

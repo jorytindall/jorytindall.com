@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns';
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { RichText } from 'components/rich-text';
