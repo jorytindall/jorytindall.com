@@ -1,5 +1,5 @@
 import { getImageAsset, buildImageUrl } from '@sanity/asset-utils';
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 
 export function getSanityImageUrl(imageRef) {
 	if (!imageRef) return null;

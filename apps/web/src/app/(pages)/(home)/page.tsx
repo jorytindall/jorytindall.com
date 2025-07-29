@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/sanityClient';
+import { sanityClient } from 'lib/sanity/config';
 import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
 import { getCurrentEvents } from 'utils/getCurrentEvents';

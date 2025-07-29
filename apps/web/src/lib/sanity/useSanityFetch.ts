@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { sanityClient } from './sanityClient';
+import { sanityClient } from './config';
 
 const useSanityFetch = (query) => {
 	const [data, setData] = useState(null);

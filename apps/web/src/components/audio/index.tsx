@@ -1,2 +1,3 @@
 export { Playlist } from './playlist';
-export { Audio } from './audio';
+export { Audio } from './Audio';
+export type { AudioProps } from './Audio';
