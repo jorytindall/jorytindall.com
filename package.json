@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "jorytindall",
 	"description": "Monorepo for my personal website and projects",
-	"packageManager": "pnpm@9.11.0",
+	"packageManager": "pnpm@10.13.1",
 	"scripts": {
 		"web:dev": "turbo run dev --filter=web",
 		"web:build": "turbo run build --filter=web",
@@ -19,9 +19,9 @@
 		"dev": "turbo run dev"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.29.2",
-		"prettier": "^3.5.3",
-		"turbo": "^2.5.0"
+		"@changesets/cli": "^2.29.5",
+		"prettier": "^3.6.2",
+		"turbo": "^2.5.5"
 	},
 	"repository": {
 		"type": "git",

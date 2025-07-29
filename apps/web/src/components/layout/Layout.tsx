@@ -22,7 +22,7 @@ export const Layout = ({ children }: LayoutProps) => {
 				animate="enter"
 				exit="exit"
 				transition={{
-					type: 'linear',
+					ease: 'linear',
 				}}
 			>
 				{children}
