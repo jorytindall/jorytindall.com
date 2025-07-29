@@ -3,52 +3,52 @@
     "semantic": {
       "page": {
         "primary": {
-          "value": "{color.core.tertiary.100.value}"
+          "value": "{color.core.tertiary.100}"
         }
       },
       "surface": {
         "primary": {
-          "value": "{color.core.tertiary.200.value}"
+          "value": "{color.core.tertiary.200}"
         },
         "secondary": {
-          "value": "{color.core.secondary.200.value}"
+          "value": "{color.core.secondary.200}"
         },
         "brand": {
-          "value": "{color.core.primary.300.value}"
+          "value": "{color.core.primary.300}"
         },
         "dark": {
-          "value": "{color.core.neutral.600.value}"
+          "value": "{color.core.neutral.600}"
         },
         "light": {
-          "value": "{color.core.neutral.100.value}"
+          "value": "{color.core.neutral.100}"
         }
       },
       "foreground": {
         "primary": {
-          "value": "{color.core.neutral.600.value}"
+          "value": "{color.core.neutral.600}"
         },
         "brand": {
-          "value": "{color.core.primary.300.value}"
+          "value": "{color.core.primary.300}"
         },
         "inverse": {
-          "value": "{color.core.neutral.100.value}"
+          "value": "{color.core.neutral.100}"
         }
       },
       "border": {
         "brand": {
-          "value": "{color.core.primary.300.value}"
+          "value": "{color.core.primary.300}"
         },
         "primary": {
-          "value": "{color.core.tertiary.300.value}"
+          "value": "{color.core.tertiary.300}"
         },
         "secondary": {
-          "value": "{color.core.secondary.300.value}"
+          "value": "{color.core.secondary.300}"
         },
         "dark": {
-          "value": "{color.core.neutral.600.value}"
+          "value": "{color.core.neutral.600}"
         },
         "light": {
-          "value": "{color.core.neutral.200.value}"
+          "value": "{color.core.neutral.200}"
         }
       }
     }
