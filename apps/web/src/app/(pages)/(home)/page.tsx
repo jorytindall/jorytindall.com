@@ -1,7 +1,6 @@
 import { sanityClient } from 'lib/sanity/config';
 import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
-import { getCurrentEvents } from 'utils/getCurrentEvents';
 
 // Page content
 import HomeIntroduction from './Introduction';
@@ -22,15 +21,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-	const homePage = await sanityClient.fetch(GET_HOMEPAGE_DATA);
-
-	const currentEvents = getCurrentEvents(homePage);
+	const events = await sanityClient.fetch(GET_HOMEPAGE_DATA);
 
 	return (
 		<BentoBox>
 			<HomeIntroduction />
-			{currentEvents.length > 0 ?
-				(<HomeEvents events={currentEvents} />) : null
+			{events.length > 0 ?
+				(<HomeEvents events={events} />) : null
 			}
 			<HomePortfolio />
 			<HomeMusic />
