@@ -12,30 +12,28 @@ export default {
 			type: 'string',
 		},
 		{
+			name: 'date',
+			title: 'Date',
+			type: 'datetime',
+			options: {
+				allowTimeZoneSwitch: true,
+				displayTimeZone: 'America/Los_Angeles',
+			}
+		},
+		{
 			name: 'slug',
 			title: 'Slug',
 			type: 'slug',
 			validation: (Rule: any) => [
-        Rule.required().error("The event must have a slug."),
-      ],
-      options: {
-        source: (doc: any) => {
-          const { title, date } = doc;
-          const slug = slugify([title, isoDateToString(date)]);
-          return slug;
-        },
-      },
-		},
-		{
-			name: 'project',
-			title: 'Project',
-			type: 'reference',
-			to: [{ type: 'musicProject' }],
-		},
-		{
-			name: 'date',
-			title: 'Date',
-			type: 'datetime',
+				Rule.required().error("The event must have a slug."),
+			],
+			options: {
+				source: (doc: any) => {
+					const { title, date } = doc;
+					const slug = slugify([title, isoDateToString(date)]);
+					return slug;
+				},
+			},
 		},
 		{
 			name: 'location',
@@ -46,6 +44,12 @@ export default {
 			name: 'url',
 			title: 'URL',
 			type: 'url',
+		},
+		{
+			name: 'project',
+			title: 'Project',
+			type: 'reference',
+			to: [{ type: 'musicProject' }],
 		},
 		{
 			name: 'image',
