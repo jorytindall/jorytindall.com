@@ -44,12 +44,7 @@
 	font-size: var(--typography-font-size-body-secondary);
 }
 
-.location {
-	color: var(--color-core-neutral-300);
-	font-family: var(--typography-font-family-body);
-}
-
 .no-events {
 	color: var(--color-core-neutral-100);
-	font-size: var(--typography-font-size-body-secondary);
+	font-size: var(--typography-font-size-body-primary);
 }
