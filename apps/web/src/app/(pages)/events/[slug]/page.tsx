@@ -1,4 +1,5 @@
 import { format, parseISO } from 'date-fns';
+import { formatEventDateTime } from 'utils/datetimeFormat'
 import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
@@ -39,7 +40,7 @@ export default async function Event({ params }) {
 					{title}
 				</Headline>
 				<Paragraph color='secondary' collapse>
-					{format(parseISO(date), 'MMMM do, yyyy')} at{' '}
+					{formatEventDateTime(date, 'America/Los_Angeles')} at{' '}
 					<InlineLink href={url} type="external">
 						{location}
 					</InlineLink>
