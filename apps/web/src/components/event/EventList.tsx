@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
-import { formatDate, formatIso, formatDateTime } from 'utils/datetimeFormat';
+import { formatDate, formatEventDate, formatEventDateTime } from 'utils/datetimeFormat';
 import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
@@ -10,10 +10,13 @@ export const EventList = ({ events }) => {
 		<div className={styles.wrapper}>
 			{events.length > 0 ? (
 				events.map((event) => {
-					// console.log('Format Date: ', formatDate(event.date))
-					// console.log('Format Date Time: ', formatDateTime(event.date))
-					console.log('Format Date ISO: ', formatIso(event.date))
-					console.log('Date: ' + event.date)
+					// Debug logging to verify timezone conversion
+					console.log(`Event: ${event.title}`);
+					console.log(`UTC Date: ${event.date}`);
+					console.log(`Pacific Date: ${formatEventDate(event.date)}`);
+					console.log(`With Time: ${formatEventDateTime(event.date)}`);
+					console.log('---');
+
 					return (
 						<div className={styles.event} key={event._id}>
 							<Link
@@ -24,7 +27,7 @@ export const EventList = ({ events }) => {
 									<strong>{event.title}</strong>
 								</p>
 								<p className={styles.date}>
-									{formatDate(event.date)}
+									{formatEventDateTime(event.date, event.timezone)}
 								</p>
 							</Link>
 						</div>
