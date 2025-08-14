@@ -1,14 +1,19 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
-import { formatDate } from 'utils/datetimeFormat';
+import { formatDate, formatIso, formatDateTime } from 'utils/datetimeFormat';
 import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
+
 
 	return (
 		<div className={styles.wrapper}>
 			{events.length > 0 ? (
 				events.map((event) => {
+					// console.log('Format Date: ', formatDate(event.date))
+					// console.log('Format Date Time: ', formatDateTime(event.date))
+					console.log('Format Date ISO: ', formatIso(event.date))
+					console.log('Date: ' + event.date)
 					return (
 						<div className={styles.event} key={event._id}>
 							<Link
