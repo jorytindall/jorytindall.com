@@ -13,7 +13,6 @@ export const Avatar = ({
 					src='/avatar-logo.png'
 					width={width}
 					height={height}
-					quality={90}
 					priority={true}
 					alt="Photo of Jory Tindall"
 				/>

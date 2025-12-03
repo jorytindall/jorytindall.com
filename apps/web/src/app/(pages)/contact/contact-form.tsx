@@ -3,13 +3,14 @@
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { sendEmail } from 'actions/send-email';
-import { Form, Input, TextArea } from 'components/form';
+import { Form, Input, TextArea, Honeypot } from 'components/form';
 import { Button } from 'components/button';
 
 interface ContactFormProps {
   name: string;
   email: string;
   message: string;
+  website?: string;
 }
 
 export function ContactForm() {
@@ -23,6 +24,17 @@ export function ContactForm() {
 
   const onSubmit = async (formData: ContactFormProps) => {
     try {
+      if (formData.website) {
+        toast.success('Your email message has been sent successfully', {
+          duration: 5000,
+          position: 'top-center',
+          className: 'custom-toast',
+          icon: '🚀'
+        });
+        reset();
+        return;
+      }
+
       const contactFormObject = {
         name: formData.name || '',
         email: formData.email || '',
@@ -78,6 +90,7 @@ export function ContactForm() {
           },
         }}
       />
+      <Honeypot register={register} />
       <TextArea
         placeholder='{...typing}'
         id='message'
