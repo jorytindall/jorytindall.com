@@ -19,9 +19,9 @@
 		"dev": "turbo run dev"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.29.5",
-		"prettier": "^3.6.2",
-		"turbo": "^2.5.5"
+		"@changesets/cli": "^2.29.8",
+		"prettier": "^3.7.4",
+		"turbo": "^2.6.2"
 	},
 	"repository": {
 		"type": "git",
