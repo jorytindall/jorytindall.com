@@ -13,24 +13,24 @@ interface GalleryItemProps {
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-    // @ts-ignore
-    const galleryImage: string = getSanityImageUrl(image ?? '');
+    const galleryImage = getSanityImageUrl(image);
+
+    if (!galleryImage) {
+        return null;
+    }
 
     return (
         <a href={galleryImage} className={s.wrapper}>
             <Expand className={s.expandIcon} />
-            {image && (
-                <div className={s.imageWrapper}>
-                    <Image
-                        // @ts-ignore
-                        src={galleryImage}
-                        fill
-                        alt={altText}
-                        className={s.image}
-                        sizes="(max-width: 768px) 40vw"
-                    />
-                </div>
-            )}
+            <div className={s.imageWrapper}>
+                <Image
+                    src={galleryImage}
+                    fill
+                    alt={altText ?? ''}
+                    className={s.image}
+                    sizes="(max-width: 768px) 40vw"
+                />
+            </div>
             {caption && (
                 <Paragraph type="secondary" collapse>
                     {caption}

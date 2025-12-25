@@ -15,5 +15,6 @@ export default {
 		{ type: `results` },
 		{ type: `features` },
 		{ type: `tabs` },
+		{ type: `stravaStats` },
 	],
 };

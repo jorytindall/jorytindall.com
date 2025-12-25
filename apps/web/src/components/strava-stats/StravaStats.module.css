@@ -1,0 +1,52 @@
+.stravaStats {
+	padding: 2rem 0;
+}
+
+.statsGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 1.5rem;
+	margin-top: 1rem;
+}
+
+.statItem {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.statValue {
+	font-family: var(--typography-font-family-headline);
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--color-semantic-text-primary);
+}
+
+.statLabel {
+	font-size: 0.875rem;
+	color: var(--color-semantic-text-secondary);
+}
+
+.allTimeStats {
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--color-semantic-border-primary);
+}
+
+.allTimeLabel {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--color-semantic-text-secondary);
+	margin-bottom: 0.25rem;
+}
+
+.allTimeValue {
+	color: var(--color-semantic-text-primary);
+}
+
+.loading,
+.error {
+	color: var(--color-semantic-text-secondary);
+	font-style: italic;
+}
