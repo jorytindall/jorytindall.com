@@ -2,6 +2,10 @@
 	padding: 2rem 0;
 }
 
+.stravaStatsInline {
+	/* No padding when used inside PersonalStats */
+}
+
 .statsGrid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

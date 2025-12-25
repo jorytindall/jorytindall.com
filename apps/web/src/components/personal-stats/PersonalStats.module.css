@@ -1,0 +1,8 @@
+.personalStats {
+	padding: 2rem 0;
+}
+
+.statsContainer {
+	display: flex;
+	flex-direction: column;
+}

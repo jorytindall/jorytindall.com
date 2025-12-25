@@ -47,6 +47,7 @@ import navItem from './objects/navItem';
 import tabs from './objects/tabs/tabs';
 import tab from './objects/tabs/tab';
 import link from './objects/link';
+import personalStats from './objects/personalStats';
 import stravaStats from './objects/stravaStats';
 
 export const schemaTypes = [
@@ -98,5 +99,6 @@ export const schemaTypes = [
 	tabs,
 	tab,
 	link,
+	personalStats,
 	stravaStats,
 ];

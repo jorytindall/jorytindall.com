@@ -16,5 +16,6 @@ export default {
 		{ type: `features` },
 		{ type: `tabs` },
 		{ type: `stravaStats` },
+		{ type: `personalStats` },
 	],
 };
