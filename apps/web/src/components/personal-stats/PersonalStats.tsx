@@ -2,6 +2,7 @@
 
 import { Headline } from 'components/typography';
 import { StravaStats } from 'components/strava-stats';
+import { SpotifyStats } from 'components/spotify-stats';
 import styles from './PersonalStats.module.css';
 
 interface StatSource {
@@ -34,6 +35,13 @@ export const PersonalStats = ({ input }: PersonalStatsProps) => {
 						case 'stravaStats':
 							return (
 								<StravaStats
+									key={source._key}
+									input={{ ...source, title: undefined }}
+								/>
+							);
+						case 'spotifyStats':
+							return (
+								<SpotifyStats
 									key={source._key}
 									input={{ ...source, title: undefined }}
 								/>

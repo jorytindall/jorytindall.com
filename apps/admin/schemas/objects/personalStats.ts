@@ -18,7 +18,7 @@ export default {
 			title: 'Stat Sources',
 			type: 'array',
 			description: 'Add statistics from different sources.',
-			of: [{ type: 'stravaStats' }],
+			of: [{ type: 'stravaStats' }, { type: 'spotifyStats' }],
 		},
 	],
 };
