@@ -5,7 +5,7 @@ import { Gallery, FullWidthImage } from 'components/gallery';
 import { PortfolioList } from 'components/portfolio';
 import { Results } from 'components/results';
 import { PersonalStats } from 'components/personal-stats';
-import { StravaStats } from 'components/strava-stats';
+import { StravaStats } from 'components/personal-stats/strava';
 import {
 	Tabs,
 	TabsList,
@@ -40,17 +40,7 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return <Features input={m} key={m._key} />;
 			case 'stravaStats':
 				return <StravaStats input={m} key={m._key} />;
-			case 'personalStats':
-				return (
-					<GridItem
-						key={m._key}
-						density='collapse'
-						gridColumn='1'
-						gridSpan='3'
-					>
-						<PersonalStats input={m} />
-					</GridItem>
-				);
+			case 'personalStats': return <PersonalStats input={m} key={m._key} />;
 			case 'tabs':
 				return (
 					<GridItem

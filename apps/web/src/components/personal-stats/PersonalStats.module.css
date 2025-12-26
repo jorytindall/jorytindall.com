@@ -1,8 +1,7 @@
 .personalStats {
-	padding: 2rem 0;
-}
-
-.statsContainer {
 	display: flex;
 	flex-direction: column;
+	align-items: start;
+	gap: 1.5rem;
+	width: 100%;
 }

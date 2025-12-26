@@ -1,8 +1,8 @@
 'use client';
 
 import { Headline } from 'components/typography';
-import { StravaStats } from 'components/strava-stats';
-import { SpotifyStats } from 'components/spotify-stats';
+import { StravaStats } from 'components/personal-stats/strava';
+import { SpotifyStats } from 'components/personal-stats/spotify';
 import styles from './PersonalStats.module.css';
 
 interface StatSource {
@@ -27,8 +27,8 @@ export const PersonalStats = ({ input }: PersonalStatsProps) => {
 	}
 
 	return (
-		<section className={styles.personalStats}>
-			{title && <Headline tag="h3">{title}</Headline>}
+		<div className={styles.personalStats}>
+			{title && <Headline color="primary" tag="h3">{title}</Headline>}
 			<div className={styles.statsContainer}>
 				{statSources.map((source) => {
 					switch (source._type) {
@@ -51,6 +51,6 @@ export const PersonalStats = ({ input }: PersonalStatsProps) => {
 					}
 				})}
 			</div>
-		</section>
+		</div>
 	);
 };

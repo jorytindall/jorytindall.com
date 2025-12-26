@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './Overlay.module.css';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
-import { ModuleRenderer } from 'components/module-renderer';
+import { PersonalStats } from 'components/personal-stats';
 
 interface OverlayProps {
 	overlay?: any;
@@ -27,6 +27,8 @@ export const Overlay = ({ overlay, links, moduleContent }: OverlayProps) => {
 		? styles['overlay-visible']
 		: styles['overlay-hidden'];
 
+	console.log(moduleContent);
+
 	return (
 		<motion.div
 			variants={overlayAnimation}
@@ -38,7 +40,7 @@ export const Overlay = ({ overlay, links, moduleContent }: OverlayProps) => {
 			<div className={styles.overlayContent}>
 				{moduleContent && moduleContent.length > 0 && (
 					<div className={styles.moduleContentWrapper}>
-						<ModuleRenderer modules={moduleContent} />
+						<PersonalStats input={moduleContent[0]} />
 					</div>
 				)}
 				<NavLinks overlay={overlay}>
