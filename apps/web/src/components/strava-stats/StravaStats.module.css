@@ -1,10 +1,4 @@
-.stravaStats {
-	padding: 2rem 0;
-}
-
-.stravaStatsInline {
-	/* No padding when used inside PersonalStats */
-}
+/* .stravaStats {}
 
 .statsGrid {
 	display: grid;
@@ -53,4 +47,4 @@
 .error {
 	color: var(--color-semantic-text-secondary);
 	font-style: italic;
-}
+} */

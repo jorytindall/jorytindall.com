@@ -25,6 +25,12 @@ export const GET_GLOBAL_APP_DATA = groq`{
       _key,
       title,
       link
+    },
+    moduleContent[] {
+      ...,
+      items[] {
+        item->
+      }
     }
   },
   "siteSettings": *[_type == "siteSettings"][0] {

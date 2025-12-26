@@ -45,7 +45,7 @@ export default async function RootLayout({
 								link={bannerData.link}
 							/>
 						)}
-					<Header links={headerData.links} />
+					<Header links={headerData.links} moduleContent={headerData.moduleContent} />
 					<Main>
 						{children}
 					</Main>

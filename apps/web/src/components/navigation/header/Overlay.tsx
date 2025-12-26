@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styles from './Overlay.module.css';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
+import { ModuleRenderer } from 'components/module-renderer';
 
 interface OverlayProps {
 	overlay?: any;
@@ -10,6 +11,7 @@ interface OverlayProps {
 		link: string;
 		_key: string;
 	}[];
+	moduleContent?: any[];
 }
 
 const overlayAnimation = {
@@ -20,7 +22,7 @@ const overlayAnimation = {
 	enter: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export const Overlay = ({ overlay, links }: OverlayProps) => {
+export const Overlay = ({ overlay, links, moduleContent }: OverlayProps) => {
 	const getOverlayClass = overlay
 		? styles['overlay-visible']
 		: styles['overlay-hidden'];
@@ -33,11 +35,18 @@ export const Overlay = ({ overlay, links }: OverlayProps) => {
 			// @ts-ignore
 			className={getOverlayClass}
 		>
-			<NavLinks overlay={overlay}>
-				{links.map((link) => (
-					<NavItem key={link._key} slug={link.link} text={link.title} />
-				))}
-			</NavLinks>
+			<div className={styles.overlayContent}>
+				{moduleContent && moduleContent.length > 0 && (
+					<div className={styles.moduleContentWrapper}>
+						<ModuleRenderer modules={moduleContent} />
+					</div>
+				)}
+				<NavLinks overlay={overlay}>
+					{links.map((link) => (
+						<NavItem key={link._key} slug={link.link} text={link.title} />
+					))}
+				</NavLinks>
+			</div>
 		</motion.div>
 	);
 };
