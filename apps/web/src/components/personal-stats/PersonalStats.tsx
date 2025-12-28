@@ -3,20 +3,11 @@
 import { Headline } from 'components/typography';
 import { StravaStats } from 'components/personal-stats/strava';
 import { SpotifyStats } from 'components/personal-stats/spotify';
+import type { PersonalStatsInput, StatSource } from './types';
 import styles from './PersonalStats.module.css';
 
-interface StatSource {
-	_key: string;
-	_type: string;
-	visibleStats?: Record<string, boolean>;
-}
-
 interface PersonalStatsProps {
-	input: {
-		_key: string;
-		title?: string;
-		statSources?: StatSource[];
-	};
+	input: PersonalStatsInput;
 }
 
 export const PersonalStats = ({ input }: PersonalStatsProps) => {
@@ -36,14 +27,21 @@ export const PersonalStats = ({ input }: PersonalStatsProps) => {
 							return (
 								<StravaStats
 									key={source._key}
-									input={{ ...source, title: undefined }}
+									input={{
+										_key: source._key,
+										visibleStats: source.visibleStats,
+									}}
 								/>
 							);
 						case 'spotifyStats':
 							return (
 								<SpotifyStats
 									key={source._key}
-									input={{ ...source, title: undefined }}
+									input={{
+										_key: source._key,
+										visibleStats: source.visibleStats,
+										timeRange: source.timeRange,
+									}}
 								/>
 							);
 						default:

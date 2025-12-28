@@ -7,7 +7,7 @@ import styles from './Header.module.css';
 import { Avatar } from 'components/avatar';
 import { NavTrigger } from './NavTrigger';
 
-export const Header = ({ links, moduleContent }) => {
+export const Header = ({ links, personalStats }) => {
 	const route = usePathname();
 	const [overlay, setOverlay] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
@@ -81,7 +81,7 @@ export const Header = ({ links, moduleContent }) => {
 		>
 			<Avatar />
 			<NavTrigger overlay={overlay} toggle={setOverlay} />
-			<Overlay overlay={overlay} links={links} moduleContent={moduleContent} />
+			<Overlay overlay={overlay} links={links} personalStats={personalStats} />
 		</header>
 	);
 };

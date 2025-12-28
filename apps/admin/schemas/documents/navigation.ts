@@ -26,13 +26,6 @@ export default {
       type: 'array',
       title: 'Items',
       of: [{ type: 'navItem' }]
-    },
-    {
-      name: 'moduleContent',
-      type: 'moduleContent',
-      title: 'Module Content',
-      description: 'Optional content modules to display in the navigation overlay.',
-      hidden: ({ parent }: { parent: { area: string } }) => parent?.area !== 'header'
     }
   ],
   preview: {

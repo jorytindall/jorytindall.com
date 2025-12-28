@@ -12,6 +12,7 @@ import post from './documents/post';
 import settings from './documents/siteSettings';
 import talk from './documents/talk';
 import navigation from './documents/navigation';
+import personalStatsSettings from './documents/personalStatsSettings';
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -66,6 +67,7 @@ export const schemaTypes = [
 	settings,
 	talk,
 	navigation,
+	personalStatsSettings,
 	// Objects
 	moduleContent,
 	richText,

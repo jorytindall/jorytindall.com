@@ -25,12 +25,6 @@ export const GET_GLOBAL_APP_DATA = groq`{
       _key,
       title,
       link
-    },
-    moduleContent[] {
-      ...,
-      items[] {
-        item->
-      }
     }
   },
   "siteSettings": *[_type == "siteSettings"][0] {
@@ -42,6 +36,17 @@ export const GET_GLOBAL_APP_DATA = groq`{
       platform,
       text,
       link
+    }
+  },
+  "personalStats": *[_type == "personalStatsSettings"][0] {
+    _id,
+    title,
+    statSources[] {
+      _key,
+      _type,
+      title,
+      visibleStats,
+      timeRange
     }
   }
 }`

@@ -3,15 +3,20 @@ import styles from './Overlay.module.css';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
 import { PersonalStats } from 'components/personal-stats';
+import type { StatSource } from 'components/personal-stats';
 
 interface OverlayProps {
-	overlay?: any;
+	overlay?: boolean;
 	links: {
 		title: string;
 		link: string;
 		_key: string;
 	}[];
-	moduleContent?: any[];
+	personalStats?: {
+		_id: string;
+		title?: string;
+		statSources?: StatSource[];
+	};
 }
 
 const overlayAnimation = {
@@ -22,25 +27,28 @@ const overlayAnimation = {
 	enter: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export const Overlay = ({ overlay, links, moduleContent }: OverlayProps) => {
+export const Overlay = ({ overlay = true, links, personalStats }: OverlayProps) => {
 	const getOverlayClass = overlay
 		? styles['overlay-visible']
 		: styles['overlay-hidden'];
-
-	console.log(moduleContent);
 
 	return (
 		<motion.div
 			variants={overlayAnimation}
 			initial="hidden"
 			animate={overlay ? "enter" : "hidden"}
-			// @ts-ignore
 			className={getOverlayClass}
 		>
 			<div className={styles.overlayContent}>
-				{moduleContent && moduleContent.length > 0 && (
+				{personalStats && (
 					<div className={styles.moduleContentWrapper}>
-						<PersonalStats input={moduleContent[0]} />
+						<PersonalStats
+							input={{
+								_key: personalStats._id,
+								title: personalStats.title,
+								statSources: personalStats.statSources,
+							}}
+						/>
 					</div>
 				)}
 				<NavLinks overlay={overlay}>

@@ -42,6 +42,7 @@
 	.overlayContent {
 		flex-direction: row;
 		gap: 3rem;
+		justify-content: space-between;
 	}
 
 	.moduleContentWrapper {

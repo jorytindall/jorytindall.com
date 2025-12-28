@@ -3,28 +3,17 @@
 import { useEffect, useState } from 'react';
 import { getStravaStats } from 'actions/strava-stats';
 import { Headline, Paragraph } from 'components/typography';
+import { TextArrow } from 'components/button';
 import type { StravaDisplayStats } from 'lib/strava/types';
 import { StatCard } from '../shared';
+import type { StravaStatsInput, StravaVisibleStats } from '../types';
 import s from './StravaStats.module.css';
 
-interface VisibleStats {
-	ytdMiles?: boolean;
-	ytdRuns?: boolean;
-	ytdTime?: boolean;
-	ytdElevation?: boolean;
-	allTimeMiles?: boolean;
-	allTimeRuns?: boolean;
-}
-
 interface StravaStatsProps {
-	input: {
-		_key: string;
-		title?: string;
-		visibleStats?: VisibleStats;
-	};
+	input: StravaStatsInput;
 }
 
-type StatKey = keyof VisibleStats;
+type StatKey = keyof StravaVisibleStats;
 
 interface StatConfig {
 	key: StatKey;
@@ -48,7 +37,7 @@ const statConfigs: StatConfig[] = [
 	{ key: 'allTimeRuns', getValue: (s) => s.allTimeRuns.toLocaleString(), label: 'All-time runs', group: 'allTime' },
 ];
 
-const defaultVisibleStats: VisibleStats = {
+const defaultVisibleStats: StravaVisibleStats = {
 	ytdMiles: true,
 	ytdRuns: true,
 	ytdTime: true,
@@ -59,7 +48,7 @@ const defaultVisibleStats: VisibleStats = {
 
 export const StravaStats = ({ input }: StravaStatsProps) => {
 	const { title, visibleStats } = input;
-	const visible: VisibleStats = { ...defaultVisibleStats, ...visibleStats };
+	const visible: StravaVisibleStats = { ...defaultVisibleStats, ...visibleStats };
 	const [stats, setStats] = useState<StravaDisplayStats | null>(null);
 	const [loading, setLoading] = useState(true);
 
@@ -128,6 +117,11 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 			{title && <Headline tag="h3">{title}</Headline>}
 			{ytdStats.length > 0 && renderStatGroup(ytdStats)}
 			{allTimeStats.length > 0 && renderStatGroup(allTimeStats)}
+			<TextArrow
+				href="https://www.strava.com/athletes/97586690"
+				target="_blank"
+				rel="noopener noreferrer"
+			>View more on Strava</TextArrow>
 		</div>
 	);
 };
