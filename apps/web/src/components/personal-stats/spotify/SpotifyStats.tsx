@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import Image from 'next/image';
 import { getSpotifyStats } from 'actions/spotify-stats';
-import { Headline } from 'components/typography';
+import { Headline, Paragraph } from 'components/typography';
 import { TextArrow } from 'components/button';
-import type { SpotifyDisplayStats, DisplayArtist, DisplayTrack } from 'lib/spotify/types';
+import type { SpotifyDisplayStats } from 'lib/spotify/types';
 import type { SpotifyStatsInput, SpotifyVisibleStats } from '../types';
+import { RenderGenre, RenderArtist, RenderTrack } from './SubComponents';
 import s from './SpotifyStats.module.css';
+
 
 interface SpotifyStatsProps {
 	input: SpotifyStatsInput;
@@ -32,78 +33,27 @@ const defaultVisibleStats: SpotifyVisibleStats = {
 	recentlyPlayedCount: 5,
 };
 
-const renderArtist = (artist: DisplayArtist) => (
-	<a
-		key={artist.name}
-		href={artist.spotifyUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		className={s.artistItem}
-	>
-		{artist.imageUrl && (
-			<Image
-				src={artist.imageUrl}
-				alt={artist.name}
-				width={64}
-				height={64}
-				className={s.artistImage}
-			/>
-		)}
-		<span className={s.artistName}>{artist.name}</span>
-	</a>
-);
-
-const renderGenre = (genre: string) => (
-	<span key={genre} className={s.genrePill}>
-		{genre}
-	</span>
-);
-
-const renderTrack = (track: DisplayTrack, index: number) => (
-	<a
-		key={`${track.name}-${index}`}
-		href={track.spotifyUrl}
-		target="_blank"
-		rel="noopener noreferrer"
-		className={s.trackItem}
-	>
-		{track.albumImageUrl && (
-			<Image
-				src={track.albumImageUrl}
-				alt={track.name}
-				width={48}
-				height={48}
-				className={s.trackImage}
-			/>
-		)}
-		<div className={s.trackInfo}>
-			<span className={s.trackName}>{track.name}</span>
-			<span className={s.trackArtist}>{track.artistName}</span>
-		</div>
-	</a>
-);
-
 const sectionConfigs: SectionConfig[] = [
 	{
 		key: 'topArtists',
 		title: 'Top Artists',
 		getData: (stats) => stats.topArtists,
-		containerClass: s.artistsGrid,
-		renderItems: (stats) => stats.topArtists.map(renderArtist),
+		containerClass: s.gridList,
+		renderItems: (stats) => stats.topArtists.map(RenderArtist),
 	},
 	{
 		key: 'topGenres',
 		title: 'Top Genres',
 		getData: (stats) => stats.topGenres,
-		containerClass: s.genresList,
-		renderItems: (stats) => stats.topGenres.map(renderGenre),
+		containerClass: s.badgeList,
+		renderItems: (stats) => stats.topGenres.map(RenderGenre),
 	},
 	{
 		key: 'recentlyPlayed',
 		title: 'Recently Played',
 		getData: (stats) => stats.recentlyPlayed,
-		containerClass: s.tracksList,
-		renderItems: (stats) => stats.recentlyPlayed.map(renderTrack),
+		containerClass: s.gridList,
+		renderItems: (stats) => stats.recentlyPlayed.map(RenderTrack),
 	},
 ];
 
@@ -141,18 +91,18 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 
 	if (loading) {
 		return (
-			<div className={s.spotifyStats}>
+			<div>
 				{title && <Headline tag="h3">{title}</Headline>}
-				<p className={s.loading}>Loading stats...</p>
+				<Paragraph className={s.loading}>Loading stats...</Paragraph>
 			</div>
 		);
 	}
 
 	if (!stats || stats.error) {
 		return (
-			<div className={s.spotifyStats}>
+			<div>
 				{title && <Headline tag="h3">{title}</Headline>}
-				<p className={s.error}>Unable to load listening stats</p>
+				<Paragraph className={s.error}>Unable to load listening stats</Paragraph>
 			</div>
 		);
 	}
@@ -162,11 +112,16 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 	);
 
 	return (
-		<div className={s.spotifyStats}>
+		<div className={s.wrapper}>
 			{title && <Headline tag="h3">{title}</Headline>}
 			{visibleSections.map((config) => (
 				<div key={config.key} className={s.section}>
-					<h4 className={s.sectionTitle}>{config.title}</h4>
+					<Headline
+						tag='h4'
+						size='h6'
+						collapse
+						className={s.sectionTitle}
+					>{config.title}</Headline>
 					<div className={config.containerClass}>
 						{config.renderItems(stats)}
 					</div>

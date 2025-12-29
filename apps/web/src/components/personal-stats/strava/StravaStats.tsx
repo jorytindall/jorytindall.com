@@ -90,16 +90,18 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 	const allTimeStats = visibleStats$.filter((config) => config.group === 'allTime');
 
 	const renderStatGroup = (statGroup: StatConfig[]) => (
-		<div className={s.statsGrid}>
+		<>
 			{statGroup.map((config) => (
 				<StatCard
 					orientation='vertical'
 					style='primary'
+					padding='medium'
+					gap='none'
 					key={config.key}
 				>
 					<Headline
 						tag='p'
-						size='h3'
+						size='h4'
 						collapse
 						className='stat-value'
 					>{config.getValue(stats)}</Headline>
@@ -109,19 +111,29 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 					>{config.label}</Paragraph>
 				</StatCard>
 			))}
-		</div>
+		</>
 	);
 
 	return (
-		<div className={s[`strava-stats--wrapper`]}>
+		<section className={s.statsWrapper}>
 			{title && <Headline tag="h3">{title}</Headline>}
-			{ytdStats.length > 0 && renderStatGroup(ytdStats)}
-			{allTimeStats.length > 0 && renderStatGroup(allTimeStats)}
+			<div className={s.section}>
+				<Headline
+					tag='h4'
+					size='h6'
+					collapse
+					className={s.sectionTitle}
+				>Running stats</Headline>
+				<div className={s.statsGrid}>
+					{ytdStats.length > 0 && renderStatGroup(ytdStats)}
+					{allTimeStats.length > 0 && renderStatGroup(allTimeStats)}
+				</div>
+			</div>
 			<TextArrow
 				href="https://www.strava.com/athletes/97586690"
 				target="_blank"
 				rel="noopener noreferrer"
 			>View more on Strava</TextArrow>
-		</div>
+		</section>
 	);
 };

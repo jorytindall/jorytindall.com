@@ -20,35 +20,33 @@ export const PersonalStats = ({ input }: PersonalStatsProps) => {
 	return (
 		<div className={styles.personalStats}>
 			{title && <Headline color="primary" tag="h3">{title}</Headline>}
-			<div className={styles.statsContainer}>
-				{statSources.map((source) => {
-					switch (source._type) {
-						case 'stravaStats':
-							return (
-								<StravaStats
-									key={source._key}
-									input={{
-										_key: source._key,
-										visibleStats: source.visibleStats,
-									}}
-								/>
-							);
-						case 'spotifyStats':
-							return (
-								<SpotifyStats
-									key={source._key}
-									input={{
-										_key: source._key,
-										visibleStats: source.visibleStats,
-										timeRange: source.timeRange,
-									}}
-								/>
-							);
-						default:
-							return null;
-					}
-				})}
-			</div>
+			{statSources.map((source) => {
+				switch (source._type) {
+					case 'stravaStats':
+						return (
+							<StravaStats
+								key={source._key}
+								input={{
+									_key: source._key,
+									visibleStats: source.visibleStats,
+								}}
+							/>
+						);
+					case 'spotifyStats':
+						return (
+							<SpotifyStats
+								key={source._key}
+								input={{
+									_key: source._key,
+									visibleStats: source.visibleStats,
+									timeRange: source.timeRange,
+								}}
+							/>
+						);
+					default:
+						return null;
+				}
+			})}
 		</div>
 	);
 };

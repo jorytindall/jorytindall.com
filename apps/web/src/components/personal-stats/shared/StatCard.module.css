@@ -1,6 +1,6 @@
 .statCard {
   display: flex;
-  padding: 1rem;
+  padding: 0.25rem;
   border-width: 1px;
   border-style: solid;
   border-radius: 1rem;
@@ -8,10 +8,43 @@
 
 .horizontal {
   flex-direction: row;
+  align-items: center;
 }
 
 .vertical {
   flex-direction: column;
+}
+
+.gapSm {
+  gap: 0.5rem;
+}
+
+.gapMd {
+  gap: 1rem;
+}
+
+.gapLg {
+  gap: 2rem;
+}
+
+.gapNone {
+  gap: 0;
+}
+
+.paddingLg {
+  padding: 2rem;
+}
+
+.paddingMd {
+  padding: 1rem;
+}
+
+.paddingSm {
+  padding: 0.5rem;
+}
+
+.paddingNone {
+  padding: 0;
 }
 
 .primary {
