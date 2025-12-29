@@ -37,8 +37,7 @@ const PortfolioTitle = ({
   image,
 }: PortfolioTitleProps) => {
 
-  // @ts-ignore
-  const featuredImage = getSanityImageUrl(image.asset._ref)?.toString();
+  const featuredImage = getSanityImageUrl(image);
 
   return (
     <BentoBox isFullBleed={false}>
@@ -155,7 +154,7 @@ const PortfolioTitle = ({
           <Badge text={timeline} type='primary' />
         </Container>
       </BentoItem>
-      {image &&
+      {image && featuredImage &&
         <BentoItem
           size='full'
           padding='none'
@@ -163,7 +162,6 @@ const PortfolioTitle = ({
         >
           <div className={s['image-wrapper']}>
             <Image
-              // @ts-ignore
               src={featuredImage}
               alt={image.alternativeText}
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -23,7 +23,7 @@ export default async function MusicPage() {
 	const musicItems = musicProjects.map((musicProject) => {
 
 		const { title, slug, description } = musicProject;
-		const image = getSanityImageUrl(musicProject.image.asset._ref);
+		const image = getSanityImageUrl(musicProject.image);
 		const link = linkResolver('musicProject', slug);
 
 		return (
