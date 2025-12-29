@@ -19,7 +19,13 @@ export const InlineLink = ({
 	rel,
 	variant = 'primary',
 }: LinkProps) => {
-	const classes = classnames(styles.link, styles[`link--${variant}`]);
+	const variantMap: Record<string, string> = {
+		primary: styles.linkPrimary,
+		secondary: styles.linkSecondary,
+		tertiary: styles.linkTertiary,
+	};
+
+	const classes = classnames(styles.link, variantMap[variant]);
 
 	switch (type) {
 		case 'internal':

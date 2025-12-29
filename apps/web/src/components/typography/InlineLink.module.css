@@ -6,38 +6,38 @@
 	display: inline;
 }
 
-.link--primary {
+.linkPrimary {
 	color: var(--color-core-primary-300);
 }
 
-.link--primary:hover {
+.linkPrimary:hover {
 	color: var(--color-core-primary-500);
 }
 
-.link--primary:active {
+.linkPrimary:active {
 	color: var(--color-core-primary-500);
 }
 
-.link--secondary {
+.linkSecondary {
 	color: var(--color-core-neutral-600);
 }
 
-.link--secondary:hover {
+.linkSecondary:hover {
 	color: var(--color-core-neutral-500);
 }
 
-.link--secondary:active {
+.linkSecondary:active {
 	color: var(--color-core-neutral-500);
 }
 
-.link--tertiary {
+.linkTertiary {
 	color: var(--color-core-neutral-500);
 }
 
-.link--tertiary:hover {
+.linkTertiary:hover {
 	color: var(--color-core-neutral-600);
 }
 
-.link--tertiary:active {
+.linkTertiary:active {
 	color: var(--color-core-neutral-600);
 }

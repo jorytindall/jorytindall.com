@@ -6,7 +6,7 @@ interface ButtonGroupProps {
 }
 
 export const ButtonGroup = ({ children }: ButtonGroupProps) => {
-	const classes = getClasses([styles['button-group']]);
+	const classes = getClasses([styles.buttonGroup]);
 
 	return <div className={classes}>{children}</div>;
 };

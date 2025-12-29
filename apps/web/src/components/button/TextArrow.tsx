@@ -11,9 +11,15 @@ interface TextArrowProps {
 }
 
 export const TextArrow = ({ href, children, style, target, rel }: TextArrowProps) => {
+	const styleMap: Record<string, string> = {
+		primary: styles.stylePrimary,
+		neutral: styles.styleNeutral,
+		dark: styles.styleDark,
+	};
+
 	const classes = getClasses([
-		styles['text-arrow'],
-		styles[`style--${style}`],
+		styles.textArrow,
+		style ? styleMap[style] : null,
 	]);
 
 	if (!href) {
