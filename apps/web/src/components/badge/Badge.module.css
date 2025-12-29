@@ -1,5 +1,5 @@
 /* Base badge styling that all variants will inherit */
-.badge-base {
+.badgeBase {
 	padding: 4px 16px;
 	width: fit-content;
 	height: fit-content;
@@ -16,28 +16,28 @@
 /* Type */
 
 .primary {
-	composes: badge-base;
+	composes: badgeBase;
 	color: var(--color-core-primary-300);
 	border-color: var(--color-core-primary-300);
 	background: none;
 }
 
 .secondary {
-	composes: badge-base;
+	composes: badgeBase;
 	color: var(--color-core-neutral-600);
 	border-color: var(--color-core-neutral-600);
 	background: transparent;
 }
 
 .tertiary {
-	composes: badge-base;
+	composes: badgeBase;
 	color: var(--color-core-tertiary-500);
 	border-color: var(--color-core-tertiary-500);
 	background: transparent;
 }
 
 .inverse {
-	composes: badge-base;
+	composes: badgeBase;
 	color: var(--color-core-neutral-600);
 	border-color: transparent;
 	background: var(--color-core-neutral-100);

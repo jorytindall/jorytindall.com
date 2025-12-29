@@ -23,14 +23,12 @@ const NavItem = ({ slug, text }) => {
     : pathname?.startsWith(slug);
 
   return (
-    <motion.li 
+    <motion.li
       variants={item}
-      // @ts-ignore
-      className={styles['nav-item--li']}
     >
-      <Link 
-        href={slug} 
-        className={`${styles['nav-item']} ${isActive ? styles.active : ''}`}
+      <Link
+        href={slug}
+        className={`${styles.navItem} ${isActive ? styles.active : ''}`}
         aria-current={isActive ? 'page' : undefined}
       >
         {text}

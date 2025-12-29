@@ -11,12 +11,12 @@
 	overflow: hidden;
 }
 
-.overlay-hidden {
+.overlayHidden {
 	composes: overlay;
 	visibility: hidden;
 }
 
-.overlay-visible {
+.overlayVisible {
 	composes: overlay;
 	visibility: visible;
 }

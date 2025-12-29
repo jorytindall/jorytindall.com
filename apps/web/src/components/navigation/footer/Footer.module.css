@@ -26,15 +26,15 @@
 	gap: 1rem;
 }
 
-.internal-links {
+.internalLinks {
 	grid-area: col1;
 }
 
-.external-links {
+.externalLinks {
 	grid-area: col2;
 }
 
-.internal-links, .external-links {
+.internalLinks, .externalLinks {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;

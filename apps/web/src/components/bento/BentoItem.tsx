@@ -34,20 +34,43 @@ export const BentoItem = ({
 	imageSizes,
 	altText,
 }: BentoItemProps) => {
+	const sizeMap: Record<string, string> = {
+		small: styles.sizeSmall,
+		medium: styles.sizeMedium,
+		large: styles.sizeLarge,
+		'x-large': styles.sizeXLarge,
+		full: styles.sizeFull,
+	};
+
+	const paddingMap: Record<string, string> = {
+		none: styles.paddingNone,
+		small: styles.paddingSmall,
+		medium: styles.paddingMedium,
+		large: styles.paddingLarge,
+		'x-large': styles.paddingXLarge,
+	};
+
+	const gapMap: Record<string, string> = {
+		none: styles.gapNone,
+		small: styles.gapSmall,
+		medium: styles.gapMedium,
+		large: styles.gapLarge,
+		'x-large': styles.gapXLarge,
+	};
 
 	const outerClasses = getClasses([
 		styles.outer,
 		// @ts-ignore
 		styles[background],
-		styles[`size--${size}`],
+		sizeMap[size],
 		isInteractive ? styles.isInteractive : null,
 		className,
 	]);
 
 	const innerClasses = getClasses([
 		styles.inner,
-		styles[`padding--${padding}`],
-		styles[`gap--${gap}`],
+		paddingMap[padding],
+		gap ? gapMap[gap] : null,
 		isJustified ? styles.isJustified : null,
 	])
 

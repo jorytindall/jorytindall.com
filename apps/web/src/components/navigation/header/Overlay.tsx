@@ -29,8 +29,8 @@ const overlayAnimation = {
 
 export const Overlay = ({ overlay = true, links, personalStats }: OverlayProps) => {
 	const getOverlayClass = overlay
-		? styles['overlay-visible']
-		: styles['overlay-hidden'];
+		? styles.overlayVisible
+		: styles.overlayHidden;
 
 	return (
 		<motion.div

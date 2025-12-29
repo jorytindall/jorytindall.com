@@ -1,4 +1,4 @@
-.form-error {
+.formError {
   color: var(--color-core-tertiary-500);
   font-family: var(--typography-font-family-body);
   font-size: var(--typography-font-size-body-secondary);

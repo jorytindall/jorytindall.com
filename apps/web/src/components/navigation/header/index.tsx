@@ -25,7 +25,7 @@ export const Header = ({ links, personalStats }) => {
 				const scrollY = window.scrollY;
 				
 				// Add our CSS module class to body
-				document.body.classList.add(styles['no-scroll']);
+				document.body.classList.add(styles.noScroll);
 				
 				// Set the scroll position as a CSS custom property
 				document.body.style.setProperty('--scroll-position', `-${scrollY}px`);
@@ -37,7 +37,7 @@ export const Header = ({ links, personalStats }) => {
 						.replace('px', '');
 				
 				// Remove our CSS module class
-				document.body.classList.remove(styles['no-scroll']);
+				document.body.classList.remove(styles.noScroll);
 				
 				// Remove the custom property
 				document.body.style.removeProperty('--scroll-position');
@@ -76,7 +76,7 @@ export const Header = ({ links, personalStats }) => {
 
 	return (
 		<header className={
-			`${getOverlayClass} ${scrolled ? styles.scrolled : ''} ${overlay ? styles['overlay-active'] : ''}`
+			`${getOverlayClass} ${scrolled ? styles.scrolled : ''} ${overlay ? styles.overlayActive : ''}`
 		}
 		>
 			<Avatar />

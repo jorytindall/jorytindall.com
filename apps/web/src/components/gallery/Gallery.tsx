@@ -19,9 +19,20 @@ interface GalleryProps {
 }
 
 export const Gallery = ({ input }: GalleryProps) => {
+	const columnMap: Record<string, string> = {
+		'1': styles.columns1,
+		'2': styles.columns2,
+		'3': styles.columns3,
+		'4': styles.columns4,
+		'5': styles.columns5,
+		'6': styles.columns6,
+		'7': styles.columns7,
+		'8': styles.columns8,
+	};
+
 	const classes = getClasses([
 		styles.wrapper,
-		styles['columns-' + input.columns],
+		columnMap[input.columns],
 	]);
 
 	const { _key, images } = input;

@@ -32,7 +32,7 @@ export const Button = ({
 	const classes = getClasses([
 		styles[variant],
 		styles[size],
-		isFullWidth ? styles[`full-width`] : null,
+		isFullWidth ? styles.fullWidth : null,
 		className,
 	]);
 

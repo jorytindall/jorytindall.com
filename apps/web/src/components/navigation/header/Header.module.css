@@ -22,7 +22,7 @@
 	background: rgba(3, 9, 19, 0.5);
 }
 
-[data-theme='dark'] .overlay-active {
+[data-theme='dark'] .overlayActive {
 	background: rgba(3, 9, 19, 1);
 }
 
@@ -37,7 +37,7 @@
 }
 
 /* Define the noScroll class that will be applied to body */
-.no-scroll {
+.noScroll {
 	position: fixed;
 	top: var(--scroll-position);
 	left: 0;

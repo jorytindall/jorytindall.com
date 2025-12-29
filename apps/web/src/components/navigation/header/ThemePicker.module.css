@@ -1,11 +1,11 @@
-.theme-picker {
+.themePicker {
   display: flex;
   flex-direction: row;
   gap: 2px;
   align-items: center;
 }
 
-.theme-button {
+.themeButton {
   display: flex;
   flex-direction: row;
   padding: 6px 8px;
@@ -17,28 +17,28 @@
   height: 100%;
 }
 
-.theme-button:nth-child(1) {
+.themeButton:nth-child(1) {
   border-radius: 18px 4px 4px 18px;
 }
 
-.theme-button:nth-child(2) {
+.themeButton:nth-child(2) {
   border-radius: 4px;
 }
 
-.theme-button:nth-child(3) {
+.themeButton:nth-child(3) {
   border-radius: 4px;
 }
 
-.theme-button .theme-icon path {
+.themeButton .themeIcon path {
   fill: var(--color-core-neutral-500);
 }
 
-.theme-button:hover {
+.themeButton:hover {
   cursor: pointer;
   background: var(--color-core-neutral-300);
 }
 
-.theme-button .button-text {
+.themeButton .buttonText {
   display: none;
 }
 
@@ -47,7 +47,7 @@
   background: var(--color-core-neutral-300);
 }
 
-.current .theme-icon path {
+.current .themeIcon path {
   fill: var(--color-semantic-foreground-primary);
 }
 

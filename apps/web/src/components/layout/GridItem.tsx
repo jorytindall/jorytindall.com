@@ -17,11 +17,22 @@ const GridItem = ({
   children,
   className,
 }: GridItemProps) => {
+  const columnMap: Record<string, string> = {
+    '1': s.gridColumn1,
+    '2': s.gridColumn2,
+    '3': s.gridColumn3,
+  };
+
+  const spanMap: Record<string, string> = {
+    '1': s.gridSpan1,
+    '2': s.gridSpan2,
+    '3': s.gridSpan3,
+  };
 
   const classes = classnames([
-    s[`grid-item`],
-    gridColumn ? s[`grid-column-${gridColumn}`] : null,
-    gridSpan ? s[`grid-span-${gridSpan}`] : null,
+    s.gridItem,
+    gridColumn ? columnMap[gridColumn] : null,
+    gridSpan ? spanMap[gridSpan] : null,
     className,
   ])
 
