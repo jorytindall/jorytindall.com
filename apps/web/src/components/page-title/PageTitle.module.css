@@ -1,4 +1,4 @@
-.page-title {
+.pageTitle {
 	padding: 2rem;
 	display: grid;
 	grid-template-areas: 'title mega mega';
@@ -20,7 +20,7 @@
 	}
 }
 
-.title-paragraph {
+.titleParagraph {
 	font-size: var(--typography-font-size-body-lead);
 	grid-area: title;
 	display: flex;
@@ -29,7 +29,7 @@
 	padding: 1rem 0;
 }
 
-.title-headline {
+.titleHeadline {
 	grid-area: mega;
 	font-family: var(--typography-font-family-headline);
 	font-size: var(--typography-font-size-headline-mega);

@@ -7,12 +7,12 @@ interface PageTitleProps {
 }
 
 export const PageTitle = ({ title, megaTitle }: PageTitleProps) => {
-	const classes = getClasses([styles['page-title']]);
+	const classes = getClasses([styles.pageTitle]);
 
 	return (
 		<section className={classes}>
 			{title && (
-				<p className={styles['title-paragraph']}>
+				<p className={styles.titleParagraph}>
 					{title}
 					<svg
 						width="40"
@@ -29,7 +29,7 @@ export const PageTitle = ({ title, megaTitle }: PageTitleProps) => {
 				</p>
 			)}
 			{megaTitle && (
-				<h1 className={styles['title-headline']}>{megaTitle}</h1>
+				<h1 className={styles.titleHeadline}>{megaTitle}</h1>
 			)}
 		</section>
 	);
