@@ -20,7 +20,7 @@ const NavLinks = ({ children, overlay }) => {
       initial="hidden"
       animate={overlay ? "enter" : "hidden"}
       // @ts-ignore
-      className={styles['link-wrapper']}
+      className={styles.linkWrapper}
     >
       {children}
     </motion.ul>

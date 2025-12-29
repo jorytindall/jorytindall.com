@@ -1,4 +1,4 @@
-.link-wrapper {
+.linkWrapper {
 	display: flex;
 	flex-direction: column;
 	text-align: right;
@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 768px) {
-	.link-wrapper {
+	.linkWrapper {
 		padding: 0;
 	}
 }

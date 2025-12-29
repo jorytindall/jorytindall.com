@@ -12,7 +12,7 @@ export const Footer = ({ internalLinks, socialLinks }) => {
 					Copyright &copy; Jory Tindall {new Date().getFullYear()}
 				</Paragraph>
 			</div>
-			<div className={styles['internal-links']}>
+			<div className={styles.internalLinks}>
 				{internalLinks.map((link) => {
 					return (
 						<Link
@@ -26,7 +26,7 @@ export const Footer = ({ internalLinks, socialLinks }) => {
 					);
 				})}
 			</div>
-			<div className={styles['external-links']}>
+			<div className={styles.externalLinks}>
 				{socialLinks.map((link) => {
 					return (
 						<a
