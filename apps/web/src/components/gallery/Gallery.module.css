@@ -4,10 +4,11 @@
   display: grid;
   gap: 2.5rem;
   padding: 2.5rem;
+  max-width: 100%;
 }
 
 /* Responsive styles for wrapper */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .wrapper {
     padding: 1rem;
     gap: 1rem;

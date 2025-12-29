@@ -1,8 +1,8 @@
 .results {
 	grid-column: 1 / span 3;
 	padding: 2.5rem;
-	/* background: var(--color-core-primary-300); */
-	max-width: 100vw;
+	width: 100%;
+	max-width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -13,12 +13,16 @@
 
 	& div {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
 		justify-content: center;
 		gap: 2rem;
 	}
 
-	@media (max-width: 1000px) {
-		padding: 2.5rem 1rem;
+	@media (max-width: 768px) {
+		padding: 1rem;
+
+		& div {
+			grid-template-columns: 1fr;
+		}
 	}
 }

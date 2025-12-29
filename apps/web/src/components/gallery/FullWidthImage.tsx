@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Image from 'next/image';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import styles from './FullWidthImage.module.css';
@@ -12,16 +11,21 @@ interface FullWidthImageProps {
 
 export const FullWidthImage = ({ input }: FullWidthImageProps) => {
 	const { image, alternativeText } = input;
-
 	const imageSrc = getSanityImageUrl(image);
 
+	if (!imageSrc) {
+		return null;
+	}
+
 	return (
-		<Image
-			fill
-			src={imageSrc}
-			// style={css}
-			alt={alternativeText}
-			className={styles.fullWidthImage}
-		/>
+		<div className={styles.wrapper}>
+			<Image
+				fill
+				src={imageSrc}
+				alt={alternativeText ?? ''}
+				className={styles.fullWidthImage}
+				sizes="100vw"
+			/>
+		</div>
 	);
 };
