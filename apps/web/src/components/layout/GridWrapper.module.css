@@ -1,4 +1,6 @@
 .gridWrapper {
 	display: grid;
 	grid-template-columns: 1fr min(85ch, 100%) 1fr;
+	overflow-x: hidden;
+	max-width: 100%;
 }

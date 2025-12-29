@@ -1,3 +1,4 @@
 .wrapper {
-	grid-column: 1 / span 3
+	grid-column: 1 / span 3;
+	max-width: 100%;
 }

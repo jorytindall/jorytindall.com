@@ -1,7 +1,21 @@
 .wrapper {
 	margin: 2.5rem 0;
+	max-width: 100%;
+	overflow-x: auto;
 }
 
 .codeWrapper {
 	padding: 2.5rem;
+	max-width: 100%;
+
+	@media (max-width: 768px) {
+		padding: 1rem;
+	}
+
+	/* Ensure code blocks scroll horizontally */
+	& pre,
+	& code {
+		max-width: 100%;
+		overflow-x: auto;
+	}
 }

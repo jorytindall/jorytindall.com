@@ -1,21 +1,25 @@
 /* Density variants */
 .density_default {
 	width: 100%;
+	max-width: 100%;
 	padding: 2.5rem;
 }
 
 .density_packed {
 	width: 100%;
+	max-width: 100%;
 	padding: 1rem;
 }
 
 .density_spacious {
 	width: 100%;
+	max-width: 100%;
 	padding: 5rem;
 }
 
 .density_collapse {
 	width: 100%;
+	max-width: 100%;
 	padding: 0rem;
 }
 
@@ -97,7 +101,7 @@
 }
 
 /* Media query for density */
-@media (max-width: 786px) {
+@media (max-width: 768px) {
 	.density_default,
 	.density_packed,
 	.density_spacious,

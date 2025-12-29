@@ -1,12 +1,20 @@
 .wrapper {
 	grid-column: 2;
 	padding: 2.5rem;
+	max-width: 100%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 
 	@media (max-width: 768px) {
+		grid-column: 1 / -1;
 		padding: 0 1rem;
 	}
 }
 
 .collapse {
 	padding: 0;
+
+	@media (max-width: 768px) {
+		grid-column: 1 / -1;
+	}
 }

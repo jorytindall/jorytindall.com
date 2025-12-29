@@ -5,15 +5,16 @@
 	gap: 5rem;
 	background: var(--color-core-primary-300);
 	grid-column: 1 / span 3;
+	max-width: 100%;
 
 	& h5,
 	& p {
 		color: var(--color-core-neutral-100);
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
-		padding: 1rem 1rem;
+		padding: 1rem;
 		gap: 2.5rem;
 	}
 }
@@ -21,8 +22,13 @@
 .imageWrapper {
 	position: relative;
 	height: 500px;
+	max-width: 100%;
 
 	& img {
 		object-fit: cover;
+	}
+
+	@media (max-width: 768px) {
+		height: 300px;
 	}
 }
