@@ -1,4 +1,11 @@
-.wrapper {
+.outerWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
+.innerWrapper {
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -14,5 +21,3 @@
   height: 24px;
   background: var(--color-core-neutral-400);
 }
-
-
