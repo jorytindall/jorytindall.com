@@ -24,7 +24,12 @@
 .overlayContent {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
 	height: 100%;
+}
+
+.statsWrapper {
+	display: none;
 }
 
 .moduleContentWrapper {
@@ -38,11 +43,19 @@
 	}
 }
 
-@media (min-width: 800px) {
+@media (min-width: 950px) {
 	.overlayContent {
 		flex-direction: row;
-		gap: 3rem;
+		align-items: stretch;
+		gap: 10rem;
 		justify-content: space-between;
+	}
+
+	.statsWrapper {
+		display: block;
+		flex: 1;
+		overflow-y: auto;
+		min-height: 0;
 	}
 
 	.moduleContentWrapper {

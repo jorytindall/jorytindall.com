@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { getSpotifyStats } from 'actions/spotify-stats';
 import { Headline, Paragraph } from 'components/typography';
 import { TextArrow } from 'components/button';
+import { Icon } from 'components/icon';
 import type { SpotifyDisplayStats } from 'lib/spotify/types';
 import type { SpotifyStatsInput, SpotifyVisibleStats } from '../types';
 import { RenderGenre, RenderArtist, RenderTrack } from './SubComponents';
@@ -116,12 +117,15 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 			{title && <Headline tag="h3">{title}</Headline>}
 			{visibleSections.map((config) => (
 				<div key={config.key} className={s.section}>
-					<Headline
-						tag='h4'
-						size='h6'
-						collapse
-						className={s.sectionTitle}
-					>{config.title}</Headline>
+					<div className={s.titleWrapper}>
+						<Icon name="spotify" size={24} color="var(--color-core-primary-300)" />
+						<Headline
+							tag='h4'
+							size='h6'
+							collapse
+							className={s.sectionTitle}
+						>{config.title}</Headline>
+					</div>
 					<div className={config.containerClass}>
 						{config.renderItems(stats)}
 					</div>

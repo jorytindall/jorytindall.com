@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getStravaStats } from 'actions/strava-stats';
 import { Headline, Paragraph } from 'components/typography';
 import { TextArrow } from 'components/button';
+import { Icon } from 'components/icon';
 import type { StravaDisplayStats } from 'lib/strava/types';
 import { StatCard } from '../shared';
 import type { StravaStatsInput, StravaVisibleStats } from '../types';
@@ -116,14 +117,17 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 
 	return (
 		<section className={s.statsWrapper}>
-			{title && <Headline tag="h3">{title}</Headline>}
 			<div className={s.section}>
-				<Headline
-					tag='h4'
-					size='h6'
-					collapse
-					className={s.sectionTitle}
-				>Running stats</Headline>
+				<div className={s.titleWrapper}>
+					<Icon name='strava' size={24} color='var(--color-core-primary-300)' />
+					{/* {title && <Headline tag="h3">{title}</Headline>} */}
+					<Headline
+						tag='h4'
+						size='h6'
+						collapse
+						className={s.sectionTitle}
+					>Running stats</Headline>
+				</div>
 				<div className={s.statsGrid}>
 					{ytdStats.length > 0 && renderStatGroup(ytdStats)}
 					{allTimeStats.length > 0 && renderStatGroup(allTimeStats)}

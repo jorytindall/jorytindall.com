@@ -41,13 +41,16 @@ export const Overlay = ({ overlay = true, links, personalStats }: OverlayProps) 
 		>
 			<div className={styles.overlayContent}>
 				{personalStats && (
-					<PersonalStats
-						input={{
-							_key: personalStats._id,
-							title: personalStats.title,
-							statSources: personalStats.statSources,
-						}}
-					/>
+					<div className={styles.statsWrapper}>
+						<PersonalStats
+							input={{
+								_key: personalStats._id,
+								title: personalStats.title,
+								statSources: personalStats.statSources,
+							}}
+							overlay={overlay}
+						/>
+					</div>
 				)}
 				<NavLinks overlay={overlay}>
 					{links.map((link) => (
