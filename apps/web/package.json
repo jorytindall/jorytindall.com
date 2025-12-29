@@ -1,7 +1,7 @@
 {
   "name": "web",
   "packageManager": "pnpm@10.19.0",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "author": "Jory Tindall <jory@hypecreativestudios.com",
   "license": "MIT",
   "scripts": {
