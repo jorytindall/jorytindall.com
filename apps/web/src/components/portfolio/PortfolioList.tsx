@@ -13,7 +13,7 @@ interface PortfolioListItem {
 export const PortfolioList = ({ input }: PortfolioListItem) => {
 	const portfolioItems = input.items.map((item) => {
 
-		const image = getSanityImageUrl(item.item.featuredImage.asset._ref);
+		const image = getSanityImageUrl(item.item.featuredImage);
 
 		return (
 				<BentoItem
