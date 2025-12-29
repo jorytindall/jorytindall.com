@@ -9,7 +9,7 @@ import styles from './NowPlaying.module.css';
 
 const POLLING_INTERVAL = 30000; // 30 seconds
 
-const emptySubscribe = () => () => {};
+const emptySubscribe = () => () => { };
 
 export const NowPlaying = () => {
 	const isClient = useSyncExternalStore(

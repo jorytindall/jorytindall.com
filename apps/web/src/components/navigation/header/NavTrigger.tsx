@@ -5,11 +5,13 @@ import s from './NavTrigger.module.css';
 
 const NavTrigger = ({ overlay, toggle }) => {
   return (
-    <div className={s.wrapper}>
+    <div className={s.outerWrapper}>
       <NowPlaying />
-      <ThemePicker />
-      <span className={s.divider}></span>
-      <Burger overlay={overlay} toggle={toggle} />
+      <div className={s.innerWrapper}>
+        <ThemePicker />
+        <span className={s.divider}></span>
+        <Burger overlay={overlay} toggle={toggle} />
+      </div>
     </div>
   )
 }

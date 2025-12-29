@@ -1,26 +1,28 @@
 .nowPlaying {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 0.375rem 0.75rem;
-	background-color: var(--color-semantic-background-secondary);
+	gap: 1rem;
+	padding: 5px 16px 5px 8px;
+	background-color: var(--color-semantic-surface-light);
 	border-radius: 9999px;
+	border: 1px solid var(--color-semantic-border-brand);
 	text-decoration: none;
 	color: inherit;
 	transition: background-color 0.2s ease;
-	max-width: 200px;
 }
 
 .nowPlaying:hover {
-	background-color: var(--color-semantic-background-tertiary);
+	background-color: var(--color-core-primary-100)
 }
 
 .albumArt {
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
+	border: 1px solid var(--color-core-neutral-300);
 	object-fit: cover;
 	flex-shrink: 0;
+	animation: rotate 3s linear infinite;
 }
 
 .trackInfo {
@@ -34,7 +36,7 @@
 .trackName {
 	font-size: 0.75rem;
 	font-weight: 500;
-	color: var(--color-semantic-text-primary);
+	color: var(--color-semantic-foreground-secondary);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -42,7 +44,7 @@
 
 .artistName {
 	font-size: 0.625rem;
-	color: var(--color-semantic-text-secondary);
+	color: var(--color-semantic-foreground-secondary);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -58,9 +60,9 @@
 
 .bar {
 	width: 3px;
-	background-color: var(--color-semantic-text-primary);
+	background-color: var(--color-core-primary-300);
 	border-radius: 1px;
-	animation: playingBar 1s ease-in-out infinite;
+	animation: playingBar 1.5s ease-in-out infinite;
 }
 
 .bar:nth-child(1) {
@@ -76,12 +78,24 @@
 }
 
 @keyframes playingBar {
+
 	0%,
 	100% {
 		height: 4px;
 	}
+
 	50% {
 		height: 16px;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
 	}
 }
 
