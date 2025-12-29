@@ -60,45 +60,45 @@
 /* Sizes */
 
 @media (min-width: 350px) {
-	.size--small {
+	.sizeSmall {
 		grid-column: span 6;
 	}
 
-	.size--medium,
-	.size--large,
-	.size--x-large {
+	.sizeMedium,
+	.sizeLarge,
+	.sizeXLarge {
 		grid-column: span 12;
 	}
 }
 
 @media (min-with: 768px) {
-	.size--medium {
+	.sizeMedium {
 		grid-column: span 6;
 	}
 }
 
 @media (min-width: 1000px) {
-	.size--small,
-	.size--medium {
+	.sizeSmall,
+	.sizeMedium {
 		grid-column: span 4;
 	}
 }
 
 @media (min-width: 1200px) {
-	.size--small {
+	.sizeSmall {
 		grid-column: span 3;
 	}
 
-	.size--large {
+	.sizeLarge {
 		grid-column: span 6;
 	}
 
-	.size--x-large {
+	.sizeXLarge {
 		grid-column: span 8;
 	}
 }
 
-.size--full {
+.sizeFull {
 	grid-column: span 12;
 }
 
@@ -131,44 +131,44 @@
 
 /* Padding */
 
-.padding--none {
+.paddingNone {
 	padding: 0;
 }
 
-.padding--small {
+.paddingSmall {
 	padding: 0.5rem;
 }
 
-.padding--medium {
+.paddingMedium {
 	padding: 1rem;
 }
 
-.padding--large {
+.paddingLarge {
 	padding: 1.5rem;
 }
 
-.padding--x-large {
+.paddingXLarge {
 	padding: 2.5rem;
 }
 
 /* Gap */
 
-.gap--none {
+.gapNone {
 	gap: 0;
 }
 
-.gap--small {
+.gapSmall {
 	gap: 0.5rem;
 }
 
-.gap--medium {
+.gapMedium {
 	gap: 1rem;
 }
 
-.gap--large {
+.gapLarge {
 	gap: 1.5rem;
 }
 
-.gap--x-large {
+.gapXLarge {
 	gap: 2.5rem;
 }
