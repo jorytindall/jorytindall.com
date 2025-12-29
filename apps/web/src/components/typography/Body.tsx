@@ -6,6 +6,7 @@ interface ParagraphProps {
 	type?: 'primary' | 'secondary' | 'lead';
 	color?: 'primary' | 'secondary' | 'light';
 	collapse?: boolean;
+	className?: string;
 }
 
 interface CodeProps {
@@ -17,12 +18,14 @@ export const Paragraph = ({
 	type = 'primary',
 	color = 'secondary',
 	collapse,
+	className,
 }: ParagraphProps) => {
 	const classes = getClasses([
 		styles[type],
 		// @ts-ignore
 		styles[color ? color : null],
 		collapse ? styles.collapse : null,
+		className,
 	]);
 
 	return <p className={classes}>{children}</p>;

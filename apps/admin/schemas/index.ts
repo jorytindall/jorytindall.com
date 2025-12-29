@@ -12,6 +12,7 @@ import post from './documents/post';
 import settings from './documents/siteSettings';
 import talk from './documents/talk';
 import navigation from './documents/navigation';
+import personalStatsSettings from './documents/personalStatsSettings';
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -47,6 +48,9 @@ import navItem from './objects/navItem';
 import tabs from './objects/tabs/tabs';
 import tab from './objects/tabs/tab';
 import link from './objects/link';
+import personalStats from './objects/personalStats';
+import stravaStats from './objects/stravaStats';
+import spotifyStats from './objects/spotifyStats';
 
 export const schemaTypes = [
 	// Documents
@@ -63,6 +67,7 @@ export const schemaTypes = [
 	settings,
 	talk,
 	navigation,
+	personalStatsSettings,
 	// Objects
 	moduleContent,
 	richText,
@@ -97,4 +102,7 @@ export const schemaTypes = [
 	tabs,
 	tab,
 	link,
+	personalStats,
+	stravaStats,
+	spotifyStats,
 ];

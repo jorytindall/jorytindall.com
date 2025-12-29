@@ -2,14 +2,21 @@ import { motion } from 'framer-motion';
 import styles from './Overlay.module.css';
 import { NavLinks } from './NavLinks'
 import { NavItem } from './NavItem';
+import { PersonalStats } from 'components/personal-stats';
+import type { StatSource } from 'components/personal-stats';
 
 interface OverlayProps {
-	overlay?: any;
+	overlay?: boolean;
 	links: {
 		title: string;
 		link: string;
 		_key: string;
 	}[];
+	personalStats?: {
+		_id: string;
+		title?: string;
+		statSources?: StatSource[];
+	};
 }
 
 const overlayAnimation = {
@@ -20,7 +27,7 @@ const overlayAnimation = {
 	enter: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export const Overlay = ({ overlay, links }: OverlayProps) => {
+export const Overlay = ({ overlay = true, links, personalStats }: OverlayProps) => {
 	const getOverlayClass = overlay
 		? styles['overlay-visible']
 		: styles['overlay-hidden'];
@@ -30,14 +37,27 @@ export const Overlay = ({ overlay, links }: OverlayProps) => {
 			variants={overlayAnimation}
 			initial="hidden"
 			animate={overlay ? "enter" : "hidden"}
-			// @ts-ignore
 			className={getOverlayClass}
 		>
-			<NavLinks overlay={overlay}>
-				{links.map((link) => (
-					<NavItem key={link._key} slug={link.link} text={link.title} />
-				))}
-			</NavLinks>
+			<div className={styles.overlayContent}>
+				{personalStats && (
+					<div className={styles.statsWrapper}>
+						<PersonalStats
+							input={{
+								_key: personalStats._id,
+								title: personalStats.title,
+								statSources: personalStats.statSources,
+							}}
+							overlay={overlay}
+						/>
+					</div>
+				)}
+				<NavLinks overlay={overlay}>
+					{links.map((link) => (
+						<NavItem key={link._key} slug={link.link} text={link.title} />
+					))}
+				</NavLinks>
+			</div>
 		</motion.div>
 	);
 };

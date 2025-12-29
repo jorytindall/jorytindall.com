@@ -7,6 +7,7 @@ interface HeadlineProps {
 	collapse?: boolean;
 	tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 	color?: 'primary' | 'secondary' | 'light';
+	className?: string;
 }
 
 export const Headline = ({
@@ -15,6 +16,7 @@ export const Headline = ({
 	collapse,
 	tag,
 	color,
+	className
 }: HeadlineProps) => {
 	const classes = getClasses([
 		// @ts-ignore
@@ -22,6 +24,7 @@ export const Headline = ({
 		// @ts-ignore
 		styles[color ? color : null],
 		collapse ? styles.collapse : null,
+		className,
 	]);
 
 	switch (tag) {

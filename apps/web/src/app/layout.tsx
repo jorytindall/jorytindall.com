@@ -33,7 +33,10 @@ export default async function RootLayout({
 
 	// Banner
 	const bannerData = globalAppData.banner;
-	
+
+	// Personal Stats
+	const personalStatsData = globalAppData.personalStats;
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
@@ -45,7 +48,7 @@ export default async function RootLayout({
 								link={bannerData.link}
 							/>
 						)}
-					<Header links={headerData.links} />
+					<Header links={headerData.links} personalStats={personalStatsData} />
 					<Main>
 						{children}
 					</Main>

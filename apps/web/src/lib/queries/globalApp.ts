@@ -37,5 +37,16 @@ export const GET_GLOBAL_APP_DATA = groq`{
       text,
       link
     }
+  },
+  "personalStats": *[_type == "personalStatsSettings"][0] {
+    _id,
+    title,
+    statSources[] {
+      _key,
+      _type,
+      title,
+      visibleStats,
+      timeRange
+    }
   }
 }`

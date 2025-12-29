@@ -4,11 +4,13 @@ import styles from './TextArrow.module.css';
 
 interface TextArrowProps {
 	href?: string;
+	target?: "_blank" | "_self" | "_parent" | "_top";
+	rel?: string;
 	children: React.ReactNode;
 	style?: string;
 }
 
-export const TextArrow = ({ href, children, style }: TextArrowProps) => {
+export const TextArrow = ({ href, children, style, target, rel }: TextArrowProps) => {
 	const classes = getClasses([
 		styles['text-arrow'],
 		styles[`style--${style}`],
@@ -34,7 +36,13 @@ export const TextArrow = ({ href, children, style }: TextArrowProps) => {
 		);
 	} else if (href.includes('http')) {
 		return (
-			<Link href={href} passHref className={classes}>
+			<Link
+				href={href}
+				passHref
+				target={target}
+				rel={rel}
+				className={classes}
+			>
 				{children}
 				<svg
 					width="40"
@@ -52,7 +60,12 @@ export const TextArrow = ({ href, children, style }: TextArrowProps) => {
 		);
 	} else {
 		return (
-			<a href={href} className={classes}>
+			<a
+				href={href}
+				target={target}
+				rel={rel}
+				className={classes}
+			>
 				{children}
 				<svg
 					width="40"
