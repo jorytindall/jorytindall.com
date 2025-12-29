@@ -20,79 +20,79 @@
 }
 
 /* Base flex class */
-.is-flex {
+.isFlex {
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
 }
 
 /* Direction variants */
-.is-flex--column {
+.isFlexColumn {
 	display: flex;
 	flex-direction: column;
 }
 
-.is-flex--row {
+.isFlexRow {
 	display: flex;
 	flex-direction: row;
 }
 
 /* Justify variants */
-.is-flex--normal {
+.isFlexNormal {
 	justify-content: normal;
 }
-.is-flex--flex-start {
+.isFlexStart {
 	justify-content: flex-start;
 }
-.is-flex--center {
+.isFlexCenter {
 	justify-content: center;
 }
-.is-flex--flex-end {
+.isFlexEnd {
 	justify-content: flex-end;
 }
-.is-flex--space-between {
+.isFlexSpaceBetween {
 	justify-content: space-between;
 }
-.is-flex--space-around {
+.isFlexSpaceAround {
 	justify-content: space-around;
 }
 
 /* Align variants */
-.is-flex--normal {
+.isFlexAlignNormal {
 	align-items: normal;
 }
-.is-flex--flex-start {
+.isFlexAlignStart {
 	align-items: flex-start;
 }
-.is-flex--center {
+.isFlexAlignCenter {
 	align-items: center;
 }
-.is-flex--flex-end {
+.isFlexAlignEnd {
 	align-items: flex-end;
 }
 
 /* Gap variants */
-.is-flex--small {
+.isFlexGapSmall {
 	gap: 0.5rem;
 }
-.is-flex--default {
+.isFlexGapDefault {
 	gap: 1rem;
 }
-.is-flex--large {
+.isFlexGapLarge {
 	gap: 1.5rem;
 }
-.is-flex--extra-large {
+.isFlexGapExtraLarge {
 	gap: 2.5rem;
 }
 
 /* Text alignment */
-.text-align--left * {
+.textAlignLeft * {
 	text-align: left !important;
 }
-.text-align--center * {
+.textAlignCenter * {
 	text-align: center !important;
 }
-.text-align--right * {
+.textAlignRight * {
 	text-align: right !important;
 }
 

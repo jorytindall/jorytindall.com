@@ -32,14 +32,48 @@ const Container = ({
 	textAlign,
 	className,
 }: ContainerProps) => {
+	const directionMap: Record<string, string> = {
+		row: styles.isFlexRow,
+		column: styles.isFlexColumn,
+	};
+
+	const justifyMap: Record<string, string> = {
+		normal: styles.isFlexNormal,
+		'flex-start': styles.isFlexStart,
+		center: styles.isFlexCenter,
+		'flex-end': styles.isFlexEnd,
+		'space-between': styles.isFlexSpaceBetween,
+		'space-around': styles.isFlexSpaceAround,
+	};
+
+	const alignMap: Record<string, string> = {
+		normal: styles.isFlexAlignNormal,
+		'flex-start': styles.isFlexAlignStart,
+		center: styles.isFlexAlignCenter,
+		'flex-end': styles.isFlexAlignEnd,
+	};
+
+	const gapMap: Record<string, string> = {
+		small: styles.isFlexGapSmall,
+		default: styles.isFlexGapDefault,
+		large: styles.isFlexGapLarge,
+		'extra-large': styles.isFlexGapExtraLarge,
+	};
+
+	const textAlignMap: Record<string, string> = {
+		left: styles.textAlignLeft,
+		center: styles.textAlignCenter,
+		right: styles.textAlignRight,
+	};
+
 	const classes = getClasses([
 		styles[`density_${density}`],
-		[isFlex === true ? styles[`is-flex`] : null],
-		styles[`is-flex--${flexDirection}`],
-		styles[`is-flex--${justify}`],
-		styles[`is-flex--${align}`],
-		styles[`is-flex--${gap}`],
-		styles[`text-align--${textAlign}`],
+		isFlex === true ? styles.isFlex : null,
+		flexDirection ? directionMap[flexDirection] : null,
+		justify ? justifyMap[justify] : null,
+		align ? alignMap[align] : null,
+		gap ? gapMap[gap] : null,
+		textAlign ? textAlignMap[textAlign] : null,
 		className,
 	]);
 

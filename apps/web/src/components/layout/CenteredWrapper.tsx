@@ -16,8 +16,8 @@ export const CenteredWrapper = ({
 }: CenteredWrapperProps) => {
 	const classes = getClasses([
 		s.wrapper,
-		collapseY && s['collapse-y'],
-		collapseX && s['collapse-x'],
+		collapseY && s.collapseY,
+		collapseX && s.collapseX,
 	]);
 
 	switch (semanticElement) {

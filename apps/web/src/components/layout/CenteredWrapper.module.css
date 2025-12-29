@@ -9,12 +9,12 @@
 
 /* Collapse */
 
-.collapse-y {
+.collapseY {
 	padding-top: 0;
 	padding-bottom: 0;
 }
 
-.collapse-x {
+.collapseX {
 	padding-left: 0;
 	padding-right: 0;
 }
