@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Box from './Box.svelte';
 	import Text from './Text.svelte';
-	import type { SvelteComponent } from 'svelte';
 
 	let {
 		presenters = [
@@ -9,10 +8,19 @@
 				name: '',
 				image: '',
 				website: '',
+				role: '',
 			},
 		],
-	}: { presenters: { name: string; image: string; website: string }[] } =
-		$props();
+		color = 'secondary',
+	}: {
+		presenters: {
+			name: string;
+			image: string;
+			website: string;
+			role: string;
+		}[];
+		color?: 'primary' | 'secondary' | 'brand' | 'inverse';
+	} = $props();
 </script>
 
 <Box flexDirection="row" gap="large" alignItems="center">
@@ -26,7 +34,8 @@
 			>
 				<img src={presenter.image} alt={presenter.name} width="50" />
 			</a>
-			<Text size="small" color="secondary">{presenter.name}</Text>
+			<Text size="small" {color}>{presenter.name}</Text>
+			<Text size="small" {color}>{presenter.role}</Text>
 		{/each}
 	</Box>
 </Box>

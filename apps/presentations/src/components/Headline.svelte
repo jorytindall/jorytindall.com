@@ -33,7 +33,7 @@
 		font-family: var(--typography-font-family-headline);
 		line-height: var(--typography-line-height-headline);
 		margin: 0;
-		letter-spacing: -0.065em;
+		letter-spacing: -0.05em;
 	}
 
 	/* Sizes */
