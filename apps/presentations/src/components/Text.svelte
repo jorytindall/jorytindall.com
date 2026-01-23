@@ -6,9 +6,9 @@
 		size = 'medium',
 		tag = 'p',
 		color = 'primary',
-		children
+		children,
 	}: {
-		size?: 'small' | 'medium' | 'large' | 'x-large';
+		size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
 		tag?: 'p' | 'span' | 'label' | 'div' | 'li';
 		color?: 'primary' | 'secondary' | 'brand' | 'inverse';
 		children?: Snippet;
@@ -32,6 +32,10 @@
 	}
 
 	/* Sizes */
+	.text--size-x-small {
+		font-size: 0.75rem;
+	}
+
 	.text--size-small {
 		font-size: var(--typography-font-size-body-secondary);
 	}

@@ -34,8 +34,10 @@
 			>
 				<img src={presenter.image} alt={presenter.name} width="50" />
 			</a>
-			<Text size="small" {color}>{presenter.name}</Text>
-			<Text size="small" {color}>{presenter.role}</Text>
+			<Box flexDirection="column" gap="x-small">
+				<Text size="small" {color}>{presenter.name}</Text>
+				<Text size="x-small" {color}>{presenter.role}</Text>
+			</Box>
 		{/each}
 	</Box>
 </Box>

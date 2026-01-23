@@ -22,6 +22,7 @@
 				name: 'Jory Tindall',
 				image: './images/jory-square-avatar.png',
 				website: 'https://jorytindall.com',
+				role: 'Lead Designer, Closet Engineer, Helios Design System',
 			},
 		]}
 	/>
