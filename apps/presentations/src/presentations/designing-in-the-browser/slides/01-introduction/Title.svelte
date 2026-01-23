@@ -6,7 +6,7 @@
 <CoverSlide
 	backgroundImage="./images/apex-cover.png"
 	title="Designing in the Browser"
-	subtitle="A realistic approach to realistic application development"
+	subtitle="A realistic approach to realistic application design"
 >
 	{#snippet notes()}
 		<p>
