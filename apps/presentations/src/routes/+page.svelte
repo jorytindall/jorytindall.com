@@ -17,6 +17,7 @@
 			<a href="/atomic-design-of-improvisation"
 				>The Atomic Design of Improvisation</a
 			>
+			<a href="/designing-in-the-browser">Designing in the Browser</a>
 		</article>
 
 		<a href="https://jorytindall.com" target="blank" class="back-link"
