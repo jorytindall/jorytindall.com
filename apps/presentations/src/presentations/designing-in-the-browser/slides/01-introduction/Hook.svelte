@@ -12,6 +12,11 @@
 		</Headline>
 	</Box>
 	<Notes>
-		<p>This is the uncomfortable question many of us are asking ourselves. The tools are changing, AI is changing how we build, and the boundaries between design and development are blurring.</p>
+		<ul>
+			<li>This is the uncomfortable question many of us are asking ourselves</li>
+			<li>The tools are changing</li>
+			<li>AI is changing how we build</li>
+			<li>The boundaries between design and development are blurring</li>
+		</ul>
 	</Notes>
 </Slide>

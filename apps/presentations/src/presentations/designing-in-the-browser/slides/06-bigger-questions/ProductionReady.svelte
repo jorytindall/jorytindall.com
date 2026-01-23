@@ -14,6 +14,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>Let's be realistic. In most scenarios, designers won't ship production code — there are organizational blockers, processes, ownership issues. But these barriers are starting to erode for technically minded designers. I can imagine a near future where designers ship production code that's been reviewed by experienced engineers.</p>
+		<ul>
+			<li>Let's be realistic — in most scenarios, designers won't ship production code</li>
+			<li>There are organizational blockers, processes, ownership issues</li>
+			<li>But these barriers are starting to erode for technically minded designers</li>
+			<li>I can imagine a near future where designers ship production code that's been reviewed by experienced engineers</li>
+		</ul>
 	</Notes>
 </Slide>

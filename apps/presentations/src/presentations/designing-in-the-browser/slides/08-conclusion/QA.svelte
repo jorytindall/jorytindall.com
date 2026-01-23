@@ -10,6 +10,10 @@
 		<Headline tag="h2" size="h1" color="brand">Questions?</Headline>
 	</Box>
 	<Notes>
-		<p>Open it up for Q&A. Be ready for questions about specific tools, workflows, and pushback on the premise.</p>
+		<ul>
+			<li>Open it up for Q&amp;A</li>
+			<li>Be ready for questions about specific tools and workflows</li>
+			<li>Be ready for pushback on the premise</li>
+		</ul>
 	</Notes>
 </Slide>

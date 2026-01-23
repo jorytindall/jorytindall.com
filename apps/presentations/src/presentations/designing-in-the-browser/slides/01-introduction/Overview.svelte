@@ -19,6 +19,6 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>Here's our agenda for today. We'll start with the why, move into practical how-to, be honest about trade-offs, and end with concrete things you can do starting Monday.</p>
+		<p>Here's our agenda for today. We'll start with the why, move into practical how-to, be honest about trade-offs, and end with concrete things you can start doing immediately.</p>
 	</Notes>
 </Slide>

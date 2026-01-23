@@ -15,6 +15,10 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>In practice, most of us will use both. Figma for early exploration when you need to move fast and loose, for stakeholder presentations, for documentation. Browser for iteration, for nailing interaction design, for testing with real data, for final refinement before shipping.</p>
+		<ul>
+			<li>In practice, most of us will use both</li>
+			<li>Figma: early exploration, stakeholder presentations, documentation</li>
+			<li>Browser: iteration, nailing interaction design, testing with real data, final refinement before shipping</li>
+		</ul>
 	</Notes>
 </Slide>

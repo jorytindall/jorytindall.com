@@ -17,6 +17,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>Let's be clear: Figma isn't going away. It's still the best tool for certain parts of the design process. Learning it was and is necessary for the job. Most high-fidelity mockup creation, especially for stakeholder presentations and early exploration, is still best done there.</p>
+		<ul>
+			<li>Let's be clear: Figma isn't going away</li>
+			<li>It's still the best tool for certain parts of the design process</li>
+			<li>Learning it was and is necessary for the job</li>
+			<li>Most high-fidelity mockup creation, especially for stakeholder presentations and early exploration, is still best done there</li>
+		</ul>
 	</Notes>
 </Slide>

@@ -14,6 +14,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>I've always defined a designer as someone who solves problems — through design thinking and deep understanding of the problem space. In corporate settings, that's manifested as someone who creates UI designs in a design tool. But we're on the cusp of designers shaking off the handcuffs of design tooling.</p>
+		<ul>
+			<li>I've always defined a designer as someone who solves problems</li>
+			<li>Through design thinking and deep understanding of the problem space</li>
+			<li>In corporate settings, that's manifested as someone who creates UI designs in a design tool</li>
+			<li>But we're on the cusp of designers shaking off the handcuffs of design tooling</li>
+		</ul>
 	</Notes>
 </Slide>

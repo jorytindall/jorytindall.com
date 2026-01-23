@@ -17,6 +17,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>Yes, there's a knowledge gap. But it's not impossible to bridge. The basics of web development aren't outrageously challenging. You don't need to become a senior engineer. Start small, build gradually, and use AI tools to help fill the gaps in your knowledge.</p>
+		<ul>
+			<li>Yes, there's a knowledge gap — but it's not impossible to bridge</li>
+			<li>The basics of web development aren't outrageously challenging</li>
+			<li>You don't need to become a senior engineer</li>
+			<li>Start small, build gradually, and use AI tools to help fill the gaps</li>
+		</ul>
 	</Notes>
 </Slide>

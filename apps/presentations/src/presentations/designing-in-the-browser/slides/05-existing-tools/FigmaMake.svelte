@@ -17,6 +17,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>Figma sees what's coming and is adapting — Figma Make and other AI features are attempts to stay relevant. But here's the thing: why add AI to the middle step when you could eliminate the middle step? Going directly to the browser removes an entire layer of translation.</p>
+		<ul>
+			<li>Figma sees what's coming and is adapting</li>
+			<li>Figma Make and other AI features are attempts to stay relevant</li>
+			<li>But here's the thing: why add AI to the middle step when you could eliminate the middle step?</li>
+			<li>Going directly to the browser removes an entire layer of translation</li>
+		</ul>
 	</Notes>
 </Slide>

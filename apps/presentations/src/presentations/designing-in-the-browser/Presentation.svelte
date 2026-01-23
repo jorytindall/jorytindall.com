@@ -34,7 +34,7 @@
 	import DesignerRefresh from './slides/06-bigger-questions/DesignerRefresh.svelte';
 
 	// 07 - Actionable next steps
-	import StartMonday from './slides/07-actionable/StartMonday.svelte';
+	import StartToday from './slides/07-actionable/StartToday.svelte';
 	import Resources from './slides/07-actionable/Resources.svelte';
 
 	// 08 - Conclusion
@@ -75,8 +75,8 @@
 <WhatIsProductDesigner />
 <DesignerRefresh />
 
-<!-- 07 - Start Monday: Actionable Next Steps (2 min) -->
-<StartMonday />
+<!-- 07 - Start Today: Actionable Next Steps (2 min) -->
+<StartToday />
 <Resources />
 
 <!-- 08 - Q&A (remaining time) -->

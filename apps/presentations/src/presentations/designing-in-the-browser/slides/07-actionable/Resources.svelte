@@ -17,6 +17,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>The best resource is an engineer willing to pair with you and answer questions. AI tools are great for explaining code and helping you get unstuck. MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals. But honestly, the most important resource is your own curiosity — start poking around.</p>
+		<ul>
+			<li>The best resource is an engineer willing to pair with you and answer questions</li>
+			<li>AI tools are great for explaining code and helping you get unstuck</li>
+			<li>MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals</li>
+			<li>But honestly, the most important resource is your own curiosity — start poking around</li>
+		</ul>
 	</Notes>
 </Slide>

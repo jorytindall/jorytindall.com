@@ -17,6 +17,10 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>Figma's infinite canvas is great for exploration, but it creates a fundamental disconnect. Your users experience your design within the constraints of their browser, their screen size, their device. When you design on an infinite canvas, you're designing in a vacuum.</p>
+		<ul>
+			<li>Figma's infinite canvas is great for exploration, but it creates a fundamental disconnect</li>
+			<li>Your users experience your design within the constraints of their browser, their screen size, their device</li>
+			<li>When you design on an infinite canvas, you're designing in a vacuum</li>
+		</ul>
 	</Notes>
 </Slide>

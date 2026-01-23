@@ -8,7 +8,7 @@
 
 <Slide>
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
-		<Headline tag="h2" size="h3" color="brand">Start Monday</Headline>
+		<Headline tag="h2" size="h3" color="brand">Start today</Headline>
 		<ol>
 			<li><Text tag="span" size="large">Clone your team's repo and run the application locally</Text></li>
 			<li><Text tag="span" size="large">Find one small UI change and try to make it yourself</Text></li>
@@ -16,6 +16,12 @@
 		</ol>
 	</Box>
 	<Notes>
-		<p>Don't leave here without a plan. First, get the application running locally — ask an engineer to help you. Second, find one small UI change — a color, some spacing, a label — and try to make it yourself. Third, use an AI tool like Claude or Cursor to help you understand what you're looking at. Start small.</p>
+		<ul>
+			<li>Don't leave here without a plan</li>
+			<li>First, get the application running locally — ask an engineer to help you</li>
+			<li>Second, find one small UI change — a color, some spacing, a label — and try to make it yourself</li>
+			<li>Third, use an AI tool like Claude or Cursor to help you understand what you're looking at</li>
+			<li>Start small</li>
+		</ul>
 	</Notes>
 </Slide>

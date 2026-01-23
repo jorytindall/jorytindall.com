@@ -16,6 +16,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>There's no single right approach. You can work directly with HTML/CSS/JS if you have that skillset. AI tools are helpful for scaffolding but struggle with design system constraints. The gold standard is working within your actual application — using the real components, the real patterns.</p>
+		<ul>
+			<li>There's no single right approach</li>
+			<li>You can work directly with HTML/CSS/JS if you have that skillset</li>
+			<li>AI tools are helpful for scaffolding but struggle with design system constraints</li>
+			<li>The gold standard is working within your actual application — using the real components, the real patterns</li>
+		</ul>
 	</Notes>
 </Slide>

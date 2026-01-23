@@ -22,6 +22,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>There's no single entry point. If you've never written code, AI tools can get you started — focus on understanding what they generate. If you know some HTML/CSS, start modifying existing components and use AI to help where you get stuck. If you're comfortable with code, dive straight into the application.</p>
+		<ul>
+			<li>There's no single entry point</li>
+			<li>Never written code? AI tools can get you started — focus on understanding what they generate</li>
+			<li>Know some HTML/CSS? Start modifying existing components and use AI to help where you get stuck</li>
+			<li>Comfortable with code? Dive straight into the application</li>
+		</ul>
 	</Notes>
 </Slide>

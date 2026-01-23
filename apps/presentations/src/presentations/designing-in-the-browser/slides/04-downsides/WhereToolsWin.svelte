@@ -17,6 +17,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>Figma is genuinely better for certain tasks. When you need to flesh out many different versions of a design quickly — especially component work — Figma makes it easy to visually compare variations side by side. That's hard to replicate in the browser.</p>
+		<ul>
+			<li>Figma is genuinely better for certain tasks</li>
+			<li>When you need to flesh out many different versions of a design quickly — especially component work</li>
+			<li>Figma makes it easy to visually compare variations side by side</li>
+			<li>That's hard to replicate in the browser</li>
+		</ul>
 	</Notes>
 </Slide>

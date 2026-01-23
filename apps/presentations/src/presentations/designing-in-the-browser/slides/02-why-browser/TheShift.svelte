@@ -20,6 +20,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>The browser doesn't let you cheat. It forces you to answer questions that Figma lets you defer. How does this actually scroll? What happens when content overflows? These questions have real answers in the browser — you can't just wave your hands.</p>
+		<ul>
+			<li>The browser doesn't let you cheat</li>
+			<li>It forces you to answer questions that Figma lets you defer</li>
+			<li>How does this actually scroll? What happens when content overflows?</li>
+			<li>These questions have real answers in the browser — you can't just wave your hands</li>
+		</ul>
 	</Notes>
 </Slide>

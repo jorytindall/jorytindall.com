@@ -17,6 +17,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>You didn't waste your time. Figma is still necessary for the job today, and those skills — understanding layout, hierarchy, systems thinking — transfer directly. But the landscape is shifting. The designers who can work in both worlds will have an advantage.</p>
+		<ul>
+			<li>You didn't waste your time</li>
+			<li>Figma is still necessary for the job today</li>
+			<li>Those skills — understanding layout, hierarchy, systems thinking — transfer directly</li>
+			<li>But the landscape is shifting — designers who can work in both worlds will have an advantage</li>
+		</ul>
 	</Notes>
 </Slide>

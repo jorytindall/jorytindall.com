@@ -15,6 +15,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>There's a spectrum here. UI design work, presentational JavaScript, cleaning up legacy experiences — that's well within reach for most designers. Complex APIs, database work, heavy functional JavaScript — that's probably out of reach for now. Know what's achievable and focus there.</p>
+		<ul>
+			<li>There's a spectrum here</li>
+			<li>In reach: UI design work, presentational JavaScript, cleaning up legacy experiences</li>
+			<li>Further out: Complex APIs, database work, heavy functional JavaScript</li>
+			<li>Know what's achievable and focus there</li>
+		</ul>
 	</Notes>
 </Slide>

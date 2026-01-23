@@ -20,6 +20,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>This is where the real power is. Instead of designing in isolation, you're designing within the actual application. You're using real design system components, real local components, following real patterns. You can run Terraform locally, use the existing structure, and see exactly how your design fits into the bigger picture.</p>
+		<ul>
+			<li>This is where the real power is</li>
+			<li>Instead of designing in isolation, you're designing within the actual application</li>
+			<li>You're using real design system components, real local components, following real patterns</li>
+			<li>You can run the app locally, use the existing structure, and see exactly how your design fits into the bigger picture</li>
+		</ul>
 	</Notes>
 </Slide>

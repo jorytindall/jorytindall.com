@@ -17,6 +17,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>Let's be honest about the challenge. These are new skills that aren't part of a typical designer's job description. Learning how the browser works, understanding web dev basics, efficient workflows — it's a real investment. And the web development space moves so quickly that if you're focused on design most of the time, it can be hard to keep up with industry changes.</p>
+		<ul>
+			<li>Let's be honest about the challenge</li>
+			<li>These are new skills that aren't part of a typical designer's job description</li>
+			<li>Learning how the browser works, understanding web dev basics, efficient workflows — it's a real investment</li>
+			<li>The web development space moves so quickly that if you're focused on design most of the time, it can be hard to keep up</li>
+		</ul>
 	</Notes>
 </Slide>

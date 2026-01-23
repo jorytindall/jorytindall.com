@@ -16,6 +16,11 @@
 		</ul>
 	</Box>
 	<Notes>
-		<p>When you design in the browser, you're working with reality. Faster iteration because there's no handoff step. You see exactly what users will experience. And your interaction design is grounded in what's actually possible — real hover states, real transitions, real system feedback.</p>
+		<ul>
+			<li>When you design in the browser, you're working with reality</li>
+			<li>Faster iteration because there's no handoff step</li>
+			<li>You see exactly what users will experience</li>
+			<li>Your interaction design is grounded in what's actually possible — real hover states, real transitions, real system feedback</li>
+		</ul>
 	</Notes>
 </Slide>

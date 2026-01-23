@@ -17,6 +17,11 @@
 		</Text>
 	</Box>
 	<Notes>
-		<p>With a little technical knowledge, a paired AI tool, and some creative thinking, the term "designer" is set for a refresh. There's also a risk: firms that maintain a strict view of what a designer "is" and does will fall behind. Those that embrace a more flexible description will reap the rewards of moving design closer to users.</p>
+		<ul>
+			<li>With a little technical knowledge, a paired AI tool, and some creative thinking, the term "designer" is set for a refresh</li>
+			<li>There's also a risk: firms that maintain a strict view of what a designer "is" will fall behind</li>
+			<li>Those that embrace a more flexible description will reap the rewards</li>
+			<li>Moving design closer to users</li>
+		</ul>
 	</Notes>
 </Slide>
