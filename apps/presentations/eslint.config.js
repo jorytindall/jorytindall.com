@@ -16,6 +16,7 @@ export default [
 		rules: {
 			'no-unused-vars': 'warn',
 			'svelte/valid-prop-names-in-kit-pages': 'off',
+			'svelte/no-navigation-without-resolve': 'off',
 		},
 	},
 	{

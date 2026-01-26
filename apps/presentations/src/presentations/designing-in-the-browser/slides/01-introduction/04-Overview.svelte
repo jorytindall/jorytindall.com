@@ -1,0 +1,84 @@
+<script>
+	import Slide from '../../../../components/Slide.svelte';
+	import Box from '../../../../components/Box.svelte';
+	import Headline from '../../../../components/Headline.svelte';
+	import Text from '../../../../components/Text.svelte';
+	import Notes from '../../../../components/Notes.svelte';
+	import Callout from '../../../../components/Callout.svelte';
+</script>
+
+<Slide>
+	<Box
+		flexDirection="column"
+		textAlign="left"
+		justifyContent="start"
+		gap="x-large"
+	>
+		<Headline tag="h2" size="h3" color="brand">What we'll cover</Headline>
+		<ul>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="1"
+				>🤨 What/Why design in the browser?</Text
+			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="2"
+				>🛠️ How to get started</Text
+			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="3"
+				>👎 The honest downsides</Text
+			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="4"
+				>🧑‍💻 Where existing tools fit</Text
+			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="5"
+				>🤔 The bigger questions</Text
+			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="6"
+				>🚀 Actionable next steps</Text
+			>
+		</ul>
+		<Callout color="warning" class="fragment" data-fragment-index="8">
+			<Box
+				flexDirection="column"
+				gap="medium"
+				justifyContent="start"
+				alignItems="start"
+			>
+				<Headline tag="h3" size="h5">🙋 Note on questions</Headline>
+				<Text size="x-small" tag="p">
+					I'll leave time at the end for questions, otherwise feel
+					free to drop anything in the APEX Slack channel and I'll
+					follow-up after this session.
+				</Text>
+			</Box>
+		</Callout>
+	</Box>
+	<Notes>
+		<p>Here's a high-level outline of our agenda for today:</p>
+		<ul>
+			<li>
+				We'll start with what I mean when I say "design in the browser"
+				and why it matters.
+			</li>
+			<li>
+				Then we'll explore how to get started with designing in the
+				browser effectively.
+			</li>
+			<li>
+				Next, we'll discuss the honest downsides and challenges of this
+				approach.
+			</li>
+			<li>
+				We'll also look at where existing design tools fit into this
+				workflow.
+			</li>
+			<li>
+				Then we'll wrap up with some of the bigger questions around this
+				process and some actionable next steps.
+			</li>
+		</ul>
+		<p>
+			I'll leave a bit of time at the end for questions, otherwise feel
+			free to drop anything in the APEX Slack channel and I'll follow-up
+			after this session.
+		</p>
+	</Notes>
+</Slide>

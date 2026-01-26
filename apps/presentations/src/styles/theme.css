@@ -27,8 +27,8 @@ section.has-dark-background h6 {
 	--r-heading-margin: 0 0 20px 0;
 	--r-heading-font: Uxum Grotesque, Helvetica, Aria, sans-serif;
 	--r-heading-color: #005eff;
-	--r-heading-line-height: 1.2;
-	--r-heading-letter-spacing: normal;
+	--r-heading-line-height: 1.0;
+	--r-heading-letter-spacing: -0.1rem;
 	--r-heading-text-transform: none;
 	--r-heading-text-shadow: none;
 	--r-heading-font-weight: 600;
@@ -70,7 +70,7 @@ section.has-dark-background h6 {
 }
 
 .reveal .slides section,
-.reveal .slides section > section {
+.reveal .slides section>section {
 	line-height: 1.3;
 	font-weight: inherit;
 }
@@ -89,7 +89,7 @@ section.has-dark-background h6 {
 	font-family: var(--r-heading-font);
 	font-weight: var(--r-heading-font-weight);
 	line-height: var(--r-heading-line-height);
-	letter-spacing: var(--r-heading-letter-spacing);
+	/* letter-spacing: var(--r-heading-letter-spacing); */
 	text-transform: var(--r-heading-text-transform);
 	text-shadow: var(--r-heading-text-shadow);
 	word-wrap: break-word;
@@ -362,6 +362,7 @@ section.has-dark-background h6 {
 		background-color: var(--r-background-color);
 	}
 }
+
 .flex--row {
 	display: flex;
 	flex-direction: row;

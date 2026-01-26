@@ -17,23 +17,29 @@ h6 {
 	font-family: var(--typography-font-family-headline);
 	margin: 0;
 	padding: 0;
+	letter-spacing: -2%;
 }
 
 h1 {
 	font-size: var(--typography-font-size-headline-01);
 }
+
 h2 {
 	font-size: var(--typography-font-size-headline-02);
 }
+
 h3 {
 	font-size: var(--typography-font-size-headline-03);
 }
+
 h4 {
 	font-size: var(--typography-font-size-headline-04);
 }
+
 h5 {
 	font-size: var(--typography-font-size-headline-05);
 }
+
 h6 {
 	font-size: var(--typography-font-size-headline-06);
 }
