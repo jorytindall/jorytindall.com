@@ -8,7 +8,7 @@
 <Slide>
 	<Box flexDirection="column" textAlign="center" justifyContent="center">
 		<Headline tag="h2" size="h2" color="brand" textAlign="center">
-			"What does 'product designer' even mean anymore?"
+			What does "product designer" even mean anymore?
 		</Headline>
 	</Box>
 	<Notes>

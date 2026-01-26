@@ -7,13 +7,8 @@
 	import Callout from '../../../../components/Callout.svelte';
 </script>
 
-<Slide>
-	<Box
-		flexDirection="column"
-		textAlign="left"
-		justifyContent="start"
-		gap="x-large"
-	>
+<Slide section="Introduction" title="Overview">
+	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="x-large">
 		<Headline tag="h2" size="h3" color="brand">What we'll cover</Headline>
 		<ul>
 			<Text tag="li" size="large" class="fragment" data-fragment-index="1"
@@ -36,17 +31,11 @@
 			>
 		</ul>
 		<Callout color="warning" class="fragment" data-fragment-index="8">
-			<Box
-				flexDirection="column"
-				gap="medium"
-				justifyContent="start"
-				alignItems="start"
-			>
+			<Box flexDirection="column" gap="medium" justifyContent="start" alignItems="start">
 				<Headline tag="h3" size="h5">🙋 Note on questions</Headline>
 				<Text size="x-small" tag="p">
-					I'll leave time at the end for questions, otherwise feel
-					free to drop anything in the APEX Slack channel and I'll
-					follow-up after this session.
+					I'll leave time at the end for questions, otherwise feel free to drop anything
+					in the APEX Slack channel (#apex2026) and I'll follow-up after this session.
 				</Text>
 			</Box>
 		</Callout>
@@ -55,30 +44,21 @@
 		<p>Here's a high-level outline of our agenda for today:</p>
 		<ul>
 			<li>
-				We'll start with what I mean when I say "design in the browser"
-				and why it matters.
+				We'll start with what I mean when I say "design in the browser" and why it matters.
 			</li>
 			<li>
-				Then we'll explore how to get started with designing in the
-				browser effectively.
+				Then we'll explore how to get started with designing in the browser effectively.
 			</li>
+			<li>Next, we'll discuss the honest downsides and challenges of this approach.</li>
+			<li>We'll also look at where existing design tools fit into this workflow.</li>
 			<li>
-				Next, we'll discuss the honest downsides and challenges of this
-				approach.
-			</li>
-			<li>
-				We'll also look at where existing design tools fit into this
-				workflow.
-			</li>
-			<li>
-				Then we'll wrap up with some of the bigger questions around this
-				process and some actionable next steps.
+				Then we'll wrap up with some of the bigger questions around this process and some
+				actionable next steps.
 			</li>
 		</ul>
 		<p>
-			I'll leave a bit of time at the end for questions, otherwise feel
-			free to drop anything in the APEX Slack channel and I'll follow-up
-			after this session.
+			I'll leave a bit of time at the end for questions, otherwise feel free to drop anything
+			in the APEX Slack channel and I'll follow-up after this session.
 		</p>
 	</Notes>
 </Slide>

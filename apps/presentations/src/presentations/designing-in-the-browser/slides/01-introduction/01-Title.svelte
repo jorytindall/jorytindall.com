@@ -7,6 +7,7 @@
 	backgroundImage="./images/apex-cover.png"
 	title="Designing in the Browser"
 	subtitle="A realistic approach to realistic application design"
+	hideHeader
 >
 	{#snippet notes()}
 		<p>

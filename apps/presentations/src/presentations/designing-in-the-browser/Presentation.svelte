@@ -6,9 +6,9 @@
 	import Overview from './slides/01-introduction/04-Overview.svelte';
 
 	// 02 - Why design in the browser?
-	import TheGap from './slides/02-why-browser/01-TheGap.svelte';
+	import InfiniteCanvasGap from './slides/02-why-browser/01-InfiniteCanvasGap.svelte';
 	import WhatYouGain from './slides/02-why-browser/02-WhatYouGain.svelte';
-	import TheShift from './slides/02-why-browser/03-TheShift.svelte';
+	import DesignGroundedInReality from './slides/02-why-browser/03-DesignGroundedInReality.svelte';
 
 	// 03 - How to get started
 	import LiveDemoIntro from './slides/03-getting-started/01-LiveDemoIntro.svelte';
@@ -48,9 +48,9 @@
 <Overview />
 
 <!-- 02 - Why Design in the Browser? (3-4 min) -->
-<TheGap />
+<InfiniteCanvasGap />
 <WhatYouGain />
-<TheShift />
+<DesignGroundedInReality />
 
 <!-- 03 - How to Get Started (4-5 min) -->
 <LiveDemoIntro />

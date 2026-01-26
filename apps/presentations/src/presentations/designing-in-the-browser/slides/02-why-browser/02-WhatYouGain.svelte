@@ -6,21 +6,96 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
-	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
+<Slide section="Why Design in the Browser" title="Benefits">
+	<Box
+		flexDirection="column"
+		textAlign="left"
+		justifyContent="start"
+		gap="medium"
+	>
 		<Headline tag="h2" size="h3" color="brand">What you gain</Headline>
 		<ul>
-			<li><Text tag="span" size="large"><strong>Faster iteration</strong> — skip the handoff, see changes immediately</Text></li>
-			<li><Text tag="span" size="large"><strong>Realistic experience</strong> — what users actually see and feel</Text></li>
-			<li><Text tag="span" size="large"><strong>Grounded interaction design</strong> — real hover states, real transitions, real feedback</Text></li>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="1"
+			>
+				<strong>Realistic experience</strong> — you see more or less exactly
+				what users will experience.
+			</Text>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="2"
+			>
+				<strong>Faster iteration</strong> — working with many frames in Figma
+				can sometimes be slow and clunky; in the browser, you can iterate
+				quickly on small design and experience elements.
+			</Text>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="3"
+			>
+				<strong>Avoid accessibility pitfalls</strong> — catch issues early
+				with real DOM structure, focus management, and screen reader testing
+			</Text>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="4"
+			>
+				<strong>Content design and reflow</strong> — content reflows within
+				the viewport, giving you a better sense of copy length and complexity
+			</Text>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="5"
+			>
+				<strong>Grounded interaction design</strong> — real hover states,
+				real transitions, real feedback
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
+		<p>
+			So what benefits do you actually gain when you design in the
+			browser?
+		</p>
 		<ul>
-			<li>When you design in the browser, you're working with reality</li>
-			<li>Faster iteration because there's no handoff step</li>
-			<li>You see exactly what users will experience</li>
-			<li>Your interaction design is grounded in what's actually possible — real hover states, real transitions, real system feedback</li>
+			<li>
+				When you design in the browser, you're working with reality; you
+				see exactly what users will experience
+			</li>
+			<li>
+				Faster iteration - working with many frames in Figma can
+				sometimes be slow and clunky; in the browser, you can iterate
+				quickly on small design and experience elements.
+			</li>
+			<li>
+				You can avoid accessibility pitfalls early — working in the real
+				DOM means you can test focus management, screen reader behavior,
+				and keyboard navigation as you design rather than discovering
+				issues after implementation.
+			</li>
+			<li>
+				Content design and reflow — content will reflow within the
+				viewport, giving you a better idea of the exact length and
+				perceived complexity of micro copy and long-form content.
+			</li>
+			<li>
+				(and this is the most important) Your design is grounded in
+				what's actually possible — real hover states, real transitions,
+				real system feedback having this level of grounded/realistic
+				design from the beginning makes a huge difference when handing
+				off and capturing the unique aspects of a design to an engineer.
+			</li>
 		</ul>
 	</Notes>
 </Slide>

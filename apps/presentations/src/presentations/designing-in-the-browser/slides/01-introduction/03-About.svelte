@@ -8,7 +8,7 @@
 	import Link from '../../../../components/Link.svelte';
 </script>
 
-<Slide>
+<Slide section="Introduction" title="About Me">
 	<Box flexDirection="column" gap="x-large" justifyContent="start">
 		<Box
 			flexDirection="column"
@@ -95,7 +95,9 @@
 		<p>
 			An interesting note about this presentation is that is was designed
 			and written entirely in the browser and runs as a Svelte
-			application.
+			application. It's a pretty cool Svelte app built with Reveal.js to
+			handle the slide deck functionality, but that's a conversation for a
+			different presentation!
 		</p>
 	</Notes>
 </Slide>
