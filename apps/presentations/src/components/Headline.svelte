@@ -1,18 +1,23 @@
 <script lang="ts">
 	import classnames from 'classnames';
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
 	let {
 		size = 'h1',
 		tag = 'h1',
 		color = 'primary',
+		textAlign = 'left',
+		class: className,
 		children,
+		...rest
 	}: {
 		size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 		color?: 'primary' | 'secondary' | 'brand' | 'inverse';
+		textAlign?: 'left' | 'center' | 'right';
 		children?: Snippet;
-	} = $props();
+	} & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <svelte:element
@@ -21,7 +26,10 @@
 		'headline',
 		`headline--size-${size}`,
 		`headline--color-${color}`,
+		`headline--align-${textAlign}`,
+		className,
 	)}
+	{...rest}
 >
 	{#if children}
 		{@render children()}
@@ -76,5 +84,18 @@
 
 	.headline--color-inverse {
 		color: var(--color-semantic-foreground-inverse);
+	}
+
+	/* Text align */
+	.headline--align-left {
+		text-align: left;
+	}
+
+	.headline--align-center {
+		text-align: center;
+	}
+
+	.headline--align-right {
+		text-align: right;
 	}
 </style>

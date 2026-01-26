@@ -1,44 +1,44 @@
 <script>
 	// 01 - Introduction
-	import Title from './slides/01-introduction/Title.svelte';
-	import Hook from './slides/01-introduction/Hook.svelte';
-	import About from './slides/01-introduction/About.svelte';
-	import Overview from './slides/01-introduction/Overview.svelte';
+	import Title from './slides/01-introduction/01-Title.svelte';
+	import Hook from './slides/01-introduction/02-Hook.svelte';
+	import About from './slides/01-introduction/03-About.svelte';
+	import Overview from './slides/01-introduction/04-Overview.svelte';
 
 	// 02 - Why design in the browser?
-	import TheGap from './slides/02-why-browser/TheGap.svelte';
-	import WhatYouGain from './slides/02-why-browser/WhatYouGain.svelte';
-	import TheShift from './slides/02-why-browser/TheShift.svelte';
+	import TheGap from './slides/02-why-browser/01-TheGap.svelte';
+	import WhatYouGain from './slides/02-why-browser/02-WhatYouGain.svelte';
+	import TheShift from './slides/02-why-browser/03-TheShift.svelte';
 
 	// 03 - How to get started
-	import LiveDemoIntro from './slides/03-getting-started/LiveDemoIntro.svelte';
-	import ToolsApproaches from './slides/03-getting-started/ToolsApproaches.svelte';
-	import MinimumSkillset from './slides/03-getting-started/MinimumSkillset.svelte';
-	import StartingPoints from './slides/03-getting-started/StartingPoints.svelte';
+	import LiveDemoIntro from './slides/03-getting-started/01-LiveDemoIntro.svelte';
+	import ToolsApproaches from './slides/03-getting-started/02-ToolsApproaches.svelte';
+	import MinimumSkillset from './slides/03-getting-started/03-MinimumSkillset.svelte';
+	import StartingPoints from './slides/03-getting-started/04-StartingPoints.svelte';
 
 	// 04 - The honest downsides
-	import WhatsHarder from './slides/04-downsides/WhatsHarder.svelte';
-	import WhereToolsWin from './slides/04-downsides/WhereToolsWin.svelte';
-	import WhenNot from './slides/04-downsides/WhenNot.svelte';
+	import WhatsHarder from './slides/04-downsides/01-WhatsHarder.svelte';
+	import WhereToolsWin from './slides/04-downsides/02-WhereToolsWin.svelte';
+	import WhenNot from './slides/04-downsides/03-WhenNot.svelte';
 
 	// 05 - Where do existing tools fit?
-	import FigmaRole from './slides/05-existing-tools/FigmaRole.svelte';
-	import FigmaMake from './slides/05-existing-tools/FigmaMake.svelte';
-	import HybridWorkflow from './slides/05-existing-tools/HybridWorkflow.svelte';
+	import FigmaRole from './slides/05-existing-tools/01-FigmaRole.svelte';
+	import FigmaMake from './slides/05-existing-tools/02-FigmaMake.svelte';
+	import HybridWorkflow from './slides/05-existing-tools/03-HybridWorkflow.svelte';
 
 	// 06 - The bigger questions
-	import ProductionReady from './slides/06-bigger-questions/ProductionReady.svelte';
-	import ProductionReadyNuance from './slides/06-bigger-questions/ProductionReadyNuance.svelte';
-	import FigmaInvestment from './slides/06-bigger-questions/FigmaInvestment.svelte';
-	import WhatIsProductDesigner from './slides/06-bigger-questions/WhatIsProductDesigner.svelte';
-	import DesignerRefresh from './slides/06-bigger-questions/DesignerRefresh.svelte';
+	import ProductionReady from './slides/06-bigger-questions/01-ProductionReady.svelte';
+	import ProductionReadyNuance from './slides/06-bigger-questions/02-ProductionReadyNuance.svelte';
+	import FigmaInvestment from './slides/06-bigger-questions/03-FigmaInvestment.svelte';
+	import WhatIsProductDesigner from './slides/06-bigger-questions/04-WhatIsProductDesigner.svelte';
+	import DesignerRefresh from './slides/06-bigger-questions/05-DesignerRefresh.svelte';
 
 	// 07 - Actionable next steps
-	import StartToday from './slides/07-actionable/StartToday.svelte';
-	import Resources from './slides/07-actionable/Resources.svelte';
+	import StartToday from './slides/07-actionable/01-StartToday.svelte';
+	import Resources from './slides/07-actionable/02-Resources.svelte';
 
 	// 08 - Conclusion
-	import QA from './slides/08-conclusion/QA.svelte';
+	import QA from './slides/08-conclusion/01-QA.svelte';
 </script>
 
 <!-- 01 - Introduction (1-2 min) -->

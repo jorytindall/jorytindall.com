@@ -1,23 +1,29 @@
 <script lang="ts">
 	import classnames from 'classnames';
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
 	let {
 		size = 'medium',
 		tag = 'p',
 		color = 'primary',
+		textAlign = 'left',
+		class: className,
 		children,
+		...rest
 	}: {
 		size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
 		tag?: 'p' | 'span' | 'label' | 'div' | 'li';
 		color?: 'primary' | 'secondary' | 'brand' | 'inverse';
+		textAlign?: 'left' | 'center' | 'right';
 		children?: Snippet;
-	} = $props();
+	} & HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <svelte:element
 	this={tag}
-	class={classnames('text', `text--size-${size}`, `text--color-${color}`)}
+	class={classnames('text', `text--size-${size}`, `text--color-${color}`, `text--align-${textAlign}`, className)}
+	{...rest}
 >
 	{#if children}
 		{@render children()}
@@ -67,5 +73,18 @@
 
 	.text--color-inverse {
 		color: var(--color-semantic-foreground-inverse);
+	}
+
+	/* Text align */
+	.text--align-left {
+		text-align: left;
+	}
+
+	.text--align-center {
+		text-align: center;
+	}
+
+	.text--align-right {
+		text-align: right;
 	}
 </style>
