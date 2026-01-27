@@ -11,10 +11,10 @@
 	import DesignGroundedInReality from './slides/02-why-browser/03-DesignGroundedInReality.svelte';
 
 	// 03 - How to get started
-	import LiveDemoIntro from './slides/03-getting-started/01-LiveDemoIntro.svelte';
-	import ToolsApproaches from './slides/03-getting-started/02-ToolsApproaches.svelte';
-	import MinimumSkillset from './slides/03-getting-started/03-MinimumSkillset.svelte';
-	import StartingPoints from './slides/03-getting-started/04-StartingPoints.svelte';
+	import LetsGetStarted from './slides/03-getting-started/01-LetsGetStarted.svelte';
+	import Prerequisites from './slides/03-getting-started/02-Prerequisites.svelte';
+	import LevelsOfEntry from './slides/03-getting-started/03-LevelsOfEntry.svelte';
+	import DemoTime from './slides/03-getting-started/04-DemoTime.svelte';
 
 	// 04 - The honest downsides
 	import WhatsHarder from './slides/04-downsides/01-WhatsHarder.svelte';
@@ -53,10 +53,10 @@
 <DesignGroundedInReality />
 
 <!-- 03 - How to Get Started (4-5 min) -->
-<LiveDemoIntro />
-<ToolsApproaches />
-<MinimumSkillset />
-<StartingPoints />
+<LetsGetStarted />
+<Prerequisites />
+<LevelsOfEntry />
+<DemoTime />
 
 <!-- 04 - The Honest Downsides (2-3 min) -->
 <WhatsHarder />
