@@ -9,7 +9,7 @@
 <Slide section="Getting Started" title="Options">
 	<Box flexDirection="column" textAlign="center" justifyContent="center" gap="medium">
 		<Headline tag="h2" size="h2" color="brand">Let's get started</Headline>
-		<Text size="large" class="fragment" data-fragment-index="1">
+		<Text size="large">
 			There are multiple ways to design in the browser, each with its own strengths.
 		</Text>
 	</Box>

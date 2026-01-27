@@ -31,27 +31,29 @@
 	</Box>
 	<Notes>
 		<p>
-			There are different levels at which you can start designing in the browser, each serving a
-			different purpose and being suited for different parts of the design process and development
-			lifecycle:
+			There are different levels at which you can start designing in the browser, each serving
+			a different purpose and being suited for different parts of the design process and
+			development lifecycle:
 		</p>
 		<ul>
 			<li>
-				<strong>Browser inspect tools:</strong> Perfect for quick adjustments and refinements or
-				identifying exactly what type of design language is used in a specific element (the CSS
-				styles applied to an element). This is especially useful when you're working with an
-				engineer on a call — you can tweak values live and see changes immediately.
+				<strong>Browser inspect tools:</strong> Perfect for quick adjustments and refinements
+				or identifying exactly what type of design language is used in a specific element (the
+				CSS styles applied to an element). This is especially useful when you're working with
+				an engineer on a call — you can tweak values live and see changes immediately.
 			</li>
 			<li>
-				<strong>CodePen or demo apps:</strong> Great for exploration and experimentation. When you
-				want to iterate on a small pattern or component without the overhead of a full application.
+				<strong>CodePen or demo apps:</strong> Great for exploration and experimentation. When
+				you want to iterate on a small pattern or component without the overhead of a full application.
+				Working in this way can also be great for testing interaction design very quickly, for
+				example, hover, active, and focus states.
 			</li>
 			<li>
 				<strong>Running the app that your working on locally:</strong> This is where you get the
 				full picture. You can map out complete UX flows, test responsive layouts at scale, explore
-				what's actually possible with real design system components or application-specific
-				patterns. This level is also ideal for updating and modernizing existing designs through an
-				iterative process.
+				what's actually possible with real design system components or application-specific patterns.
+				This level is also ideal for updating and modernizing existing designs through an iterative
+				process.
 			</li>
 		</ul>
 	</Notes>

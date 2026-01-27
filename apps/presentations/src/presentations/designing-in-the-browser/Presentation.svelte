@@ -1,8 +1,8 @@
 <script>
 	// 01 - Introduction
 	import Title from './slides/01-introduction/01-Title.svelte';
-	import Hook from './slides/01-introduction/02-Hook.svelte';
-	import About from './slides/01-introduction/03-About.svelte';
+	import About from './slides/01-introduction/02-About.svelte';
+	import Hook from './slides/01-introduction/03-Hook.svelte';
 	import Overview from './slides/01-introduction/04-Overview.svelte';
 
 	// 02 - Why design in the browser?
@@ -43,8 +43,8 @@
 
 <!-- 01 - Introduction (1-2 min) -->
 <Title />
-<Hook />
 <About />
+<Hook />
 <Overview />
 
 <!-- 02 - Why Design in the Browser? (3-4 min) -->
