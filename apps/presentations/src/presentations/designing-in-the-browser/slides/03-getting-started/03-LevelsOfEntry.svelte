@@ -2,27 +2,36 @@
 	import Slide from '../../../../components/Slide.svelte';
 	import Box from '../../../../components/Box.svelte';
 	import Headline from '../../../../components/Headline.svelte';
-	import Text from '../../../../components/Text.svelte';
 	import Notes from '../../../../components/Notes.svelte';
+	import DifficultyCard from '../../../../components/DifficultyCard.svelte';
 </script>
 
 <Slide section="Getting Started" title="Levels of Entry">
-	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
+	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="large">
 		<Headline tag="h2" size="h3" color="brand">Different levels of entry</Headline>
-		<ul>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="1">
-				<strong>Browser inspect tools</strong> — great for quick tweaks, refining details on the
-				fly, or iterating with an engineer in real-time
-			</Text>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="2">
-				<strong>CodePen or demo apps</strong> — ideal for exploration, iterating on small patterns,
-				or testing ideas in isolation
-			</Text>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="3">
-				<strong>Running the app locally</strong> — best for mapping out UX, testing large layouts,
-				pushing boundaries, or updating legacy designs
-			</Text>
-		</ul>
+		<Box flexDirection="row" gap="medium" justifyContent="start">
+			<DifficultyCard
+				title="Browser inspect tools"
+				description="Great for quick tweaks, refining details on the fly, or iterating with an engineer in real-time"
+				level={1}
+				maxLevel={5}
+				fragmentIndex={1}
+			/>
+			<DifficultyCard
+				title="CodePen or demo apps"
+				description="Ideal for exploration, iterating on small patterns, or testing ideas in isolation"
+				level={3}
+				maxLevel={5}
+				fragmentIndex={2}
+			/>
+			<DifficultyCard
+				title="Running the app locally"
+				description="Best for mapping out UX, testing large layouts, pushing boundaries, or updating legacy designs"
+				level={5}
+				maxLevel={5}
+				fragmentIndex={3}
+			/>
+		</Box>
 	</Box>
 	<Notes>
 		<p>
