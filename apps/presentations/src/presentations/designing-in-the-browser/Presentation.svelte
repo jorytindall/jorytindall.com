@@ -38,6 +38,7 @@
 	// 07 - Actionable next steps
 	import StartToday from './slides/07-actionable/01-StartToday.svelte';
 	import Resources from './slides/07-actionable/02-Resources.svelte';
+	import KeyTakeaways from './slides/07-actionable/03-KeyTakeaways.svelte';
 
 	// 08 - Conclusion
 	import QA from './slides/08-conclusion/01-QA.svelte';
@@ -82,6 +83,7 @@
 <!-- 07 - Start Today: Actionable Next Steps (2 min) -->
 <StartToday />
 <Resources />
+<KeyTakeaways />
 
 <!-- 08 - Q&A (remaining time) -->
 <QA />

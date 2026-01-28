@@ -25,11 +25,24 @@
 		</ul>
 	</Box>
 	<Notes>
+		<p>Here are some resources to help you on your journey:</p>
 		<ul>
-			<li>The best resource is an engineer willing to pair with you and answer questions</li>
-			<li>AI tools are great for explaining code and helping you get unstuck</li>
-			<li>MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals</li>
-			<li>But honestly, the most important resource is your own curiosity — start poking around</li>
+			<li>
+				The best resource is an engineer willing to pair with you and answer questions. Don't
+				be afraid to ask for help — most engineers love explaining how things work.
+			</li>
+			<li>
+				AI tools like Claude and Cursor are incredible for explaining code and helping you get
+				unstuck. Use them as learning tools, not just code generators.
+			</li>
+			<li>
+				MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals.
+				Bookmark it and use it often.
+			</li>
+			<li>
+				But honestly, the most important resource is your own curiosity — start poking around,
+				break things, and learn from the experience.
+			</li>
 		</ul>
 	</Notes>
 </Slide>
