@@ -6,14 +6,22 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Actionable Next Steps" title="Resources">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">Resources</Headline>
 		<ul>
-			<li><Text tag="span" size="large">Your friendly neighborhood engineer</Text></li>
-			<li><Text tag="span" size="large">Claude, Cursor, or your AI tool of choice</Text></li>
-			<li><Text tag="span" size="large">MDN Web Docs for fundamentals</Text></li>
-			<li><Text tag="span" size="large">Your own curiosity</Text></li>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="1">
+				Your friendly neighborhood engineer
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
+				Claude, Cursor, or your AI tool of choice
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
+				MDN Web Docs for fundamentals
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
+				Your own curiosity
+			</Text>
 		</ul>
 	</Box>
 	<Notes>

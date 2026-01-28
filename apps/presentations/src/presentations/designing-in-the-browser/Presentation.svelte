@@ -25,6 +25,8 @@
 	import FigmaRole from './slides/05-existing-tools/01-FigmaRole.svelte';
 	import FigmaMake from './slides/05-existing-tools/02-FigmaMake.svelte';
 	import HybridWorkflow from './slides/05-existing-tools/03-HybridWorkflow.svelte';
+	import FigmaWorkflow from './slides/05-existing-tools/04-FigmaWorkflow.svelte';
+	import BrowserWorkflow from './slides/05-existing-tools/05-BrowserWorkflow.svelte';
 
 	// 06 - The bigger questions
 	import ProductionReady from './slides/06-bigger-questions/01-ProductionReady.svelte';
@@ -67,6 +69,8 @@
 <FigmaRole />
 <FigmaMake />
 <HybridWorkflow />
+<FigmaWorkflow />
+<BrowserWorkflow />
 
 <!-- 06 - The Bigger Questions (3-4 min) -->
 <ProductionReady />

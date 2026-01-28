@@ -6,7 +6,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="The Bigger Questions" title="Figma Investment">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">"Did I waste years learning Figma?"</Headline>
 		<Text size="large">

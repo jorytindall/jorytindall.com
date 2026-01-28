@@ -5,7 +5,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Conclusion" title="Q&A">
 	<Box flexDirection="column" textAlign="center" justifyContent="center">
 		<Headline tag="h2" size="h1" color="brand">Questions?</Headline>
 	</Box>

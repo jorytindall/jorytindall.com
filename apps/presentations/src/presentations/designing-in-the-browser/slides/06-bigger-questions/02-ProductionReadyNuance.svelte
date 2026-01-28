@@ -6,12 +6,16 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="The Bigger Questions" title="What's In Reach">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">What's in reach vs. what's not</Headline>
 		<ul>
-			<li><Text tag="span" size="large"><strong>In reach:</strong> UI design, presentational JavaScript, cleaning up legacy experiences</Text></li>
-			<li><Text tag="span" size="large"><strong>Further out:</strong> Complex APIs, databases, complex functional JavaScript</Text></li>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="1">
+				<strong>In reach:</strong> UI design, presentational JavaScript, cleaning up legacy experiences
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
+				<strong>Further out:</strong> Complex APIs, databases, complex functional JavaScript
+			</Text>
 		</ul>
 	</Box>
 	<Notes>

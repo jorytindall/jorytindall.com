@@ -6,13 +6,19 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Actionable Next Steps" title="Start Today">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">Start today</Headline>
 		<ol>
-			<li><Text tag="span" size="large">Clone your team's repo and run the application locally</Text></li>
-			<li><Text tag="span" size="large">Find one small UI change and try to make it yourself</Text></li>
-			<li><Text tag="span" size="large">Use an AI tool to help you understand the code</Text></li>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="1">
+				Clone your team's repo and run the application locally
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
+				Find one small UI change and try to make it yourself
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
+				Use an AI tool to help you understand the code
+			</Text>
 		</ol>
 	</Box>
 	<Notes>

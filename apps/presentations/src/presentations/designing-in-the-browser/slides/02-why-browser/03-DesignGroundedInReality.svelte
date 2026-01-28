@@ -6,7 +6,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Why Design in the Browser" title="Design Grounded in Reality">
 	<Box
 		flexDirection="column"
 		textAlign="left"

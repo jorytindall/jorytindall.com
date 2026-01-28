@@ -6,19 +6,18 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
-	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
-		<Headline tag="h2" size="h3" color="brand">The hybrid workflow</Headline>
-		<ul>
-			<li><Text tag="span" size="large"><strong>Figma:</strong> Early exploration, stakeholder alignment, documentation</Text></li>
-			<li><Text tag="span" size="large"><strong>Browser:</strong> Iteration, interaction design, testing, final refinement</Text></li>
-		</ul>
+<Slide section="Where Do Existing Tools Fit" title="The Hybrid Workflow">
+	<Box flexDirection="column" alignItems="center" gap="medium">
+		<img
+			src="./images/designing-in-the-browser/cat-watermelon.gif"
+			alt="A cat and a watermelon…hybrid!"
+		/>
+		<Headline tag="h2" size="h1" textAlign="center" color="brand">The hybrid workflow</Headline>
 	</Box>
 	<Notes>
-		<ul>
-			<li>In practice, most of us will use both</li>
-			<li>Figma: early exploration, stakeholder presentations, documentation</li>
-			<li>Browser: iteration, nailing interaction design, testing with real data, final refinement before shipping</li>
-		</ul>
+		<p>
+			In practice, a hybrid workflow using both Figma and the browser in our design process
+			makes sense. Each has strengths that complement the other.
+		</p>
 	</Notes>
 </Slide>

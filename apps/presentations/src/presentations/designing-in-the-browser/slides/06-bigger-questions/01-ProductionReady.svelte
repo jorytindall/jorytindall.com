@@ -6,7 +6,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="The Bigger Questions" title="Production Ready">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">"Can I ship production-ready work?"</Headline>
 		<Text size="large">

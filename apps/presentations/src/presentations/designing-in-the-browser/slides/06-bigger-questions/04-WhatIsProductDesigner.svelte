@@ -6,7 +6,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="The Bigger Questions" title="What is a Product Designer">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">"What does 'product designer' even mean now?"</Headline>
 		<Text size="large">

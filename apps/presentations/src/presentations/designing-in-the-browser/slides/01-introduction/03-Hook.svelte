@@ -5,7 +5,7 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Introduction" title="Hook">
 	<Box flexDirection="column" textAlign="center" justifyContent="center">
 		<Headline tag="h2" size="h2" color="brand" textAlign="center">
 			What does "product designer" even mean anymore?
