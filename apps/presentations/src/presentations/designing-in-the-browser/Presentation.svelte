@@ -14,12 +14,11 @@
 	import LetsGetStarted from './slides/03-getting-started/01-LetsGetStarted.svelte';
 	import Prerequisites from './slides/03-getting-started/02-Prerequisites.svelte';
 	import LevelsOfEntry from './slides/03-getting-started/03-LevelsOfEntry.svelte';
-	import DemoTime from './slides/03-getting-started/04-DemoTime.svelte';
 
 	// 04 - The honest downsides
 	import WhatsHarder from './slides/04-downsides/01-WhatsHarder.svelte';
-	import WhereToolsWin from './slides/04-downsides/02-WhereToolsWin.svelte';
-	import WhenNot from './slides/04-downsides/03-WhenNot.svelte';
+	import WhenNot from './slides/04-downsides/02-WhenNot.svelte';
+	import WhereToolsWin from './slides/04-downsides/03-WhereToolsWin.svelte';
 
 	// 05 - Where do existing tools fit?
 	import FigmaRole from './slides/05-existing-tools/01-FigmaRole.svelte';
@@ -30,6 +29,7 @@
 	import HybridWorkflow from './slides/05-existing-tools/06-HybridWorkflow.svelte';
 	import FigmaWorkflow from './slides/05-existing-tools/07-FigmaWorkflow.svelte';
 	import BrowserWorkflow from './slides/05-existing-tools/08-BrowserWorkflow.svelte';
+	import DemoTime from './slides/05-existing-tools/09-DemoTime.svelte';
 
 	// 06 - The bigger questions
 	import ProductionReady from './slides/06-bigger-questions/01-ProductionReady.svelte';
@@ -62,12 +62,11 @@
 <LetsGetStarted />
 <Prerequisites />
 <LevelsOfEntry />
-<DemoTime />
 
 <!-- 04 - The Honest Downsides (2-3 min) -->
 <WhatsHarder />
-<WhereToolsWin />
 <WhenNot />
+<WhereToolsWin />
 
 <!-- 05 - Where Do Existing Tools Fit? (2-3 min) -->
 <FigmaRole />
@@ -78,6 +77,7 @@
 <HybridWorkflow />
 <FigmaWorkflow />
 <BrowserWorkflow />
+<DemoTime />
 
 <!-- 06 - The Bigger Questions (3-4 min) -->
 <ProductionReady />
