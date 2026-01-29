@@ -24,12 +24,12 @@
 	// 05 - Where do existing tools fit?
 	import FigmaRole from './slides/05-existing-tools/01-FigmaRole.svelte';
 	import FigmaMake from './slides/05-existing-tools/02-FigmaMake.svelte';
-	import HybridWorkflow from './slides/05-existing-tools/03-HybridWorkflow.svelte';
-	import FigmaWorkflow from './slides/05-existing-tools/04-FigmaWorkflow.svelte';
-	import BrowserWorkflow from './slides/05-existing-tools/05-BrowserWorkflow.svelte';
-	import ScenarioSpacing from './slides/05-existing-tools/06-ScenarioSpacing.svelte';
-	import ScenarioAnimation from './slides/05-existing-tools/07-ScenarioAnimation.svelte';
-	import ScenarioFormWidth from './slides/05-existing-tools/08-ScenarioFormWidth.svelte';
+	import ScenarioAnimation from './slides/05-existing-tools/03-ScenarioAnimation.svelte';
+	import ScenarioSpacing from './slides/05-existing-tools/04-ScenarioSpacing.svelte';
+	import ScenarioFormWidth from './slides/05-existing-tools/05-ScenarioFormWidth.svelte';
+	import HybridWorkflow from './slides/05-existing-tools/06-HybridWorkflow.svelte';
+	import FigmaWorkflow from './slides/05-existing-tools/07-FigmaWorkflow.svelte';
+	import BrowserWorkflow from './slides/05-existing-tools/08-BrowserWorkflow.svelte';
 
 	// 06 - The bigger questions
 	import ProductionReady from './slides/06-bigger-questions/01-ProductionReady.svelte';
@@ -72,8 +72,8 @@
 <!-- 05 - Where Do Existing Tools Fit? (2-3 min) -->
 <FigmaRole />
 <FigmaMake />
-<ScenarioSpacing />
 <ScenarioAnimation />
+<ScenarioSpacing />
 <ScenarioFormWidth />
 <HybridWorkflow />
 <FigmaWorkflow />

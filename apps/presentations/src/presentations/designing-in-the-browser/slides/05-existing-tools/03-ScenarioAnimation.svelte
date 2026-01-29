@@ -12,7 +12,8 @@
 		<Headline tag="h2" size="h4" color="brand">Scenario: Hover animation</Headline>
 		<Text size="medium">
 			You want to add some whimsy to a card's hover interaction. Instead of wrestling with
-			Figma's animation tools, prototype it directly in your demo app with AI assistance.
+			Figma's animation and prototyping tools, prototype it directly in your demo app with AI
+			assistance.
 		</Text>
 		<Box class="fragment" data-fragment-index="1">
 			<Code lang="css">
@@ -39,8 +40,10 @@
 			<li>Feel the interaction in real-time as you adjust</li>
 			<li>Hand off the exact CSS keyframe or transition values to your engineer</li>
 		</ul>
+		<p>The browser is where this interaction will actually live. Why not design it there?</p>
 		<p>
-			The browser is where this interaction will actually live. Why not design it there?
+			And, in reality, CSS transitions are not super complex, so it might be easier to just
+			write one yourself!
 		</p>
 	</Notes>
 </Slide>

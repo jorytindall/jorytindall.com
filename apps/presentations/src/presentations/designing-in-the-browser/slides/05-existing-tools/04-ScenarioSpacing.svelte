@@ -12,7 +12,8 @@
 		<Headline tag="h2" size="h4" color="brand">Scenario: Spacing feedback</Headline>
 		<Text size="medium">
 			Your PM gives feedback on the spacing between elements. Instead of updating the mockup,
-			use the browser's inspect tool to explore options and pass specs directly to your engineer.
+			use the browser's inspect tool to explore options and pass specs directly to your
+			engineer.
 		</Text>
 		<Box class="fragment" data-fragment-index="1">
 			<Code lang="css">
@@ -33,12 +34,15 @@
 		</p>
 		<ul>
 			<li>Open your browser's dev tools and inspect the element</li>
-			<li>Live-edit the CSS to try different spacing values</li>
+			<li>
+				Live-edit the CSS to try different spacing values (I'll show you this in a second)
+			</li>
 			<li>Once you find what works, pass those exact values to your engineer</li>
 		</ul>
 		<p>
-			This takes minutes instead of the round-trip of updating Figma, exporting, and handing
-			off again. You're working with the real layout, real content, and real constraints.
+			This takes seconds instead of the round-trip of updating Figma, exporting, and handing
+			off again. You're working with the real layout, real content, and the real constraints
+			of the web.
 		</p>
 	</Notes>
 </Slide>

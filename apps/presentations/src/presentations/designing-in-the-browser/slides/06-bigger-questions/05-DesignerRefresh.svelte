@@ -28,8 +28,10 @@
 				There's also a risk: firms that maintain a strict view of what a designer "is" will
 				fall behind
 			</li>
-			<li>Those that embrace a more flexible description will reap the rewards</li>
-			<li>Moving design closer to users</li>
+			<li>
+				Those that embrace a more flexible description will reap the rewards of moving
+				design closer to users
+			</li>
 		</ul>
 	</Notes>
 </Slide>

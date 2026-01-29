@@ -18,6 +18,8 @@
 		<ul>
 			<li>
 				Let's be realistic — in most scenarios, designers won't ship production code yet!
+				Fortunately that isn't true in all scenarios, and as I've mentioned, the landscape
+				is changing!
 			</li>
 			<li>There are organizational blockers, processes, ownership issues</li>
 			<li>

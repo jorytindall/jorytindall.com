@@ -19,6 +19,10 @@
 			<Text tag="li" size="large" class="fragment" data-fragment-index="3">
 				Most high-fidelity mockup creation is still best done in Figma.
 			</Text>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="4">
+				Managing design systems and component libraries are still a massive strong suit of
+				Figma.
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
@@ -29,6 +33,10 @@
 			<li>
 				Most high-fidelity mockup creation, especially for stakeholder presentations and
 				early exploration, is still best done there
+			</li>
+			<li>
+				Managing design systems and component libraries are still a massive strong suit of
+				Figma
 			</li>
 		</ul>
 	</Notes>

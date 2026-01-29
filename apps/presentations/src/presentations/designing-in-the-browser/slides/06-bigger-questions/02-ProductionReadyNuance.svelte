@@ -16,14 +16,20 @@
 			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
 				<strong>Further out:</strong> Complex APIs, databases, complex functional JavaScript
 			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
+				Know what's achievable and focus there
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
+		<p>What's realistically in reach for designers today? There's a spectrum here.</p>
 		<ul>
-			<li>There's a spectrum here</li>
-			<li>In reach: UI design work, presentational JavaScript, cleaning up legacy experiences</li>
+			<li>
+				In reach: UI development/engineering work, presentational JavaScript, cleaning up
+				legacy experiences
+			</li>
 			<li>Further out: Complex APIs, database work, heavy functional JavaScript</li>
-			<li>Know what's achievable and focus there</li>
+			<li>Know what's achievable and within your bounds, focus there</li>
 		</ul>
 	</Notes>
 </Slide>

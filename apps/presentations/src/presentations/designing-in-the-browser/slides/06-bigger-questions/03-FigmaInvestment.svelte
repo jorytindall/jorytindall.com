@@ -16,6 +16,12 @@
 			<Text tag="li" size="large" class="fragment" data-fragment-index="2"
 				>Figma skills got you here. Browser skills will take you further.</Text
 			>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="3"
+				>There are a lot of transferable skills
+			</Text>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="4"
+				>Designers who can work in both worlds will have an advantage</Text
+			>
 		</ul>
 	</Box>
 	<Notes>

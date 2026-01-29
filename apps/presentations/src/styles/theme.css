@@ -232,8 +232,8 @@ section.has-dark-background h6 {
 .reveal pre {
 	display: block;
 	position: relative;
-	width: 90%;
-	margin: var(--r-block-margin) auto;
+	width: 100%;
+	margin: var(--r-block-margin) 0;
 	text-align: left;
 	font-size: 0.55em;
 	font-family: var(--r-code-font);
@@ -250,7 +250,7 @@ section.has-dark-background h6 {
 
 .reveal pre code {
 	display: block;
-	padding: 5px;
+	padding: 1rem 1.25rem;
 	overflow: auto;
 	max-height: 400px;
 	word-wrap: normal;

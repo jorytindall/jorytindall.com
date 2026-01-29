@@ -1,9 +1,21 @@
-<script>
-	export let trim = true;
-	export let noescape = false;
-	export let lineNumbers = false;
-	export let lineStartFrom = undefined;
-	export let lang = undefined;
+<script lang="ts">
+	import type { Snippet } from 'svelte';
+
+	let {
+		trim = true,
+		noescape = false,
+		lineNumbers = false,
+		lineStartFrom = undefined,
+		lang = undefined,
+		children
+	}: {
+		trim?: boolean;
+		noescape?: boolean;
+		lineNumbers?: boolean;
+		lineStartFrom?: number;
+		lang?: string;
+		children?: Snippet;
+	} = $props();
 </script>
 
 <pre><code
@@ -11,5 +23,5 @@
 		data-trim={trim}
 		data-noescape={noescape}
 		data-line-numbers={lineNumbers}
-		data-ln-start-from={lineStartFrom}><slot /></code
+		data-ln-start-from={lineStartFrom}>{#if children}{@render children()}{/if}</code
 	></pre>

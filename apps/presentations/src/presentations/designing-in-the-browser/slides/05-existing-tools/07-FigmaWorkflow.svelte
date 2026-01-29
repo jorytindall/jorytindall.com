@@ -20,6 +20,11 @@
 				Design documentation and handoff artifacts
 			</Text>
 		</ul>
+		<Text size="medium" class="fragment" data-fragment-index="4">
+			Figma is a powerful tool for certain stages of the design process, but it's not the only
+			tool in your toolbox. Understanding where it fits best can help you leverage its
+			strengths while avoiding its limitations.
+		</Text>
 	</Box>
 	<Notes>
 		<p>In a hybrid workflow, Figma excels at specific stages of the design process:</p>
@@ -40,5 +45,11 @@
 				teams.
 			</li>
 		</ul>
+		<p>
+			More importantly, you want to consider who is going to be using these artifacts. If
+			somebody else is going to be using them, probably beneficial to use Figma for these
+			stages. Use your best judgement based on the gravity of the change, project, audience,
+			and version history.
+		</p>
 	</Notes>
 </Slide>
