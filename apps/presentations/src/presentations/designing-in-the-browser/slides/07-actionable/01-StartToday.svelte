@@ -6,22 +6,49 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Actionable Next Steps" title="Start Today">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">Start today</Headline>
 		<ol>
-			<li><Text tag="span" size="large">Clone your team's repo and run the application locally</Text></li>
-			<li><Text tag="span" size="large">Find one small UI change and try to make it yourself</Text></li>
-			<li><Text tag="span" size="large">Use an AI tool to help you understand the code</Text></li>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="1">
+				Open DevTools and inspect an element — understand how it's built
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
+				Clone your team's repo and get the application running locally
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
+				Find one small UI change and try to make it yourself
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
+				Use an AI tool as your pair programmer — to learn, not just generate
+			</Text>
 		</ol>
 	</Box>
 	<Notes>
+		<p>Here's my call-to-action for you. Don't leave here without a plan:</p>
 		<ul>
-			<li>Don't leave here without a plan</li>
-			<li>First, get the application running locally — ask an engineer to help you</li>
-			<li>Second, find one small UI change — a color, some spacing, a label — and try to make it yourself</li>
-			<li>Third, use an AI tool like Claude or Cursor to help you understand what you're looking at</li>
-			<li>Start small</li>
+			<li>
+				First, start with browser DevTools — right-click any element and inspect it. This is
+				the lowest barrier to entry and you can do it right now.
+			</li>
+			<li>
+				Second, get the application running locally — ask an engineer to help you with the
+				setup. This is where the real magic happens.
+			</li>
+			<li>
+				Third, find one small UI change — a color, some spacing, a label — and try to make it
+				yourself. Start small and build confidence.
+			</li>
+			<li>
+				Fourth, use an AI tool like Claude or Cursor as your pair programmer. These
+				tools are incredible for learning — ask them to explain what you're looking at,
+				why something works the way it does, or what alternatives exist. Treat it as a
+				patient teacher who's always available, not just a code generator.
+			</li>
 		</ul>
+		<p>
+			Remember the levels of entry we discussed: browser inspect tools, CodePen/demo apps, and
+			running locally. Pick the level that feels right for you and start there.
+		</p>
 	</Notes>
 </Slide>

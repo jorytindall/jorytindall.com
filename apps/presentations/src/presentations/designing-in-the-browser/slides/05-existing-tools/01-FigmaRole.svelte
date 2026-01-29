@@ -6,22 +6,68 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Where Do Existing Tools Fit" title="Figma's Role">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
-		<Headline tag="h2" size="h3" color="brand">Figma is a tool</Headline>
-		<Text size="large">
-			Learning Figma is necessary for the job right now.
-		</Text>
-		<Text size="large">
-			Most high-fidelity mockup creation is still best done in Figma.
-		</Text>
+		<Headline tag="h2" size="h3" color="brand">The landscape is changing</Headline>
+		<ul>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="1">
+				Learning Figma is necessary for the job right now.
+			</Text>
+			<Text tag="li" size="large" class="fragment" data-fragment-index="2">
+				Design systems and component libraries are a massive strong suit of Figma.
+			</Text>
+		</ul>
+		<Headline
+			tag="h3"
+			size="h4"
+			color="brand"
+			class="fragment"
+			data-fragment-index="3"
+			style="margin-top: 1rem;">Where Figma fits best</Headline
+		>
+		<ul>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
+				Early exploration and ideation
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="5">
+				Stakeholder presentations and alignment
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="6">
+				Design documentation and handoff artifacts
+			</Text>
+		</ul>
 	</Box>
 	<Notes>
+		<p>Let's be clear; Figma isn't going away, but the landscape is changing.</p>
 		<ul>
-			<li>Let's be clear: Figma isn't going away</li>
-			<li>It's still the best tool for certain parts of the design process</li>
-			<li>Learning it was and is necessary for the job</li>
-			<li>Most high-fidelity mockup creation, especially for stakeholder presentations and early exploration, is still best done there</li>
+			<li>Learning it was and is necessary for our jobs</li>
+			<li>
+				Managing design systems and component libraries are still a massive strong suit of
+				Figma
+			</li>
 		</ul>
+		<p>In a hybrid workflow, Figma excels at specific stages of the design process:</p>
+		<ul>
+			<li>
+				Early exploration and ideation — when you need to quickly sketch out ideas and
+				explore different directions without worrying about implementation details. Or even
+				storyboarding or crazy eights.
+			</li>
+			<li>
+				Stakeholder presentations and alignment — Figma's presentation features and easy
+				sharing make it ideal for getting buy-in and feedback from non-technical
+				stakeholders, especially early on in the process.
+			</li>
+			<li>
+				Design documentation and handoff artifacts — creating specs, component
+				documentation, and design system guidelines that need to be referenced by multiple
+				teams.
+			</li>
+		</ul>
+		<p>
+			More importantly, you want to consider who is going to be using these artifacts. If
+			somebody else is going to be using them, probably beneficial to use Figma for these
+			stages.
+		</p>
 	</Notes>
 </Slide>

@@ -10,17 +10,26 @@
 	import RevealNotes from 'reveal.js/plugin/notes/notes';
 	import { onMount, tick } from 'svelte';
 	import Presentation from '../../presentations/designing-in-the-browser/Presentation.svelte';
+	import SlideHeader from '../../components/SlideHeader.svelte';
+	import { createSlideContext } from '../../lib/slideContext.svelte';
 
-	export let reveal;
+	let reveal;
+
+	// Create the slide context at the page level
+	const slideContext = createSlideContext();
 
 	onMount(async () => {
 		await tick();
+
+		// Dynamically import highlight plugin to avoid SSR issues (uses window)
+		const RevealHighlight = (await import('reveal.js/plugin/highlight/highlight')).default;
+
 		const deck = new Reveal(reveal);
 		deck.initialize({
 			// Transition style
 			transition: 'fade',
 			transitionSpeed: 'fast',
-			plugins: [RevealNotes],
+			plugins: [RevealNotes, RevealHighlight],
 			// Use 1 based indexing for # links to match slide number (the default is 0)
 			hashOneBasedIndex: false,
 			// Add the current slide number to the URL hash so that reloading the page/copying the URL will return you to the same slide.
@@ -37,6 +46,15 @@
 			// Time before the cursor is hidden in ms
 			hideCursorTime: 5000, // 5 seconds
 		});
+
+		// Set initial slide index
+		const indices = deck.getIndices();
+		slideContext.setCurrentSlideIndex(indices.h);
+
+		// Listen for slide changes
+		deck.on('slidechanged', (event) => {
+			slideContext.setCurrentSlideIndex(event.indexh);
+		});
 	});
 </script>
 
@@ -44,7 +62,9 @@
 	<title>Designing in the Browser</title>
 </svelte:head>
 
-<div class="reveal">
+<SlideHeader />
+
+<div class="reveal" bind:this={reveal}>
 	<div class="slides">
 		<Presentation />
 	</div>

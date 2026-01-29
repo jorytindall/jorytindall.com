@@ -21,6 +21,7 @@
 	"devDependencies": {
 		"@changesets/cli": "^2.29.8",
 		"prettier": "^3.7.4",
+		"prettier-plugin-svelte": "^3.4.1",
 		"turbo": "^2.7.2"
 	},
 	"repository": {

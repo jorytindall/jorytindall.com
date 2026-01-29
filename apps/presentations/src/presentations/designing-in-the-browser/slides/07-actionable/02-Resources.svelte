@@ -6,22 +6,45 @@
 	import Notes from '../../../../components/Notes.svelte';
 </script>
 
-<Slide>
+<Slide section="Actionable Next Steps" title="Resources">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="medium">
 		<Headline tag="h2" size="h3" color="brand">Resources</Headline>
 		<ul>
-			<li><Text tag="span" size="large">Your friendly neighborhood engineer</Text></li>
-			<li><Text tag="span" size="large">Claude, Cursor, or your AI tool of choice</Text></li>
-			<li><Text tag="span" size="large">MDN Web Docs for fundamentals</Text></li>
-			<li><Text tag="span" size="large">Your own curiosity</Text></li>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="1">
+				Your friendly neighborhood engineer
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
+				AI tools as your pair programmer and patient educator
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
+				MDN Web Docs for fundamentals
+			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
+				Your own curiosity
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
+		<p>Here are some resources to help you on your journey:</p>
 		<ul>
-			<li>The best resource is an engineer willing to pair with you and answer questions</li>
-			<li>AI tools are great for explaining code and helping you get unstuck</li>
-			<li>MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals</li>
-			<li>But honestly, the most important resource is your own curiosity — start poking around</li>
+			<li>
+				The best resource is an engineer willing to pair with you and answer questions. Don't
+				be afraid to ask for help — most engineers love explaining how things work.
+			</li>
+			<li>
+				AI tools like Claude and Cursor make excellent pair programmers — they can
+				explain code line-by-line, teach you new patterns, and help you understand
+				not just what works but why it works. Use them as patient educators who never
+				tire of your questions, not just code generators.
+			</li>
+			<li>
+				MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals.
+				Bookmark it and use it often.
+			</li>
+			<li>
+				But honestly, the most important resource is your own curiosity — start poking around,
+				break things, and learn from the experience.
+			</li>
 		</ul>
 	</Notes>
 </Slide>

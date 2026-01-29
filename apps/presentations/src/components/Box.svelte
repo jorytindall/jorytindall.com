@@ -7,8 +7,9 @@
 		textAlign = 'center',
 		justifyContent = 'center',
 		flexDirection = 'column',
+		flexWrap = 'nowrap',
 		alignItems = 'start',
-		alignContent = 'center',
+		alignContent,
 		gap = 'none',
 		class: className,
 		children,
@@ -17,6 +18,7 @@
 		textAlign?: 'left' | 'center' | 'right';
 		justifyContent?: 'start' | 'center' | 'end' | 'space-between' | 'space-around';
 		flexDirection?: 'row' | 'column';
+		flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 		alignItems?: 'start' | 'end' | 'center' | 'stretch';
 		alignContent?: 'start' | 'end' | 'center' | 'stretch' | 'space-between' | 'space-around';
 		gap?: 'none' | 'small' | 'medium' | 'large' | 'x-large';
@@ -28,8 +30,9 @@
 			'box',
 			`justify-content--${justifyContent}`,
 			`align-items--${alignItems}`,
-			`align-content--${alignContent}`,
+			alignContent && `align-content--${alignContent}`,
 			`flex-direction--${flexDirection}`,
+			`flex-wrap--${flexWrap}`,
 			`text-align--${textAlign}`,
 			`gap--${gap}`,
 			className,
@@ -68,6 +71,20 @@
 
 	.flex-direction--column {
 		flex-direction: column;
+	}
+
+	/* Flex wrap */
+
+	.flex-wrap--nowrap {
+		flex-wrap: nowrap;
+	}
+
+	.flex-wrap--wrap {
+		flex-wrap: wrap;
+	}
+
+	.flex-wrap--wrap-reverse {
+		flex-wrap: wrap-reverse;
 	}
 
 	/* Justify content */
