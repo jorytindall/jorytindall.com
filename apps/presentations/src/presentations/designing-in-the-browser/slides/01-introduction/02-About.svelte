@@ -31,10 +31,13 @@
 					<Text size="large" tag="li" class="fragment" data-fragment-index="4"
 						>Saxophonist and musician</Text
 					>
+					<Text size="large" tag="li" class="fragment" data-fragment-index="5">
+						Run a lot of miles (most often while listening to Limp Bizkit)
+					</Text>
 				</ul>
 			</Box>
 		</Box>
-		<Callout color="primary" class="fragment" data-fragment-index="5">
+		<Callout color="primary" class="fragment" data-fragment-index="6">
 			<Box flexDirection="column" gap="small" justifyContent="start" alignItems="start">
 				<Headline size="h5" color="brand" tag="h3">💅 Fun fact</Headline>
 				<Text size="small" tag="p">
@@ -68,6 +71,10 @@
 			<li>
 				I'm also a saxophonist and musician in the local music scene here in the Pacific
 				Northwest.
+			</li>
+			<li>
+				And lastly, I run a lot of miles — usually while listening to Limp Bizkit. Don't
+				judge me.
 			</li>
 		</ul>
 		<p>

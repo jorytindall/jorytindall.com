@@ -5,32 +5,23 @@
 	import Text from '../../../../components/Text.svelte';
 	import Notes from '../../../../components/Notes.svelte';
 	import Callout from '../../../../components/Callout.svelte';
+	import TableOfContents from '../../../../components/TableOfContents.svelte';
+
+	const tocItems = [
+		{ emoji: '🤨', title: 'What/Why design in the browser?', slideIndex: 4 },
+		{ emoji: '🛠️', title: 'How to get started', slideIndex: 7 },
+		{ emoji: '👎', title: 'The honest downsides', slideIndex: 11 },
+		{ emoji: '🧑‍💻', title: 'Where existing tools fit', slideIndex: 14 },
+		{ emoji: '🤔', title: 'The bigger questions', slideIndex: 22 },
+		{ emoji: '🚀', title: 'Actionable next steps', slideIndex: 27 }
+	];
 </script>
 
 <Slide section="Introduction" title="Overview">
 	<Box flexDirection="column" textAlign="left" justifyContent="start" gap="x-large">
 		<Headline tag="h2" size="h3" color="brand">What we'll cover</Headline>
-		<ul>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="1"
-				>🤨 What/Why design in the browser?</Text
-			>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="2"
-				>🛠️ How to get started</Text
-			>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="3"
-				>👎 The honest downsides</Text
-			>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="4"
-				>🧑‍💻 Where existing tools fit</Text
-			>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="5"
-				>🤔 The bigger questions</Text
-			>
-			<Text tag="li" size="large" class="fragment" data-fragment-index="6"
-				>🚀 Actionable next steps</Text
-			>
-		</ul>
-		<Callout color="warning" class="fragment" data-fragment-index="8">
+		<TableOfContents items={tocItems} />
+		<Callout color="warning" class="fragment" data-fragment-index="1">
 			<Box flexDirection="column" gap="medium" justifyContent="start" alignItems="start">
 				<Headline tag="h3" size="h5">🙋 Note on questions</Headline>
 				<Text size="x-small" tag="p">

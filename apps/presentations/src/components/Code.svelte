@@ -1,11 +1,15 @@
 <script>
- export let trim;
- export let noescape;
- export let lineNumbers;
- export let lineStartFrom;
+	export let trim = true;
+	export let noescape = false;
+	export let lineNumbers = false;
+	export let lineStartFrom = undefined;
+	export let lang = undefined;
 </script>
-<pre>
-		<code data-trim={trim} data-noescape={noescape} data-line-numbers={lineNumbers} data-ln-start-from={lineStartFrom}>
-				<slot/>
-		</code>
-</pre>
+
+<pre><code
+		class={lang ? `language-${lang}` : undefined}
+		data-trim={trim}
+		data-noescape={noescape}
+		data-line-numbers={lineNumbers}
+		data-ln-start-from={lineStartFrom}><slot /></code
+	></pre>

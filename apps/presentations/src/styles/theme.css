@@ -155,7 +155,8 @@ section.has-dark-background h6 {
 .reveal ul {
 	display: inline-block;
 	text-align: left;
-	margin: 0 0 0 1em;
+	margin: 0;
+	padding-left: 1.2em;
 }
 
 .reveal ol {
@@ -163,15 +164,32 @@ section.has-dark-background h6 {
 }
 
 .reveal ul {
-	list-style-type: disc;
+	list-style: none;
+}
+
+.reveal ul>li {
+	position: relative;
+	padding-left: 0.5rem;
+}
+
+.reveal ul>li::before {
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	background: url('/arrow-right.png');
+	background-size: cover;
+	background-position: center;
+	top: 0.3em;
+	left: -1.5rem;
 }
 
 .reveal ul ul {
-	list-style-type: square;
+	list-style: none;
 }
 
 .reveal ul ul ul {
-	list-style-type: circle;
+	list-style: none;
 }
 
 .reveal ul ul,
@@ -179,7 +197,8 @@ section.has-dark-background h6 {
 .reveal ol ol,
 .reveal ol ul {
 	display: block;
-	margin-left: 40px;
+	margin-left: 0;
+	padding-left: 1.2em;
 }
 
 .reveal dt {
@@ -469,7 +488,7 @@ section.has-dark-background h6 {
 }
 
 ul li {
-	margin-bottom: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 code {

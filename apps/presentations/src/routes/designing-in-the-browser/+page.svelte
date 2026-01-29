@@ -20,12 +20,16 @@
 
 	onMount(async () => {
 		await tick();
+
+		// Dynamically import highlight plugin to avoid SSR issues (uses window)
+		const RevealHighlight = (await import('reveal.js/plugin/highlight/highlight')).default;
+
 		const deck = new Reveal(reveal);
 		deck.initialize({
 			// Transition style
 			transition: 'fade',
 			transitionSpeed: 'fast',
-			plugins: [RevealNotes],
+			plugins: [RevealNotes, RevealHighlight],
 			// Use 1 based indexing for # links to match slide number (the default is 0)
 			hashOneBasedIndex: false,
 			// Add the current slide number to the URL hash so that reloading the page/copying the URL will return you to the same slide.
