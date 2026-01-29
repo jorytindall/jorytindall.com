@@ -20,7 +20,7 @@
 				Find one small UI change and try to make it yourself
 			</Text>
 			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
-				Use an AI tool to help you understand the code
+				Use an AI tool as your pair programmer — to learn, not just generate
 			</Text>
 		</ol>
 	</Box>
@@ -40,8 +40,10 @@
 				yourself. Start small and build confidence.
 			</li>
 			<li>
-				Fourth, use an AI tool like Claude or Cursor to help you understand what you're
-				looking at. These tools are incredible for learning and getting unstuck.
+				Fourth, use an AI tool like Claude or Cursor as your pair programmer. These
+				tools are incredible for learning — ask them to explain what you're looking at,
+				why something works the way it does, or what alternatives exist. Treat it as a
+				patient teacher who's always available, not just a code generator.
 			</li>
 		</ul>
 		<p>

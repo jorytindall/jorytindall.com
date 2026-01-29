@@ -16,7 +16,7 @@
 			problem space.
 		</Text>
 		<Text size="large" class="fragment" data-fragment-index="2">
-			Technical knowledge + AI tools + creative thinking = a new kind of designer.
+			Technical knowledge + AI as pair programmer + creative thinking = a new kind of designer.
 		</Text>
 		<Text size="large" class="fragment" data-fragment-index="3">
 			Organizations that embrace this flexibility will move faster. Those that don't will fall
@@ -39,8 +39,8 @@
 		<p>The title is due for a refresh:</p>
 		<ul>
 			<li>
-				With a little technical knowledge, a paired AI tool, and some creative thinking, the
-				term "designer" is set for a refresh
+				With a little technical knowledge, an AI pair programmer to guide and teach you,
+				and some creative thinking, the term "designer" is set for a refresh
 			</li>
 			<li>
 				There's also a risk: firms that maintain a strict view of what a designer "is" will

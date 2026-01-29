@@ -14,7 +14,7 @@
 				Your friendly neighborhood engineer
 			</Text>
 			<Text size="large" tag="li" class="fragment" data-fragment-index="2">
-				Claude, Cursor, or your AI tool of choice
+				AI tools as your pair programmer and patient educator
 			</Text>
 			<Text size="large" tag="li" class="fragment" data-fragment-index="3">
 				MDN Web Docs for fundamentals
@@ -32,8 +32,10 @@
 				be afraid to ask for help — most engineers love explaining how things work.
 			</li>
 			<li>
-				AI tools like Claude and Cursor are incredible for explaining code and helping you get
-				unstuck. Use them as learning tools, not just code generators.
+				AI tools like Claude and Cursor make excellent pair programmers — they can
+				explain code line-by-line, teach you new patterns, and help you understand
+				not just what works but why it works. Use them as patient educators who never
+				tire of your questions, not just code generators.
 			</li>
 			<li>
 				MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals.

@@ -36,7 +36,7 @@
 				You don't need to become a senior engineer.
 			</Text>
 			<Text size="large" tag="li" class="fragment" data-fragment-index="7">
-				Start small, build gradually, and use AI tools to help fill the gaps.
+				Start small, build gradually, and use AI as your pair programmer and educator.
 			</Text>
 		</ul>
 	</Box>
@@ -71,9 +71,11 @@
 				attainable with some effort and practice.
 			</li>
 			<li>
-				Start small, build gradually, and use AI tools to help fill the gaps. But I can't
-				stress enough the importance of understanding and contextualizing what a tool like
-				Copilot or Claude Code generates.
+				Start small, build gradually, and use AI as your pair programmer and educator.
+				Tools like Claude or Cursor aren't just code generators — they can explain why
+				code works, suggest alternatives, and teach you patterns as you go. The key is
+				to engage with what they generate, ask follow-up questions, and build real
+				understanding over time.
 			</li>
 		</ul>
 	</Notes>
