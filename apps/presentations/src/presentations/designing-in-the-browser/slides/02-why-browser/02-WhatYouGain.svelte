@@ -61,6 +61,15 @@
 				<strong>Grounded interaction design</strong> — real hover states,
 				real transitions, real feedback
 			</Text>
+			<Text
+				tag="li"
+				size="large"
+				class="fragment"
+				data-fragment-index="6"
+			>
+				<strong>Reduced time-to-value</strong> — by eliminating the mockup-to-code
+				translation step, features reach users faster with fewer rounds of revision
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
@@ -95,6 +104,12 @@
 				real system feedback having this level of grounded/realistic
 				design from the beginning makes a huge difference when handing
 				off and capturing the unique aspects of a design to an engineer.
+			</li>
+			<li>
+				When you're working directly in the medium that ships, you're cutting
+				out a translation step. This means faster iteration cycles, fewer
+				misunderstandings between design and engineering, and ultimately
+				features reaching users sooner.
 			</li>
 		</ul>
 	</Notes>

@@ -22,6 +22,9 @@
 			<Text size="large" tag="li" class="fragment" data-fragment-index="4">
 				Start small and build gradually
 			</Text>
+			<Text size="large" tag="li" class="fragment" data-fragment-index="5">
+				AI tools + browser workflow = faster time-to-value
+			</Text>
 		</ul>
 	</Box>
 	<Notes>
@@ -44,6 +47,11 @@
 			<li>
 				Start small and build gradually — pick the level of entry that works for you, whether
 				that's browser DevTools, CodePen, or running locally. Every step forward is progress.
+			</li>
+			<li>
+				The combination of AI-assisted development and browser-based design dramatically
+				reduces the time from idea to shipped feature. This is increasingly what
+				organizations will expect from modern product designers.
 			</li>
 		</ul>
 	</Notes>

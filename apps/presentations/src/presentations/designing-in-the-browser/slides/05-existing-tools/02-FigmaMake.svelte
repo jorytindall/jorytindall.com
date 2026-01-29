@@ -20,7 +20,8 @@
 				Why add AI to the middle step when you could skip it entirely?
 			</Text>
 			<Text tag="li" size="large" class="fragment" data-fragment-index="3">
-				Sometimes the mockup becomes a bottleneck, not a benefit.
+				Sometimes the mockup becomes a bottleneck, not a benefit — slowing down time-to-value
+				for your product.
 			</Text>
 		</ul>
 	</Box>
@@ -39,7 +40,9 @@
 			<li>
 				Sometimes Figma becomes a bottleneck rather than a benefit. When you receive feedback
 				on spacing, want to explore an interaction, or need to test with real data, updating
-				a mockup adds friction rather than value.
+				a mockup adds friction rather than value. Every hour spent updating mockups is an
+				hour not spent shipping. When you can iterate directly in the browser with AI
+				assistance, you're reducing the time between design decision and user value.
 			</li>
 		</ul>
 		<p>
