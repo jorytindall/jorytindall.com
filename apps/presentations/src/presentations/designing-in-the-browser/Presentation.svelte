@@ -16,9 +16,8 @@
 	import LevelsOfEntry from './slides/03-getting-started/03-LevelsOfEntry.svelte';
 
 	// 04 - The honest downsides
-	import WhatsHarder from './slides/04-downsides/01-WhatsHarder.svelte';
-	import WhenNot from './slides/04-downsides/02-WhenNot.svelte';
-	import WhereToolsWin from './slides/04-downsides/03-WhereToolsWin.svelte';
+	import SkillGap from './slides/04-downsides/01-SkillGap.svelte';
+	import WhereToolsWin from './slides/04-downsides/02-WhereToolsWin.svelte';
 
 	// 05 - Where do existing tools fit?
 	import FigmaRole from './slides/05-existing-tools/01-FigmaRole.svelte';
@@ -27,16 +26,13 @@
 	import ScenarioSpacing from './slides/05-existing-tools/04-ScenarioSpacing.svelte';
 	import ScenarioFormWidth from './slides/05-existing-tools/05-ScenarioFormWidth.svelte';
 	import HybridWorkflow from './slides/05-existing-tools/06-HybridWorkflow.svelte';
-	import FigmaWorkflow from './slides/05-existing-tools/07-FigmaWorkflow.svelte';
-	import BrowserWorkflow from './slides/05-existing-tools/08-BrowserWorkflow.svelte';
-	import DemoTime from './slides/05-existing-tools/09-DemoTime.svelte';
+	import BrowserWorkflow from './slides/05-existing-tools/07-BrowserWorkflow.svelte';
+	import DemoTime from './slides/05-existing-tools/08-DemoTime.svelte';
 
 	// 06 - The bigger questions
 	import ProductionReady from './slides/06-bigger-questions/01-ProductionReady.svelte';
-	import ProductionReadyNuance from './slides/06-bigger-questions/02-ProductionReadyNuance.svelte';
+	import WhatIsProductDesigner from './slides/06-bigger-questions/02-WhatIsProductDesigner.svelte';
 	import FigmaInvestment from './slides/06-bigger-questions/03-FigmaInvestment.svelte';
-	import WhatIsProductDesigner from './slides/06-bigger-questions/04-WhatIsProductDesigner.svelte';
-	import DesignerRefresh from './slides/06-bigger-questions/05-DesignerRefresh.svelte';
 
 	// 07 - Actionable next steps
 	import StartToday from './slides/07-actionable/01-StartToday.svelte';
@@ -64,8 +60,7 @@
 <LevelsOfEntry />
 
 <!-- 04 - The Honest Downsides (2-3 min) -->
-<WhatsHarder />
-<WhenNot />
+<SkillGap />
 <WhereToolsWin />
 
 <!-- 05 - Where Do Existing Tools Fit? (2-3 min) -->
@@ -75,16 +70,13 @@
 <ScenarioSpacing />
 <ScenarioFormWidth />
 <HybridWorkflow />
-<FigmaWorkflow />
 <BrowserWorkflow />
 <DemoTime />
 
 <!-- 06 - The Bigger Questions (3-4 min) -->
 <ProductionReady />
-<ProductionReadyNuance />
-<FigmaInvestment />
 <WhatIsProductDesigner />
-<DesignerRefresh />
+<FigmaInvestment />
 
 <!-- 07 - Start Today: Actionable Next Steps (2 min) -->
 <StartToday />
