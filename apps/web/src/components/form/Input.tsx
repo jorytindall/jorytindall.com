@@ -15,6 +15,8 @@ interface InputProps {
 	validationSchema?: any;
 	label: string;
 	errors?: any;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	autoFocus?: boolean;
 }
 
 export const Input = ({
@@ -28,8 +30,15 @@ export const Input = ({
 	validationSchema,
 	label,
 	errors,
+	onChange,
+	autoFocus,
 }: InputProps) => {
 	const classes = getClasses([styles.input]);
+
+	// Support both react-hook-form and controlled inputs
+	const inputProps = register
+		? register(name, validationSchema)
+		: { value, onChange };
 
 	return (
 		<ItemWrapper>
@@ -39,10 +48,10 @@ export const Input = ({
 				type={type}
 				name={name}
 				className={classes}
-				value={value}
 				id={id}
 				required={required}
-				{...register(name, validationSchema)}
+				autoFocus={autoFocus}
+				{...inputProps}
 			/>
 			{errors && errors[name]?.type === "required" && (
 				<Error message={errors[name]?.message} />

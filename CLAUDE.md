@@ -71,6 +71,7 @@ This is a monorepo managed by `pnpm` workspaces and TurboRepo containing Jory Ti
 The web app expects these environment variables:
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
+- `PORTFOLIO_ACCESS_PASSWORD` - Shared password for accessing protected portfolio projects
 - Additional vars for analytics and email functionality
 
 ## Testing
