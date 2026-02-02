@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import styles from './InlineLink.module.css';
 
 interface LinkProps {
-	type: string;
+	type: 'internal' | 'external' | string;
 	href: any;
 	children: React.ReactNode;
 	target?: '_self' | '_blank' | '_parent' | '_top';

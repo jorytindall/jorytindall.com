@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import { Input } from 'components/form/Input';
 import { Button } from 'components/button/Button';
-import { Headline } from 'components/typography/Headline';
-import { Paragraph } from 'components/typography/Body';
+import { Headline, Paragraph, InlineLink } from 'components/typography';
 import styles from './PasswordGate.module.css';
 
 interface PasswordGateProps {
@@ -50,15 +49,15 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 		<div className={styles.container}>
 			<div className={styles.content}>
 				<div className={styles.header}>
-					<Headline tag="h1" size="h2">Protected Content</Headline>
+					<Headline tag="h1" size="h2" color="primary">Protected Content</Headline>
 					{title && (
-						<Paragraph type="primary" color="primary">
+						<Headline tag="h2" size="h3" color="secondary">
 							{title}
-						</Paragraph>
+						</Headline>
 					)}
 					<Paragraph type="secondary" color="secondary">
 						This portfolio project is password protected. Please enter the
-						access code to continue.
+						access code to continue. Don&apos;t have an access code? <InlineLink type='internal' variant='primary' href='/contact'>Send me a note!</InlineLink>
 					</Paragraph>
 				</div>
 
@@ -70,7 +69,7 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 						label="Access Code"
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
-						placeholder="Enter access code"
+						placeholder="Speak, friend, and enter"
 						required
 						autoFocus
 					/>
