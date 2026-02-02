@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Label } from 'components/form/Label';
 import { ItemWrapper } from 'components/form/ItemWrapper';
 import { Button } from 'components/button/Button';
@@ -16,7 +15,6 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
-	const router = useRouter();
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -40,8 +38,8 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 				return;
 			}
 
-			// Refresh the page to show the protected content
-			router.refresh();
+			// Hard reload to ensure server reads the new cookie
+			window.location.reload();
 		} catch {
 			setError('An error occurred. Please try again.');
 			setIsLoading(false);
