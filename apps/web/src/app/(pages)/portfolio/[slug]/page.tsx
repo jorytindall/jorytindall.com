@@ -5,6 +5,8 @@ import {
 } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
 import { PortfolioTitle } from 'components/portfolio/PortfolioTitle';
+import { PasswordGate } from 'components/password-gate';
+import { hasPortfolioAccess } from 'lib/auth/portfolioAccess';
 
 // Revalidate portfolio every minute
 export const revalidate = 60;
@@ -45,8 +47,17 @@ export default async function PortfolioProject({ params }) {
 		client,
 		tools,
 		featuredImage,
-		moduleContent
+		moduleContent,
+		isPasswordProtected,
 	} = portfolioProject;
+
+	// Check if content is password protected and user has access
+	if (isPasswordProtected) {
+		const hasAccess = await hasPortfolioAccess();
+		if (!hasAccess) {
+			return <PasswordGate title={title} />;
+		}
+	}
 
 	return (
 		<>
