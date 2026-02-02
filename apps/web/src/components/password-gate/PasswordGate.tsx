@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Label } from 'components/form/Label';
-import { ItemWrapper } from 'components/form/ItemWrapper';
+import { Input } from 'components/form/Input';
 import { Button } from 'components/button/Button';
+import { Headline } from 'components/typography/Headline';
+import { Paragraph } from 'components/typography/Body';
 import styles from './PasswordGate.module.css';
-import inputStyles from 'components/form/Input.module.css';
 
 interface PasswordGateProps {
 	title?: string;
@@ -50,33 +50,43 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 		<div className={styles.container}>
 			<div className={styles.content}>
 				<div className={styles.header}>
-					<h1 className={styles.title}>Protected Content</h1>
-					{title && <p className={styles.projectTitle}>{title}</p>}
-					<p className={styles.description}>
+					<Headline tag="h1" size="h2">Protected Content</Headline>
+					{title && (
+						<Paragraph type="primary" color="primary">
+							{title}
+						</Paragraph>
+					)}
+					<Paragraph type="secondary" color="secondary">
 						This portfolio project is password protected. Please enter the
 						access code to continue.
-					</p>
+					</Paragraph>
 				</div>
 
 				<form onSubmit={handleSubmit} className={styles.form}>
-					<ItemWrapper>
-						<Label htmlFor="password">Access Code</Label>
-						<input
-							type="password"
-							id="password"
-							name="password"
-							className={inputStyles.input}
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							placeholder="Enter access code"
-							required
-							autoFocus
-						/>
-					</ItemWrapper>
+					<Input
+						type="password"
+						id="password"
+						name="password"
+						label="Access Code"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+						placeholder="Enter access code"
+						required
+						autoFocus
+					/>
 
-					{error && <p className={styles.error}>{error}</p>}
+					{error && (
+						<Paragraph type="secondary" className={styles.error}>
+							{error}
+						</Paragraph>
+					)}
 
-					<Button type="submit" variant="primary" disabled={isLoading}>
+					<Button
+						type="submit"
+						variant="primary"
+						isFullWidth
+						disabled={isLoading}
+					>
 						{isLoading ? 'Verifying...' : 'Access Project'}
 					</Button>
 				</form>
