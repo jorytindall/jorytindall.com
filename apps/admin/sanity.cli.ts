@@ -9,7 +9,7 @@ export default defineCliConfig({
 		...prev,
 		preview: {
 			...prev.preview,
-			allowedHosts: ['admin.jorytindall.com'],
+			allowedHosts: ['admin.jorytindall.com', '.railway.app'],
 		},
 	}),
 });
