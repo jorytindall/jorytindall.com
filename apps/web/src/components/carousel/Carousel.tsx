@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useSyncExternalStore } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { getClasses } from 'utils/getClasses';
 import styles from './Carousel.module.css';
@@ -21,9 +21,34 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 		...options,
 	});
 
-	const [canScrollPrev, setCanScrollPrev] = useState(false);
-	const [canScrollNext, setCanScrollNext] = useState(false);
-	const [selectedIndex, setSelectedIndex] = useState(0);
+	const subscribe = useCallback(
+		(callback: () => void) => {
+			if (!emblaApi) return () => {};
+			emblaApi.on('select', callback);
+			emblaApi.on('reInit', callback);
+			return () => {
+				emblaApi.off('select', callback);
+				emblaApi.off('reInit', callback);
+			};
+		},
+		[emblaApi]
+	);
+
+	const canScrollPrev = useSyncExternalStore(
+		subscribe,
+		() => emblaApi?.canScrollPrev() ?? false,
+		() => false
+	);
+	const canScrollNext = useSyncExternalStore(
+		subscribe,
+		() => emblaApi?.canScrollNext() ?? false,
+		() => false
+	);
+	const selectedIndex = useSyncExternalStore(
+		subscribe,
+		() => emblaApi?.selectedScrollSnap() ?? 0,
+		() => 0
+	);
 
 	const hasMultipleSlides = children.length > 1;
 
@@ -50,24 +75,6 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 		},
 		[emblaApi]
 	);
-
-	const onSelect = useCallback(() => {
-		if (!emblaApi) return;
-		setSelectedIndex(emblaApi.selectedScrollSnap());
-		setCanScrollPrev(emblaApi.canScrollPrev());
-		setCanScrollNext(emblaApi.canScrollNext());
-	}, [emblaApi]);
-
-	useEffect(() => {
-		if (!emblaApi) return;
-		onSelect();
-		emblaApi.on('select', onSelect);
-		emblaApi.on('reInit', onSelect);
-		return () => {
-			emblaApi.off('select', onSelect);
-			emblaApi.off('reInit', onSelect);
-		};
-	}, [emblaApi, onSelect]);
 
 	const wrapperClasses = getClasses([styles.wrapper, className ?? null]);
 

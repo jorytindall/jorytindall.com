@@ -11,6 +11,13 @@ export const Header = ({ links, personalStats }) => {
 	const route = usePathname();
 	const [overlay, setOverlay] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [prevRoute, setPrevRoute] = useState(route);
+
+	// Reset the state of overlay after route change
+	if (prevRoute !== route) {
+		setPrevRoute(route);
+		setOverlay(false);
+	}
 
 	// Check to see if overlay is toggled, then return the appropriate class
 	const getOverlayClass = overlay ? styles.headerOverlay : styles.header;
@@ -19,14 +26,14 @@ export const Header = ({ links, personalStats }) => {
 	useEffect(() => {
 		// Store the original body overflow style
 		const originalStyle = window.getComputedStyle(document.body).overflow;
-		
+
 		if (overlay) {
 				// Store current scroll position
 				const scrollY = window.scrollY;
-				
+
 				// Add our CSS module class to body
 				document.body.classList.add(styles.noScroll);
-				
+
 				// Set the scroll position as a CSS custom property
 				document.body.style.setProperty('--scroll-position', `-${scrollY}px`);
 		} else {
@@ -35,13 +42,13 @@ export const Header = ({ links, personalStats }) => {
 						.getPropertyValue('--scroll-position')
 						.replace('-', '')
 						.replace('px', '');
-				
+
 				// Remove our CSS module class
 				document.body.classList.remove(styles.noScroll);
-				
+
 				// Remove the custom property
 				document.body.style.removeProperty('--scroll-position');
-				
+
 				// Restore scroll position if we have one
 				if (scrollY) {
 						window.scrollTo(0, parseInt(scrollY, 10));
@@ -55,9 +62,6 @@ export const Header = ({ links, personalStats }) => {
 				document.body.style.overflow = originalStyle;
 		};
 	}, [overlay]);
-
-	// Reset the state of overlay after route change
-	useEffect(() => setOverlay(false), [route]);
 
 	// Change the header background on scroll
 	useEffect(() => {
