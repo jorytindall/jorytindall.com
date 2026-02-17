@@ -1,15 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useSyncExternalStore } from 'react'
 import { useTheme } from "next-themes"
 import { getClasses } from 'utils/getClasses';
 import s from './ThemePicker.module.css'
 
-const ThemePicker = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+const emptySubscribe = () => () => {};
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+const ThemePicker = () => {
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false)
+  const { theme, setTheme } = useTheme()
 
   if (!mounted) {
     return null

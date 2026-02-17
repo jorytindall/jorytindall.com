@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
 	TbPlayerPlayFilled,
 	TbPlayerPauseFilled,
@@ -29,20 +29,6 @@ export const Controls = ({
 
 	const playAnimationRef = useRef();
 
-	const repeat = useCallback(() => {
-		if (audioRef.current) {
-			const currentTime: number = audioRef.current.currentTime ?? 0;
-			setTimeProgress(currentTime);
-			progressBarRef.current.value = currentTime;
-			progressBarRef.current.style.setProperty(
-				'--range-progress',
-				`${(progressBarRef.current.value / duration) * 100}%`,
-			);
-		}
-
-		playAnimationRef.current = requestAnimationFrame(repeat);
-	}, [audioRef, duration, progressBarRef, setTimeProgress]);
-
 	const togglePlayPause = () => {
 		setIsPlaying((prev) => !prev);
 	};
@@ -54,8 +40,23 @@ export const Controls = ({
 			audioRef.current.pause();
 		}
 
-		playAnimationRef.current = requestAnimationFrame(repeat);
-	}, [isPlaying, audioRef, repeat]);
+		const animate = () => {
+			if (audioRef.current) {
+				const currentTime: number = audioRef.current.currentTime ?? 0;
+				setTimeProgress(currentTime);
+				progressBarRef.current.value = currentTime;
+				progressBarRef.current.style.setProperty(
+					'--range-progress',
+					`${(progressBarRef.current.value / duration) * 100}%`,
+				);
+			}
+			playAnimationRef.current = requestAnimationFrame(animate);
+		};
+
+		playAnimationRef.current = requestAnimationFrame(animate);
+
+		return () => cancelAnimationFrame(playAnimationRef.current);
+	}, [isPlaying, audioRef, duration, progressBarRef, setTimeProgress]);
 
 	// Navigation between tracks
 	const skipForward = () => {
