@@ -52,6 +52,13 @@ export default {
 			type: `mainImage`,
 		},
 		{
+			name: `galleryImages`,
+			title: `Gallery Images`,
+			type: `array`,
+			description: `Additional images displayed in a carousel on the portfolio card. If provided, these replace the featured image in the card view.`,
+			of: [{ type: `mainImage` }],
+		},
+		{
 			name: `overview`,
 			title: `Overview`,
 			type: `text`,

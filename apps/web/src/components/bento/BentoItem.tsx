@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Carousel } from 'components/carousel';
 import { getClasses } from 'utils/getClasses';
 import styles from './BentoItem.module.css';
+
+interface BentoItemImage {
+	src: string;
+	alt: string;
+}
 
 interface BentoItemProps {
 	children: React.ReactNode
@@ -14,6 +20,7 @@ interface BentoItemProps {
 	isInteractive?: boolean
 	href?: any
 	image?: any
+	images?: BentoItemImage[];
 	imagePosition?: 'top' | 'bottom';
 	altText?: string;
 	imageSizes?: string;
@@ -30,6 +37,7 @@ export const BentoItem = ({
 	isInteractive = false,
 	href,
 	image,
+	images,
 	imagePosition = 'top',
 	imageSizes,
 	altText,
@@ -86,22 +94,47 @@ export const BentoItem = ({
 		)
 	}
 
+	const renderMedia = () => {
+		if (images && images.length > 0) {
+			return (
+				<div className={styles.imageWrapper}>
+					<Carousel>
+						{images.map((img, index) => (
+							<Image
+								key={index}
+								src={img.src}
+								alt={img.alt}
+								fill
+								sizes={imageSizes}
+							/>
+						))}
+					</Carousel>
+				</div>
+			);
+		}
+
+		if (image) {
+			return (
+				<div className={styles.imageWrapper}>
+					{renderImage()}
+				</div>
+			);
+		}
+
+		return null;
+	}
+
+	const mediaTop = imagePosition === 'top' ? renderMedia() : null;
+	const mediaBottom = imagePosition === 'bottom' ? renderMedia() : null;
+
 	if (isInteractive === false) {
 		return (
 			<article className={outerClasses}>
-				{image && imagePosition === 'top' &&
-					<div className={styles.imageWrapper}>
-						{renderImage()}
-					</div>
-				}
+				{mediaTop}
 				<div className={innerClasses}>
 					{children}
 				</div>
-				{image && imagePosition === 'bottom' &&
-					<div className={styles.imageWrapper}>
-						{renderImage()}
-					</div>
-				}
+				{mediaBottom}
 			</article>
 		)
 	} else {
@@ -110,19 +143,11 @@ export const BentoItem = ({
 				href={href}
 				className={outerClasses}
 			>
-				{image && imagePosition === 'top' &&
-					<div className={styles.imageWrapper}>
-						{renderImage()}
-					</div>
-				}
+				{mediaTop}
 				<div className={innerClasses}>
 					{children}
 				</div>
-				{image && imagePosition === 'bottom' &&
-					<div className={styles.imageWrapper}>
-						{renderImage()}
-					</div>
-				}
+				{mediaBottom}
 			</Link>
 		)
 	}

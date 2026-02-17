@@ -12,8 +12,21 @@ interface PortfolioListItem {
 
 export const PortfolioList = ({ input }: PortfolioListItem) => {
 	const portfolioItems = input.items.map((item) => {
+		const galleryImages = item.item.galleryImages;
+		const hasGallery = galleryImages && galleryImages.length > 0;
 
-		const image = getSanityImageUrl(item.item.featuredImage);
+		const images = hasGallery
+			? galleryImages
+					.map((img: any) => {
+						const url = getSanityImageUrl(img);
+						return url ? { src: url, alt: img.alternativeText || '' } : null;
+					})
+					.filter(Boolean)
+			: undefined;
+
+		const fallbackImage = !hasGallery
+			? getSanityImageUrl(item.item.featuredImage)
+			: undefined;
 
 		return (
 				<BentoItem
@@ -24,10 +37,11 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 					gap='large'
 					isInteractive={true}
 					href={linkResolver('portfolioProject', item.item.slug.current)}
-					image={image}
+					image={fallbackImage}
+					images={images}
 					imagePosition="top"
 					imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-					altText={item.item.featuredImage.alternativeText}
+					altText={item.item.featuredImage?.alternativeText}
 				>
 					<Headline tag='h2' size='h4' color='secondary' collapse>{item.item.title}</Headline>
 					<Badge text={item.item.client} type='inverse' />

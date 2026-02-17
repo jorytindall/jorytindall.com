@@ -10,7 +10,14 @@ export const GET_PAGES = groq`
         moduleContent[] {
             ...,
             items[] {
-                item->
+                item-> {
+                    ...,
+                    galleryImages[] {
+                        alternativeText,
+                        caption,
+                        asset
+                    }
+                }
             }
         }
     }
