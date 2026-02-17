@@ -29,6 +29,13 @@ export default {
 			description: `If the portfolio project as featured as featured, it will appear on the main portfolio page.`,
 		},
 		{
+			name: `isPasswordProtected`,
+			title: `Password Protected`,
+			type: `boolean`,
+			description: `If enabled, visitors will need to enter a password to view this project.`,
+			initialValue: false,
+		},
+		{
 			name: `author`,
 			title: `Author`,
 			type: `reference`,

@@ -5,6 +5,7 @@ export const GET_PORTFOLIO_PROJECTS = groq`
         _id,
         title,
         "slug": slug.current,
+        isPasswordProtected,
         client,
         tools,
         timeline,
