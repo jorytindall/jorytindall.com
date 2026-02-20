@@ -1,7 +1,7 @@
 import { sanityClient } from 'lib/sanity/config';
-import { format, parseISO } from 'date-fns';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
+import { formatEventDate } from 'utils/datetimeFormat';
 import { PageTitle } from 'components/page-title';
 import { CenteredWrapper } from 'components/layout';
 import { Container } from 'components/layout';
@@ -33,7 +33,7 @@ export default async function Events() {
 				const { title, location, date, slug, _id } = event;
 
 				const eventLink = linkResolver('event', slug);
-				const eventDate = format(parseISO(date), 'MMMM do, yyyy');
+				const eventDate = formatEventDate(date);
 
 				return (
 					<ListItem
