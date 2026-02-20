@@ -1,3 +1,4 @@
+import { format, parseISO } from 'date-fns';
 import { isoDateToString } from '../../utils/formatDate';
 import { slugify } from '../../utils/slugify';
 
@@ -5,6 +6,18 @@ export default {
 	name: 'event',
 	title: 'Event',
 	type: 'document',
+	orderings: [
+		{
+			title: 'Date, Most Recent',
+			name: 'dateDesc',
+			by: [{ field: 'date', direction: 'desc' }],
+		},
+		{
+			title: 'Date, Oldest',
+			name: 'dateAsc',
+			by: [{ field: 'date', direction: 'asc' }],
+		},
+	],
 	fields: [
 		{
 			name: 'title',
@@ -62,4 +75,23 @@ export default {
 			type: 'richText',
 		},
 	],
+	preview: {
+		select: {
+			title: 'title',
+			date: 'date',
+			location: 'location',
+		},
+		prepare(selection: { title?: string; date?: string; location?: string }) {
+			const { title, date, location } = selection;
+			const formattedDate = date ? format(parseISO(date), 'MMMM d, yyyy') : 'No date';
+			const subtitleParts = [formattedDate];
+			if (location) {
+				subtitleParts.push(location);
+			}
+			return {
+				title: title || 'Untitled Event',
+				subtitle: subtitleParts.join(' — '),
+			};
+		},
+	},
 };
