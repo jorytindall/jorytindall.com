@@ -1,5 +1,5 @@
-import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
+import { formatLongDate } from 'utils/datetimeFormat';
 import { sanityClient } from 'lib/sanity/config';
 import { getSanityImageUrl } from 'utils/getSanityImage';
 import { GET_TALKS, GET_TALK_PATHS } from 'lib/queries';
@@ -69,7 +69,7 @@ export default async function Talk({ params }) {
 						<a href={conferenceLink} target="blank">
 							{conference}
 						</a>{' '}
-						on {format(parseISO(date), 'MMMM do, yyyy')}
+						on {formatLongDate(date)}
 					</Paragraph>
 					<div className={styles.actions}>
 						{link && (

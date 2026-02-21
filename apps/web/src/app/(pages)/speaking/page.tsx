@@ -1,5 +1,5 @@
-import { format, parseISO } from 'date-fns';
 import { sanityClient } from 'lib/sanity/config';
+import { formatLongDate } from 'utils/datetimeFormat';
 import { GET_ALL_TALKS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { CenteredWrapper } from 'components/layout';
@@ -34,7 +34,7 @@ export default async function TalksPage() {
 				<Paragraph type="secondary" collapse>
 					Given at <strong>{talk.conference}</strong> on{' '}
 					<strong>
-						{format(parseISO(talk.date), 'MMMM do, yyyy')}
+						{formatLongDate(talk.date)}
 					</strong>
 				</Paragraph>
 			</ListItem>
