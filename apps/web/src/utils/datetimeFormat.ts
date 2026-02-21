@@ -14,16 +14,6 @@ export const formatLongDate = (dateIso: string) => {
 };
 
 /**
- * Format a datetime string with timezone into a long date.
- * Use for content types that store datetime with timezone (events).
- * Example: "January 15, 2024"
- */
-export const formatEventDate = (dateIso: string, timezone?: string) => {
-  const tz = timezone || DEFAULT_TIMEZONE;
-  return formatInTimeZone(parseISO(dateIso), tz, 'MMMM d, yyyy');
-};
-
-/**
  * Format a datetime string with timezone into a long date and time.
  * Use for content types that store datetime with timezone (events).
  * Example: "January 15, 2024 at 7:30 PM"
