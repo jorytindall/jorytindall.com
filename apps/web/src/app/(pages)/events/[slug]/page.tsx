@@ -1,4 +1,3 @@
-import { format, parseISO } from 'date-fns';
 import { formatEventDateTime } from 'utils/datetimeFormat'
 import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';

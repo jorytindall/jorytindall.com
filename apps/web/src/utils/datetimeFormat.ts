@@ -4,40 +4,30 @@ import { formatInTimeZone } from 'date-fns-tz';
 // Default timezone for events (Pacific Time)
 const DEFAULT_TIMEZONE = 'America/Los_Angeles';
 
-export const formatIso = (date: string) => {
-  // If the date string doesn't include a timezone, append the time portion
-  // This ensures the date is parsed as the start of day in the local timezone
-  if (!date.includes('T')) {
-    return parseISO(`${date}T00:00:00`);
-  }
-  return parseISO(date);
+/**
+ * Format a date-only string into a long human-readable date.
+ * Use for content types that store simple dates without timezone (talks, blog posts).
+ * Example: "January 15, 2024"
+ */
+export const formatLongDate = (dateIso: string) => {
+  return format(parseISO(dateIso), 'MMMM d, yyyy');
 };
 
-export const formatDateTime = (dateIso: string, timezone?: string) => {
-  const tz = timezone || DEFAULT_TIMEZONE;
-  const formatted = formatInTimeZone(parseISO(dateIso), tz, 'PPPp');
-  return formatted;
-};
-
-export const formatDate = (dateIso: string, timezone?: string) => {
-  const tz = timezone || DEFAULT_TIMEZONE;
-  const formatted = formatInTimeZone(parseISO(dateIso), tz, 'PP');
-  return formatted;
-};
-
-export const formatDateString = (dateIso: string, timezone?: string) => {
-  const tz = timezone || DEFAULT_TIMEZONE;
-  const formatted = formatInTimeZone(parseISO(dateIso), tz, 'ddMMyyyy');
-  return formatted;
-};
-
-// New function specifically for event dates that ensures Pacific Time
+/**
+ * Format a datetime string with timezone into a long date.
+ * Use for content types that store datetime with timezone (events).
+ * Example: "January 15, 2024"
+ */
 export const formatEventDate = (dateIso: string, timezone?: string) => {
   const tz = timezone || DEFAULT_TIMEZONE;
   return formatInTimeZone(parseISO(dateIso), tz, 'MMMM d, yyyy');
 };
 
-// New function for event date and time
+/**
+ * Format a datetime string with timezone into a long date and time.
+ * Use for content types that store datetime with timezone (events).
+ * Example: "January 15, 2024 at 7:30 PM"
+ */
 export const formatEventDateTime = (dateIso: string, timezone?: string) => {
   const tz = timezone || DEFAULT_TIMEZONE;
   return formatInTimeZone(parseISO(dateIso), tz, 'MMMM d, yyyy \'at\' h:mm a');
