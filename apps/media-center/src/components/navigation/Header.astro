@@ -1,5 +1,6 @@
 ---
 import styles from './Header.module.css';
+import ThemePicker from './ThemePicker.astro';
 
 interface Props {
 	user: { username: string; email: string; thumb: string } | null;
@@ -8,7 +9,7 @@ interface Props {
 const { user } = Astro.props;
 ---
 
-<header class={styles.header}>
+<header class={styles.header} id="site-header">
 	<a href="/" class={styles.brand}>Media Center</a>
 	<nav class={styles.nav}>
 		<a href="/docs" class={styles.navLink}>Docs</a>
@@ -19,5 +20,23 @@ const { user } = Astro.props;
 				<a href="/auth/logout" class={styles.logout}>Sign out</a>
 			</div>
 		)}
+		<ThemePicker />
 	</nav>
 </header>
+
+<script>
+	function initScrollDetection() {
+		const header = document.getElementById('site-header');
+		if (!header) return;
+
+		const onScroll = () => {
+			header.classList.toggle('scrolled', window.scrollY > 0);
+		};
+
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	}
+
+	initScrollDetection();
+	document.addEventListener('astro:after-swap', initScrollDetection);
+</script>

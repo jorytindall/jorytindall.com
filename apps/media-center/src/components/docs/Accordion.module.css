@@ -46,7 +46,7 @@
 .panel {
 	padding: 0 1.25rem 1.25rem;
 	font-size: 0.9375rem;
-	line-height: 1.6;
+	line-height: var(--typography-line-height-body);
 	color: var(--color-core-neutral-500);
 }
 
