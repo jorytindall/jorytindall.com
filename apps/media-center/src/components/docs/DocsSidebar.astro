@@ -8,26 +8,53 @@ interface Props {
 }
 
 const { docs, currentSlug } = Astro.props;
-const sorted = docs.sort((a, b) => a.data.order - b.data.order);
+
+const categoryOrder = ['Getting Started', 'Using Plex', 'Using Seerr', 'Help'];
+
+const grouped = docs.reduce(
+	(acc, doc) => {
+		const category = doc.data.category;
+		if (!acc[category]) acc[category] = [];
+		acc[category].push(doc);
+		return acc;
+	},
+	{} as Record<string, CollectionEntry<'docs'>[]>
+);
+
+// Sort docs within each category by order
+for (const category of Object.keys(grouped)) {
+	grouped[category].sort((a, b) => a.data.order - b.data.order);
+}
+
+// Sort categories by defined order, with unknown categories at the end
+const sortedCategories = Object.keys(grouped).sort((a, b) => {
+	const aIndex = categoryOrder.indexOf(a);
+	const bIndex = categoryOrder.indexOf(b);
+	return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+});
 ---
 
 <aside class={styles.sidebar}>
 	<nav>
-		<p class={styles.title}>Documentation</p>
-		<ul class={styles.list}>
-			{sorted.map((doc) => {
-				const docSlug = doc.id.replace(/\.mdx?$/, '');
-				return (
-					<li>
-						<a
-							href={`/docs/${docSlug}`}
-							class:list={[styles.link, { [styles.active]: docSlug === currentSlug }]}
-						>
-							{doc.data.title}
-						</a>
-					</li>
-				);
-			})}
-		</ul>
+		{sortedCategories.map((category) => (
+			<div class={styles.group}>
+				<p class={styles.title}>{category}</p>
+				<ul class={styles.list}>
+					{grouped[category].map((doc) => {
+						const docSlug = doc.id.replace(/\.mdx?$/, '');
+						return (
+							<li>
+								<a
+									href={`/docs/${docSlug}`}
+									class:list={[styles.link, { [styles.active]: docSlug === currentSlug }]}
+								>
+									{doc.data.title}
+								</a>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+		))}
 	</nav>
 </aside>
