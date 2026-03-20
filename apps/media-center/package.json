@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "infisical run --path /media-center -- astro dev",
 		"build": "astro build",
-		"preview": "astro preview"
+		"preview": "astro preview",
+		"start": "node dist/server/entry.mjs"
 	},
 	"dependencies": {
 		"astro": "^5.9.3",
