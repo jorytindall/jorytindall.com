@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../components/layout/Layout.astro';
+import DocsSidebar from '../../components/docs/DocsSidebar.astro';
+import DocsContent from '../../components/docs/DocsContent.astro';
+
+const { slug } = Astro.params;
+const docs = await getCollection('docs');
+const entry = docs.find((doc) => doc.id === slug);
+
+if (!entry) {
+	return Astro.redirect('/docs');
+}
+
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} — Docs`}>
+	<div style="display: flex; gap: 2rem; padding: 2rem; max-width: 1100px; margin: 0 auto;">
+		<DocsSidebar docs={docs} currentSlug={slug} />
+		<DocsContent>
+			<Content />
+		</DocsContent>
+	</div>
+</Layout>

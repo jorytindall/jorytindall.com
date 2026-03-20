@@ -1,0 +1,15 @@
+{
+	"name": "media-center",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "infisical run --path /media-center -- astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"dependencies": {
+		"astro": "^5.9.3",
+		"@astrojs/node": "^9.2.2",
+		"tokens": "workspace:^"
+	}
+}

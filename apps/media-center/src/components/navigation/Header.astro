@@ -1,0 +1,23 @@
+---
+import styles from './Header.module.css';
+
+interface Props {
+	user: { username: string; email: string; thumb: string } | null;
+}
+
+const { user } = Astro.props;
+---
+
+<header class={styles.header}>
+	<a href="/" class={styles.brand}>Media Center</a>
+	<nav class={styles.nav}>
+		<a href="/docs" class={styles.navLink}>Docs</a>
+		{user && (
+			<div class={styles.user}>
+				<img src={user.thumb} alt={user.username} class={styles.avatar} />
+				<span class={styles.username}>{user.username}</span>
+				<a href="/auth/logout" class={styles.logout}>Sign out</a>
+			</div>
+		)}
+	</nav>
+</header>

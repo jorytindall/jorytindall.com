@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/layout/Layout.astro';
+import DocsSidebar from '../../components/docs/DocsSidebar.astro';
+
+const docs = await getCollection('docs');
+const sorted = docs.sort((a, b) => a.data.order - b.data.order);
+
+if (sorted.length > 0) {
+	return Astro.redirect(`/docs/${sorted[0].id}`);
+}
+---
+
+<Layout title="Documentation">
+	<div style="display: flex; gap: 2rem; padding: 2rem;">
+		<DocsSidebar docs={docs} />
+		<div>
+			<h1>Documentation</h1>
+			<p>Select a guide from the sidebar to get started.</p>
+		</div>
+	</div>
+</Layout>

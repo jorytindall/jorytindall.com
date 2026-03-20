@@ -1,0 +1,36 @@
+---
+import { checkPin, getUser, hasServerAccess } from '../../lib/plex';
+import { createSession } from '../../lib/session';
+
+const pinId = Astro.url.searchParams.get('pinId');
+
+if (!pinId) {
+	return Astro.redirect('/login');
+}
+
+const pin = await checkPin(Number(pinId));
+
+if (!pin) {
+	return Astro.redirect('/login');
+}
+
+const hasAccess = await hasServerAccess(pin.authToken);
+
+if (!hasAccess) {
+	return Astro.redirect('/login?error=no-access');
+}
+
+const user = await getUser(pin.authToken);
+
+createSession(
+	{
+		username: user.username,
+		email: user.email,
+		thumb: user.thumb,
+		plexToken: pin.authToken,
+	},
+	Astro.cookies
+);
+
+return Astro.redirect('/');
+---

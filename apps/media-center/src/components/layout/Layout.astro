@@ -1,0 +1,32 @@
+---
+import Header from '../navigation/Header.astro';
+import styles from './Layout.module.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+const user = Astro.locals.user;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title} — Media Center</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	</head>
+	<body>
+		<div class={styles.page}>
+			<Header user={user} />
+			<main class={styles.main}>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	@import '../../styles/global.css';
+</style>

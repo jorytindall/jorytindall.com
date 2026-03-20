@@ -1,0 +1,91 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import ServiceCard from '../components/navigation/ServiceCard.astro';
+
+const user = Astro.locals.user;
+---
+
+<Layout title="Dashboard">
+	<div class="dashboard">
+		<section class="welcome">
+			<h1>Welcome{user ? `, ${user.username}` : ''}</h1>
+			<p>Your hub for the media server. Stream content, request new titles, and find helpful guides below.</p>
+		</section>
+
+		<section class="services">
+			<h2>Services</h2>
+			<div class="service-grid">
+				<ServiceCard
+					name="Plex"
+					description="Stream movies, TV shows, and music from the media server."
+					href="https://app.plex.tv"
+					cta="Open Plex"
+				/>
+				<ServiceCard
+					name="Seerr"
+					description="Browse and request movies or TV shows to be added to the server."
+					href="https://seerr.jorytindall.tv"
+					cta="Open Seerr"
+				/>
+			</div>
+		</section>
+
+		<section class="quick-links">
+			<h2>Quick Links</h2>
+			<ul>
+				<li><a href="/docs/getting-started">Getting Started</a></li>
+				<li><a href="/docs/requesting-content">How to Request Content</a></li>
+				<li><a href="/docs/plex-apps">Plex Apps &amp; Settings</a></li>
+			</ul>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.dashboard {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.welcome {
+		margin-bottom: 2.5rem;
+	}
+
+	.welcome h1 {
+		font-size: var(--typography-font-size-headline-02);
+		margin-bottom: 0.5rem;
+	}
+
+	.welcome p {
+		color: var(--color-core-neutral-500);
+		font-size: 1.0625rem;
+	}
+
+	.services {
+		margin-bottom: 2.5rem;
+	}
+
+	.services h2,
+	.quick-links h2 {
+		font-size: var(--typography-font-size-headline-04);
+		margin-bottom: 1rem;
+	}
+
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 1rem;
+	}
+
+	.quick-links ul {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.quick-links a {
+		color: var(--color-core-primary-300);
+		font-size: 0.9375rem;
+	}
+</style>

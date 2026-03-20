@@ -12,6 +12,8 @@
 		"pres:dev": "turbo run dev --filter=presentations",
 		"pres:build": "turbo run build --filter=presentations",
 		"api:start": "turbo run start --filter=me-api",
+		"media:dev": "turbo run dev --filter=media-center",
+		"media:build": "turbo run build --filter=media-center",
 		"format:all": "prettier --write .",
 		"build": "turbo run build",
 		"test": "turbo run test",
