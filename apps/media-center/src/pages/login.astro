@@ -12,7 +12,7 @@ let error = '';
 
 const errorParam = Astro.url.searchParams.get('error');
 if (errorParam === 'no-access') {
-	error = 'Your Plex account does not have access to this server. Contact Jory for an invite.';
+	error = 'Looks like your Plex account doesn\'t have access to this server yet. Hit up Jory for an invite.';
 }
 
 if (Astro.request.method === 'POST') {
@@ -89,7 +89,7 @@ if (Astro.request.method === 'POST') {
 		<div class="login-page">
 			<div class="login-card">
 				<h1>Media Center</h1>
-				<p>Sign in with your Plex account to access the media server resources.</p>
+				<p>Sign in with your Plex account to get started. If you've been invited, you're already in.</p>
 				{error && <p class="error">{error}</p>}
 				<form method="POST">
 					<button type="submit" class="plex-button">

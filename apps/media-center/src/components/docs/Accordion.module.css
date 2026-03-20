@@ -1,0 +1,73 @@
+.accordion {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.item {
+	border: 1px solid var(--color-core-neutral-300);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.trigger {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 1rem 1.25rem;
+	background: none;
+	border: none;
+	font: inherit;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--color-core-neutral-600);
+	cursor: pointer;
+	text-align: left;
+	transition: background-color 0.15s;
+}
+
+.trigger:hover {
+	background-color: var(--color-core-neutral-200);
+}
+
+.chevron {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	transition: transform 0.2s ease;
+}
+
+.item[open] .chevron {
+	transform: rotate(180deg);
+}
+
+.panel {
+	padding: 0 1.25rem 1.25rem;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--color-core-neutral-500);
+}
+
+.panel :global(p) {
+	margin-bottom: 0.75rem;
+}
+
+.panel :global(p:last-child) {
+	margin-bottom: 0;
+}
+
+.panel :global(ul) {
+	list-style: disc;
+	padding-left: 1.25rem;
+	margin-bottom: 0.75rem;
+}
+
+.panel :global(li) {
+	margin-bottom: 0.25rem;
+}
+
+.panel :global(strong) {
+	color: var(--color-core-neutral-600);
+}

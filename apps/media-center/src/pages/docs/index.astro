@@ -7,7 +7,7 @@ const docs = await getCollection('docs');
 const sorted = docs.sort((a, b) => a.data.order - b.data.order);
 
 if (sorted.length > 0) {
-	return Astro.redirect(`/docs/${sorted[0].id}`);
+	return Astro.redirect(`/docs/${sorted[0].id.replace(/\.mdx?$/, '')}`);
 }
 ---
 

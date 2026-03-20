@@ -9,7 +9,10 @@ const user = Astro.locals.user;
 	<div class="dashboard">
 		<section class="welcome">
 			<h1>Welcome{user ? `, ${user.username}` : ''}</h1>
-			<p>Your hub for the media server. Stream content, request new titles, and find helpful guides below.</p>
+			<p>
+				You've got the keys to the kingdom. Stream whatever you want, request anything
+				that's missing, and let the robots handle the rest.
+			</p>
 		</section>
 
 		<section class="services">
@@ -17,21 +20,29 @@ const user = Astro.locals.user;
 			<div class="service-grid">
 				<ServiceCard
 					name="Plex"
-					description="Stream movies, TV shows, and music from the media server."
-					href="https://app.plex.tv"
-					cta="Open Plex"
+					description="The main event. Movies, shows, music — all streaming and ready to go."
+					href="https://watch.jorytindall.tv"
+					cta="Start watching"
 				/>
 				<ServiceCard
-					name="Seerr"
-					description="Browse and request movies or TV shows to be added to the server."
-					href="https://seerr.jorytindall.tv"
-					cta="Open Seerr"
+					name="Request content"
+					description="Don't see what you're looking for? Request it and it'll show up like magic. You'll be redirected to the Seerr app to browse and make requests."
+					href="https://request.jorytindall.tv"
+					cta="Request something"
 				/>
 			</div>
 		</section>
 
+		<section class="faq-callout">
+			<div class="faq-inner">
+				<h2>First time here?</h2>
+				<p>Check the FAQ for everything you need to know — what this is, how it works, and how to get the best experience.</p>
+				<a href="/docs/streaming-faq" class="faq-link">Read the Streaming FAQ &rarr;</a>
+			</div>
+		</section>
+
 		<section class="quick-links">
-			<h2>Quick Links</h2>
+			<h2>Learn the Ropes</h2>
 			<ul>
 				<li><a href="/docs/getting-started">Getting Started</a></li>
 				<li><a href="/docs/requesting-content">How to Request Content</a></li>
@@ -76,6 +87,40 @@ const user = Astro.locals.user;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 		gap: 1rem;
+	}
+
+	.faq-callout {
+		margin-bottom: 2.5rem;
+	}
+
+	.faq-inner {
+		background-color: var(--color-core-primary-100);
+		border: 1px solid var(--color-core-primary-200);
+		border-radius: 12px;
+		padding: 1.75rem 2rem;
+	}
+
+	.faq-inner h2 {
+		font-size: var(--typography-font-size-headline-04);
+		margin-bottom: 0.375rem;
+	}
+
+	.faq-inner p {
+		color: var(--color-core-neutral-500);
+		font-size: 0.9375rem;
+		margin-bottom: 1rem;
+	}
+
+	.faq-link {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 0.9375rem;
+		color: var(--color-core-primary-300);
+		text-decoration: none;
+	}
+
+	.faq-link:hover {
+		text-decoration: underline;
 	}
 
 	.quick-links ul {

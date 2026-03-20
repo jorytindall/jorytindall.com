@@ -6,7 +6,7 @@ import DocsContent from '../../components/docs/DocsContent.astro';
 
 const { slug } = Astro.params;
 const docs = await getCollection('docs');
-const entry = docs.find((doc) => doc.id === slug);
+const entry = docs.find((doc) => doc.id.replace(/\.mdx?$/, '') === slug);
 
 if (!entry) {
 	return Astro.redirect('/docs');

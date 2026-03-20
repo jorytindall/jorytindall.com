@@ -15,16 +15,19 @@ const sorted = docs.sort((a, b) => a.data.order - b.data.order);
 	<nav>
 		<p class={styles.title}>Documentation</p>
 		<ul class={styles.list}>
-			{sorted.map((doc) => (
-				<li>
-					<a
-						href={`/docs/${doc.id}`}
-						class:list={[styles.link, { [styles.active]: doc.id === currentSlug }]}
-					>
-						{doc.data.title}
-					</a>
-				</li>
-			))}
+			{sorted.map((doc) => {
+				const docSlug = doc.id.replace(/\.mdx?$/, '');
+				return (
+					<li>
+						<a
+							href={`/docs/${docSlug}`}
+							class:list={[styles.link, { [styles.active]: docSlug === currentSlug }]}
+						>
+							{doc.data.title}
+						</a>
+					</li>
+				);
+			})}
 		</ul>
 	</nav>
 </aside>
