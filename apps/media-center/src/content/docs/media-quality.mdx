@@ -1,0 +1,63 @@
+---
+title: Media Quality
+description: Understanding 4K content, transcoding, and how to get the best picture quality.
+order: 4
+category: Using Plex
+---
+
+# Media Quality
+
+A good chunk of the library is available in 4K (UHD) with HDR — but whether you actually see that depends on your device and setup. Here's what you need to know.
+
+## What's Available
+
+The server hosts content in a range of qualities, from standard 1080p all the way up to 4K HDR. Movies in particular tend to have 4K versions when available. TV shows vary — some are 4K, most are 1080p, and that's usually fine for episodic content.
+
+## Getting 4K Playback
+
+To actually stream 4K content at full quality, you need two things:
+
+1. **A device that supports 4K direct play** — The device needs to be able to handle the video and audio formats natively without the server having to convert anything.
+2. **Quality settings set to Maximum or Original** — If your Plex app is set to limit quality, it'll force the server to transcode down regardless of your hardware.
+
+### Devices That Handle 4K Well
+
+- **Apple TV 4K** — Excellent all-around. Handles nearly every format and codec natively.
+- **NVIDIA Shield** — The gold standard for Plex. Plays basically everything.
+- **Roku Ultra / Streaming Stick 4K** — Great budget-friendly option. Handles most 4K content well.
+- **Fire TV Stick 4K** — Solid option, wide format support.
+- **Desktop Plex app** — Works well if your computer and display support 4K.
+
+### Devices That Will Likely Transcode 4K
+
+- **Smart TV apps** (Samsung, LG, Vizio built-in Plex) — These often can't handle 4K formats natively, especially with HDR or surround sound audio. The server will transcode to 1080p.
+- **Older streaming sticks** — Non-4K models obviously can't display 4K, so the server will convert down.
+- **Web browser** (app.plex.tv) — Browsers have limited codec support, so 4K content will almost always be transcoded.
+- **Mobile devices** — Phones and tablets generally get transcoded to a lower resolution to match their screen and connection.
+
+## What Happens When 4K Gets Transcoded
+
+If your device can't direct play 4K content, the server converts it to 1080p on the fly. This still looks good — 1080p is solid quality — but there are a couple of things to know:
+
+- **It uses significant server resources** — 4K transcoding is demanding. If multiple people need it simultaneously, everyone's experience can suffer.
+- **HDR gets lost** — When 4K HDR content is transcoded, the HDR metadata is stripped. Colors might look slightly washed out compared to a direct play experience.
+- **It's not the end of the world** — Transcoded 1080p still looks great on most screens. You're not getting a bad experience, just not the _best_ one.
+
+The bottom line: if you have a 4K TV, pairing it with a capable streaming device (Apple TV 4K, Shield, etc.) makes a noticeable difference over using the TV's built-in app.
+
+## Recommended Quality Settings
+
+To make sure you're getting the best quality your setup can handle:
+
+1. Open the Plex app on your device
+2. Go to **Settings** > **Video Quality**
+3. Set **Home Streaming** (or **Local Quality**) to **Maximum** or **Original**
+4. Set **Remote Streaming** to at least **720p 4 Mbps** — higher if your connection supports it
+
+Leaving quality on "Auto" or a lower preset is the most common reason people get a worse picture than they should.
+
+## Something Look Off?
+
+If you're watching something and the quality seems noticeably bad — blurry, artifacted, weirdly dark, or just doesn't look right — let Jory know. Sometimes a specific file just isn't great, and it can usually be replaced with a better version. Don't suffer through a bad encode when there's likely a better one out there.
+
+A quick text with what you were watching is all it takes.

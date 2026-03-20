@@ -8,13 +8,21 @@
 	top: 5rem;
 }
 
+.group {
+	margin-bottom: 1.25rem;
+}
+
+.group:last-child {
+	margin-bottom: 0;
+}
+
 .title {
 	font-size: 0.75rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	color: var(--color-core-neutral-500);
-	margin-bottom: 0.75rem;
+	margin-bottom: 0.5rem;
 }
 
 .list {
