@@ -1,0 +1,26 @@
+---
+import styles from './Accordion.module.css';
+
+interface Props {
+	items: Array<{
+		question: string;
+		answer: string;
+	}>;
+}
+
+const { items } = Astro.props;
+---
+
+<div class={styles.accordion}>
+	{items.map((item) => (
+		<details class={styles.item}>
+			<summary class={styles.trigger}>
+				{item.question}
+				<svg class={styles.chevron} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="6 9 12 15 18 9" />
+				</svg>
+			</summary>
+			<div class={styles.panel} set:html={item.answer} />
+		</details>
+	))}
+</div>

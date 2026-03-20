@@ -1,0 +1,60 @@
+.content {
+	flex: 1;
+	min-width: 0;
+	max-width: 720px;
+}
+
+.content :global(h1) {
+	font-size: var(--typography-font-size-headline-02);
+	margin-bottom: 1rem;
+}
+
+.content :global(h2) {
+	font-size: var(--typography-font-size-headline-04);
+	margin-top: 2.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.content :global(h3) {
+	font-size: var(--typography-font-size-headline-05);
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.content :global(p) {
+	margin-bottom: 1rem;
+}
+
+.content :global(ul),
+.content :global(ol) {
+	margin-bottom: 1rem;
+	padding-left: 1.5rem;
+}
+
+.content :global(ul) {
+	list-style: disc;
+}
+
+.content :global(ol) {
+	list-style: decimal;
+}
+
+.content :global(li) {
+	margin-bottom: 0.375rem;
+}
+
+.content :global(pre) {
+	background-color: var(--color-core-neutral-200);
+	padding: 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	margin-bottom: 1rem;
+}
+
+.content :global(a) {
+	color: var(--color-core-primary-300);
+}
+
+.content :global(strong) {
+	font-weight: 600;
+}

@@ -1,0 +1,102 @@
+---
+import { createPin, getAuthUrl } from '../lib/plex';
+import { getSession } from '../lib/session';
+
+const session = getSession(Astro.cookies);
+if (session) {
+	return Astro.redirect('/');
+}
+
+let authUrl = '';
+let error = '';
+
+const errorParam = Astro.url.searchParams.get('error');
+if (errorParam === 'no-access') {
+	error = 'Looks like your Plex account doesn\'t have access to this server yet. Hit up Jory for an invite.';
+}
+
+if (Astro.request.method === 'POST') {
+	try {
+		const appUrl = import.meta.env.PUBLIC_APP_URL || Astro.url.origin;
+		const pin = await createPin();
+		const forwardUrl = `${appUrl}/auth/callback?pinId=${pin.id}`;
+		authUrl = getAuthUrl(pin.code, forwardUrl);
+		return Astro.redirect(authUrl);
+	} catch (e) {
+		error = 'Failed to start Plex authentication. Please try again.';
+	}
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Sign In — Media Center</title>
+		<style>
+			@import '../styles/global.css';
+
+			.login-page {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				padding: 2rem;
+			}
+
+			.login-card {
+				text-align: center;
+				max-width: 400px;
+				width: 100%;
+			}
+
+			.login-card h1 {
+				font-size: var(--typography-font-size-headline-03);
+				margin-bottom: 0.5rem;
+			}
+
+			.login-card p {
+				color: var(--color-core-neutral-500);
+				margin-bottom: 2rem;
+			}
+
+			.plex-button {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				background-color: #e5a00d;
+				color: #1f1f1f;
+				border: none;
+				padding: 0.75rem 1.5rem;
+				border-radius: 6px;
+				font-size: 1rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: background-color 0.15s;
+			}
+
+			.plex-button:hover {
+				background-color: #c98d0b;
+			}
+
+			.error {
+				color: #c0392b;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login-page">
+			<div class="login-card">
+				<h1>Media Center</h1>
+				<p>Sign in with your Plex account to get started. If you've been invited, you're already in.</p>
+				{error && <p class="error">{error}</p>}
+				<form method="POST">
+					<button type="submit" class="plex-button">
+						Sign in with Plex
+					</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

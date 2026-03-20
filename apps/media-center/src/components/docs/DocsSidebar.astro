@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import styles from './DocsSidebar.module.css';
+
+interface Props {
+	docs: CollectionEntry<'docs'>[];
+	currentSlug?: string;
+}
+
+const { docs, currentSlug } = Astro.props;
+const sorted = docs.sort((a, b) => a.data.order - b.data.order);
+---
+
+<aside class={styles.sidebar}>
+	<nav>
+		<p class={styles.title}>Documentation</p>
+		<ul class={styles.list}>
+			{sorted.map((doc) => {
+				const docSlug = doc.id.replace(/\.mdx?$/, '');
+				return (
+					<li>
+						<a
+							href={`/docs/${docSlug}`}
+							class:list={[styles.link, { [styles.active]: docSlug === currentSlug }]}
+						>
+							{doc.data.title}
+						</a>
+					</li>
+				);
+			})}
+		</ul>
+	</nav>
+</aside>

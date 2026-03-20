@@ -1,0 +1,42 @@
+@import '../../node_modules/tokens/dist/web/tokens.css';
+@import '../../node_modules/tokens/dist/web/tokens-dark.css';
+@import './reset.css';
+
+body {
+	font-family: var(--typography-font-family-body);
+	color: var(--color-core-neutral-600);
+	background-color: var(--color-core-neutral-100);
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--typography-font-family-headline);
+	line-height: 1.2;
+}
+
+a {
+	color: var(--color-core-primary-300);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+code {
+	font-family: var(--typography-font-family-mono);
+	font-size: 0.875em;
+	background-color: var(--color-core-neutral-200);
+	padding: 0.125em 0.375em;
+	border-radius: 4px;
+}
+
+pre code {
+	background: none;
+	padding: 0;
+}

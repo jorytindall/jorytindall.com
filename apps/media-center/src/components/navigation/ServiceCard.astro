@@ -1,0 +1,18 @@
+---
+import styles from './ServiceCard.module.css';
+
+interface Props {
+	name: string;
+	description: string;
+	href: string;
+	cta?: string;
+}
+
+const { name, description, href, cta = 'Open' } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class={styles.card}>
+	<span class={styles.name}>{name}</span>
+	<span class={styles.description}>{description}</span>
+	<span class={styles.cta}>{cta} &rarr;</span>
+</a>
