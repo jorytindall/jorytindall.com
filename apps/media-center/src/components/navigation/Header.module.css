@@ -2,12 +2,22 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem 2rem;
-	border-bottom: 1px solid var(--color-core-neutral-300);
-	background-color: var(--color-core-neutral-100);
+	padding: 2rem 2.5rem;
+	background-color: transparent;
 	position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: 100;
+	transition: background-color 0.2s, backdrop-filter 0.2s;
+}
+
+.header:global(.scrolled) {
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
+:global([data-theme='dark']) .header:global(.scrolled) {
+	background-color: rgba(3, 9, 19, 0.5);
 }
 
 .brand {
@@ -65,4 +75,10 @@
 
 .logout:hover {
 	color: var(--color-core-neutral-600);
+}
+
+@media (max-width: 768px) {
+	.header {
+		padding: 1rem 1.5rem;
+	}
 }

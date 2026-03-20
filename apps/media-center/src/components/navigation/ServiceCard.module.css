@@ -25,7 +25,7 @@
 .description {
 	font-size: 0.9375rem;
 	color: var(--color-core-neutral-500);
-	line-height: 1.5;
+	line-height: var(--typography-line-height-body);
 }
 
 .cta {

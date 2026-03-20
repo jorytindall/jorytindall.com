@@ -1,12 +1,13 @@
 @import '../../node_modules/tokens/dist/web/tokens.css';
 @import '../../node_modules/tokens/dist/web/tokens-dark.css';
+@import './fonts.css';
 @import './reset.css';
 
 body {
 	font-family: var(--typography-font-family-body);
 	color: var(--color-core-neutral-600);
-	background-color: var(--color-core-neutral-100);
-	line-height: 1.6;
+	background: var(--color-core-tertiary-100);
+	line-height: var(--typography-line-height-body);
 }
 
 h1,

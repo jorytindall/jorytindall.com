@@ -10,11 +10,12 @@ html {
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
+	font-family: var(--typography-font-family-body);
+	color: var(--color-core-neutral-600);
 }
 
 body {
 	min-height: 100vh;
-	line-height: 1.5;
 }
 
 img,
