@@ -18,7 +18,7 @@
   "dependencies": {
     "@date-fns/tz": "^1.4.1",
     "@next/bundle-analyzer": "^16.2.6",
-    "@portabletext/react": "^5.0.0",
+    "@portabletext/react": "^6.2.0",
     "@radix-ui/react-tabs": "^1.1.13",
     "@sanity/asset-utils": "^2.3.0",
     "@sanity/image-url": "^2.1.1",
@@ -46,7 +46,7 @@
     "resend": "^6.12.3",
     "sharp": "^0.34.5",
     "tokens": "workspace:^",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
