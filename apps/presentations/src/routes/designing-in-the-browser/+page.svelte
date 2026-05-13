@@ -1,13 +1,13 @@
 <script>
 	// Import Reveal styles
-	import 'reveal.js/dist/reveal.css';
+	import 'reveal.js/reveal.css';
 	// Import theme
 	import '../../styles/theme.css';
 	// Import CSS for plugins
 	import 'reveal.js/plugin/highlight/monokai.css';
 
 	import Reveal from 'reveal.js';
-	import RevealNotes from 'reveal.js/plugin/notes/notes';
+	import RevealNotes from 'reveal.js/plugin/notes';
 	import { onMount, tick } from 'svelte';
 	import Presentation from '../../presentations/designing-in-the-browser/Presentation.svelte';
 	import SlideHeader from '../../components/SlideHeader.svelte';
@@ -22,7 +22,7 @@
 		await tick();
 
 		// Dynamically import highlight plugin to avoid SSR issues (uses window)
-		const RevealHighlight = (await import('reveal.js/plugin/highlight/highlight')).default;
+		const RevealHighlight = (await import('reveal.js/plugin/highlight')).default;
 
 		const deck = new Reveal(reveal);
 		deck.initialize({

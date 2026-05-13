@@ -8,7 +8,7 @@ import {
   Text,
   Link,
   Hr,
-} from '@react-email/components';
+} from 'react-email';
 
 type ContactEmailProps = {
   name: string;
