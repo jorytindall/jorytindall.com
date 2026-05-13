@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-node": "^5.5.4",
 		"classnames": "^2.5.1",
-		"reveal.js": "^5.2.1",
+		"reveal.js": "^6.0.1",
 		"tokens": "workspace:^"
 	}
 }
