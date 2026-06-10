@@ -1,4 +1,4 @@
-import { formatEventDateTime } from 'utils/datetimeFormat'
+import { formatEventDateTime, formatEventSchedule } from 'utils/datetimeFormat'
 import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
@@ -30,7 +30,7 @@ export default async function Event({ params }) {
 	const { slug } = await params;
 	const events = await sanityClient.fetch(GET_EVENTS, { slug });
 
-	const { title, date, description, location, url } = events;
+	const { title, eventFormat, performances, description, location, url } = events;
 
 	return (
 		<GridWrapper>
@@ -39,13 +39,32 @@ export default async function Event({ params }) {
 					{title}
 				</Headline>
 				<Paragraph color='secondary' collapse>
-					{formatEventDateTime(date, 'America/Los_Angeles')} at{' '}
-					<InlineLink href={url} type="external">
-						{location}
-					</InlineLink>
+					{formatEventSchedule(events)}
+					{location && (
+						<>
+							{' '}at{' '}
+							{url ? (
+								<InlineLink href={url} type="external">
+									{location}
+								</InlineLink>
+							) : (
+								location
+							)}
+						</>
+					)}
 				</Paragraph>
+				{eventFormat === 'series' && performances?.length > 0 && (
+					<ul className={styles.performances}>
+						{performances.map((performance) => (
+							<li key={performance._key} className={styles.performance}>
+								<strong>{formatEventDateTime(performance.date)}</strong>
+								{performance.note ? ` — ${performance.note}` : ''}
+							</li>
+						))}
+					</ul>
+				)}
 				{description && <RichText value={description.content} />}
-				<Button href={url}>More information</Button>
+				{url && <Button href={url}>More information</Button>}
 			</section>
 		</GridWrapper>
 	);

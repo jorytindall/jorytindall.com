@@ -2,6 +2,7 @@
 import banner from './documents/banner';
 import category from './documents/category';
 import event from './documents/event';
+import eventPerformance from './objects/eventPerformance';
 import homePage from './documents/homePage';
 import landingPage from './documents/landingPage';
 import musicProject from './documents/musicProject';
@@ -98,6 +99,7 @@ export const schemaTypes = [
 	audio,
 	playlist,
 	video,
+	eventPerformance,
 	navItem,
 	tabs,
 	tab,

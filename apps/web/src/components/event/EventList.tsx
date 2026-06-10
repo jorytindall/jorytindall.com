@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { linkResolver } from 'utils/linkResolver';
-import { formatEventDateTime } from 'utils/datetimeFormat';
+import { formatEventSchedule } from 'utils/datetimeFormat';
 import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
@@ -20,7 +20,7 @@ export const EventList = ({ events }) => {
 									<strong>{event.title}</strong>
 								</p>
 								<p className={styles.date}>
-									{formatEventDateTime(event.date, event.timezone)}
+									{formatEventSchedule(event)}
 								</p>
 							</Link>
 						</div>
