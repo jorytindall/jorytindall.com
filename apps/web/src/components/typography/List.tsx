@@ -9,9 +9,7 @@ interface ListProps {
 	children: React.ReactNode;
 }
 
-export const Item = ({ children }: ItemProps) => (
-	<li className={styles.item}>{children}</li>
-);
+export const Item = ({ children }: ItemProps) => <li className={styles.item}>{children}</li>;
 
 export const List = ({ type, children }: ListProps) => {
 	switch (type) {

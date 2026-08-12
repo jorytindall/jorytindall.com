@@ -36,11 +36,7 @@
 	}
 
 	.callout--color-brand {
-		background-color: color-mix(
-			in srgb,
-			var(--color-semantic-surface-brand) 15%,
-			transparent
-		);
+		background-color: color-mix(in srgb, var(--color-semantic-surface-brand) 15%, transparent);
 		border-color: var(--color-semantic-border-brand);
 	}
 

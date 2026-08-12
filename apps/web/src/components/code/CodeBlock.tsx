@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { CopyBlock, atomOneDark } from 'react-code-blocks';
 import { Paragraph } from 'components/typography';

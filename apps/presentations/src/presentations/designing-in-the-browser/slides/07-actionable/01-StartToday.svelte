@@ -36,14 +36,14 @@
 				setup. This is where the real magic happens.
 			</li>
 			<li>
-				Third, find one small UI change — a color, some spacing, a label — and try to make it
-				yourself. Start small and build confidence.
+				Third, find one small UI change — a color, some spacing, a label — and try to make
+				it yourself. Start small and build confidence.
 			</li>
 			<li>
-				Fourth, use an AI tool like Claude or Cursor as your pair programmer. These
-				tools are incredible for learning — ask them to explain what you're looking at,
-				why something works the way it does, or what alternatives exist. Treat it as a
-				patient teacher who's always available, not just a code generator.
+				Fourth, use an AI tool like Claude or Cursor as your pair programmer. These tools
+				are incredible for learning — ask them to explain what you're looking at, why
+				something works the way it does, or what alternatives exist. Treat it as a patient
+				teacher who's always available, not just a code generator.
 			</li>
 		</ul>
 		<p>

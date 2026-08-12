@@ -22,7 +22,13 @@
 
 <svelte:element
 	this={tag}
-	class={classnames('text', `text--size-${size}`, `text--color-${color}`, `text--align-${textAlign}`, className)}
+	class={classnames(
+		'text',
+		`text--size-${size}`,
+		`text--color-${color}`,
+		`text--align-${textAlign}`,
+		className,
+	)}
 	{...rest}
 >
 	{#if children}

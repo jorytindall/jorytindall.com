@@ -21,9 +21,7 @@ export default defineType({
 			options: {
 				source: `title`,
 			},
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+			validation: (Rule: any) => [Rule.required().error(`The page must have a title.`)],
 		},
 		{
 			name: `image`,

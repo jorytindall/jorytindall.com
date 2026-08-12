@@ -7,12 +7,7 @@ interface IconProps {
 	className?: string;
 }
 
-export const Icon = ({
-	name,
-	size = 24,
-	color = 'currentColor',
-	className,
-}: IconProps) => {
+export const Icon = ({ name, size = 24, color = 'currentColor', className }: IconProps) => {
 	const icon = icons[name];
 
 	if (!icon) {

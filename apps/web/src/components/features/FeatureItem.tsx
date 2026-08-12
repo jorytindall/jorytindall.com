@@ -12,11 +12,7 @@ interface FeatureItemProps {
 	description: string;
 }
 
-export const FeatureItem = ({
-	image,
-	title,
-	description,
-}: FeatureItemProps) => {
+export const FeatureItem = ({ image, title, description }: FeatureItemProps) => {
 	return (
 		<>
 			<Container

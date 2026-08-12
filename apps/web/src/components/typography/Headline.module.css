@@ -1,5 +1,11 @@
 /* Base headline styles */
-.mega, .h1, .h2, .h3, .h4, .h5, .h6 {
+.mega,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
 	font-family: var(--typography-font-family-headline);
 	font-weight: bold;
 	margin: 2rem 0 1rem 0;
@@ -42,10 +48,18 @@
 }
 
 /* Color variants */
-.primary { color: var(--color-core-primary-300); }
-.secondary { color: var(--color-core-neutral-600); }
-.light { color: var(--color-core-neutral-100); }
-.dark { color: var(--color-core-neutral-600); }
+.primary {
+	color: var(--color-core-primary-300);
+}
+.secondary {
+	color: var(--color-core-neutral-600);
+}
+.light {
+	color: var(--color-core-neutral-100);
+}
+.dark {
+	color: var(--color-core-neutral-600);
+}
 
 /* Utility */
 .collapse {

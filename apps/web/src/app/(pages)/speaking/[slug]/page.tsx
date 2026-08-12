@@ -34,16 +34,7 @@ export default async function Talk({ params }) {
 	const { slug } = await params;
 	const talk = await sanityClient.fetch(GET_TALKS, { slug });
 
-	const {
-		title,
-		conference,
-		conferenceLink,
-		date,
-		link,
-		deck,
-		moduleContent,
-		image,
-	} = talk;
+	const { title, conference, conferenceLink, date, link, deck, moduleContent, image } = talk;
 
 	return (
 		<GridWrapper>

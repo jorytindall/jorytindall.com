@@ -35,10 +35,10 @@ export const TextArea = ({
 				id={id}
 				{...regsiter(name, validationSchema)}
 			></textarea>
-			{errors && errors[name]?.type === "required" && (
+			{errors && errors[name]?.type === 'required' && (
 				<Error message={errors[name]?.message} />
 			)}
-			{errors && errors[name]?.type === "minLength" && (
+			{errors && errors[name]?.type === 'minLength' && (
 				<Error message={errors[name]?.message} />
 			)}
 		</ItemWrapper>

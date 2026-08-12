@@ -44,9 +44,11 @@ utils/
 import { defineType } from 'sanity';
 
 export default defineType({
-  name: 'thing',
-  type: 'object',
-  fields: [ /* … */ ],
+	name: 'thing',
+	type: 'object',
+	fields: [
+		/* … */
+	],
 });
 ```
 
@@ -55,7 +57,9 @@ argument. Without it, `Rule` is implicitly `any` and mistakes pass silently — 
 validation rules in this repo were written as
 
 ```ts
-validation: (Rule) => { Rule.required().error('…') }   // WRONG — block body, no return
+validation: (Rule) => {
+	Rule.required().error('…');
+}; // WRONG — block body, no return
 ```
 
 which evaluates to `undefined`, so Sanity applied no validation at all. Fields that were

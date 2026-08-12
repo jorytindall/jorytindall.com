@@ -12,9 +12,7 @@ export default defineType({
 			title: `Title`,
 			type: `string`,
 			description: `Title of the page`,
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+			validation: (Rule: any) => [Rule.required().error(`The page must have a title.`)],
 		},
 		{
 			name: `showTitle`,
@@ -30,9 +28,7 @@ export default defineType({
 			options: {
 				source: `title`,
 			},
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+			validation: (Rule: any) => [Rule.required().error(`The page must have a title.`)],
 		},
 		{
 			name: `megaHeadline`,

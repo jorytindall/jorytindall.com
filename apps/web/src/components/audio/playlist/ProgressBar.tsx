@@ -1,11 +1,6 @@
 import styles from './Playlist.module.css';
 
-export const ProgressBar = ({
-	progressBarRef,
-	audioRef,
-	timeProgress,
-	duration,
-}) => {
+export const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
 	const handleProgressChange = () => {
 		audioRef.current.currentTime = progressBarRef.current.value;
 	};

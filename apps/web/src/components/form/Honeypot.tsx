@@ -5,10 +5,7 @@ interface HoneypotProps {
 	register?: any;
 }
 
-export const Honeypot = ({
-	name = 'website',
-	register,
-}: HoneypotProps) => {
+export const Honeypot = ({ name = 'website', register }: HoneypotProps) => {
 	return (
 		<div className={styles.honeypot} aria-hidden="true">
 			<label htmlFor={name}>Website</label>

@@ -71,11 +71,10 @@
 				attainable with some effort and practice.
 			</li>
 			<li>
-				Start small, build gradually, and use AI as your pair programmer and educator.
-				Tools like Claude or Cursor aren't just code generators — they can explain why
-				code works, suggest alternatives, and teach you patterns as you go. The key is
-				to engage with what they generate, ask follow-up questions, and build real
-				understanding over time.
+				Start small, build gradually, and use AI as your pair programmer and educator. Tools
+				like Claude or Cursor aren't just code generators — they can explain why code works,
+				suggest alternatives, and teach you patterns as you go. The key is to engage with
+				what they generate, ask follow-up questions, and build real understanding over time.
 			</li>
 		</ul>
 	</Notes>

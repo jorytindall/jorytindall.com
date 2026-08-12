@@ -15,12 +15,7 @@ export const Footer = ({ internalLinks, socialLinks }) => {
 			<div className={styles.internalLinks}>
 				{internalLinks.map((link) => {
 					return (
-						<Link
-							href={link.link}
-							key={link._key}
-							passHref
-							className={styles.link}
-						>
+						<Link href={link.link} key={link._key} passHref className={styles.link}>
 							{link.title}
 						</Link>
 					);
@@ -41,6 +36,6 @@ export const Footer = ({ internalLinks, socialLinks }) => {
 					);
 				})}
 			</div>
-		</footer >
+		</footer>
 	);
 };

@@ -24,7 +24,7 @@ const getCachedNowPlaying = unstable_cache(
 	{
 		revalidate: 10, // 10 seconds
 		tags: ['spotify-now-playing'],
-	}
+	},
 );
 
 export async function getNowPlaying(): Promise<NowPlayingData> {

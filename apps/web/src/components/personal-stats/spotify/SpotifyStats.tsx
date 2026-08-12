@@ -10,7 +10,6 @@ import type { SpotifyStatsInput, SpotifyVisibleStats } from '../types';
 import { RenderGenre, RenderArtist, RenderTrack } from './SubComponents';
 import s from './SpotifyStats.module.css';
 
-
 interface SpotifyStatsProps {
 	input: SpotifyStatsInput;
 }
@@ -72,7 +71,7 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 					timeRange,
 					visible.topArtistsCount,
 					visible.topGenresCount,
-					visible.recentlyPlayedCount
+					visible.recentlyPlayedCount,
 				);
 				setStats(data);
 			} catch (error) {
@@ -83,12 +82,7 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 		}
 
 		fetchStats();
-	}, [
-		timeRange,
-		visible.topArtistsCount,
-		visible.topGenresCount,
-		visible.recentlyPlayedCount,
-	]);
+	}, [timeRange, visible.topArtistsCount, visible.topGenresCount, visible.recentlyPlayedCount]);
 
 	if (loading) {
 		return (
@@ -109,7 +103,7 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 	}
 
 	const visibleSections = sectionConfigs.filter(
-		(config) => visible[config.key] && config.getData(stats).length > 0
+		(config) => visible[config.key] && config.getData(stats).length > 0,
 	);
 
 	return (
@@ -119,23 +113,20 @@ export const SpotifyStats = ({ input }: SpotifyStatsProps) => {
 				<div key={config.key} className={s.section}>
 					<div className={s.titleWrapper}>
 						<Icon name="spotify" size={24} color="var(--color-core-primary-300)" />
-						<Headline
-							tag='h4'
-							size='h6'
-							collapse
-							className={s.sectionTitle}
-						>{config.title}</Headline>
+						<Headline tag="h4" size="h6" collapse className={s.sectionTitle}>
+							{config.title}
+						</Headline>
 					</div>
-					<div className={config.containerClass}>
-						{config.renderItems(stats)}
-					</div>
+					<div className={config.containerClass}>{config.renderItems(stats)}</div>
 				</div>
 			))}
 			<TextArrow
 				href="https://open.spotify.com/user/1224682961?si=29c84f6c943340ff"
 				target="_blank"
 				rel="noopener noreferrer"
-			>View more on Spotify</TextArrow>
+			>
+				View more on Spotify
+			</TextArrow>
 		</div>
 	);
 };

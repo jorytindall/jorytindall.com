@@ -13,23 +13,22 @@
 		<p>Open it up for Q&amp;A. Be prepared for questions like:</p>
 		<ul>
 			<li>
-				<strong>Tools and workflows:</strong> "What specific tools do you use?" — Browser
-				DevTools, VS Code/Cursor, local dev environment, AI assistants like Claude.
+				<strong>Tools and workflows:</strong> "What specific tools do you use?" — Browser DevTools,
+				VS Code/Cursor, local dev environment, AI assistants like Claude.
 			</li>
 			<li>
-				<strong>Pushback on premise:</strong> "Isn't this just for design engineers?" — No,
-				this is about expanding your skillset and getting closer to the final product. The
-				level of depth is up to you.
+				<strong>Pushback on premise:</strong> "Isn't this just for design engineers?" — No, this
+				is about expanding your skillset and getting closer to the final product. The level of
+				depth is up to you.
 			</li>
 			<li>
-				<strong>Time investment:</strong> "How long does it take to learn?" — Start with
-				DevTools today, basic HTML/CSS in a few weeks, local development in a few months. It's
-				a gradual process.
+				<strong>Time investment:</strong> "How long does it take to learn?" — Start with DevTools
+				today, basic HTML/CSS in a few weeks, local development in a few months. It's a gradual
+				process.
 			</li>
 			<li>
-				<strong>Team dynamics:</strong> "How do engineers feel about this?" — In my
-				experience, engineers appreciate designers who understand the medium and can speak
-				their language.
+				<strong>Team dynamics:</strong> "How do engineers feel about this?" — In my experience,
+				engineers appreciate designers who understand the medium and can speak their language.
 			</li>
 		</ul>
 		<p>

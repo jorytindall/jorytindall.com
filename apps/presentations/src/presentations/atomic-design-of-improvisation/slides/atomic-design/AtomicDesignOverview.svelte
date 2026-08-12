@@ -20,17 +20,14 @@
 		</p>
 	</Box>
 	<Notes>
-		Atomic Design is a concept and design methodology (envisioned originally
-		by Brad Frost) that we should all be familiar with, but here's a brief
-		overview to make sure we're on the same page.
+		Atomic Design is a concept and design methodology (envisioned originally by Brad Frost) that
+		we should all be familiar with, but here's a brief overview to make sure we're on the same
+		page.
 		<ul>
+			<li>Cells: the lowest level primitive in Atomic design (colors, type ramp, spacing)</li>
 			<li>
-				Cells: the lowest level primitive in Atomic design (colors, type
-				ramp, spacing)
-			</li>
-			<li>
-				Molecules: built upon cells, more at the component level
-				(buttons, badges, simple components)
+				Molecules: built upon cells, more at the component level (buttons, badges, simple
+				components)
 			</li>
 			<li>Organisms: combinations of multiple molecules</li>
 			<li>Templates</li>

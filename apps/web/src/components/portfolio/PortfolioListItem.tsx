@@ -13,17 +13,9 @@ interface PortfolioListItemProps {
 	image: any;
 }
 
-export const PortfolioListItem = ({
-	title,
-	slug,
-	client,
-	image,
-}: PortfolioListItemProps) => {
+export const PortfolioListItem = ({ title, slug, client, image }: PortfolioListItemProps) => {
 	return (
-		<Link
-			href={linkResolver('portfolioProject', slug)}
-			className={styles.linkWrapper}
-		>
+		<Link href={linkResolver('portfolioProject', slug)} className={styles.linkWrapper}>
 			<article className={styles.itemWrapper} key={title}>
 				<div className={styles.imageWrapper}>
 					<Image

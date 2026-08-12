@@ -13,7 +13,7 @@ export function linkResolver(parent, slug) {
 		case 'musicProject':
 			return `music/${slug}`;
 		case 'music':
-			return `music/${slug}`
+			return `music/${slug}`;
 		case 'landingPage':
 			return `p/${slug}`;
 		case 'speaking':

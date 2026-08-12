@@ -8,9 +8,8 @@
 	<Box flexDirection="column" justifyContent="start" textAlign="left">
 		<h2>What is the DOM?</h2>
 		<p>
-			<strong>Document Object Model (DOM):</strong> the data
-			representation of the objects that comprise the structure and
-			content of a document on the web. (<a
+			<strong>Document Object Model (DOM):</strong> the data representation of the objects
+			that comprise the structure and content of a document on the web. (<a
 				href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
 				>Source</a
 			>)
@@ -28,8 +27,7 @@
 		</ul>
 	</Box>
 	<Notes>
-		When we're in the world of single page applications and JavaScript
-		frameworks things can get a bit complicated, but that's a story for
-		another day.
+		When we're in the world of single page applications and JavaScript frameworks things can get
+		a bit complicated, but that's a story for another day.
 	</Notes>
 </Slide>

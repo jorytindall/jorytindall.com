@@ -10,10 +10,9 @@
 	</Box>
 	<Notes>
 		<p>
-			Why not "jazz" improvisation? The term jazz can often pigeon-hole
-			improvisers into a specific style of music as listeners understand
-			the genere, even if the genre is much more expansive than the
-			standard listener knows.
+			Why not "jazz" improvisation? The term jazz can often pigeon-hole improvisers into a
+			specific style of music as listeners understand the genere, even if the genre is much
+			more expansive than the standard listener knows.
 		</p>
 	</Notes>
 </Slide>

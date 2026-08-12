@@ -8,6 +8,7 @@ apps/**/dist
 apps/**/build
 apps/**/.svelte-kit
 apps/**/.astro
+apps/**/.sanity
 packages/**/dist
 **/.turbo
 

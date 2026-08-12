@@ -6,31 +6,19 @@
 			"cache": false
 		},
 		"build": {
-			"dependsOn": [
-				"^build"
-			],
-			"outputs": [
-				"./.next/**",
-				"./dist/**",
-				"./.svelte-kit/**"
-			]
+			"dependsOn": ["^build"],
+			"outputs": ["./.next/**", "./dist/**", "./.svelte-kit/**"]
 		},
 		"test": {},
 		"lint": {
 			"outputs": []
 		},
 		"typecheck": {
-			"dependsOn": [
-				"^build"
-			],
+			"dependsOn": ["^build"],
 			"outputs": []
 		},
 		"deploy": {
-			"dependsOn": [
-				"build",
-				"test",
-				"lint"
-			],
+			"dependsOn": ["build", "test", "lint"],
 			"outputs": []
 		}
 	}

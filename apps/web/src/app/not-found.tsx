@@ -1,31 +1,39 @@
-import Image from "next/image";
-import { Headline, Paragraph } from "../components/typography";
-import { Container } from "../components/layout";
+import Image from 'next/image';
+import { Headline, Paragraph } from '../components/typography';
+import { Container } from '../components/layout';
 // import notFoundImage from "./images/not-found-confused.gif"
-import { TextArrow } from "../components/button";
+import { TextArrow } from '../components/button';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "404: Not found",
-  description: "Sorry, couldn't find that page."
-}
+	title: '404: Not found',
+	description: "Sorry, couldn't find that page.",
+};
 
 export default function NotFound() {
-  return (
-    <Container
-      isFlex={true}
-      flexDirection="column"
-      justify="center"
-      align="center"
-      textAlign="center"
-      gap="default"
-      semanticElement="section"
-    >
-      <Image src='/images/not-found-confused.gif' unoptimized width={480} height={270} alt="Not found" />
-      <Headline color="primary" tag='h1' size='h1' collapse>404 🤷‍♂️</Headline>
-      <Paragraph collapse>Sorry, couldn&apos;t find that page.</Paragraph>
-      <TextArrow href="/">Go back home</TextArrow>
-    </Container>
-  )
+	return (
+		<Container
+			isFlex={true}
+			flexDirection="column"
+			justify="center"
+			align="center"
+			textAlign="center"
+			gap="default"
+			semanticElement="section"
+		>
+			<Image
+				src="/images/not-found-confused.gif"
+				unoptimized
+				width={480}
+				height={270}
+				alt="Not found"
+			/>
+			<Headline color="primary" tag="h1" size="h1" collapse>
+				404 🤷‍♂️
+			</Headline>
+			<Paragraph collapse>Sorry, couldn&apos;t find that page.</Paragraph>
+			<TextArrow href="/">Go back home</TextArrow>
+		</Container>
+	);
 }

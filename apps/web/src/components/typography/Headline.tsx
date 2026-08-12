@@ -10,14 +10,7 @@ interface HeadlineProps {
 	className?: string;
 }
 
-export const Headline = ({
-	children,
-	size,
-	collapse,
-	tag,
-	color,
-	className
-}: HeadlineProps) => {
+export const Headline = ({ children, size, collapse, tag, color, className }: HeadlineProps) => {
 	const classes = getClasses([
 		// @ts-ignore
 		styles[size ? size : tag],

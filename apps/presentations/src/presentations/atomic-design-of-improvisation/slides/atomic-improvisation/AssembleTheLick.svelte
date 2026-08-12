@@ -20,10 +20,7 @@
 	</Slide>
 	<Slide>
 		<h3>Identify the sounds</h3>
-		<img
-			src="/images/atomic-design-of-improvisation/the-lick-sounds-01.png"
-			alt="Sounds"
-		/>
+		<img src="/images/atomic-design-of-improvisation/the-lick-sounds-01.png" alt="Sounds" />
 		<ul>
 			<li><strong>1:</strong> Major 2nd, ascending</li>
 			<li><strong>2:</strong> Major 2nd, ascending</li>
@@ -33,10 +30,7 @@
 	</Slide>
 	<Slide>
 		<h3>This could also be analyzed as this:</h3>
-		<img
-			src="/images/atomic-design-of-improvisation/the-lick-sounds-02.png"
-			alt="Sounds"
-		/>
+		<img src="/images/atomic-design-of-improvisation/the-lick-sounds-02.png" alt="Sounds" />
 		<ul>
 			<li><strong>1:</strong> Minor 2nd, ascending</li>
 			<li><strong>2:</strong> Major 3nd, descending</li>
@@ -44,10 +38,7 @@
 	</Slide>
 	<Slide>
 		<h3>Identify the cells</h3>
-		<img
-			src="/images/atomic-design-of-improvisation/the-lick-cells.png"
-			alt="Cells"
-		/>
+		<img src="/images/atomic-design-of-improvisation/the-lick-cells.png" alt="Cells" />
 		<ul>
 			<li><strong>1:</strong> 4-note digital pattern</li>
 			<li><strong>2:</strong> Enclosure of the root scale degree</li>
@@ -55,10 +46,7 @@
 	</Slide>
 	<Slide>
 		<h3>Now we have a <strong>motif!</strong></h3>
-		<img
-			src="/images/atomic-design-of-improvisation/the-lick-motif.png"
-			alt="Motif"
-		/>
+		<img src="/images/atomic-design-of-improvisation/the-lick-motif.png" alt="Motif" />
 		<h2>🎉</h2>
 	</Slide>
 </Slide>

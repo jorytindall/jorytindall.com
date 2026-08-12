@@ -26,9 +26,7 @@ async function refreshAccessToken(): Promise<string> {
 		throw new Error('Missing Spotify environment variables');
 	}
 
-	const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString(
-		'base64'
-	);
+	const basicAuth = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
 
 	const response = await fetch(SPOTIFY_TOKEN_URL, {
 		method: 'POST',
@@ -67,7 +65,7 @@ async function getAccessToken(): Promise<string> {
 
 export async function getTopArtists(
 	timeRange: TimeRange = 'medium_term',
-	limit: number = 10
+	limit: number = 10,
 ): Promise<SpotifyArtist[]> {
 	const accessToken = await getAccessToken();
 
@@ -77,7 +75,7 @@ export async function getTopArtists(
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
 			},
-		}
+		},
 	);
 
 	if (!response.ok) {
@@ -89,18 +87,15 @@ export async function getTopArtists(
 }
 
 export async function getRecentlyPlayed(
-	limit: number = 10
+	limit: number = 10,
 ): Promise<SpotifyRecentlyPlayedResponse> {
 	const accessToken = await getAccessToken();
 
-	const response = await fetch(
-		`${SPOTIFY_API_BASE}/me/player/recently-played?limit=${limit}`,
-		{
-			headers: {
-				Authorization: `Bearer ${accessToken}`,
-			},
-		}
-	);
+	const response = await fetch(`${SPOTIFY_API_BASE}/me/player/recently-played?limit=${limit}`, {
+		headers: {
+			Authorization: `Bearer ${accessToken}`,
+		},
+	});
 
 	if (!response.ok) {
 		throw new Error(`Failed to fetch recently played: ${response.status}`);
@@ -130,10 +125,7 @@ export async function getCurrentlyPlaying(): Promise<SpotifyCurrentlyPlayingResp
 	return response.json();
 }
 
-export function extractGenresFromArtists(
-	artists: SpotifyArtist[],
-	limit: number = 10
-): string[] {
+export function extractGenresFromArtists(artists: SpotifyArtist[], limit: number = 10): string[] {
 	const genreCount = new Map<string, number>();
 
 	for (const artist of artists) {
@@ -157,7 +149,7 @@ export function formatArtistForDisplay(artist: SpotifyArtist): DisplayArtist {
 }
 
 export function formatTrackForDisplay(
-	track: SpotifyRecentlyPlayedResponse['items'][0]
+	track: SpotifyRecentlyPlayedResponse['items'][0],
 ): DisplayTrack {
 	return {
 		name: track.track.name,
@@ -172,7 +164,7 @@ export async function getSpotifyDisplayStats(
 	timeRange: TimeRange = 'medium_term',
 	artistLimit: number = 5,
 	genreLimit: number = 5,
-	recentLimit: number = 5
+	recentLimit: number = 5,
 ): Promise<SpotifyDisplayStats> {
 	const [artists, recentlyPlayedResponse] = await Promise.all([
 		getTopArtists(timeRange, artistLimit),
@@ -186,9 +178,7 @@ export async function getSpotifyDisplayStats(
 	};
 }
 
-export function formatNowPlaying(
-	data: SpotifyCurrentlyPlayingResponse | null
-): NowPlayingData {
+export function formatNowPlaying(data: SpotifyCurrentlyPlayingResponse | null): NowPlayingData {
 	if (!data || !data.is_playing || data.currently_playing_type !== 'track' || !data.item) {
 		return {
 			isPlaying: false,

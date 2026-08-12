@@ -4,8 +4,6 @@ import { formatEventSchedule } from 'utils/datetimeFormat';
 import styles from './EventList.module.css';
 
 export const EventList = ({ events }) => {
-
-
 	return (
 		<div className={styles.wrapper}>
 			{events.length > 0 ? (
@@ -19,17 +17,13 @@ export const EventList = ({ events }) => {
 								<p className={styles.title}>
 									<strong>{event.title}</strong>
 								</p>
-								<p className={styles.date}>
-									{formatEventSchedule(event)}
-								</p>
+								<p className={styles.date}>{formatEventSchedule(event)}</p>
 							</Link>
 						</div>
 					);
 				})
 			) : (
-				<p className={styles.noEvents}>
-					No upcoming events, check back soon!
-				</p>
+				<p className={styles.noEvents}>No upcoming events, check back soon!</p>
 			)}
 		</div>
 	);

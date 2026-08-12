@@ -19,7 +19,7 @@
 		"test": "turbo run test",
 		"lint": "turbo run lint",
 		"typecheck": "turbo run typecheck",
-		"verify": "turbo run lint typecheck",
+		"verify": "pnpm format:check && turbo run lint typecheck",
 		"dev": "turbo run dev"
 	},
 	"devDependencies": {

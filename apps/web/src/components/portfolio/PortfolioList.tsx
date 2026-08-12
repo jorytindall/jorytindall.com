@@ -24,37 +24,34 @@ export const PortfolioList = ({ input }: PortfolioListItem) => {
 					.filter(Boolean)
 			: undefined;
 
-		const fallbackImage = !hasGallery
-			? getSanityImageUrl(item.item.featuredImage)
-			: undefined;
+		const fallbackImage = !hasGallery ? getSanityImageUrl(item.item.featuredImage) : undefined;
 
 		return (
-				<BentoItem
-					key={item.item.title}
-					background='tertiary'
-					size='medium'
-					padding='large'
-					gap='large'
-					isInteractive={true}
-					href={linkResolver('portfolioProject', item.item.slug.current)}
-					image={fallbackImage}
-					images={images}
-					imagePosition="top"
-					imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-					altText={item.item.featuredImage?.alternativeText}
-				>
-					<Headline tag='h2' size='h4' color='secondary' collapse>{item.item.title}</Headline>
-					<Badge text={item.item.client} type='inverse' />
-				</BentoItem>
+			<BentoItem
+				key={item.item.title}
+				background="tertiary"
+				size="medium"
+				padding="large"
+				gap="large"
+				isInteractive={true}
+				href={linkResolver('portfolioProject', item.item.slug.current)}
+				image={fallbackImage}
+				images={images}
+				imagePosition="top"
+				imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+				altText={item.item.featuredImage?.alternativeText}
+			>
+				<Headline tag="h2" size="h4" color="secondary" collapse>
+					{item.item.title}
+				</Headline>
+				<Badge text={item.item.client} type="inverse" />
+			</BentoItem>
 		);
 	});
 
 	return (
-		<BentoBox
-			className={styles.wrapper}
-			isFullBleed={false}
-		>
+		<BentoBox className={styles.wrapper} isFullBleed={false}>
 			{portfolioItems}
 		</BentoBox>
-	)
+	);
 };

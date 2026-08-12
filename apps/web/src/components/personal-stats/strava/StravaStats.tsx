@@ -32,10 +32,30 @@ function formatTime(seconds: number): string {
 const statConfigs: StatConfig[] = [
 	{ key: 'ytdMiles', getValue: (s) => s.ytdMiles, label: 'Miles run this year', group: 'ytd' },
 	{ key: 'ytdRuns', getValue: (s) => s.ytdRuns, label: 'Runs this year', group: 'ytd' },
-	{ key: 'ytdTime', getValue: (s) => formatTime(s.ytdTimeSeconds), label: 'Time running', group: 'ytd' },
-	{ key: 'ytdElevation', getValue: (s) => s.ytdElevationFeet.toLocaleString(), label: 'Feet climbed running', group: 'ytd' },
-	{ key: 'allTimeMiles', getValue: (s) => s.allTimeMiles.toLocaleString(), label: 'All-time miles', group: 'allTime' },
-	{ key: 'allTimeRuns', getValue: (s) => s.allTimeRuns.toLocaleString(), label: 'All-time runs', group: 'allTime' },
+	{
+		key: 'ytdTime',
+		getValue: (s) => formatTime(s.ytdTimeSeconds),
+		label: 'Time running',
+		group: 'ytd',
+	},
+	{
+		key: 'ytdElevation',
+		getValue: (s) => s.ytdElevationFeet.toLocaleString(),
+		label: 'Feet climbed running',
+		group: 'ytd',
+	},
+	{
+		key: 'allTimeMiles',
+		getValue: (s) => s.allTimeMiles.toLocaleString(),
+		label: 'All-time miles',
+		group: 'allTime',
+	},
+	{
+		key: 'allTimeRuns',
+		getValue: (s) => s.allTimeRuns.toLocaleString(),
+		label: 'All-time runs',
+		group: 'allTime',
+	},
 ];
 
 const defaultVisibleStats: StravaVisibleStats = {
@@ -94,22 +114,18 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 		<>
 			{statGroup.map((config) => (
 				<StatCard
-					orientation='vertical'
-					style='primary'
-					padding='medium'
-					gap='none'
+					orientation="vertical"
+					style="primary"
+					padding="medium"
+					gap="none"
 					key={config.key}
 				>
-					<Headline
-						tag='p'
-						size='h4'
-						collapse
-						className='stat-value'
-					>{config.getValue(stats)}</Headline>
-					<Paragraph
-						collapse
-						className='stat-label'
-					>{config.label}</Paragraph>
+					<Headline tag="p" size="h4" collapse className="stat-value">
+						{config.getValue(stats)}
+					</Headline>
+					<Paragraph collapse className="stat-label">
+						{config.label}
+					</Paragraph>
 				</StatCard>
 			))}
 		</>
@@ -119,14 +135,11 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 		<section className={s.statsWrapper}>
 			<div className={s.section}>
 				<div className={s.titleWrapper}>
-					<Icon name='strava' size={24} color='var(--color-core-primary-300)' />
+					<Icon name="strava" size={24} color="var(--color-core-primary-300)" />
 					{/* {title && <Headline tag="h3">{title}</Headline>} */}
-					<Headline
-						tag='h4'
-						size='h6'
-						collapse
-						className={s.sectionTitle}
-					>Running stats</Headline>
+					<Headline tag="h4" size="h6" collapse className={s.sectionTitle}>
+						Running stats
+					</Headline>
 				</div>
 				<div className={s.statsGrid}>
 					{ytdStats.length > 0 && renderStatGroup(ytdStats)}
@@ -137,7 +150,9 @@ export const StravaStats = ({ input }: StravaStatsProps) => {
 				href="https://www.strava.com/athletes/97586690"
 				target="_blank"
 				rel="noopener noreferrer"
-			>View more on Strava</TextArrow>
+			>
+				View more on Strava
+			</TextArrow>
 		</section>
 	);
 };

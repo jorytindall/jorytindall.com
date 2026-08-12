@@ -16,17 +16,17 @@ person.
 
 **Apps** (all deployed on Railway, project `jorytindall`, environment `production`):
 
-| App | What it is | Dev port | Domain |
-| --- | --- | --- | --- |
-| `apps/web` | The main site. Next.js 16 App Router, content from Sanity. | 3000 | `jorytindall.com` |
-| `apps/admin` | Sanity Studio v4. Source of all editorial content. | 3333 | `admin.jorytindall.com` |
-| `apps/presentations` | SvelteKit 2 + RevealJS 6 conference talks. | 5173 | `presentations.jorytindall.com` |
-| `apps/media-center` | Astro 5 media browser wired to a Plex server. | 4321 | `jorytindall.tv` |
+| App                  | What it is                                                 | Dev port | Domain                          |
+| -------------------- | ---------------------------------------------------------- | -------- | ------------------------------- |
+| `apps/web`           | The main site. Next.js 16 App Router, content from Sanity. | 3000     | `jorytindall.com`               |
+| `apps/admin`         | Sanity Studio v4. Source of all editorial content.         | 3333     | `admin.jorytindall.com`         |
+| `apps/presentations` | SvelteKit 2 + RevealJS 6 conference talks.                 | 5173     | `presentations.jorytindall.com` |
+| `apps/media-center`  | Astro 5 media browser wired to a Plex server.              | 4321     | `jorytindall.tv`                |
 
 **Packages:**
 
-| Package | What it is | Has a build step? |
-| --- | --- | --- |
+| Package           | What it is                                                 | Has a build step?      |
+| ----------------- | ---------------------------------------------------------- | ---------------------- |
 | `packages/tokens` | Design tokens via style-dictionary. Light and dark themes. | Yes — style-dictionary |
 
 ## Dependency graph
@@ -42,7 +42,7 @@ admin ── no workspace dependencies at all
 Two consequences worth internalizing:
 
 1. **`admin` is fully isolated.** It does not consume `tokens` and shares no code with
-   `web`. Its coupling to `web` is by *convention only*: a schema type name in
+   `web`. Its coupling to `web` is by _convention only_: a schema type name in
    `apps/admin/schemas/` must match the `_type` a GROQ query in `apps/web/src/lib/queries/`
    reads, and the `_type` case in `apps/web/src/components/module-renderer/index.tsx`.
    Nothing enforces any of that. Break it and content silently stops rendering.
@@ -67,18 +67,19 @@ pnpm tokens:build
 **Before claiming any change is done, run:**
 
 ```bash
-pnpm verify        # === turbo run lint typecheck, across every workspace
+pnpm verify        # === format:check + turbo run lint typecheck, every workspace
 ```
 
 Roughly 7 seconds cold, instant warm, and it **needs no secrets** — that is deliberate,
 so it always runs. It must exit 0. Individually:
 
 ```bash
+pnpm format:check  # prettier, whole repo
 pnpm lint          # eslint — web, admin, presentations
 pnpm typecheck     # tsc (web, admin), svelte-check (presentations), astro check (media-center)
 ```
 
-### What `verify` does *not* cover
+### What `verify` does _not_ cover
 
 Do not assume a green `verify` means everything is checked:
 
@@ -87,9 +88,9 @@ Do not assume a green `verify` means everything is checked:
   meaningless, not as reassurance.
 - **The only tests are two Playwright e2e specs** in `apps/web/src/tests/e2e/`. They need
   a build and real secrets, so they are not in `verify`:
-  ```bash
-  pnpm --filter web test:e2e
-  ```
+    ```bash
+    pnpm --filter web test:e2e
+    ```
 - **`pnpm build` fails locally without Infisical.** `apps/web` calls `createClient` at
   module scope, so a missing `NEXT_PUBLIC_SANITY_PROJECT_ID` throws
   `Configuration must contain 'projectId'` during page-data collection. Run
@@ -99,7 +100,6 @@ Do not assume a green `verify` means everything is checked:
   is the only thing looking at it.
 - **`tokens` has neither linting nor typechecking.** It is JSON token files plus
   style-dictionary config.
-- **`format:check` is not gated.** See *Formatting* below.
 
 ### CI
 
@@ -113,15 +113,15 @@ not run in months.
 
 ## Where to make a change
 
-| You want to… | Go to | Then |
-| --- | --- | --- |
-| Add or change a UI component | `apps/web/src/components/<name>/` | Folder-per-component with a co-located `.module.css` |
-| Change a color or type value | `packages/tokens/tokens/` | `pnpm tokens:build`, then rebuild consumers |
-| Add or change a content type | `apps/admin/schemas/` | Register in `schemas/index.ts` — then the four-step chain below |
-| Render new content on the site | `apps/web/src/lib/queries/`, then the route | Add the `_type` case to `module-renderer/index.tsx` |
-| Change Portable Text rendering | `apps/web/src/components/rich-text/Components.tsx` | |
-| Add a slide or talk | `apps/presentations/src/presentations/` | Route in `src/routes/<talk>/+page.svelte` |
-| Change transactional email | `apps/web/src/email/` | `pnpm email` to preview |
+| You want to…                   | Go to                                              | Then                                                            |
+| ------------------------------ | -------------------------------------------------- | --------------------------------------------------------------- |
+| Add or change a UI component   | `apps/web/src/components/<name>/`                  | Folder-per-component with a co-located `.module.css`            |
+| Change a color or type value   | `packages/tokens/tokens/`                          | `pnpm tokens:build`, then rebuild consumers                     |
+| Add or change a content type   | `apps/admin/schemas/`                              | Register in `schemas/index.ts` — then the four-step chain below |
+| Render new content on the site | `apps/web/src/lib/queries/`, then the route        | Add the `_type` case to `module-renderer/index.tsx`             |
+| Change Portable Text rendering | `apps/web/src/components/rich-text/Components.tsx` |                                                                 |
+| Add a slide or talk            | `apps/presentations/src/presentations/`            | Route in `src/routes/<talk>/+page.svelte`                       |
+| Change transactional email     | `apps/web/src/email/`                              | `pnpm email` to preview                                         |
 
 **The content chain is four steps and half-finishing it fails silently.** Adding a
 content type means: define the schema → register it in `apps/admin/schemas/index.ts` →
@@ -155,10 +155,11 @@ renders as nothing, with no error. Use the `new-sanity-type` skill.
 ### Formatting
 
 Prettier config is at the root: tabs, width 4, print width 100, single quotes.
-`pnpm format:check` reports the whole repo, `pnpm format:all` rewrites it.
 
-**Match the style of the file you are editing.** Some files predate the current config,
-and reformatting one in passing turns a two-line change into a hundred-line diff.
+The whole repo was normalized in one commit, and `format:check` is part of `pnpm verify`,
+so formatting is a solved problem here — **run `pnpm format:all` freely.** It will only
+touch what you changed, because nothing else is out of style. This is the payoff for
+doing the normalization as its own commit; do not let the repo drift back.
 
 ### Changesets
 

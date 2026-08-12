@@ -16,15 +16,13 @@ export default defineType({
 				allowTimeZoneSwitch: true,
 				displayTimeZone: 'America/Los_Angeles',
 			},
-			validation: (Rule: any) =>
-				Rule.required().error('A performance must have a date.'),
+			validation: (Rule: any) => Rule.required().error('A performance must have a date.'),
 		},
 		{
 			name: 'note',
 			title: 'Note',
 			type: 'string',
-			description:
-				'Optional label for this performance (e.g. "Opening night", "Matinee").',
+			description: 'Optional label for this performance (e.g. "Opening night", "Matinee").',
 		},
 	],
 	preview: {

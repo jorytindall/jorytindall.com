@@ -16,15 +16,9 @@ interface BlogTitleProps {
 	];
 }
 
-export const BlogTitle = ({
-	featuredImage,
-	title,
-	categories,
-}: BlogTitleProps) => {
+export const BlogTitle = ({ featuredImage, title, categories }: BlogTitleProps) => {
 	const mapCategories = categories.map((category) => {
-		return (
-			<Badge type="primary" text={category.name} key={category.name} />
-		);
+		return <Badge type="primary" text={category.name} key={category.name} />;
 	});
 
 	return (
@@ -38,9 +32,7 @@ export const BlogTitle = ({
 					fill
 				/>
 			</div>
-			{categories && (
-				<div className={s.categoryContainer}>{mapCategories}</div>
-			)}
+			{categories && <div className={s.categoryContainer}>{mapCategories}</div>}
 			{title && <Headline tag="h1">{title}</Headline>}
 		</section>
 	);

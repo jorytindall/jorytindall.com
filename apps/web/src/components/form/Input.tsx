@@ -36,9 +36,7 @@ export const Input = ({
 	const classes = getClasses([styles.input]);
 
 	// Support both react-hook-form and controlled inputs
-	const inputProps = register
-		? register(name, validationSchema)
-		: { value, onChange };
+	const inputProps = register ? register(name, validationSchema) : { value, onChange };
 
 	return (
 		<ItemWrapper>
@@ -53,10 +51,10 @@ export const Input = ({
 				autoFocus={autoFocus}
 				{...inputProps}
 			/>
-			{errors && errors[name]?.type === "required" && (
+			{errors && errors[name]?.type === 'required' && (
 				<Error message={errors[name]?.message} />
 			)}
-			{errors && errors[name]?.type === "minLength" && (
+			{errors && errors[name]?.type === 'minLength' && (
 				<Error message={errors[name]?.message} />
 			)}
 		</ItemWrapper>

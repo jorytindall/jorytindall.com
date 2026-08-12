@@ -7,15 +7,11 @@ interface BentoBoxProps {
 	isFullBleed?: boolean;
 }
 
-export const BentoBox = ({
-	isFullBleed = true,
-	children,
-	className
-}: BentoBoxProps) => {
+export const BentoBox = ({ isFullBleed = true, children, className }: BentoBoxProps) => {
 	const classes = getClasses([
 		styles.wrapper,
 		[isFullBleed ? styles.isFullBleed : null],
-		className
+		className,
 	]);
 
 	return <section className={classes}>{children}</section>;

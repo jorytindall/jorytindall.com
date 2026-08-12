@@ -5,16 +5,11 @@
 
 <Slide>
 	<Box justifyContent="start" textAlign="left" flexDirection="column">
-		<img
-			src="/images/jory-square-avatar.png"
-			alt="Jory Tindall"
-			width="150"
-		/>
+		<img src="/images/jory-square-avatar.png" alt="Jory Tindall" width="150" />
 		<h2>Jory Tindall</h2>
 		<p>
-			Product Designer, <a
-				href="https://helios.hashicorp.design"
-				target="blank">HashiCorp Design System</a
+			Product Designer, <a href="https://helios.hashicorp.design" target="blank"
+				>HashiCorp Design System</a
 			>
 		</p>
 		<p>

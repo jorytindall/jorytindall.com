@@ -40,8 +40,7 @@ export default defineType({
 				],
 				layout: 'radio',
 			},
-			validation: (Rule: any) =>
-				Rule.required().error('Choose how this event is scheduled.'),
+			validation: (Rule: any) => Rule.required().error('Choose how this event is scheduled.'),
 		},
 		{
 			name: 'date',
@@ -53,8 +52,7 @@ export default defineType({
 				allowTimeZoneSwitch: true,
 				displayTimeZone: 'America/Los_Angeles',
 			},
-			validation: (Rule: any) =>
-				Rule.required().error('The event must have a start date.'),
+			validation: (Rule: any) => Rule.required().error('The event must have a start date.'),
 		},
 		{
 			name: 'endDate',
@@ -95,9 +93,7 @@ export default defineType({
 			name: 'slug',
 			title: 'Slug',
 			type: 'slug',
-			validation: (Rule: any) => [
-				Rule.required().error("The event must have a slug."),
-			],
+			validation: (Rule: any) => [Rule.required().error('The event must have a slug.')],
 			options: {
 				source: (doc: any) => {
 					const { title, date } = doc;
@@ -150,8 +146,7 @@ export default defineType({
 			eventFormat?: string;
 			performances?: { date?: string }[];
 		}) {
-			const { title, date, endDate, location, eventFormat, performances } =
-				selection;
+			const { title, date, endDate, location, eventFormat, performances } = selection;
 			const fmt = (d: string) => format(parseISO(d), 'MMMM d, yyyy');
 
 			let dateLabel = 'No date';

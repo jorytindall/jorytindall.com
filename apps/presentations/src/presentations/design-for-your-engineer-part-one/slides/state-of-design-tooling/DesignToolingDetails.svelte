@@ -7,10 +7,7 @@
 	<Box>
 		<h2>Current state of design tooling</h2>
 		<ul>
-			<li>
-				Tools are moving quickly to close the gap between designers and
-				engineers
-			</li>
+			<li>Tools are moving quickly to close the gap between designers and engineers</li>
 			<li></li>
 		</ul>
 	</Box>

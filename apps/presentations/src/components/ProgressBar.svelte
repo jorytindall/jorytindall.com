@@ -25,10 +25,7 @@
 	const percentage = $derived(Math.min(Math.max((value / max) * 100, 0), 100));
 </script>
 
-<div
-	class={classnames('progress-bar', `progress-bar--size-${size}`, className)}
-	{...rest}
->
+<div class={classnames('progress-bar', `progress-bar--size-${size}`, className)} {...rest}>
 	{#if label}
 		<div class="progress-bar__header">
 			<span class="progress-bar__label">{label}</span>
@@ -46,10 +43,7 @@
 		aria-label={ariaLabel ?? label ?? `Progress: ${value} of ${max}`}
 	>
 		<div
-			class={classnames(
-				'progress-bar__fill',
-				`progress-bar__fill--appearance-${appearance}`,
-			)}
+			class={classnames('progress-bar__fill', `progress-bar__fill--appearance-${appearance}`)}
 			style="width: {percentage}%"
 		></div>
 	</div>

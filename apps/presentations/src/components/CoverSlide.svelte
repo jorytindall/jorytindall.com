@@ -65,16 +65,9 @@
 	data-slide-hide-header={hideHeader || undefined}
 >
 	<div class="cover-overlay" style="--overlay-color: {backgroundOverlay}">
-		<Box
-			flexDirection="column"
-			{textAlign}
-			justifyContent="end"
-			gap="medium"
-		>
+		<Box flexDirection="column" {textAlign} justifyContent="end" gap="medium">
 			{#if title}
-				<Headline tag="h1" size="h1" color={titleColor}
-					>{title}</Headline
-				>
+				<Headline tag="h1" size="h1" color={titleColor}>{title}</Headline>
 			{/if}
 			{#if subtitle}
 				<Text size="large" color={subtitleColor}>{subtitle}</Text>

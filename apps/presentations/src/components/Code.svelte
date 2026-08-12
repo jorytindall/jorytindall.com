@@ -7,7 +7,7 @@
 		lineNumbers = false,
 		lineStartFrom = undefined,
 		lang = undefined,
-		children
+		children,
 	}: {
 		trim?: boolean;
 		noescape?: boolean;
@@ -23,5 +23,6 @@
 		data-trim={trim}
 		data-noescape={noescape}
 		data-line-numbers={lineNumbers}
-		data-ln-start-from={lineStartFrom}>{#if children}{@render children()}{/if}</code
+		data-ln-start-from={lineStartFrom}
+		>{#if children}{@render children()}{/if}</code
 	></pre>

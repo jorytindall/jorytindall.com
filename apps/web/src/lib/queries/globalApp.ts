@@ -49,4 +49,4 @@ export const GET_GLOBAL_APP_DATA = groq`{
       timeRange
     }
   }
-}`
+}`;

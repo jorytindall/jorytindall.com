@@ -16,7 +16,7 @@
 		</ul>
 	</Box>
 	<Notes>
-		More importantly, where is the convergence point between these two
-		concepts, and can we conceptualize improvisation in an atomic manner?
+		More importantly, where is the convergence point between these two concepts, and can we
+		conceptualize improvisation in an atomic manner?
 	</Notes>
 </Slide>

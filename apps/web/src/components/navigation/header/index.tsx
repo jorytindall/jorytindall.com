@@ -28,38 +28,38 @@ export const Header = ({ links, personalStats }) => {
 		const originalStyle = window.getComputedStyle(document.body).overflow;
 
 		if (overlay) {
-				// Store current scroll position
-				const scrollY = window.scrollY;
+			// Store current scroll position
+			const scrollY = window.scrollY;
 
-				// Add our CSS module class to body
-				document.body.classList.add(styles.noScroll);
+			// Add our CSS module class to body
+			document.body.classList.add(styles.noScroll);
 
-				// Set the scroll position as a CSS custom property
-				document.body.style.setProperty('--scroll-position', `-${scrollY}px`);
+			// Set the scroll position as a CSS custom property
+			document.body.style.setProperty('--scroll-position', `-${scrollY}px`);
 		} else {
-				// Get the stored scroll position before removing styles
-				const scrollY = getComputedStyle(document.body)
-						.getPropertyValue('--scroll-position')
-						.replace('-', '')
-						.replace('px', '');
+			// Get the stored scroll position before removing styles
+			const scrollY = getComputedStyle(document.body)
+				.getPropertyValue('--scroll-position')
+				.replace('-', '')
+				.replace('px', '');
 
-				// Remove our CSS module class
-				document.body.classList.remove(styles.noScroll);
+			// Remove our CSS module class
+			document.body.classList.remove(styles.noScroll);
 
-				// Remove the custom property
-				document.body.style.removeProperty('--scroll-position');
+			// Remove the custom property
+			document.body.style.removeProperty('--scroll-position');
 
-				// Restore scroll position if we have one
-				if (scrollY) {
-						window.scrollTo(0, parseInt(scrollY, 10));
-				}
+			// Restore scroll position if we have one
+			if (scrollY) {
+				window.scrollTo(0, parseInt(scrollY, 10));
+			}
 		}
 
 		// Cleanup function
 		return () => {
-				document.body.classList.remove(styles.noScroll);
-				document.body.style.removeProperty('--scroll-position');
-				document.body.style.overflow = originalStyle;
+			document.body.classList.remove(styles.noScroll);
+			document.body.style.removeProperty('--scroll-position');
+			document.body.style.overflow = originalStyle;
 		};
 	}, [overlay]);
 
@@ -70,18 +70,17 @@ export const Header = ({ links, personalStats }) => {
 			if (isScrolled !== scrolled) {
 				setScrolled(!scrolled);
 			}
-		}
+		};
 
 		document.addEventListener('scroll', handleScroll);
 		return () => {
 			document.removeEventListener('scroll', handleScroll);
-		}
+		};
 	}, [scrolled]);
 
 	return (
-		<header className={
-			`${getOverlayClass} ${scrolled ? styles.scrolled : ''} ${overlay ? styles.overlayActive : ''}`
-		}
+		<header
+			className={`${getOverlayClass} ${scrolled ? styles.scrolled : ''} ${overlay ? styles.overlayActive : ''}`}
 		>
 			<Avatar />
 			<NavTrigger overlay={overlay} toggle={setOverlay} />

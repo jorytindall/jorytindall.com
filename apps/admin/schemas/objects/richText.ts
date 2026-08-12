@@ -79,7 +79,7 @@ export default defineType({
 				{ type: 'fileDownload' },
 				{ type: `playlist` },
 				{ type: `video` },
-				{ type: `calloutBlock` }
+				{ type: `calloutBlock` },
 			],
 		},
 	],

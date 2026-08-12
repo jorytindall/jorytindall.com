@@ -6,203 +6,174 @@ import { Headline, Paragraph } from 'components/typography';
 import { Badge } from 'components/badge';
 import { Container } from 'components/layout';
 import { TextArrow } from 'components/button';
-import s from './PortfolioTitle.module.css'
+import s from './PortfolioTitle.module.css';
 
 interface PortfolioTitleProps {
-  title: string;
-  overview: string;
-  timeline?: string;
-  types?: string[];
-  externalLink: string;
-  roles?: string[];
-  client: string;
-  tools?: string[];
-  parentProject?: {
-    title: string
-    slug: string
-  }
-  image?: {
-    alternativeText: string
-    asset: {
-      _ref: string
-      _type: string
-    }
-  }
+	title: string;
+	overview: string;
+	timeline?: string;
+	types?: string[];
+	externalLink: string;
+	roles?: string[];
+	client: string;
+	tools?: string[];
+	parentProject?: {
+		title: string;
+		slug: string;
+	};
+	image?: {
+		alternativeText: string;
+		asset: {
+			_ref: string;
+			_type: string;
+		};
+	};
 }
 
 const PortfolioTitle = ({
-  title,
-  overview,
-  timeline,
-  types,
-  externalLink,
-  roles,
-  client,
-  tools,
-  parentProject,
-  image,
+	title,
+	overview,
+	timeline,
+	types,
+	externalLink,
+	roles,
+	client,
+	tools,
+	parentProject,
+	image,
 }: PortfolioTitleProps) => {
+	const featuredImage = getSanityImageUrl(image);
 
-  const featuredImage = getSanityImageUrl(image);
+	// These fields are all optional in the schema, so a project that omits them
+	// must still render rather than throw on .map().
+	const hasProjectInfo = Boolean(types?.length || roles?.length || tools?.length || timeline);
 
-  // These fields are all optional in the schema, so a project that omits them
-  // must still render rather than throw on .map().
-  const hasProjectInfo = Boolean(
-    types?.length || roles?.length || tools?.length || timeline
-  );
+	return (
+		<BentoBox isFullBleed={false}>
+			<BentoItem size="x-large" padding="x-large" gap="large" background="primary">
+				{parentProject && (
+					<Link href={`/portfolio/${parentProject.slug}`} className={s['parent-link']}>
+						&larr; Part of {parentProject.title}
+					</Link>
+				)}
+				<Badge text={client} type="inverse" />
+				<Headline tag="h1" size="h1" color="light" collapse>
+					{title}
+				</Headline>
+				<Paragraph color="light" collapse>
+					{overview}
+				</Paragraph>
+				{externalLink && (
+					<TextArrow style="dark" href={externalLink}>
+						View project
+					</TextArrow>
+				)}
+			</BentoItem>
+			{hasProjectInfo && (
+				<BentoItem size="medium" padding="x-large" gap="x-large" background="tertiary">
+					{types && types.length > 0 && (
+						<Container
+							semanticElement="section"
+							isFlex
+							flexDirection="column"
+							gap="small"
+							density="collapse"
+						>
+							<Headline color="secondary" tag="h2" size="h5" collapse>
+								Project type
+							</Headline>
+							<Container
+								isFlex
+								flexDirection="row"
+								gap="small"
+								semanticElement="aside"
+								density="collapse"
+							>
+								{types.map((type) => (
+									<Badge key={type} text={type} type="primary" />
+								))}
+							</Container>
+						</Container>
+					)}
+					{roles && roles.length > 0 && (
+						<Container
+							semanticElement="section"
+							isFlex
+							flexDirection="column"
+							gap="small"
+							density="collapse"
+						>
+							<Headline color="secondary" tag="h2" size="h5" collapse>
+								Project role
+							</Headline>
+							<Container
+								isFlex
+								flexDirection="row"
+								gap="small"
+								semanticElement="aside"
+								density="collapse"
+							>
+								{roles.map((role) => (
+									<Badge key={role} text={role} type="primary" />
+								))}
+							</Container>
+						</Container>
+					)}
+					{tools && tools.length > 0 && (
+						<Container
+							semanticElement="section"
+							isFlex
+							flexDirection="column"
+							gap="small"
+							density="collapse"
+						>
+							<Headline color="secondary" tag="h2" size="h5" collapse>
+								Tools
+							</Headline>
+							<Container
+								isFlex
+								flexDirection="row"
+								gap="small"
+								semanticElement="aside"
+								density="collapse"
+							>
+								{tools.map((tool) => (
+									<Badge key={tool} text={tool} type="primary" />
+								))}
+							</Container>
+						</Container>
+					)}
+					{timeline && (
+						<Container
+							semanticElement="section"
+							isFlex
+							flexDirection="column"
+							gap="small"
+							density="collapse"
+						>
+							<Headline color="secondary" tag="h2" size="h5" collapse>
+								Project timeline
+							</Headline>
+							<Badge text={timeline} type="primary" />
+						</Container>
+					)}
+				</BentoItem>
+			)}
+			{image && featuredImage && (
+				<BentoItem size="full" padding="none" background="tertiary">
+					<div className={s['image-wrapper']}>
+						<Image
+							src={featuredImage}
+							alt={image.alternativeText}
+							sizes="(max-width: 768px) 100vw, 50vw"
+							priority
+							fill
+						/>
+					</div>
+				</BentoItem>
+			)}
+		</BentoBox>
+	);
+};
 
-  return (
-    <BentoBox isFullBleed={false}>
-      <BentoItem
-        size="x-large"
-        padding="x-large"
-        gap="large"
-        background='primary'
-      >
-        {parentProject &&
-          <Link
-            href={`/portfolio/${parentProject.slug}`}
-            className={s['parent-link']}
-          >
-            &larr; Part of {parentProject.title}
-          </Link>
-        }
-        <Badge text={client} type='inverse' />
-        <Headline tag='h1' size='h1' color='light' collapse>{title}</Headline>
-        <Paragraph color='light' collapse>{overview}</Paragraph>
-        {externalLink &&
-          <TextArrow
-            style='dark'
-            href={externalLink}
-          >View project</TextArrow>
-        }
-      </BentoItem>
-      {hasProjectInfo &&
-        <BentoItem
-          size="medium"
-          padding="x-large"
-          gap="x-large"
-          background='tertiary'
-        >
-          {types && types.length > 0 &&
-            <Container
-              semanticElement='section'
-              isFlex
-              flexDirection='column'
-              gap='small'
-              density='collapse'
-            >
-              <Headline
-                color='secondary'
-                tag='h2'
-                size='h5'
-                collapse
-              >Project type</Headline>
-              <Container
-                isFlex
-                flexDirection='row'
-                gap='small'
-                semanticElement='aside'
-                density='collapse'
-              >
-                {types.map((type) => (
-                  <Badge key={type} text={type} type='primary' />
-                ))}
-              </Container>
-            </Container>
-          }
-          {roles && roles.length > 0 &&
-            <Container
-              semanticElement='section'
-              isFlex
-              flexDirection='column'
-              gap='small'
-              density='collapse'
-            >
-              <Headline
-                color='secondary'
-                tag='h2'
-                size='h5'
-                collapse
-              >Project role</Headline>
-              <Container
-                isFlex
-                flexDirection='row'
-                gap='small'
-                semanticElement='aside'
-                density='collapse'
-              >
-                {roles.map((role) => (
-                  <Badge key={role} text={role} type='primary' />
-                ))}
-              </Container>
-            </Container>
-          }
-          {tools && tools.length > 0 &&
-            <Container
-              semanticElement='section'
-              isFlex
-              flexDirection='column'
-              gap='small'
-              density='collapse'
-            >
-              <Headline
-                color='secondary'
-                tag='h2'
-                size='h5'
-                collapse
-              >Tools</Headline>
-              <Container
-                isFlex
-                flexDirection='row'
-                gap='small'
-                semanticElement='aside'
-                density='collapse'
-              >
-                {tools.map((tool) => (
-                  <Badge key={tool} text={tool} type='primary' />
-                ))}
-              </Container>
-            </Container>
-          }
-          {timeline &&
-            <Container
-              semanticElement='section'
-              isFlex
-              flexDirection='column'
-              gap='small'
-              density='collapse'
-            >
-              <Headline
-                color='secondary'
-                tag='h2'
-                size='h5'
-                collapse
-              >Project timeline</Headline>
-              <Badge text={timeline} type='primary' />
-            </Container>
-          }
-        </BentoItem>
-      }
-      {image && featuredImage &&
-        <BentoItem
-          size='full'
-          padding='none'
-          background='tertiary'
-        >
-          <div className={s['image-wrapper']}>
-            <Image
-              src={featuredImage}
-              alt={image.alternativeText}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              priority
-              fill
-            />
-          </div>
-        </BentoItem>
-      }
-    </BentoBox>
-  );
-}
-
-export { PortfolioTitle }
+export { PortfolioTitle };

@@ -13,13 +13,7 @@ export const Form = ({ children, name, method, action, onSubmit }: FormProps) =>
 	const classes = getClasses([styles.form]);
 
 	return (
-		<form
-			name={name}
-			method={method}
-			action={action}
-			className={classes}
-			onSubmit={onSubmit}
-		>
+		<form name={name} method={method} action={action} className={classes} onSubmit={onSubmit}>
 			{children}
 		</form>
 	);

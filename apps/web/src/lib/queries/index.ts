@@ -6,4 +6,4 @@ export * from './music';
 export * from './landingPage';
 export * from './homepage';
 export * from './talk';
-export * from './globalApp'
+export * from './globalApp';

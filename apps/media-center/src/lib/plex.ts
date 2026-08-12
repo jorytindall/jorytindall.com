@@ -52,9 +52,7 @@ export function getAuthUrl(code: string, forwardUrl: string): string {
 	return `https://app.plex.tv/auth#?${params.toString()}`;
 }
 
-export async function checkPin(
-	pinId: number
-): Promise<{ authToken: string } | null> {
+export async function checkPin(pinId: number): Promise<{ authToken: string } | null> {
 	const res = await fetch(`${PLEX_API}/api/v2/pins/${pinId}`, {
 		headers: headers(),
 	});
@@ -92,7 +90,5 @@ export async function hasServerAccess(token: string): Promise<boolean> {
 
 	if (!res.ok) return false;
 	const resources: Array<{ clientIdentifier: string }> = await res.json();
-	return resources.some(
-		(r) => r.clientIdentifier === getServerMachineId()
-	);
+	return resources.some((r) => r.clientIdentifier === getServerMachineId());
 }

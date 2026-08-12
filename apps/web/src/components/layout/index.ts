@@ -4,4 +4,4 @@ export * from './RichTextWrapper';
 export * from './GridWrapper';
 export * from './GridItem';
 export * from './CenteredWrapper';
-export * from './Main'
+export * from './Main';

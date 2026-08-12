@@ -15,9 +15,9 @@
 	</Box>
 	<Notes>
 		<p>
-			Now that we've covered why designing in the browser matters, let's talk
-			about how you can actually get started. The good news is there are several
-			approaches, and you can choose based on your comfort level and goals.
+			Now that we've covered why designing in the browser matters, let's talk about how you
+			can actually get started. The good news is there are several approaches, and you can
+			choose based on your comfort level and goals.
 		</p>
 	</Notes>
 </Slide>

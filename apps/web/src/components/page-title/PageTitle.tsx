@@ -28,9 +28,7 @@ export const PageTitle = ({ title, megaTitle }: PageTitleProps) => {
 					</svg>
 				</p>
 			)}
-			{megaTitle && (
-				<h1 className={styles.titleHeadline}>{megaTitle}</h1>
-			)}
+			{megaTitle && <h1 className={styles.titleHeadline}>{megaTitle}</h1>}
 		</section>
 	);
 };

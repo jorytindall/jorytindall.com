@@ -15,12 +15,12 @@ would be more surface than substance. Add one when a real gap shows up, not befo
 
 ## Skills
 
-| Skill | Use it when |
-| --- | --- |
-| `plan-feature` | Starting any non-trivial work — turns a Notion task or a description into a plan and a branch |
+| Skill             | Use it when                                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------------- |
+| `plan-feature`    | Starting any non-trivial work — turns a Notion task or a description into a plan and a branch                 |
 | `new-sanity-type` | Adding a CMS content type. The four-step chain across `admin` and `web` that fails silently if you stop early |
-| `ship` | Work is done — verify, changeset, commit, PR, update Notion |
-| `sync-notion` | Reading or updating the 🤘 Projects tracker |
+| `ship`            | Work is done — verify, changeset, commit, PR, update Notion                                                   |
+| `sync-notion`     | Reading or updating the 🤘 Projects tracker                                                                   |
 
 Invoke with `/plan-feature`, `/ship`, and so on. The typical loop:
 

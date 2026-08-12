@@ -22,7 +22,13 @@ export const ResultsItem = ({
 					<Headline tag="h1" collapse>
 						{metric}
 					</Headline>
-					{percentageDirection ? (percentageDirection === 'up' ? <ArrowUpSquare /> : <ArrowDownSquare />) : null}
+					{percentageDirection ? (
+						percentageDirection === 'up' ? (
+							<ArrowUpSquare />
+						) : (
+							<ArrowDownSquare />
+						)
+					) : null}
 				</span>
 			)}
 			{headline && (

@@ -27,13 +27,13 @@ Use the routing table in the root [`AGENTS.md`](../../../AGENTS.md), then **read
 
 Quick routing:
 
-| Change | Workspace |
-| --- | --- |
-| Page, route, component, rendering | `apps/web` |
-| Content type / CMS schema | `apps/admin` → then `apps/web` |
-| Color, spacing, type value | `packages/tokens` (then rebuild consumers) |
-| A talk or a slide | `apps/presentations` |
-| Plex browser, help docs | `apps/media-center` |
+| Change                            | Workspace                                  |
+| --------------------------------- | ------------------------------------------ |
+| Page, route, component, rendering | `apps/web`                                 |
+| Content type / CMS schema         | `apps/admin` → then `apps/web`             |
+| Color, spacing, type value        | `packages/tokens` (then rebuild consumers) |
+| A talk or a slide                 | `apps/presentations`                       |
+| Plex browser, help docs           | `apps/media-center`                        |
 
 Watch for changes that cross a boundary — that is where the real work is:
 

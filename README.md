@@ -6,13 +6,13 @@ You might also find me performing as a saxophonist in Seattle and the Pacific No
 
 This monorepo is managed by `pnpm` workspaces and TurboRepo.
 
-| Workspace | What it is | Where it lives |
-| --- | --- | --- |
-| `apps/web` | My [personal website](https://jorytindall.com) for design, development, and music. [Next.js](https://nextjs.org/). | `jorytindall.com` |
-| `apps/admin` | The content management system behind the website. [Sanity](https://www.sanity.io/). | `admin.jorytindall.com` |
+| Workspace            | What it is                                                                                                                                           | Where it lives                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `apps/web`           | My [personal website](https://jorytindall.com) for design, development, and music. [Next.js](https://nextjs.org/).                                   | `jorytindall.com`               |
+| `apps/admin`         | The content management system behind the website. [Sanity](https://www.sanity.io/).                                                                  | `admin.jorytindall.com`         |
 | `apps/presentations` | Conference talks and design systems education, built with an unusual pairing of [Svelte](https://svelte.dev/) and [RevealJS](https://revealjs.com/). | `presentations.jorytindall.com` |
-| `apps/media-center` | A personal media browser wired up to Plex. [Astro](https://astro.build/). | `jorytindall.tv` |
-| `packages/tokens` | Design tokens managed with `style-dictionary`. | — |
+| `apps/media-center`  | A personal media browser wired up to Plex. [Astro](https://astro.build/).                                                                            | `jorytindall.tv`                |
+| `packages/tokens`    | Design tokens managed with `style-dictionary`.                                                                                                       | —                               |
 
 Everything deploys to [Railway](https://railway.app).
 

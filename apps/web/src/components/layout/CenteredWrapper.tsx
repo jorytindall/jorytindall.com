@@ -14,11 +14,7 @@ export const CenteredWrapper = ({
 	collapseY,
 	collapseX,
 }: CenteredWrapperProps) => {
-	const classes = getClasses([
-		s.wrapper,
-		collapseY && s.collapseY,
-		collapseX && s.collapseX,
-	]);
+	const classes = getClasses([s.wrapper, collapseY && s.collapseY, collapseX && s.collapseX]);
 
 	switch (semanticElement) {
 		case 'div':

@@ -18,14 +18,14 @@ being unreachable — say so and carry on.
 
 ## Schema
 
-| Property | Type | Values |
-| --- | --- | --- |
-| `Name` | title | |
-| `Type` | select | `Project`, `Task` |
-| `Status` | status | `Backlog`, `Todo`, `In progress`, `Done` |
-| `Priority` | select | `High`, `Medium`, `Low` |
-| `Branch` | text | the git branch, set by `plan-feature` |
-| `PR` | text | the pull request URL, set by `ship` |
+| Property   | Type   | Values                                   |
+| ---------- | ------ | ---------------------------------------- |
+| `Name`     | title  |                                          |
+| `Type`     | select | `Project`, `Task`                        |
+| `Status`   | status | `Backlog`, `Todo`, `In progress`, `Done` |
+| `Priority` | select | `High`, `Medium`, `Low`                  |
+| `Branch`   | text   | the git branch, set by `plan-feature`    |
+| `PR`       | text   | the pull request URL, set by `ship`      |
 
 That is the whole schema. There is no epic relation, no LOE, no sprint — do not look for
 them or invent them.
@@ -57,11 +57,11 @@ sweep.
 
 The two moments that matter:
 
-| When | Set |
-| --- | --- |
+| When                                     | Set                                              |
+| ---------------------------------------- | ------------------------------------------------ |
 | `plan-feature`, after cutting the branch | `Status` → `In progress`, `Branch` → branch name |
-| `ship`, after opening the PR | `PR` → pull request URL |
-| After the PR is **merged** | `Status` → `Done` |
+| `ship`, after opening the PR             | `PR` → pull request URL                          |
+| After the PR is **merged**               | `Status` → `Done`                                |
 
 `Done` means merged, not "PR opened". Getting that wrong makes the board lie.
 

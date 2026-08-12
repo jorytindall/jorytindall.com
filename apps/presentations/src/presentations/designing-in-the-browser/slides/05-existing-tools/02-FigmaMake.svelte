@@ -20,8 +20,8 @@
 				Why add AI to the middle step when you could skip it entirely?
 			</Text>
 			<Text tag="li" size="large" class="fragment" data-fragment-index="3">
-				Sometimes the mockup becomes a bottleneck, not a benefit — slowing down time-to-value
-				for your product.
+				Sometimes the mockup becomes a bottleneck, not a benefit — slowing down
+				time-to-value for your product.
 			</Text>
 		</ul>
 	</Box>
@@ -38,10 +38,10 @@
 				middle step entirely?
 			</li>
 			<li>
-				Sometimes Figma becomes a bottleneck rather than a benefit. When you receive feedback
-				on spacing, want to explore an interaction, or need to test with real data, updating
-				a mockup adds friction rather than value. Every hour spent updating mockups is an
-				hour not spent shipping. When you can iterate directly in the browser with AI
+				Sometimes Figma becomes a bottleneck rather than a benefit. When you receive
+				feedback on spacing, want to explore an interaction, or need to test with real data,
+				updating a mockup adds friction rather than value. Every hour spent updating mockups
+				is an hour not spent shipping. When you can iterate directly in the browser with AI
 				assistance, you're reducing the time between design decision and user value.
 			</li>
 		</ul>
@@ -50,6 +50,8 @@
 			encourage you to really think about them in a way that encourages discussion and
 			critical thinking about how your design process could evolve over the next 5 years.
 		</p>
-		<p>Let's look at some specific scenarios where skipping Figma can speed up your workflow.</p>
+		<p>
+			Let's look at some specific scenarios where skipping Figma can speed up your workflow.
+		</p>
 	</Notes>
 </Slide>

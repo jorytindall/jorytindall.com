@@ -5,7 +5,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-areas: 'copyright copyright col1 col2';
-	
+
 	@media (max-width: 1200px) {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-areas:
@@ -34,7 +34,8 @@
 	grid-area: col2;
 }
 
-.internalLinks, .externalLinks {
+.internalLinks,
+.externalLinks {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;

@@ -6,36 +6,36 @@ import { Expand } from './Expand';
 import s from './GalleryItem.module.css';
 
 interface GalleryItemProps {
-    key: string;
-    image: string;
-    altText: string;
-    caption: string;
+	key: string;
+	image: string;
+	altText: string;
+	caption: string;
 }
 
 export const GalleryItem = ({ image, altText, caption }: GalleryItemProps) => {
-    const galleryImage = getSanityImageUrl(image);
+	const galleryImage = getSanityImageUrl(image);
 
-    if (!galleryImage) {
-        return null;
-    }
+	if (!galleryImage) {
+		return null;
+	}
 
-    return (
-        <a href={galleryImage} className={s.wrapper}>
-            <Expand className={s.expandIcon} />
-            <div className={s.imageWrapper}>
-                <Image
-                    src={galleryImage}
-                    fill
-                    alt={altText ?? ''}
-                    className={s.image}
-                    sizes="(max-width: 768px) 40vw"
-                />
-            </div>
-            {caption && (
-                <Paragraph type="secondary" collapse>
-                    {caption}
-                </Paragraph>
-            )}
-        </a>
-    );
+	return (
+		<a href={galleryImage} className={s.wrapper}>
+			<Expand className={s.expandIcon} />
+			<div className={s.imageWrapper}>
+				<Image
+					src={galleryImage}
+					fill
+					alt={altText ?? ''}
+					className={s.image}
+					sizes="(max-width: 768px) 40vw"
+				/>
+			</div>
+			{caption && (
+				<Paragraph type="secondary" collapse>
+					{caption}
+				</Paragraph>
+			)}
+		</a>
+	);
 };

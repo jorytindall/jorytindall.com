@@ -6,7 +6,7 @@ description: Add a Sanity content type and wire it all the way through to the re
 # New Sanity type
 
 Content reaches a page in this repo through a **four-step chain across two workspaces**,
-and three of the four steps fail *silently* when skipped. This skill exists because
+and three of the four steps fail _silently_ when skipped. This skill exists because
 stopping at step two or three looks like it worked.
 
 ```

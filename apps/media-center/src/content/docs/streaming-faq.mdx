@@ -4,6 +4,7 @@ description: Common questions about streaming, server resources, and getting the
 order: 5
 category: Help
 ---
+
 import Accordion from '../../components/docs/Accordion.astro';
 
 # Streaming FAQ
@@ -12,76 +13,84 @@ Got questions? Good — here are the answers to the stuff people usually wonder 
 
 ## The Basics
 
-<Accordion items={[
-	{
-		question: "Where is all this content actually coming from?",
-		answer: "<p>Everything you're watching is streaming from a physical server that Jory runs at home. It's not Netflix, it's not a cloud service — it's a real computer sitting in a real room, doing its best to serve up your shows and movies. This means the experience depends on that server's resources and internet connection.</p><p>Most of the time, it works great. But if something feels off — buffering, slow loading, weird quality — just let Jory know. It's probably fixable.</p>"
-	},
-	{
-		question: "Is there a limit to how much I can watch?",
-		answer: "<p>There's no usage cap or anything like that — watch as much as you want. That said, the server has a finite amount of bandwidth and processing power. If a bunch of people are streaming at the same time (especially high-quality 4K content), things might slow down a bit.</p><p>In practice, this rarely happens. But if you notice hiccups during peak hours, that might be why.</p>"
-	},
-	{
-		question: "Can I share my account with other people?",
-		answer: "<p>Please don't. Access is shared on an invite basis, and each person gets their own Plex account so watch history and recommendations stay personal. If someone you know wants access, have them reach out to Jory directly.</p>"
-	}
-]} />
+<Accordion
+	items={[
+		{
+			question: 'Where is all this content actually coming from?',
+			answer: "<p>Everything you're watching is streaming from a physical server that Jory runs at home. It's not Netflix, it's not a cloud service — it's a real computer sitting in a real room, doing its best to serve up your shows and movies. This means the experience depends on that server's resources and internet connection.</p><p>Most of the time, it works great. But if something feels off — buffering, slow loading, weird quality — just let Jory know. It's probably fixable.</p>",
+		},
+		{
+			question: 'Is there a limit to how much I can watch?',
+			answer: "<p>There's no usage cap or anything like that — watch as much as you want. That said, the server has a finite amount of bandwidth and processing power. If a bunch of people are streaming at the same time (especially high-quality 4K content), things might slow down a bit.</p><p>In practice, this rarely happens. But if you notice hiccups during peak hours, that might be why.</p>",
+		},
+		{
+			question: 'Can I share my account with other people?',
+			answer: "<p>Please don't. Access is shared on an invite basis, and each person gets their own Plex account so watch history and recommendations stay personal. If someone you know wants access, have them reach out to Jory directly.</p>",
+		},
+	]}
+/>
 
 ## Storage & Requests
 
-<Accordion items={[
-	{
-		question: "Is there a limit to how much I can request?",
-		answer: "<p>There's no hard limit, but use some common sense. Storage is a finite resource — Jory has a good amount of space available, but hard drives aren't free and they do fill up over time.</p><p>Request the stuff you actually plan to watch. A movie here, a season there — totally fine. Requesting every season of every show you've ever heard of in one sitting? Maybe pace yourself.</p>"
-	},
-	{
-		question: "What happens when the server runs out of space?",
-		answer: "<p>Jory keeps an eye on storage and manages it over time. Content that hasn't been watched in a long time may eventually get removed to free up room for new stuff. If something you loved disappears and you want it back, just request it again — no hard feelings.</p>"
-	},
-	{
-		question: "Why was something I requested not added?",
-		answer: "<p>Most requests go through automatically, but occasionally something might not be available — it could be too new, region-locked, or just hard to find. If a request seems stuck, ping Jory and he can look into it.</p>"
-	}
-]} />
+<Accordion
+	items={[
+		{
+			question: 'Is there a limit to how much I can request?',
+			answer: "<p>There's no hard limit, but use some common sense. Storage is a finite resource — Jory has a good amount of space available, but hard drives aren't free and they do fill up over time.</p><p>Request the stuff you actually plan to watch. A movie here, a season there — totally fine. Requesting every season of every show you've ever heard of in one sitting? Maybe pace yourself.</p>",
+		},
+		{
+			question: 'What happens when the server runs out of space?',
+			answer: "<p>Jory keeps an eye on storage and manages it over time. Content that hasn't been watched in a long time may eventually get removed to free up room for new stuff. If something you loved disappears and you want it back, just request it again — no hard feelings.</p>",
+		},
+		{
+			question: 'Why was something I requested not added?',
+			answer: '<p>Most requests go through automatically, but occasionally something might not be available — it could be too new, region-locked, or just hard to find. If a request seems stuck, ping Jory and he can look into it.</p>',
+		},
+	]}
+/>
 
 ## Getting the Best Experience
 
-<Accordion items={[
-	{
-		question: "What device should I use to watch?",
-		answer: "<p>This one actually matters a lot. The Plex app on a <strong>Roku, Apple TV, Fire TV Stick, or NVIDIA Shield</strong> will give you the best experience by far. These devices can play most formats natively, which means the server doesn't have to work as hard.</p><p><strong>Smart TV apps</strong> (the Plex app built into your Samsung, LG, or Vizio TV) tend to be much worse. They often can't handle certain audio or video formats, which forces the server to convert the stream on the fly — a process called transcoding. This uses a lot of server resources, can cause buffering, and usually results in lower quality.</p><p>If you're watching on a smart TV and having issues, plugging in a $30 Roku or Fire Stick could be a game-changer.</p>"
-	},
-	{
-		question: "What's transcoding and why should I care?",
-		answer: "<p>Transcoding is when the server has to convert a video or audio stream in real time because your device can't play the original format. It's like the server running a translator between the content and your screen.</p><p>The problem is that it's resource-intensive. When multiple people need transcoding at the same time, the server can struggle. Direct play (where your device handles the file as-is) is always better for everyone.</p><p>The easiest way to avoid transcoding: use a good streaming device and set your quality to <strong>Maximum</strong> or <strong>Original</strong> when you're on Wi-Fi.</p>"
-	},
-	{
-		question: "Why does the quality sometimes look bad?",
-		answer: "<p>A few common culprits:</p><ul><li><strong>Your quality setting is too low</strong> — Check Plex settings and make sure video quality is set to Maximum or Original when on your home Wi-Fi</li><li><strong>Your device is forcing transcoding</strong> — Some devices (especially smart TV apps) default to lower quality. A dedicated streaming device fixes this</li><li><strong>Bandwidth issues</strong> — If your internet connection or Wi-Fi is spotty, Plex will automatically lower quality to avoid buffering</li><li><strong>The server is under load</strong> — If lots of people are streaming at once, quality might dip. This is rare but possible</li></ul>"
-	},
-	{
-		question: "Can I download content for offline viewing?",
-		answer: "<p>You can, but it requires a <strong>Plex Pass</strong> on your own account (a paid upgrade from Plex, not something Jory controls). With Plex Pass, you can download movies and shows to your phone or tablet for offline watching — great for flights or road trips.</p><p>Without Plex Pass, you'll need an internet connection to stream.</p>"
-	},
-	{
-		question: "Why do some things have subtitles and others don't?",
-		answer: "<p>Most content comes with subtitles included, but not everything. If you need subtitles for something and they're not there, let Jory know and he can usually add them.</p><p>Set your subtitle preference to <strong>Auto</strong> in the Plex app so they'll show up automatically for foreign language audio without you having to toggle them on every time.</p>"
-	}
-]} />
+<Accordion
+	items={[
+		{
+			question: 'What device should I use to watch?',
+			answer: "<p>This one actually matters a lot. The Plex app on a <strong>Roku, Apple TV, Fire TV Stick, or NVIDIA Shield</strong> will give you the best experience by far. These devices can play most formats natively, which means the server doesn't have to work as hard.</p><p><strong>Smart TV apps</strong> (the Plex app built into your Samsung, LG, or Vizio TV) tend to be much worse. They often can't handle certain audio or video formats, which forces the server to convert the stream on the fly — a process called transcoding. This uses a lot of server resources, can cause buffering, and usually results in lower quality.</p><p>If you're watching on a smart TV and having issues, plugging in a $30 Roku or Fire Stick could be a game-changer.</p>",
+		},
+		{
+			question: "What's transcoding and why should I care?",
+			answer: "<p>Transcoding is when the server has to convert a video or audio stream in real time because your device can't play the original format. It's like the server running a translator between the content and your screen.</p><p>The problem is that it's resource-intensive. When multiple people need transcoding at the same time, the server can struggle. Direct play (where your device handles the file as-is) is always better for everyone.</p><p>The easiest way to avoid transcoding: use a good streaming device and set your quality to <strong>Maximum</strong> or <strong>Original</strong> when you're on Wi-Fi.</p>",
+		},
+		{
+			question: 'Why does the quality sometimes look bad?',
+			answer: '<p>A few common culprits:</p><ul><li><strong>Your quality setting is too low</strong> — Check Plex settings and make sure video quality is set to Maximum or Original when on your home Wi-Fi</li><li><strong>Your device is forcing transcoding</strong> — Some devices (especially smart TV apps) default to lower quality. A dedicated streaming device fixes this</li><li><strong>Bandwidth issues</strong> — If your internet connection or Wi-Fi is spotty, Plex will automatically lower quality to avoid buffering</li><li><strong>The server is under load</strong> — If lots of people are streaming at once, quality might dip. This is rare but possible</li></ul>',
+		},
+		{
+			question: 'Can I download content for offline viewing?',
+			answer: "<p>You can, but it requires a <strong>Plex Pass</strong> on your own account (a paid upgrade from Plex, not something Jory controls). With Plex Pass, you can download movies and shows to your phone or tablet for offline watching — great for flights or road trips.</p><p>Without Plex Pass, you'll need an internet connection to stream.</p>",
+		},
+		{
+			question: "Why do some things have subtitles and others don't?",
+			answer: "<p>Most content comes with subtitles included, but not everything. If you need subtitles for something and they're not there, let Jory know and he can usually add them.</p><p>Set your subtitle preference to <strong>Auto</strong> in the Plex app so they'll show up automatically for foreign language audio without you having to toggle them on every time.</p>",
+		},
+	]}
+/>
 
 ## Troubleshooting
 
-<Accordion items={[
-	{
-		question: "Something isn't playing or keeps buffering — what do I do?",
-		answer: "<p>Try these in order:</p><ul><li><strong>Check your internet connection</strong> — Make sure Wi-Fi is solid on your end</li><li><strong>Lower the quality temporarily</strong> — In the Plex player, drop quality to 720p and see if it smooths out</li><li><strong>Restart the app</strong> — Close Plex completely and reopen it</li><li><strong>Try a different device</strong> — If it works on your phone but not your TV, the TV app might be the problem</li></ul><p>If none of that helps, let Jory know. It might be a server-side issue.</p>"
-	},
-	{
-		question: "I can see the server but nothing is loading",
-		answer: "<p>The server might be restarting or undergoing maintenance. Give it a few minutes and try again. If it's been down for a while, text Jory — he might not have noticed.</p>"
-	},
-	{
-		question: "Audio is out of sync or sounds weird",
-		answer: "<p>This usually means the audio track is in a format your device can't handle natively, so Plex is transcoding it. Try switching to a different audio track if one is available (some content has multiple). If you're on a smart TV, this is another reason a dedicated streaming device can help.</p>"
-	}
-]} />
+<Accordion
+	items={[
+		{
+			question: "Something isn't playing or keeps buffering — what do I do?",
+			answer: '<p>Try these in order:</p><ul><li><strong>Check your internet connection</strong> — Make sure Wi-Fi is solid on your end</li><li><strong>Lower the quality temporarily</strong> — In the Plex player, drop quality to 720p and see if it smooths out</li><li><strong>Restart the app</strong> — Close Plex completely and reopen it</li><li><strong>Try a different device</strong> — If it works on your phone but not your TV, the TV app might be the problem</li></ul><p>If none of that helps, let Jory know. It might be a server-side issue.</p>',
+		},
+		{
+			question: 'I can see the server but nothing is loading',
+			answer: "<p>The server might be restarting or undergoing maintenance. Give it a few minutes and try again. If it's been down for a while, text Jory — he might not have noticed.</p>",
+		},
+		{
+			question: 'Audio is out of sync or sounds weird',
+			answer: "<p>This usually means the audio track is in a format your device can't handle natively, so Plex is transcoding it. Try switching to a different audio track if one is available (some content has multiple). If you're on a smart TV, this is another reason a dedicated streaming device can help.</p>",
+		},
+	]}
+/>

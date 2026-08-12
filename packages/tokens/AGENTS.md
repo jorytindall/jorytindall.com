@@ -23,11 +23,11 @@ tokens/
 
 There are two style-dictionary configs and they differ in exactly two ways:
 
-| | `config.json` | `config.dark.json` |
-| --- | --- | --- |
-| `source` glob | `tokens/**/!(*.dark).json` | `tokens/**/!(*.light).json` |
-| CSS `selector` | `:root` | `:root[data-theme='dark']` |
-| CSS output | `dist/web/tokens.css` | `dist/web/tokens-dark.css` |
+|                | `config.json`              | `config.dark.json`          |
+| -------------- | -------------------------- | --------------------------- |
+| `source` glob  | `tokens/**/!(*.dark).json` | `tokens/**/!(*.light).json` |
+| CSS `selector` | `:root`                    | `:root[data-theme='dark']`  |
+| CSS output     | `dist/web/tokens.css`      | `dist/web/tokens-dark.css`  |
 
 So `semantic.json` is compiled **twice** — once resolving against the light core ramp,
 once against the dark one. The semantic layer is what makes theming work; the core ramps

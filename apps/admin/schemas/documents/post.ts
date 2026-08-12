@@ -60,8 +60,7 @@ export default defineType({
 			title: `Author`,
 			type: `reference`,
 			to: [{ type: `person` }],
-			validation: (Rule) =>
-				Rule.required().error('The post needs an author.'),
+			validation: (Rule) => Rule.required().error('The post needs an author.'),
 		},
 		{
 			name: `categories`,
@@ -89,9 +88,7 @@ export default defineType({
 			description: `Enter content with rich text and embedded content models.`,
 			type: `richText`,
 			validation: (Rule) =>
-				Rule.required().error(
-					'The post needs content, otherwise why would you write it?',
-				),
+				Rule.required().error('The post needs content, otherwise why would you write it?'),
 		},
 	],
 	preview: {

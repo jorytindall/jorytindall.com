@@ -1,8 +1,4 @@
-import type {
-	StravaTokenResponse,
-	StravaAthleteStats,
-	StravaDisplayStats,
-} from './types';
+import type { StravaTokenResponse, StravaAthleteStats, StravaDisplayStats } from './types';
 
 const STRAVA_API_BASE = 'https://www.strava.com/api/v3';
 const STRAVA_TOKEN_URL = 'https://www.strava.com/oauth/token';
@@ -66,14 +62,11 @@ export async function getAthleteStats(): Promise<StravaAthleteStats> {
 
 	const accessToken = await getAccessToken();
 
-	const response = await fetch(
-		`${STRAVA_API_BASE}/athletes/${athleteId}/stats`,
-		{
-			headers: {
-				Authorization: `Bearer ${accessToken}`,
-			},
-		}
-	);
+	const response = await fetch(`${STRAVA_API_BASE}/athletes/${athleteId}/stats`, {
+		headers: {
+			Authorization: `Bearer ${accessToken}`,
+		},
+	});
 
 	if (!response.ok) {
 		throw new Error(`Failed to fetch Strava stats: ${response.status}`);

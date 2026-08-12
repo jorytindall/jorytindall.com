@@ -111,11 +111,7 @@ export const Controls = ({
 					className={styles.controlButton}
 					aria-label="Play track"
 				>
-					{isPlaying ? (
-						<TbPlayerPauseFilled />
-					) : (
-						<TbPlayerPlayFilled />
-					)}
+					{isPlaying ? <TbPlayerPauseFilled /> : <TbPlayerPlayFilled />}
 				</button>
 				{tracks.length > 1 && (
 					<>
