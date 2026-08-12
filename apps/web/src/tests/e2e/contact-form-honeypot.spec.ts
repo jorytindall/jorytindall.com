@@ -4,13 +4,21 @@ test.describe('Contact form honeypot protection', () => {
 	test('honeypot field should be hidden from view', async ({ page }) => {
 		await page.goto('http://localhost:3000/contact');
 
-		const honeypotField = await page.locator('input[name="website"]');
+		const honeypotField = page.locator('input[name="website"]');
 		await expect(honeypotField).toBeAttached();
-		await expect(honeypotField).toBeHidden();
 
-		const honeypotContainer = await page.locator('input[name="website"]').locator('..');
-		const ariaHidden = await honeypotContainer.getAttribute('aria-hidden');
-		expect(ariaHidden).toBe('true');
+		// Deliberately NOT asserted with `toBeHidden()`. A honeypot has to stay
+		// fillable-looking to a bot, so it must not use `display: none` or
+		// `visibility: hidden` — bots skip those. It is hidden from people by being
+		// positioned off-screen and fully transparent, which Playwright still counts
+		// as visible because the element keeps a non-empty bounding box.
+		const box = await honeypotField.boundingBox();
+		expect(box).not.toBeNull();
+		expect(box!.x + box!.width).toBeLessThan(0);
+
+		const honeypotContainer = honeypotField.locator('..');
+		await expect(honeypotContainer).toHaveAttribute('aria-hidden', 'true');
+		await expect(honeypotContainer).toHaveCSS('opacity', '0');
 	});
 
 	test('honeypot field should have tabindex -1', async ({ page }) => {

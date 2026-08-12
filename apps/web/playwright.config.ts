@@ -21,6 +21,12 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: 'html',
+	/*
+	 * The Next dev server compiles routes lazily, so the first navigation to a cold
+	 * route can take well over the 5s default while several workers hit it at once.
+	 * That is startup cost, not the thing under test.
+	 */
+	expect: { timeout: 15_000 },
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
 		/* Base URL to use in actions like `await page.goto('/')`. */
@@ -48,9 +54,13 @@ export default defineConfig({
 		},
 	],
 
-	/* Run your local dev server before starting the tests */
+	/*
+	 * Run the dev server before starting the tests. Locally, secrets come from
+	 * Infisical; in CI they are already in the environment via GitHub secrets, and
+	 * `infisical` is not installed there at all.
+	 */
 	webServer: {
-		command: 'infisical run -- pnpm dev',
+		command: process.env.CI ? 'pnpm dev:ci' : 'infisical run -- pnpm dev',
 		url: 'http://127.0.0.1:3000',
 		reuseExistingServer: !process.env.CI,
 	},

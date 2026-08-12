@@ -101,3 +101,16 @@ isn't without saying so.
 - **ESLint will walk `playwright-report/` if you let it.** Flat config does not read
   `.gitignore`; generated output is listed explicitly in `eslint.config.mjs`.
 - `strict: false`, but `strictNullChecks: true`. Implicit `any` will not be caught here.
+- **A link click straight after `page.goto()` can be swallowed by hydration.** React has
+  attached its handler and calls `preventDefault`, but the router is not ready, so the
+  click does nothing and raises no error — roughly one navigation in five. The footer
+  tests wrap the click in `expect(...).toPass()` for this reason. The primary-nav tests
+  look immune only because they click the menu toggle first, which cannot work until
+  hydration is done.
+- **The honeypot is not `display: none` on purpose** — bots skip fields that are. It is
+  hidden off-screen at `left: -9999px` with `opacity: 0`, which Playwright still counts
+  as _visible_ because the bounding box is non-empty. Do not "fix" a honeypot test by
+  making the field genuinely hidden; that defeats it.
+- **`public/sitemap*.xml` is generated and untracked.** `next-sitemap` writes it in
+  `postbuild` (enabled by `enable-pre-post-scripts=true` in `.npmrc`), and Railway
+  regenerates it on every deploy. It used to be committed and went stale by eight months.

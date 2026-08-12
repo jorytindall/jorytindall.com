@@ -86,9 +86,12 @@ Do not assume a green `verify` means everything is checked:
 - **There are no unit tests anywhere in this repo.** `pnpm test` maps to a Turbo task no
   workspace defines, so it exits 0 having run nothing. Treat a green `pnpm test` as
   meaningless, not as reassurance.
-- **The only tests are two Playwright e2e specs** in `apps/web/src/tests/e2e/`. They need
-  a build and real secrets, so they are not in `verify`:
+- **The only tests are two Playwright e2e specs** in `apps/web/src/tests/e2e/` — 48 cases
+  across chromium, firefox and webkit, all green. They start a dev server and need real
+  secrets, so they are not in `verify`:
     ```bash
+    infisical login          # once
+    npx playwright install   # once
     pnpm --filter web test:e2e
     ```
 - **`pnpm build` fails locally without Infisical.** `apps/web` calls `createClient` at
@@ -110,6 +113,12 @@ secrets, so it also runs on forks.
 **disabled in the GitHub UI since December 2025** and was failing when it was switched
 off. Nothing in it currently runs. Do not tell anyone Playwright "passed in CI" — it has
 not run in months.
+
+The reason it could not pass has been fixed: `playwright.config.ts` hard-coded
+`infisical run -- pnpm dev` as its `webServer`, and `infisical` is not installed on the
+runner. It now uses `pnpm dev:ci` when `process.env.CI` is set, taking secrets from the
+environment instead. Re-enabling the workflow (`gh workflow enable ci-web.yml`) should
+work now, but nobody has confirmed that against a real run yet.
 
 ## Where to make a change
 
