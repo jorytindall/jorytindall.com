@@ -134,6 +134,36 @@ export default {
 			fieldset: `projectInformation`,
 		},
 		{
+			name: `parentProject`,
+			title: `Parent Project`,
+			type: `reference`,
+			description: `If this project is a chapter of a larger program, reference the hub project here. Chapters are listed on the hub's page and are hidden from the main portfolio list.`,
+			fieldset: `projectInformation`,
+			to: [{ type: `portfolioProject` }],
+			options: {
+				// Only hub projects are selectable: exclude this document (both the
+				// published and draft id) and anything that is already a chapter.
+				filter: ({ document }) => {
+					const publishedId = document._id.replace(/^drafts\./, ``);
+					return {
+						filter: `!defined(parentProject) && !(_id in [$publishedId, $draftId])`,
+						params: {
+							publishedId,
+							draftId: `drafts.${publishedId}`,
+						},
+					};
+				},
+			},
+		},
+		{
+			name: `chapterOrder`,
+			title: `Chapter Order`,
+			type: `number`,
+			description: `Position of this chapter on the parent project's page. Chapters without an order fall back to alphabetical.`,
+			fieldset: `projectInformation`,
+			hidden: ({ document }) => !document?.parentProject,
+		},
+		{
 			name: `moduleContent`,
 			type: `moduleContent`,
 		},
