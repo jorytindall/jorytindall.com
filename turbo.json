@@ -12,11 +12,17 @@
 			"outputs": [
 				"./.next/**",
 				"./dist/**",
-				"./svelte-kit/**"
+				"./.svelte-kit/**"
 			]
 		},
 		"test": {},
 		"lint": {
+			"outputs": []
+		},
+		"typecheck": {
+			"dependsOn": [
+				"^build"
+			],
 			"outputs": []
 		},
 		"deploy": {

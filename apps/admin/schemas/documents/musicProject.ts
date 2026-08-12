@@ -1,6 +1,7 @@
 import { BiMusic } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `musicProject`,
 	title: `Music Project`,
 	type: `document`,
@@ -11,9 +12,7 @@ export default {
 			title: `Title`,
 			type: `string`,
 			description: `Title of the music project.`,
-			validation: (Rule: any) => {
-				Rule.required().error('The project must have a title.');
-			},
+			validation: (Rule) => Rule.required().error('The project must have a title.'),
 		},
 		{
 			name: `slug`,
@@ -22,17 +21,13 @@ export default {
 			options: {
 				source: `title`,
 			},
-			validation: (Rule: any) => {
-				Rule.required().error('The project must have a slug.');
-			},
+			validation: (Rule) => Rule.required().error('The project must have a slug.'),
 		},
 		{
 			name: `description`,
 			title: `Description`,
 			type: `text`,
-			validation: (Rule: any) => {
-				Rule.required().error('The project must have a descrtiption.');
-			},
+			validation: (Rule) => Rule.required().error('The project must have a description.'),
 		},
 		{
 			name: 'pressKit',
@@ -56,9 +51,7 @@ export default {
 			name: 'image',
 			title: 'Image',
 			type: 'mainImage',
-			validation: (Rule: any) => {
-				Rule.required().error('The project must have an image.');
-			},
+			validation: (Rule) => Rule.required().error('The project must have an image.'),
 		},
 		{
 			name: `moduleContent`,
@@ -71,4 +64,4 @@ export default {
 			media: `image`,
 		},
 	}
-};
+});

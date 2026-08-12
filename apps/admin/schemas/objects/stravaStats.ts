@@ -1,6 +1,7 @@
 import { BiRun } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'stravaStats',
 	title: 'Strava Stats',
 	type: 'object',
@@ -58,4 +59,4 @@ export default {
 			],
 		},
 	],
-};
+});

@@ -1,6 +1,7 @@
 import { BiChart } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `impactBlock`,
 	title: `Impact Block`,
 	type: `object`,
@@ -24,4 +25,4 @@ export default {
 			],
 		},
 	],
-};
+});

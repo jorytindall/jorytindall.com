@@ -1,6 +1,7 @@
 import { BiFile } from 'react-icons/bi'
+import { defineType } from 'sanity';
 
-export default { 
+export default defineType({ 
   name: 'tab',
   title: 'Tab',
   type: 'object',
@@ -18,4 +19,4 @@ export default {
       of: [{ type: 'richText' }]
     }
   ]
-}
+});

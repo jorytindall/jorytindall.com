@@ -1,6 +1,7 @@
 import { BiPencil } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `post`,
 	title: `Post`,
 	type: `document`,
@@ -108,4 +109,4 @@ export default {
 			};
 		},
 	},
-};
+});

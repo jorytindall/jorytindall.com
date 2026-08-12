@@ -1,6 +1,7 @@
 import { BiBookmark } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `banner`,
 	title: `Banner`,
 	type: `document`,
@@ -79,4 +80,4 @@ export default {
 			],
 		},
 	],
-};
+});

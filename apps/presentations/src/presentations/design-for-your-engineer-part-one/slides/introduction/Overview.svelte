@@ -5,7 +5,7 @@
 </script>
 
 <Slide>
-	<Box flexDirection="column" justifyContent="start" textAlign="start">
+	<Box flexDirection="column" justifyContent="start" textAlign="left">
 		<h2>What is this talk about?</h2>
 		<ul>
 			<li class="fragment" data-fragment-index="1">

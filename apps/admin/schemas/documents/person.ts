@@ -1,6 +1,7 @@
 import { BiUserCircle } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `person`,
 	title: `Person`,
 	type: `document`,
@@ -10,9 +11,7 @@ export default {
 			name: `name`,
 			title: `Name`,
 			type: `string`,
-			validation: (Rule: any) => {
-				Rule.required().error('The person needs a name.');
-			},
+			validation: (Rule) => Rule.required().error('The person needs a name.'),
 		},
 		{
 			name: `instrument`,
@@ -36,4 +35,4 @@ export default {
 			media: `image`,
 		},
 	},
-};
+});

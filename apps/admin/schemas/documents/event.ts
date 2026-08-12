@@ -1,8 +1,9 @@
 import { format, parseISO } from 'date-fns';
 import { isoDateToString } from '../../utils/formatDate';
 import { slugify } from '../../utils/slugify';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'event',
 	title: 'Event',
 	type: 'document',
@@ -174,4 +175,4 @@ export default {
 			};
 		},
 	},
-};
+});

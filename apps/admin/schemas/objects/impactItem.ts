@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity';
+
+export default defineType({
 	name: `impactItem`,
 	title: `Impact Item`,
 	type: `object`,
@@ -14,4 +16,4 @@ export default {
 			type: `string`,
 		},
 	],
-};
+});

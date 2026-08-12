@@ -1,6 +1,7 @@
 import { BiDownload } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'fileDownload',
 	title: 'File Download',
 	type: 'object',
@@ -17,4 +18,4 @@ export default {
 			type: 'file',
 		},
 	],
-};
+});

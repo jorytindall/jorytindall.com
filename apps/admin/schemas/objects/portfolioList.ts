@@ -1,6 +1,7 @@
 import { BiPaint } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `portfolioList`,
 	title: `Portfolio List`,
 	type: `object`,
@@ -32,4 +33,4 @@ export default {
 			};
 		},
 	},
-};
+});

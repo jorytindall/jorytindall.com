@@ -1,6 +1,7 @@
 import { FiFigma } from 'react-icons/fi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `figmaEmbed`,
 	title: `Figma Embed`,
 	type: `object`,
@@ -24,4 +25,4 @@ export default {
 			description: `Enter the 'Share' URL from within Figma. Ensure the link is available to users outside of the Figma organization.`,
 		},
 	],
-};
+});

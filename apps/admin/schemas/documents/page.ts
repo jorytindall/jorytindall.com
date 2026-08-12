@@ -1,6 +1,7 @@
 import { BiFile } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `page`,
 	title: `Page`,
 	type: `document`,
@@ -49,4 +50,4 @@ export default {
 			type: `moduleContent`,
 		},
 	],
-};
+});

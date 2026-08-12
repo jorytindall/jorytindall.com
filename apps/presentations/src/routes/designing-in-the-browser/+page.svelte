@@ -13,6 +13,7 @@
 	import SlideHeader from '../../components/SlideHeader.svelte';
 	import { createSlideContext } from '../../lib/slideContext.svelte';
 
+	/** @type {HTMLDivElement} */
 	let reveal;
 
 	// Create the slide context at the page level
@@ -53,7 +54,10 @@
 
 		// Listen for slide changes
 		deck.on('slidechanged', (event) => {
-			slideContext.setCurrentSlideIndex(event.indexh);
+			// Reveal types the handler param as a bare Event; the slidechanged
+			// event carries the horizontal slide index as `indexh`.
+			const { indexh } = /** @type {Event & { indexh: number }} */ (event);
+			slideContext.setCurrentSlideIndex(indexh);
 		});
 	});
 </script>

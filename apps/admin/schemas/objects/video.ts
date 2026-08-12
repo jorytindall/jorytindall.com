@@ -1,6 +1,7 @@
 import { BiVideo } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'video',
 	title: 'Video',
 	type: 'object',
@@ -36,4 +37,4 @@ export default {
 		//   hidden: ({ parent }: any) => parent?.source !== 'muxVideo',
 		// }
 	],
-};
+});

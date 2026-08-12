@@ -1,6 +1,7 @@
 import { BiBookContent } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `hero`,
 	title: `Hero`,
 	type: `object`,
@@ -43,4 +44,4 @@ export default {
 			description: `Set the height of the hero to maximum for it to occupy 100% of the height and width of the browser.`,
 		},
 	],
-};
+});

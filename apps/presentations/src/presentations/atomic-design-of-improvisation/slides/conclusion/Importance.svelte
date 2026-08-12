@@ -1,7 +1,6 @@
 <script>
 	import Slide from '../../../../components/Slide.svelte';
 	import Box from '../../../../components/Box.svelte';
-	import Notes from '../../../../components/Notes.svelte';
 </script>
 
 <Slide>

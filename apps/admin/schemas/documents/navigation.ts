@@ -1,11 +1,12 @@
 import { BiCompass } from "react-icons/bi"
+import { defineType } from 'sanity';
 
 const areas = [
   { title: 'Header', value: 'header' },
   { title: 'Footer', value: 'footer' }
 ]
 
-export default {
+export default defineType({
   name: 'navigation',
   type: 'document',
   title: 'Navigation',
@@ -33,4 +34,4 @@ export default {
       title: 'area',
     },
   }
-}
+});

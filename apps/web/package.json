@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "email": "email dev --dir src/email",
     "test:e2e": "playwright test",

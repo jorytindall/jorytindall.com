@@ -1,6 +1,7 @@
 import { BiFlag } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `landingPage`,
 	title: `Landing Page`,
 	type: `document`,
@@ -30,4 +31,4 @@ export default {
 			type: `moduleContent`,
 		},
 	],
-};
+});

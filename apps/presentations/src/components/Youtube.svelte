@@ -3,6 +3,7 @@
  export let width = 560;
  export let height = 315;
  const regex = /https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9]*)/;
+ /** @type {string | undefined} */
  let id;
  const found = url.match(regex);
  if(found) {

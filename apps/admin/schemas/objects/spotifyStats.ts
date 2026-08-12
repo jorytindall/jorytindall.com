@@ -1,6 +1,7 @@
 import { BiMusic } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'spotifyStats',
 	title: 'Spotify Stats',
 	type: 'object',
@@ -82,4 +83,4 @@ export default {
 			],
 		},
 	],
-};
+});

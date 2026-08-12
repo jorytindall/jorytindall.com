@@ -1,7 +1,8 @@
 import { format, parseISO } from 'date-fns';
 import { BiCalendar } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'eventPerformance',
 	title: 'Performance',
 	type: 'object',
@@ -42,4 +43,4 @@ export default {
 			};
 		},
 	},
-};
+});

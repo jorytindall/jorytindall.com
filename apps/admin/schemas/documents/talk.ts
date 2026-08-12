@@ -1,6 +1,7 @@
 import { BiMicrophone } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `talk`,
 	title: `Talk`,
 	type: `document`,
@@ -10,9 +11,7 @@ export default {
 			name: `title`,
 			title: `Title`,
 			type: `string`,
-			validation: (Rule: any) => {
-				Rule.required().error(`The talk must have a title.`);
-			},
+			validation: (Rule) => Rule.required().error(`The talk must have a title.`),
 		},
 		{
 			name: `slug`,
@@ -73,4 +72,4 @@ export default {
 			subtitle: 'title',
 		},
 	},
-};
+});

@@ -3,7 +3,7 @@
 	import Box from '../../../../components/Box.svelte';
 </script>
 
-<Slide date-auto-animate>
+<Slide autoAnimate>
 	<Box>
 		<h2>Current state of design tooling</h2>
 		<ul>

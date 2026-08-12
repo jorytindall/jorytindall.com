@@ -1,14 +1,7 @@
 import { BiColumns } from "react-icons/bi"
+import { defineType } from 'sanity';
 
-interface TabsPreviewProps {
-  tab1: string
-  tab2: string
-  tab3: string
-  tab4: string
-  tab5: string
-}
-
-export default {
+export default defineType({
   name: 'tabs',
   title: 'Tabs',
   type: 'object',
@@ -29,7 +22,7 @@ export default {
       tab4: 'tabs.3.label',
       tab5: 'tabs.4.label',
     },
-    prepare: ({ tab1, tab2, tab3, tab4, tab5 }: TabsPreviewProps) => {
+    prepare: ({ tab1, tab2, tab3, tab4, tab5 }) => {
       const tabs = [tab1, tab2, tab3, tab4, tab5].filter(Boolean)
       const title = tabs.join(', ')
       return {
@@ -37,4 +30,4 @@ export default {
       }
     }
   }
-}
+});

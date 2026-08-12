@@ -1,6 +1,7 @@
 import { BiLink} from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
   name: 'link',
   type: 'object',
   title: 'Link',
@@ -68,4 +69,4 @@ export default {
       hidden: ({ parent }: any) => parent?.type !== 'customInternal'
     }
   ]
-}
+});

@@ -1,6 +1,7 @@
 import { BiCodeBlock } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `codeBlock`,
 	title: `Code Block`,
 	type: `object`,
@@ -47,4 +48,4 @@ export default {
 			subtitle: `description`,
 		},
 	},
-};
+});

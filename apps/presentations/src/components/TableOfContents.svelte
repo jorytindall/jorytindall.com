@@ -19,7 +19,7 @@
 
 <nav class={classnames('toc', className)} {...rest}>
 	<ul class="toc__list">
-		{#each items as item, i}
+		{#each items as item (item.slideIndex)}
 			<li class="toc__item">
 				<a href={`#/${item.slideIndex}`} class="toc__link">
 					{#if item.emoji}

@@ -1,6 +1,7 @@
 import { BiBarChart } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `results`,
 	title: `Results`,
 	type: `object`,
@@ -24,4 +25,4 @@ export default {
 			of: [{ type: `resultItem` }],
 		},
 	],
-};
+});

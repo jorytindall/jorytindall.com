@@ -5,7 +5,7 @@
 </script>
 
 <Slide>
-	<Box justify="center">
+	<Box justifyContent="center">
 		<h3>
 			Jazz improvisation is built around a universally understood language
 			and repetitive set of improvisational concepts.

@@ -1,6 +1,7 @@
 import { BiCalendar } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'eventList',
 	title: 'Event List',
 	type: 'object',
@@ -25,4 +26,4 @@ export default {
 			project3: 'items.3.eventListItem.title',
 		},
 	},
-};
+});
