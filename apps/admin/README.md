@@ -1,9 +1,13 @@
-# Sanity Clean Content Studio
+# admin
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Sanity Studio — the source of all editorial content for `apps/web`.
+Project `j9ccckrc`, dataset `production`.
 
-Now you can do the following things:
+```bash
+pnpm admin:dev      # Studio on :3333
+pnpm admin:build
+```
 
--   [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
--   [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
--   [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+See [`AGENTS.md`](./AGENTS.md) for the schema layout and the schema → GROQ chain that
+couples this app to `web`, and the [repo-wide contract](../../AGENTS.md) for everything
+else.

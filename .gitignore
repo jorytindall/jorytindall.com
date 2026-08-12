@@ -1,13 +1,21 @@
-./node_modules
-/node_modules
 node_modules
+apps/**/node_modules
+packages/**/node_modules
 
 .DS_Store
+packages/.DS_Store
 
 .turbo
-
-packages/**/node_modules
-packages/.DS_Store
+apps/**/.turbo
 packages/**/.turbo
 
 .yarn
+
+# Secrets. Real values live in Infisical — nothing here should ever be committed.
+.env
+.env.*
+!.env.example
+.infisical.json
+
+# Local agent state
+.claude/settings.local.json

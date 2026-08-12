@@ -1,5 +1,21 @@
 node_modules
-
+apps/**/node_modules
 packages/**/node_modules
-packages/web/.next
-packages/admin/config
+
+# Build output
+apps/**/.next
+apps/**/dist
+apps/**/build
+apps/**/.svelte-kit
+apps/**/.astro
+packages/**/dist
+**/.turbo
+
+# Generated
+pnpm-lock.yaml
+apps/web/public/sitemap*.xml
+apps/web/playwright-report
+apps/web/test-results
+apps/web/blob-report
+apps/admin/dist
+**/CHANGELOG.md

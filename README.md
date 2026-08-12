@@ -4,15 +4,35 @@ My name is Jory Tindall, I'm a product designer and design technologist speciali
 
 You might also find me performing as a saxophonist in Seattle and the Pacific Northwest and teaching the next generation of shredders. If you're interested in music and music education, check out [Downbeat Academy](https://downbeatacademy.com), a growing resource for students, musicians, and educators.
 
-This monorepo is managed by `pnpm` workspaces and TurboRepo and contains:
+This monorepo is managed by `pnpm` workspaces and TurboRepo.
 
--   My [personal website](https://jorytindall.com) for design, development, and music, built with [NextJS](https://nextjs.org/).
--   The content management system for my website built with [Sanity](https://www.sanity.io/).
--   Tokens managed with `style-dictionary`
+| Workspace | What it is | Where it lives |
+| --- | --- | --- |
+| `apps/web` | My [personal website](https://jorytindall.com) for design, development, and music. [Next.js](https://nextjs.org/). | `jorytindall.com` |
+| `apps/admin` | The content management system behind the website. [Sanity](https://www.sanity.io/). | `admin.jorytindall.com` |
+| `apps/presentations` | Conference talks and design systems education, built with an unusual pairing of [Svelte](https://svelte.dev/) and [RevealJS](https://revealjs.com/). | `presentations.jorytindall.com` |
+| `apps/media-center` | A personal media browser wired up to Plex. [Astro](https://astro.build/). | `jorytindall.tv` |
+| `packages/tokens` | Design tokens managed with `style-dictionary`. | — |
 
-There are a couple of projects that are a work-in-progress to add some additional content and functionality to my personal suite of web platforms, including:
+Everything deploys to [Railway](https://railway.app).
 
--   A custom REST API for managing my resume items and work history.
--   A growing collection of presentations geared towards conference talks and education around design systems and bridging the gap between designers and engineers; built with a unique configuration of [Svelte](https://svelte.dev/) and [RevealJS](https://revealjs.com/).
+## Getting started
 
-Everything deploys to [Vercel](https://vercel.com).
+```bash
+pnpm install
+pnpm dev            # every app at once, or use web:dev / admin:dev / pres:dev / media:dev
+```
+
+Secrets live in [Infisical](https://infisical.com) and are injected at dev time, so you
+will need `infisical login` before `pnpm web:dev` or `pnpm media:dev` will work.
+
+Before pushing anything:
+
+```bash
+pnpm verify         # lint + typecheck, every workspace
+```
+
+## Working here
+
+If you are an AI coding agent — or a person who wants the same briefing — start with
+**[AGENTS.md](./AGENTS.md)**. Each workspace has its own `AGENTS.md` with local detail.
