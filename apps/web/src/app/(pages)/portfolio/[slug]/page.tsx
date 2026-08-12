@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
 import {
 	GET_PORTFOLIO_PROJECTS,
@@ -5,6 +6,7 @@ import {
 } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
 import { PortfolioTitle } from 'components/portfolio/PortfolioTitle';
+import { ProjectChapters } from 'components/portfolio/ProjectChapters';
 import { PasswordGate } from 'components/password-gate';
 import { hasPortfolioAccess } from 'lib/auth/portfolioAccess';
 
@@ -18,6 +20,10 @@ export async function generateMetadata({ params }) {
 	const portfolioProject = await client.fetch(GET_PORTFOLIO_PROJECTS, {
 		slug,
 	});
+
+	if (!portfolioProject?.title) {
+		return { title: `Portfolio | Jory Tindall` };
+	}
 
 	return {
 		title: `${portfolioProject.title} | Jory Tindall`,
@@ -37,6 +43,11 @@ export default async function PortfolioProject({ params }) {
 		slug,
 	});
 
+	// An unresolvable slug would otherwise throw on destructuring below.
+	if (!portfolioProject) {
+		notFound();
+	}
+
 	const {
 		title,
 		overview,
@@ -49,6 +60,8 @@ export default async function PortfolioProject({ params }) {
 		featuredImage,
 		moduleContent,
 		isPasswordProtected,
+		parentProject,
+		chapters,
 	} = portfolioProject;
 
 	// Check if content is password protected and user has access
@@ -71,10 +84,12 @@ export default async function PortfolioProject({ params }) {
 					roles={roles}
 					client={client}
 					tools={tools}
+					parentProject={parentProject}
 					image={featuredImage}
 				/>
 			}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
+			{chapters?.length > 0 && <ProjectChapters chapters={chapters} />}
 		</>
 	);
 }

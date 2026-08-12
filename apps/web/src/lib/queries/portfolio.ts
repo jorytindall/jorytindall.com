@@ -22,7 +22,39 @@ export const GET_PORTFOLIO_PROJECTS = groq`
             alternativeText,
             asset
         },
-        moduleContent
+        parentProject-> {
+            title,
+            "slug": slug.current
+        },
+        "chapters": *[_type == 'portfolioProject' && parentProject._ref == ^._id] | order(chapterOrder asc, title asc) {
+            _id,
+            title,
+            "slug": slug.current,
+            client,
+            overview,
+            featuredImage {
+                alternativeText,
+                asset
+            },
+            galleryImages[] {
+                alternativeText,
+                caption,
+                asset
+            }
+        },
+        moduleContent[] {
+            ...,
+            items[] {
+                item-> {
+                    ...,
+                    galleryImages[] {
+                        alternativeText,
+                        caption,
+                        asset
+                    }
+                }
+            }
+        }
     }
 `;
 
