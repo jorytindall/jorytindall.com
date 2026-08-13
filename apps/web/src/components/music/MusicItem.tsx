@@ -11,19 +11,10 @@ interface MusicItemProps {
 	link: string;
 }
 
-export const MusicItem = ({
-	title,
-	description,
-	image,
-	link,
-}: MusicItemProps) => {
-
-	console.log(title)
+export const MusicItem = ({ title, description, image, link }: MusicItemProps) => {
+	console.log(title);
 	return (
-		<Link
-			href={linkResolver('musicProject', link)}
-			className={styles.wrapper}
-		>
+		<Link href={linkResolver('musicProject', link)} className={styles.wrapper}>
 			{image && (
 				<div className={styles.imageWrapper}>
 					<Image

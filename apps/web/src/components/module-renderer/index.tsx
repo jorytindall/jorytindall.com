@@ -6,12 +6,7 @@ import { PortfolioList } from 'components/portfolio';
 import { Results } from 'components/results';
 import { PersonalStats } from 'components/personal-stats';
 import { StravaStats } from 'components/personal-stats/strava';
-import {
-	Tabs,
-	TabsList,
-	TabsTrigger,
-	TabsContent,
-} from 'components/tabs'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from 'components/tabs';
 
 interface ModuleRendererProps {
 	modules?: any;
@@ -40,36 +35,37 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return <Features input={m} key={m._key} />;
 			case 'stravaStats':
 				return <StravaStats input={m} key={m._key} />;
-			case 'personalStats': return <PersonalStats input={m} key={m._key} />;
+			case 'personalStats':
+				return <PersonalStats input={m} key={m._key} />;
 			case 'tabs':
 				return (
 					<GridItem
 						key={m._key}
-						density='collapse'
-						gridColumn='1'
-						gridSpan='3'
-						className='max-width--x-large'
+						density="collapse"
+						gridColumn="1"
+						gridSpan="3"
+						className="max-width--x-large"
 					>
-						<Tabs
-							defaultValue={m.tabs[0]._key}
-						>
+						<Tabs defaultValue={m.tabs[0]._key}>
 							<TabsList>
 								{m.tabs.map((tab) => (
-									<TabsTrigger key={tab._key} value={tab._key}>{tab.label}</TabsTrigger>
+									<TabsTrigger key={tab._key} value={tab._key}>
+										{tab.label}
+									</TabsTrigger>
 								))}
 							</TabsList>
 							{m.tabs.map((tab) => {
 								return (
 									<TabsContent key={tab._key} value={tab._key}>
-										<Container semanticElement='div'>
+										<Container semanticElement="div">
 											<RichText value={tab.content[0].content} />
 										</Container>
 									</TabsContent>
-								)
+								);
 							})}
 						</Tabs>
 					</GridItem>
-				)
+				);
 			default:
 				return console.error('Nothing came back for this module');
 		}

@@ -1,7 +1,5 @@
-import s from './Error.module.css'
+import s from './Error.module.css';
 
 export const Error = ({ message }) => {
-  return (
-    <p className={s.formError}>{message}</p>
-  )
-}
+	return <p className={s.formError}>{message}</p>;
+};

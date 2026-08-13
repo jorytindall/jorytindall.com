@@ -11,20 +11,23 @@
 		"tokens:build": "turbo run build --filter=tokens",
 		"pres:dev": "turbo run dev --filter=presentations",
 		"pres:build": "turbo run build --filter=presentations",
-		"api:start": "turbo run start --filter=me-api",
 		"media:dev": "turbo run dev --filter=media-center",
 		"media:build": "turbo run build --filter=media-center",
 		"format:all": "prettier --write .",
+		"format:check": "prettier --check .",
 		"build": "turbo run build",
 		"test": "turbo run test",
 		"lint": "turbo run lint",
+		"typecheck": "turbo run typecheck",
+		"verify": "pnpm format:check && turbo run lint typecheck",
 		"dev": "turbo run dev"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.31.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^3.5.2",
-		"turbo": "^2.9.12"
+		"turbo": "^2.9.12",
+		"typescript": "^6.0.3"
 	},
 	"repository": {
 		"type": "git",

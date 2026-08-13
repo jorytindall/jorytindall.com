@@ -1,6 +1,7 @@
 import { BiChart } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `resultItem`,
 	title: `Result Item`,
 	type: `object`,
@@ -26,7 +27,7 @@ export default {
 			name: `percentageDirection`,
 			title: `Percentage Direction`,
 			type: `string`,
-			desctipn: `(Optional) Corresponds with the percentage and won't be rendered if the percentage is empty.`,
+			description: `(Optional) Corresponds with the percentage and won't be rendered if the percentage is empty.`,
 			options: {
 				list: [
 					{ title: `Up`, value: `up` },
@@ -35,4 +36,4 @@ export default {
 			},
 		},
 	],
-};
+});

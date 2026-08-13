@@ -1,6 +1,7 @@
 import { BiHeart } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `brandLogoBlock`,
 	title: `Brand Logo Block`,
 	type: `object`,
@@ -19,4 +20,4 @@ export default {
 			],
 		},
 	],
-};
+});

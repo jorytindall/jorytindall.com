@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styles from './Overlay.module.css';
-import { NavLinks } from './NavLinks'
+import { NavLinks } from './NavLinks';
 import { NavItem } from './NavItem';
 import { PersonalStats } from 'components/personal-stats';
 import type { StatSource } from 'components/personal-stats';
@@ -28,15 +28,13 @@ const overlayAnimation = {
 };
 
 export const Overlay = ({ overlay = true, links, personalStats }: OverlayProps) => {
-	const getOverlayClass = overlay
-		? styles.overlayVisible
-		: styles.overlayHidden;
+	const getOverlayClass = overlay ? styles.overlayVisible : styles.overlayHidden;
 
 	return (
 		<motion.div
 			variants={overlayAnimation}
 			initial="hidden"
-			animate={overlay ? "enter" : "hidden"}
+			animate={overlay ? 'enter' : 'hidden'}
 			className={getOverlayClass}
 		>
 			<div className={styles.overlayContent}>

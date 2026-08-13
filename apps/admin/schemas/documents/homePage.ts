@@ -1,6 +1,7 @@
 import { BiHome } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `homePage`,
 	title: `Home Page`,
 	type: `document`,
@@ -30,4 +31,4 @@ export default {
 			subtitle: `modeulContent`,
 		},
 	},
-};
+});

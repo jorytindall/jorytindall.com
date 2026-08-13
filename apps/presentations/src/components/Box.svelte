@@ -21,7 +21,7 @@
 		flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 		alignItems?: 'start' | 'end' | 'center' | 'stretch';
 		alignContent?: 'start' | 'end' | 'center' | 'stretch' | 'space-between' | 'space-around';
-		gap?: 'none' | 'small' | 'medium' | 'large' | 'x-large';
+		gap?: 'none' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
 		children?: Snippet;
 	} & HTMLAttributes<HTMLDivElement> = $props();
 
@@ -157,6 +157,10 @@
 
 	.gap--none {
 		gap: 0;
+	}
+
+	.gap--x-small {
+		gap: 4px;
 	}
 
 	.gap--small {

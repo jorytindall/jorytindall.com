@@ -7,7 +7,9 @@
 	border-radius: 12px;
 	text-decoration: none;
 	color: var(--color-core-neutral-600);
-	transition: border-color 0.15s, box-shadow 0.15s;
+	transition:
+		border-color 0.15s,
+		box-shadow 0.15s;
 }
 
 .card:hover {

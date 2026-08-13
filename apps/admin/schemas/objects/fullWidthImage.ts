@@ -1,6 +1,7 @@
 import { BiImage } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `fullWidthImage`,
 	title: `Full Width Image`,
 	type: `object`,
@@ -23,4 +24,4 @@ export default {
 			description: `Maximum height of the image.`,
 		},
 	],
-};
+});

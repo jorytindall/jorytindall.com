@@ -15,9 +15,8 @@
 		allowfullscreen
 	></iframe>
 	<Notes>
-		As an example, this video has become a bit of a meme in the jazz
-		community because and because of the prevalence of this lick in jazz
-		improvisation. It's almost like an easter egg, secret handshake, or
-		inside joke to jazz musicians.
+		As an example, this video has become a bit of a meme in the jazz community because and
+		because of the prevalence of this lick in jazz improvisation. It's almost like an easter
+		egg, secret handshake, or inside joke to jazz musicians.
 	</Notes>
 </Slide>

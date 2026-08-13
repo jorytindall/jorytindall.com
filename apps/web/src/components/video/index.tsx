@@ -23,9 +23,7 @@ export const Video = ({ source, youTubeId, title }: VideoProps) => {
 					title={title}
 				/>
 			) : (
-				<Paragraph type="secondary">
-					Unsupported video source.
-				</Paragraph>
+				<Paragraph type="secondary">Unsupported video source.</Paragraph>
 			)}
 		</article>
 	);

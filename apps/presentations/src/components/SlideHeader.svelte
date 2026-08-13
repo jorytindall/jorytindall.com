@@ -7,9 +7,7 @@
 	const totalSlides = $derived(context?.totalSlides ?? 0);
 
 	const shouldShow = $derived(
-		currentSlide &&
-			!currentSlide.hideHeader &&
-			(currentSlide.section || currentSlide.title),
+		currentSlide && !currentSlide.hideHeader && (currentSlide.section || currentSlide.title),
 	);
 </script>
 

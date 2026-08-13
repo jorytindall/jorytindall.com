@@ -1,6 +1,7 @@
 import { BiFile } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `page`,
 	title: `Page`,
 	type: `document`,
@@ -11,9 +12,7 @@ export default {
 			title: `Title`,
 			type: `string`,
 			description: `Title of the page`,
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+			validation: (Rule: any) => [Rule.required().error(`The page must have a title.`)],
 		},
 		{
 			name: `showTitle`,
@@ -29,9 +28,7 @@ export default {
 			options: {
 				source: `title`,
 			},
-			validation: (Rule: any) => [
-				Rule.required().error(`The page must have a title.`),
-			],
+			validation: (Rule: any) => [Rule.required().error(`The page must have a title.`)],
 		},
 		{
 			name: `megaHeadline`,
@@ -49,4 +46,4 @@ export default {
 			type: `moduleContent`,
 		},
 	],
-};
+});

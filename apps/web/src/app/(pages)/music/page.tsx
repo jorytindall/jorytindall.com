@@ -21,7 +21,6 @@ export default async function MusicPage() {
 	const musicProjects = await sanityClient.fetch(GET_ALL_MUSIC_PROJECTS);
 
 	const musicItems = musicProjects.map((musicProject) => {
-
 		const { title, slug, description } = musicProject;
 		const image = getSanityImageUrl(musicProject.image);
 		const link = linkResolver('musicProject', slug);
@@ -29,10 +28,10 @@ export default async function MusicPage() {
 		return (
 			<BentoItem
 				key={title}
-				background='tertiary'
-				size='medium'
-				padding='large'
-				gap='none'
+				background="tertiary"
+				size="medium"
+				padding="large"
+				gap="none"
 				isInteractive={true}
 				href={link}
 				image={image}
@@ -40,7 +39,9 @@ export default async function MusicPage() {
 				imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				altText={musicProject.image.alternativeText}
 			>
-				<Headline tag='h2' size='h4' color='secondary' collapse>{musicProject.title}</Headline>
+				<Headline tag="h2" size="h4" color="secondary" collapse>
+					{musicProject.title}
+				</Headline>
 				<Paragraph>{description}</Paragraph>
 			</BentoItem>
 		);
@@ -49,10 +50,7 @@ export default async function MusicPage() {
 	return (
 		<>
 			<PageTitle title="🎵 Music" megaTitle="Music projects" />
-			<BentoBox
-				className={styles.wrapper}
-				isFullBleed={false}
-			>
+			<BentoBox className={styles.wrapper} isFullBleed={false}>
 				{musicItems}
 			</BentoBox>
 		</>

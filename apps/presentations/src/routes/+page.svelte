@@ -11,12 +11,8 @@
 		<article class="presentations">
 			<h1>Jory's presentations</h1>
 
-			<a href="/design-for-your-engineer-part-one"
-				>Design For Your Engineer: Part I</a
-			>
-			<a href="/atomic-design-of-improvisation"
-				>The Atomic Design of Improvisation</a
-			>
+			<a href="/design-for-your-engineer-part-one">Design For Your Engineer: Part I</a>
+			<a href="/atomic-design-of-improvisation">The Atomic Design of Improvisation</a>
 			<a href="/designing-in-the-browser">Designing in the Browser</a>
 		</article>
 

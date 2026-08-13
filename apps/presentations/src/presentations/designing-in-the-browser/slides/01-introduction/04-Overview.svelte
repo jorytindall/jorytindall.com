@@ -13,7 +13,7 @@
 		{ emoji: '👎', title: 'The honest downsides', slideIndex: 11 },
 		{ emoji: '🧑‍💻', title: 'Where existing tools fit', slideIndex: 14 },
 		{ emoji: '🤔', title: 'The bigger questions', slideIndex: 22 },
-		{ emoji: '🚀', title: 'Actionable next steps', slideIndex: 27 }
+		{ emoji: '🚀', title: 'Actionable next steps', slideIndex: 27 },
 	];
 </script>
 

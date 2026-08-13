@@ -50,15 +50,17 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 		<div className={styles.container}>
 			<div className={styles.content}>
 				<div className={styles.header}>
-					<Headline tag="h1" size="h2">Protected Content</Headline>
+					<Headline tag="h1" size="h2">
+						Protected Content
+					</Headline>
 					{title && (
 						<Paragraph type="primary" color="primary">
 							{title}
 						</Paragraph>
 					)}
 					<Paragraph type="secondary" color="secondary">
-						This portfolio project is password protected. Please enter the
-						access code to continue.
+						This portfolio project is password protected. Please enter the access code
+						to continue.
 					</Paragraph>
 				</div>
 
@@ -81,12 +83,7 @@ export const PasswordGate = ({ title }: PasswordGateProps) => {
 						</Paragraph>
 					)}
 
-					<Button
-						type="submit"
-						variant="primary"
-						isFullWidth
-						disabled={isLoading}
-					>
+					<Button type="submit" variant="primary" isFullWidth disabled={isLoading}>
 						{isLoading ? 'Verifying...' : 'Access Project'}
 					</Button>
 				</form>

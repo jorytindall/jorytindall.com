@@ -35,7 +35,10 @@
 			do basic prototyping, but getting the exact feel of an animation is difficult.
 		</p>
 		<ul>
-			<li>Pair with an AI tool to quickly generate a starting point, then ask it to explain the CSS properties so you understand what each value does</li>
+			<li>
+				Pair with an AI tool to quickly generate a starting point, then ask it to explain
+				the CSS properties so you understand what each value does
+			</li>
 			<li>Tweak the timing, easing, and transform values in the browser</li>
 			<li>Feel the interaction in real-time as you adjust</li>
 			<li>Hand off the exact CSS keyframe or transition values to your engineer</li>

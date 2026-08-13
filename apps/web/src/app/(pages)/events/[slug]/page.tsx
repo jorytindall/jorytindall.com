@@ -1,4 +1,4 @@
-import { formatEventDateTime, formatEventSchedule } from 'utils/datetimeFormat'
+import { formatEventDateTime, formatEventSchedule } from 'utils/datetimeFormat';
 import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
@@ -38,11 +38,12 @@ export default async function Event({ params }) {
 				<Headline tag="h1" color="primary" collapse>
 					{title}
 				</Headline>
-				<Paragraph color='secondary' collapse>
+				<Paragraph color="secondary" collapse>
 					{formatEventSchedule(events)}
 					{location && (
 						<>
-							{' '}at{' '}
+							{' '}
+							at{' '}
 							{url ? (
 								<InlineLink href={url} type="external">
 									{location}

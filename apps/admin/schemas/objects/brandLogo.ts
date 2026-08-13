@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity';
+
+export default defineType({
 	name: `brandLogo`,
 	title: `Brand Logo`,
 	type: `object`,
@@ -14,4 +16,4 @@ export default {
 			type: `mainImage`,
 		},
 	],
-};
+});

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import LightGallery from 'lightgallery/react';
 import 'lightgallery/css/lightgallery.css';
@@ -30,10 +30,7 @@ export const Gallery = ({ input }: GalleryProps) => {
 		'8': styles.columns8,
 	};
 
-	const classes = getClasses([
-		styles.wrapper,
-		columnMap[input.columns],
-	]);
+	const classes = getClasses([styles.wrapper, columnMap[input.columns]]);
 
 	const { _key, images } = input;
 

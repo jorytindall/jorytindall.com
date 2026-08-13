@@ -45,8 +45,9 @@
 				The basics of HTML and CSS are within reach, and AI tools can help fill the gaps.
 			</li>
 			<li>
-				Start small and build gradually — pick the level of entry that works for you, whether
-				that's browser DevTools, CodePen, or running locally. Every step forward is progress.
+				Start small and build gradually — pick the level of entry that works for you,
+				whether that's browser DevTools, CodePen, or running locally. Every step forward is
+				progress.
 			</li>
 			<li>
 				The combination of AI-assisted development and browser-based design dramatically

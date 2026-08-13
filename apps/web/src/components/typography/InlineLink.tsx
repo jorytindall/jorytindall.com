@@ -30,33 +30,19 @@ export const InlineLink = ({
 	switch (type) {
 		case 'internal':
 			return (
-				<Link
-					href={href}
-					className={classes}
-					passHref
-				>
+				<Link href={href} className={classes} passHref>
 					{children}
 				</Link>
 			);
 		case 'external':
 			return (
-				<a
-					href={href}
-					target={target}
-					rel={rel}
-					className={classes}
-				>
+				<a href={href} target={target} rel={rel} className={classes}>
 					{children}
 				</a>
 			);
 		default:
 			return (
-				<a
-					href={href}
-					target={target}
-					rel={rel}
-					className={classes}
-				>
+				<a href={href} target={target} rel={rel} className={classes}>
 					{children}
 				</a>
 			);

@@ -1,6 +1,7 @@
 import { BiImages } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `gallery`,
 	title: `Gallery`,
 	type: `object`,
@@ -31,4 +32,4 @@ export default {
 			title: `title`,
 		},
 	},
-};
+});

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import styles from './Button.module.css';
@@ -13,7 +13,7 @@ interface ButtonProps {
 	isDownload?: boolean;
 	isFullWidth?: boolean;
 	disabled?: boolean;
-	className?: string,
+	className?: string;
 	onClick?: () => void;
 }
 

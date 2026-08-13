@@ -1,10 +1,4 @@
-export const TrackList = ({
-	tracks,
-	currentTrack,
-	setCurrentTrack,
-	trackIndex,
-	setTrackIndex,
-}) => {
+export const TrackList = ({ tracks, currentTrack, setCurrentTrack, trackIndex, setTrackIndex }) => {
 	console.log(tracks);
 
 	const handleSetCurrentTrack = () => {

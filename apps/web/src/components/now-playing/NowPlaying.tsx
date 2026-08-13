@@ -9,13 +9,13 @@ import styles from './NowPlaying.module.css';
 
 const POLLING_INTERVAL = 30000; // 30 seconds
 
-const emptySubscribe = () => () => { };
+const emptySubscribe = () => () => {};
 
 export const NowPlaying = () => {
 	const isClient = useSyncExternalStore(
 		emptySubscribe,
 		() => true,
-		() => false
+		() => false,
 	);
 	const [nowPlaying, setNowPlaying] = useState<NowPlayingData | null>(null);
 	const intervalRef = useRef<NodeJS.Timeout | null>(null);

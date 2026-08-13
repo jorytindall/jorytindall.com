@@ -34,7 +34,10 @@
 		</p>
 		<ul>
 			<li>Open your locally running application</li>
-			<li>Enter realistic values: long email addresses, international phone numbers, full names</li>
+			<li>
+				Enter realistic values: long email addresses, international phone numbers, full
+				names
+			</li>
 			<li>Adjust the max-width until it accommodates real-world edge cases</li>
 			<li>You're testing with actual browser rendering, not Figma's approximation</li>
 		</ul>

@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity';
+
+export default defineType({
 	name: `socialLink`,
 	title: `Social Link`,
 	type: `object`,
@@ -27,7 +29,7 @@ export default {
 			name: 'text',
 			type: 'string',
 			title: 'Text',
-			description: 'Text to display for the social link.'
+			description: 'Text to display for the social link.',
 		},
 		{
 			name: `link`,
@@ -42,4 +44,4 @@ export default {
 			subtitle: `link`,
 		},
 	},
-};
+});

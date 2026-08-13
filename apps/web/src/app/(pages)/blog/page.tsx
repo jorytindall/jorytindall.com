@@ -28,12 +28,10 @@ export default async function Blog() {
 
 	const posts = blogPosts.map((post) => {
 		return (
-			<ListItem
-				title={post.title}
-				link={linkResolver('post', post.slug)}
-				key={post._id}
-			>
-				<Paragraph type="primary" color='secondary' collapse>{post.excerpt}</Paragraph>
+			<ListItem title={post.title} link={linkResolver('post', post.slug)} key={post._id}>
+				<Paragraph type="primary" color="secondary" collapse>
+					{post.excerpt}
+				</Paragraph>
 			</ListItem>
 		);
 	});
@@ -41,9 +39,7 @@ export default async function Blog() {
 	return (
 		<>
 			<PageTitle title="📝 Blog" megaTitle="Recent Posts" />
-			<CenteredWrapper semanticElement="section">
-				{posts}
-			</CenteredWrapper>
+			<CenteredWrapper semanticElement="section">{posts}</CenteredWrapper>
 		</>
 	);
 }

@@ -1,4 +1,6 @@
-export default {
+import { defineType } from 'sanity';
+
+export default defineType({
 	name: `moduleContent`,
 	title: `Module Content`,
 	type: `array`,
@@ -18,4 +20,4 @@ export default {
 		{ type: `stravaStats` },
 		{ type: `personalStats` },
 	],
-};
+});

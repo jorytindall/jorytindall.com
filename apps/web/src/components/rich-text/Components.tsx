@@ -1,11 +1,4 @@
-import {
-	Headline,
-	Paragraph,
-	Code,
-	InlineLink,
-	List,
-	Item,
-} from 'components/typography';
+import { Headline, Paragraph, Code, InlineLink, List, Item } from 'components/typography';
 import { Blockquote } from 'components/blockquote';
 import { CodeBlock } from 'components/code';
 import { Playlist } from 'components/audio';
@@ -14,7 +7,7 @@ import { DownloadButton } from 'components/button';
 import { Callout } from 'components/callout';
 import { RichText } from './RichText';
 
-import s from './RichText.module.css'
+import s from './RichText.module.css';
 
 interface BlockProps {
 	children?: React.ReactNode;
@@ -31,30 +24,14 @@ interface TypeProps {
 
 export const Components = {
 	block: {
-		h1: ({ children }: BlockProps) => (
-			<Headline tag="h1">{children}</Headline>
-		),
-		h2: ({ children }: BlockProps) => (
-			<Headline tag="h2">{children}</Headline>
-		),
-		h3: ({ children }: BlockProps) => (
-			<Headline tag="h3">{children}</Headline>
-		),
-		h4: ({ children }: BlockProps) => (
-			<Headline tag="h4">{children}</Headline>
-		),
-		h5: ({ children }: BlockProps) => (
-			<Headline tag="h5">{children}</Headline>
-		),
-		h6: ({ children }: BlockProps) => (
-			<Headline tag="h6">{children}</Headline>
-		),
-		normal: ({ children }: BlockProps) => (
-			<Paragraph type="secondary">{children}</Paragraph>
-		),
-		blockquote: ({ children }: BlockProps) => (
-			<Blockquote text={children} />
-		),
+		h1: ({ children }: BlockProps) => <Headline tag="h1">{children}</Headline>,
+		h2: ({ children }: BlockProps) => <Headline tag="h2">{children}</Headline>,
+		h3: ({ children }: BlockProps) => <Headline tag="h3">{children}</Headline>,
+		h4: ({ children }: BlockProps) => <Headline tag="h4">{children}</Headline>,
+		h5: ({ children }: BlockProps) => <Headline tag="h5">{children}</Headline>,
+		h6: ({ children }: BlockProps) => <Headline tag="h6">{children}</Headline>,
+		normal: ({ children }: BlockProps) => <Paragraph type="secondary">{children}</Paragraph>,
+		blockquote: ({ children }: BlockProps) => <Blockquote text={children} />,
 	},
 	list: {
 		bullet: ({ children }: BlockProps) => <List type="ul">{children}</List>,
@@ -88,11 +65,7 @@ export const Components = {
 		mainImage: ({ value }: TypeProps) => <p>This is an image</p>,
 		playlist: ({ value }: TypeProps) => <Playlist tracks={value.tracks} />,
 		video: ({ value }: TypeProps) => (
-			<Video
-				title={value.title}
-				source={value.source}
-				youTubeId={value.youTubeId}
-			/>
+			<Video title={value.title} source={value.source} youTubeId={value.youTubeId} />
 		),
 		fileDownload: ({ value }: TypeProps) => (
 			<DownloadButton
@@ -102,11 +75,9 @@ export const Components = {
 			/>
 		),
 		calloutBlock: ({ value }: TypeProps) => (
-			<Callout
-				headline={value.headline}
-			>
+			<Callout headline={value.headline}>
 				<RichText value={value.content} />
 			</Callout>
-		)
+		),
 	},
 };

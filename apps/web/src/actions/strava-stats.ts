@@ -26,7 +26,7 @@ const getCachedStravaStats = unstable_cache(
 	{
 		revalidate: 1800, // 30 minutes
 		tags: ['strava'],
-	}
+	},
 );
 
 export async function getStravaStats(): Promise<StravaDisplayStats> {

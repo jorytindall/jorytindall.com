@@ -1,6 +1,7 @@
 import { BiImageAlt } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `mainImage`,
 	title: `Image`,
 	type: `image`,
@@ -25,4 +26,4 @@ export default {
 			title: 'alternativeText',
 		},
 	},
-};
+});

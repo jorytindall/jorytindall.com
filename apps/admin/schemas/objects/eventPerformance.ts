@@ -1,7 +1,8 @@
 import { format, parseISO } from 'date-fns';
 import { BiCalendar } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'eventPerformance',
 	title: 'Performance',
 	type: 'object',
@@ -15,15 +16,13 @@ export default {
 				allowTimeZoneSwitch: true,
 				displayTimeZone: 'America/Los_Angeles',
 			},
-			validation: (Rule: any) =>
-				Rule.required().error('A performance must have a date.'),
+			validation: (Rule: any) => Rule.required().error('A performance must have a date.'),
 		},
 		{
 			name: 'note',
 			title: 'Note',
 			type: 'string',
-			description:
-				'Optional label for this performance (e.g. "Opening night", "Matinee").',
+			description: 'Optional label for this performance (e.g. "Opening night", "Matinee").',
 		},
 	],
 	preview: {
@@ -42,4 +41,4 @@ export default {
 			};
 		},
 	},
-};
+});

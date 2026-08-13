@@ -7,17 +7,11 @@ interface ContainerProps {
 	flexDirection?: 'row' | 'column';
 	semanticElement?: 'div' | 'section' | 'article' | 'aside';
 	children?: React.ReactNode;
-	justify?:
-		| 'normal'
-		| 'flex-start'
-		| 'center'
-		| 'flex-end'
-		| 'space-between'
-		| 'space-around';
+	justify?: 'normal' | 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around';
 	align?: 'normal' | 'flex-start' | 'center' | 'flex-end';
 	textAlign?: 'left' | 'center' | 'right';
 	gap?: 'small' | 'default' | 'large' | 'extra-large';
-	className?: string,
+	className?: string;
 }
 
 const Container = ({
@@ -89,5 +83,5 @@ const Container = ({
 	}
 };
 
-export { Container }
-export type { ContainerProps }
+export { Container };
+export type { ContainerProps };

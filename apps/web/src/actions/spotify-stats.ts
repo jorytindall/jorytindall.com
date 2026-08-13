@@ -9,15 +9,10 @@ const getCachedSpotifyStats = unstable_cache(
 		timeRange: TimeRange,
 		artistLimit: number,
 		genreLimit: number,
-		recentLimit: number
+		recentLimit: number,
 	): Promise<SpotifyDisplayStats> => {
 		try {
-			return await getSpotifyDisplayStats(
-				timeRange,
-				artistLimit,
-				genreLimit,
-				recentLimit
-			);
+			return await getSpotifyDisplayStats(timeRange, artistLimit, genreLimit, recentLimit);
 		} catch (error) {
 			console.error('Failed to fetch Spotify stats:', error);
 			return {
@@ -32,14 +27,14 @@ const getCachedSpotifyStats = unstable_cache(
 	{
 		revalidate: 86400, // 24 hours
 		tags: ['spotify'],
-	}
+	},
 );
 
 export async function getSpotifyStats(
 	timeRange: TimeRange = 'medium_term',
 	artistLimit: number = 5,
 	genreLimit: number = 5,
-	recentLimit: number = 5
+	recentLimit: number = 5,
 ): Promise<SpotifyDisplayStats> {
 	return getCachedSpotifyStats(timeRange, artistLimit, genreLimit, recentLimit);
 }

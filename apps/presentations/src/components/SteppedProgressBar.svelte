@@ -29,7 +29,7 @@
 
 	onMount(() => {
 		// Use MutationObserver to watch for Reveal.js adding/removing 'visible' class on fragments
-		const observer = new MutationObserver((mutations) => {
+		const observer = new MutationObserver(() => {
 			// Count how many fragments currently have the 'visible' class
 			const visibleFragments = fragmentContainer.querySelectorAll('.fragment.visible');
 			currentStep = visibleFragments.length;
@@ -72,7 +72,7 @@
 			></div>
 		</div>
 		<div class="stepped-progress__markers">
-			{#each steps as step, index}
+			{#each steps as _step, index (index)}
 				<div
 					class={classnames('stepped-progress__marker', {
 						'stepped-progress__marker--active': index < currentStep,
@@ -86,7 +86,7 @@
 
 	<!-- Hidden fragments for Reveal.js to track -->
 	<div class="stepped-progress__fragments" bind:this={fragmentContainer}>
-		{#each steps as step, index}
+		{#each steps as _step, index (index)}
 			<span
 				class="fragment stepped-progress__fragment"
 				data-fragment-index={fragmentStartIndex + index}
@@ -96,7 +96,7 @@
 
 	<!-- Step content -->
 	<div class="stepped-progress__content">
-		{#each steps as step, index}
+		{#each steps as step, index (index)}
 			<div
 				class={classnames('stepped-progress__step', {
 					'stepped-progress__step--active': index === currentStep - 1,

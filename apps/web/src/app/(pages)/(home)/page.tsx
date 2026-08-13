@@ -26,9 +26,7 @@ export default async function Home() {
 	return (
 		<BentoBox>
 			<HomeIntroduction />
-			{events.length > 0 ?
-				(<HomeEvents events={events} />) : null
-			}
+			{events.length > 0 ? <HomeEvents events={events} /> : null}
 			<HomePortfolio />
 			<HomeMusic />
 			<HomeContact />

@@ -35,9 +35,7 @@ export default async function MusicProject({ params }) {
 
 	const { title, moduleContent, musicians, pressKit } = page;
 
-	const pressKitUrl = pressKit
-		? getSanityFileUrl(pressKit.file.asset._ref)
-		: null;
+	const pressKitUrl = pressKit ? getSanityFileUrl(pressKit.file.asset._ref) : null;
 
 	return (
 		<>
@@ -59,10 +57,7 @@ export default async function MusicProject({ params }) {
 				</section>
 			)}
 			{pressKit && (
-				<CenteredWrapper
-					semanticElement="div"
-					collapseY
-				>
+				<CenteredWrapper semanticElement="div" collapseY>
 					<Button
 						// @ts-ignore
 						href={pressKitUrl.url}

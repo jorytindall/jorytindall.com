@@ -1,9 +1,6 @@
 import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
-import {
-	GET_PORTFOLIO_PROJECTS,
-	GET_PORTFOLIO_PROJECT_PATHS,
-} from 'lib/queries';
+import { GET_PORTFOLIO_PROJECTS, GET_PORTFOLIO_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
 import { PortfolioTitle } from 'components/portfolio/PortfolioTitle';
 import { ProjectChapters } from 'components/portfolio/ProjectChapters';
@@ -74,7 +71,7 @@ export default async function PortfolioProject({ params }) {
 
 	return (
 		<>
-			{title &&
+			{title && (
 				<PortfolioTitle
 					title={title}
 					overview={overview}
@@ -87,7 +84,7 @@ export default async function PortfolioProject({ params }) {
 					parentProject={parentProject}
 					image={featuredImage}
 				/>
-			}
+			)}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 			{chapters?.length > 0 && <ProjectChapters chapters={chapters} />}
 		</>

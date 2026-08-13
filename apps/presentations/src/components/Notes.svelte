@@ -1,1 +1,1 @@
-<aside class="notes"><slot/></aside> 
+<aside class="notes"><slot /></aside>

@@ -28,22 +28,22 @@
 		<p>Here are some resources to help you on your journey:</p>
 		<ul>
 			<li>
-				The best resource is an engineer willing to pair with you and answer questions. Don't
-				be afraid to ask for help — most engineers love explaining how things work.
+				The best resource is an engineer willing to pair with you and answer questions.
+				Don't be afraid to ask for help — most engineers love explaining how things work.
 			</li>
 			<li>
-				AI tools like Claude and Cursor make excellent pair programmers — they can
-				explain code line-by-line, teach you new patterns, and help you understand
-				not just what works but why it works. Use them as patient educators who never
-				tire of your questions, not just code generators.
+				AI tools like Claude and Cursor make excellent pair programmers — they can explain
+				code line-by-line, teach you new patterns, and help you understand not just what
+				works but why it works. Use them as patient educators who never tire of your
+				questions, not just code generators.
 			</li>
 			<li>
 				MDN Web Docs is the definitive reference for HTML, CSS, and JavaScript fundamentals.
 				Bookmark it and use it often.
 			</li>
 			<li>
-				But honestly, the most important resource is your own curiosity — start poking around,
-				break things, and learn from the experience.
+				But honestly, the most important resource is your own curiosity — start poking
+				around, break things, and learn from the experience.
 			</li>
 		</ul>
 	</Notes>

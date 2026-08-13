@@ -23,19 +23,13 @@ export default async function TalksPage() {
 
 	const renderTalks = talks.map((talk) => {
 		return (
-			<ListItem
-				key={talk._id}
-				title={talk.title}
-				link={linkResolver('speaking', talk.slug)}
-			>
+			<ListItem key={talk._id} title={talk.title} link={linkResolver('speaking', talk.slug)}>
 				<Paragraph type="primary" collapse>
 					{talk.description}
 				</Paragraph>
 				<Paragraph type="secondary" collapse>
 					Given at <strong>{talk.conference}</strong> on{' '}
-					<strong>
-						{formatLongDate(talk.date)}
-					</strong>
+					<strong>{formatLongDate(talk.date)}</strong>
 				</Paragraph>
 			</ListItem>
 		);
@@ -44,9 +38,7 @@ export default async function TalksPage() {
 	return (
 		<>
 			<PageTitle title="🎙️ Speaking" megaTitle="Conference talks" />
-			<CenteredWrapper semanticElement="section">
-				{renderTalks}
-			</CenteredWrapper>
+			<CenteredWrapper semanticElement="section">{renderTalks}</CenteredWrapper>
 		</>
 	);
 }

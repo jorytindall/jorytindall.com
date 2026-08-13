@@ -9,27 +9,18 @@ export async function POST(request: NextRequest) {
 		const { password } = await request.json();
 
 		if (!password) {
-			return NextResponse.json(
-				{ error: 'Password is required' },
-				{ status: 400 }
-			);
+			return NextResponse.json({ error: 'Password is required' }, { status: 400 });
 		}
 
 		const correctPassword = process.env.PORTFOLIO_ACCESS_PASSWORD;
 
 		if (!correctPassword) {
 			console.error('PORTFOLIO_ACCESS_PASSWORD environment variable is not set');
-			return NextResponse.json(
-				{ error: 'Server configuration error' },
-				{ status: 500 }
-			);
+			return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
 		}
 
 		if (password !== correctPassword) {
-			return NextResponse.json(
-				{ error: 'Invalid password' },
-				{ status: 401 }
-			);
+			return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
 		}
 
 		// Create a simple token (in production, consider using a signed JWT)
@@ -47,10 +38,7 @@ export async function POST(request: NextRequest) {
 		return NextResponse.json({ success: true });
 	} catch (error) {
 		console.error('Portfolio auth error:', error);
-		return NextResponse.json(
-			{ error: 'An error occurred' },
-			{ status: 500 }
-		);
+		return NextResponse.json({ error: 'An error occurred' }, { status: 500 });
 	}
 }
 

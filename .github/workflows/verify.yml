@@ -1,0 +1,35 @@
+name: Verify
+
+on:
+    push:
+        branches:
+            - main
+    pull_request: {}
+
+jobs:
+    verify:
+        name: lint + typecheck
+        timeout-minutes: 15
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            # No version pin — action-setup reads `packageManager` from package.json,
+            # so CI and local development cannot drift apart.
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+
+            - name: Set up Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+                  cache: pnpm
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            # Deliberately needs no secrets: `verify` is lint + typecheck only, so it
+            # runs on forks and never blocks on a missing Sanity token.
+            - name: Verify
+              run: pnpm verify

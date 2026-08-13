@@ -77,7 +77,11 @@ export const PersonalStats = ({ input, overlay = true }: PersonalStatsProps) => 
 			initial="hidden"
 			animate={overlay ? 'enter' : 'hidden'}
 		>
-			{title && <Headline color="primary" tag="h3">{title}</Headline>}
+			{title && (
+				<Headline color="primary" tag="h3">
+					{title}
+				</Headline>
+			)}
 			{statSources.map((source) => (
 				<motion.div key={source._key} variants={itemVariants}>
 					{renderStatSource(source)}

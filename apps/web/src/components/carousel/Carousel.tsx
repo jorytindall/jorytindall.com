@@ -31,35 +31,32 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 				emblaApi.off('reInit', callback);
 			};
 		},
-		[emblaApi]
+		[emblaApi],
 	);
 
 	const canScrollPrev = useSyncExternalStore(
 		subscribe,
 		() => emblaApi?.canScrollPrev() ?? false,
-		() => false
+		() => false,
 	);
 	const canScrollNext = useSyncExternalStore(
 		subscribe,
 		() => emblaApi?.canScrollNext() ?? false,
-		() => false
+		() => false,
 	);
 	const selectedIndex = useSyncExternalStore(
 		subscribe,
 		() => emblaApi?.selectedScrollSnap() ?? 0,
-		() => 0
+		() => 0,
 	);
 
 	const hasMultipleSlides = children.length > 1;
 
-	const handleControlClick = useCallback(
-		(e: React.MouseEvent, action: () => void) => {
-			e.preventDefault();
-			e.stopPropagation();
-			action();
-		},
-		[]
-	);
+	const handleControlClick = useCallback((e: React.MouseEvent, action: () => void) => {
+		e.preventDefault();
+		e.stopPropagation();
+		action();
+	}, []);
 
 	const scrollPrev = useCallback(() => {
 		emblaApi?.scrollPrev();
@@ -73,7 +70,7 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 		(index: number) => {
 			emblaApi?.scrollTo(index);
 		},
-		[emblaApi]
+		[emblaApi],
 	);
 
 	const wrapperClasses = getClasses([styles.wrapper, className ?? null]);
@@ -109,13 +106,7 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 				aria-label="Previous slide"
 				type="button"
 			>
-				<svg
-					width="20"
-					height="20"
-					viewBox="0 0 20 20"
-					fill="none"
-					aria-hidden="true"
-				>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
 					<path
 						d="M12.5 15L7.5 10L12.5 5"
 						stroke="currentColor"
@@ -137,13 +128,7 @@ export const Carousel = ({ children, options, className }: CarouselProps) => {
 				aria-label="Next slide"
 				type="button"
 			>
-				<svg
-					width="20"
-					height="20"
-					viewBox="0 0 20 20"
-					fill="none"
-					aria-hidden="true"
-				>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
 					<path
 						d="M7.5 15L12.5 10L7.5 5"
 						stroke="currentColor"

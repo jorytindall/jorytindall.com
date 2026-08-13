@@ -45,9 +45,7 @@ export default async function Page({ params }) {
 			{page.megaHeadline !== null ? (
 				<PageTitle title={page.title} megaTitle={page.megaHeadline} />
 			) : null}
-			{megaHeadline === null ? (
-				<Headline tag="h1">{title}</Headline>
-			) : null}
+			{megaHeadline === null ? <Headline tag="h1">{title}</Headline> : null}
 			{moduleContent && <ModuleRenderer modules={moduleContent} />}
 		</>
 	);

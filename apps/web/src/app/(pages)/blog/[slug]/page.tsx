@@ -30,11 +30,7 @@ export default async function BlogPost({ params }) {
 
 	return (
 		<>
-			<BlogTitle
-				featuredImage={featuredImage}
-				title={title}
-				categories={categories}
-			/>
+			<BlogTitle featuredImage={featuredImage} title={title} categories={categories} />
 			{content && (
 				<GridWrapper>
 					<RichTextWrapper>

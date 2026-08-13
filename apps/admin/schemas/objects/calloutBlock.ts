@@ -1,6 +1,7 @@
 import { BiDetail } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `calloutBlock`,
 	title: `Callout Block`,
 	type: `object`,
@@ -35,4 +36,4 @@ export default {
 			],
 		},
 	],
-};
+});

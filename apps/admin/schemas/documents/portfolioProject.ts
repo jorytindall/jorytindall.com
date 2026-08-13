@@ -1,6 +1,7 @@
 import { BiPaint } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `portfolioProject`,
 	title: `Portfolio Project`,
 	type: `document`,
@@ -175,4 +176,4 @@ export default {
 			media: `featuredImage`,
 		},
 	},
-};
+});

@@ -20,9 +20,7 @@ function getSecret(): string {
 }
 
 function sign(payload: string): string {
-	const signature = createHmac('sha256', getSecret())
-		.update(payload)
-		.digest('base64url');
+	const signature = createHmac('sha256', getSecret()).update(payload).digest('base64url');
 	return `${payload}.${signature}`;
 }
 
@@ -33,9 +31,7 @@ function verify(signed: string): string | null {
 	const payload = signed.slice(0, lastDot);
 	const signature = signed.slice(lastDot + 1);
 
-	const expected = createHmac('sha256', getSecret())
-		.update(payload)
-		.digest('base64url');
+	const expected = createHmac('sha256', getSecret()).update(payload).digest('base64url');
 
 	const sigBuffer = Buffer.from(signature, 'base64url');
 	const expectedBuffer = Buffer.from(expected, 'base64url');

@@ -1,6 +1,7 @@
 import { BiText, BiLinkExternal, BiLink } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: `richText`,
 	title: `Rich Text`,
 	type: `object`,
@@ -78,7 +79,7 @@ export default {
 				{ type: 'fileDownload' },
 				{ type: `playlist` },
 				{ type: `video` },
-				{ type: `calloutBlock` }
+				{ type: `calloutBlock` },
 			],
 		},
 	],
@@ -88,4 +89,4 @@ export default {
 			subtitle: `alignment`,
 		},
 	},
-};
+});

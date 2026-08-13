@@ -10,16 +10,16 @@ interface BentoItemImage {
 }
 
 interface BentoItemProps {
-	children: React.ReactNode
-	background?: 'primary' | 'secondary' | 'tertiary' | 'light' | 'dark'
-	className?: string
-	size: 'small' | 'medium' | 'large' | 'x-large' | 'full'
-	padding: 'none' | 'small' | 'medium' | 'large' | 'x-large'
-	gap?: 'none' | 'small' | 'medium' | 'large' | 'x-large'
-	isJustified?: boolean
-	isInteractive?: boolean
-	href?: any
-	image?: any
+	children: React.ReactNode;
+	background?: 'primary' | 'secondary' | 'tertiary' | 'light' | 'dark';
+	className?: string;
+	size: 'small' | 'medium' | 'large' | 'x-large' | 'full';
+	padding: 'none' | 'small' | 'medium' | 'large' | 'x-large';
+	gap?: 'none' | 'small' | 'medium' | 'large' | 'x-large';
+	isJustified?: boolean;
+	isInteractive?: boolean;
+	href?: any;
+	image?: any;
 	images?: BentoItemImage[];
 	imagePosition?: 'top' | 'bottom';
 	altText?: string;
@@ -80,7 +80,7 @@ export const BentoItem = ({
 		paddingMap[padding],
 		gap ? gapMap[gap] : null,
 		isJustified ? styles.isJustified : null,
-	])
+	]);
 
 	const renderImage = () => {
 		return (
@@ -91,8 +91,8 @@ export const BentoItem = ({
 				fill
 				sizes={imageSizes}
 			/>
-		)
-	}
+		);
+	};
 
 	const renderMedia = () => {
 		if (images && images.length > 0) {
@@ -114,15 +114,11 @@ export const BentoItem = ({
 		}
 
 		if (image) {
-			return (
-				<div className={styles.imageWrapper}>
-					{renderImage()}
-				</div>
-			);
+			return <div className={styles.imageWrapper}>{renderImage()}</div>;
 		}
 
 		return null;
-	}
+	};
 
 	const mediaTop = imagePosition === 'top' ? renderMedia() : null;
 	const mediaBottom = imagePosition === 'bottom' ? renderMedia() : null;
@@ -131,24 +127,17 @@ export const BentoItem = ({
 		return (
 			<article className={outerClasses}>
 				{mediaTop}
-				<div className={innerClasses}>
-					{children}
-				</div>
+				<div className={innerClasses}>{children}</div>
 				{mediaBottom}
 			</article>
-		)
+		);
 	} else {
 		return (
-			<Link
-				href={href}
-				className={outerClasses}
-			>
+			<Link href={href} className={outerClasses}>
 				{mediaTop}
-				<div className={innerClasses}>
-					{children}
-				</div>
+				<div className={innerClasses}>{children}</div>
 				{mediaBottom}
 			</Link>
-		)
+		);
 	}
 };

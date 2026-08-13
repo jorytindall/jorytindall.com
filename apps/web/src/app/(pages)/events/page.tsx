@@ -29,23 +29,18 @@ export default async function Events() {
 	const filterEvents =
 		currentEvents.length > 0 ? (
 			currentEvents.map((event) => {
-
 				const { title, location, slug, _id } = event;
 
 				const eventLink = linkResolver('event', slug);
 				const eventDate = formatEventSchedule(event);
 
 				return (
-					<ListItem
-						title={title}
-						link={eventLink}
-						key={_id}
-					>
-						<Paragraph type="primary" color='secondary' collapse>
+					<ListItem title={title} link={eventLink} key={_id}>
+						<Paragraph type="primary" color="secondary" collapse>
 							<strong>Location: </strong>
 							{location}
 						</Paragraph>
-						<Paragraph type="primary" color='secondary' collapse>
+						<Paragraph type="primary" color="secondary" collapse>
 							<strong>Date: </strong>
 							{eventDate}
 						</Paragraph>
@@ -53,7 +48,9 @@ export default async function Events() {
 				);
 			})
 		) : (
-			<Paragraph color='secondary' collapse>No upcoming events, check back soon!</Paragraph>
+			<Paragraph color="secondary" collapse>
+				No upcoming events, check back soon!
+			</Paragraph>
 		);
 
 	return (
@@ -61,11 +58,14 @@ export default async function Events() {
 			<PageTitle title="🗓 Events" megaTitle="Upcoming Events" />
 			<CenteredWrapper semanticElement="section">
 				{filterEvents}
-				<Container
-					semanticElement="section"
-				>
-					<Headline tag='h3' collapse>Want to stay in the loop?</Headline>
-					<Paragraph collapse>No spam, just 🔥 content about upcoming shows and releases. Subscribe to my newsletter for all of the deets.</Paragraph>
+				<Container semanticElement="section">
+					<Headline tag="h3" collapse>
+						Want to stay in the loop?
+					</Headline>
+					<Paragraph collapse>
+						No spam, just 🔥 content about upcoming shows and releases. Subscribe to my
+						newsletter for all of the deets.
+					</Paragraph>
 					<NewsletterSubscriptionForm />
 				</Container>
 			</CenteredWrapper>

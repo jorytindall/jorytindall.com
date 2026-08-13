@@ -1,6 +1,7 @@
 import { BiStats } from 'react-icons/bi';
+import { defineType } from 'sanity';
 
-export default {
+export default defineType({
 	name: 'personalStats',
 	title: 'Personal Stats',
 	type: 'object',
@@ -21,4 +22,4 @@ export default {
 			of: [{ type: 'stravaStats' }, { type: 'spotifyStats' }],
 		},
 	],
-};
+});

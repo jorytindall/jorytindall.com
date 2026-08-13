@@ -1,46 +1,42 @@
-'use client'
+'use client';
 
-import * as TabsPrimitive from '@radix-ui/react-tabs'
-import classnames from 'classnames'
-import s from './Tabs.module.css'
+import * as TabsPrimitive from '@radix-ui/react-tabs';
+import classnames from 'classnames';
+import s from './Tabs.module.css';
 
-import { TabsProps } from './types'
+import { TabsProps } from './types';
 
 const Tabs = ({
-  children,
-  defaultValue,
-  value,
-  onValueChange,
-  orientation = 'horizontal',
-  dir = 'ltr',
-  activationMode = 'automatic',
-  className,
+	children,
+	defaultValue,
+	value,
+	onValueChange,
+	orientation = 'horizontal',
+	dir = 'ltr',
+	activationMode = 'automatic',
+	className,
 }: TabsProps) => {
+	const classes = classnames([s[`tabs--root`], className]);
 
-  const classes = classnames([
-    s[`tabs--root`],
-    className,
-  ])
+	return (
+		<TabsPrimitive.Root
+			defaultValue={defaultValue}
+			value={value}
+			onValueChange={onValueChange}
+			orientation={orientation}
+			dir={dir}
+			activationMode={activationMode}
+			className={classes}
+		>
+			{children}
+		</TabsPrimitive.Root>
+	);
+};
 
-  return  (
-    <TabsPrimitive.Root
-      defaultValue={defaultValue}
-      value={value}
-      onValueChange={onValueChange}
-      orientation={orientation}
-      dir={dir}
-      activationMode={activationMode}
-      className={classes}
-    >
-      {children}
-    </TabsPrimitive.Root>
-  )
-}
+Tabs.displayName = 'Tabs';
 
-Tabs.displayName = 'Tabs'
+const Root = Tabs;
 
-const Root = Tabs
+export { Root, Tabs };
 
-export { Root, Tabs }
-
-export type { TabsProps }
+export type { TabsProps };

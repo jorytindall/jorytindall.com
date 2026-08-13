@@ -27,5 +27,4 @@ export const previewClient = createClient({
 });
 
 // Helper to get the appropriate client
-export const getClient = (usePreview = false) =>
-	usePreview ? previewClient : sanityClient;
+export const getClient = (usePreview = false) => (usePreview ? previewClient : sanityClient);
