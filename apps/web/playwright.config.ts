@@ -62,6 +62,13 @@ export default defineConfig({
 	webServer: {
 		command: process.env.CI ? 'pnpm dev:ci' : 'infisical run -- pnpm dev',
 		url: 'http://127.0.0.1:3000',
-		reuseExistingServer: !process.env.CI,
+		// The contact form tests submit for real. Without this the suite delivers
+		// three live emails per run, one per browser.
+		env: { E2E_TEST_MODE: 'true' },
+		// Never reuse a server this config did not start. A `pnpm web:dev` already
+		// on :3000 would not have E2E_TEST_MODE set, and the suite would silently go
+		// back to sending real mail. Failing with "port already in use" is the safer
+		// outcome — stop the dev server and re-run.
+		reuseExistingServer: false,
 	},
 });

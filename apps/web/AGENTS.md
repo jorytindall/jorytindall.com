@@ -107,6 +107,16 @@ isn't without saying so.
   tests wrap the click in `expect(...).toPass()` for this reason. The primary-nav tests
   look immune only because they click the menu toggle first, which cannot work until
   hydration is done.
+- **The e2e suite submits the contact form for real.** `sendEmail` short-circuits when
+  `E2E_TEST_MODE=true`, which `playwright.config.ts` sets on the dev server it starts.
+  Without that guard every run delivered three live emails to `me@jorytindall.com`. For
+  the same reason `reuseExistingServer` is `false` — a `pnpm web:dev` already on :3000
+  would not have the flag set, and the suite would quietly start sending again. If a run
+  fails with "port already in use", stop your dev server rather than re-enabling reuse.
+- **Filling a form field via `page.evaluate` + `.value` does nothing here.** The forms are
+  react-hook-form, which tracks state from change events, so a raw DOM assignment leaves
+  the value empty as far as submission is concerned. Use `page.fill`. The honeypot test
+  did this and was vacuous for it — it would have passed with the honeypot deleted.
 - **The honeypot is not `display: none` on purpose** — bots skip fields that are. It is
   hidden off-screen at `left: -9999px` with `opacity: 0`, which Playwright still counts
   as _visible_ because the bounding box is non-empty. Do not "fix" a honeypot test by
