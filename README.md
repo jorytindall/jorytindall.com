@@ -26,13 +26,28 @@ pnpm dev            # every app at once, or use web:dev / admin:dev / pres:dev /
 Secrets live in [Infisical](https://infisical.com) and are injected at dev time, so you
 will need `infisical login` before `pnpm web:dev` or `pnpm media:dev` will work.
 
+A couple of others worth knowing:
+
+```bash
+pnpm tokens:build   # after changing a design token — `pnpm --filter` won't do this for you
+pnpm format:all     # prettier, whole repo. Safe to run anytime
+```
+
 Before pushing anything:
 
 ```bash
-pnpm verify         # lint + typecheck, every workspace
+pnpm verify         # format + lint + typecheck; needs no secrets
 ```
+
+There are no unit tests here — `pnpm test` exits 0 having run nothing. The real suite is
+`pnpm --filter web test:e2e`, two Playwright specs that need Infisical and a dev server.
 
 ## Working here
 
 If you are an AI coding agent — or a person who wants the same briefing — start with
-**[AGENTS.md](./AGENTS.md)**. Each workspace has its own `AGENTS.md` with local detail.
+**[AGENTS.md](./AGENTS.md)**. It is the canonical contract, and each workspace has its own
+with local detail.
+
+The Claude Code setup is committed too: **[`.claude/README.md`](./.claude/README.md)**
+covers the repo's skills — `/plan-feature`, `/new-sanity-type`, `/ship`, `/sync-notion` —
+and the permission model behind them.

@@ -3,6 +3,10 @@
 	"name": "jorytindall",
 	"description": "Monorepo for my personal website and projects",
 	"packageManager": "pnpm@10.13.1",
+	"engines": {
+		"node": ">=22",
+		"pnpm": ">=10"
+	},
 	"scripts": {
 		"web:dev": "turbo run dev --filter=web",
 		"web:build": "turbo run build --filter=web",
