@@ -14,18 +14,19 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
+            # No version pin — action-setup reads `packageManager` from package.json,
+            # so CI and local development cannot drift apart.
+            - name: Install pnpm
+              uses: pnpm/action-setup@v4
+
             - name: Set up Node
               uses: actions/setup-node@v4
               with:
-                  node-version: 20
-
-            - name: Install pnpm
-              uses: pnpm/action-setup@v2
-              with:
-                  version: 8
+                  node-version: 22
+                  cache: pnpm
 
             - name: Install dependencies
-              run: pnpm install
+              run: pnpm install --frozen-lockfile
 
             - name: Build application
               run: cd apps/web && pnpm build
