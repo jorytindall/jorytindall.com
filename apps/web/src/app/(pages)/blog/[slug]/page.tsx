@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
 import { BlogTitle } from 'components/blog';
@@ -10,6 +11,10 @@ export const revalidate = 60;
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
 	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
+
+	if (!post) {
+		return { title: '404: Not found' };
+	}
 
 	return {
 		title: `${post.title} | Jory Tindall`,
@@ -25,6 +30,11 @@ export async function generateStaticParams() {
 export default async function BlogPost({ params }) {
 	const { slug } = await params;
 	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
+
+	// An unresolvable slug would otherwise throw on destructuring below.
+	if (!post) {
+		notFound();
+	}
 
 	const { title, featuredImage, categories, content } = post;
 

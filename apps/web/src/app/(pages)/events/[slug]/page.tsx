@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { formatEventDateTime, formatEventSchedule } from 'utils/datetimeFormat';
 import { sanityClient } from 'lib/sanity/config';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
@@ -15,6 +16,10 @@ export async function generateMetadata({ params }) {
 	const client = sanityClient;
 	const events = await client.fetch(GET_EVENTS, { slug });
 
+	if (!events) {
+		return { title: '404: Not found' };
+	}
+
 	return {
 		title: `${events.title} | Jory Tindall`,
 	};
@@ -29,6 +34,11 @@ export async function generateStaticParams() {
 export default async function Event({ params }) {
 	const { slug } = await params;
 	const events = await sanityClient.fetch(GET_EVENTS, { slug });
+
+	// An unresolvable slug would otherwise throw on destructuring below.
+	if (!events) {
+		notFound();
+	}
 
 	const { title, eventFormat, performances, description, location, url } = events;
 
