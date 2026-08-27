@@ -25,8 +25,6 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 				return <FullWidthImage input={m} key={m._key} />;
 			case 'gallery':
 				return <Gallery input={m} key={m._key} />;
-			case 'hero':
-				return <p key={m._key}>Hero here</p>;
 			case 'portfolioList':
 				return <PortfolioList input={m} key={m._key} />;
 			case 'results':
@@ -67,7 +65,20 @@ export const ModuleRenderer = ({ modules }: ModuleRendererProps) => {
 					</GridItem>
 				);
 			default:
-				return console.error('Nothing came back for this module');
+				/*
+				 * A _type with no case here renders as nothing at all — no error,
+				 * no warning, just a missing section. That is how `mainImage`,
+				 * `form`, `brandLogoBlock` and `impactBlock` sat unrendered in the
+				 * Studio for months. Fail loudly in development so the next one is
+				 * caught immediately; in production, drop the single module rather
+				 * than take the whole page down with it.
+				 */
+				if (process.env.NODE_ENV !== 'production') {
+					throw new Error(
+						`ModuleRenderer: no case for module _type "${m._type}". Add one here, or remove the type from moduleContent in apps/admin.`,
+					);
+				}
+				return null;
 		}
 	});
 
