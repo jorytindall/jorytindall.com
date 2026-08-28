@@ -16,7 +16,7 @@ import type { Metadata } from 'next';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-	title: 'Events | Jory Tindall',
+	title: 'Events',
 	description: 'Upcoming events and live music',
 };
 

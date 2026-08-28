@@ -4,7 +4,7 @@ import { CenteredWrapper } from 'components/layout';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'Contact | Jory Tindall',
+	title: 'Contact',
 	description: 'Get in touch and say hello!',
 };
 

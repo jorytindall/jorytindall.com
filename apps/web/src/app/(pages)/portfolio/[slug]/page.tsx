@@ -19,11 +19,11 @@ export async function generateMetadata({ params }) {
 	});
 
 	if (!portfolioProject?.title) {
-		return { title: `Portfolio | Jory Tindall` };
+		return { title: 'Portfolio' };
 	}
 
 	return {
-		title: `${portfolioProject.title} | Jory Tindall`,
+		title: portfolioProject.title,
 	};
 }
 

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 	}
 
 	return {
-		title: `${post.title} | Jory Tindall`,
+		title: post.title,
 	};
 }
 
