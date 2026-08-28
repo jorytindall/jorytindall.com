@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from 'react-hot-toast';
 import { Providers } from './providers';
 import Fathom from 'lib/fathom';
@@ -51,7 +50,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					/>
 					<Toaster />
 					<Fathom />
-					<Analytics />
 				</Providers>
 			</body>
 		</html>
