@@ -3,8 +3,6 @@
 import { Resend } from 'resend';
 import ContactEmail from 'email/ContactEmail';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendEmail({ name, email, message }) {
 	// The e2e suite submits the contact form for real, so without this guard every
 	// run delivers live mail to the inbox — three per run, one per browser. Set only
@@ -15,6 +13,15 @@ export async function sendEmail({ name, email, message }) {
 		console.warn(`[E2E_TEST_MODE] suppressed contact email from ${email}`);
 		return;
 	}
+
+	/*
+	 * Constructed here rather than at module scope. `new Resend()` throws
+	 * "Missing API key" when RESEND_API_KEY is unset, and at module scope that
+	 * took the whole module down as it was imported — before the guard above
+	 * could run. CI has no Infisical and is passed only the Sanity secrets, so
+	 * every honeypot-empty submission failed there while passing locally.
+	 */
+	const resend = new Resend(process.env.RESEND_API_KEY);
 
 	try {
 		const { data } = await resend.emails.send({
