@@ -5,6 +5,15 @@ on:
         branches:
             - main
     pull_request: {}
+    # Lets a verification run be triggered without pushing a commit. This workflow
+    # was disabled for months; being able to prove it green on demand is the point.
+    workflow_dispatch: {}
+
+# A superseded run tells you nothing, and this job is long. Cancel in-flight runs
+# for the same ref rather than paying for both.
+concurrency:
+    group: ci-web-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
     test:
@@ -28,6 +37,15 @@ jobs:
             - name: Install dependencies
               run: pnpm install --frozen-lockfile
 
+            # Deliberately NOT `pnpm web:build`. Turbo runs in strict env mode, and
+            # only the `NEXT_PUBLIC_*` vars reach the task automatically via Next.js
+            # framework inference — `SANITY_API_TOKEN` would be stripped. Driving
+            # `next build` directly is what keeps the secrets below meaningful.
+            # If you do move this onto Turbo, declare all three under `env` for the
+            # `build` task in turbo.json first, or the build loses its token.
+            #
+            # Bypassing Turbo is safe here for `tokens`: packages/tokens/dist is
+            # committed, so the CSS `main.css` imports exists in a fresh clone.
             - name: Build application
               run: cd apps/web && pnpm build
               env:
@@ -35,12 +53,19 @@ jobs:
                   NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
                   SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
 
-            - name: Install Playwright and browsers
+            # `@playwright/test` is already a devDependency and was installed above.
+            # This step used to run `pnpm install @playwright/test`, which is an alias
+            # for `pnpm add` — it rewrote pnpm-lock.yaml immediately after
+            # `--frozen-lockfile`, making the run non-deterministic. Only the browser
+            # binaries are needed here.
+            - name: Install Playwright browsers
               working-directory: apps/web
-              run: |
-                  pnpm install @playwright/test
-                  pnpm exec playwright install --with-deps
+              run: pnpm exec playwright install --with-deps
 
+            # playwright.config.ts starts the dev server itself: `pnpm dev:ci` when CI
+            # is set, so it never reaches for `infisical`, which is not on the runner.
+            # It also sets E2E_TEST_MODE on that server, which is what stops the
+            # contact-form specs delivering real email.
             - name: Run Playwright tests
               working-directory: apps/web
               run: pnpm exec playwright test

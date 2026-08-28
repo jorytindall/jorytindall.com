@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
@@ -18,6 +19,10 @@ export async function generateMetadata({ params }) {
 		slug,
 	});
 
+	if (!page) {
+		return { title: '404: Not found' };
+	}
+
 	return {
 		title: `${page.title} | Jory Tindall`,
 	};
@@ -32,6 +37,11 @@ export async function generateStaticParams() {
 export default async function MusicProject({ params }) {
 	const { slug } = await params;
 	const page = await sanityClient.fetch(GET_MUSIC_PROJECTS, { slug });
+
+	// An unresolvable slug would otherwise throw on destructuring below.
+	if (!page) {
+		notFound();
+	}
 
 	const { title, moduleContent, musicians, pressKit } = page;
 

@@ -1,0 +1,20 @@
+.figure {
+	margin: 1.5rem 0;
+}
+
+.image {
+	width: 100%;
+	height: auto;
+}
+
+/*
+ * No border-radius here on purpose: packages/tokens ships no radius scale yet,
+ * and inlining one would be the hardcoded value AGENTS.md rules out.
+ */
+.caption {
+	margin-top: 0.5rem;
+	color: var(--color-semantic-foreground-primary);
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-body-secondary);
+	line-height: var(--typography-line-height-body);
+}

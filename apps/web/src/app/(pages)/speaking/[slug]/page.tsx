@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { formatLongDate } from 'utils/datetimeFormat';
 import { sanityClient } from 'lib/sanity/config';
@@ -19,6 +20,10 @@ export async function generateMetadata({ params }) {
 		slug,
 	});
 
+	if (!talk) {
+		return { title: '404: Not found' };
+	}
+
 	return {
 		title: `${talk.title} | Jory Tindall`,
 	};
@@ -33,6 +38,11 @@ export async function generateStaticParams() {
 export default async function Talk({ params }) {
 	const { slug } = await params;
 	const talk = await sanityClient.fetch(GET_TALKS, { slug });
+
+	// An unresolvable slug would otherwise throw on destructuring below.
+	if (!talk) {
+		notFound();
+	}
 
 	const { title, conference, conferenceLink, date, link, deck, moduleContent, image } = talk;
 

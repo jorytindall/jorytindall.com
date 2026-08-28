@@ -75,7 +75,6 @@ export default defineType({
 				},
 				{ type: `codeBlock` },
 				{ type: `mainImage` },
-				{ type: `figmaEmbed` },
 				{ type: 'fileDownload' },
 				{ type: `playlist` },
 				{ type: `video` },

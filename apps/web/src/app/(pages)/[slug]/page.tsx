@@ -17,6 +17,10 @@ export async function generateMetadata({ params }) {
 		slug,
 	});
 
+	if (!page) {
+		return { title: '404: Not found' };
+	}
+
 	return {
 		title: `${page.title} | Jory Tindall`,
 	};
@@ -34,11 +38,12 @@ export default async function Page({ params }) {
 	const { slug } = await params;
 	const page = await sanityClient.fetch(GET_PAGES, { slug });
 
-	const { title, megaHeadline, moduleContent } = page;
-
+	// An unresolvable slug would otherwise throw on destructuring below.
 	if (!page) {
-		return notFound();
+		notFound();
 	}
+
+	const { title, megaHeadline, moduleContent } = page;
 
 	return (
 		<>

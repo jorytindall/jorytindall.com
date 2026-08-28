@@ -6,6 +6,7 @@ import { Video } from 'components/video';
 import { DownloadButton } from 'components/button';
 import { Callout } from 'components/callout';
 import { RichText } from './RichText';
+import { RichTextImage } from './RichTextImage';
 
 import s from './RichText.module.css';
 
@@ -62,7 +63,7 @@ export const Components = {
 				description={value.description}
 			/>
 		),
-		mainImage: ({ value }: TypeProps) => <p>This is an image</p>,
+		mainImage: ({ value }: TypeProps) => <RichTextImage value={value} />,
 		playlist: ({ value }: TypeProps) => <Playlist tracks={value.tracks} />,
 		video: ({ value }: TypeProps) => (
 			<Video title={value.title} source={value.source} youTubeId={value.youTubeId} />
