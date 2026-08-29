@@ -12,7 +12,7 @@ import { Paragraph } from 'components/typography';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-	title: 'Blog | Jory Tindall',
+	title: 'Blog',
 	description: 'Recent blog posts and writings',
 };
 

@@ -21,7 +21,8 @@ src/
     (pages)/          all routes — (home), [slug], blog, events, music, portfolio,
                       speaking, contact
     api/auth/portfolio/route.ts
-    layout.tsx  providers.tsx  template.tsx  not-found.tsx  robots.ts
+    layout.tsx  providers.tsx  template.tsx  robots.ts
+    not-found.tsx  error.tsx  global-error.tsx
   actions/            server actions — contact email, newsletter, Spotify, Strava
   components/         34 folder-per-component directories
   lib/
@@ -124,3 +125,13 @@ isn't without saying so.
 - **`public/sitemap*.xml` is generated and untracked.** `next-sitemap` writes it in
   `postbuild` (enabled by `enable-pre-post-scripts=true` in `.npmrc`), and Railway
   regenerates it on every deploy. It used to be committed and went stale by eight months.
+- **`next-sitemap` does the sitemap and nothing else — `app/robots.ts` owns robots.txt.**
+  Do not enable next-sitemap's `generateRobotsTxt`. It writes a static
+  `public/robots.txt`, and a static file wins over the App Router route, so turning it on
+  silently replaces the working robots.txt with one that has no sitemap pointer.
+- **Page titles come from the root `title.template` in `app/layout.tsx`.** A route sets
+  only its own name — `title: 'Blog'` renders as `Blog | Jory Tindall`. Do not re-add the
+  suffix by hand; use `title: { absolute: '...' }` to opt out of it. The root
+  `openGraph`/`twitter` blocks deliberately set no `title` or `description`, because Next
+  fills those per route from the resolved page values — setting them at the root pins
+  every page's og:title to the homepage's.

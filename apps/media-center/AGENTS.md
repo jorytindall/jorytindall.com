@@ -40,9 +40,14 @@ Plex forwards back to `/auth/callback` → `checkPin()` exchanges for a token �
 cookie is set.
 
 Sessions are an HMAC-SHA256-signed cookie (`plex_session`), verified with
-`timingSafeEqual`, 7-day max age. **`SESSION_SECRET` must be at least 32 characters** or
-`getSecret()` throws at request time, not at boot — a short secret looks fine until the
-first page load.
+`timingSafeEqual`. **`SESSION_SECRET` must be at least 32 characters** or `getSecret()`
+throws at request time, not at boot — a short secret looks fine until the first page
+load.
+
+The 7-day expiry is signed _into_ the payload as `exp` and checked in `getSession()`.
+The cookie's `maxAge` alone is only a client-side hint, which a copied cookie value
+ignores. A payload without an `exp` is rejected outright, so changing this shape logs
+everyone out — that is the intended trade.
 
 ## Environment
 
@@ -66,8 +71,11 @@ not compile.
   the pnpm store rather than from this workspace, which is why `typescript` is also a
   root devDependency. Removing it from the root breaks `pnpm typecheck` here with a
   confusing interactive "Astro requires typescript" prompt.
-- `security.checkOrigin` is **off** in `astro.config.mjs`. That disables Astro's built-in
-  CSRF origin check on form posts. It is presumably there for the Plex callback; be
-  deliberate about anything that adds a new form.
+- `security.checkOrigin` is **on** (Astro's default), and it only stays working because
+  `security.allowedDomains` in `astro.config.mjs` lists the production hosts. Astro
+  rebuilds the request URL from `Host` + `X-Forwarded-Proto`, and only trusts those
+  headers for hosts on that list — drop the list and `Astro.url.origin` becomes
+  `https://localhost`, which 403s the `/login` form POST in production. **A new domain
+  has to be added there**, or logging in from it breaks.
 - `tsconfig.json` extends `astro/tsconfigs/strict` — this workspace is genuinely strict,
   unlike `web` and `admin`.

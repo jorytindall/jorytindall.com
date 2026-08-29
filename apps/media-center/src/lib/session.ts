@@ -11,6 +11,16 @@ export interface SessionData {
 	plexToken: string;
 }
 
+/**
+ * What actually gets signed. The cookie's `maxAge` is a client-side hint that a copied
+ * cookie value ignores, so the expiry has to live inside the signed payload and be
+ * checked on read.
+ */
+interface SignedSession extends SessionData {
+	/** Unix seconds. */
+	exp: number;
+}
+
 function getSecret(): string {
 	const secret = import.meta.env.SESSION_SECRET;
 	if (!secret || secret.length < 32) {
@@ -43,7 +53,11 @@ function verify(signed: string): string | null {
 }
 
 export function createSession(data: SessionData, cookies: AstroCookies): void {
-	const payload = Buffer.from(JSON.stringify(data)).toString('base64url');
+	const session: SignedSession = {
+		...data,
+		exp: Math.floor(Date.now() / 1000) + MAX_AGE,
+	};
+	const payload = Buffer.from(JSON.stringify(session)).toString('base64url');
 	const signed = sign(payload);
 
 	cookies.set(COOKIE_NAME, signed, {
@@ -62,11 +76,19 @@ export function getSession(cookies: AstroCookies): SessionData | null {
 	const payload = verify(cookie.value);
 	if (!payload) return null;
 
+	let session: SignedSession;
 	try {
-		return JSON.parse(Buffer.from(payload, 'base64url').toString('utf-8'));
+		session = JSON.parse(Buffer.from(payload, 'base64url').toString('utf-8'));
 	} catch {
 		return null;
 	}
+
+	// A pre-expiry cookie has no `exp` and cannot be trusted, so it is rejected too —
+	// anyone holding one signs in again.
+	if (typeof session.exp !== 'number' || session.exp * 1000 <= Date.now()) return null;
+
+	const { exp: _exp, ...data } = session;
+	return data;
 }
 
 export function clearSession(cookies: AstroCookies): void {

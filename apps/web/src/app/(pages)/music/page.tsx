@@ -13,7 +13,7 @@ import type { Metadata } from 'next';
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-	title: 'Music | Jory Tindall',
+	title: 'Music',
 	description: 'Music projects, ensembles, and current working groups.',
 };
 

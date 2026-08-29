@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
 	}
 
 	return {
-		title: `${talk.title} | Jory Tindall`,
+		title: talk.title,
 	};
 }
 

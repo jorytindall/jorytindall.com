@@ -23,7 +23,6 @@
 		"@radix-ui/react-tabs": "^1.1.13",
 		"@sanity/asset-utils": "^2.3.0",
 		"@sanity/image-url": "^2.1.1",
-		"@vercel/analytics": "^2.0.1",
 		"classnames": "^2.5.1",
 		"date-fns": "^4.1.0",
 		"date-fns-tz": "^3.2.0",
