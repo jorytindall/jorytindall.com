@@ -1,4 +1,5 @@
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_ALL_BLOG_POSTS } from 'lib/queries';
 import { linkResolver } from 'utils/linkResolver';
 import { ListItem } from 'components/list';
@@ -23,8 +24,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Blog() {
-	const client = sanityClient;
-	const blogPosts = await client.fetch(GET_ALL_BLOG_POSTS);
+	const blogPosts = await sanityFetch(GET_ALL_BLOG_POSTS);
 
 	const posts = blogPosts.map((post) => {
 		return (

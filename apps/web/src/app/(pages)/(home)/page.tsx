@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_HOMEPAGE_DATA } from 'lib/queries';
 import { BentoBox } from 'components/bento';
 
@@ -17,7 +17,7 @@ import HomeContact from './HomeContact';
 export const revalidate = 60;
 
 export default async function Home() {
-	const events = await sanityClient.fetch(GET_HOMEPAGE_DATA);
+	const events = await sanityFetch(GET_HOMEPAGE_DATA);
 
 	return (
 		<BentoBox>

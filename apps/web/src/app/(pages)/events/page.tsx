@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_ALL_EVENTS } from 'lib/queries';
 import { getCurrentEvents } from 'utils/getCurrentEvents';
 import { formatEventSchedule } from 'utils/datetimeFormat';
@@ -21,8 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Events() {
-	const client = sanityClient;
-	const events = await client.fetch(GET_ALL_EVENTS);
+	const events = await sanityFetch(GET_ALL_EVENTS);
 
 	const currentEvents = getCurrentEvents(events);
 

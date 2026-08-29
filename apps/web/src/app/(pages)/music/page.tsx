@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_ALL_MUSIC_PROJECTS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
 import { linkResolver } from 'utils/linkResolver';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MusicPage() {
-	const musicProjects = await sanityClient.fetch(GET_ALL_MUSIC_PROJECTS);
+	const musicProjects = await sanityFetch(GET_ALL_MUSIC_PROJECTS);
 
 	const musicItems = musicProjects.map((musicProject) => {
 		const { title, slug, description } = musicProject;

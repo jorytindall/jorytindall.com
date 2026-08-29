@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_PAGES, GET_PAGE_PATHS } from 'lib/queries';
 
 import { PageTitle } from 'components/page-title';
@@ -12,10 +13,7 @@ export const revalidate = 60;
 // Generate metadata
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const client = sanityClient;
-	const page = await client.fetch(GET_PAGES, {
-		slug,
-	});
+	const page = await sanityFetch(GET_PAGES, { slug }, { stega: false });
 
 	if (!page) {
 		return { title: '404: Not found' };
@@ -36,7 +34,7 @@ export async function generateStaticParams() {
 // Generate page
 export default async function Page({ params }) {
 	const { slug } = await params;
-	const page = await sanityClient.fetch(GET_PAGES, { slug });
+	const page = await sanityFetch(GET_PAGES, { slug });
 
 	// An unresolvable slug would otherwise throw on destructuring below.
 	if (!page) {

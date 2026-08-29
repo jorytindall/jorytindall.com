@@ -22,10 +22,29 @@ schemas/
   index.ts            the registry — a type not listed here does not exist
   documents/          14 document types
   objects/            ~35 object types, including form/, features/, tabs/
-sanity.config.ts      plugins and desk structure
+actions/              custom document actions
+previewConfig.ts      where previews point, and which origins are allowed
+sanity.config.ts      plugins, desk structure, presentation, document actions
 sanity.cli.ts
-utils/
+utils/                previewPath.ts — document type to site route
 ```
+
+## Content preview
+
+The Studio can render unpublished content through the real website, two ways: the
+**Presentation** tool (a live pane, with click-to-edit) and an **Open preview** document
+action (a new tab). Both are configured in `sanity.config.ts`.
+
+**To make a document type previewable, add it to `ROUTE_PREFIXES` in
+`utils/previewPath.ts`** — that single map feeds both entry points, so they cannot
+disagree about where a document lives. A type only belongs there if `apps/web` has a
+route that renders it.
+
+Do not put a preview secret in `SANITY_STUDIO_*`: those are inlined into a public bundle.
+Secrets are minted per click against the dataset instead.
+
+Full setup — tokens, CORS, staging — is in
+[`docs/content-preview.md`](../../docs/content-preview.md).
 
 ## Adding a type
 

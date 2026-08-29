@@ -129,6 +129,7 @@ work now, but nobody has confirmed that against a real run yet.
 | Add or change a content type   | `apps/admin/schemas/`                              | Register in `schemas/index.ts` — then the four-step chain below |
 | Render new content on the site | `apps/web/src/lib/queries/`, then the route        | Add the `_type` case to `module-renderer/index.tsx`             |
 | Change Portable Text rendering | `apps/web/src/components/rich-text/Components.tsx` |                                                                 |
+| Make a type previewable        | `apps/admin/utils/previewPath.ts`                  | One map feeds both preview entry points                         |
 | Add a slide or talk            | `apps/presentations/src/presentations/`            | Route in `src/routes/<talk>/+page.svelte`                       |
 | Change transactional email     | `apps/web/src/email/`                              | `pnpm email` to preview                                         |
 
@@ -153,7 +154,7 @@ renders as nothing, with no error. Use the `new-sanity-type` skill.
 
 ### TypeScript
 
-- `apps/web` and `apps/admin` are `strict: false` with `strictNullChecks: true`.
+- `apps/web` is `strict: false` with `strictNullChecks: true`. `apps/admin`,
   `apps/presentations` and `apps/media-center` are `strict: true`. Don't assume
   strictness.
 - No shared base `tsconfig` — each workspace owns its own.
@@ -224,4 +225,5 @@ protected portfolio projects.
 - [`apps/presentations/AGENTS.md`](./apps/presentations/AGENTS.md) — slides, components, RevealJS
 - [`apps/media-center/AGENTS.md`](./apps/media-center/AGENTS.md) — Plex integration and sessions
 - [`packages/tokens/AGENTS.md`](./packages/tokens/AGENTS.md) — token sources and the build
+- [`docs/content-preview.md`](./docs/content-preview.md) — draft mode, Presentation, and preview setup
 - [`.claude/README.md`](./.claude/README.md) — the skills and the permission model

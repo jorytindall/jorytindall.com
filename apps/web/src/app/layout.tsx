@@ -1,12 +1,15 @@
+import { draftMode } from 'next/headers';
+import { VisualEditing } from 'next-sanity/visual-editing';
 import { Toaster } from 'react-hot-toast';
 import { Providers } from './providers';
 import Fathom from 'lib/fathom';
 import { Header, Footer } from 'components/navigation';
 import { Banner } from 'components/banner';
+import { DraftModeBanner } from 'components/draft-mode';
 import { Main } from 'components/layout';
 import 'styles/main.css';
 
-import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_GLOBAL_APP_DATA } from 'lib/queries';
 
 import type { Metadata } from 'next';
@@ -43,11 +46,15 @@ export const metadata: Metadata = {
 };
 
 const getGlobalAppData = async () => {
-	const data = await sanityClient.fetch(GET_GLOBAL_APP_DATA);
+	const data = await sanityFetch(GET_GLOBAL_APP_DATA);
 	return data;
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	// Reading `isEnabled` is safe during prerendering — it resolves to `false` rather
+	// than opting the whole app into dynamic rendering, so routes keep their revalidate.
+	const { isEnabled: isDraftMode } = await draftMode();
+
 	// Global app data
 	const globalAppData = await getGlobalAppData();
 
@@ -67,7 +74,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
+				{/* React hoists this into <head>. Draft pages render unpublished content
+				    and are reachable at ordinary URLs, so keep them out of the index. */}
+				{isDraftMode && <meta name="robots" content="noindex, nofollow" />}
 				<Providers>
+					{isDraftMode && <DraftModeBanner />}
 					{bannerData !== null && (
 						<Banner
 							title={bannerData.title}
@@ -83,6 +94,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					/>
 					<Toaster />
 					<Fathom />
+					{/* Mounts the overlay that talks to the Studio: click-to-edit
+					    highlights, and live updates as the editor types. */}
+					{isDraftMode && <VisualEditing />}
 				</Providers>
 			</body>
 		</html>

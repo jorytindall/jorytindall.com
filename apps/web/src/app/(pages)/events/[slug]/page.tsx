@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { formatEventDateTime, formatEventSchedule } from 'utils/datetimeFormat';
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_EVENTS, GET_EVENT_PATHS } from 'lib/queries';
 import { Headline, Paragraph, InlineLink } from 'components/typography';
 import { RichText } from 'components/rich-text';
@@ -13,8 +14,7 @@ export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const client = sanityClient;
-	const events = await client.fetch(GET_EVENTS, { slug });
+	const events = await sanityFetch(GET_EVENTS, { slug }, { stega: false });
 
 	if (!events) {
 		return { title: '404: Not found' };
@@ -33,7 +33,7 @@ export async function generateStaticParams() {
 
 export default async function Event({ params }) {
 	const { slug } = await params;
-	const events = await sanityClient.fetch(GET_EVENTS, { slug });
+	const events = await sanityFetch(GET_EVENTS, { slug });
 
 	// An unresolvable slug would otherwise throw on destructuring below.
 	if (!events) {

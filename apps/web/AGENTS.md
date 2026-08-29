@@ -27,7 +27,8 @@ src/
   components/         34 folder-per-component directories
   lib/
     queries/          GROQ, one file per content type, re-exported from index.ts
-    sanity/config.ts  the client
+    sanity/config.ts  the clients — published, draft, and secret-validating
+    sanity/fetch.ts   sanityFetch — the draft-aware read path
     auth/             portfolio password gate
     spotify/ strava/  third-party API clients
   email/              react-email templates
@@ -46,6 +47,28 @@ import { getPortfolioProject } from 'lib/queries';
 
 Not relative paths. This used to be `baseUrl: "src"`, which TypeScript 6 deprecates —
 `paths` is the replacement and behaves the same.
+
+## Reading content
+
+**Everything that renders content goes through `sanityFetch`**, not the client directly:
+
+```ts
+import { sanityFetch } from 'lib/sanity/fetch';
+
+const post = await sanityFetch(GET_BLOG_POSTS, { slug });
+```
+
+Outside draft mode that is the published, CDN-backed client and routes keep their
+`revalidate`. Inside it, it is a token-bearing client on `perspective: 'drafts'` with no
+caching. See [`docs/content-preview.md`](../../docs/content-preview.md).
+
+Two exceptions, both deliberate:
+
+- **`generateStaticParams` uses `sanityClient` directly.** `draftMode()` throws there —
+  it runs at build time with no request. Leave those calls alone.
+- **`generateMetadata` passes `{ stega: false }`.** Draft responses carry invisible
+  characters mapping strings back to their fields; useful in rendered text, corrupting in
+  a `<title>`.
 
 ## The content chain
 
@@ -98,7 +121,8 @@ isn't without saying so.
   `Configuration must contain 'projectId'` while collecting page data. Use
   `infisical run -- pnpm build`. The upside: a build that passes really did reach Sanity.
 - **`src/lib/sanity/useSanityFetch.ts` is dead code** — a client-side fetch hook with no
-  callers. All fetching is server-side via `lib/queries/`.
+  callers. All fetching is server-side via `lib/queries/`. Not to be confused with
+  `lib/sanity/fetch.ts`, which is the real read path.
 - **ESLint will walk `playwright-report/` if you let it.** Flat config does not read
   `.gitignore`; generated output is listed explicitly in `eslint.config.mjs`.
 - `strict: false`, but `strictNullChecks: true`. Implicit `any` will not be caught here.

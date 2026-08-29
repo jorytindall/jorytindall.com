@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_PORTFOLIO_PROJECTS, GET_PORTFOLIO_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
 import { PortfolioTitle } from 'components/portfolio/PortfolioTitle';
@@ -13,10 +14,7 @@ export const revalidate = 60;
 // Generate Metadata
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const client = sanityClient;
-	const portfolioProject = await client.fetch(GET_PORTFOLIO_PROJECTS, {
-		slug,
-	});
+	const portfolioProject = await sanityFetch(GET_PORTFOLIO_PROJECTS, { slug }, { stega: false });
 
 	if (!portfolioProject?.title) {
 		return { title: 'Portfolio' };
@@ -36,7 +34,7 @@ export async function generateStaticParams() {
 
 export default async function PortfolioProject({ params }) {
 	const { slug } = await params;
-	const portfolioProject = await sanityClient.fetch(GET_PORTFOLIO_PROJECTS, {
+	const portfolioProject = await sanityFetch(GET_PORTFOLIO_PROJECTS, {
 		slug,
 	});
 

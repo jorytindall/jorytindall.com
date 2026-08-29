@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_MUSIC_PROJECTS, GET_MUSIC_PROJECT_PATHS } from 'lib/queries';
 import { ModuleRenderer } from 'components/module-renderer';
 import { PageTitle } from 'components/page-title';
@@ -14,10 +15,7 @@ export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const client = sanityClient;
-	const page = await client.fetch(GET_MUSIC_PROJECTS, {
-		slug,
-	});
+	const page = await sanityFetch(GET_MUSIC_PROJECTS, { slug }, { stega: false });
 
 	if (!page) {
 		return { title: '404: Not found' };
@@ -36,7 +34,7 @@ export async function generateStaticParams() {
 
 export default async function MusicProject({ params }) {
 	const { slug } = await params;
-	const page = await sanityClient.fetch(GET_MUSIC_PROJECTS, { slug });
+	const page = await sanityFetch(GET_MUSIC_PROJECTS, { slug });
 
 	// An unresolvable slug would otherwise throw on destructuring below.
 	if (!page) {

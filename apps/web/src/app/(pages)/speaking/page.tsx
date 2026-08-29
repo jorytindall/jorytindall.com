@@ -1,4 +1,4 @@
-import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { formatLongDate } from 'utils/datetimeFormat';
 import { GET_ALL_TALKS } from 'lib/queries';
 import { PageTitle } from 'components/page-title';
@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TalksPage() {
-	const client = sanityClient;
-	const talks = await client.fetch(GET_ALL_TALKS);
+	const talks = await sanityFetch(GET_ALL_TALKS);
 
 	const renderTalks = talks.map((talk) => {
 		return (

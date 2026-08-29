@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { sanityClient } from 'lib/sanity/config';
+import { sanityFetch } from 'lib/sanity/fetch';
 import { GET_BLOG_POSTS, GET_BLOG_POST_PATHS } from 'lib/queries';
 import { BlogTitle } from 'components/blog';
 import { RichText } from 'components/rich-text';
@@ -10,7 +11,7 @@ export const revalidate = 60;
 
 export async function generateMetadata({ params }) {
 	const { slug } = await params;
-	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
+	const post = await sanityFetch(GET_BLOG_POSTS, { slug }, { stega: false });
 
 	if (!post) {
 		return { title: '404: Not found' };
@@ -29,7 +30,7 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({ params }) {
 	const { slug } = await params;
-	const post = await sanityClient.fetch(GET_BLOG_POSTS, { slug });
+	const post = await sanityFetch(GET_BLOG_POSTS, { slug });
 
 	// An unresolvable slug would otherwise throw on destructuring below.
 	if (!post) {
