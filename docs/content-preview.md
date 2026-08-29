@@ -63,15 +63,21 @@ non-secret values belong there.
 The Studio writes the secret document with the editor's own credentials, and the site
 reads it back with its token, so both origins need to be allowed:
 
-**CORS origins** (Sanity → Project → API → CORS origins), each **with credentials**:
+**CORS origins** — only the **Studio** origins need to be listed, and they already are
+(`https://admin.jorytindall.com`, `http://localhost:3333`, `http://127.0.0.1:3333`, each
+with credentials). The website is not in the list and does not need to be: it reads
+Sanity only from the server, and the visual editing overlay talks to the Studio by
+`postMessage` rather than calling the API from the browser. That is why the site has
+worked without `http://localhost:3000` all along.
 
-- `https://jorytindall.com`
-- `https://admin.jorytindall.com`
-- the staging URL, once it exists
-- `http://localhost:3000` and `http://localhost:3333` for local work
+If you ever add browser-side fetching — `@sanity/react-loader`, or `defineLive` from
+`next-sanity/live` — that changes, and the site's origins have to be added with
+credentials.
 
-**Token**: Project → API → Tokens → add a token with **Viewer** permission, and put it in
-Infisical as `SANITY_API_TOKEN`.
+**Token**: Project → API → Tokens → a token with **Viewer** permission, stored as
+`SANITY_API_TOKEN`. This already exists on the Railway `Web` service; a preview that
+returns published content where you expected drafts is the sign that the existing token
+lacks draft-read permission.
 
 ## Adding a document type to preview
 
@@ -97,25 +103,42 @@ types deliberately have no entry:
 
 ## Staging
 
-`SANITY_STUDIO_PREVIEW_URL` exists so preview can point somewhere other than production.
-To stand up a staging site on Railway:
+Preview points at **staging**, not production, so an editor previewing a draft never
+touches the live site.
 
-1. In the `jorytindall` Railway project, add a second service from the same repo — the
-   same build and start commands as `Web`, deployed from whichever branch you want
-   staging to track.
-2. Give it the same environment variables as `Web`, including `SANITY_API_TOKEN`.
-3. Note its URL, then:
-    - add it to the Sanity CORS origins, with credentials;
-    - set `SANITY_STUDIO_PREVIEW_URL` on the `Admin` service to it, and redeploy the
-      Studio.
+| Thing           | Value                                                                |
+| --------------- | -------------------------------------------------------------------- |
+| Railway service | `Web Staging`, in project `jorytindall`, environment `production`    |
+| Deploys from    | branch `claude/jt-44-jcmm43` — move to `main` once JT-44 is merged   |
+| Railway URL     | `https://web-staging-production-e9d6.up.railway.app`                 |
+| Custom domain   | `https://staging.jorytindall.com`                                    |
+| Build / start   | `pnpm --filter web build` / `pnpm --filter web start`, same as `Web` |
 
-Preview then opens against staging by default, and an editor can still switch the target
-to production from inside the Presentation tool, because production stays in
-`ALLOWED_PREVIEW_ORIGINS`.
+Its variables are **Railway reference variables** pointing at the `Web` service
+(`${{Web.SANITY_API_TOKEN}}` and so on), not copies. One place to rotate a secret, and
+staging cannot drift from production.
 
-Until that service exists, preview points at production. Draft content is still gated
-behind the token and a validated secret, so nothing unpublished becomes public either
-way.
+### DNS
+
+`staging.jorytindall.com` needs one record in Cloudflare:
+
+| Type    | Name      | Value                     |
+| ------- | --------- | ------------------------- |
+| `CNAME` | `staging` | `nbyj3n2j.up.railway.app` |
+
+Cloudflare's SSL/TLS mode must be **Full** — _not_ Full (Strict), which Railway
+documents as not working. That is a zone-wide setting and `jorytindall.com` already
+resolves through Railway, so it is presumably already right; nothing to change unless
+staging alone fails to get a certificate.
+
+Until that record exists, use the `*.up.railway.app` URL, which needs no DNS.
+
+### Pointing preview somewhere else
+
+`SANITY_STUDIO_PREVIEW_URL` on the `Admin` service decides the target;
+`SANITY_STUDIO_PREVIEW_ORIGINS` adds others an editor may switch to from inside
+Presentation. Production stays selectable either way, because `previewConfig.ts` always
+includes it.
 
 ## Gotchas
 
