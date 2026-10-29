@@ -40,19 +40,16 @@ const sortedCategories = Object.keys(grouped).sort((a, b) => {
 			<div class={styles.group}>
 				<p class={styles.title}>{category}</p>
 				<ul class={styles.list}>
-					{grouped[category].map((doc) => {
-						const docSlug = doc.id.replace(/\.mdx?$/, '');
-						return (
-							<li>
-								<a
-									href={`/docs/${docSlug}`}
-									class:list={[styles.link, { [styles.active]: docSlug === currentSlug }]}
-								>
-									{doc.data.title}
-								</a>
-							</li>
-						);
-					})}
+					{grouped[category].map((doc) => (
+						<li>
+							<a
+								href={`/docs/${doc.id}`}
+								class:list={[styles.link, { [styles.active]: doc.id === currentSlug }]}
+							>
+								{doc.data.title}
+							</a>
+						</li>
+					))}
 				</ul>
 			</div>
 		))}

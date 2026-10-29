@@ -1,7 +1,7 @@
 # media-center
 
 [jorytindall.tv](https://jorytindall.tv) — a private media browser and help site for a
-personal Plex server. Astro 5, server output, behind Plex PIN auth.
+personal Plex server. Astro 7, server output, behind Plex PIN auth.
 
 ```bash
 pnpm media:dev      # :4321 — needs `infisical login` first

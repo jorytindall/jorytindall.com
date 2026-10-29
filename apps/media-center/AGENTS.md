@@ -1,7 +1,7 @@
 # apps/media-center
 
 A private media browser and help site for a personal Plex server, at
-[jorytindall.tv](https://jorytindall.tv). Astro 5, `output: 'server'` with the Node
+[jorytindall.tv](https://jorytindall.tv). Astro 7, `output: 'server'` with the Node
 adapter. Deployed on Railway as service `Media Center`.
 
 Read the [repo-wide contract](../../AGENTS.md) first.
@@ -23,6 +23,7 @@ src/
     index.astro        the dashboard
     login.astro  auth/callback.astro  auth/logout.astro
     docs/index.astro  docs/[...slug].astro
+  content.config.ts    the docs collection's glob() loader and schema
   content/docs/        MDX help articles, an Astro content collection
   components/          docs/, layout/, navigation/ — each with a co-located .module.css
   styles/
@@ -55,12 +56,24 @@ everyone out — that is the intended trade.
 `SESSION_SECRET`, `PUBLIC_APP_URL`. Real values come from Infisical at path
 `/media-center`, which is why `dev` is `infisical run --path /media-center -- astro dev`.
 
+**Read them from `process.env`, never `import.meta.env`.** Astro inlines every
+`import.meta.env` lookup at build time (the default since Astro 6), so a secret read that
+way is frozen to whatever the build environment held — `undefined` on Railway, which
+throws on the first request, or a real secret baked into the committed bundle if one
+happened to be present. `import.meta.env.PROD` is fine; it is genuinely a build-time
+constant.
+
 ## Docs content
 
-`src/content/docs/*.mdx` is an Astro content collection. The schema in
-`src/content/config.ts` requires `title`, `description` and `order`, with `category`
-defaulting to `general`. `order` drives sidebar sorting — a new article without it will
-not compile.
+`src/content/docs/*.mdx` is an Astro content collection, loaded by the `glob()` loader
+declared in `src/content.config.ts` (the content-layer path — `src/content/config.ts`
+throws `LegacyContentConfigError` since Astro 6). The schema requires `title`,
+`description` and `order`, with `category` defaulting to `general`. `order` drives
+sidebar sorting — a new article without it will not compile.
+
+An entry's `id` is its filename without the extension, so `getting-started.mdx` is
+reachable at `/docs/getting-started` and the routes compare `doc.id` to the slug
+directly.
 
 ## Gotchas
 

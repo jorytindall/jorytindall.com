@@ -1,13 +1,16 @@
 const PLEX_API = 'https://plex.tv';
 
+// `process.env`, not `import.meta.env` — see the note on `getSecret()` in ./session.ts.
+// Astro 6 inlines `import.meta.env` at build time, which would freeze these to the
+// build environment's (empty) values.
 function getClientId(): string {
-	const id = import.meta.env.PLEX_CLIENT_ID;
+	const id = process.env.PLEX_CLIENT_ID;
 	if (!id) throw new Error('PLEX_CLIENT_ID is not set');
 	return id;
 }
 
 function getServerMachineId(): string {
-	const id = import.meta.env.PLEX_SERVER_MACHINE_ID;
+	const id = process.env.PLEX_SERVER_MACHINE_ID;
 	if (!id) throw new Error('PLEX_SERVER_MACHINE_ID is not set');
 	return id;
 }
