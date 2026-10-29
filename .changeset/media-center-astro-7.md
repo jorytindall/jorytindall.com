@@ -26,5 +26,9 @@ Three breaking changes needed code, not just version numbers:
 - **Entry IDs no longer carry a file extension**, so the `.replace(/\.mdx?$/, '')` the docs
   routes and sidebar applied to `entry.id` is gone.
 
+Astro 7 also raises its Node floor to `>=22.23.4`. The root `.nvmrc` said a bare `22`,
+which Railway's mise resolved to 22.23.3, so the deploy failed while local builds on a
+newer Node passed. `.nvmrc` is now pinned to `22.23.4` and the root `engines.node` matches.
+
 Marked major because the app's environment contract changed: a deploy that only supplied
 these variables at build time would now break.

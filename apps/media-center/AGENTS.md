@@ -90,5 +90,10 @@ directly.
   headers for hosts on that list — drop the list and `Astro.url.origin` becomes
   `https://localhost`, which 403s the `/login` form POST in production. **A new domain
   has to be added there**, or logging in from it breaks.
+- **Astro pins a Node _patch_ floor**, currently `>=22.23.4`, and the root `.nvmrc` is
+  what Railway's mise reads. It used to say a bare `22`, which mise resolved to 22.23.3 —
+  one patch short — so `astro build` refused to run on Railway while building fine on any
+  newer local Node. `.nvmrc` is pinned to an exact version for that reason; when Astro
+  raises the floor again, raise the pin with it.
 - `tsconfig.json` extends `astro/tsconfigs/strict` — this workspace is genuinely strict,
   unlike `web` and `admin`.

@@ -4,7 +4,7 @@
 	"description": "Monorepo for my personal website and projects",
 	"packageManager": "pnpm@10.13.1",
 	"engines": {
-		"node": ">=22",
+		"node": ">=22.23.4",
 		"pnpm": ">=10"
 	},
 	"scripts": {
