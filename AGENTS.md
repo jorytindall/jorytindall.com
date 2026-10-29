@@ -130,16 +130,29 @@ Do not assume a green `verify` means everything is checked:
 `.github/workflows/verify.yml` runs `pnpm verify` on every push and PR. It needs no
 secrets, so it also runs on forks.
 
-`.github/workflows/ci-web.yml` builds `web` and runs Playwright, but it has been
-**disabled in the GitHub UI since December 2025** and was failing when it was switched
-off. Nothing in it currently runs. Do not tell anyone Playwright "passed in CI" — it has
-not run in months.
-
-The reason it could not pass has been fixed: `playwright.config.ts` hard-coded
+`.github/workflows/ci-web.yml` builds `web` and runs Playwright. It is **enabled and
+passing** — 48 tests across chromium, firefox and webkit in roughly two minutes. It was
+disabled in the GitHub UI from December 2025 and has since been re-enabled, and the fix
+it was waiting on is confirmed working: `playwright.config.ts` used to hard-code
 `infisical run -- pnpm dev` as its `webServer`, and `infisical` is not installed on the
 runner. It now uses `pnpm dev:ci` when `process.env.CI` is set, taking secrets from the
-environment instead. Re-enabling the workflow (`gh workflow enable ci-web.yml`) should
-work now, but nobody has confirmed that against a real run yet.
+environment.
+
+The job runs with only some secrets present. It logs `Missing STRAVA_ATHLETE_ID`,
+`Missing Spotify environment variables` and a missing Resend key while still passing —
+that output is expected noise, not a failing run.
+
+**`@playwright/test` has to keep pace with the `ubuntu-latest` runner image.** In October
+2026 that image rolled to Ubuntu 26.04 and the pinned Playwright 1.60.0 refused to
+install browsers at all:
+
+```
+ERROR: Playwright does not support chromium on ubuntu26.04-x64
+```
+
+That failed every PR at the browser-install step, before a single test ran, and it looked
+like a broken branch rather than a stale pin. Playwright 1.64.1 fixed it. If this job
+dies in well under a minute having run no tests, check that pairing before anything else.
 
 ## Where to make a change
 
