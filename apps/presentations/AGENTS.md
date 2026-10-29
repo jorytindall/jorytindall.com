@@ -71,3 +71,7 @@ One without the other is exactly the failure above.
   `interface` method signatures as unused variables. `svelte-check` covers those.
 - Reveal's `deck.on('slidechanged', …)` types its handler argument as a bare `Event`; the
   slide index arrives as `event.indexh` and needs a cast.
+- **A deck paints blank for ~2s on first load** while RevealJS initializes, with nothing
+  in the console. It is not broken and it is not a regression — screenshot or assert too
+  early and you will think it is. Wait for content before judging a deck, especially when
+  verifying a `svelte`, `vite` or `reveal.js` bump.

@@ -99,6 +99,27 @@ Do not assume a green `verify` means everything is checked:
   `Configuration must contain 'projectId'` during page-data collection. Run
   `infisical login` once, then `infisical run -- pnpm build`. This is a loud failure, not
   a silent one — a build that succeeds really did reach Sanity.
+
+    Note that `infisical run` triggers an **interactive** login flow when there is no
+    valid session, which an agent cannot complete — it will hang on a TTY prompt and then
+    fail with `Unable to parse domain url`. There is no non-interactive fallback
+    configured. If you are an agent and need to prove `web` still bundles after a
+    dependency bump, run `next build` directly with placeholder env instead:
+
+    ```bash
+    cd apps/web && NEXT_PUBLIC_SANITY_PROJECT_ID=zzzzzzzz \
+      NEXT_PUBLIC_SANITY_DATASET=production \
+      NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01 \
+      PORTFOLIO_ACCESS_PASSWORD=placeholder RESEND_API_KEY=re_placeholder \
+      npx next build
+    ```
+
+    That gets past `createClient`, prints `✓ Compiled successfully`, runs TypeScript, then
+    fails at "Collecting page data" with a Sanity 404. **Reaching that 404 is the pass
+    condition** — it proves compilation and typechecking, nothing about data fetching or
+    rendering. Delete `.next/` afterwards, and say in the PR that the build was verified
+    to the compile stage only.
+
 - **`media-center` has no linting.** No ESLint config, no eslint dependency. `astro check`
   is the only thing looking at it.
 - **`tokens` has neither linting nor typechecking.** It is JSON token files plus
@@ -109,16 +130,29 @@ Do not assume a green `verify` means everything is checked:
 `.github/workflows/verify.yml` runs `pnpm verify` on every push and PR. It needs no
 secrets, so it also runs on forks.
 
-`.github/workflows/ci-web.yml` builds `web` and runs Playwright, but it has been
-**disabled in the GitHub UI since December 2025** and was failing when it was switched
-off. Nothing in it currently runs. Do not tell anyone Playwright "passed in CI" — it has
-not run in months.
-
-The reason it could not pass has been fixed: `playwright.config.ts` hard-coded
+`.github/workflows/ci-web.yml` builds `web` and runs Playwright. It is **enabled and
+passing** — 48 tests across chromium, firefox and webkit in roughly two minutes. It was
+disabled in the GitHub UI from December 2025 and has since been re-enabled, and the fix
+it was waiting on is confirmed working: `playwright.config.ts` used to hard-code
 `infisical run -- pnpm dev` as its `webServer`, and `infisical` is not installed on the
 runner. It now uses `pnpm dev:ci` when `process.env.CI` is set, taking secrets from the
-environment instead. Re-enabling the workflow (`gh workflow enable ci-web.yml`) should
-work now, but nobody has confirmed that against a real run yet.
+environment.
+
+The job runs with only some secrets present. It logs `Missing STRAVA_ATHLETE_ID`,
+`Missing Spotify environment variables` and a missing Resend key while still passing —
+that output is expected noise, not a failing run.
+
+**`@playwright/test` has to keep pace with the `ubuntu-latest` runner image.** In October
+2026 that image rolled to Ubuntu 26.04 and the pinned Playwright 1.60.0 refused to
+install browsers at all:
+
+```
+ERROR: Playwright does not support chromium on ubuntu26.04-x64
+```
+
+That failed every PR at the browser-install step, before a single test ran, and it looked
+like a broken branch rather than a stale pin. Playwright 1.64.1 fixed it. If this job
+dies in well under a minute having run no tests, check that pairing before anything else.
 
 ## Where to make a change
 

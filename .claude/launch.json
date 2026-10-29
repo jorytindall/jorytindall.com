@@ -1,0 +1,29 @@
+{
+	"version": "0.0.1",
+	"configurations": [
+		{
+			"name": "web",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["web:dev"],
+			"port": 3000
+		},
+		{
+			"name": "admin",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["admin:dev"],
+			"port": 3333
+		},
+		{
+			"name": "presentations",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["pres:dev"],
+			"port": 5173
+		},
+		{
+			"name": "media-center",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": ["media:dev"],
+			"port": 4321
+		}
+	]
+}
