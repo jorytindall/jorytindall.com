@@ -99,6 +99,27 @@ Do not assume a green `verify` means everything is checked:
   `Configuration must contain 'projectId'` during page-data collection. Run
   `infisical login` once, then `infisical run -- pnpm build`. This is a loud failure, not
   a silent one — a build that succeeds really did reach Sanity.
+
+    Note that `infisical run` triggers an **interactive** login flow when there is no
+    valid session, which an agent cannot complete — it will hang on a TTY prompt and then
+    fail with `Unable to parse domain url`. There is no non-interactive fallback
+    configured. If you are an agent and need to prove `web` still bundles after a
+    dependency bump, run `next build` directly with placeholder env instead:
+
+    ```bash
+    cd apps/web && NEXT_PUBLIC_SANITY_PROJECT_ID=zzzzzzzz \
+      NEXT_PUBLIC_SANITY_DATASET=production \
+      NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01 \
+      PORTFOLIO_ACCESS_PASSWORD=placeholder RESEND_API_KEY=re_placeholder \
+      npx next build
+    ```
+
+    That gets past `createClient`, prints `✓ Compiled successfully`, runs TypeScript, then
+    fails at "Collecting page data" with a Sanity 404. **Reaching that 404 is the pass
+    condition** — it proves compilation and typechecking, nothing about data fetching or
+    rendering. Delete `.next/` afterwards, and say in the PR that the build was verified
+    to the compile stage only.
+
 - **`media-center` has no linting.** No ESLint config, no eslint dependency. `astro check`
   is the only thing looking at it.
 - **`tokens` has neither linting nor typechecking.** It is JSON token files plus
