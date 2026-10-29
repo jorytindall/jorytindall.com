@@ -10,13 +10,13 @@
 		"start": "node dist/server/entry.mjs"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.3.0",
-		"@astrojs/node": "^9.2.2",
-		"astro": "^5.9.3",
+		"@astrojs/mdx": "^4.3.14",
+		"@astrojs/node": "^9.5.5",
+		"astro": "^5.18.2",
 		"tokens": "workspace:^"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.10",
+		"@astrojs/check": "^0.9.12",
 		"typescript": "^6.0.3"
 	}
 }

@@ -8,8 +8,8 @@
 	},
 	"devDependencies": {
 		"@divriots/style-dictionary-to-figma": "^0.4.0",
-		"fs-extra": "^11.3.5",
-		"style-dictionary": "^5.4.0"
+		"fs-extra": "^11.4.1",
+		"style-dictionary": "^5.7.1"
 	},
 	"main": "dist/",
 	"files": [
