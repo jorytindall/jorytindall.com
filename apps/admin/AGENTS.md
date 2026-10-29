@@ -46,9 +46,7 @@ import { defineType } from 'sanity';
 export default defineType({
 	name: 'thing',
 	type: 'object',
-	fields: [
-		/* … */
-	],
+	fields: [/* … */],
 });
 ```
 
