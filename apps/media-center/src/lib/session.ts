@@ -21,8 +21,15 @@ interface SignedSession extends SessionData {
 	exp: number;
 }
 
+/**
+ * Read from `process.env`, not `import.meta.env`. Since Astro 6 every `import.meta.env`
+ * lookup is inlined at build time, so a secret read that way is frozen to whatever the
+ * build environment held — `undefined` here, because Railway builds without Infisical —
+ * and would be baked into the bundle if it ever were present. `process.env` stays a
+ * runtime read.
+ */
 function getSecret(): string {
-	const secret = import.meta.env.SESSION_SECRET;
+	const secret = process.env.SESSION_SECRET;
 	if (!secret || secret.length < 32) {
 		throw new Error('SESSION_SECRET must be at least 32 characters');
 	}

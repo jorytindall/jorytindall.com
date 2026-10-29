@@ -21,7 +21,7 @@ person.
 | `apps/web`           | The main site. Next.js 16 App Router, content from Sanity. | 3000     | `jorytindall.com`               |
 | `apps/admin`         | Sanity Studio v4. Source of all editorial content.         | 3333     | `admin.jorytindall.com`         |
 | `apps/presentations` | SvelteKit 2 + RevealJS 6 conference talks.                 | 5173     | `presentations.jorytindall.com` |
-| `apps/media-center`  | Astro 5 media browser wired to a Plex server.              | 4321     | `jorytindall.tv`                |
+| `apps/media-center`  | Astro 7 media browser wired to a Plex server.              | 4321     | `jorytindall.tv`                |
 
 **Packages:**
 
