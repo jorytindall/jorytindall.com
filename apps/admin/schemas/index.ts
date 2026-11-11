@@ -14,6 +14,11 @@ import settings from './documents/siteSettings';
 import talk from './documents/talk';
 import navigation from './documents/navigation';
 import personalStatsSettings from './documents/personalStatsSettings';
+import resumeProfile from './documents/resume/resumeProfile';
+import resume from './documents/resume/resume';
+import experience from './documents/resume/experience';
+import skillGroup from './documents/resume/skillGroup';
+import education from './documents/resume/education';
 
 // Objects
 import moduleContent from './objects/moduleContent';
@@ -52,6 +57,9 @@ import link from './objects/link';
 import personalStats from './objects/personalStats';
 import stravaStats from './objects/stravaStats';
 import spotifyStats from './objects/spotifyStats';
+import resumeLink from './objects/resume/resumeLink';
+import resumeHighlight from './objects/resume/resumeHighlight';
+import resumeExperienceEntry from './objects/resume/resumeExperienceEntry';
 
 export const schemaTypes = [
 	// Documents
@@ -69,6 +77,11 @@ export const schemaTypes = [
 	talk,
 	navigation,
 	personalStatsSettings,
+	resumeProfile,
+	resume,
+	experience,
+	skillGroup,
+	education,
 	// Objects
 	moduleContent,
 	richText,
@@ -107,4 +120,7 @@ export const schemaTypes = [
 	personalStats,
 	stravaStats,
 	spotifyStats,
+	resumeLink,
+	resumeHighlight,
+	resumeExperienceEntry,
 ];
