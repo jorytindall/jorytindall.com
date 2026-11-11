@@ -33,6 +33,12 @@ export default defineType({
 			description: `Example: Jazz Performance.`,
 		},
 		{
+			name: `honors`,
+			title: `Honors`,
+			type: `string`,
+			description: `Example: Cum Laude. Maps to JSON Resume "score".`,
+		},
+		{
 			name: `startDate`,
 			title: `Start Date`,
 			type: `date`,
