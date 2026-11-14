@@ -9,6 +9,7 @@ Read the [repo-wide contract](../../AGENTS.md) first.
 pnpm web:dev                       # :3000 — needs `infisical login`
 pnpm --filter web typecheck        # tsc --noEmit
 pnpm --filter web lint
+pnpm --filter web test             # Vitest unit tests (src/**/*.test.ts); no secrets
 pnpm --filter web test:e2e         # Playwright; needs a build and real secrets
 pnpm email                         # react-email preview for src/email/
 ```
@@ -27,6 +28,7 @@ src/
   components/         34 folder-per-component directories
   lib/
     queries/          GROQ, one file per content type, re-exported from index.ts
+    resume/           Sanity résumé → JSON Resume mapper, its types and unit tests
     sanity/config.ts  the client
     auth/             portfolio password gate
     spotify/ strava/  third-party API clients
@@ -66,6 +68,17 @@ Portable Text marks and blocks are wired separately, in
 `src/components/rich-text/Components.tsx`.
 
 Use the `new-sanity-type` skill rather than doing this from memory.
+
+## The résumé
+
+`lib/queries/resume.ts` fetches a résumé variant; `lib/resume/toJsonResume.ts` maps it to
+the [JSON Resume](https://jsonresume.org/schema) format. Variant highlight filtering
+(`highlightTags`, `maxHighlights`) happens in the mapper, not in GROQ, so it is tested.
+The result types in `lib/resume/types.ts` are hand-written — there is no Sanity typegen —
+so change them with the projection.
+
+The Sanity dataset is public. Never add a private field (phone, street address) to the
+résumé schemas expecting a projection to hide it; the test asserts none reach the output.
 
 ## Styling
 

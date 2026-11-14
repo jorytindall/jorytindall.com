@@ -83,10 +83,11 @@ pnpm typecheck     # tsc (web, admin), svelte-check (presentations), astro check
 
 Do not assume a green `verify` means everything is checked:
 
-- **There are no unit tests anywhere in this repo.** `pnpm test` maps to a Turbo task no
-  workspace defines, so it exits 0 having run nothing. Treat a green `pnpm test` as
-  meaningless, not as reassurance.
-- **The only tests are two Playwright e2e specs** in `apps/web/src/tests/e2e/` — 48 cases
+- **Unit tests exist only in `apps/web`, and `verify` does not run them.** They are Vitest,
+  under `src/**/*.test.ts` — currently just the résumé mapper in `src/lib/resume/`. Run
+  them with `pnpm test` (Turbo runs every workspace's `test` script; only `web` has one)
+  or `pnpm --filter web test`. They need no secrets. No other workspace has unit tests.
+- **The only other tests are two Playwright e2e specs** in `apps/web/src/tests/e2e/` — 48 cases
   across chromium, firefox and webkit, all green. They start a dev server and need real
   secrets, so they are not in `verify`:
     ```bash
