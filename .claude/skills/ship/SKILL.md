@@ -16,8 +16,8 @@ pnpm verify        # format:check + lint + typecheck, every workspace, ~7s cold
 
 It must exit 0.
 
-`verify` does **not** cover everything — there are no unit tests in this repo, and
-`pnpm test` exits 0 having run nothing. Also do, when relevant:
+`verify` does **not** cover everything — it does not run the unit tests, which exist only
+in `apps/web`. Also do, when relevant:
 
 | If you changed                | Also do                                                                     |
 | ----------------------------- | --------------------------------------------------------------------------- |
@@ -25,6 +25,7 @@ It must exit 0.
 | A Sanity schema               | `pnpm admin:dev`, create a real document, confirm `web` renders it          |
 | Anything in the content chain | Check the `module-renderer` switch handles the `_type`                      |
 | A design token                | `pnpm tokens:build`, then rebuild the consumer — tokens alone is not enough |
+| Anything with a `*.test.ts`   | `pnpm test` — Vitest, `apps/web` only, no secrets needed                    |
 | A route or nav in `web`       | `pnpm --filter web test:e2e` (needs Infisical + a build)                    |
 | A slide or slide component    | `pnpm pres:dev` and page through the deck                                   |
 | Anything in `media-center`    | `pnpm media:dev` — and remember the whole site is behind auth               |
