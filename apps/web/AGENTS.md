@@ -83,8 +83,10 @@ so change them with the projection.
 (`__fixtures__/designEngineerFull.json`) so a template change that breaks the one-page fit
 fails the tests. Keep the layout single-column with no letter-spacing on text: both break
 text extraction for applicant tracking systems (letter-spacing turns "EDUCATION" into
-"E D U C AT I O N"). The face is Helvetica, a standard PDF font, until a brand face with
-an embedding licence is registered in `pdf/fonts.ts`.
+"E D U C AT I O N"). Fonts are the site's own — Neue Haas Unica and Uxum Grotesque — registered in
+`pdf/fonts.ts` from the `.woff` files in `public/fonts/` (react-pdf cannot read WOFF2).
+Paths resolve from `process.cwd()`, so the PDF must be rendered with `apps/web` as the
+working directory.
 
 The Sanity dataset is public. Never add a private field (phone, street address) to the
 résumé schemas expecting a projection to hide it; the test asserts none reach the output.

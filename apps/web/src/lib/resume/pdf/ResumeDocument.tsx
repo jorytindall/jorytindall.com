@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
 		paddingTop: 32,
 		paddingBottom: 28,
 		paddingHorizontal: 40,
-		fontFamily: FONT.regular,
+		fontFamily: FONT.body,
 		fontSize: 9,
 		lineHeight: 1.25,
 		color: COLOR.text,
 	},
-	name: { fontFamily: FONT.bold, fontSize: 18, lineHeight: 1.1 },
+	name: { fontFamily: FONT.heading, fontWeight: 'bold', fontSize: 20, lineHeight: 1.1 },
 	label: { fontSize: 10.5, marginTop: 1, color: COLOR.muted },
 	contact: { flexDirection: 'row', flexWrap: 'wrap', marginTop: 4, color: COLOR.muted },
 	contactItem: { color: COLOR.muted, textDecoration: 'none' },
@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
 	summary: { marginTop: 6 },
 	section: { marginTop: 8 },
 	sectionTitle: {
-		fontFamily: FONT.bold,
-		fontSize: 9,
+		fontFamily: FONT.heading,
+		fontWeight: 'bold',
+		fontSize: 10,
 		textTransform: 'uppercase',
 		paddingBottom: 2,
 		marginBottom: 4,
@@ -46,14 +47,14 @@ const styles = StyleSheet.create({
 	},
 	role: { marginBottom: 5 },
 	roleHeader: { flexDirection: 'row', justifyContent: 'space-between' },
-	roleTitle: { fontFamily: FONT.bold, flexShrink: 1, paddingRight: 8 },
+	roleTitle: { fontWeight: 'bold', flexShrink: 1, paddingRight: 8 },
 	roleDates: { color: COLOR.muted, flexShrink: 0 },
 	roleMeta: { color: COLOR.muted },
 	bullet: { flexDirection: 'row', marginTop: 1.5 },
 	bulletMark: { width: 9 },
 	bulletText: { flex: 1 },
 	skillLine: { marginBottom: 1.5 },
-	skillName: { fontFamily: FONT.bold },
+	skillName: { fontWeight: 'bold' },
 });
 
 type Props = {
@@ -174,7 +175,7 @@ export function ResumeDocument({ resume, portfolioUrl }: Props) {
 							<View key={edu.institution} style={styles.roleHeader}>
 								<Text style={styles.roleTitle}>
 									{edu.institution}
-									<Text style={{ fontFamily: FONT.regular }}>
+									<Text style={{ fontWeight: 'normal' }}>
 										{[
 											[edu.studyType, edu.area].filter(Boolean).join(', '),
 											edu.score,

@@ -59,6 +59,17 @@ describe('renderResumePdf', () => {
 		},
 		TIMEOUT,
 	);
+	it(
+		'embeds the brand typefaces',
+		async () => {
+			const pdf = (await renderResumePdf(fullResume)).toString('latin1');
+			// Subset font names carry a random-looking prefix, e.g. DZZZZZ+NeueHaasUnicaPro-Regular.
+			expect(pdf).toMatch(/\/FontName \/[A-Z]{6}\+NeueHaasUnicaPro-Regular/);
+			expect(pdf).toMatch(/\/FontName \/[A-Z]{6}\+UxumGrotesque-Bold/);
+			expect(pdf).not.toContain('/BaseFont /Helvetica');
+		},
+		TIMEOUT,
+	);
 });
 
 describe('countPages', () => {
