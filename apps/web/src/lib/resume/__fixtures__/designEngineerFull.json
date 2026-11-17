@@ -1,0 +1,210 @@
+{
+	"_id": "resume-design-engineer",
+	"_updatedAt": "2026-11-11T07:30:58Z",
+	"education": [
+		{
+			"_id": "education-unc",
+			"_updatedAt": "2026-11-11T07:30:48Z",
+			"area": "Jazz Studies & Saxophone Performance",
+			"endDate": "2012-05-01",
+			"honors": "Cum Laude",
+			"institution": "University of Northern Colorado",
+			"startDate": null,
+			"studyType": "Bachelor of Music",
+			"url": null
+		}
+	],
+	"experience": [
+		{
+			"highlightTags": null,
+			"maxHighlights": null,
+			"role": {
+				"_id": "experience-ibm",
+				"_updatedAt": "2026-11-14T21:37:28Z",
+				"current": true,
+				"employer": "IBM",
+				"endDate": null,
+				"highlights": [
+					{
+						"tags": null,
+						"text": "Partner with engineering to define the technical and scalable strategy for the Helios MCP Server, an assistant-agnostic service giving AI tools access to design system components, tokens, documentation, and usage guidance; led testing, documentation, and evangelism for 200+ engineers and designers across the enterprise."
+					},
+					{
+						"tags": null,
+						"text": "Lead development of the Helios Harness, a suite of agent directives, skills, evaluations, and scaffolding supporting different workflows including Figma validation, design exploration to code prototyping, realistic design validation, and other design tooling to code pipelines."
+					},
+					{
+						"tags": null,
+						"text": "Drive the evolution of the Helios Design System to IBM's Carbon Design System visual language, refactoring Figma assets for a new variable-driven brand theme – shipped in a flagship enterprise product with four to five products closely following – and reworking documentation to support Carbon guidance and side-by-side theme examples."
+					},
+					{
+						"tags": null,
+						"text": "Build and release Helios Design Tooling, a custom Figma plugin that accelerates designer workflows by automating table creation with Helios components, integrating visual regression testing, and easing the transition to IBM's Carbon visual language."
+					},
+					{
+						"tags": null,
+						"text": "Lead the planning, design, development, and evangelism of foundational elements, components, patterns, and documentation for the enterprise Helios Design System, consumed by six products across a broad ecosystem of engineers, designers, and product owners."
+					},
+					{
+						"tags": null,
+						"text": "Foster partnerships across the product design teams to validate design decisions through realistic prototypes, testing for usability, accessible design best practices, and correct use of the design system before handoff to engineering."
+					}
+				],
+				"location": "Remote, Seattle, WA",
+				"startDate": "2025-06-01",
+				"summary": null,
+				"title": "Lead Product Designer, Helios Design System",
+				"url": "https://ibm.com"
+			}
+		},
+		{
+			"highlightTags": null,
+			"maxHighlights": null,
+			"role": {
+				"_id": "experience-hashicorp",
+				"_updatedAt": "2026-11-14T21:38:26Z",
+				"current": false,
+				"employer": "HashiCorp",
+				"endDate": "2025-06-01",
+				"highlights": [
+					{
+						"tags": null,
+						"text": "Led the design and development of new components, patterns, and assets in Helios, HashiCorp's enterprise design system, driving adoption of more than 50 components, patterns, and design system assets across the HashiCorp product suite."
+					},
+					{
+						"tags": null,
+						"text": "Planned, deployed, and executed a comprehensive service-driven model, collaborating with design system consumers to audit their applications, build custom components and patterns extending the design system, and partner on high-impact and high-visibility projects."
+					},
+					{
+						"tags": null,
+						"text": "Strategized and developed a comprehensive framework for technical documentation and educational enablement content, focusing on design-to-code implementation and engineering collaboration."
+					}
+				],
+				"location": "Remote",
+				"startDate": "2022-06-01",
+				"summary": "Acquired by IBM in February 2025.",
+				"title": "Lead Product Designer, HashiCorp Design System (Helios)",
+				"url": "https://www.hashicorp.com"
+			}
+		},
+		{
+			"highlightTags": null,
+			"maxHighlights": null,
+			"role": {
+				"_id": "experience-tmobile",
+				"_updatedAt": "2026-11-11T07:30:48Z",
+				"current": false,
+				"employer": "T-Mobile",
+				"endDate": "2022-06-01",
+				"highlights": [
+					{
+						"tags": null,
+						"text": "Championed design system principles and best practices across designers, developers, and product teams, driving consistent user experiences for over 100 million cross-platform users."
+					},
+					{
+						"tags": null,
+						"text": "Led a cross-functional team to redefine the T-Mobile Design System through foundational UX exploration, an accessible color token architecture, component creation, pattern definition, and design tooling."
+					},
+					{
+						"tags": null,
+						"text": "Spearheaded a migration from Adobe XD to Figma, publishing six libraries adopted by designers, agencies, and third-party partners – streamlining collaboration, increasing consistency, and accelerating time-to-market."
+					}
+				],
+				"location": null,
+				"startDate": "2021-08-01",
+				"summary": null,
+				"title": "Senior User Experience Designer, Design System and Framework",
+				"url": null
+			}
+		},
+		{
+			"highlightTags": null,
+			"maxHighlights": null,
+			"role": {
+				"_id": "experience-jove",
+				"_updatedAt": "2026-11-14T21:39:28Z",
+				"current": false,
+				"employer": "Jove",
+				"endDate": "2021-06-01",
+				"highlights": [
+					{
+						"tags": null,
+						"text": "Partnered with product, engineering, and leadership to plan and implement the go-to-market strategy and design for Jove's Creative Insights product, driving a 63% increase in active users."
+					},
+					{
+						"tags": null,
+						"text": "Implemented consistent documentation standards for the design system and microcopy, boosting user retention by 25%."
+					}
+				],
+				"location": "Seattle, WA",
+				"startDate": "2020-07-01",
+				"summary": null,
+				"title": "Senior User Experience Designer",
+				"url": "https://newengen.com"
+			}
+		}
+	],
+	"headline": null,
+	"isDefault": true,
+	"profile": {
+		"_updatedAt": "2026-11-11T07:30:48Z",
+		"email": "me@jorytindall.com",
+		"label": "Design Engineer, Product Designer",
+		"links": [
+			{
+				"network": "LinkedIn",
+				"url": "https://www.linkedin.com/in/jory-tindall/",
+				"username": "jory-tindall"
+			}
+		],
+		"location": { "city": "Seattle", "countryCode": "US", "region": "WA" },
+		"name": "Jory Tindall",
+		"summary": "Product designer and design engineer crafting enterprise design systems and the tooling that connects design to code. Current building the AI infrastructure used by designers and engineers to ship consistent experiences with the Helios and IBM Carbon design systems.",
+		"website": "https://jorytindall.com"
+	},
+	"skills": [
+		{
+			"_id": "skillGroup-design",
+			"_updatedAt": "2026-11-11T07:30:48Z",
+			"items": [
+				"Product & User Experience Design",
+				"Design Systems & Tokens",
+				"Advanced & Code-Based Prototyping",
+				"UX Research & Usability Testing",
+				"Information Architecture & Schema Design",
+				"Copywriting and Microcopy",
+				"Figma (Plugin API, Variables), Adobe Creative Cloud"
+			],
+			"name": "Design"
+		},
+		{
+			"_id": "skillGroup-ai",
+			"_updatedAt": "2026-11-11T07:30:48Z",
+			"items": [
+				"Model Context Protocol (MCP) Servers",
+				"Agents, Skills, Evaluations",
+				"Context, Prompt, Harness Engineering",
+				"Claude Code, GitHub Copilot, OpenCode, IBM Bob"
+			],
+			"name": "AI"
+		},
+		{
+			"_id": "skillGroup-development",
+			"_updatedAt": "2026-11-11T07:30:48Z",
+			"items": [
+				"HTML & CSS",
+				"JavaScript & TypeScript",
+				"React, NextJS",
+				"Ember",
+				"Svelte",
+				"Astro",
+				"Storybook & Visual Regression Testing",
+				"PostgreSQL"
+			],
+			"name": "Development"
+		}
+	],
+	"slug": "design-engineer",
+	"summary": null,
+	"title": "Design Engineer"
+}

@@ -77,6 +77,15 @@ the [JSON Resume](https://jsonresume.org/schema) format. Variant highlight filte
 The result types in `lib/resume/types.ts` are hand-written — there is no Sanity typegen —
 so change them with the projection.
 
+`lib/resume/pdf/` renders that JSON Resume to a one-page PDF with `@react-pdf/renderer`.
+`renderResumePdf` throws `ResumeOverflowError` rather than return a second page, and
+`renderResumePdf.test.ts` renders a snapshot of the real content
+(`__fixtures__/designEngineerFull.json`) so a template change that breaks the one-page fit
+fails the tests. Keep the layout single-column with no letter-spacing on text: both break
+text extraction for applicant tracking systems (letter-spacing turns "EDUCATION" into
+"E D U C AT I O N"). The face is Helvetica, a standard PDF font, until a brand face with
+an embedding licence is registered in `pdf/fonts.ts`.
+
 The Sanity dataset is public. Never add a private field (phone, street address) to the
 résumé schemas expecting a projection to hide it; the test asserts none reach the output.
 
