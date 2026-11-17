@@ -59,8 +59,9 @@ const RESUME_PROJECTION = groq`{
 	},
 }`;
 
-/** One variant by slug, e.g. `design-engineer`. Null when the slug is unknown. */
-export const GET_RESUME_BY_SLUG = groq`
+/** One variant by `$slug`, e.g. `design-engineer`. Null when the slug is unknown.
+ * Named to match the other single-document queries (`GET_TALKS`, `GET_PAGES`, …). */
+export const GET_RESUMES = groq`
 	*[_type == 'resume' && slug.current == $slug][0] ${RESUME_PROJECTION}
 `;
 
@@ -70,6 +71,6 @@ export const GET_DEFAULT_RESUME = groq`
 `;
 
 /** Slugs of every variant, for static params and the variant list. */
-export const GET_RESUME_SLUGS = groq`
+export const GET_RESUME_PATHS = groq`
 	*[_type == 'resume' && defined(slug.current)] | order(title asc).slug.current
 `;

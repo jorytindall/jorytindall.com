@@ -1,7 +1,7 @@
 import type { ResumeQueryResult } from '../types';
 
 /**
- * Shaped like a real GET_RESUME_BY_SLUG result for the seeded Design Engineer variant,
+ * Shaped like a real GET_RESUMES result for the seeded Design Engineer variant,
  * trimmed to two roles. Tag data is added here to exercise highlight filtering.
  */
 export const designEngineer: ResumeQueryResult = {
