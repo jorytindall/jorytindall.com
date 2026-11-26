@@ -225,6 +225,14 @@ to a registry — versioning exists for changelogs. Docs-only changes do not nee
 
 `feat/`, `fix/`, `chore/`, `docs/` prefixes. Never commit directly to `main`.
 
+### Pull requests
+
+**Keep PR descriptions brief.** Fill in the template in a few lines per section: one or
+two sentences of what and why, the checks you actually ran, anything the reviewer must do
+before it works. Detail belongs in the commit messages and the code, not the PR body. If
+a description needs scrolling, cut it. When a follow-up changes the PR's scope, update
+the description to match rather than appending to it.
+
 ### Secrets
 
 All secrets live in **Infisical**, injected at dev time — that is why the dev scripts
