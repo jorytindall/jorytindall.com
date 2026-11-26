@@ -88,6 +88,27 @@ text extraction for applicant tracking systems (letter-spacing turns "EDUCATION"
 Paths resolve from `process.cwd()`, so the PDF must be rendered with `apps/web` as the
 working directory.
 
+### Résumé routes
+
+| Route                                       | Serves                                   |
+| ------------------------------------------- | ---------------------------------------- |
+| `/resume.pdf`, `/resume.json`               | The variant marked default in Sanity     |
+| `/resume/<slug>.pdf`, `/resume/<slug>.json` | A named variant; unknown slugs 404       |
+| `POST /api/revalidate/resume`               | Sanity webhook; expires the résumé cache |
+
+`app/resume/[file]/route.ts` parses the extension itself — App Router segments cannot
+carry a suffix. Route logic lives in `lib/resume/http.ts` (pure, tested); the cached
+Sanity loaders are in `lib/resume/server.ts`. The rendered PDF itself is cached under the
+`resume` tag, so it is rendered at most once per publish. `?download=1` on a PDF forces a
+download.
+
+The webhook needs `SANITY_REVALIDATE_SECRET` in Infisical and on the Railway `Web` service,
+and a Sanity webhook (filter: résumé document types, on create/update/delete, projection
+`{_type}`) pointing at `https://jorytindall.com/api/revalidate/resume` with the same
+secret. Without it, résumé changes still appear — within a day, when the cache expires.
+
+`@react-pdf/renderer` is listed in `serverExternalPackages` in `next.config.js`.
+
 The Sanity dataset is public. Never add a private field (phone, street address) to the
 résumé schemas expecting a projection to hide it; the test asserts none reach the output.
 
