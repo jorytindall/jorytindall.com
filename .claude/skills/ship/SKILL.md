@@ -67,11 +67,12 @@ gh pr create --base main --title "…" --body "…"
 ```
 
 The PR template asks for: what and why, workspaces touched, what you actually verified,
-and screenshots for anything visual. Fill it in rather than deleting it.
+and screenshots for anything visual. Fill it in rather than deleting it — and **keep it
+brief**: a few lines per section, no essays. The commits carry the detail. See "Pull
+requests" in the root `AGENTS.md`.
 
-The `Verify` workflow will run `pnpm verify` on the PR. Note that `ci-web.yml` — the
-Playwright job — is **disabled** and has not run since December 2025, so nothing checks
-e2e for you.
+The `Verify` workflow runs `pnpm verify` on the PR, and `ci-web.yml` runs the Playwright
+e2e suite against a build.
 
 ## 5. Update Notion
 
